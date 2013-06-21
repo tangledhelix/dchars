@@ -1,0 +1,82 @@
+#!/usr/bin/python3
+# -*- coding: utf-8 -*-
+################################################################################
+#    DChars Copyright (C) 2012 Suizokukan
+#    Contact: suizokukan _A.T._ orange dot fr
+#
+#    This file is part of DChars.
+#    DChars is free software: you can redistribute it and/or modify
+#    it under the terms of the GNU General Public License as published by
+#    the Free Software Foundation, either version 3 of the License, or
+#    (at your option) any later version.
+#
+#    DChars is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    GNU General Public License for more details.
+#
+#    You should have received a copy of the GNU General Public License
+#    along with DChars.  If not, see <http://www.gnu.org/licenses/>.
+################################################################################
+"""
+    ❏DChars❏ : dchars/tests/alphabetical_weight_tests.py
+"""
+
+import unittest
+
+from dchars.alphabetical_weight import AlphabeticalWeight
+
+################################################################################
+class TESTAlphabeticalWeight(unittest.TestCase):
+    """
+        class TESTAlphabeticalWeight
+
+        We test dchars/alphabetical_weight.py
+    """
+
+    #///////////////////////////////////////////////////////////////////////////
+    def test(self):
+        """
+                TESTAlphabeticalWeight.test
+        """
+
+        #.......................................................................
+        alphaw1 = AlphabeticalWeight( [1,2,3] )
+        alphaw2 = AlphabeticalWeight( [1,2,3] )
+
+        self.assertTrue( alphaw1 == alphaw2 )
+        self.assertFalse( alphaw1 < alphaw2 )
+        self.assertFalse( alphaw1 > alphaw2 )
+
+        #.......................................................................
+        alphaw1 = AlphabeticalWeight( [1,2] )
+        alphaw2 = AlphabeticalWeight( [1,2,3] )
+
+        self.assertFalse( alphaw1 == alphaw2 )
+        self.assertTrue( alphaw1 < alphaw2 )
+        self.assertFalse( alphaw1 > alphaw2 )
+
+        #.......................................................................
+        alphaw1 = AlphabeticalWeight( [] )
+        alphaw2 = AlphabeticalWeight( [1,] )
+
+        self.assertFalse( alphaw1 == alphaw2 )
+        self.assertTrue( alphaw1 < alphaw2 )
+        self.assertFalse( alphaw1 > alphaw2 )
+
+        #.......................................................................
+        alphaw1 = AlphabeticalWeight( [1,2,3] )
+        alphaw2 = AlphabeticalWeight( [99,] )
+
+        self.assertFalse( alphaw1 == alphaw2 )
+        self.assertTrue( alphaw1 < alphaw2 )
+        self.assertFalse( alphaw1 > alphaw2 )
+
+        #.......................................................................
+        alphaw1 = AlphabeticalWeight( [1,2,3] )
+        alphaw2 = AlphabeticalWeight( [99,100,101,102] )
+
+        self.assertFalse( alphaw1 == alphaw2 )
+        self.assertTrue( alphaw1 < alphaw2 )
+        self.assertFalse( alphaw1 > alphaw2 )
+

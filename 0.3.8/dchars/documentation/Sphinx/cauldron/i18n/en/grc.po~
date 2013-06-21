@@ -1,0 +1,103 @@
+# English translations for DChars package.
+# Copyright (C) 2012, suizokukan (Xavier Faure)
+# This file is distributed under the same license as the DChars package.
+# Automatically generated, 2013.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: DChars 0.1.2\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-03-22 13:32\n"
+"PO-Revision-Date: 2013-03-22 13:32\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: en_GB\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+# b1b4377e46fe4597bc03623262f6ec2c
+#: grc.rst:7
+msgid "GRC_TITLE"
+msgstr "Ancient Greek"
+
+# 557210e7f12d46de8e05b8f6df1c6aa1
+#: grc.rst:11
+msgid "WHAT_IS_THIS"
+msgstr "Language and writing system"
+
+# b2ac6eb159b6428db05e23f3799a2648
+#: grc.rst:13
+msgid "$WHAT_IS_THIS_TXT$"
+msgstr "This document explains how DChars deal with Ancient Greek and its usual writing system. Ancient Greek is named 'grc' by the norm ISO-639-3, hence the name of the specific module dedicated to this language : dchars.languages.grc ."
+
+# 3441424b88b349bda49acf77c7ef4b80
+#: grc.rst:17
+msgid "SIMPLE_EXAMPLES"
+msgstr "simple examples"
+
+# 7dbbf691fd0044289d5f3c9396e64a4c
+#: grc.rst:19
+msgid "$SIMPLE_EXAMPLES_TXT$"
+msgstr "Some simple examples of what can be done with this module. Feel free to write DChars' author for further informations."
+
+# 18fbe09820944881ad03d5e0dc7fabc0
+#: grc.rst:71
+msgid "TRANSLITERATION_METHODS"
+msgstr "transliteration's methods"
+
+# e87b081dfa254ceb815acb229e8ea2a6
+#: grc.rst:73
+msgid "$TRANSLITERATION_METHODS_TXT$"
+msgstr "Three methods are available : 'basic', 'betacode' and 'perseus'. This module uses 'basic' as the default method for transliteration."
+
+# dbcd7cac5bdb4c7a9e2343d99ec06d84
+#: grc.rst:76
+msgid "BASIC_METHOD"
+msgstr "'basic'"
+
+# 12311e604fbc4551a654529f1bd75529
+#: grc.rst:78
+msgid "$BASIC_METHOD_TXT$"
+msgstr "Own method used by the author of DChars; this method is linked to the keyboard mapping he used with Yudit to write Ancient Greek."
+
+# 792016d2d75d467e93b74f1ca2c5aac9
+#: grc.rst:93
+msgid "BETACODE_METHOD"
+msgstr "'betacode'"
+
+# 1051d46b790c4d5f94125e00c88ab39f
+#: grc.rst:95
+msgid "$BETACODE_METHOD_TXT$"
+msgstr "See for example https://en.wikipedia.org/wiki/Beta_code ."
+
+# a4406bbf9b434d3b938e5d7a9204055e
+#: grc.rst:110
+msgid "PERSEUS_METHOD"
+msgstr "'perseus'"
+
+# 88de04f2d314436fa1289bb54bfd62c8
+#: grc.rst:112
+msgid "$PERSEUS_METHOD_TXT$"
+msgstr "Special betacode for Perseus site for Ancient Greek texts (http://www.perseus.tufts.edu)"
+
+# 2b54926f01e74019974a5d8800a4f8ec
+#: grc.rst:128
+msgid "POSSIBILITIES"
+msgstr "general informations"
+
+# 903f3df334e846598105052ea398816a
+#: grc.rst:130
+msgid "$POSSIBILITIES_TXT$"
+msgstr "Current known limitations and possibilities of this module :"
+
+# 827da60e62934c23bca9b8db34a52318
+#: grc.rst:153
+msgid "HOW_IT_WORKS"
+msgstr "how it works"
+
+# e290f35cd2bc44d884d104b60f74a7ea
+#: grc.rst:155
+msgid "$HOW_IT_WORKS_TXT$"
+msgstr "This long description sums up the functionnement of this module. Let's hope it will help anyone to read more easily the code !"

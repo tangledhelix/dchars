@@ -1,0 +1,344 @@
+#!/usr/bin/python3
+# -*- coding: utf-8 -*-
+################################################################################
+#    DChars Copyright (C) 2012 Suizokukan
+#    Contact: suizokukan _A.T._ orange dot fr
+#
+#    This file is part of DChars.
+#    DChars is free software: you can redistribute it and/or modify
+#    it under the terms of the GNU General Public License as published by
+#    the Free Software Foundation, either version 3 of the License, or
+#    (at your option) any later version.
+#
+#    DChars is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    GNU General Public License for more details.
+#
+#    You should have received a copy of the GNU General Public License
+#    along with DChars.  If not, see <http://www.gnu.org/licenses/>.
+################################################################################
+"""
+    ❏DChars❏ : dchars/dchars.py
+"""
+
+import re
+import unicodedata
+
+SYMBOLS__PUNCTUATION = ('.', ',', ';', '·')
+
+SYMBOLS__UPPER_CASE = ('Α', 'Β',      'Γ', 'Δ', 'Ε', 'Ζ',
+                       'η', 'Θ', 'Ι', 'Κ', 'Λ', 'Μ', 'Ν', 'Ξ',
+                       'Ο', 'Π', 'Ρ', 'Σ',
+                       'Τ', 'Υ', 'Φ', 'Χ', 'Ψ', 'Ω'  )
+SYMBOLS__LOWER_CASE = ('α', 'β', 'ϐ', 'γ', 'δ', 'ε', 'ζ',
+                       'Η', 'θ', 'ι', 'κ', 'λ', 'μ', 'ν', 'ξ',
+                       'ο', 'π', 'ρ', 'σ', 'ς',
+                       'τ', 'υ', 'φ', 'χ', 'ψ', 'ω' )
+
+SYMBOLS__DIACRITICS_NUM2NAME = {chr(0x300) : "τόνος.βαρεῖα",            # ὰ
+                                chr(0x301) : "τόνος.ὀξεῖα",             # ά
+                                chr(0x304) : "μῆκος.μακρόν",            # ᾱ
+                                chr(0x306) : "μῆκος.βραχύ",             # ᾰ
+                                chr(0x342) : "τόνος.περισπωμένη",       # ᾶ
+                                chr(0x313) : "πνεῦμα.ψιλὸν",            # ἀ
+                                chr(0x314) : "πνεῦμα.δασὺ",             # ἁ
+                                chr(0x345) : "ὑπογεγραμμένη",           # ᾳ
+                                chr(0x308) : "διαλυτικά",               # ϋ
+                                }
+
+# e.g. SYMBOLS__DIACRITICS_NAME2NUM['τόνος.βαρεῖα'] = chr(0x300)
+SYMBOLS__DIACRITICS_NAME2NUM = dict(zip(SYMBOLS__DIACRITICS_NUM2NAME.values(),
+                                        SYMBOLS__DIACRITICS_NUM2NAME.keys()))
+
+################################################################################
+class DCharacter(object):
+    """
+        class DCharacter, motherclass for all DCharacter* classes
+    """
+
+    #///////////////////////////////////////////////////////////////////////////
+    def __init__(self,
+                 unknown_char,
+                 base_char,
+                 punctuation):
+        """
+                DCharacter.__init__
+
+                unknown_char    : bool
+                base_char       : str
+                punctuation     : bool
+        """
+        self.unknown_char = unknown_char
+        self.base_char = base_char
+        self.punctuation = punctuation
+
+################################################################################
+class DCharacterString(list):
+    """
+        class DCharacterString, motherclass for all DCharacterString* classes
+    """
+
+    #///////////////////////////////////////////////////////////////////////////
+    def __init__(self):
+        """
+                DCharacterString.__init__
+        """
+        list.__init__(self)
+
+    #///////////////////////////////////////////////////////////////////////////
+    def __repr__(self):
+        """
+                DCharacterString.__repr__
+        """
+        return "\n".join( (repr(element) for element in self) )
+
+################################################################################
+class DCharacterGRC(DCharacter):
+    """
+        class DCharacterGRC
+    """
+
+    #///////////////////////////////////////////////////////////////////////////
+    def __init__(self,
+                 unknown_char = False,
+                 base_char = None,
+                 punctuation = False,
+                 capital_letter = False,
+                 tonos = None,
+                 pneuma = None,
+                 hupogegrammene = False,
+                 dialutika = False,
+                 mekos=None):
+        """
+                DCharacterGRC.__init__
+
+                unknown_char                    : bool
+                base_char                       : None or a string
+                punctuation                     : True, False
+                capital_letter                  : True, False
+
+                mekos(μῆκος)                    : None, "βραχύ", "μακρόν"
+                tonos(τόνος)                    : None, "ὀξεῖα", "βαρεῖα", "περισπωμένη"
+                pneuma(πνεῦμα)                  : None, "ψιλὸν", "δασὺ"
+                hupogegrammene(ὑπογεγραμμένη)   : True, False
+                dialutika(διαλυτικά)            : True, False
+        """
+
+        DCharacter.__init__(self,
+                            unknown_char = unknown_char,
+                            base_char = base_char,
+                            punctuation = punctuation)
+
+        self.capital_letter = capital_letter
+        self.tonos = tonos
+        self.pneuma = pneuma
+        self.hupogegrammene = hupogegrammene
+        self.dialutika = dialutika
+        self.mekos = mekos
+
+    #///////////////////////////////////////////////////////////////////////////
+    def __repr__(self):
+        """
+                DCharacterGRC.__repr__
+        """
+
+        if self.unknown_char:
+            return "?"
+
+        else:
+            return "unknown_char="+repr(self.unknown_char) + "; " + \
+                   "base_char="+repr(self.base_char) + "; " + \
+                   "punctuation="+repr(self.punctuation) + "; " + \
+                   "capital_letter="+repr(self.capital_letter) + "; " + \
+                   "tonos="+repr(self.tonos) + "; " + \
+                   "pneuma="+repr(self.pneuma) + "; " + \
+                   "hupogegrammene="+repr(self.hupogegrammene) + "; " + \
+                   "dialutika="+repr(self.dialutika) + "; " + \
+                   "mekos="+repr(self.mekos)
+
+    #///////////////////////////////////////////////////////////////////////////
+    def repr_as_a_string(self):
+        """
+                DCharacterGRC.repr_as_a_string
+
+                Return a string.
+        """
+
+        res = ""
+
+        if self.base_char is not None:
+            res += self.base_char
+
+        if self.tonos == 'ὀξεῖα':
+            res += SYMBOLS__DIACRITICS_NAME2NUM['τόνος.ὀξεῖα']
+        elif self.tonos == 'βαρεῖα':
+            res += SYMBOLS__DIACRITICS_NAME2NUM['τόνος.βαρεῖα']
+        elif self.tonos == 'περισπωμένη':
+            res += SYMBOLS__DIACRITICS_NAME2NUM['τόνος.περισπωμένη']
+
+        if self.mekos == 'βραχύ':
+            res += SYMBOLS__DIACRITICS_NAME2NUM['μῆκος.βραχύ']
+        elif self.mekos == 'μακρόν':
+            res += SYMBOLS__DIACRITICS_NAME2NUM['μῆκος.μακρόν']
+
+        if self.pneuma == 'ψιλὸν':
+            res += SYMBOLS__DIACRITICS_NAME2NUM['πνεῦμα.ψιλὸν']
+        elif self.pneuma == 'δασὺ':
+            res += SYMBOLS__DIACRITICS_NAME2NUM['πνεῦμα.δασὺ']
+
+        if self.hupogegrammene == True:
+            res += SYMBOLS__DIACRITICS_NAME2NUM['ὑπογεγραμμένη']
+
+        if self.dialutika == True:
+            res += SYMBOLS__DIACRITICS_NAME2NUM['διαλυτικά']
+
+        return unicodedata.normalize('NFC', res)
+
+################################################################################
+class DCharacterStringGRC(DCharacterString):
+    """
+        class DCharacterStringGRC
+    """
+
+    pattern = re.compile("((?P<letter>({0}))(?P<diacritics>({1})*))".format(
+        "|".join( SYMBOLS__LOWER_CASE + SYMBOLS__UPPER_CASE ),
+        "|".join( SYMBOLS__DIACRITICS_NUM2NAME.keys() )))
+
+    #///////////////////////////////////////////////////////////////////////////
+    def __init__(self, str_src):
+        """
+                DCharacterStringGRC.__init__
+        """
+        DCharacterString.__init__(self)
+
+        self.errors = []
+        self.init_from_str(str_src)
+
+    #///////////////////////////////////////////////////////////////////////////
+    def get_str(self):
+        """
+                DCharacterStringGRC.get_str
+
+                Return a string.
+        """
+        res = ""
+
+        for char in self:
+            res += char.repr_as_a_string()
+
+        return res
+
+    #///////////////////////////////////////////////////////////////////////////
+    def init_from_str(self, str_src):
+        """
+                DCharacterStringGRC.init_from_str
+
+                Function called by __init__()
+
+                str_src : str
+        """
+        self.errors = []
+
+        normalized_src = unicodedata.normalize('NFD', str_src)
+
+        #.......................................................................
+        # initialisation from the recognized characters.
+        #.......................................................................
+        indexes = []    # indexes of the substring well analyzed : ( start, end )
+        for element in re.finditer(DCharacterStringGRC.pattern,
+                                   normalized_src):
+
+            indexes.append( (element.start(), element.end()-1 ) )
+
+            data = element.groupdict()
+            letter     = data['letter']
+            diacritics = data['diacritics']
+
+            punctuation = letter in SYMBOLS__PUNCTUATION
+            capital_letter = letter in SYMBOLS__UPPER_CASE
+
+            tonos = None
+            if SYMBOLS__DIACRITICS_NAME2NUM['τόνος.βαρεῖα'] in diacritics:
+                tonos = "βαρεῖα"
+            elif SYMBOLS__DIACRITICS_NAME2NUM['τόνος.ὀξεῖα'] in diacritics:
+                tonos = "ὀξεῖα"
+            elif SYMBOLS__DIACRITICS_NAME2NUM['τόνος.περισπωμένη'] in diacritics:
+                tonos = "περισπωμένη"
+
+            mekos = None
+            if SYMBOLS__DIACRITICS_NAME2NUM['μῆκος.μακρόν'] in diacritics:
+                mekos = "μακρόν"
+            elif SYMBOLS__DIACRITICS_NAME2NUM['μῆκος.βραχύ'] in diacritics:
+                mekos = "βραχύ"
+
+            pneuma = None
+            if SYMBOLS__DIACRITICS_NAME2NUM['πνεῦμα.ψιλὸν'] in diacritics:
+                pneuma = "ψιλὸν"
+            elif SYMBOLS__DIACRITICS_NAME2NUM['πνεῦμα.δασὺ'] in diacritics:
+                pneuma = "δασὺ"
+
+            hupogegrammene = False
+            if SYMBOLS__DIACRITICS_NAME2NUM['ὑπογεγραμμένη'] in diacritics:
+                hupogegrammene = True
+
+            dialutika = False
+            if SYMBOLS__DIACRITICS_NAME2NUM['διαλυτικά'] in diacritics:
+                dialutika = True
+
+            new_character = DCharacterGRC(unknown_char = False,
+                                          base_char = letter,
+                                          punctuation = punctuation,
+                                          capital_letter = capital_letter,
+                                          tonos = tonos,
+                                          pneuma = pneuma,
+                                          hupogegrammene = hupogegrammene,
+                                          dialutika = dialutika,
+                                          mekos=mekos)
+
+            self.append( new_character )
+
+        #.......................................................................
+        # we add the unrecognized character(s) :
+        #.......................................................................
+        if indexes:
+
+            # <indexes> is not empty :
+
+            # missing character BEFORE the found indexes :
+            # e.g. 0 before (1, 3), (5, 5), (6, 7), (8, 8), (9, 11), (12, 12)
+            start, end = indexes[0]
+            for pos in range(0, start):
+                print("add", pos)
+
+            # missing character IN the found indexes :
+            # e.g. 4 in (1, 3), (5, 5), (6, 7), (8, 8), (9, 11), (12, 12)
+            last_end = None
+            for start, end in indexes:
+
+                if last_end is not None:
+
+                    if start != last_end + 1:
+                        for pos in range(last_end+1, start):
+                            print("add", pos)
+
+                last_end = end
+
+            # missing character AFTER the found indexes :
+            # e.g. 13, 14 AFTER (1, 3), (5, 5), (6, 7), (8, 8), (9, 11), (12, 12)
+            start, end = indexes[-1]
+            for pos in range(end+1, len(normalized_src)):
+                print("add", pos)
+
+        else:
+            # <indexes> is empty :
+            for pos in range(0, len(normalized_src)):
+                print("add²", pos)
+
+        print(indexes)
+
+# src = "" #"*ά̄*βάϐά̄Β**"
+# print(src)
+# print( DCharacterStringGRC(src).get_str() )
+
+

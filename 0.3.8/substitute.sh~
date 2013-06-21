@@ -1,0 +1,4 @@
+find dchars/ -name "*.py" -exec sed -i "s/from dchars.symbols/from dchars.symbols.symbols/g" {} \;
+
+
+

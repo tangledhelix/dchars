@@ -1,0 +1,93 @@
+# French translations for DChars package.
+# Copyright (C) 2012, suizokukan (Xavier Faure)
+# This file is distributed under the same license as the DChars package.
+# Automatically generated, 2013.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: DChars 0.1.2\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-03-22 13:32\n"
+"PO-Revision-Date: 2013-03-22 13:32\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: fr\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+# 04a4204c80854b02abb3275be85ab9c3
+#: san.rst:7
+msgid "SAN_TITLE"
+msgstr "sanskrit(devanāgarī)"
+
+# 3ff77dd5bc6a47bc894ac86ced7ea4b0
+#: san.rst:11
+msgid "WHAT_IS_THIS"
+msgstr "langue et système d'écriture"
+
+# 75739a5b9359499b9795bc9152b29d8c
+#: san.rst:13
+msgid "$WHAT_IS_THIS_TXT$"
+msgstr "Ce document décrit comment DChars traite le sanskrit et son système d'écriture usuel, la devanāgarī. La norme ISO-693-3 nomme cette langue 'san', d'où le nom du module spécifique dédié à cette langue : dchars.languages.san ."
+
+# a3e4c52f74754ac49d04abd2bca0e194
+#: san.rst:17
+msgid "SIMPLE_EXAMPLES"
+msgstr "quelques exemples simples d'utilisation"
+
+# 270761c7acf64eaa8842b03ece9383eb
+#: san.rst:19
+msgid "$SIMPLE_EXAMPLES_TXT$"
+msgstr "Quelques exemples de ce qui peut être fait avec ce module. N'hésitez pas à écrire à l'auteur pour de plus amples renseignements."
+
+# 4cb4134a89694f2989c73d8e50f6ea10
+#: san.rst:71
+msgid "TRANSLITERATION_METHODS"
+msgstr "méthodes de translittération"
+
+# 718d7fe1730f49c68f354721cba6593a
+#: san.rst:73
+msgid "$TRANSLITERATION_METHODS_TXT$"
+msgstr "Deux méthodes sont disponibles : 'iso15919' et 'itrans'. Par défaut, ce module utilise la méthode de translittération nommée 'iso15919'."
+
+# a6c7369a6e9b4d5cbbae91cd3e8e1df4
+#: san.rst:76
+msgid "ISO15919_METHOD"
+msgstr "'iso15919'"
+
+# 8438c82000b24e538ae3f60e48e74e4e
+#: san.rst:78
+msgid "$ISO15919_TXT$"
+msgstr "Il s'agit d'une adaptation d'une partie de la norme ISO15919 et non de la norme complète. Voyez ci-dessous pour davantage de détails."
+
+# 133fb6a7d79c463a9d9a5cd4c3101556
+#: san.rst:126
+msgid "ITRANS_METHOD"
+msgstr "'itrans'"
+
+# 69e1717ae4b04440a32497e550c49ed3
+#: san.rst:128
+msgid "$ITRANS_TXT$"
+msgstr "Voyez par exemple https://en.wikipedia.org/wiki/ITRANS ."
+
+# 5cb688805bd949a9b09d9e03befd7ef7
+#: san.rst:207
+msgid "POSSIBILITIES"
+msgstr "informations générales"
+
+# 672986fde82c4b91a29bffac945975d9
+#: san.rst:209
+msgid "$POSSIBILITIES_TXT$"
+msgstr "Limites et possibilités actuelles du programme :"
+
+# 6156e15b01664b72865cf059a2c38e7d
+#: san.rst:245
+msgid "HOW_IT_WORKS"
+msgstr "fonctionnement"
+
+# 010a565a23904ff79e40362726dfc2e9
+#: san.rst:247
+msgid "$HOW_IT_WORKS_TXT$"
+msgstr "Cette longue description est un résumé du fonctionnement de ce module. Elle a été écrite pour que chacun puisse lire le code plus facilement."

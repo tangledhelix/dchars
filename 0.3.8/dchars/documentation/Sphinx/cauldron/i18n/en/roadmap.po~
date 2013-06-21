@@ -1,0 +1,25 @@
+# English translations for DChars package.
+# Copyright (C) 2012, suizokukan (Xavier Faure)
+# This file is distributed under the same license as the DChars package.
+# Automatically generated, 2013.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: DChars 0.1.2\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-03-22 13:32\n"
+"PO-Revision-Date: 2013-03-22 13:32\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: en_GB\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+# f90fddf3827f441896a5e798d4bece10
+#: roadmap.rst:3
+msgid "ROADMAP_TITLE"
+msgstr "roadmap"
+"
+

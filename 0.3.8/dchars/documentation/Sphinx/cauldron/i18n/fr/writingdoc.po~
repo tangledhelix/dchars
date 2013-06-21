@@ -1,0 +1,29 @@
+# French translations for Phoseg package.
+# Copyright (C) 2012, suizokukan (Xavier Faure)
+# This file is distributed under the same license as the Phoseg package.
+# Automatically generated, 2012.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Phoseg 0.3.6\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-12-16 10:45\n"
+"PO-Revision-Date: 2012-12-16 10:45\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: fr\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: writingdoc.rst:7
+# e57080928a3b452c8213ed682327a6bc
+msgid "WRITINGDOC_TITLE"
+msgstr "écrire la documentation"
+
+#: writingdoc.rst:9
+# 7fd1013dfe1844ec8a878dcdfea93759
+msgid "$WRITINGDOC_TEXT$"
+msgstr "A partir des fichiers .rst de ``documentation/Sphinx/RSTsourcefiles/`` sont créés dans le même répertoire les fichiers .pot (templates) correspondants (``sphinx-build -b gettext . .``) . Chaque fichier .pot est converti en un fichier .po pour chaque langue et copié dans ``documentation/Sphinx/i18n/fr/`` (``msginit --no-translator --locale=fr_FR -i file.pot -o ../i18n/fr/file.po``). Le traducteur complète alors la traduction de chaque fichier .po. |br| Chaque fichier .po devient pendant la génération de la documentation (``./create_documentation.py``) un fichier .mo, placé dans ``documentation/Sphinx/i18n/fr/LC_MESSAGES/``. |br| |br| Certains fichiers .rst sont dynamiquement créés par le fichier ``./create_documentation.py``; c'est le cas de ``index.rst``, ``keywords.rst`` et de ``source_code.rst``. |br| |br| Attention : les anciens fichiers .po sont ÉCRASÉS avec la commande ``msginit`` !"
+

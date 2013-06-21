@@ -1,0 +1,28 @@
+# English translations for DChars package.
+# Copyright (C) 2012, suizokukan (Xavier Faure)
+# This file is distributed under the same license as the DChars package.
+# Automatically generated, 2013.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: DChars 0.1.2\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-03-22 13:32\n"
+"PO-Revision-Date: 2013-03-22 13:32\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: en_GB\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+# 5eb4108a06e045a48ac7f9d4704f08e9
+#: howto_install.rst:7
+msgid "HOWTO_INSTALL_TITLE"
+msgstr "installation"
+
+# 959f100e1e154b1dbb90ddbc28275eb1
+#: howto_install.rst:9
+msgid "$HOWTO_INSTALL_TEXT$"
+msgstr "Use DChars for Python3 projects. Download the last version available, go to your project's directory and expand the tarball with ``tar -xvzf phoseg.tar.gz``. All DChars's code is now in a phoseg/ subdirectory."
