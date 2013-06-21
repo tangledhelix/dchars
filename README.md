@@ -1,21 +1,19 @@
 ----
 ----
 
-DChars 
-
-[Check out the homepage !](http://94.23.197.37/dchars/)
+DChars : [Check out the homepage !](http://94.23.197.37/dchars/)
 
 ----
 ----
 
-D(etailed) char(acter)s for Biblical Hebrew, Ancient Greek, Sanskrit, Latin and Tibetan
+*D(etailed)* *char(acter)s* *for* *Biblical* *Hebrew*, *Ancient* *Greek*, *Sanskrit*, *Latin* *and* *Tibetan*
 
 DChars (Detailed Characters) is a **Python3** module aiming to modify easily the diacritics signs of complex unicode characters and to get their transliteration. DChars’ code is licensed under the **GPLv3** licence and is free. Current available languages are Ancient Greek, Latin, Biblical Hebrew, Sanskrit (devanāgarī) and Tibetan.
 
 ----
 ----
 
-How to use it :
+*How* *to* *use* *it* :
 
 ```python
 # Let's use by instance the Sanskrit module :
