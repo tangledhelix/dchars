@@ -4,14 +4,17 @@ DChars
 homepage : 94.23.197.37/dchars/
 
 ----
+
 D(etailed) char(acter)s for Biblical Hebrew, Ancient Greek, Sanskrit, Latin and Tibetan
 
 DChars (Detailed Characters) is a Python3 module aiming to modify easily the diacritics signs of complex unicode characters and to get their transliteration. DChars’ code is licensed under the GPLv3 licence and is free. Current available languages are Ancient Greek, Latin, Biblical Hebrew, Sanskrit (devanāgarī) and Tibetan.
+
 ----
 ----
 
 How to use it :
 
+```python
 # Let's use by instance the Sanskrit module :
 
 # we import the "new_dstring" object in order to set DSTRING_SAN :
@@ -43,5 +46,5 @@ print(string.get_transliteration())         # -> "ágnimī́ḷē pu̱rōhíta�
 with DSTRING_SAN().open(sourcefile, 'r') as src:
     for line in src.readlines():
         print( line.get_transliteration() )
-
+```
 ----
