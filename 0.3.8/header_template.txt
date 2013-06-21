@@ -1,1 +1,0 @@
-2012 Suizokukan[\s|\w|\W]*❏DChars❏
