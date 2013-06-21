@@ -43,7 +43,6 @@ string[0].accent = "DEVANAGARI STRESS SIGN UDATTA"
 print(string.get_transliteration())         # -> "ágnimī́ḷē pu̱rōhítaṁ ya̱jñasyá dē̱vamr̥̱tvijám .hōtā́raṁ ratna̱dhātámam .."
 
 # Let's read a file and display its transliteration, line by line :
-
 with DSTRING_SAN().open(sourcefile, 'r') as src:
     for line in src.readlines():
         print( line.get_transliteration() )
