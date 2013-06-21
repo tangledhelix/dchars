@@ -1,7 +1,7 @@
 ----
 ----
 
-DChars (homepage : 94.23.197.37/dchars/)
+DChars (homepage : http://94.23.197.37/dchars/)
 
 ----
 ----
