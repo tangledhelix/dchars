@@ -1,8 +1,9 @@
+----
+----
 
-DChars
+DChars (homepage : 94.23.197.37/dchars/)
 
-homepage : 94.23.197.37/dchars/
-
+----
 ----
 
 D(etailed) char(acter)s for Biblical Hebrew, Ancient Greek, Sanskrit, Latin and Tibetan
@@ -19,7 +20,7 @@ How to use it :
 
 # we import the "new_dstring" object in order to set DSTRING_SAN :
 from dchars.dchars import new_dstring
-DSTRING_SAN = new_dstring(language='संस्कृतम्', transliteration_method="iso15919")
+DSTRING_SAN = new_dstring(language='san', transliteration_method="iso15919")
 
 # We set the string from a source-string :
 # this is the first part of the first verse of the Rig-Veda :
