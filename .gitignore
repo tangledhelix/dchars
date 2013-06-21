@@ -2,9 +2,17 @@
 *.pyc
 __pycache__
 .doctrees
+*.rc
+#*
 
-documentation/
-tests/
+header_please_test.py
+header_template.txt
+projects_files.py
+pylint_tests.py
+
+dchars/documentation/
+dchars/tests/
+doc/
 
 
 
