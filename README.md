@@ -1,7 +1,7 @@
 ----
 ----
 
-DChars : [Check out the homepage !](http://94.23.197.37/dchars/)
+*DChars* : [Check out the homepage !](http://94.23.197.37/dchars/)
 
 ----
 ----
