@@ -1,0 +1,689 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>dchars.dstring &mdash; DChars 0.3.8 documentation</title>
+    
+    <link rel="stylesheet" href="_static/theme.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '0.3.8',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <link rel="top" title="DChars 0.3.8 documentation" href="index.html" />
+    <link rel="up" title="code source" href="source_code.html" />
+    <link rel="next" title="dchars.errors.__init__" href="dchars.errors.__init__.html" />
+    <link rel="prev" title="dchars.dchars" href="dchars.dchars.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="Index général"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Index des modules Python"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="dchars.errors.__init__.html" title="dchars.errors.__init__"
+             accesskey="N">suivant</a> |</li>
+        <li class="right" >
+          <a href="dchars.dchars.html" title="dchars.dchars"
+             accesskey="P">précédent</a> |</li>
+        <li><a href="index.html">DChars 0.3.8 documentation</a> &raquo;</li>
+          <li><a href="source_code.html" accesskey="U">code source</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="dchars-dstring">
+<h1>dchars.dstring<a class="headerlink" href="#dchars-dstring" title="Lien permanent vers ce titre">¶</a></h1>
+<div class="section" id="documentation">
+<h2>Documentation<a class="headerlink" href="#documentation" title="Lien permanent vers ce titre">¶</a></h2>
+</div>
+<div class="section" id="source-code">
+<h2>Source code<a class="headerlink" href="#source-code" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>  1
+  2
+  3
+  4
+  5
+  6
+  7
+  8
+  9
+ 10
+ 11
+ 12
+ 13
+ 14
+ 15
+ 16
+ 17
+ 18
+ 19
+ 20
+ 21
+ 22
+ 23
+ 24
+ 25
+ 26
+ 27
+ 28
+ 29
+ 30
+ 31
+ 32
+ 33
+ 34
+ 35
+ 36
+ 37
+ 38
+ 39
+ 40
+ 41
+ 42
+ 43
+ 44
+ 45
+ 46
+ 47
+ 48
+ 49
+ 50
+ 51
+ 52
+ 53
+ 54
+ 55
+ 56
+ 57
+ 58
+ 59
+ 60
+ 61
+ 62
+ 63
+ 64
+ 65
+ 66
+ 67
+ 68
+ 69
+ 70
+ 71
+ 72
+ 73
+ 74
+ 75
+ 76
+ 77
+ 78
+ 79
+ 80
+ 81
+ 82
+ 83
+ 84
+ 85
+ 86
+ 87
+ 88
+ 89
+ 90
+ 91
+ 92
+ 93
+ 94
+ 95
+ 96
+ 97
+ 98
+ 99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276</pre></div></td><td class="code"><div class="highlight"><pre><span class="c">#!/usr/bin/python3</span>
+<span class="c"># -*- coding: utf-8 -*-</span>
+<span class="c">################################################################################</span>
+<span class="c">#    DChars Copyright (C) 2012 Suizokukan</span>
+<span class="c">#    Contact: suizokukan _A.T._ orange dot fr</span>
+<span class="c">#</span>
+<span class="c">#    This file is part of DChars.</span>
+<span class="c">#    DChars is free software: you can redistribute it and/or modify</span>
+<span class="c">#    it under the terms of the GNU General Public License as published by</span>
+<span class="c">#    the Free Software Foundation, either version 3 of the License, or</span>
+<span class="c">#    (at your option) any later version.</span>
+<span class="c">#</span>
+<span class="c">#    DChars is distributed in the hope that it will be useful,</span>
+<span class="c">#    but WITHOUT ANY WARRANTY; without even the implied warranty of</span>
+<span class="c">#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span>
+<span class="c">#    GNU General Public License for more details.</span>
+<span class="c">#</span>
+<span class="c">#    You should have received a copy of the GNU General Public License</span>
+<span class="c">#    along with DChars.  If not, see &lt;http://www.gnu.org/licenses/&gt;.</span>
+<span class="c">################################################################################</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    ❏DChars❏ : dchars/dstring.py</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="c"># problem with Pylint :</span>
+<span class="c"># pylint: disable=E0611</span>
+<span class="c"># &quot;No name &#39;errors&#39; in module &#39;dchars.dchars&#39;&quot;</span>
+<span class="kn">from</span> <span class="nn">dchars.errors.errors</span> <span class="kn">import</span> <span class="n">DCharsError</span>
+<span class="kn">from</span> <span class="nn">dchars.utilities.triggerlist</span> <span class="kn">import</span> <span class="n">TriggerList</span>
+<span class="kn">import</span> <span class="nn">io</span>
+
+<span class="c">################################################################################</span>
+<span class="k">class</span> <span class="nc">DStringMotherClass</span><span class="p">(</span><span class="n">TriggerList</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        class DStringMotherClass, motherclass for all DString* classes</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c">#///////////////////////////////////////////////////////////////////////////</span>
+    <span class="k">def</span> <span class="nf">__enter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">                DStringMotherClass.__enter__</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span>
+
+    <span class="c">#///////////////////////////////////////////////////////////////////////////</span>
+    <span class="k">def</span> <span class="nf">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">aliud</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">                DStringMotherClass.__eq__</span>
+
+<span class="sd">                aliud   :       DString* object</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">aliud</span><span class="p">)</span> <span class="o">!=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <span class="k">return</span> <span class="bp">False</span>
+
+        <span class="n">res</span> <span class="o">=</span> <span class="bp">True</span>
+
+        <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">dchar</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">dchar</span> <span class="o">!=</span> <span class="n">aliud</span><span class="p">[</span><span class="n">index</span><span class="p">]:</span>
+                <span class="n">res</span> <span class="o">=</span> <span class="bp">False</span>
+                <span class="k">break</span>
+
+        <span class="k">return</span> <span class="n">res</span>
+
+    <span class="c">#///////////////////////////////////////////////////////////////////////////</span>
+    <span class="k">def</span> <span class="nf">__exit__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">typ</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">traceback</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">                DStringMotherClass.__exit__</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">srcfile</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">DCharsError</span><span class="p">(</span> <span class="n">context</span> <span class="o">=</span> <span class="s">&quot;DStringMotherClass.read&quot;</span><span class="p">,</span>
+                               <span class="n">message</span> <span class="o">=</span> <span class="s">&quot;no file attached to this object&quot;</span> <span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">srcfile</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+    <span class="c">#///////////////////////////////////////////////////////////////////////////</span>
+    <span class="k">def</span> <span class="nf">__ge__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">aliud</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">                DStringMotherClass.__ge__</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span> <span class="o">==</span> <span class="n">aliud</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">True</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">sortingvalue</span><span class="p">()</span> <span class="o">&gt;</span> <span class="n">aliud</span><span class="o">.</span><span class="n">sortingvalue</span><span class="p">()</span>
+
+    <span class="c">#///////////////////////////////////////////////////////////////////////////</span>
+    <span class="k">def</span> <span class="nf">__gt__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">aliud</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">                DStringMotherClass.__gt__</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">sortingvalue</span><span class="p">()</span> <span class="o">&gt;</span> <span class="n">aliud</span><span class="o">.</span><span class="n">sortingvalue</span><span class="p">()</span>
+
+    <span class="c">#///////////////////////////////////////////////////////////////////////////</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">iterable</span> <span class="o">=</span> <span class="bp">None</span><span class="p">,</span> <span class="n">alert_function</span> <span class="o">=</span> <span class="bp">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">                DStringMotherClass.__init__</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">TriggerList</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">iterable</span> <span class="o">=</span> <span class="n">iterable</span><span class="p">,</span> <span class="n">alert_function</span> <span class="o">=</span> <span class="n">alert_function</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">srcfile</span> <span class="o">=</span> <span class="bp">None</span>
+
+    <span class="c">#///////////////////////////////////////////////////////////////////////////</span>
+    <span class="k">def</span> <span class="nf">__le__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">aliud</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">                DStringMotherClass.__le__</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span> <span class="o">==</span> <span class="n">aliud</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">True</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">sortingvalue</span><span class="p">()</span> <span class="o">&lt;</span> <span class="n">aliud</span><span class="o">.</span><span class="n">sortingvalue</span><span class="p">()</span>
+
+    <span class="c">#///////////////////////////////////////////////////////////////////////////</span>
+    <span class="k">def</span> <span class="nf">__lt__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">aliud</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">                DStringMotherClass.__lt__</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">sortingvalue</span><span class="p">()</span> <span class="o">&lt;</span> <span class="n">aliud</span><span class="o">.</span><span class="n">sortingvalue</span><span class="p">()</span>
+
+    <span class="c">#///////////////////////////////////////////////////////////////////////////</span>
+    <span class="k">def</span> <span class="nf">__ne__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">aliud</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">                DStringMotherClass.__ne__</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="ow">not</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__eq__</span><span class="p">(</span><span class="n">aliud</span><span class="p">))</span>
+
+    <span class="c">#///////////////////////////////////////////////////////////////////////////</span>
+    <span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">                DStringMotherClass.__repr__</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="c"># pylint: disable=E1101</span>
+        <span class="c"># We disable this error in order to avoid the message :</span>
+        <span class="c"># &quot;Instance of &#39;DStringMotherClass&#39; has no &#39;iso639_3_name&#39; member&quot;</span>
+        <span class="c">#</span>
+        <span class="c"># Since DString* classes are created by dchars.py::new_dstring,</span>
+        <span class="c"># we&#39;re sure that this members exist.</span>
+        <span class="n">res</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s">&quot;(DStringMotherClass : &#39;{0}&#39;/&#39;{1}&#39;/{2}; {3} character(s))&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">iso639_3_name</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">transliteration_method</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="p">,</span>
+            <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="p">),</span>
+            <span class="p">))</span>
+
+        <span class="k">for</span> <span class="n">index_dchar</span><span class="p">,</span> <span class="n">dchar</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <span class="n">res</span><span class="o">.</span><span class="n">append</span><span class="p">(</span> <span class="s">&quot;#(&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">index_dchar</span><span class="p">)</span><span class="o">+</span><span class="s">&quot;)&quot;</span><span class="o">+</span><span class="nb">repr</span><span class="p">(</span><span class="n">dchar</span><span class="p">)</span> <span class="p">)</span>
+
+        <span class="k">return</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span> <span class="p">(</span><span class="n">string</span> <span class="k">for</span> <span class="n">string</span> <span class="ow">in</span> <span class="n">res</span><span class="p">)</span> <span class="p">)</span>
+
+    <span class="c">#///////////////////////////////////////////////////////////////////////////</span>
+    <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">                DStringMotherClass.__str__</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="s">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span> <span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">element</span><span class="p">)</span> <span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">)</span> <span class="p">)</span>
+
+    <span class="c">#///////////////////////////////////////////////////////////////////////////</span>
+    <span class="k">def</span> <span class="nf">diff</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">aliud</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">                DStringMotherClass.diff</span>
+
+<span class="sd">                debugging-oriented function.</span>
+
+<span class="sd">                aliud   :       DString* object</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">index_dchar</span><span class="p">,</span> <span class="n">dchar</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">aliud</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="n">index_dchar</span><span class="p">:</span>
+                <span class="n">res</span><span class="o">.</span><span class="n">append</span><span class="p">(</span> <span class="s">&quot;{0} : (1) / ~~&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">index_dchar</span><span class="p">)</span><span class="o">+</span><span class="s">&quot; : &quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">dchar</span><span class="p">))</span>
+            <span class="k">elif</span> <span class="bp">self</span><span class="p">[</span><span class="n">index_dchar</span><span class="p">]</span> <span class="o">==</span> <span class="n">aliud</span><span class="p">[</span><span class="n">index_dchar</span><span class="p">]:</span>
+                <span class="n">res</span><span class="o">.</span><span class="n">append</span><span class="p">(</span> <span class="s">&quot;{0} : (1) == (2)&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">index_dchar</span><span class="p">)</span><span class="o">+</span><span class="s">&quot; : &quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">dchar</span><span class="p">))</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">res</span><span class="o">.</span><span class="n">append</span><span class="p">(</span> <span class="s">&quot;{0} : (1) != (2)&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">index_dchar</span><span class="p">)</span> <span class="o">+</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span> <span class="o">+</span>\
+                             <span class="s">&quot;(1)==&quot;</span><span class="o">+</span><span class="nb">repr</span><span class="p">(</span><span class="n">dchar</span><span class="p">)</span> <span class="o">+</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span> <span class="o">+</span>\
+                             <span class="s">&quot;(2)==&quot;</span><span class="o">+</span><span class="nb">repr</span><span class="p">(</span><span class="n">aliud</span><span class="p">[</span><span class="n">index_dchar</span><span class="p">]),)</span>
+                <span class="k">break</span>
+
+        <span class="k">return</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
+
+    <span class="c">#///////////////////////////////////////////////////////////////////////////</span>
+    <span class="k">def</span> <span class="nf">get_sourcestr_representation</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">                DStringMotherClass.get_sourcestr_representation</span>
+
+<span class="sd">                Return a string.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="k">for</span> <span class="n">dchar</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">:</span>
+            <span class="n">res</span><span class="o">.</span><span class="n">append</span><span class="p">(</span> <span class="n">dchar</span><span class="o">.</span><span class="n">get_sourcestr_representation</span><span class="p">()</span> <span class="p">)</span>
+
+        <span class="k">return</span> <span class="s">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
+
+    <span class="c">#///////////////////////////////////////////////////////////////////////////</span>
+    <span class="k">def</span> <span class="nf">init_from_str</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">src</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">                DStringMotherClass.init_from_str</span>
+
+<span class="sd">                This function should be overloaded.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">pass</span>
+
+    <span class="c">#///////////////////////////////////////////////////////////////////////////</span>
+    <span class="k">def</span> <span class="nf">open</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+             <span class="n">filename</span><span class="p">,</span>
+             <span class="n">mode</span><span class="o">=</span><span class="s">&#39;r&#39;</span><span class="p">,</span>
+             <span class="n">buffering</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span>
+             <span class="n">encoding</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
+             <span class="n">errors</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
+             <span class="n">newline</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
+             <span class="n">closefd</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
+             <span class="n">opener</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">                DStringMotherClass.open</span>
+
+<span class="sd">                wrapper around io.open in order to write something like :</span>
+
+<span class="sd">                .. code-block:: python</span>
+
+<span class="sd">                    import dchars.dchars as dchars</span>
+<span class="sd">                    DSTRING_SAN = dchars.new_dstring(language=&#39;संस्कृतम्&#39;, transliteration_method=&quot;itrans&quot;)</span>
+
+<span class="sd">                    with DSTRING_SAN().open(&quot;myfile&quot;, &#39;r&#39;) as src:</span>
+<span class="sd">                        print( src.get_transliteration() )</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="c"># we call io.open() since a call to open() would call self.open()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">srcfile</span> <span class="o">=</span> <span class="n">io</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="nb">file</span><span class="o">=</span><span class="n">filename</span><span class="p">,</span>
+                               <span class="n">mode</span><span class="o">=</span><span class="n">mode</span><span class="p">,</span>
+                               <span class="n">buffering</span><span class="o">=</span><span class="n">buffering</span><span class="p">,</span>
+                               <span class="n">encoding</span><span class="o">=</span><span class="n">encoding</span><span class="p">,</span>
+                               <span class="n">errors</span><span class="o">=</span><span class="n">errors</span><span class="p">,</span>
+                               <span class="n">newline</span><span class="o">=</span><span class="n">newline</span><span class="p">,</span>
+                               <span class="n">closefd</span><span class="o">=</span><span class="n">closefd</span><span class="p">,</span>
+                               <span class="n">opener</span><span class="o">=</span><span class="n">opener</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="s">&#39;r&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">mode</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">DCharsError</span><span class="p">(</span><span class="n">context</span><span class="o">=</span><span class="s">&quot;DStringMotherClass.open&quot;</span><span class="p">,</span>
+                              <span class="n">message</span><span class="o">=</span><span class="s">&quot;open() can only work with the &#39;r&#39; mode.&quot;</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="bp">self</span>
+
+    <span class="c">#///////////////////////////////////////////////////////////////////////////</span>
+    <span class="k">def</span> <span class="nf">read</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">                DStringMotherClass.read</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">srcfile</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">DCharsError</span><span class="p">(</span> <span class="n">context</span> <span class="o">=</span> <span class="s">&quot;DStringMotherClass.read&quot;</span><span class="p">,</span>
+                               <span class="n">message</span> <span class="o">=</span> <span class="s">&quot;no file attached to this object&quot;</span> <span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">init_from_str</span><span class="p">(</span> <span class="bp">self</span><span class="o">.</span><span class="n">srcfile</span><span class="o">.</span><span class="n">read</span><span class="p">()</span> <span class="p">)</span>
+
+        <span class="k">return</span> <span class="bp">self</span>
+
+    <span class="c">#///////////////////////////////////////////////////////////////////////////</span>
+    <span class="k">def</span> <span class="nf">readlines</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">                DStringMotherClass.readline</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">srcfile</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">DCharsError</span><span class="p">(</span> <span class="n">context</span> <span class="o">=</span> <span class="s">&quot;DStringMotherClass.read&quot;</span><span class="p">,</span>
+                               <span class="n">message</span> <span class="o">=</span> <span class="s">&quot;no file attached to this object&quot;</span> <span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">srcfile</span><span class="o">.</span><span class="n">readlines</span><span class="p">():</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">init_from_str</span><span class="p">(</span> <span class="n">line</span> <span class="p">)</span>
+            <span class="k">yield</span> <span class="bp">self</span>
+
+    <span class="c">#///////////////////////////////////////////////////////////////////////////</span>
+    <span class="k">def</span> <span class="nf">sortingvalue</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">                DStringMotherClass.sortingvalue</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span>  <span class="p">[</span> <span class="n">dchar</span><span class="o">.</span><span class="n">sortingvalue</span><span class="p">()</span> <span class="k">for</span> <span class="n">dchar</span> <span class="ow">in</span> <span class="bp">self</span>  <span class="p">]</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table des matières</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">dchars.dstring</a><ul>
+<li><a class="reference internal" href="#documentation">Documentation</a></li>
+<li><a class="reference internal" href="#source-code">Source code</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Sujet précédent</h4>
+  <p class="topless"><a href="dchars.dchars.html"
+                        title="Chapitre précédent">dchars.dchars</a></p>
+  <h4>Sujet suivant</h4>
+  <p class="topless"><a href="dchars.errors.__init__.html"
+                        title="Chapitre suivant">dchars.errors.__init__</a></p>
+  <h3>Cette page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/dchars.dstring.txt"
+           rel="nofollow">Montrer la source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Recherche rapide</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Saisissez un mot clef ou un nom de module, classe ou fonction.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="Index général"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Index des modules Python"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="dchars.errors.__init__.html" title="dchars.errors.__init__"
+             >suivant</a> |</li>
+        <li class="right" >
+          <a href="dchars.dchars.html" title="dchars.dchars"
+             >précédent</a> |</li>
+        <li><a href="index.html">DChars 0.3.8 documentation</a> &raquo;</li>
+          <li><a href="source_code.html" >code source</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2012, suizokukan (Xavier Faure).
+      Créé avec <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

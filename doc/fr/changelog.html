@@ -1,0 +1,1587 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>&lt;no title&gt; &mdash; DChars 0.3.8 documentation</title>
+    
+    <link rel="stylesheet" href="_static/theme.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '0.3.8',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <link rel="top" title="DChars 0.3.8 documentation" href="index.html" />
+    <link rel="up" title="développement" href="development.html" />
+    <link rel="next" title="&lt;no title&gt;" href="roadmap.html" />
+    <link rel="prev" title="développement" href="development.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="Index général"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Index des modules Python"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="roadmap.html" title="&lt;no title&gt;"
+             accesskey="N">suivant</a> |</li>
+        <li class="right" >
+          <a href="development.html" title="développement"
+             accesskey="P">précédent</a> |</li>
+        <li><a href="index.html">DChars 0.3.8 documentation</a> &raquo;</li>
+          <li><a href="development.html" accesskey="U">développement</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <p>&lt;!DOCTYPE html&gt;
+&lt;html&gt;</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>&lt;head prefix=&#8221;og: <a class="reference external" href="http://ogp.me">http://ogp.me</a>/ns# fb: <a class="reference external" href="http://ogp.me/ns">http://ogp.me/ns</a>/fb# githubog: <a class="reference external" href="http://ogp.me/ns/fb">http://ogp.me/ns/fb</a>/githubog#&#8221;&gt;</dt>
+<dd><p class="first">&lt;meta charset=&#8217;utf-8&#8217;&gt;
+&lt;meta http-equiv=&#8221;X-UA-Compatible&#8221; content=&#8221;IE=edge&#8221;&gt;</p>
+<blockquote>
+<div>&lt;title&gt;dchars/0.3.8/dchars/documentation/Sphinx/RSTsourcefiles/changelog.rst at 223edf6bde0d6c8a1475971375271f82674571b3 · suizokukan/dchars&lt;/title&gt;</div></blockquote>
+<p>&lt;link rel=&#8221;search&#8221; type=&#8221;application/opensearchdescription+xml&#8221; href=&#8221;/opensearch.xml&#8221; title=&#8221;GitHub&#8221; /&gt;
+&lt;link rel=&#8221;fluid-icon&#8221; href=&#8221;<a class="reference external" href="https://github.com/fluidicon.png">https://github.com/fluidicon.png</a>&#8221; title=&#8221;GitHub&#8221; /&gt;
+&lt;link rel=&#8221;apple-touch-icon&#8221; sizes=&#8221;57x57&#8221; href=&#8221;/apple-touch-icon-114.png&#8221; /&gt;
+&lt;link rel=&#8221;apple-touch-icon&#8221; sizes=&#8221;114x114&#8221; href=&#8221;/apple-touch-icon-114.png&#8221; /&gt;
+&lt;link rel=&#8221;apple-touch-icon&#8221; sizes=&#8221;72x72&#8221; href=&#8221;/apple-touch-icon-144.png&#8221; /&gt;
+&lt;link rel=&#8221;apple-touch-icon&#8221; sizes=&#8221;144x144&#8221; href=&#8221;/apple-touch-icon-144.png&#8221; /&gt;
+&lt;link rel=&#8221;logo&#8221; type=&#8221;image/svg&#8221; href=&#8221;<a class="reference external" href="https://github-media-downloads.s3.amazonaws.com/github-logo.svg">https://github-media-downloads.s3.amazonaws.com/github-logo.svg</a>&#8221; /&gt;
+&lt;meta property=&#8221;og:image&#8221; content=&#8221;https://a248.e.akamai.net/assets.github.com/images/modules/logos_page/Octocat.png&#8221;&gt;
+&lt;link rel=&#8221;assets&#8221; href=&#8221;https://a248.e.akamai.net/assets.github.com/&#8221;&gt;
+&lt;link rel=&#8221;xhr-socket&#8221; href=&#8221;/_sockets&#8221; /&gt;</p>
+<p>&lt;meta name=&#8221;msapplication-TileImage&#8221; content=&#8221;/windows-tile.png&#8221; /&gt;
+&lt;meta name=&#8221;msapplication-TileColor&#8221; content=&#8221;#ffffff&#8221; /&gt;
+&lt;meta name=&#8221;selected-link&#8221; value=&#8221;repo_source&#8221; data-pjax-transient /&gt;
+&lt;meta content=&#8221;collector.githubapp.com&#8221; name=&#8221;octolytics-host&#8221; /&gt;&lt;meta content=&#8221;github&#8221; name=&#8221;octolytics-app-id&#8221; /&gt;&lt;meta content=&#8221;3998078&#8221; name=&#8221;octolytics-actor-id&#8221; /&gt;&lt;meta content=&#8221;suizokukan&#8221; name=&#8221;octolytics-actor-login&#8221; /&gt;&lt;meta content=&#8221;1b97d94afd4bbfaba9870e2d819bc9fd3d6d417d47e92c338e8db94d5c7a838f&#8221; name=&#8221;octolytics-actor-hash&#8221; /&gt;</p>
+<p>&lt;link rel=&#8221;icon&#8221; type=&#8221;image/x-icon&#8221; href=&#8221;/favicon.ico&#8221; /&gt;</p>
+<p class="last">&lt;meta content=&#8221;authenticity_token&#8221; name=&#8221;csrf-param&#8221; /&gt;</p>
+</dd>
+</dl>
+</div></blockquote>
+<p>&lt;meta content=&#8221;JuSGFeLXQes4GbqgvXQALWAimqljzWfJHCx2QzqShCk=&#8221; name=&#8221;csrf-token&#8221; /&gt;</p>
+<blockquote>
+<div><blockquote>
+<div><p>&lt;link href=&#8221;<a class="reference external" href="https://a248.e.akamai.net/assets.github.com/assets/github-52c7f5d250c57ca1380f2a5703d96d015d5eb533.css">https://a248.e.akamai.net/assets.github.com/assets/github-52c7f5d250c57ca1380f2a5703d96d015d5eb533.css</a>&#8221; media=&#8221;all&#8221; rel=&#8221;stylesheet&#8221; type=&#8221;text/css&#8221; /&gt;
+&lt;link href=&#8221;<a class="reference external" href="https://a248.e.akamai.net/assets.github.com/assets/github2-58b10e96bcdc3e0d5ea328ffcd01e36e2e8fd07e.css">https://a248.e.akamai.net/assets.github.com/assets/github2-58b10e96bcdc3e0d5ea328ffcd01e36e2e8fd07e.css</a>&#8221; media=&#8221;all&#8221; rel=&#8221;stylesheet&#8221; type=&#8221;text/css&#8221; /&gt;</p>
+<blockquote>
+<div><p>&lt;script src=&#8221;<a class="reference external" href="https://a248.e.akamai.net/assets.github.com/assets/frameworks-4c434fa1705bf526e191eec0cd8fab1a5ce3e326.js">https://a248.e.akamai.net/assets.github.com/assets/frameworks-4c434fa1705bf526e191eec0cd8fab1a5ce3e326.js</a>&#8221; type=&#8221;text/javascript&#8221;&gt;&lt;/script&gt;
+&lt;script src=&#8221;<a class="reference external" href="https://a248.e.akamai.net/assets.github.com/assets/github-c9ee6873d0b9bc74d5f353bd006a81aa3efc29b3.js">https://a248.e.akamai.net/assets.github.com/assets/github-c9ee6873d0b9bc74d5f353bd006a81aa3efc29b3.js</a>&#8221; type=&#8221;text/javascript&#8221;&gt;&lt;/script&gt;</p>
+<p>&lt;meta http-equiv=&#8221;x-pjax-version&#8221; content=&#8221;9a05a1423af26d07af36db19fa49a2c8&#8221;&gt;</p>
+<blockquote>
+<div>&lt;link data-pjax-transient rel=&#8217;permalink&#8217; href=&#8217;/suizokukan/dchars/blob/223edf6bde0d6c8a1475971375271f82674571b3/0.3.8/dchars/documentation/Sphinx/RSTsourcefiles/changelog.rst&#8217;&gt;</div></blockquote>
+</div></blockquote>
+<p>&lt;meta property=&#8221;og:title&#8221; content=&#8221;dchars&#8221;/&gt;
+&lt;meta property=&#8221;og:type&#8221; content=&#8221;githubog:gitrepository&#8221;/&gt;
+&lt;meta property=&#8221;og:url&#8221; content=&#8221;https://github.com/suizokukan/dchars&#8221;/&gt;
+&lt;meta property=&#8221;og:image&#8221; content=&#8221;https://secure.gravatar.com/avatar/8e0379710f523b8ef48a1d74fea00430?s=420&amp;amp;d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png&#8221;/&gt;
+&lt;meta property=&#8221;og:site_name&#8221; content=&#8221;GitHub&#8221;/&gt;
+&lt;meta property=&#8221;og:description&#8221; content=&#8221;dchars - D(etailed) char(acter)s for Biblical Hebrew, Ancient Greek, Sanskrit, Latin and Tibetan&#8221;/&gt;
+&lt;meta property=&#8221;twitter:card&#8221; content=&#8221;summary&#8221;/&gt;
+&lt;meta property=&#8221;twitter:site&#8221; content=&#8221;&#64;GitHub&#8221;&gt;
+&lt;meta property=&#8221;twitter:title&#8221; content=&#8221;suizokukan/dchars&#8221;/&gt;</p>
+<p>&lt;meta name=&#8221;description&#8221; content=&#8221;dchars - D(etailed) char(acter)s for Biblical Hebrew, Ancient Greek, Sanskrit, Latin and Tibetan&#8221; /&gt;</p>
+<p>&lt;meta content=&#8221;3998078&#8221; name=&#8221;octolytics-dimension-user_id&#8221; /&gt;&lt;meta content=&#8221;suizokukan&#8221; name=&#8221;octolytics-dimension-user_login&#8221; /&gt;&lt;meta content=&#8221;10844644&#8221; name=&#8221;octolytics-dimension-repository_id&#8221; /&gt;&lt;meta content=&#8221;suizokukan/dchars&#8221; name=&#8221;octolytics-dimension-repository_nwo&#8221; /&gt;&lt;meta content=&#8221;true&#8221; name=&#8221;octolytics-dimension-repository_public&#8221; /&gt;&lt;meta content=&#8221;false&#8221; name=&#8221;octolytics-dimension-repository_is_fork&#8221; /&gt;&lt;meta content=&#8221;10844644&#8221; name=&#8221;octolytics-dimension-repository_network_root_id&#8221; /&gt;&lt;meta content=&#8221;suizokukan/dchars&#8221; name=&#8221;octolytics-dimension-repository_network_root_nwo&#8221; /&gt;</p>
+</div></blockquote>
+<p>&lt;link href=&#8221;<a class="reference external" href="https://github.com/suizokukan/dchars/commits/223edf6bde0d6c8a1475971375271f82674571b3.atom">https://github.com/suizokukan/dchars/commits/223edf6bde0d6c8a1475971375271f82674571b3.atom</a>&#8221; rel=&#8221;alternate&#8221; title=&#8221;Recent Commits to dchars:223edf6bde0d6c8a1475971375271f82674571b3&#8221; type=&#8221;application/atom+xml&#8221; /&gt;</p>
+<p>&lt;/head&gt;</p>
+<dl class="docutils">
+<dt>&lt;body class=&#8221;logged_in page-blob linux vis-public env-production  &#8220;&gt;</dt>
+<dd><p class="first">&lt;div id=&#8221;wrapper&#8221;&gt;</p>
+<blockquote class="last">
+<div>&lt;div class=&#8221;header header-logged-in true&#8221;&gt;</div></blockquote>
+</dd>
+</dl>
+<p>&lt;div class=&#8221;container clearfix&#8221;&gt;</p>
+<blockquote>
+<div>&lt;a class=&#8221;header-logo-invertocat&#8221; href=&#8221;<a class="reference external" href="https://github.com/">https://github.com/</a>&#8220;&gt;</div></blockquote>
+<p>&lt;span class=&#8221;mega-octicon octicon-mark-github&#8221;&gt;&lt;/span&gt;</p>
+</div></blockquote>
+<p>&lt;/a&gt;</p>
+<blockquote>
+<div><blockquote>
+<div><p>&lt;div class=&#8221;divider-vertical&#8221;&gt;&lt;/div&gt;</p>
+<blockquote>
+<div>&lt;a href=&#8221;/notifications&#8221; class=&#8221;notification-indicator tooltipped downwards&#8221; title=&#8221;You have no unread notifications&#8221;&gt;</div></blockquote>
+<p>&lt;span class=&#8221;mail-status all-read&#8221;&gt;&lt;/span&gt;</p>
+</div></blockquote>
+<p>&lt;/a&gt;
+&lt;div class=&#8221;divider-vertical&#8221;&gt;&lt;/div&gt;</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>&lt;div class=&#8221;command-bar js-command-bar  in-repository&#8221;&gt;</dt>
+<dd>&lt;form accept-charset=&#8221;UTF-8&#8221; action=&#8221;/search&#8221; class=&#8221;command-bar-form&#8221; id=&#8221;top_search_form&#8221; method=&#8221;get&#8221;&gt;</dd>
+</dl>
+</div></blockquote>
+</div></blockquote>
+<dl class="docutils">
+<dt>&lt;input type=&#8221;text&#8221; data-hotkey=&#8221; s&#8221; name=&#8221;q&#8221; id=&#8221;js-command-bar-field&#8221; placeholder=&#8221;Search or type a command&#8221; tabindex=&#8221;1&#8221; autocapitalize=&#8221;off&#8221;</dt>
+<dd><blockquote class="first">
+<div><dl class="docutils">
+<dt>data-username=&#8221;suizokukan&#8221;</dt>
+<dd>data-repo=&#8221;suizokukan/dchars&#8221;
+data-branch=&#8221;&#8221;
+data-sha=&#8221;f07845057ee20083092e05ca34f4b70edff13bc1&#8221;</dd>
+</dl>
+</div></blockquote>
+<p>&gt;</p>
+<blockquote>
+<div><p>&lt;input type=&#8221;hidden&#8221; name=&#8221;nwo&#8221; value=&#8221;suizokukan/dchars&#8221; /&gt;</p>
+<dl class="docutils">
+<dt>&lt;div class=&#8221;select-menu js-menu-container js-select-menu search-context-select-menu&#8221;&gt;</dt>
+<dd><dl class="first docutils">
+<dt>&lt;span class=&#8221;minibutton select-menu-button js-menu-target&#8221;&gt;</dt>
+<dd>&lt;span class=&#8221;js-select-button&#8221;&gt;This repository&lt;/span&gt;</dd>
+</dl>
+<p>&lt;/span&gt;</p>
+<dl class="docutils">
+<dt>&lt;div class=&#8221;select-menu-modal-holder js-menu-content js-navigation-container&#8221;&gt;</dt>
+<dd><p class="first">&lt;div class=&#8221;select-menu-modal&#8221;&gt;</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>&lt;div class=&#8221;select-menu-item js-navigation-item selected&#8221;&gt;</dt>
+<dd>&lt;span class=&#8221;select-menu-item-icon octicon octicon-check&#8221;&gt;&lt;/span&gt;
+&lt;input type=&#8221;radio&#8221; class=&#8221;js-search-this-repository&#8221; name=&#8221;search_target&#8221; value=&#8221;repository&#8221; checked=&#8221;checked&#8221; /&gt;
+&lt;div class=&#8221;select-menu-item-text js-select-button-text&#8221;&gt;This repository&lt;/div&gt;</dd>
+</dl>
+<p>&lt;/div&gt; &lt;!&#8211; /.select-menu-item &#8211;&gt;</p>
+<dl class="docutils">
+<dt>&lt;div class=&#8221;select-menu-item js-navigation-item&#8221;&gt;</dt>
+<dd>&lt;span class=&#8221;select-menu-item-icon octicon octicon-check&#8221;&gt;&lt;/span&gt;
+&lt;input type=&#8221;radio&#8221; name=&#8221;search_target&#8221; value=&#8221;global&#8221; /&gt;
+&lt;div class=&#8221;select-menu-item-text js-select-button-text&#8221;&gt;All repositories&lt;/div&gt;</dd>
+</dl>
+<p>&lt;/div&gt; &lt;!&#8211; /.select-menu-item &#8211;&gt;</p>
+</div></blockquote>
+<p class="last">&lt;/div&gt;</p>
+</dd>
+</dl>
+<p class="last">&lt;/div&gt;</p>
+</dd>
+</dl>
+<p>&lt;/div&gt;</p>
+</div></blockquote>
+<dl class="docutils">
+<dt>&lt;span class=&#8221;octicon help tooltipped downwards&#8221; title=&#8221;Show command bar help&#8221;&gt;</dt>
+<dd>&lt;span class=&#8221;octicon octicon-question&#8221;&gt;&lt;/span&gt;</dd>
+</dl>
+<p>&lt;/span&gt;</p>
+<p class="last">&lt;input type=&#8221;hidden&#8221; name=&#8221;ref&#8221; value=&#8221;cmdform&#8221;&gt;</p>
+</dd>
+<dt>&lt;/form&gt;</dt>
+<dd><blockquote class="first">
+<div><blockquote>
+<div><dl class="docutils">
+<dt>&lt;ul class=&#8221;top-nav&#8221;&gt;</dt>
+<dd><blockquote class="first">
+<div>&lt;li class=&#8221;explore&#8221;&gt;&lt;a href=&#8221;/explore&#8221;&gt;Explore&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#8221;<a class="reference external" href="https://gist.github.com">https://gist.github.com</a>&#8220;&gt;Gist&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#8221;/blog&#8221;&gt;Blog&lt;/a&gt;&lt;/li&gt;</div></blockquote>
+<p class="last">&lt;li&gt;&lt;a href=&#8221;<a class="reference external" href="https://help.github.com">https://help.github.com</a>&#8220;&gt;Help&lt;/a&gt;&lt;/li&gt;</p>
+</dd>
+</dl>
+<p>&lt;/ul&gt;</p>
+</div></blockquote>
+<p>&lt;/div&gt;</p>
+</div></blockquote>
+<dl class="docutils">
+<dt>&lt;ul id=&#8221;user-links&#8221;&gt;</dt>
+<dd><dl class="first docutils">
+<dt>&lt;li&gt;</dt>
+<dd><dl class="first docutils">
+<dt>&lt;a href=&#8221;/suizokukan&#8221; class=&#8221;name&#8221;&gt;</dt>
+<dd>&lt;img height=&#8221;20&#8221; src=&#8221;<a class="reference external" href="https://secure.gravatar.com/avatar/8e0379710f523b8ef48a1d74fea00430?s=140&amp;amp;d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png">https://secure.gravatar.com/avatar/8e0379710f523b8ef48a1d74fea00430?s=140&amp;amp;d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png</a>&#8221; width=&#8221;20&#8221; /&gt; suizokukan</dd>
+</dl>
+<p class="last">&lt;/a&gt;</p>
+</dd>
+</dl>
+<p>&lt;/li&gt;</p>
+<blockquote class="last">
+<div><dl class="docutils">
+<dt>&lt;li&gt;</dt>
+<dd><dl class="first docutils">
+<dt>&lt;a href=&#8221;/new&#8221; id=&#8221;new_repo&#8221; class=&#8221;tooltipped downwards&#8221; title=&#8221;Create a new repo&#8221;&gt;</dt>
+<dd>&lt;span class=&#8221;octicon octicon-repo-create&#8221;&gt;&lt;/span&gt;</dd>
+</dl>
+<p class="last">&lt;/a&gt;</p>
+</dd>
+</dl>
+<p>&lt;/li&gt;</p>
+<dl class="docutils">
+<dt>&lt;li&gt;</dt>
+<dd><dl class="first docutils">
+<dt>&lt;a href=&#8221;/settings/profile&#8221; id=&#8221;account_settings&#8221;</dt>
+<dd>class=&#8221;tooltipped downwards&#8221;
+title=&#8221;Account settings &#8220;&gt;
+&lt;span class=&#8221;octicon octicon-tools&#8221;&gt;&lt;/span&gt;</dd>
+</dl>
+<p class="last">&lt;/a&gt;</p>
+</dd>
+</dl>
+<p>&lt;/li&gt;
+&lt;li&gt;</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>&lt;a class=&#8221;tooltipped downwards&#8221; href=&#8221;/logout&#8221; data-method=&#8221;post&#8221; id=&#8221;logout&#8221; title=&#8221;Sign out&#8221;&gt;</dt>
+<dd>&lt;span class=&#8221;octicon octicon-log-out&#8221;&gt;&lt;/span&gt;</dd>
+</dl>
+<p>&lt;/a&gt;</p>
+</div></blockquote>
+<p>&lt;/li&gt;</p>
+</div></blockquote>
+</dd>
+</dl>
+<p class="last">&lt;/ul&gt;</p>
+</dd>
+</dl>
+<p>&lt;div class=&#8221;js-new-dropdown-contents hidden&#8221;&gt;</p>
+<dl class="docutils">
+<dt>&lt;ul class=&#8221;dropdown-menu&#8221;&gt;</dt>
+<dd><dl class="first docutils">
+<dt>&lt;li&gt;</dt>
+<dd>&lt;a href=&#8221;/new&#8221;&gt;&lt;span class=&#8221;octicon octicon-repo-create&#8221;&gt;&lt;/span&gt; New repository&lt;/a&gt;</dd>
+</dl>
+<p>&lt;/li&gt;
+&lt;li&gt;</p>
+<blockquote>
+<div>&lt;a href=&#8221;/organizations/new&#8221;&gt;&lt;span class=&#8221;octicon octicon-list-unordered&#8221;&gt;&lt;/span&gt; New organization&lt;/a&gt;</div></blockquote>
+<p>&lt;/li&gt;</p>
+<blockquote class="last">
+<div><dl class="docutils">
+<dt>&lt;li class=&#8221;section-title&#8221;&gt;</dt>
+<dd>&lt;span title=&#8221;suizokukan/dchars&#8221;&gt;This repository&lt;/span&gt;</dd>
+</dl>
+<p>&lt;/li&gt;
+&lt;li&gt;</p>
+<blockquote>
+<div>&lt;a href=&#8221;/suizokukan/dchars/issues/new&#8221;&gt;&lt;span class=&#8221;octicon octicon-issue-opened&#8221;&gt;&lt;/span&gt; New issue&lt;/a&gt;</div></blockquote>
+<dl class="docutils">
+<dt>&lt;/li&gt;</dt>
+<dd><dl class="first docutils">
+<dt>&lt;li&gt;</dt>
+<dd>&lt;a href=&#8221;/suizokukan/dchars/settings/collaboration&#8221;&gt;&lt;span class=&#8221;octicon octicon-person-add&#8221;&gt;&lt;/span&gt; New collaborator&lt;/a&gt;</dd>
+</dl>
+<p class="last">&lt;/li&gt;</p>
+</dd>
+</dl>
+</div></blockquote>
+</dd>
+</dl>
+<p>&lt;/ul&gt;</p>
+<p>&lt;/div&gt;</p>
+<blockquote>
+<div>&lt;/div&gt;</div></blockquote>
+<p>&lt;/div&gt;</p>
+<blockquote>
+<div><blockquote>
+<div><blockquote>
+<div>&lt;div class=&#8221;global-notices&#8221;&gt;</div></blockquote>
+<dl class="docutils">
+<dt>&lt;div class=&#8221;flash-global&#8221;&gt;</dt>
+<dd><dl class="first docutils">
+<dt>&lt;div class=&#8221;container&#8221;&gt;</dt>
+<dd><p class="first">&lt;a href=&#8221;/users/suizokukan/enable_repository_next?nwo=suizokukan%2Fdchars&#8221; class=&#8221;button minibutton flash-action blue&#8221; data-method=&#8221;post&#8221;&gt;Enable Repository Next&lt;/a&gt;</p>
+<p class="last">&lt;h2&gt;Hey there, would you like to enable our new repository design?&lt;/h2&gt;
+&lt;p&gt;We&amp;rsquo;ve been working hard making a &lt;a href=&#8221;<a class="reference external" href="https://github.com/blog/1529-repository-next">https://github.com/blog/1529-repository-next</a>&#8220;&gt;faster, better repository experience&lt;/a&gt; and we&amp;rsquo;d love to share it with you.&lt;/p&gt;</p>
+</dd>
+</dl>
+<p class="last">&lt;/div&gt;</p>
+</dd>
+</dl>
+<p>&lt;/div&gt;</p>
+</div></blockquote>
+<p>&lt;/div&gt;
+&lt;div class=&#8221;site hfeed&#8221; itemscope itemtype=&#8221;<a class="reference external" href="http://schema.org/WebPage">http://schema.org/WebPage</a>&#8220;&gt;</p>
+<blockquote>
+<div><p>&lt;div class=&#8221;hentry&#8221;&gt;</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>&lt;div class=&#8221;pagehead repohead instapaper_ignore readability-menu &#8220;&gt;</dt>
+<dd><dl class="first last docutils">
+<dt>&lt;div class=&#8221;container&#8221;&gt;</dt>
+<dd>&lt;div class=&#8221;title-actions-bar&#8221;&gt;</dd>
+</dl>
+</dd>
+</dl>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>&lt;ul class=&#8221;pagehead-actions&#8221;&gt;</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>&lt;li class=&#8221;nspr&#8221;&gt;</dt>
+<dd>&lt;a href=&#8221;/suizokukan/dchars/pull/new/223edf6bde0d6c8a1475971375271f82674571b3&#8221; class=&#8221;button minibutton btn-pull-request&#8221; icon_class=&#8221;octicon-git-pull-request&#8221;&gt;&lt;span class=&#8221;octicon octicon-git-pull-request&#8221;&gt;&lt;/span&gt;Pull Request&lt;/a&gt;</dd>
+</dl>
+<p>&lt;/li&gt;</p>
+<dl class="docutils">
+<dt>&lt;li class=&#8221;subscription&#8221;&gt;</dt>
+<dd>&lt;form accept-charset=&#8221;UTF-8&#8221; action=&#8221;/notifications/subscribe&#8221; data-autosubmit=&#8221;true&#8221; data-remote=&#8221;true&#8221; method=&#8221;post&#8221;&gt;&lt;div style=&#8221;margin:0;padding:0;display:inline&#8221;&gt;&lt;input name=&#8221;authenticity_token&#8221; type=&#8221;hidden&#8221; value=&#8221;JuSGFeLXQes4GbqgvXQALWAimqljzWfJHCx2QzqShCk=&#8221; /&gt;&lt;/div&gt;  &lt;input id=&#8221;repository_id&#8221; name=&#8221;repository_id&#8221; type=&#8221;hidden&#8221; value=&#8221;10844644&#8221; /&gt;</dd>
+<dt>&lt;div class=&#8221;select-menu js-menu-container js-select-menu&#8221;&gt;</dt>
+<dd><dl class="first docutils">
+<dt>&lt;span class=&#8221;minibutton select-menu-button  js-menu-target&#8221;&gt;</dt>
+<dd><dl class="first docutils">
+<dt>&lt;span class=&#8221;js-select-button&#8221;&gt;</dt>
+<dd>&lt;span class=&#8221;octicon octicon-eye-unwatch&#8221;&gt;&lt;/span&gt;
+Unwatch</dd>
+</dl>
+<p class="last">&lt;/span&gt;</p>
+</dd>
+</dl>
+<p>&lt;/span&gt;</p>
+<dl class="docutils">
+<dt>&lt;div class=&#8221;select-menu-modal-holder&#8221;&gt;</dt>
+<dd><dl class="first docutils">
+<dt>&lt;div class=&#8221;select-menu-modal subscription-menu-modal js-menu-content&#8221;&gt;</dt>
+<dd><dl class="first docutils">
+<dt>&lt;div class=&#8221;select-menu-header&#8221;&gt;</dt>
+<dd>&lt;span class=&#8221;select-menu-title&#8221;&gt;Notification status&lt;/span&gt;
+&lt;span class=&#8221;octicon octicon-remove-close js-menu-close&#8221;&gt;&lt;/span&gt;</dd>
+</dl>
+<p>&lt;/div&gt; &lt;!&#8211; /.select-menu-header &#8211;&gt;</p>
+<p>&lt;div class=&#8221;select-menu-list js-navigation-container&#8221;&gt;</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>&lt;div class=&#8221;select-menu-item js-navigation-item &#8220;&gt;</dt>
+<dd><p class="first">&lt;span class=&#8221;select-menu-item-icon octicon octicon-check&#8221;&gt;&lt;/span&gt;
+&lt;div class=&#8221;select-menu-item-text&#8221;&gt;</p>
+<blockquote>
+<div><p>&lt;input id=&#8221;do_included&#8221; name=&#8221;do&#8221; type=&#8221;radio&#8221; value=&#8221;included&#8221; /&gt;
+&lt;h4&gt;Not watching&lt;/h4&gt;
+&lt;span class=&#8221;description&#8221;&gt;You only receive notifications for discussions in which you participate or are &#64;mentioned.&lt;/span&gt;
+&lt;span class=&#8221;js-select-button-text hidden-select-button-text&#8221;&gt;</p>
+<blockquote>
+<div>&lt;span class=&#8221;octicon octicon-eye-watch&#8221;&gt;&lt;/span&gt;
+Watch</div></blockquote>
+<p>&lt;/span&gt;</p>
+</div></blockquote>
+<p class="last">&lt;/div&gt;</p>
+</dd>
+</dl>
+<p>&lt;/div&gt; &lt;!&#8211; /.select-menu-item &#8211;&gt;</p>
+<dl class="docutils">
+<dt>&lt;div class=&#8221;select-menu-item js-navigation-item selected&#8221;&gt;</dt>
+<dd><p class="first">&lt;span class=&#8221;select-menu-item-icon octicon octicon octicon-check&#8221;&gt;&lt;/span&gt;
+&lt;div class=&#8221;select-menu-item-text&#8221;&gt;</p>
+<blockquote>
+<div><p>&lt;input checked=&#8221;checked&#8221; id=&#8221;do_subscribed&#8221; name=&#8221;do&#8221; type=&#8221;radio&#8221; value=&#8221;subscribed&#8221; /&gt;
+&lt;h4&gt;Watching&lt;/h4&gt;
+&lt;span class=&#8221;description&#8221;&gt;You receive notifications for all discussions in this repository.&lt;/span&gt;
+&lt;span class=&#8221;js-select-button-text hidden-select-button-text&#8221;&gt;</p>
+<blockquote>
+<div>&lt;span class=&#8221;octicon octicon-eye-unwatch&#8221;&gt;&lt;/span&gt;
+Unwatch</div></blockquote>
+<p>&lt;/span&gt;</p>
+</div></blockquote>
+<p class="last">&lt;/div&gt;</p>
+</dd>
+</dl>
+<p>&lt;/div&gt; &lt;!&#8211; /.select-menu-item &#8211;&gt;</p>
+<dl class="docutils">
+<dt>&lt;div class=&#8221;select-menu-item js-navigation-item &#8220;&gt;</dt>
+<dd><p class="first">&lt;span class=&#8221;select-menu-item-icon octicon octicon-check&#8221;&gt;&lt;/span&gt;
+&lt;div class=&#8221;select-menu-item-text&#8221;&gt;</p>
+<blockquote>
+<div><p>&lt;input id=&#8221;do_ignore&#8221; name=&#8221;do&#8221; type=&#8221;radio&#8221; value=&#8221;ignore&#8221; /&gt;
+&lt;h4&gt;Ignoring&lt;/h4&gt;
+&lt;span class=&#8221;description&#8221;&gt;You do not receive any notifications for discussions in this repository.&lt;/span&gt;
+&lt;span class=&#8221;js-select-button-text hidden-select-button-text&#8221;&gt;</p>
+<blockquote>
+<div>&lt;span class=&#8221;octicon octicon-mute&#8221;&gt;&lt;/span&gt;
+Stop ignoring</div></blockquote>
+<p>&lt;/span&gt;</p>
+</div></blockquote>
+<p class="last">&lt;/div&gt;</p>
+</dd>
+</dl>
+<p>&lt;/div&gt; &lt;!&#8211; /.select-menu-item &#8211;&gt;</p>
+</div></blockquote>
+<p class="last">&lt;/div&gt; &lt;!&#8211; /.select-menu-list &#8211;&gt;</p>
+</dd>
+</dl>
+<p class="last">&lt;/div&gt; &lt;!&#8211; /.select-menu-modal &#8211;&gt;</p>
+</dd>
+</dl>
+<p class="last">&lt;/div&gt; &lt;!&#8211; /.select-menu-modal-holder &#8211;&gt;</p>
+</dd>
+</dl>
+<p>&lt;/div&gt; &lt;!&#8211; /.select-menu &#8211;&gt;</p>
+</div></blockquote>
+<dl class="docutils">
+<dt>&lt;/form&gt;</dt>
+<dd><p class="first">&lt;/li&gt;</p>
+<dl class="docutils">
+<dt>&lt;li class=&#8221;js-toggler-container js-social-container starring-container &#8220;&gt;</dt>
+<dd><dl class="first docutils">
+<dt>&lt;a href=&#8221;/suizokukan/dchars/unstar&#8221; class=&#8221;minibutton with-count js-toggler-target star-button starred upwards&#8221; title=&#8221;Unstar this repo&#8221; data-remote=&#8221;true&#8221; data-method=&#8221;post&#8221; rel=&#8221;nofollow&#8221;&gt;</dt>
+<dd>&lt;span class=&#8221;octicon octicon-star-delete&#8221;&gt;&lt;/span&gt;
+&lt;span class=&#8221;text&#8221;&gt;Unstar&lt;/span&gt;</dd>
+</dl>
+<p>&lt;/a&gt;
+&lt;a href=&#8221;/suizokukan/dchars/star&#8221; class=&#8221;minibutton with-count js-toggler-target star-button unstarred upwards&#8221; title=&#8221;Star this repo&#8221; data-remote=&#8221;true&#8221; data-method=&#8221;post&#8221; rel=&#8221;nofollow&#8221;&gt;</p>
+<blockquote>
+<div>&lt;span class=&#8221;octicon octicon-star&#8221;&gt;&lt;/span&gt;
+&lt;span class=&#8221;text&#8221;&gt;Star&lt;/span&gt;</div></blockquote>
+<p class="last">&lt;/a&gt;
+&lt;a class=&#8221;social-count js-social-count&#8221; href=&#8221;/suizokukan/dchars/stargazers&#8221;&gt;0&lt;/a&gt;</p>
+</dd>
+</dl>
+<p>&lt;/li&gt;</p>
+<blockquote class="last">
+<div><dl class="docutils">
+<dt>&lt;li&gt;</dt>
+<dd><dl class="first docutils">
+<dt>&lt;a href=&#8221;/suizokukan/dchars/fork&#8221; class=&#8221;minibutton with-count js-toggler-target fork-button lighter upwards&#8221; title=&#8221;Fork this repo&#8221; rel=&#8221;nofollow&#8221; data-method=&#8221;post&#8221;&gt;</dt>
+<dd>&lt;span class=&#8221;octicon octicon-git-branch-create&#8221;&gt;&lt;/span&gt;
+&lt;span class=&#8221;text&#8221;&gt;Fork&lt;/span&gt;</dd>
+</dl>
+<p class="last">&lt;/a&gt;
+&lt;a href=&#8221;/suizokukan/dchars/network&#8221; class=&#8221;social-count&#8221;&gt;0&lt;/a&gt;</p>
+</dd>
+</dl>
+<p>&lt;/li&gt;</p>
+</div></blockquote>
+</dd>
+</dl>
+<p>&lt;/ul&gt;</p>
+<blockquote>
+<div><blockquote>
+<div><blockquote>
+<div><dl class="docutils">
+<dt>&lt;h1 itemscope itemtype=&#8221;<a class="reference external" href="http://data-vocabulary.org/Breadcrumb">http://data-vocabulary.org/Breadcrumb</a>&#8221; class=&#8221;entry-title public&#8221;&gt;</dt>
+<dd><p class="first">&lt;span class=&#8221;repo-label&#8221;&gt;&lt;span&gt;public&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&#8221;mega-octicon octicon-repo&#8221;&gt;&lt;/span&gt;
+&lt;span class=&#8221;author vcard&#8221;&gt;</p>
+<blockquote>
+<div>&lt;a href=&#8221;/suizokukan&#8221; class=&#8221;url fn&#8221; itemprop=&#8221;url&#8221; rel=&#8221;author&#8221;&gt;
+&lt;span itemprop=&#8221;title&#8221;&gt;suizokukan&lt;/span&gt;
+&lt;/a&gt;&lt;/span&gt; /</div></blockquote>
+<p class="last">&lt;strong&gt;&lt;a href=&#8221;/suizokukan/dchars&#8221; class=&#8221;js-current-repository&#8221;&gt;dchars&lt;/a&gt;&lt;/strong&gt;</p>
+</dd>
+</dl>
+<p>&lt;/h1&gt;</p>
+</div></blockquote>
+<p>&lt;/div&gt;</p>
+</div></blockquote>
+<dl class="docutils">
+<dt>&lt;ul class=&#8221;tabs&#8221;&gt;</dt>
+<dd><p class="first">&lt;li class=&#8221;pulse-nav&#8221;&gt;&lt;a href=&#8221;/suizokukan/dchars/pulse&#8221; class=&#8221;js-selected-navigation-item &#8221; data-selected-links=&#8221;pulse /suizokukan/dchars/pulse&#8221; rel=&#8221;nofollow&#8221;&gt;&lt;span class=&#8221;octicon octicon-pulse&#8221;&gt;&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#8221;/suizokukan/dchars&#8221; class=&#8221;js-selected-navigation-item selected&#8221; data-selected-links=&#8221;repo_source repo_downloads repo_commits repo_tags repo_branches /suizokukan/dchars&#8221;&gt;Code&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#8221;/suizokukan/dchars/network&#8221; class=&#8221;js-selected-navigation-item &#8221; data-selected-links=&#8221;repo_network /suizokukan/dchars/network&#8221;&gt;Network&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#8221;/suizokukan/dchars/pulls&#8221; class=&#8221;js-selected-navigation-item &#8221; data-selected-links=&#8221;repo_pulls /suizokukan/dchars/pulls&#8221;&gt;Pull Requests &lt;span class=&#8217;counter&#8217;&gt;0&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;</p>
+<blockquote>
+<div><p>&lt;li&gt;&lt;a href=&#8221;/suizokukan/dchars/issues&#8221; class=&#8221;js-selected-navigation-item &#8221; data-selected-links=&#8221;repo_issues /suizokukan/dchars/issues&#8221;&gt;Issues &lt;span class=&#8217;counter&#8217;&gt;0&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;</p>
+<p>&lt;li&gt;&lt;a href=&#8221;/suizokukan/dchars/wiki&#8221; class=&#8221;js-selected-navigation-item &#8221; data-selected-links=&#8221;repo_wiki /suizokukan/dchars/wiki&#8221;&gt;Wiki&lt;/a&gt;&lt;/li&gt;</p>
+</div></blockquote>
+<p>&lt;li&gt;&lt;a href=&#8221;/suizokukan/dchars/graphs&#8221; class=&#8221;js-selected-navigation-item &#8221; data-selected-links=&#8221;repo_graphs repo_contributors /suizokukan/dchars/graphs&#8221;&gt;Graphs&lt;/a&gt;&lt;/li&gt;</p>
+<blockquote class="last">
+<div><dl class="docutils">
+<dt>&lt;li&gt;</dt>
+<dd>&lt;a href=&#8221;/suizokukan/dchars/settings&#8221;&gt;Settings&lt;/a&gt;</dd>
+</dl>
+<p>&lt;/li&gt;</p>
+</div></blockquote>
+</dd>
+</dl>
+<p>&lt;/ul&gt;</p>
+</div></blockquote>
+<p>&lt;div class=&#8221;tabnav&#8221;&gt;</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>&lt;span class=&#8221;tabnav-right&#8221;&gt;</dt>
+<dd><dl class="first docutils">
+<dt>&lt;ul class=&#8221;tabnav-tabs&#8221;&gt;</dt>
+<dd>&lt;li&gt;&lt;a href=&#8221;/suizokukan/dchars/tags&#8221; class=&#8221;js-selected-navigation-item tabnav-tab&#8221; data-selected-links=&#8221;repo_tags /suizokukan/dchars/tags&#8221;&gt;Tags &lt;span class=&#8221;counter blank&#8221;&gt;0&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;</dd>
+</dl>
+<p class="last">&lt;/ul&gt;</p>
+</dd>
+</dl>
+<p>&lt;/span&gt;</p>
+<p>&lt;div class=&#8221;tabnav-widget scope&#8221;&gt;</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>&lt;div class=&#8221;select-menu js-menu-container js-select-menu js-branch-menu&#8221;&gt;</dt>
+<dd><dl class="first docutils">
+<dt>&lt;a class=&#8221;minibutton select-menu-button js-menu-target&#8221; data-hotkey=&#8221;w&#8221; data-ref=&#8221;&#8220;&gt;</dt>
+<dd>&lt;span class=&#8221;octicon octicon-tag&#8221;&gt;&lt;/span&gt;
+&lt;i&gt;tree:&lt;/i&gt;
+&lt;span class=&#8221;js-select-button&#8221;&gt;223edf6bde&lt;/span&gt;</dd>
+</dl>
+<p>&lt;/a&gt;</p>
+<p>&lt;div class=&#8221;select-menu-modal-holder js-menu-content js-navigation-container&#8221;&gt;</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>&lt;div class=&#8221;select-menu-modal&#8221;&gt;</dt>
+<dd><dl class="first docutils">
+<dt>&lt;div class=&#8221;select-menu-header&#8221;&gt;</dt>
+<dd>&lt;span class=&#8221;select-menu-title&#8221;&gt;Switch branches/tags&lt;/span&gt;
+&lt;span class=&#8221;octicon octicon-remove-close js-menu-close&#8221;&gt;&lt;/span&gt;</dd>
+</dl>
+<p>&lt;/div&gt; &lt;!&#8211; /.select-menu-header &#8211;&gt;</p>
+<dl class="docutils">
+<dt>&lt;div class=&#8221;select-menu-filters&#8221;&gt;</dt>
+<dd><dl class="first docutils">
+<dt>&lt;div class=&#8221;select-menu-text-filter&#8221;&gt;</dt>
+<dd>&lt;input type=&#8221;text&#8221; id=&#8221;commitish-filter-field&#8221; class=&#8221;js-filterable-field js-navigation-enable&#8221; placeholder=&#8221;Find or create a branch…&#8221;&gt;</dd>
+</dl>
+<p>&lt;/div&gt;
+&lt;div class=&#8221;select-menu-tabs&#8221;&gt;</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>&lt;ul&gt;</dt>
+<dd><dl class="first docutils">
+<dt>&lt;li class=&#8221;select-menu-tab&#8221;&gt;</dt>
+<dd>&lt;a href=&#8221;#&#8221; data-tab-filter=&#8221;branches&#8221; class=&#8221;js-select-menu-tab&#8221;&gt;Branches&lt;/a&gt;</dd>
+</dl>
+<p>&lt;/li&gt;
+&lt;li class=&#8221;select-menu-tab&#8221;&gt;</p>
+<blockquote>
+<div>&lt;a href=&#8221;#&#8221; data-tab-filter=&#8221;tags&#8221; class=&#8221;js-select-menu-tab&#8221;&gt;Tags&lt;/a&gt;</div></blockquote>
+<p class="last">&lt;/li&gt;</p>
+</dd>
+</dl>
+<p>&lt;/ul&gt;</p>
+</div></blockquote>
+<p class="last">&lt;/div&gt;&lt;!&#8211; /.select-menu-tabs &#8211;&gt;</p>
+</dd>
+</dl>
+<p>&lt;/div&gt;&lt;!&#8211; /.select-menu-filters &#8211;&gt;</p>
+<p>&lt;div class=&#8221;select-menu-list select-menu-tab-bucket js-select-menu-tab-bucket css-truncate&#8221; data-tab-filter=&#8221;branches&#8221;&gt;</p>
+<blockquote>
+<div><p>&lt;div data-filterable-for=&#8221;commitish-filter-field&#8221; data-filterable-type=&#8221;substring&#8221;&gt;</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>&lt;div class=&#8221;select-menu-item js-navigation-item &#8220;&gt;</dt>
+<dd>&lt;span class=&#8221;select-menu-item-icon octicon octicon-check&#8221;&gt;&lt;/span&gt;
+&lt;a href=&#8221;/suizokukan/dchars/blob/master/0.3.8/dchars/documentation/Sphinx/RSTsourcefiles/changelog.rst&#8221; class=&#8221;js-navigation-open select-menu-item-text js-select-button-text css-truncate-target&#8221; data-name=&#8221;master&#8221; rel=&#8221;nofollow&#8221; title=&#8221;master&#8221;&gt;master&lt;/a&gt;</dd>
+</dl>
+<p>&lt;/div&gt; &lt;!&#8211; /.select-menu-item &#8211;&gt;</p>
+</div></blockquote>
+<p>&lt;/div&gt;</p>
+<blockquote>
+<div><p>&lt;form accept-charset=&#8221;UTF-8&#8221; action=&#8221;/suizokukan/dchars/branches&#8221; class=&#8221;js-create-branch select-menu-item select-menu-new-item-form js-navigation-item js-new-item-form&#8221; method=&#8221;post&#8221;&gt;&lt;div style=&#8221;margin:0;padding:0;display:inline&#8221;&gt;&lt;input name=&#8221;authenticity_token&#8221; type=&#8221;hidden&#8221; value=&#8221;JuSGFeLXQes4GbqgvXQALWAimqljzWfJHCx2QzqShCk=&#8221; /&gt;&lt;/div&gt;</p>
+<blockquote>
+<div><p>&lt;span class=&#8221;octicon octicon-git-branch-create select-menu-item-icon&#8221;&gt;&lt;/span&gt;
+&lt;div class=&#8221;select-menu-item-text&#8221;&gt;</p>
+<blockquote>
+<div>&lt;h4&gt;Create branch: &lt;span class=&#8221;js-new-item-name&#8221;&gt;&lt;/span&gt;&lt;/h4&gt;
+&lt;span class=&#8221;description&#8221;&gt;from ‘223edf6bde0d6c8a1475971375271f82674571b3’&lt;/span&gt;</div></blockquote>
+<p>&lt;/div&gt;
+&lt;input type=&#8221;hidden&#8221; name=&#8221;name&#8221; id=&#8221;name&#8221; class=&#8221;js-new-item-value&#8221;&gt;
+&lt;input type=&#8221;hidden&#8221; name=&#8221;branch&#8221; id=&#8221;branch&#8221; value=&#8221;223edf6bde0d6c8a1475971375271f82674571b3&#8221; /&gt;
+&lt;input type=&#8221;hidden&#8221; name=&#8221;path&#8221; id=&#8221;branch&#8221; value=&#8221;0.3.8/dchars/documentation/Sphinx/RSTsourcefiles/changelog.rst&#8221; /&gt;</p>
+</div></blockquote>
+<p>&lt;/form&gt; &lt;!&#8211; /.select-menu-item &#8211;&gt;</p>
+</div></blockquote>
+</div></blockquote>
+<p>&lt;/div&gt; &lt;!&#8211; /.select-menu-list &#8211;&gt;</p>
+<dl class="docutils">
+<dt>&lt;div class=&#8221;select-menu-list select-menu-tab-bucket js-select-menu-tab-bucket css-truncate&#8221; data-tab-filter=&#8221;tags&#8221;&gt;</dt>
+<dd><p class="first">&lt;div data-filterable-for=&#8221;commitish-filter-field&#8221; data-filterable-type=&#8221;substring&#8221;&gt;</p>
+<p>&lt;/div&gt;</p>
+<p class="last">&lt;div class=&#8221;select-menu-no-results&#8221;&gt;Nothing to show&lt;/div&gt;</p>
+</dd>
+</dl>
+<p class="last">&lt;/div&gt; &lt;!&#8211; /.select-menu-list &#8211;&gt;</p>
+</dd>
+</dl>
+<p>&lt;/div&gt; &lt;!&#8211; /.select-menu-modal &#8211;&gt;</p>
+</div></blockquote>
+<p class="last">&lt;/div&gt; &lt;!&#8211; /.select-menu-modal-holder &#8211;&gt;</p>
+</dd>
+</dl>
+<p>&lt;/div&gt; &lt;!&#8211; /.select-menu &#8211;&gt;</p>
+</div></blockquote>
+<p>&lt;/div&gt; &lt;!&#8211; /.scope &#8211;&gt;</p>
+<dl class="docutils">
+<dt>&lt;ul class=&#8221;tabnav-tabs&#8221;&gt;</dt>
+<dd>&lt;li&gt;&lt;a href=&#8221;/suizokukan/dchars&#8221; class=&#8221;selected js-selected-navigation-item tabnav-tab&#8221; data-selected-links=&#8221;repo_source /suizokukan/dchars&#8221;&gt;Files&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#8221;/suizokukan/dchars/commits/&#8221; class=&#8221;js-selected-navigation-item tabnav-tab&#8221; data-selected-links=&#8221;repo_commits /suizokukan/dchars/commits/&#8221;&gt;Commits&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#8221;/suizokukan/dchars/branches&#8221; class=&#8221;js-selected-navigation-item tabnav-tab&#8221; data-selected-links=&#8221;repo_branches /suizokukan/dchars/branches&#8221; rel=&#8221;nofollow&#8221;&gt;Branches &lt;span class=&#8221;counter &#8220;&gt;1&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;</dd>
+</dl>
+<p>&lt;/ul&gt;</p>
+</div></blockquote>
+<p>&lt;/div&gt;</p>
+<blockquote>
+<div><blockquote>
+<div>&lt;/div&gt;</div></blockquote>
+<p>&lt;/div&gt;&lt;!&#8211; /.repohead &#8211;&gt;</p>
+<p>&lt;div id=&#8221;js-repo-pjax-container&#8221; class=&#8221;container context-loader-container&#8221; data-pjax-container&gt;</p>
+</div></blockquote>
+<p>&lt;!&#8211; blob contrib key: blob_contributors:v21:8cc1ae03b4526f8f398eea2e0ed02c52 &#8211;&gt;
+&lt;!&#8211; blob contrib frag key: views10/v8/blob_contributors:v21:8cc1ae03b4526f8f398eea2e0ed02c52 &#8211;&gt;</p>
+<dl class="docutils">
+<dt>&lt;div id=&#8221;slider&#8221;&gt;</dt>
+<dd><blockquote class="first">
+<div><p>&lt;div class=&#8221;frame-meta&#8221;&gt;</p>
+<blockquote>
+<div><p>&lt;p title=&#8221;This is a placeholder element&#8221; class=&#8221;js-history-link-replace hidden&#8221;&gt;&lt;/p&gt;</p>
+<blockquote>
+<div><p>&lt;a href=&#8221;/suizokukan/dchars/find/223edf6bde0d6c8a1475971375271f82674571b3&#8221; class=&#8221;js-slide-to&#8221; data-hotkey=&#8221;t&#8221; style=&#8221;display:none&#8221;&gt;Show File Finder&lt;/a&gt;</p>
+<dl class="docutils">
+<dt>&lt;div class=&#8221;breadcrumb&#8221;&gt;</dt>
+<dd>&lt;span class=&#8217;repo-root js-repo-root&#8217;&gt;&lt;span itemscope=&#8221;&#8221; itemtype=&#8221;<a class="reference external" href="http://data-vocabulary.org/Breadcrumb">http://data-vocabulary.org/Breadcrumb</a>&#8220;&gt;&lt;a href=&#8221;/suizokukan/dchars/tree/223edf6bde0d6c8a1475971375271f82674571b3&#8221; class=&#8221;js-slide-to&#8221; data-branch=&#8221;223edf6bde0d6c8a1475971375271f82674571b3&#8221; data-direction=&#8221;back&#8221; itemscope=&#8221;url&#8221; rel=&#8221;nofollow&#8221;&gt;&lt;span itemprop=&#8221;title&#8221;&gt;dchars&lt;/span&gt;&lt;/a&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#8221;separator&#8221;&gt; / &lt;/span&gt;&lt;span itemscope=&#8221;&#8221; itemtype=&#8221;<a class="reference external" href="http://data-vocabulary.org/Breadcrumb">http://data-vocabulary.org/Breadcrumb</a>&#8220;&gt;&lt;a href=&#8221;/suizokukan/dchars/tree/223edf6bde0d6c8a1475971375271f82674571b3/0.3.8&#8221; class=&#8221;js-slide-to&#8221; data-branch=&#8221;223edf6bde0d6c8a1475971375271f82674571b3&#8221; data-direction=&#8221;back&#8221; itemscope=&#8221;url&#8221; rel=&#8221;nofollow&#8221;&gt;&lt;span itemprop=&#8221;title&#8221;&gt;0.3.8&lt;/span&gt;&lt;/a&gt;&lt;/span&gt;&lt;span class=&#8221;separator&#8221;&gt; / &lt;/span&gt;&lt;span itemscope=&#8221;&#8221; itemtype=&#8221;<a class="reference external" href="http://data-vocabulary.org/Breadcrumb">http://data-vocabulary.org/Breadcrumb</a>&#8220;&gt;&lt;a href=&#8221;/suizokukan/dchars/tree/223edf6bde0d6c8a1475971375271f82674571b3/0.3.8/dchars&#8221; class=&#8221;js-slide-to&#8221; data-branch=&#8221;223edf6bde0d6c8a1475971375271f82674571b3&#8221; data-direction=&#8221;back&#8221; itemscope=&#8221;url&#8221; rel=&#8221;nofollow&#8221;&gt;&lt;span itemprop=&#8221;title&#8221;&gt;dchars&lt;/span&gt;&lt;/a&gt;&lt;/span&gt;&lt;span class=&#8221;separator&#8221;&gt; / &lt;/span&gt;&lt;span itemscope=&#8221;&#8221; itemtype=&#8221;<a class="reference external" href="http://data-vocabulary.org/Breadcrumb">http://data-vocabulary.org/Breadcrumb</a>&#8220;&gt;&lt;a href=&#8221;/suizokukan/dchars/tree/223edf6bde0d6c8a1475971375271f82674571b3/0.3.8/dchars/documentation&#8221; class=&#8221;js-slide-to&#8221; data-branch=&#8221;223edf6bde0d6c8a1475971375271f82674571b3&#8221; data-direction=&#8221;back&#8221; itemscope=&#8221;url&#8221; rel=&#8221;nofollow&#8221;&gt;&lt;span itemprop=&#8221;title&#8221;&gt;documentation&lt;/span&gt;&lt;/a&gt;&lt;/span&gt;&lt;span class=&#8221;separator&#8221;&gt; / &lt;/span&gt;&lt;span itemscope=&#8221;&#8221; itemtype=&#8221;<a class="reference external" href="http://data-vocabulary.org/Breadcrumb">http://data-vocabulary.org/Breadcrumb</a>&#8220;&gt;&lt;a href=&#8221;/suizokukan/dchars/tree/223edf6bde0d6c8a1475971375271f82674571b3/0.3.8/dchars/documentation/Sphinx&#8221; class=&#8221;js-slide-to&#8221; data-branch=&#8221;223edf6bde0d6c8a1475971375271f82674571b3&#8221; data-direction=&#8221;back&#8221; itemscope=&#8221;url&#8221; rel=&#8221;nofollow&#8221;&gt;&lt;span itemprop=&#8221;title&#8221;&gt;Sphinx&lt;/span&gt;&lt;/a&gt;&lt;/span&gt;&lt;span class=&#8221;separator&#8221;&gt; / &lt;/span&gt;&lt;span itemscope=&#8221;&#8221; itemtype=&#8221;<a class="reference external" href="http://data-vocabulary.org/Breadcrumb">http://data-vocabulary.org/Breadcrumb</a>&#8220;&gt;&lt;a href=&#8221;/suizokukan/dchars/tree/223edf6bde0d6c8a1475971375271f82674571b3/0.3.8/dchars/documentation/Sphinx/RSTsourcefiles&#8221; class=&#8221;js-slide-to&#8221; data-branch=&#8221;223edf6bde0d6c8a1475971375271f82674571b3&#8221; data-direction=&#8221;back&#8221; itemscope=&#8221;url&#8221; rel=&#8221;nofollow&#8221;&gt;&lt;span itemprop=&#8221;title&#8221;&gt;RSTsourcefiles&lt;/span&gt;&lt;/a&gt;&lt;/span&gt;&lt;span class=&#8221;separator&#8221;&gt; / &lt;/span&gt;&lt;strong class=&#8221;final-path&#8221;&gt;changelog.rst&lt;/strong&gt; &lt;span class=&#8221;js-zeroclipboard zeroclipboard-button&#8221; data-clipboard-text=&#8221;0.3.8/dchars/documentation/Sphinx/RSTsourcefiles/changelog.rst&#8221; data-copied-hint=&#8221;copied!&#8221; title=&#8221;copy to clipboard&#8221;&gt;&lt;span class=&#8221;octicon octicon-clippy&#8221;&gt;&lt;/span&gt;&lt;/span&gt;</dd>
+</dl>
+<p>&lt;/div&gt;</p>
+<dl class="docutils">
+<dt>&lt;div class=&#8221;commit commit-loader file-history-tease js-deferred-content&#8221; data-url=&#8221;/suizokukan/dchars/contributors/223edf6bde0d6c8a1475971375271f82674571b3/0.3.8/dchars/documentation/Sphinx/RSTsourcefiles/changelog.rst&#8221;&gt;</dt>
+<dd><p class="first">Fetching contributors…</p>
+<dl class="docutils">
+<dt>&lt;div class=&#8221;participation&#8221;&gt;</dt>
+<dd>&lt;p class=&#8221;loader-loading&#8221;&gt;&lt;img alt=&#8221;Octocat-spinner-32-eaf2f5&#8221; height=&#8221;16&#8221; src=&#8221;<a class="reference external" href="https://a248.e.akamai.net/assets.github.com/images/spinners/octocat-spinner-32-EAF2F5.gif">https://a248.e.akamai.net/assets.github.com/images/spinners/octocat-spinner-32-EAF2F5.gif</a>&#8221; width=&#8221;16&#8221; /&gt;&lt;/p&gt;
+&lt;p class=&#8221;loader-error&#8221;&gt;Cannot retrieve contributors at this time&lt;/p&gt;</dd>
+</dl>
+<p class="last">&lt;/div&gt;</p>
+</dd>
+</dl>
+<p>&lt;/div&gt;</p>
+</div></blockquote>
+</div></blockquote>
+<p>&lt;/div&gt;&lt;!&#8211; ./.frame-meta &#8211;&gt;</p>
+<dl class="docutils">
+<dt>&lt;div class=&#8221;frames&#8221;&gt;</dt>
+<dd><p class="first">&lt;div class=&#8221;frame&#8221; data-permalink-url=&#8221;/suizokukan/dchars/blob/223edf6bde0d6c8a1475971375271f82674571b3/0.3.8/dchars/documentation/Sphinx/RSTsourcefiles/changelog.rst&#8221; data-title=&#8221;dchars/0.3.8/dchars/documentation/Sphinx/RSTsourcefiles/changelog.rst at 223edf6bde0d6c8a1475971375271f82674571b3 · suizokukan/dchars · GitHub&#8221; data-type=&#8221;blob&#8221;&gt;</p>
+<blockquote class="last">
+<div><dl class="docutils">
+<dt>&lt;div id=&#8221;files&#8221; class=&#8221;bubble&#8221;&gt;</dt>
+<dd><dl class="first last docutils">
+<dt>&lt;div class=&#8221;file&#8221;&gt;</dt>
+<dd><dl class="first docutils">
+<dt>&lt;div class=&#8221;meta&#8221;&gt;</dt>
+<dd><dl class="first docutils">
+<dt>&lt;div class=&#8221;info&#8221;&gt;</dt>
+<dd><p class="first">&lt;span class=&#8221;icon&#8221;&gt;&lt;b class=&#8221;octicon octicon-file-text&#8221;&gt;&lt;/b&gt;&lt;/span&gt;
+&lt;span class=&#8221;mode&#8221; title=&#8221;File Mode&#8221;&gt;file&lt;/span&gt;</p>
+<blockquote>
+<div>&lt;span&gt;501 lines (364 sloc)&lt;/span&gt;</div></blockquote>
+<p class="last">&lt;span&gt;17.768 kb&lt;/span&gt;</p>
+</dd>
+</dl>
+<p>&lt;/div&gt;
+&lt;div class=&#8221;actions&#8221;&gt;</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>&lt;div class=&#8221;button-group&#8221;&gt;</dt>
+<dd><blockquote class="first">
+<div><dl class="docutils">
+<dt>&lt;a class=&#8221;minibutton js-entice&#8221; href=&#8221;&#8220;</dt>
+<dd>data-entice=&#8221;You must be signed in and on a branch to make or propose changes&#8221;&gt;Edit&lt;/a&gt;</dd>
+</dl>
+</div></blockquote>
+<dl class="docutils">
+<dt>&lt;a href=&#8221;/suizokukan/dchars/raw/223edf6bde0d6c8a1475971375271f82674571b3/0.3.8/dchars/documentation/Sphinx/RSTsourcefiles/changelog.rst&#8221; class=&#8221;button minibutton &#8221; id=&#8221;raw-url&#8221;&gt;Raw&lt;/a&gt;</dt>
+<dd>&lt;a href=&#8221;/suizokukan/dchars/blame/223edf6bde0d6c8a1475971375271f82674571b3/0.3.8/dchars/documentation/Sphinx/RSTsourcefiles/changelog.rst&#8221; class=&#8221;button minibutton &#8220;&gt;Blame&lt;/a&gt;</dd>
+</dl>
+<p class="last">&lt;a href=&#8221;/suizokukan/dchars/commits/223edf6bde0d6c8a1475971375271f82674571b3/0.3.8/dchars/documentation/Sphinx/RSTsourcefiles/changelog.rst&#8221; class=&#8221;button minibutton &#8221; rel=&#8221;nofollow&#8221;&gt;History&lt;/a&gt;</p>
+</dd>
+</dl>
+<p>&lt;/div&gt;&lt;!&#8211; /.button-group &#8211;&gt;</p>
+</div></blockquote>
+<p class="last">&lt;/div&gt;&lt;!&#8211; /.actions &#8211;&gt;</p>
+</dd>
+</dl>
+<p class="last">&lt;/div&gt;</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</div></blockquote>
+</dd>
+</dl>
+</div></blockquote>
+<dl class="last docutils">
+<dt>&lt;div id=&#8221;readme&#8221; class=&#8221;blob instapaper_body&#8221;&gt;</dt>
+<dd>&lt;article class=&#8221;markdown-body entry-content&#8221; itemprop=&#8221;mainContentOfPage&#8221;&gt;&lt;div&gt;</dd>
+</dl>
+</dd>
+</dl>
+<p>&lt;div&gt;
+&lt;h1&gt;
+&lt;a name=&#8221;changelog_title&#8221; class=&#8221;anchor&#8221; href=&#8221;#changelog_title&#8221;&gt;&lt;span class=&#8221;octicon octicon-link&#8221;&gt;&lt;/span&gt;&lt;/a&gt;CHANGELOG_TITLE&lt;/h1&gt;
+&lt;div&gt;
+&lt;h2&gt;
+&lt;a name=&#8221;038-2013_06_21&#8221; class=&#8221;anchor&#8221; href=&#8221;#038-2013_06_21&#8221;&gt;&lt;span class=&#8221;octicon octicon-link&#8221;&gt;&lt;/span&gt;&lt;/a&gt;0.3.8 [2013_06_21]&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;rewrote documentation for (bod)internalstructure.py::get_intstruct_from_str()&lt;/li&gt;
+&lt;li&gt;added some documentations to roadmap.rst (DChars&#8217; &#8220;map&#8221; concerning Tibetan)&lt;/li&gt;
+&lt;li&gt;sort.py : version 0.3.8-sort#[2|3|4], fixed several bugs concerning Tibetan&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;/div&gt;
+&lt;div&gt;
+&lt;h2&gt;
+&lt;a name=&#8221;037-2013_06_17&#8221; class=&#8221;anchor&#8221; href=&#8221;#037-2013_06_17&#8221;&gt;&lt;span class=&#8221;octicon octicon-link&#8221;&gt;&lt;/span&gt;&lt;/a&gt;0.3.7 [2013_06_17]&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;sort.py has the same version as DChars&lt;/li&gt;
+&lt;li&gt;ListOfInternalStructures.seems_to_be_a_sanskrit_string got the &#8216;strict_answer&#8217; argument,
+used by sort.py.&lt;/li&gt;
+&lt;li&gt;dchars/symbols.py has been moved to dchars/symbols/symbols.py&lt;/li&gt;
+&lt;li&gt;dchars/dicttools.py, dchars/lstringtools.py, dchars/name2symbols.py,
+dchars/orderedset.py, dchars/regexstring.py dchars/sortingvalue.py,
+dchars/triggerlist.py have been moved to dchars/utilities&lt;/li&gt;
+&lt;li&gt;no more useless print()&lt;/li&gt;
+&lt;li&gt;get rid of lot of $$$ and ??? strings, replaced by ad hoc comments.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;/div&gt;
+&lt;div&gt;
+&lt;h2&gt;
+&lt;a name=&#8221;036-2013_06_04&#8221; class=&#8221;anchor&#8221; href=&#8221;#036-2013_06_04&#8221;&gt;&lt;span class=&#8221;octicon octicon-link&#8221;&gt;&lt;/span&gt;&lt;/a&gt;0.3.6 [2013_06_04]&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;(bod) ... superfix letter ! Fixed this old mistake : until this version DChars didn&#8217;t
+know what a superfix was... hem... hem...&lt;/li&gt;
+&lt;li&gt;(all languages) a lot of new tests in order to test comparisons.&lt;/li&gt;
+&lt;li&gt;(all languages) ./sort.py : a program to sort files.&lt;/li&gt;
+&lt;li&gt;(lat, grc) changed letter&#8217;s name in order to be shorter (e.g. &#8216;ἄλφα&#8217; &amp;gt; &#8216;α&#8217;)&lt;/li&gt;
+&lt;li&gt;(all languages) added the six rich comparison ordering methods to DStringMotherClass :
+lt/le, gt/ge, eq/ne.  Except eq/ne, those methods call the sortingvalue() function.&lt;/li&gt;
+&lt;li&gt;(all languages) added five rich comparison ordering methods to DCharacterMotherClass :
+lt/le, gt/ge, ne (but NOT __eq__, defined in the derived classes). Those methods
+call the sortingvalue() function.&lt;/li&gt;
+&lt;li&gt;(lat) base_char contains always &#8220;a&#8221;, not &#8220;A&#8221; as before (and &#8216;b&#8217;, not &#8216;B&#8217; and so on)&lt;/li&gt;
+&lt;li&gt;(all languages) added a new option : &#8220;sorting method&#8221;&lt;/li&gt;
+&lt;li&gt;(all languages) in DCharacter* classes, the .dstring_object attribute belongs now
+to the mother class dchars/dcharacter.py::DCharacterMotherClass&lt;/li&gt;
+&lt;li&gt;code quality :&lt;ul&gt;
+&lt;li&gt;header_please_test.py ok&lt;/li&gt;
+&lt;li&gt;130 tests, all ok&lt;/li&gt;
+&lt;li&gt;Pylint&#8217;s worst mark : 9.47&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;/div&gt;
+&lt;div&gt;
+&lt;h2&gt;
+&lt;a name=&#8221;older_versions_title&#8221; class=&#8221;anchor&#8221; href=&#8221;#older_versions_title&#8221;&gt;&lt;span class=&#8221;octicon octicon-link&#8221;&gt;&lt;/span&gt;&lt;/a&gt;OLDER_VERSIONS_TITLE&lt;/h2&gt;
+&lt;div&gt;
+&lt;h3&gt;
+&lt;a name=&#8221;035-2013_04_27&#8221; class=&#8221;anchor&#8221; href=&#8221;#035-2013_04_27&#8221;&gt;&lt;span class=&#8221;octicon octicon-link&#8221;&gt;&lt;/span&gt;&lt;/a&gt;0.3.5 [2013_04_27]&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;(bod.bodsan) fixed a bug concerning the presence of the tsheg symbol after each
+Sanskrit syllable.&lt;/li&gt;
+&lt;li&gt;(all languages) delete the function add_the_unrecognized_characters() and rewrote
+the init_from_src() functions.&lt;/li&gt;
+&lt;li&gt;(all languages) new option : &#8220;anonymize the unknown characters&#8221;&lt;/li&gt;
+&lt;li&gt;code quality :&lt;ul&gt;
+&lt;li&gt;header_please_test.py ok&lt;/li&gt;
+&lt;li&gt;111 tests, all ok&lt;/li&gt;
+&lt;li&gt;Pylint&#8217;s worst mark : 9.47&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;/div&gt;
+&lt;div&gt;
+&lt;h3&gt;
+&lt;a name=&#8221;034-2013_04_26&#8221; class=&#8221;anchor&#8221; href=&#8221;#034-2013_04_26&#8221;&gt;&lt;span class=&#8221;octicon octicon-link&#8221;&gt;&lt;/span&gt;&lt;/a&gt;0.3.4 [2013_04_26]&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;(bod) new transliteration&#8217;s method : &#8220;bodsan&#8221; (Tibetan &amp;lt;-&amp;gt; Sanskrit)&lt;/li&gt;
+&lt;li&gt;(bod) fixed a bug concerning the oM symbol.&lt;/li&gt;
+&lt;li&gt;modified dicttools.py in order to show more explicit error message&lt;/li&gt;
+&lt;li&gt;added more explicit comments in config.ini&lt;/li&gt;
+&lt;li&gt;(bod) fixed several bugs in bod__create_buffers.py&lt;/li&gt;
+&lt;li&gt;(bod) added a bunch of new ewts words (places&#8217; names) to ewts_words
+(dchars/languages/bod/transliteration/ewts_words.txt) in order to add new
+syllables to the buffers. Buffers were updated.&lt;/li&gt;
+&lt;li&gt;delete the ISO15919/ directory&lt;/li&gt;
+&lt;li&gt;code quality :&lt;ul&gt;
+&lt;li&gt;header_please_test.py ok&lt;/li&gt;
+&lt;li&gt;111 tests, all ok&lt;/li&gt;
+&lt;li&gt;Pylint&#8217;s worst mark : 9.47&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;/div&gt;
+&lt;div&gt;
+&lt;h3&gt;
+&lt;a name=&#8221;033-2013_04_25&#8221; class=&#8221;anchor&#8221; href=&#8221;#033-2013_04_25&#8221;&gt;&lt;span class=&#8221;octicon octicon-link&#8221;&gt;&lt;/span&gt;&lt;/a&gt;0.3.3 [2013_04_25]&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;(bod) fixed a bug in the EWTS transliteration of &#8220;H&#8221; and &#8220;M&#8221; : &#8220;labH&#8221; but &#8220;khaMs&#8221;,
+H after the suffix, M after the main vowel.&lt;/li&gt;
+&lt;li&gt;(bod) fixed a bug in the transliteration of &#8220;always Sanskrit&#8221; Tibetan string :
+བསྒྲད is &#8220;basgrada&#8221;, not &#8220;bsgrada&#8221; (I forgot to add the &#8216;a&#8217; vowel to the prefix)&lt;/li&gt;
+&lt;li&gt;fixed a bug in new_dstring : I forgot to duplicate the options : the different DString*
+don&#8217;t have to share the same dictionary of options !&lt;/li&gt;
+&lt;li&gt;code quality :&lt;ul&gt;
+&lt;li&gt;header_please_test.py ok&lt;/li&gt;
+&lt;li&gt;110 tests, all ok&lt;/li&gt;
+&lt;li&gt;Pylint&#8217;s worst mark : 9.47&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;/div&gt;
+&lt;div&gt;
+&lt;h3&gt;
+&lt;a name=&#8221;032-2013_04_25&#8221; class=&#8221;anchor&#8221; href=&#8221;#032-2013_04_25&#8221;&gt;&lt;span class=&#8221;octicon octicon-link&#8221;&gt;&lt;/span&gt;&lt;/a&gt;0.3.2 [2013_04_25]&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;added config.ini, a file describing the default values of DString* objects&lt;/li&gt;
+&lt;li&gt;(bod) in bod_tests.py, test_problematicstring() &amp;gt; test_problematicstrings()&lt;/li&gt;
+&lt;li&gt;(bod) TESTSDStringBOD.test_pickle() tests the functions used to format ListOfInternalStructures object into a &#8220;pickle-compliant&#8221; string.&lt;/li&gt;
+&lt;li&gt;(bod) two functions can now use buffers in order to return quickly the entries already computed :
+ewts.py::get_intstruct_from_str() and ewts.py::get_intstruct_from_trans_str()&lt;/li&gt;
+&lt;li&gt;(bod) modified the name of the letters in order to spare time and memory (e.g. &#8220;LETTER KHA&#8221; -&amp;gt; &#8220;KH&#8221;)&lt;/li&gt;
+&lt;li&gt;code quality :&lt;ul&gt;
+&lt;li&gt;header_please_test.py ok&lt;/li&gt;
+&lt;li&gt;110 tests, all ok&lt;/li&gt;
+&lt;li&gt;Pylint&#8217;s worst mark : 9.47&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;/div&gt;
+&lt;div&gt;
+&lt;h3&gt;
+&lt;a name=&#8221;031-2013_04_24&#8221; class=&#8221;anchor&#8221; href=&#8221;#031-2013_04_24&#8221;&gt;&lt;span class=&#8221;octicon octicon-link&#8221;&gt;&lt;/span&gt;&lt;/a&gt;0.3.1 [2013_04_24]&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;dl&gt;
+&lt;dt&gt;(bod) new option : &#8220;expected structure&#8221; :&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;&#8221;always Sanskrit&#8221;, &#8220;always Tibetan&#8221;, &#8220;Tibetan or Sanskrit&#8221;&lt;/p&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;added default options to every DString created by new_dstring()&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;(bod) rewrote large parts of get_intstruct_from_trans_str() and of get_intstruct_from_str()
+using a new function, ListOfInternalStructures.get_the_complete_records&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;(bod) added a bunch of EWTS words to the tests (file ewts_words)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;no more dstring.err(), dstring.errors, dstring.validity; if an error occurs, an exception
+will be raised.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;(bod) added new strings for tests&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;(bod) fixed a bug concerning rnam bcad/anusvara/halanta place in transliteration.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;(bod) fixed a bug concerning words ending with a suffix and the rnam bcad symbol (e.g. ལབཿ labH)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;code quality :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;header_please_test.py ok&lt;/li&gt;
+&lt;li&gt;109 tests, all ok&lt;/li&gt;
+&lt;li&gt;Pylint&#8217;s worst mark : 9.47&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;/div&gt;
+&lt;div&gt;
+&lt;h3&gt;
+&lt;a name=&#8221;030-2013_04_21&#8221; class=&#8221;anchor&#8221; href=&#8221;#030-2013_04_21&#8221;&gt;&lt;span class=&#8221;octicon octicon-link&#8221;&gt;&lt;/span&gt;&lt;/a&gt;0.3.0 [2013_04_21]&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;(bod) &#8220;dependentvowel&#8221; &amp;gt; &#8220;vowel&#8221;&lt;/li&gt;
+&lt;li&gt;(bod) &#8220;TIBETAN xxx&#8221; &amp;gt; &#8220;xxx&#8221; (e.g. &#8220;TIBETAN LETTER LA&#8221; -&amp;gt; &#8220;LETTER LA&#8221;)&lt;/li&gt;
+&lt;li&gt;(bod) new file : bod/syllabic_structure.py&lt;/li&gt;
+&lt;li&gt;(bod) DString&#8217;s type is now TriggerList.&lt;/li&gt;
+&lt;li&gt;(bod) new function : InternalStructrure.check_default_value() in order to simplify comparisons
+betwwen InternalStructrure objects.&lt;/li&gt;
+&lt;li&gt;(bod) new suffixes supported : &#8216;i, &#8216;is, &#8216;u, &#8216;o, &#8216;ang and &#8216;am. Damn, it wasn&#8217;t easy...&lt;/li&gt;
+&lt;li&gt;(bod) added a new test (TESTSDStringBOD.test_intstruct) in order to test the internal structure taken from an EWTS string and from a unicode string.&lt;/li&gt;
+&lt;li&gt;(bod) fix OrderedSet.__eq__ so that the an OrderedSet object can be compared to None&lt;/li&gt;
+&lt;li&gt;(bod) DStringBOD has now a (ListOfInternalStructures) self.istructs attribute&lt;/li&gt;
+&lt;li&gt;(bod) fixed a minor bug in functions like dstring__init_from_translit_str() : these functions do not return the dstring object but may return anything else (e.g. with bod
+functions, it&#8217;s an ListOfInternalStructures object which may be returned)&lt;/li&gt;
+&lt;li&gt;(bod) added new tests to EWTS from &lt;a href=&#8221;<a class="reference external" href="http://www.thlib.org/reference/transliteration/wyconverter.php">http://www.thlib.org/reference/transliteration/wyconverter.php</a>&#8220;&gt;http://www.thlib.org/reference/transliteration/wyconverter.php&lt;/a&gt;
+&lt;/li&gt;
+&lt;li&gt;added LANGUAGES_LOADED to dchars.py in order to avoid to import several times the
+same module.&lt;/li&gt;
+&lt;li&gt;code quality :&lt;ul&gt;
+&lt;li&gt;header_please_test.py ok&lt;/li&gt;
+&lt;li&gt;108 tests, all ok&lt;/li&gt;
+&lt;li&gt;Pylint&#8217;s worst mark : 9.47&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;/div&gt;
+&lt;div&gt;
+&lt;h3&gt;
+&lt;a name=&#8221;029-2013_04_13&#8221; class=&#8221;anchor&#8221; href=&#8221;#029-2013_04_13&#8221;&gt;&lt;span class=&#8221;octicon octicon-link&#8221;&gt;&lt;/span&gt;&lt;/a&gt;0.2.9 [2013_04_13]&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;new tests for strings with unknown character; the code was deeply analysed and sometimes
+rewritten to achieve the expected results.&lt;/li&gt;
+&lt;li&gt;languages modules are dynamically loaded by dchars/dchars.py::new_dstring&lt;/li&gt;
+&lt;li&gt;new file : dchars/symbols.py defines the UNKNOW_CHAR_SYMBOL symbol.&lt;/li&gt;
+&lt;li&gt;all the languages use the UNKNOWN_CHAR_SYMBOL for the get_the_transliteration() functions.&lt;/li&gt;
+&lt;li&gt;added the UNKNOWN_CHAR_SYMBOL symbol to all DChar* objects in order to show the presence of
+unknown characters.&lt;/li&gt;
+&lt;li&gt;fixed a typo in DStringMotherClass.__repr__ : &#8220;characters&#8221; &amp;gt; &#8220;character(s)&#8221;&lt;/li&gt;
+&lt;li&gt;code quality :&lt;ul&gt;
+&lt;li&gt;header_please_test.py ok&lt;/li&gt;
+&lt;li&gt;100 tests, all ok&lt;/li&gt;
+&lt;li&gt;Pylint&#8217;s worst mark : 9.47&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;0.2.8 [2013_04_12]&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;(all the code) &#8220;specialpoints&#8221; &amp;gt; &#8220;specialpoint&#8221;&lt;/li&gt;
+&lt;li&gt;(san) deleted the useless pseudo-sign &#8220;&#64;VIRAMA&#8221; and &#8220;&#64;NUKTA&#8221;&lt;/li&gt;
+&lt;li&gt;fixed a big bug concerning regex&#8217; patterns (?P&amp;lt;name&amp;gt;(a|b|c))? != (?P&amp;lt;name&amp;gt;(a|b|c)?)&lt;/li&gt;
+&lt;li&gt;fixed a lot of small bugs in all languages : I checked that we have trans-&amp;gt;unicode-&amp;gt;trans
+for all languages.&lt;/li&gt;
+&lt;li&gt;delete some old and big .txt~ files&lt;/li&gt;
+&lt;li&gt;(bod) added a test in order to check abnormal use of diacritics (e.g. &#8220;ཀཾཾ&#8221; has two anusvara-s)&lt;/li&gt;
+&lt;li&gt;code quality :&lt;ul&gt;
+&lt;li&gt;header_please_test.py ok&lt;/li&gt;
+&lt;li&gt;87 tests, all ok&lt;/li&gt;
+&lt;li&gt;Pylint&#8217;s worst mark : 9.47&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;0.2.7 [2013_04_10]&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;dl&gt;
+&lt;dt&gt;(bod, ewts) : modified transliterations for &#8216;TIBETAN LETTER GHA&#8217; : &#8216;g+h&#8217; (before : &#8216;gh&#8217;)&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;same thing for &#8220;b+h&#8221; (before : &#8216;bh&#8217;) and &#8220;d+h&#8221; (before : &#8216;dh&#8217;)
+(according to &lt;a href=&#8221;<a class="reference external" href="http://www.thlib.org/reference/transliteration/#!essay=/thl/ewts/4/">http://www.thlib.org/reference/transliteration/#!essay=/thl/ewts/4/</a>&#8220;&gt;http://www.thlib.org/reference/transliteration/#!essay=/thl/ewts/4/&lt;/a&gt;)&lt;/p&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;(bod, ewts) : all Unicode compound forms (e.g. chr(0x0F90) + chr(0x0FB5), chr(0x0FB9)  ྐྵ -&amp;gt;  ྐྵ ) are
+now defined in bod/dstring.py::INIT_FROM_STR__SUBSTITUTIONS . DChars uses the
+unique character (0x0FB9), not the compounds characters but know how to read them.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;(bod, ewts) added &#8216;TIBETAN LETTER KSSA&#8217;  : &#8216;k+Sh&#8217; to ewts.py&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;(bod, ewts) added &#8216;TIBETAN LETTER DZHA&#8217;  : &#8216;dz+h&#8217; to ewts.py&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;code quality :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;header_please_test.py ok&lt;/li&gt;
+&lt;li&gt;69 tests, all ok&lt;/li&gt;
+&lt;li&gt;Pylint&#8217;s worst mark : 9.47&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;0.2.6 [2013_04_10]&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;(bod, ewts) fixed a bug with ༀ = oM in order to accept, e.g., ཡོཾ = yoM too.&lt;/li&gt;
+&lt;li&gt;(bod, ewts) &#8216;TIBETAN SIGN RJES SU NGA RO&#8217; (སཾ = saM) accepted&lt;/li&gt;
+&lt;li&gt;(bod, ewts) &#8216;TIBETAN SIGN NYI ZLA NAA DA&#8217; (སྂ = sa~M`) accepted&lt;/li&gt;
+&lt;li&gt;(bod, ewts) &#8216;TIBETAN SIGN SNA LDAN&#8217; (སྃ = sa~M) accepted&lt;/li&gt;
+&lt;li&gt;(bod, ewts) fixed a bug with +C (C being a consonant)&lt;/li&gt;
+&lt;li&gt;(bod, ewts) halanta is accepted, like in &#8220;ཀ྄&#8221;=&#8221;k?&#8221;&lt;/li&gt;
+&lt;li&gt;code quality :&lt;ul&gt;
+&lt;li&gt;header_please_test.py ok&lt;/li&gt;
+&lt;li&gt;69 tests, all ok&lt;/li&gt;
+&lt;li&gt;Pylint&#8217;s worst mark : 9.47&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;0.2.5 [2013_04_09]&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;(bod, ewts) rnam bcad is accepted, like in &#8220;གཏིཿ&#8221;=&#8221;gtiH&#8221;&lt;/li&gt;
+&lt;li&gt;(lstringtool.py::isort_a_lstrings_bylen_nodup) modify the function in order to treat empty entry.&lt;/li&gt;
+&lt;li&gt;(bod, ewts) &#8220;ཕ༹&#8221; = &#8220;fa&#8221;, &#8220;བ༹&#8221; = &#8220;va&#8221; are accepted&lt;/li&gt;
+&lt;li&gt;(bod, ewts) &#8220;ཀྵ&#8221; = &#8220;k+Sha&#8221; is accepted&lt;/li&gt;
+&lt;li&gt;(bod, ewts) oM is accepted&lt;/li&gt;
+&lt;li&gt;(bod, ewts) D+ha, Sha are accepted&lt;/li&gt;
+&lt;li&gt;(bod, ewts) +C (C being a consonant) is accepted&lt;/li&gt;
+&lt;li&gt;code quality :&lt;ul&gt;
+&lt;li&gt;header_please_test.py ok&lt;/li&gt;
+&lt;li&gt;68 tests, all ok&lt;/li&gt;
+&lt;li&gt;Pylint&#8217;s worst mark : 9.47&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;0.2.4 [2013_04_08]&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;(bod) unicode-&amp;gt;EWTS seems functional for standard Tibetan (not for Sanskrit Tibetan)&lt;/li&gt;
+&lt;li&gt;(bod/internalstructure.py) get_internal_structure() -&amp;gt; get_intstructures_from_dstring()&lt;/li&gt;
+&lt;li&gt;new fake-function : DCharacterMotherClass.reset() (this function must be overloaded)&lt;/li&gt;
+&lt;li&gt;(bod) ListOfAssumptions &amp;gt; ListOfInternalStructures, Assumptions &amp;gt; InternalStructure&lt;/li&gt;
+&lt;li&gt;(bod) assumptions.py has been placed in internalstructure.py&lt;/li&gt;
+&lt;li&gt;code quality :&lt;ul&gt;
+&lt;li&gt;header_please_test.py ok&lt;/li&gt;
+&lt;li&gt;68 tests, all ok&lt;/li&gt;
+&lt;li&gt;Pylint&#8217;s worst mark : 8.82&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;0.2.3 [2013_04_05]&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;DStringMotherClass.open() can only be used to read files.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;modify DStringMotherClass in order to allow :&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;div class=&#8221;highlight&#8221;&gt;&lt;pre&gt;
+&lt;span class=&#8221;kn&#8221;&gt;import&lt;/span&gt; &lt;span class=&#8221;nn&#8221;&gt;dchars.dchars&lt;/span&gt; &lt;span class=&#8221;kn&#8221;&gt;as&lt;/span&gt; &lt;span class=&#8221;nn&#8221;&gt;dchars&lt;/span&gt;
+&lt;span class=&#8221;n&#8221;&gt;DSTRING_SAN&lt;/span&gt; &lt;span class=&#8221;o&#8221;&gt;=&lt;/span&gt; &lt;span class=&#8221;n&#8221;&gt;dchars&lt;/span&gt;&lt;span class=&#8221;o&#8221;&gt;.&lt;/span&gt;&lt;span class=&#8221;n&#8221;&gt;new_dstring&lt;/span&gt;&lt;span class=&#8221;p&#8221;&gt;(&lt;/span&gt;&lt;span class=&#8221;n&#8221;&gt;language&lt;/span&gt;&lt;span class=&#8221;o&#8221;&gt;=&lt;/span&gt;&lt;span class=&#8221;s&#8221;&gt;&#8217;संस्कृतम्&#8217;&lt;/span&gt;&lt;span class=&#8221;p&#8221;&gt;,&lt;/span&gt; &lt;span class=&#8221;n&#8221;&gt;transliteration_method&lt;/span&gt;&lt;span class=&#8221;o&#8221;&gt;=&lt;/span&gt;&lt;span class=&#8221;s&#8221;&gt;&#8221;itrans&#8221;&lt;/span&gt;&lt;span class=&#8221;p&#8221;&gt;)&lt;/span&gt;</p>
+<p>&lt;span class=&#8221;c&#8221;&gt;# example with read() :&lt;/span&gt;
+&lt;span class=&#8221;k&#8221;&gt;with&lt;/span&gt; &lt;span class=&#8221;n&#8221;&gt;DSTRING_SAN&lt;/span&gt;&lt;span class=&#8221;p&#8221;&gt;()&lt;/span&gt;&lt;span class=&#8221;o&#8221;&gt;.&lt;/span&gt;&lt;span class=&#8221;n&#8221;&gt;open&lt;/span&gt;&lt;span class=&#8221;p&#8221;&gt;(&lt;/span&gt;&lt;span class=&#8221;n&#8221;&gt;sourcefile&lt;/span&gt;&lt;span class=&#8221;p&#8221;&gt;,&lt;/span&gt; &lt;span class=&#8221;s&#8221;&gt;&#8217;r&#8217;&lt;/span&gt;&lt;span class=&#8221;p&#8221;&gt;)&lt;/span&gt; &lt;span class=&#8221;k&#8221;&gt;as&lt;/span&gt; &lt;span class=&#8221;n&#8221;&gt;src&lt;/span&gt;&lt;span class=&#8221;p&#8221;&gt;:&lt;/span&gt;</p>
+<blockquote>
+<div>&lt;span class=&#8221;k&#8221;&gt;print&lt;/span&gt;&lt;span class=&#8221;p&#8221;&gt;(&lt;/span&gt; &lt;span class=&#8221;n&#8221;&gt;src&lt;/span&gt;&lt;span class=&#8221;o&#8221;&gt;.&lt;/span&gt;&lt;span class=&#8221;n&#8221;&gt;read&lt;/span&gt;&lt;span class=&#8221;p&#8221;&gt;()&lt;/span&gt;&lt;span class=&#8221;o&#8221;&gt;.&lt;/span&gt;&lt;span class=&#8221;n&#8221;&gt;get_transliteration&lt;/span&gt;&lt;span class=&#8221;p&#8221;&gt;()&lt;/span&gt; &lt;span class=&#8221;p&#8221;&gt;)&lt;/span&gt;</div></blockquote>
+<p>&lt;span class=&#8221;c&#8221;&gt;# example with readlines() :&lt;/span&gt;
+&lt;span class=&#8221;k&#8221;&gt;with&lt;/span&gt; &lt;span class=&#8221;n&#8221;&gt;DSTRING_SAN&lt;/span&gt;&lt;span class=&#8221;p&#8221;&gt;()&lt;/span&gt;&lt;span class=&#8221;o&#8221;&gt;.&lt;/span&gt;&lt;span class=&#8221;n&#8221;&gt;open&lt;/span&gt;&lt;span class=&#8221;p&#8221;&gt;(&lt;/span&gt;&lt;span class=&#8221;n&#8221;&gt;sourcefile&lt;/span&gt;&lt;span class=&#8221;p&#8221;&gt;,&lt;/span&gt; &lt;span class=&#8221;s&#8221;&gt;&#8217;r&#8217;&lt;/span&gt;&lt;span class=&#8221;p&#8221;&gt;)&lt;/span&gt; &lt;span class=&#8221;k&#8221;&gt;as&lt;/span&gt; &lt;span class=&#8221;n&#8221;&gt;src&lt;/span&gt;&lt;span class=&#8221;p&#8221;&gt;:&lt;/span&gt;</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>&lt;span class=&#8221;k&#8221;&gt;for&lt;/span&gt; &lt;span class=&#8221;n&#8221;&gt;line&lt;/span&gt; &lt;span class=&#8221;ow&#8221;&gt;in&lt;/span&gt; &lt;span class=&#8221;n&#8221;&gt;src&lt;/span&gt;&lt;span class=&#8221;o&#8221;&gt;.&lt;/span&gt;&lt;span class=&#8221;n&#8221;&gt;readlines&lt;/span&gt;&lt;span class=&#8221;p&#8221;&gt;():&lt;/span&gt;</dt>
+<dd>&lt;span class=&#8221;k&#8221;&gt;print&lt;/span&gt;&lt;span class=&#8221;p&#8221;&gt;(&lt;/span&gt; &lt;span class=&#8221;n&#8221;&gt;line&lt;/span&gt;&lt;span class=&#8221;o&#8221;&gt;.&lt;/span&gt;&lt;span class=&#8221;n&#8221;&gt;get_transliteration&lt;/span&gt;&lt;span class=&#8221;p&#8221;&gt;()&lt;/span&gt; &lt;span class=&#8221;p&#8221;&gt;)&lt;/span&gt;</dd>
+</dl>
+</div></blockquote>
+<p>&lt;/pre&gt;&lt;/div&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;(bod) add COMMON_CONSONANTS_STACK to internalstructure.py in order to treat strings like
+&#8220;སཏྟྭ&#8221;=&#8221;sat+t+wa&#8221;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;(bod, ewts) : one Tibetan syllable can now have two vowels (e.g. &#8220;རྡོེ&#8221;=&#8221;rdo+e&#8221;)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;(documentation) modify index.po&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;(documentation) fix a typo in grc.rst&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;code quality :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;header_please_test.py ok&lt;/li&gt;
+&lt;li&gt;66 tests, all ok&lt;/li&gt;
+&lt;li&gt;Pylint&#8217;s worst mark : 8.82&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;0.2.2 [2013_04_03]&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;read and checked every call to DCharsError&lt;/li&gt;
+&lt;li&gt;(bod) GetInternalStructure() &amp;gt; get_internal_structure()&lt;/li&gt;
+&lt;li&gt;default transliteration method is defined in dchars.dchars.py::LANGUAGES&lt;/li&gt;
+&lt;li&gt;no more &#8220;logotheras&#8221; string in .py files (&#8220;logotheras&#8221; -&amp;gt; &#8220;dchars&#8221;)&lt;/li&gt;
+&lt;li&gt;all languages accept the new interface to the DString classes : new_dstring(language, transliteration_method)&lt;/li&gt;
+&lt;li&gt;(san) find a big bug in iso15919_tests.py (test test_init_from_transliteration1 was ineffective)&lt;/li&gt;
+&lt;li&gt;(san) better support for candrabindu&lt;/li&gt;
+&lt;li&gt;code quality :&lt;ul&gt;
+&lt;li&gt;header_please_test.py ok&lt;/li&gt;
+&lt;li&gt;66 tests, all ok&lt;/li&gt;
+&lt;li&gt;Pylint&#8217;s worst mark : 8.82&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;0.2.1 [2013_03_29]&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;fixed a bug in (bod)dchars.py : vowels TIBETAN VOWEL SIGN II and
+TIBETAN VOWEL SIGN UU are now well recognized.&lt;/li&gt;
+&lt;li&gt;(bod) bodsan module uses the internal structure computed by
+GetInternalStructure() to transliterate tibetan into sanskrit.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;0.2.0 [2013_03_29]&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;(bod) new files : internalstructure.py, assumptions.py&lt;/li&gt;
+&lt;li&gt;no more &#8220;bot&#8221; (instead of &#8216;bod&#8217;) anymore in the code.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;0.2.0 [2013_03_29]&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;bod : unicode-&amp;gt;EWTS has been improved&lt;/li&gt;
+&lt;li&gt;update dchars/tests/languages/bod/transliterations/ewts_tests.py&lt;/li&gt;
+&lt;li&gt;first steps with bodsan.py (tibetan &amp;lt;-&amp;gt; sanskrit)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;0.1.9 [2013_03_28]&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;bod : unicode-&amp;gt;EWTS seems to work on all &#8220;pure tibetan&#8221; words.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;0.1.8 [2013_03_25]&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;bod : unicode-&amp;gt;EWTS well advanced&lt;/li&gt;
+&lt;li&gt;bod : first steps with EWTS-&amp;gt;unicode&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;0.1.7 [2013_03_24]&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;first steps with bod (Tibetan)&lt;/li&gt;
+&lt;li&gt;index.rst has been modified : let&#8217;s hope this page is now easier to read !&lt;/li&gt;
+&lt;li&gt;fixed typos in sans.rst, lat.rst, howto_use.rst&lt;/li&gt;
+&lt;li&gt;code quality :&lt;ul&gt;
+&lt;li&gt;header_please_test.py ok&lt;/li&gt;
+&lt;li&gt;61 tests, all ok&lt;/li&gt;
+&lt;li&gt;Pylint&#8217;s worst mark : 9.47&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;(DChars presented on linuxfr.org)&lt;/p&gt;
+&lt;p&gt;0.1.6 [2013_03_22]&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;Sphinx&#8217; documentation ok.&lt;/li&gt;
+&lt;li&gt;remove the old dchars/languages/hbo/transliterations/default.py&lt;/li&gt;
+&lt;li&gt;speed up the code by removing some calls to get_default_symbol()&lt;/li&gt;
+&lt;li&gt;test functions test_from_srcstr_2_srcstr() are now much harder (reciprocal identity used)&lt;/li&gt;
+&lt;li&gt;remove some unused lines of code in san/translations/itrans.py concerning nukta point.&lt;/li&gt;
+&lt;li&gt;fix a bug in iso15919.py : dchar.dependentvowel = None instead of the stupid &#8221; = False&#8221;&lt;/li&gt;
+&lt;li&gt;code quality :&lt;ul&gt;
+&lt;li&gt;header_please_test.py ok&lt;/li&gt;
+&lt;li&gt;61 tests, all ok&lt;/li&gt;
+&lt;li&gt;Pylint&#8217;s worst mark : 9.47&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;0.1.5 [2013_03_22]&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;Sphinx&#8217;s documentation : not for Sanskrit and no translations.&lt;/li&gt;
+&lt;li&gt;bug fixed : san/dchars.py knows how to handle the &#8220;a&#8221; vowel in order to pass the srcstr_2_srcstr test.&lt;/li&gt;
+&lt;li&gt;repr_as_a_string() renamed as source_string_representation()&lt;/li&gt;
+&lt;li&gt;bug fixed in DString.__str__ : &#8220;&#8221;.join(), not &#8220;n&#8221;.join().&lt;/li&gt;
+&lt;li&gt;add to all languages the DStringXXX.get_transliteration() function in order to
+use the DEFAULT_TRANSLITERATION_METHOD if no method if given to the function.&lt;/li&gt;
+&lt;li&gt;remove the useless &#8220;import traceback&#8221; in dchars/errors/errors.py&lt;/li&gt;
+&lt;li&gt;functions&#8217; names has been harmonized : ...trans_lstring &amp;gt; ...translit_str, ...transli_string &amp;gt; ...translit_str, ...translistring &amp;gt; ...translit_str&lt;/li&gt;
+&lt;li&gt;transliteration&#8217;s &#8220;default&#8221; method (lat,hbo,grc) renamed as &#8220;basic&#8221;&lt;/li&gt;
+&lt;li&gt;code quality :&lt;ul&gt;
+&lt;li&gt;header_please_test.py ok&lt;/li&gt;
+&lt;li&gt;55 tests, 55 ok&lt;/li&gt;
+&lt;li&gt;Pylint&#8217;s worst mark : 9.47&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;0.1.4 [2013_03_19]&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&#8221;DIGIT&#8221; &amp;gt; &#8220;OTHER_SYMBOL&#8221;&lt;/li&gt;
+&lt;li&gt;PUNCTUATION and DIGITS are now separated objects : a digit is not a punctuation
+sign anymore. (tested)&lt;/li&gt;
+&lt;li&gt;the validity attribute is checked in every test of every language&lt;/li&gt;
+&lt;li&gt;problem with hbo multiple cantillation&#8217;s marks solved (E.g : Psalm 18.12)&lt;/li&gt;
+&lt;li&gt;dchar__get_translistring &amp;gt; dchar__get_trans_lstring&lt;/li&gt;
+&lt;li&gt;dchar_init_from_translistring &amp;gt; dchar_init_from_trans_lstring&lt;/li&gt;
+&lt;li&gt;(lat) : check if &#8220;y&#8221; + diacritics works (ok)&lt;/li&gt;
+&lt;li&gt;code quality :&lt;ul&gt;
+&lt;li&gt;57 tests, 57 ok&lt;/li&gt;
+&lt;li&gt;Pylint&#8217;s worst mark : 9.47&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;0.1.3 [2013_03_18]&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;code cleaning&lt;/li&gt;
+&lt;li&gt;tests with Pylint&lt;/li&gt;
+&lt;li&gt;code quality :&lt;ul&gt;
+&lt;li&gt;53 tests, 52 ok&lt;/li&gt;
+&lt;li&gt;Pylint&#8217;s worst mark : 9.47&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;0.1.2 [2013_03_18]&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;new regex&#8217; pattern for san:iso15919 : it works.&lt;/li&gt;
+&lt;li&gt;53 tests, all ok&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;0.1.1 [2013_03_11]&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;working on iso15919 : not yet ready&lt;/li&gt;
+&lt;li&gt;san/itrans : nukta ok&lt;/li&gt;
+&lt;li&gt;DEFAULT_TRANSLITERATION_METHOD for all languages&lt;/li&gt;
+&lt;li&gt;trans_equivalences for all languages (e.g. in san/itrans : &#8220;RRi&#8221; == &#8220;R^i&#8221;)&lt;/li&gt;
+&lt;li&gt;more documentation about san/itrans&lt;/li&gt;
+&lt;li&gt;DCharacterXXX.reset cleaned up&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;0.1.0 [2013_03_11]&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;(san)itrans ok&lt;/li&gt;
+&lt;li&gt;new structure for DCharacterSAN : hiatus ok&lt;/li&gt;
+&lt;li&gt;44 tests, all ok&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;0.0.9 [2013_03_09]&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;Sanskrit/Devanagari : in progress&lt;/li&gt;
+&lt;li&gt;Latin (lat) ok&lt;/li&gt;
+&lt;li&gt;Name2Symbols.num2name &amp;gt; defaultsymbol2name&lt;/li&gt;
+&lt;li&gt;fixed a bug concerning the hbo.transliteration.default of שּ (shin + daghesh)&lt;/li&gt;
+&lt;li&gt;fixed a but in grc/dchars.py::DCharacterGRC.__eq__ : I forgot capital_letter.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;0.0.8 [2013_03_06]&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;hbo : transliteration ok&lt;/li&gt;
+&lt;li&gt;hbo : DCharacterHBO, DStringHBO tested.&lt;/li&gt;
+&lt;li&gt;(grc, hbo) a lot of code has been factorized to the motherclasses DCharacter, DString&lt;/li&gt;
+&lt;li&gt;grc: new test file (text003_Euripides_Bacchae_1_104.txt)&lt;/li&gt;
+&lt;li&gt;26 tests, all ok.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;0.0.7 [2013_03_05]&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;Ancient Hebrew (hbo) : DCharacterHBO, DStringHBO, not tested&lt;/li&gt;
+&lt;li&gt;new Greek characters : digamma, kai, ...&lt;/li&gt;
+&lt;li&gt;16 tests, all are ok.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;0.0.6 [2013_03_04]&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;new structure for the directories&lt;/li&gt;
+&lt;li&gt;new transliteration for Ancient Greek : perseus&lt;/li&gt;
+&lt;li&gt;14 tests, all are ok.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;0.0.5 [2013_03_04]&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;dchars/stringtools.py&lt;/li&gt;
+&lt;li&gt;languages/grc/transliteration/default.py&lt;/li&gt;
+&lt;li&gt;fixed a lot of bugs in grc module.&lt;/li&gt;
+&lt;li&gt;two available translitteration for Ancient Greek : default, betacode&lt;/li&gt;
+&lt;li&gt;11 tests, all are ok.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;0.0.4 [2013_03_03]&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;dchars/regexstring.py&lt;/li&gt;
+&lt;li&gt;languages/grc/symbols.py&lt;/li&gt;
+&lt;li&gt;class Name2Symbols in dchars/name2symbols.py&lt;/li&gt;
+&lt;li&gt;7 tests, all are ok.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;0.0.3 [2013_03_02]&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;class Name2Symbols&lt;/li&gt;
+&lt;li&gt;Ancient Greek is nearly ok.&lt;/li&gt;
+&lt;li&gt;5 tests, all ok&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;0.0.2 [2013_02_28]&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;DCharacterGRC::self.error&lt;/li&gt;
+&lt;li&gt;4 tests, 2 failures&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;0.0.1 [2013_02_27]&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;classes DCharacter, DCharacterString&lt;/li&gt;
+&lt;li&gt;classes DCharacterGRC, DCharacterStringGRC&lt;/li&gt;
+&lt;li&gt;no tests&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/article&gt;</p>
+<blockquote>
+<div><p>&lt;/div&gt;</p>
+<blockquote>
+<div><blockquote>
+<div><blockquote>
+<div><blockquote>
+<div>&lt;/div&gt;</div></blockquote>
+<p>&lt;/div&gt;</p>
+<p>&lt;a href=&#8221;#jump-to-line&#8221; rel=&#8221;facebox[.linejump]&#8221; data-hotkey=&#8221;l&#8221; class=&#8221;js-jump-to-line&#8221; style=&#8221;display:none&#8221;&gt;Jump to Line&lt;/a&gt;
+&lt;div id=&#8221;jump-to-line&#8221; style=&#8221;display:none&#8221;&gt;</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>&lt;form accept-charset=&#8221;UTF-8&#8221; class=&#8221;js-jump-to-line-form&#8221;&gt;</dt>
+<dd>&lt;input class=&#8221;linejump-input js-jump-to-line-field&#8221; type=&#8221;text&#8221; placeholder=&#8221;Jump to line&amp;hellip;&#8221;&gt;
+&lt;button type=&#8221;submit&#8221; class=&#8221;button&#8221;&gt;Go&lt;/button&gt;</dd>
+</dl>
+<p>&lt;/form&gt;</p>
+</div></blockquote>
+<p>&lt;/div&gt;</p>
+</div></blockquote>
+<p>&lt;/div&gt;</p>
+</div></blockquote>
+<p>&lt;/div&gt;</p>
+</div></blockquote>
+</div></blockquote>
+<p>&lt;/div&gt;</p>
+<dl class="docutils">
+<dt>&lt;div id=&#8221;js-frame-loading-template&#8221; class=&#8221;frame frame-loading large-loading-area&#8221; style=&#8221;display:none;&#8221;&gt;</dt>
+<dd>&lt;img class=&#8221;js-frame-loading-spinner&#8221; src=&#8221;<a class="reference external" href="https://a248.e.akamai.net/assets.github.com/images/spinners/octocat-spinner-128.gif">https://a248.e.akamai.net/assets.github.com/images/spinners/octocat-spinner-128.gif</a>&#8221; height=&#8221;64&#8221; width=&#8221;64&#8221;&gt;</dd>
+</dl>
+<p>&lt;/div&gt;</p>
+<blockquote>
+<div><blockquote>
+<div><blockquote>
+<div><blockquote>
+<div>&lt;/div&gt;</div></blockquote>
+<p>&lt;/div&gt;
+&lt;div class=&#8221;modal-backdrop&#8221;&gt;&lt;/div&gt;</p>
+</div></blockquote>
+<p>&lt;/div&gt;</p>
+<blockquote>
+<div>&lt;div id=&#8221;footer-push&#8221;&gt;&lt;/div&gt;&lt;!&#8211; hack for sticky footer &#8211;&gt;</div></blockquote>
+<p>&lt;/div&gt;&lt;!&#8211; end of wrapper - hack for sticky footer &#8211;&gt;</p>
+<blockquote>
+<div>&lt;!&#8211; footer &#8211;&gt;
+&lt;div id=&#8221;footer&#8221;&gt;</div></blockquote>
+</div></blockquote>
+<p>&lt;div class=&#8221;container clearfix&#8221;&gt;</p>
+<blockquote>
+<div><blockquote>
+<div><dl class="docutils">
+<dt>&lt;dl class=&#8221;footer_nav&#8221;&gt;</dt>
+<dd>&lt;dt&gt;GitHub&lt;/dt&gt;
+&lt;dd&gt;&lt;a href=&#8221;/about&#8221;&gt;About us&lt;/a&gt;&lt;/dd&gt;
+&lt;dd&gt;&lt;a href=&#8221;/blog&#8221;&gt;Blog&lt;/a&gt;&lt;/dd&gt;
+&lt;dd&gt;&lt;a href=&#8221;/contact&#8221;&gt;Contact &amp;amp; support&lt;/a&gt;&lt;/dd&gt;
+&lt;dd&gt;&lt;a href=&#8221;<a class="reference external" href="https://enterprise.github.com/">https://enterprise.github.com/</a>&#8220;&gt;GitHub Enterprise&lt;/a&gt;&lt;/dd&gt;
+&lt;dd&gt;&lt;a href=&#8221;<a class="reference external" href="https://status.github.com/">https://status.github.com/</a>&#8220;&gt;Site status&lt;/a&gt;&lt;/dd&gt;</dd>
+</dl>
+<p>&lt;/dl&gt;</p>
+<dl class="docutils">
+<dt>&lt;dl class=&#8221;footer_nav&#8221;&gt;</dt>
+<dd>&lt;dt&gt;Applications&lt;/dt&gt;
+&lt;dd&gt;&lt;a href=&#8221;<a class="reference external" href="http://mac.github.com/">http://mac.github.com/</a>&#8220;&gt;GitHub for Mac&lt;/a&gt;&lt;/dd&gt;
+&lt;dd&gt;&lt;a href=&#8221;<a class="reference external" href="http://windows.github.com/">http://windows.github.com/</a>&#8220;&gt;GitHub for Windows&lt;/a&gt;&lt;/dd&gt;
+&lt;dd&gt;&lt;a href=&#8221;<a class="reference external" href="http://eclipse.github.com/">http://eclipse.github.com/</a>&#8220;&gt;GitHub for Eclipse&lt;/a&gt;&lt;/dd&gt;
+&lt;dd&gt;&lt;a href=&#8221;<a class="reference external" href="http://mobile.github.com/">http://mobile.github.com/</a>&#8220;&gt;GitHub mobile apps&lt;/a&gt;&lt;/dd&gt;</dd>
+</dl>
+<p>&lt;/dl&gt;</p>
+<dl class="docutils">
+<dt>&lt;dl class=&#8221;footer_nav&#8221;&gt;</dt>
+<dd>&lt;dt&gt;Services&lt;/dt&gt;
+&lt;dd&gt;&lt;a href=&#8221;<a class="reference external" href="http://get.gaug.es/">http://get.gaug.es/</a>&#8220;&gt;Gauges: Web analytics&lt;/a&gt;&lt;/dd&gt;
+&lt;dd&gt;&lt;a href=&#8221;<a class="reference external" href="https://speakerdeck.com">https://speakerdeck.com</a>&#8220;&gt;Speaker Deck: Presentations&lt;/a&gt;&lt;/dd&gt;
+&lt;dd&gt;&lt;a href=&#8221;<a class="reference external" href="https://gist.github.com">https://gist.github.com</a>&#8220;&gt;Gist: Code snippets&lt;/a&gt;&lt;/dd&gt;
+&lt;dd&gt;&lt;a href=&#8221;<a class="reference external" href="https://jobs.github.com/">https://jobs.github.com/</a>&#8220;&gt;Job board&lt;/a&gt;&lt;/dd&gt;</dd>
+</dl>
+<p>&lt;/dl&gt;</p>
+<dl class="docutils">
+<dt>&lt;dl class=&#8221;footer_nav&#8221;&gt;</dt>
+<dd>&lt;dt&gt;Documentation&lt;/dt&gt;
+&lt;dd&gt;&lt;a href=&#8221;<a class="reference external" href="https://help.github.com/">https://help.github.com/</a>&#8220;&gt;GitHub Help&lt;/a&gt;&lt;/dd&gt;
+&lt;dd&gt;&lt;a href=&#8221;<a class="reference external" href="http://developer.github.com/">http://developer.github.com/</a>&#8220;&gt;Developer API&lt;/a&gt;&lt;/dd&gt;
+&lt;dd&gt;&lt;a href=&#8221;<a class="reference external" href="http://github.github.com/github-flavored-markdown/">http://github.github.com/github-flavored-markdown/</a>&#8220;&gt;GitHub Flavored Markdown&lt;/a&gt;&lt;/dd&gt;
+&lt;dd&gt;&lt;a href=&#8221;<a class="reference external" href="http://pages.github.com/">http://pages.github.com/</a>&#8220;&gt;GitHub Pages&lt;/a&gt;&lt;/dd&gt;</dd>
+</dl>
+<p>&lt;/dl&gt;</p>
+<dl class="docutils">
+<dt>&lt;dl class=&#8221;footer_nav&#8221;&gt;</dt>
+<dd>&lt;dt&gt;More&lt;/dt&gt;
+&lt;dd&gt;&lt;a href=&#8221;<a class="reference external" href="http://training.github.com/">http://training.github.com/</a>&#8220;&gt;Training&lt;/a&gt;&lt;/dd&gt;
+&lt;dd&gt;&lt;a href=&#8221;/edu&#8221;&gt;Students &amp;amp; teachers&lt;/a&gt;&lt;/dd&gt;
+&lt;dd&gt;&lt;a href=&#8221;<a class="reference external" href="http://shop.github.com">http://shop.github.com</a>&#8220;&gt;The Shop&lt;/a&gt;&lt;/dd&gt;
+&lt;dd&gt;&lt;a href=&#8221;/plans&#8221;&gt;Plans &amp;amp; pricing&lt;/a&gt;&lt;/dd&gt;
+&lt;dd&gt;&lt;a href=&#8221;<a class="reference external" href="http://octodex.github.com/">http://octodex.github.com/</a>&#8220;&gt;The Octodex&lt;/a&gt;&lt;/dd&gt;</dd>
+</dl>
+<p>&lt;/dl&gt;</p>
+<p>&lt;hr class=&#8221;footer-divider&#8221;&gt;</p>
+</div></blockquote>
+<p>&lt;p class=&#8221;right&#8221;&gt;&amp;copy; 2013 &lt;span title=&#8221;0.99460s from fe17.rs.github.com&#8221;&gt;GitHub&lt;/span&gt;, Inc. All rights reserved.&lt;/p&gt;
+&lt;a class=&#8221;left&#8221; href=&#8221;/&#8221;&gt;</p>
+<blockquote>
+<div>&lt;span class=&#8221;mega-octicon octicon-mark-github&#8221;&gt;&lt;/span&gt;</div></blockquote>
+<p>&lt;/a&gt;
+&lt;ul id=&#8221;legal&#8221;&gt;</p>
+<blockquote>
+<div>&lt;li&gt;&lt;a href=&#8221;/site/terms&#8221;&gt;Terms of Service&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#8221;/site/privacy&#8221;&gt;Privacy&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#8221;/security&#8221;&gt;Security&lt;/a&gt;&lt;/li&gt;</div></blockquote>
+<p>&lt;/ul&gt;</p>
+</div></blockquote>
+<p>&lt;/div&gt;&lt;!&#8211; /.container &#8211;&gt;</p>
+</div></blockquote>
+<p>&lt;/div&gt;&lt;!&#8211; /.#footer &#8211;&gt;</p>
+<blockquote>
+<div><blockquote>
+<div>&lt;div class=&#8221;fullscreen-overlay js-fullscreen-overlay&#8221; id=&#8221;fullscreen_overlay&#8221;&gt;</div></blockquote>
+<dl class="docutils">
+<dt>&lt;div class=&#8221;fullscreen-container js-fullscreen-container&#8221;&gt;</dt>
+<dd><dl class="first docutils">
+<dt>&lt;div class=&#8221;textarea-wrap&#8221;&gt;</dt>
+<dd><dl class="first last docutils">
+<dt>&lt;textarea name=&#8221;fullscreen-contents&#8221; id=&#8221;fullscreen-contents&#8221; class=&#8221;js-fullscreen-contents&#8221; placeholder=&#8221;&#8221; data-suggester=&#8221;fullscreen_suggester&#8221;&gt;&lt;/textarea&gt;</dt>
+<dd><dl class="first docutils">
+<dt>&lt;div class=&#8221;suggester-container&#8221;&gt;</dt>
+<dd><dl class="first docutils">
+<dt>&lt;div class=&#8221;suggester fullscreen-suggester js-navigation-container&#8221; id=&#8221;fullscreen_suggester&#8221;</dt>
+<dd>data-url=&#8221;/suizokukan/dchars/suggestions/commit&#8221;&gt;</dd>
+</dl>
+<p class="last">&lt;/div&gt;</p>
+</dd>
+</dl>
+<p class="last">&lt;/div&gt;</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="last">&lt;/div&gt;</p>
+</dd>
+</dl>
+<p>&lt;/div&gt;
+&lt;div class=&#8221;fullscreen-sidebar&#8221;&gt;</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>&lt;a href=&#8221;#&#8221; class=&#8221;exit-fullscreen js-exit-fullscreen tooltipped leftwards&#8221; title=&#8221;Exit Zen Mode&#8221;&gt;</dt>
+<dd>&lt;span class=&#8221;mega-octicon octicon-screen-normal&#8221;&gt;&lt;/span&gt;</dd>
+</dl>
+<p>&lt;/a&gt;
+&lt;a href=&#8221;#&#8221; class=&#8221;theme-switcher js-theme-switcher tooltipped leftwards&#8221;</p>
+<blockquote>
+<div>title=&#8221;Switch themes&#8221;&gt;
+&lt;span class=&#8221;octicon octicon-color-mode&#8221;&gt;&lt;/span&gt;</div></blockquote>
+<p>&lt;/a&gt;</p>
+</div></blockquote>
+<p>&lt;/div&gt;</p>
+</div></blockquote>
+<p>&lt;/div&gt;</p>
+<blockquote>
+<div><blockquote>
+<div><dl class="docutils">
+<dt>&lt;div id=&#8221;ajax-error-message&#8221; class=&#8221;flash flash-error&#8221;&gt;</dt>
+<dd>&lt;span class=&#8221;octicon octicon-alert&#8221;&gt;&lt;/span&gt;
+&lt;a href=&#8221;#&#8221; class=&#8221;octicon octicon-remove-close close ajax-error-dismiss&#8221;&gt;&lt;/a&gt;
+Something went wrong with that request. Please try again.</dd>
+</dl>
+<p>&lt;/div&gt;</p>
+<p>&lt;span id=&#8217;server_response_time&#8217; data-time=&#8216;0.99509&#8217; data-host=&#8217;fe17&#8217;&gt;&lt;/span&gt;</p>
+</div></blockquote>
+<p>&lt;/body&gt;</p>
+</div></blockquote>
+<p>&lt;/html&gt;</p>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Sujet précédent</h4>
+  <p class="topless"><a href="development.html"
+                        title="Chapitre précédent">développement</a></p>
+  <h4>Sujet suivant</h4>
+  <p class="topless"><a href="roadmap.html"
+                        title="Chapitre suivant">&lt;no title&gt;</a></p>
+  <h3>Cette page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/changelog.txt"
+           rel="nofollow">Montrer la source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Recherche rapide</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Saisissez un mot clef ou un nom de module, classe ou fonction.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="Index général"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Index des modules Python"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="roadmap.html" title="&lt;no title&gt;"
+             >suivant</a> |</li>
+        <li class="right" >
+          <a href="development.html" title="développement"
+             >précédent</a> |</li>
+        <li><a href="index.html">DChars 0.3.8 documentation</a> &raquo;</li>
+          <li><a href="development.html" >développement</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2012, suizokukan (Xavier Faure).
+      Créé avec <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,139 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>qualité du code &mdash; DChars 0.3.8 documentation</title>
+    
+    <link rel="stylesheet" href="_static/theme.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '0.3.8',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <link rel="top" title="DChars 0.3.8 documentation" href="index.html" />
+    <link rel="up" title="développement" href="development.html" />
+    <link rel="next" title="structure des répertoires" href="direcstructure.html" />
+    <link rel="prev" title="&lt;no title&gt;" href="roadmap.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="Index général"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Index des modules Python"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="direcstructure.html" title="structure des répertoires"
+             accesskey="N">suivant</a> |</li>
+        <li class="right" >
+          <a href="roadmap.html" title="&lt;no title&gt;"
+             accesskey="P">précédent</a> |</li>
+        <li><a href="index.html">DChars 0.3.8 documentation</a> &raquo;</li>
+          <li><a href="development.html" accesskey="U">développement</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="code-quality-title">
+<h1>qualité du code<a class="headerlink" href="#code-quality-title" title="Lien permanent vers ce titre">¶</a></h1>
+<p>La qualité du code compte : n&#8217;hésitez pas à contacter l&#8217;auteur pour l&#8217;améliorer !</p>
+<div class="section" id="global-tests">
+<h2>tests généraux<a class="headerlink" href="#global-tests" title="Lien permanent vers ce titre">¶</a></h2>
+<p>La qualité du code est vérifiée grâce à deux tests : <br /> <br /> <tt class="docutils literal"><span class="pre">./header_please.py</span></tt> vérifie que chaque fichier a une en-tête correcte. <br /> <br /> <tt class="docutils literal"><span class="pre">./pylint_tests</span></tt> lance Pylint qui note chaque fichier du projet. Le fichier de configuration de Pylint est modifié de la façon suivante : <br /> * max-line-length=100 <br /> * disable=W0142 (used * or ** magic) <br /> * max-public-methods=25 <br /> * max-args=10 <br /> * max-locals=20</p>
+</div>
+<div class="section" id="unittesting">
+<h2>unit testing<a class="headerlink" href="#unittesting" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Ce programme utilise <tt class="docutils literal"><span class="pre">nosetest</span></tt> pour ses tests unitaires, regroupés dans <tt class="docutils literal"><span class="pre">/tests/</span></tt>. Pour lancer les tests unitaires : <tt class="docutils literal"><span class="pre">./unittests.sh</span></tt></p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table des matières</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">qualité du code</a><ul>
+<li><a class="reference internal" href="#global-tests">tests généraux</a></li>
+<li><a class="reference internal" href="#unittesting">unit testing</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Sujet précédent</h4>
+  <p class="topless"><a href="roadmap.html"
+                        title="Chapitre précédent">&lt;no title&gt;</a></p>
+  <h4>Sujet suivant</h4>
+  <p class="topless"><a href="direcstructure.html"
+                        title="Chapitre suivant">structure des répertoires</a></p>
+  <h3>Cette page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/code_quality.txt"
+           rel="nofollow">Montrer la source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Recherche rapide</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Saisissez un mot clef ou un nom de module, classe ou fonction.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="Index général"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Index des modules Python"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="direcstructure.html" title="structure des répertoires"
+             >suivant</a> |</li>
+        <li class="right" >
+          <a href="roadmap.html" title="&lt;no title&gt;"
+             >précédent</a> |</li>
+        <li><a href="index.html">DChars 0.3.8 documentation</a> &raquo;</li>
+          <li><a href="development.html" >développement</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2012, suizokukan (Xavier Faure).
+      Créé avec <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

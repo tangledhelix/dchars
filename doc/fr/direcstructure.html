@@ -1,0 +1,153 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>structure des répertoires &mdash; DChars 0.3.8 documentation</title>
+    
+    <link rel="stylesheet" href="_static/theme.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '0.3.8',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <link rel="top" title="DChars 0.3.8 documentation" href="index.html" />
+    <link rel="up" title="développement" href="development.html" />
+    <link rel="next" title="écrire la documentation" href="writingdoc.html" />
+    <link rel="prev" title="qualité du code" href="code_quality.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="Index général"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Index des modules Python"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="writingdoc.html" title="écrire la documentation"
+             accesskey="N">suivant</a> |</li>
+        <li class="right" >
+          <a href="code_quality.html" title="qualité du code"
+             accesskey="P">précédent</a> |</li>
+        <li><a href="index.html">DChars 0.3.8 documentation</a> &raquo;</li>
+          <li><a href="development.html" accesskey="U">développement</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="directstructure-title">
+<h1>structure des répertoires<a class="headerlink" href="#directstructure-title" title="Lien permanent vers ce titre">¶</a></h1>
+<div class="highlight-none"><div class="highlight"><pre>./create_documentation.py    : create the documentation, has as --upload argument
+./header_please.py           : check the header of all files named in ./project_files.py
+./header_template.txt        : template used by ./header_please.py
+./make_devversion.py         : create the global backup.
+./nosetetests_setup.cfg      : configuration file for nosetests
+./projects_files.py          : list of all files in the project
+./pylint.rc                  : configuration file for pylint
+./pylint_tests.py            : launch the Pylint&#39;s tests for all files named in ./project_files.py
+./RSTconf_template.txt       : template for conf.py, a file created for Sphinx
+./RST_template.txt           : template for .rst files created for Sphinx
+./unittests.sh               : launch the unit tests with nosetest
+
+./dchars/                    : main directory
+./dchars/dchars.py           : mother-classes DCharacter and DString
+./dchars/documentation       : ... and specially documentation/Sphinx/RSTsourcefiles
+./dchars/dicttools.py        : utilities for dictionaries
+./dchars/errors/             : class DCharsError
+./dchars/languages/          : [see below]
+./dchars/lstringtools.py     : utilities for list of strings.
+./dchars/name2symbols.py     : class Name2Symbols
+./dchars/symbols.py/         : symbol(s) used by every languages
+./dchars/system              : (numversion and program&#39;s name defined in communia.py)
+./dchars/tests               : unit tests
+
+and for each language in ./dchars/languages/xxx :
+./dchars/languages/xxx/dchars.py     : DCharacterXXX and DStringXXX
+./dchars/languages/xxx/symbols.py    : Name2Symbols objects (SYMB_CONSONANTS, ...)
+
+and for each transliteration&#39;s method defined in ./dchars/languages/xxx/transliteration :
+./dchars/languages/xxx/transliteration/methodxxx.py
+</pre></div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Sujet précédent</h4>
+  <p class="topless"><a href="code_quality.html"
+                        title="Chapitre précédent">qualité du code</a></p>
+  <h4>Sujet suivant</h4>
+  <p class="topless"><a href="writingdoc.html"
+                        title="Chapitre suivant">écrire la documentation</a></p>
+  <h3>Cette page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/direcstructure.txt"
+           rel="nofollow">Montrer la source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Recherche rapide</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Saisissez un mot clef ou un nom de module, classe ou fonction.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="Index général"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Index des modules Python"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="writingdoc.html" title="écrire la documentation"
+             >suivant</a> |</li>
+        <li class="right" >
+          <a href="code_quality.html" title="qualité du code"
+             >précédent</a> |</li>
+        <li><a href="index.html">DChars 0.3.8 documentation</a> &raquo;</li>
+          <li><a href="development.html" >développement</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2012, suizokukan (Xavier Faure).
+      Créé avec <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,1054 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>dchars.languages.bod.dcharacter &mdash; DChars 0.3.8 documentation</title>
+    
+    <link rel="stylesheet" href="_static/theme.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '0.3.8',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="DChars 0.3.8 documentation" href="index.html" />
+    <link rel="up" title="source code" href="source_code.html" />
+    <link rel="next" title="dchars.languages.bod.dstring" href="dchars.languages.bod.dstring.html" />
+    <link rel="prev" title="dchars.languages.bod.buffer" href="dchars.languages.bod.buffer.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="dchars.languages.bod.dstring.html" title="dchars.languages.bod.dstring"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="dchars.languages.bod.buffer.html" title="dchars.languages.bod.buffer"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">DChars 0.3.8 documentation</a> &raquo;</li>
+          <li><a href="source_code.html" accesskey="U">source code</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="dchars-languages-bod-dcharacter">
+<h1>dchars.languages.bod.dcharacter<a class="headerlink" href="#dchars-languages-bod-dcharacter" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="documentation">
+<h2>Documentation<a class="headerlink" href="#documentation" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="source-code">
+<h2>Source code<a class="headerlink" href="#source-code" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><pre>  
+
+
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# githubog: http://ogp.me/ns/fb/githubog#"&gt;
+    &lt;meta charset='utf-8'&gt;
+    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
+        &lt;title&gt;dchars/0.3.8/dchars/languages/bod/dcharacter.py at 223edf6bde0d6c8a1475971375271f82674571b3 · suizokukan/dchars&lt;/title&gt;
+    &lt;link rel="search" type="application/opensearchdescription+xml" href="/opensearch.xml" title="GitHub" /&gt;
+    &lt;link rel="fluid-icon" href="https://github.com/fluidicon.png" title="GitHub" /&gt;
+    &lt;link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-114.png" /&gt;
+    &lt;link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114.png" /&gt;
+    &lt;link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-144.png" /&gt;
+    &lt;link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144.png" /&gt;
+    &lt;link rel="logo" type="image/svg" href="https://github-media-downloads.s3.amazonaws.com/github-logo.svg" /&gt;
+    &lt;meta property="og:image" content="https://a248.e.akamai.net/assets.github.com/images/modules/logos_page/Octocat.png"&gt;
+    &lt;link rel="assets" href="https://a248.e.akamai.net/assets.github.com/"&gt;
+    &lt;link rel="xhr-socket" href="/_sockets" /&gt;
+    
+
+
+    &lt;meta name="msapplication-TileImage" content="/windows-tile.png" /&gt;
+    &lt;meta name="msapplication-TileColor" content="#ffffff" /&gt;
+    &lt;meta name="selected-link" value="repo_source" data-pjax-transient /&gt;
+    &lt;meta content="collector.githubapp.com" name="octolytics-host" /&gt;&lt;meta content="github" name="octolytics-app-id" /&gt;&lt;meta content="3998078" name="octolytics-actor-id" /&gt;&lt;meta content="suizokukan" name="octolytics-actor-login" /&gt;&lt;meta content="1b97d94afd4bbfaba9870e2d819bc9fd3d6d417d47e92c338e8db94d5c7a838f" name="octolytics-actor-hash" /&gt;
+
+    
+    
+    &lt;link rel="icon" type="image/x-icon" href="/favicon.ico" /&gt;
+
+    &lt;meta content="authenticity_token" name="csrf-param" /&gt;
+&lt;meta content="JuSGFeLXQes4GbqgvXQALWAimqljzWfJHCx2QzqShCk=" name="csrf-token" /&gt;
+
+    &lt;link href="https://a248.e.akamai.net/assets.github.com/assets/github-52c7f5d250c57ca1380f2a5703d96d015d5eb533.css" media="all" rel="stylesheet" type="text/css" /&gt;
+    &lt;link href="https://a248.e.akamai.net/assets.github.com/assets/github2-58b10e96bcdc3e0d5ea328ffcd01e36e2e8fd07e.css" media="all" rel="stylesheet" type="text/css" /&gt;
+    
+
+
+      &lt;script src="https://a248.e.akamai.net/assets.github.com/assets/frameworks-4c434fa1705bf526e191eec0cd8fab1a5ce3e326.js" type="text/javascript"&gt;&lt;/script&gt;
+      &lt;script src="https://a248.e.akamai.net/assets.github.com/assets/github-c9ee6873d0b9bc74d5f353bd006a81aa3efc29b3.js" type="text/javascript"&gt;&lt;/script&gt;
+      
+      &lt;meta http-equiv="x-pjax-version" content="9a05a1423af26d07af36db19fa49a2c8"&gt;
+
+        &lt;link data-pjax-transient rel='permalink' href='/suizokukan/dchars/blob/223edf6bde0d6c8a1475971375271f82674571b3/0.3.8/dchars/languages/bod/dcharacter.py'&gt;
+    &lt;meta property="og:title" content="dchars"/&gt;
+    &lt;meta property="og:type" content="githubog:gitrepository"/&gt;
+    &lt;meta property="og:url" content="https://github.com/suizokukan/dchars"/&gt;
+    &lt;meta property="og:image" content="https://secure.gravatar.com/avatar/8e0379710f523b8ef48a1d74fea00430?s=420&amp;amp;d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png"/&gt;
+    &lt;meta property="og:site_name" content="GitHub"/&gt;
+    &lt;meta property="og:description" content="dchars - D(etailed) char(acter)s for Biblical Hebrew, Ancient Greek, Sanskrit, Latin and Tibetan"/&gt;
+    &lt;meta property="twitter:card" content="summary"/&gt;
+    &lt;meta property="twitter:site" content="@GitHub"&gt;
+    &lt;meta property="twitter:title" content="suizokukan/dchars"/&gt;
+
+    &lt;meta name="description" content="dchars - D(etailed) char(acter)s for Biblical Hebrew, Ancient Greek, Sanskrit, Latin and Tibetan" /&gt;
+
+
+    &lt;meta content="3998078" name="octolytics-dimension-user_id" /&gt;&lt;meta content="suizokukan" name="octolytics-dimension-user_login" /&gt;&lt;meta content="10844644" name="octolytics-dimension-repository_id" /&gt;&lt;meta content="suizokukan/dchars" name="octolytics-dimension-repository_nwo" /&gt;&lt;meta content="true" name="octolytics-dimension-repository_public" /&gt;&lt;meta content="false" name="octolytics-dimension-repository_is_fork" /&gt;&lt;meta content="10844644" name="octolytics-dimension-repository_network_root_id" /&gt;&lt;meta content="suizokukan/dchars" name="octolytics-dimension-repository_network_root_nwo" /&gt;
+  &lt;link href="https://github.com/suizokukan/dchars/commits/223edf6bde0d6c8a1475971375271f82674571b3.atom" rel="alternate" title="Recent Commits to dchars:223edf6bde0d6c8a1475971375271f82674571b3" type="application/atom+xml" /&gt;
+
+  &lt;/head&gt;
+
+
+  &lt;body class="logged_in page-blob linux vis-public env-production  "&gt;
+    &lt;div id="wrapper"&gt;
+
+      
+      
+      
+
+      &lt;div class="header header-logged-in true"&gt;
+  &lt;div class="container clearfix"&gt;
+
+    &lt;a class="header-logo-invertocat" href="https://github.com/"&gt;
+  &lt;span class="mega-octicon octicon-mark-github"&gt;&lt;/span&gt;
+&lt;/a&gt;
+
+    &lt;div class="divider-vertical"&gt;&lt;/div&gt;
+
+      &lt;a href="/notifications" class="notification-indicator tooltipped downwards" title="You have no unread notifications"&gt;
+    &lt;span class="mail-status all-read"&gt;&lt;/span&gt;
+  &lt;/a&gt;
+  &lt;div class="divider-vertical"&gt;&lt;/div&gt;
+
+
+      &lt;div class="command-bar js-command-bar  in-repository"&gt;
+          &lt;form accept-charset="UTF-8" action="/search" class="command-bar-form" id="top_search_form" method="get"&gt;
+
+&lt;input type="text" data-hotkey=" s" name="q" id="js-command-bar-field" placeholder="Search or type a command" tabindex="1" autocapitalize="off"
+    data-username="suizokukan"
+      data-repo="suizokukan/dchars"
+      data-branch=""
+      data-sha="f07845057ee20083092e05ca34f4b70edff13bc1"
+  &gt;
+
+    &lt;input type="hidden" name="nwo" value="suizokukan/dchars" /&gt;
+
+    &lt;div class="select-menu js-menu-container js-select-menu search-context-select-menu"&gt;
+      &lt;span class="minibutton select-menu-button js-menu-target"&gt;
+        &lt;span class="js-select-button"&gt;This repository&lt;/span&gt;
+      &lt;/span&gt;
+
+      &lt;div class="select-menu-modal-holder js-menu-content js-navigation-container"&gt;
+        &lt;div class="select-menu-modal"&gt;
+
+          &lt;div class="select-menu-item js-navigation-item selected"&gt;
+            &lt;span class="select-menu-item-icon octicon octicon-check"&gt;&lt;/span&gt;
+            &lt;input type="radio" class="js-search-this-repository" name="search_target" value="repository" checked="checked" /&gt;
+            &lt;div class="select-menu-item-text js-select-button-text"&gt;This repository&lt;/div&gt;
+          &lt;/div&gt; &lt;!-- /.select-menu-item --&gt;
+
+          &lt;div class="select-menu-item js-navigation-item"&gt;
+            &lt;span class="select-menu-item-icon octicon octicon-check"&gt;&lt;/span&gt;
+            &lt;input type="radio" name="search_target" value="global" /&gt;
+            &lt;div class="select-menu-item-text js-select-button-text"&gt;All repositories&lt;/div&gt;
+          &lt;/div&gt; &lt;!-- /.select-menu-item --&gt;
+
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+  &lt;span class="octicon help tooltipped downwards" title="Show command bar help"&gt;
+    &lt;span class="octicon octicon-question"&gt;&lt;/span&gt;
+  &lt;/span&gt;
+
+
+  &lt;input type="hidden" name="ref" value="cmdform"&gt;
+
+&lt;/form&gt;
+        &lt;ul class="top-nav"&gt;
+            &lt;li class="explore"&gt;&lt;a href="/explore"&gt;Explore&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="https://gist.github.com"&gt;Gist&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="/blog"&gt;Blog&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href="https://help.github.com"&gt;Help&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/div&gt;
+
+    
+
+  
+
+    &lt;ul id="user-links"&gt;
+      &lt;li&gt;
+        &lt;a href="/suizokukan" class="name"&gt;
+          &lt;img height="20" src="https://secure.gravatar.com/avatar/8e0379710f523b8ef48a1d74fea00430?s=140&amp;amp;d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png" width="20" /&gt; suizokukan
+        &lt;/a&gt;
+      &lt;/li&gt;
+
+        &lt;li&gt;
+          &lt;a href="/new" id="new_repo" class="tooltipped downwards" title="Create a new repo"&gt;
+            &lt;span class="octicon octicon-repo-create"&gt;&lt;/span&gt;
+          &lt;/a&gt;
+        &lt;/li&gt;
+
+        &lt;li&gt;
+          &lt;a href="/settings/profile" id="account_settings"
+            class="tooltipped downwards"
+            title="Account settings "&gt;
+            &lt;span class="octicon octicon-tools"&gt;&lt;/span&gt;
+          &lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+          &lt;a class="tooltipped downwards" href="/logout" data-method="post" id="logout" title="Sign out"&gt;
+            &lt;span class="octicon octicon-log-out"&gt;&lt;/span&gt;
+          &lt;/a&gt;
+        &lt;/li&gt;
+
+    &lt;/ul&gt;
+
+
+&lt;div class="js-new-dropdown-contents hidden"&gt;
+  
+
+&lt;ul class="dropdown-menu"&gt;
+  &lt;li&gt;
+    &lt;a href="/new"&gt;&lt;span class="octicon octicon-repo-create"&gt;&lt;/span&gt; New repository&lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;a href="/organizations/new"&gt;&lt;span class="octicon octicon-list-unordered"&gt;&lt;/span&gt; New organization&lt;/a&gt;
+  &lt;/li&gt;
+
+
+
+    &lt;li class="section-title"&gt;
+      &lt;span title="suizokukan/dchars"&gt;This repository&lt;/span&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;a href="/suizokukan/dchars/issues/new"&gt;&lt;span class="octicon octicon-issue-opened"&gt;&lt;/span&gt; New issue&lt;/a&gt;
+    &lt;/li&gt;
+      &lt;li&gt;
+        &lt;a href="/suizokukan/dchars/settings/collaboration"&gt;&lt;span class="octicon octicon-person-add"&gt;&lt;/span&gt; New collaborator&lt;/a&gt;
+      &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/div&gt;
+
+
+    
+  &lt;/div&gt;
+&lt;/div&gt;
+
+      
+
+      
+
+
+
+
+            &lt;div class="global-notices"&gt;
+      &lt;div class="flash-global"&gt;
+        &lt;div class="container"&gt;
+            &lt;a href="/users/suizokukan/enable_repository_next?nwo=suizokukan%2Fdchars" class="button minibutton flash-action blue" data-method="post"&gt;Enable Repository Next&lt;/a&gt;
+
+            &lt;h2&gt;Hey there, would you like to enable our new repository design?&lt;/h2&gt;
+            &lt;p&gt;We&amp;rsquo;ve been working hard making a &lt;a href="https://github.com/blog/1529-repository-next"&gt;faster, better repository experience&lt;/a&gt; and we&amp;rsquo;d love to share it with you.&lt;/p&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="site hfeed" itemscope itemtype="http://schema.org/WebPage"&gt;
+      &lt;div class="hentry"&gt;
+        
+        &lt;div class="pagehead repohead instapaper_ignore readability-menu "&gt;
+          &lt;div class="container"&gt;
+            &lt;div class="title-actions-bar"&gt;
+              
+
+&lt;ul class="pagehead-actions"&gt;
+
+    &lt;li class="nspr"&gt;
+      &lt;a href="/suizokukan/dchars/pull/new/223edf6bde0d6c8a1475971375271f82674571b3" class="button minibutton btn-pull-request" icon_class="octicon-git-pull-request"&gt;&lt;span class="octicon octicon-git-pull-request"&gt;&lt;/span&gt;Pull Request&lt;/a&gt;
+    &lt;/li&gt;
+
+    &lt;li class="subscription"&gt;
+      &lt;form accept-charset="UTF-8" action="/notifications/subscribe" data-autosubmit="true" data-remote="true" method="post"&gt;&lt;div style="margin:0;padding:0;display:inline"&gt;&lt;input name="authenticity_token" type="hidden" value="JuSGFeLXQes4GbqgvXQALWAimqljzWfJHCx2QzqShCk=" /&gt;&lt;/div&gt;  &lt;input id="repository_id" name="repository_id" type="hidden" value="10844644" /&gt;
+
+    &lt;div class="select-menu js-menu-container js-select-menu"&gt;
+      &lt;span class="minibutton select-menu-button  js-menu-target"&gt;
+        &lt;span class="js-select-button"&gt;
+          &lt;span class="octicon octicon-eye-unwatch"&gt;&lt;/span&gt;
+          Unwatch
+        &lt;/span&gt;
+      &lt;/span&gt;
+
+      &lt;div class="select-menu-modal-holder"&gt;
+        &lt;div class="select-menu-modal subscription-menu-modal js-menu-content"&gt;
+          &lt;div class="select-menu-header"&gt;
+            &lt;span class="select-menu-title"&gt;Notification status&lt;/span&gt;
+            &lt;span class="octicon octicon-remove-close js-menu-close"&gt;&lt;/span&gt;
+          &lt;/div&gt; &lt;!-- /.select-menu-header --&gt;
+
+          &lt;div class="select-menu-list js-navigation-container"&gt;
+
+            &lt;div class="select-menu-item js-navigation-item "&gt;
+              &lt;span class="select-menu-item-icon octicon octicon-check"&gt;&lt;/span&gt;
+              &lt;div class="select-menu-item-text"&gt;
+                &lt;input id="do_included" name="do" type="radio" value="included" /&gt;
+                &lt;h4&gt;Not watching&lt;/h4&gt;
+                &lt;span class="description"&gt;You only receive notifications for discussions in which you participate or are @mentioned.&lt;/span&gt;
+                &lt;span class="js-select-button-text hidden-select-button-text"&gt;
+                  &lt;span class="octicon octicon-eye-watch"&gt;&lt;/span&gt;
+                  Watch
+                &lt;/span&gt;
+              &lt;/div&gt;
+            &lt;/div&gt; &lt;!-- /.select-menu-item --&gt;
+
+            &lt;div class="select-menu-item js-navigation-item selected"&gt;
+              &lt;span class="select-menu-item-icon octicon octicon octicon-check"&gt;&lt;/span&gt;
+              &lt;div class="select-menu-item-text"&gt;
+                &lt;input checked="checked" id="do_subscribed" name="do" type="radio" value="subscribed" /&gt;
+                &lt;h4&gt;Watching&lt;/h4&gt;
+                &lt;span class="description"&gt;You receive notifications for all discussions in this repository.&lt;/span&gt;
+                &lt;span class="js-select-button-text hidden-select-button-text"&gt;
+                  &lt;span class="octicon octicon-eye-unwatch"&gt;&lt;/span&gt;
+                  Unwatch
+                &lt;/span&gt;
+              &lt;/div&gt;
+            &lt;/div&gt; &lt;!-- /.select-menu-item --&gt;
+
+            &lt;div class="select-menu-item js-navigation-item "&gt;
+              &lt;span class="select-menu-item-icon octicon octicon-check"&gt;&lt;/span&gt;
+              &lt;div class="select-menu-item-text"&gt;
+                &lt;input id="do_ignore" name="do" type="radio" value="ignore" /&gt;
+                &lt;h4&gt;Ignoring&lt;/h4&gt;
+                &lt;span class="description"&gt;You do not receive any notifications for discussions in this repository.&lt;/span&gt;
+                &lt;span class="js-select-button-text hidden-select-button-text"&gt;
+                  &lt;span class="octicon octicon-mute"&gt;&lt;/span&gt;
+                  Stop ignoring
+                &lt;/span&gt;
+              &lt;/div&gt;
+            &lt;/div&gt; &lt;!-- /.select-menu-item --&gt;
+
+          &lt;/div&gt; &lt;!-- /.select-menu-list --&gt;
+
+        &lt;/div&gt; &lt;!-- /.select-menu-modal --&gt;
+      &lt;/div&gt; &lt;!-- /.select-menu-modal-holder --&gt;
+    &lt;/div&gt; &lt;!-- /.select-menu --&gt;
+
+&lt;/form&gt;
+    &lt;/li&gt;
+
+    &lt;li class="js-toggler-container js-social-container starring-container "&gt;
+      &lt;a href="/suizokukan/dchars/unstar" class="minibutton with-count js-toggler-target star-button starred upwards" title="Unstar this repo" data-remote="true" data-method="post" rel="nofollow"&gt;
+        &lt;span class="octicon octicon-star-delete"&gt;&lt;/span&gt;
+        &lt;span class="text"&gt;Unstar&lt;/span&gt;
+      &lt;/a&gt;
+      &lt;a href="/suizokukan/dchars/star" class="minibutton with-count js-toggler-target star-button unstarred upwards" title="Star this repo" data-remote="true" data-method="post" rel="nofollow"&gt;
+        &lt;span class="octicon octicon-star"&gt;&lt;/span&gt;
+        &lt;span class="text"&gt;Star&lt;/span&gt;
+      &lt;/a&gt;
+      &lt;a class="social-count js-social-count" href="/suizokukan/dchars/stargazers"&gt;0&lt;/a&gt;
+    &lt;/li&gt;
+
+        &lt;li&gt;
+          &lt;a href="/suizokukan/dchars/fork" class="minibutton with-count js-toggler-target fork-button lighter upwards" title="Fork this repo" rel="nofollow" data-method="post"&gt;
+            &lt;span class="octicon octicon-git-branch-create"&gt;&lt;/span&gt;
+            &lt;span class="text"&gt;Fork&lt;/span&gt;
+          &lt;/a&gt;
+          &lt;a href="/suizokukan/dchars/network" class="social-count"&gt;0&lt;/a&gt;
+        &lt;/li&gt;
+
+
+&lt;/ul&gt;
+
+              &lt;h1 itemscope itemtype="http://data-vocabulary.org/Breadcrumb" class="entry-title public"&gt;
+                &lt;span class="repo-label"&gt;&lt;span&gt;public&lt;/span&gt;&lt;/span&gt;
+                &lt;span class="mega-octicon octicon-repo"&gt;&lt;/span&gt;
+                &lt;span class="author vcard"&gt;
+                  &lt;a href="/suizokukan" class="url fn" itemprop="url" rel="author"&gt;
+                  &lt;span itemprop="title"&gt;suizokukan&lt;/span&gt;
+                  &lt;/a&gt;&lt;/span&gt; /
+                &lt;strong&gt;&lt;a href="/suizokukan/dchars" class="js-current-repository"&gt;dchars&lt;/a&gt;&lt;/strong&gt;
+              &lt;/h1&gt;
+            &lt;/div&gt;
+
+            
+  &lt;ul class="tabs"&gt;
+    &lt;li class="pulse-nav"&gt;&lt;a href="/suizokukan/dchars/pulse" class="js-selected-navigation-item " data-selected-links="pulse /suizokukan/dchars/pulse" rel="nofollow"&gt;&lt;span class="octicon octicon-pulse"&gt;&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="/suizokukan/dchars" class="js-selected-navigation-item selected" data-selected-links="repo_source repo_downloads repo_commits repo_tags repo_branches /suizokukan/dchars"&gt;Code&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="/suizokukan/dchars/network" class="js-selected-navigation-item " data-selected-links="repo_network /suizokukan/dchars/network"&gt;Network&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="/suizokukan/dchars/pulls" class="js-selected-navigation-item " data-selected-links="repo_pulls /suizokukan/dchars/pulls"&gt;Pull Requests &lt;span class='counter'&gt;0&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+
+      &lt;li&gt;&lt;a href="/suizokukan/dchars/issues" class="js-selected-navigation-item " data-selected-links="repo_issues /suizokukan/dchars/issues"&gt;Issues &lt;span class='counter'&gt;0&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+
+      &lt;li&gt;&lt;a href="/suizokukan/dchars/wiki" class="js-selected-navigation-item " data-selected-links="repo_wiki /suizokukan/dchars/wiki"&gt;Wiki&lt;/a&gt;&lt;/li&gt;
+
+
+    &lt;li&gt;&lt;a href="/suizokukan/dchars/graphs" class="js-selected-navigation-item " data-selected-links="repo_graphs repo_contributors /suizokukan/dchars/graphs"&gt;Graphs&lt;/a&gt;&lt;/li&gt;
+
+      &lt;li&gt;
+        &lt;a href="/suizokukan/dchars/settings"&gt;Settings&lt;/a&gt;
+      &lt;/li&gt;
+
+  &lt;/ul&gt;
+  
+&lt;div class="tabnav"&gt;
+
+  &lt;span class="tabnav-right"&gt;
+    &lt;ul class="tabnav-tabs"&gt;
+          &lt;li&gt;&lt;a href="/suizokukan/dchars/tags" class="js-selected-navigation-item tabnav-tab" data-selected-links="repo_tags /suizokukan/dchars/tags"&gt;Tags &lt;span class="counter blank"&gt;0&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/span&gt;
+
+  &lt;div class="tabnav-widget scope"&gt;
+
+
+    &lt;div class="select-menu js-menu-container js-select-menu js-branch-menu"&gt;
+      &lt;a class="minibutton select-menu-button js-menu-target" data-hotkey="w" data-ref=""&gt;
+        &lt;span class="octicon octicon-tag"&gt;&lt;/span&gt;
+        &lt;i&gt;tree:&lt;/i&gt;
+        &lt;span class="js-select-button"&gt;223edf6bde&lt;/span&gt;
+      &lt;/a&gt;
+
+      &lt;div class="select-menu-modal-holder js-menu-content js-navigation-container"&gt;
+
+        &lt;div class="select-menu-modal"&gt;
+          &lt;div class="select-menu-header"&gt;
+            &lt;span class="select-menu-title"&gt;Switch branches/tags&lt;/span&gt;
+            &lt;span class="octicon octicon-remove-close js-menu-close"&gt;&lt;/span&gt;
+          &lt;/div&gt; &lt;!-- /.select-menu-header --&gt;
+
+          &lt;div class="select-menu-filters"&gt;
+            &lt;div class="select-menu-text-filter"&gt;
+              &lt;input type="text" id="commitish-filter-field" class="js-filterable-field js-navigation-enable" placeholder="Find or create a branch…"&gt;
+            &lt;/div&gt;
+            &lt;div class="select-menu-tabs"&gt;
+              &lt;ul&gt;
+                &lt;li class="select-menu-tab"&gt;
+                  &lt;a href="#" data-tab-filter="branches" class="js-select-menu-tab"&gt;Branches&lt;/a&gt;
+                &lt;/li&gt;
+                &lt;li class="select-menu-tab"&gt;
+                  &lt;a href="#" data-tab-filter="tags" class="js-select-menu-tab"&gt;Tags&lt;/a&gt;
+                &lt;/li&gt;
+              &lt;/ul&gt;
+            &lt;/div&gt;&lt;!-- /.select-menu-tabs --&gt;
+          &lt;/div&gt;&lt;!-- /.select-menu-filters --&gt;
+
+          &lt;div class="select-menu-list select-menu-tab-bucket js-select-menu-tab-bucket css-truncate" data-tab-filter="branches"&gt;
+
+            &lt;div data-filterable-for="commitish-filter-field" data-filterable-type="substring"&gt;
+
+                &lt;div class="select-menu-item js-navigation-item "&gt;
+                  &lt;span class="select-menu-item-icon octicon octicon-check"&gt;&lt;/span&gt;
+                  &lt;a href="/suizokukan/dchars/blob/master/0.3.8/dchars/languages/bod/dcharacter.py" class="js-navigation-open select-menu-item-text js-select-button-text css-truncate-target" data-name="master" rel="nofollow" title="master"&gt;master&lt;/a&gt;
+                &lt;/div&gt; &lt;!-- /.select-menu-item --&gt;
+            &lt;/div&gt;
+
+              &lt;form accept-charset="UTF-8" action="/suizokukan/dchars/branches" class="js-create-branch select-menu-item select-menu-new-item-form js-navigation-item js-new-item-form" method="post"&gt;&lt;div style="margin:0;padding:0;display:inline"&gt;&lt;input name="authenticity_token" type="hidden" value="JuSGFeLXQes4GbqgvXQALWAimqljzWfJHCx2QzqShCk=" /&gt;&lt;/div&gt;
+
+                &lt;span class="octicon octicon-git-branch-create select-menu-item-icon"&gt;&lt;/span&gt;
+                &lt;div class="select-menu-item-text"&gt;
+                  &lt;h4&gt;Create branch: &lt;span class="js-new-item-name"&gt;&lt;/span&gt;&lt;/h4&gt;
+                  &lt;span class="description"&gt;from ‘223edf6bde0d6c8a1475971375271f82674571b3’&lt;/span&gt;
+                &lt;/div&gt;
+                &lt;input type="hidden" name="name" id="name" class="js-new-item-value"&gt;
+                &lt;input type="hidden" name="branch" id="branch" value="223edf6bde0d6c8a1475971375271f82674571b3" /&gt;
+                &lt;input type="hidden" name="path" id="branch" value="0.3.8/dchars/languages/bod/dcharacter.py" /&gt;
+              &lt;/form&gt; &lt;!-- /.select-menu-item --&gt;
+
+          &lt;/div&gt; &lt;!-- /.select-menu-list --&gt;
+
+
+          &lt;div class="select-menu-list select-menu-tab-bucket js-select-menu-tab-bucket css-truncate" data-tab-filter="tags"&gt;
+            &lt;div data-filterable-for="commitish-filter-field" data-filterable-type="substring"&gt;
+
+            &lt;/div&gt;
+
+            &lt;div class="select-menu-no-results"&gt;Nothing to show&lt;/div&gt;
+
+          &lt;/div&gt; &lt;!-- /.select-menu-list --&gt;
+
+        &lt;/div&gt; &lt;!-- /.select-menu-modal --&gt;
+      &lt;/div&gt; &lt;!-- /.select-menu-modal-holder --&gt;
+    &lt;/div&gt; &lt;!-- /.select-menu --&gt;
+
+  &lt;/div&gt; &lt;!-- /.scope --&gt;
+
+  &lt;ul class="tabnav-tabs"&gt;
+    &lt;li&gt;&lt;a href="/suizokukan/dchars" class="selected js-selected-navigation-item tabnav-tab" data-selected-links="repo_source /suizokukan/dchars"&gt;Files&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="/suizokukan/dchars/commits/" class="js-selected-navigation-item tabnav-tab" data-selected-links="repo_commits /suizokukan/dchars/commits/"&gt;Commits&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="/suizokukan/dchars/branches" class="js-selected-navigation-item tabnav-tab" data-selected-links="repo_branches /suizokukan/dchars/branches" rel="nofollow"&gt;Branches &lt;span class="counter "&gt;1&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+
+&lt;/div&gt;
+
+  
+  
+  
+
+
+            
+          &lt;/div&gt;
+        &lt;/div&gt;&lt;!-- /.repohead --&gt;
+
+        &lt;div id="js-repo-pjax-container" class="container context-loader-container" data-pjax-container&gt;
+          
+
+
+&lt;!-- blob contrib key: blob_contributors:v21:68fcb89944b2b285a409236f75336025 --&gt;
+&lt;!-- blob contrib frag key: views10/v8/blob_contributors:v21:68fcb89944b2b285a409236f75336025 --&gt;
+
+&lt;div id="slider"&gt;
+    &lt;div class="frame-meta"&gt;
+
+      &lt;p title="This is a placeholder element" class="js-history-link-replace hidden"&gt;&lt;/p&gt;
+
+        &lt;a href="/suizokukan/dchars/find/223edf6bde0d6c8a1475971375271f82674571b3" class="js-slide-to" data-hotkey="t" style="display:none"&gt;Show File Finder&lt;/a&gt;
+
+        &lt;div class="breadcrumb"&gt;
+          &lt;span class='repo-root js-repo-root'&gt;&lt;span itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"&gt;&lt;a href="/suizokukan/dchars/tree/223edf6bde0d6c8a1475971375271f82674571b3" class="js-slide-to" data-branch="223edf6bde0d6c8a1475971375271f82674571b3" data-direction="back" itemscope="url" rel="nofollow"&gt;&lt;span itemprop="title"&gt;dchars&lt;/span&gt;&lt;/a&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="separator"&gt; / &lt;/span&gt;&lt;span itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"&gt;&lt;a href="/suizokukan/dchars/tree/223edf6bde0d6c8a1475971375271f82674571b3/0.3.8" class="js-slide-to" data-branch="223edf6bde0d6c8a1475971375271f82674571b3" data-direction="back" itemscope="url" rel="nofollow"&gt;&lt;span itemprop="title"&gt;0.3.8&lt;/span&gt;&lt;/a&gt;&lt;/span&gt;&lt;span class="separator"&gt; / &lt;/span&gt;&lt;span itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"&gt;&lt;a href="/suizokukan/dchars/tree/223edf6bde0d6c8a1475971375271f82674571b3/0.3.8/dchars" class="js-slide-to" data-branch="223edf6bde0d6c8a1475971375271f82674571b3" data-direction="back" itemscope="url" rel="nofollow"&gt;&lt;span itemprop="title"&gt;dchars&lt;/span&gt;&lt;/a&gt;&lt;/span&gt;&lt;span class="separator"&gt; / &lt;/span&gt;&lt;span itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"&gt;&lt;a href="/suizokukan/dchars/tree/223edf6bde0d6c8a1475971375271f82674571b3/0.3.8/dchars/languages" class="js-slide-to" data-branch="223edf6bde0d6c8a1475971375271f82674571b3" data-direction="back" itemscope="url" rel="nofollow"&gt;&lt;span itemprop="title"&gt;languages&lt;/span&gt;&lt;/a&gt;&lt;/span&gt;&lt;span class="separator"&gt; / &lt;/span&gt;&lt;span itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"&gt;&lt;a href="/suizokukan/dchars/tree/223edf6bde0d6c8a1475971375271f82674571b3/0.3.8/dchars/languages/bod" class="js-slide-to" data-branch="223edf6bde0d6c8a1475971375271f82674571b3" data-direction="back" itemscope="url" rel="nofollow"&gt;&lt;span itemprop="title"&gt;bod&lt;/span&gt;&lt;/a&gt;&lt;/span&gt;&lt;span class="separator"&gt; / &lt;/span&gt;&lt;strong class="final-path"&gt;dcharacter.py&lt;/strong&gt; &lt;span class="js-zeroclipboard zeroclipboard-button" data-clipboard-text="0.3.8/dchars/languages/bod/dcharacter.py" data-copied-hint="copied!" title="copy to clipboard"&gt;&lt;span class="octicon octicon-clippy"&gt;&lt;/span&gt;&lt;/span&gt;
+        &lt;/div&gt;
+
+
+        &lt;div class="commit commit-loader file-history-tease js-deferred-content" data-url="/suizokukan/dchars/contributors/223edf6bde0d6c8a1475971375271f82674571b3/0.3.8/dchars/languages/bod/dcharacter.py"&gt;
+          Fetching contributors…
+
+          &lt;div class="participation"&gt;
+            &lt;p class="loader-loading"&gt;&lt;img alt="Octocat-spinner-32-eaf2f5" height="16" src="https://a248.e.akamai.net/assets.github.com/images/spinners/octocat-spinner-32-EAF2F5.gif" width="16" /&gt;&lt;/p&gt;
+            &lt;p class="loader-error"&gt;Cannot retrieve contributors at this time&lt;/p&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+
+    &lt;/div&gt;&lt;!-- ./.frame-meta --&gt;
+
+    &lt;div class="frames"&gt;
+      &lt;div class="frame" data-permalink-url="/suizokukan/dchars/blob/223edf6bde0d6c8a1475971375271f82674571b3/0.3.8/dchars/languages/bod/dcharacter.py" data-title="dchars/0.3.8/dchars/languages/bod/dcharacter.py at 223edf6bde0d6c8a1475971375271f82674571b3 · suizokukan/dchars · GitHub" data-type="blob"&gt;
+
+        &lt;div id="files" class="bubble"&gt;
+          &lt;div class="file"&gt;
+            &lt;div class="meta"&gt;
+              &lt;div class="info"&gt;
+                &lt;span class="icon"&gt;&lt;b class="octicon octicon-file-text"&gt;&lt;/b&gt;&lt;/span&gt;
+                &lt;span class="mode" title="File Mode"&gt;file&lt;/span&gt;
+                  &lt;span&gt;270 lines (228 sloc)&lt;/span&gt;
+                &lt;span&gt;11.388 kb&lt;/span&gt;
+              &lt;/div&gt;
+              &lt;div class="actions"&gt;
+                &lt;div class="button-group"&gt;
+                      &lt;a class="minibutton js-entice" href=""
+                         data-entice="You must be signed in and on a branch to make or propose changes"&gt;Edit&lt;/a&gt;
+                  &lt;a href="/suizokukan/dchars/raw/223edf6bde0d6c8a1475971375271f82674571b3/0.3.8/dchars/languages/bod/dcharacter.py" class="button minibutton " id="raw-url"&gt;Raw&lt;/a&gt;
+                    &lt;a href="/suizokukan/dchars/blame/223edf6bde0d6c8a1475971375271f82674571b3/0.3.8/dchars/languages/bod/dcharacter.py" class="button minibutton "&gt;Blame&lt;/a&gt;
+                  &lt;a href="/suizokukan/dchars/commits/223edf6bde0d6c8a1475971375271f82674571b3/0.3.8/dchars/languages/bod/dcharacter.py" class="button minibutton " rel="nofollow"&gt;History&lt;/a&gt;
+                &lt;/div&gt;&lt;!-- /.button-group --&gt;
+              &lt;/div&gt;&lt;!-- /.actions --&gt;
+
+            &lt;/div&gt;
+                &lt;div class="blob-wrapper data type-python js-blob-data"&gt;
+      &lt;table class="file-code file-diff"&gt;
+        &lt;tr class="file-code-line"&gt;
+          &lt;td class="blob-line-nums"&gt;
+            &lt;span id="L1" rel="#L1"&gt;1&lt;/span&gt;
+&lt;span id="L2" rel="#L2"&gt;2&lt;/span&gt;
+&lt;span id="L3" rel="#L3"&gt;3&lt;/span&gt;
+&lt;span id="L4" rel="#L4"&gt;4&lt;/span&gt;
+&lt;span id="L5" rel="#L5"&gt;5&lt;/span&gt;
+&lt;span id="L6" rel="#L6"&gt;6&lt;/span&gt;
+&lt;span id="L7" rel="#L7"&gt;7&lt;/span&gt;
+&lt;span id="L8" rel="#L8"&gt;8&lt;/span&gt;
+&lt;span id="L9" rel="#L9"&gt;9&lt;/span&gt;
+&lt;span id="L10" rel="#L10"&gt;10&lt;/span&gt;
+&lt;span id="L11" rel="#L11"&gt;11&lt;/span&gt;
+&lt;span id="L12" rel="#L12"&gt;12&lt;/span&gt;
+&lt;span id="L13" rel="#L13"&gt;13&lt;/span&gt;
+&lt;span id="L14" rel="#L14"&gt;14&lt;/span&gt;
+&lt;span id="L15" rel="#L15"&gt;15&lt;/span&gt;
+&lt;span id="L16" rel="#L16"&gt;16&lt;/span&gt;
+&lt;span id="L17" rel="#L17"&gt;17&lt;/span&gt;
+&lt;span id="L18" rel="#L18"&gt;18&lt;/span&gt;
+&lt;span id="L19" rel="#L19"&gt;19&lt;/span&gt;
+&lt;span id="L20" rel="#L20"&gt;20&lt;/span&gt;
+&lt;span id="L21" rel="#L21"&gt;21&lt;/span&gt;
+&lt;span id="L22" rel="#L22"&gt;22&lt;/span&gt;
+&lt;span id="L23" rel="#L23"&gt;23&lt;/span&gt;
+&lt;span id="L24" rel="#L24"&gt;24&lt;/span&gt;
+&lt;span id="L25" rel="#L25"&gt;25&lt;/span&gt;
+&lt;span id="L26" rel="#L26"&gt;26&lt;/span&gt;
+&lt;span id="L27" rel="#L27"&gt;27&lt;/span&gt;
+&lt;span id="L28" rel="#L28"&gt;28&lt;/span&gt;
+&lt;span id="L29" rel="#L29"&gt;29&lt;/span&gt;
+&lt;span id="L30" rel="#L30"&gt;30&lt;/span&gt;
+&lt;span id="L31" rel="#L31"&gt;31&lt;/span&gt;
+&lt;span id="L32" rel="#L32"&gt;32&lt;/span&gt;
+&lt;span id="L33" rel="#L33"&gt;33&lt;/span&gt;
+&lt;span id="L34" rel="#L34"&gt;34&lt;/span&gt;
+&lt;span id="L35" rel="#L35"&gt;35&lt;/span&gt;
+&lt;span id="L36" rel="#L36"&gt;36&lt;/span&gt;
+&lt;span id="L37" rel="#L37"&gt;37&lt;/span&gt;
+&lt;span id="L38" rel="#L38"&gt;38&lt;/span&gt;
+&lt;span id="L39" rel="#L39"&gt;39&lt;/span&gt;
+&lt;span id="L40" rel="#L40"&gt;40&lt;/span&gt;
+&lt;span id="L41" rel="#L41"&gt;41&lt;/span&gt;
+&lt;span id="L42" rel="#L42"&gt;42&lt;/span&gt;
+&lt;span id="L43" rel="#L43"&gt;43&lt;/span&gt;
+&lt;span id="L44" rel="#L44"&gt;44&lt;/span&gt;
+&lt;span id="L45" rel="#L45"&gt;45&lt;/span&gt;
+&lt;span id="L46" rel="#L46"&gt;46&lt;/span&gt;
+&lt;span id="L47" rel="#L47"&gt;47&lt;/span&gt;
+&lt;span id="L48" rel="#L48"&gt;48&lt;/span&gt;
+&lt;span id="L49" rel="#L49"&gt;49&lt;/span&gt;
+&lt;span id="L50" rel="#L50"&gt;50&lt;/span&gt;
+&lt;span id="L51" rel="#L51"&gt;51&lt;/span&gt;
+&lt;span id="L52" rel="#L52"&gt;52&lt;/span&gt;
+&lt;span id="L53" rel="#L53"&gt;53&lt;/span&gt;
+&lt;span id="L54" rel="#L54"&gt;54&lt;/span&gt;
+&lt;span id="L55" rel="#L55"&gt;55&lt;/span&gt;
+&lt;span id="L56" rel="#L56"&gt;56&lt;/span&gt;
+&lt;span id="L57" rel="#L57"&gt;57&lt;/span&gt;
+&lt;span id="L58" rel="#L58"&gt;58&lt;/span&gt;
+&lt;span id="L59" rel="#L59"&gt;59&lt;/span&gt;
+&lt;span id="L60" rel="#L60"&gt;60&lt;/span&gt;
+&lt;span id="L61" rel="#L61"&gt;61&lt;/span&gt;
+&lt;span id="L62" rel="#L62"&gt;62&lt;/span&gt;
+&lt;span id="L63" rel="#L63"&gt;63&lt;/span&gt;
+&lt;span id="L64" rel="#L64"&gt;64&lt;/span&gt;
+&lt;span id="L65" rel="#L65"&gt;65&lt;/span&gt;
+&lt;span id="L66" rel="#L66"&gt;66&lt;/span&gt;
+&lt;span id="L67" rel="#L67"&gt;67&lt;/span&gt;
+&lt;span id="L68" rel="#L68"&gt;68&lt;/span&gt;
+&lt;span id="L69" rel="#L69"&gt;69&lt;/span&gt;
+&lt;span id="L70" rel="#L70"&gt;70&lt;/span&gt;
+&lt;span id="L71" rel="#L71"&gt;71&lt;/span&gt;
+&lt;span id="L72" rel="#L72"&gt;72&lt;/span&gt;
+&lt;span id="L73" rel="#L73"&gt;73&lt;/span&gt;
+&lt;span id="L74" rel="#L74"&gt;74&lt;/span&gt;
+&lt;span id="L75" rel="#L75"&gt;75&lt;/span&gt;
+&lt;span id="L76" rel="#L76"&gt;76&lt;/span&gt;
+&lt;span id="L77" rel="#L77"&gt;77&lt;/span&gt;
+&lt;span id="L78" rel="#L78"&gt;78&lt;/span&gt;
+&lt;span id="L79" rel="#L79"&gt;79&lt;/span&gt;
+&lt;span id="L80" rel="#L80"&gt;80&lt;/span&gt;
+&lt;span id="L81" rel="#L81"&gt;81&lt;/span&gt;
+&lt;span id="L82" rel="#L82"&gt;82&lt;/span&gt;
+&lt;span id="L83" rel="#L83"&gt;83&lt;/span&gt;
+&lt;span id="L84" rel="#L84"&gt;84&lt;/span&gt;
+&lt;span id="L85" rel="#L85"&gt;85&lt;/span&gt;
+&lt;span id="L86" rel="#L86"&gt;86&lt;/span&gt;
+&lt;span id="L87" rel="#L87"&gt;87&lt;/span&gt;
+&lt;span id="L88" rel="#L88"&gt;88&lt;/span&gt;
+&lt;span id="L89" rel="#L89"&gt;89&lt;/span&gt;
+&lt;span id="L90" rel="#L90"&gt;90&lt;/span&gt;
+&lt;span id="L91" rel="#L91"&gt;91&lt;/span&gt;
+&lt;span id="L92" rel="#L92"&gt;92&lt;/span&gt;
+&lt;span id="L93" rel="#L93"&gt;93&lt;/span&gt;
+&lt;span id="L94" rel="#L94"&gt;94&lt;/span&gt;
+&lt;span id="L95" rel="#L95"&gt;95&lt;/span&gt;
+&lt;span id="L96" rel="#L96"&gt;96&lt;/span&gt;
+&lt;span id="L97" rel="#L97"&gt;97&lt;/span&gt;
+&lt;span id="L98" rel="#L98"&gt;98&lt;/span&gt;
+&lt;span id="L99" rel="#L99"&gt;99&lt;/span&gt;
+&lt;span id="L100" rel="#L100"&gt;100&lt;/span&gt;
+&lt;span id="L101" rel="#L101"&gt;101&lt;/span&gt;
+&lt;span id="L102" rel="#L102"&gt;102&lt;/span&gt;
+&lt;span id="L103" rel="#L103"&gt;103&lt;/span&gt;
+&lt;span id="L104" rel="#L104"&gt;104&lt;/span&gt;
+&lt;span id="L105" rel="#L105"&gt;105&lt;/span&gt;
+&lt;span id="L106" rel="#L106"&gt;106&lt;/span&gt;
+&lt;span id="L107" rel="#L107"&gt;107&lt;/span&gt;
+&lt;span id="L108" rel="#L108"&gt;108&lt;/span&gt;
+&lt;span id="L109" rel="#L109"&gt;109&lt;/span&gt;
+&lt;span id="L110" rel="#L110"&gt;110&lt;/span&gt;
+&lt;span id="L111" rel="#L111"&gt;111&lt;/span&gt;
+&lt;span id="L112" rel="#L112"&gt;112&lt;/span&gt;
+&lt;span id="L113" rel="#L113"&gt;113&lt;/span&gt;
+&lt;span id="L114" rel="#L114"&gt;114&lt;/span&gt;
+&lt;span id="L115" rel="#L115"&gt;115&lt;/span&gt;
+&lt;span id="L116" rel="#L116"&gt;116&lt;/span&gt;
+&lt;span id="L117" rel="#L117"&gt;117&lt;/span&gt;
+&lt;span id="L118" rel="#L118"&gt;118&lt;/span&gt;
+&lt;span id="L119" rel="#L119"&gt;119&lt;/span&gt;
+&lt;span id="L120" rel="#L120"&gt;120&lt;/span&gt;
+&lt;span id="L121" rel="#L121"&gt;121&lt;/span&gt;
+&lt;span id="L122" rel="#L122"&gt;122&lt;/span&gt;
+&lt;span id="L123" rel="#L123"&gt;123&lt;/span&gt;
+&lt;span id="L124" rel="#L124"&gt;124&lt;/span&gt;
+&lt;span id="L125" rel="#L125"&gt;125&lt;/span&gt;
+&lt;span id="L126" rel="#L126"&gt;126&lt;/span&gt;
+&lt;span id="L127" rel="#L127"&gt;127&lt;/span&gt;
+&lt;span id="L128" rel="#L128"&gt;128&lt;/span&gt;
+&lt;span id="L129" rel="#L129"&gt;129&lt;/span&gt;
+&lt;span id="L130" rel="#L130"&gt;130&lt;/span&gt;
+&lt;span id="L131" rel="#L131"&gt;131&lt;/span&gt;
+&lt;span id="L132" rel="#L132"&gt;132&lt;/span&gt;
+&lt;span id="L133" rel="#L133"&gt;133&lt;/span&gt;
+&lt;span id="L134" rel="#L134"&gt;134&lt;/span&gt;
+&lt;span id="L135" rel="#L135"&gt;135&lt;/span&gt;
+&lt;span id="L136" rel="#L136"&gt;136&lt;/span&gt;
+&lt;span id="L137" rel="#L137"&gt;137&lt;/span&gt;
+&lt;span id="L138" rel="#L138"&gt;138&lt;/span&gt;
+&lt;span id="L139" rel="#L139"&gt;139&lt;/span&gt;
+&lt;span id="L140" rel="#L140"&gt;140&lt;/span&gt;
+&lt;span id="L141" rel="#L141"&gt;141&lt;/span&gt;
+&lt;span id="L142" rel="#L142"&gt;142&lt;/span&gt;
+&lt;span id="L143" rel="#L143"&gt;143&lt;/span&gt;
+&lt;span id="L144" rel="#L144"&gt;144&lt;/span&gt;
+&lt;span id="L145" rel="#L145"&gt;145&lt;/span&gt;
+&lt;span id="L146" rel="#L146"&gt;146&lt;/span&gt;
+&lt;span id="L147" rel="#L147"&gt;147&lt;/span&gt;
+&lt;span id="L148" rel="#L148"&gt;148&lt;/span&gt;
+&lt;span id="L149" rel="#L149"&gt;149&lt;/span&gt;
+&lt;span id="L150" rel="#L150"&gt;150&lt;/span&gt;
+&lt;span id="L151" rel="#L151"&gt;151&lt;/span&gt;
+&lt;span id="L152" rel="#L152"&gt;152&lt;/span&gt;
+&lt;span id="L153" rel="#L153"&gt;153&lt;/span&gt;
+&lt;span id="L154" rel="#L154"&gt;154&lt;/span&gt;
+&lt;span id="L155" rel="#L155"&gt;155&lt;/span&gt;
+&lt;span id="L156" rel="#L156"&gt;156&lt;/span&gt;
+&lt;span id="L157" rel="#L157"&gt;157&lt;/span&gt;
+&lt;span id="L158" rel="#L158"&gt;158&lt;/span&gt;
+&lt;span id="L159" rel="#L159"&gt;159&lt;/span&gt;
+&lt;span id="L160" rel="#L160"&gt;160&lt;/span&gt;
+&lt;span id="L161" rel="#L161"&gt;161&lt;/span&gt;
+&lt;span id="L162" rel="#L162"&gt;162&lt;/span&gt;
+&lt;span id="L163" rel="#L163"&gt;163&lt;/span&gt;
+&lt;span id="L164" rel="#L164"&gt;164&lt;/span&gt;
+&lt;span id="L165" rel="#L165"&gt;165&lt;/span&gt;
+&lt;span id="L166" rel="#L166"&gt;166&lt;/span&gt;
+&lt;span id="L167" rel="#L167"&gt;167&lt;/span&gt;
+&lt;span id="L168" rel="#L168"&gt;168&lt;/span&gt;
+&lt;span id="L169" rel="#L169"&gt;169&lt;/span&gt;
+&lt;span id="L170" rel="#L170"&gt;170&lt;/span&gt;
+&lt;span id="L171" rel="#L171"&gt;171&lt;/span&gt;
+&lt;span id="L172" rel="#L172"&gt;172&lt;/span&gt;
+&lt;span id="L173" rel="#L173"&gt;173&lt;/span&gt;
+&lt;span id="L174" rel="#L174"&gt;174&lt;/span&gt;
+&lt;span id="L175" rel="#L175"&gt;175&lt;/span&gt;
+&lt;span id="L176" rel="#L176"&gt;176&lt;/span&gt;
+&lt;span id="L177" rel="#L177"&gt;177&lt;/span&gt;
+&lt;span id="L178" rel="#L178"&gt;178&lt;/span&gt;
+&lt;span id="L179" rel="#L179"&gt;179&lt;/span&gt;
+&lt;span id="L180" rel="#L180"&gt;180&lt;/span&gt;
+&lt;span id="L181" rel="#L181"&gt;181&lt;/span&gt;
+&lt;span id="L182" rel="#L182"&gt;182&lt;/span&gt;
+&lt;span id="L183" rel="#L183"&gt;183&lt;/span&gt;
+&lt;span id="L184" rel="#L184"&gt;184&lt;/span&gt;
+&lt;span id="L185" rel="#L185"&gt;185&lt;/span&gt;
+&lt;span id="L186" rel="#L186"&gt;186&lt;/span&gt;
+&lt;span id="L187" rel="#L187"&gt;187&lt;/span&gt;
+&lt;span id="L188" rel="#L188"&gt;188&lt;/span&gt;
+&lt;span id="L189" rel="#L189"&gt;189&lt;/span&gt;
+&lt;span id="L190" rel="#L190"&gt;190&lt;/span&gt;
+&lt;span id="L191" rel="#L191"&gt;191&lt;/span&gt;
+&lt;span id="L192" rel="#L192"&gt;192&lt;/span&gt;
+&lt;span id="L193" rel="#L193"&gt;193&lt;/span&gt;
+&lt;span id="L194" rel="#L194"&gt;194&lt;/span&gt;
+&lt;span id="L195" rel="#L195"&gt;195&lt;/span&gt;
+&lt;span id="L196" rel="#L196"&gt;196&lt;/span&gt;
+&lt;span id="L197" rel="#L197"&gt;197&lt;/span&gt;
+&lt;span id="L198" rel="#L198"&gt;198&lt;/span&gt;
+&lt;span id="L199" rel="#L199"&gt;199&lt;/span&gt;
+&lt;span id="L200" rel="#L200"&gt;200&lt;/span&gt;
+&lt;span id="L201" rel="#L201"&gt;201&lt;/span&gt;
+&lt;span id="L202" rel="#L202"&gt;202&lt;/span&gt;
+&lt;span id="L203" rel="#L203"&gt;203&lt;/span&gt;
+&lt;span id="L204" rel="#L204"&gt;204&lt;/span&gt;
+&lt;span id="L205" rel="#L205"&gt;205&lt;/span&gt;
+&lt;span id="L206" rel="#L206"&gt;206&lt;/span&gt;
+&lt;span id="L207" rel="#L207"&gt;207&lt;/span&gt;
+&lt;span id="L208" rel="#L208"&gt;208&lt;/span&gt;
+&lt;span id="L209" rel="#L209"&gt;209&lt;/span&gt;
+&lt;span id="L210" rel="#L210"&gt;210&lt;/span&gt;
+&lt;span id="L211" rel="#L211"&gt;211&lt;/span&gt;
+&lt;span id="L212" rel="#L212"&gt;212&lt;/span&gt;
+&lt;span id="L213" rel="#L213"&gt;213&lt;/span&gt;
+&lt;span id="L214" rel="#L214"&gt;214&lt;/span&gt;
+&lt;span id="L215" rel="#L215"&gt;215&lt;/span&gt;
+&lt;span id="L216" rel="#L216"&gt;216&lt;/span&gt;
+&lt;span id="L217" rel="#L217"&gt;217&lt;/span&gt;
+&lt;span id="L218" rel="#L218"&gt;218&lt;/span&gt;
+&lt;span id="L219" rel="#L219"&gt;219&lt;/span&gt;
+&lt;span id="L220" rel="#L220"&gt;220&lt;/span&gt;
+&lt;span id="L221" rel="#L221"&gt;221&lt;/span&gt;
+&lt;span id="L222" rel="#L222"&gt;222&lt;/span&gt;
+&lt;span id="L223" rel="#L223"&gt;223&lt;/span&gt;
+&lt;span id="L224" rel="#L224"&gt;224&lt;/span&gt;
+&lt;span id="L225" rel="#L225"&gt;225&lt;/span&gt;
+&lt;span id="L226" rel="#L226"&gt;226&lt;/span&gt;
+&lt;span id="L227" rel="#L227"&gt;227&lt;/span&gt;
+&lt;span id="L228" rel="#L228"&gt;228&lt;/span&gt;
+&lt;span id="L229" rel="#L229"&gt;229&lt;/span&gt;
+&lt;span id="L230" rel="#L230"&gt;230&lt;/span&gt;
+&lt;span id="L231" rel="#L231"&gt;231&lt;/span&gt;
+&lt;span id="L232" rel="#L232"&gt;232&lt;/span&gt;
+&lt;span id="L233" rel="#L233"&gt;233&lt;/span&gt;
+&lt;span id="L234" rel="#L234"&gt;234&lt;/span&gt;
+&lt;span id="L235" rel="#L235"&gt;235&lt;/span&gt;
+&lt;span id="L236" rel="#L236"&gt;236&lt;/span&gt;
+&lt;span id="L237" rel="#L237"&gt;237&lt;/span&gt;
+&lt;span id="L238" rel="#L238"&gt;238&lt;/span&gt;
+&lt;span id="L239" rel="#L239"&gt;239&lt;/span&gt;
+&lt;span id="L240" rel="#L240"&gt;240&lt;/span&gt;
+&lt;span id="L241" rel="#L241"&gt;241&lt;/span&gt;
+&lt;span id="L242" rel="#L242"&gt;242&lt;/span&gt;
+&lt;span id="L243" rel="#L243"&gt;243&lt;/span&gt;
+&lt;span id="L244" rel="#L244"&gt;244&lt;/span&gt;
+&lt;span id="L245" rel="#L245"&gt;245&lt;/span&gt;
+&lt;span id="L246" rel="#L246"&gt;246&lt;/span&gt;
+&lt;span id="L247" rel="#L247"&gt;247&lt;/span&gt;
+&lt;span id="L248" rel="#L248"&gt;248&lt;/span&gt;
+&lt;span id="L249" rel="#L249"&gt;249&lt;/span&gt;
+&lt;span id="L250" rel="#L250"&gt;250&lt;/span&gt;
+&lt;span id="L251" rel="#L251"&gt;251&lt;/span&gt;
+&lt;span id="L252" rel="#L252"&gt;252&lt;/span&gt;
+&lt;span id="L253" rel="#L253"&gt;253&lt;/span&gt;
+&lt;span id="L254" rel="#L254"&gt;254&lt;/span&gt;
+&lt;span id="L255" rel="#L255"&gt;255&lt;/span&gt;
+&lt;span id="L256" rel="#L256"&gt;256&lt;/span&gt;
+&lt;span id="L257" rel="#L257"&gt;257&lt;/span&gt;
+&lt;span id="L258" rel="#L258"&gt;258&lt;/span&gt;
+&lt;span id="L259" rel="#L259"&gt;259&lt;/span&gt;
+&lt;span id="L260" rel="#L260"&gt;260&lt;/span&gt;
+&lt;span id="L261" rel="#L261"&gt;261&lt;/span&gt;
+&lt;span id="L262" rel="#L262"&gt;262&lt;/span&gt;
+&lt;span id="L263" rel="#L263"&gt;263&lt;/span&gt;
+&lt;span id="L264" rel="#L264"&gt;264&lt;/span&gt;
+&lt;span id="L265" rel="#L265"&gt;265&lt;/span&gt;
+&lt;span id="L266" rel="#L266"&gt;266&lt;/span&gt;
+&lt;span id="L267" rel="#L267"&gt;267&lt;/span&gt;
+&lt;span id="L268" rel="#L268"&gt;268&lt;/span&gt;
+&lt;span id="L269" rel="#L269"&gt;269&lt;/span&gt;
+
+          &lt;/td&gt;
+          &lt;td class="blob-line-code"&gt;
+                  &lt;div class="highlight"&gt;&lt;pre&gt;&lt;div class='line' id='LC1'&gt;&lt;span class="c"&gt;#!/usr/bin/python3&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC2'&gt;&lt;span class="c"&gt;# -*- coding: utf-8 -*-&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC3'&gt;&lt;span class="c"&gt;################################################################################&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC4'&gt;&lt;span class="c"&gt;#    DChars Copyright (C) 2012 Suizokukan&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC5'&gt;&lt;span class="c"&gt;#    Contact: suizokukan _A.T._ orange dot fr&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC6'&gt;&lt;span class="c"&gt;#&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC7'&gt;&lt;span class="c"&gt;#    This file is part of DChars.&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC8'&gt;&lt;span class="c"&gt;#    DChars is free software: you can redistribute it and/or modify&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC9'&gt;&lt;span class="c"&gt;#    it under the terms of the GNU General Public License as published by&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC10'&gt;&lt;span class="c"&gt;#    the Free Software Foundation, either version 3 of the License, or&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC11'&gt;&lt;span class="c"&gt;#    (at your option) any later version.&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC12'&gt;&lt;span class="c"&gt;#&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC13'&gt;&lt;span class="c"&gt;#    DChars is distributed in the hope that it will be useful,&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC14'&gt;&lt;span class="c"&gt;#    but WITHOUT ANY WARRANTY; without even the implied warranty of&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC15'&gt;&lt;span class="c"&gt;#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC16'&gt;&lt;span class="c"&gt;#    GNU General Public License for more details.&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC17'&gt;&lt;span class="c"&gt;#&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC18'&gt;&lt;span class="c"&gt;#    You should have received a copy of the GNU General Public License&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC19'&gt;&lt;span class="c"&gt;#    along with DChars.  If not, see &amp;lt;http://www.gnu.org/licenses/&amp;gt;.&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC20'&gt;&lt;span class="c"&gt;################################################################################&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC21'&gt;&lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC22'&gt;&lt;span class="sd"&gt;    ❏DChars❏ : dchars/languages/bod/dcharacter.py&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC23'&gt;&lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC24'&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;dchars.dcharacter&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;DCharacterMotherClass&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC25'&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;dchars.symbols.symbols&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;UNKNOWN_CHAR_SYMBOL&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC26'&gt;&lt;br/&gt;&lt;/div&gt;&lt;div class='line' id='LC27'&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;dchars.languages.bod.symbols&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;SYMB_CONSONANTS&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; \&lt;/div&gt;&lt;div class='line' id='LC28'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="n"&gt;SYMB_SUBJOINED_CONSONANTS&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; \&lt;/div&gt;&lt;div class='line' id='LC29'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="n"&gt;SYMB_FIXEDFORM_SUBJOINED_CONSONANTS&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; \&lt;/div&gt;&lt;div class='line' id='LC30'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="n"&gt;SYMB_OTHER_SYMBOLS&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; \&lt;/div&gt;&lt;div class='line' id='LC31'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="n"&gt;SYMB_PUNCTUATION&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; \&lt;/div&gt;&lt;div class='line' id='LC32'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="n"&gt;SYMB_VOWELS&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; \&lt;/div&gt;&lt;div class='line' id='LC33'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="n"&gt;FAKE_A__SYMBOL&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; \&lt;/div&gt;&lt;div class='line' id='LC34'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="n"&gt;SYMB_DIACRITICS&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; \&lt;/div&gt;&lt;div class='line' id='LC35'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="n"&gt;SYMB_DIACRITICS__HALANTA&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; \&lt;/div&gt;&lt;div class='line' id='LC36'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="n"&gt;SYMB_DIACRITICS__RNAM_BCAD&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC37'&gt;&lt;br/&gt;&lt;/div&gt;&lt;div class='line' id='LC38'&gt;&lt;span class="c"&gt;################################################################################&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC39'&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;DCharacterBOD&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;DCharacterMotherClass&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC40'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC41'&gt;&lt;span class="sd"&gt;        class DCharacterBOD&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC42'&gt;&lt;span class="sd"&gt;    &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC43'&gt;&lt;br/&gt;&lt;/div&gt;&lt;div class='line' id='LC44'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="c"&gt;#///////////////////////////////////////////////////////////////////////////&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC45'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;__eq__&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;aliud&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC46'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC47'&gt;&lt;span class="sd"&gt;                DCharacterBOD.__eq__&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC48'&gt;&lt;br/&gt;&lt;/div&gt;&lt;div class='line' id='LC49'&gt;&lt;span class="sd"&gt;                aliud   :       DCharacterBOD object&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC50'&gt;&lt;span class="sd"&gt;        &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC51'&gt;&lt;br/&gt;&lt;/div&gt;&lt;div class='line' id='LC52'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;unknown_char&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="n"&gt;aliud&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;unknown_char&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="ow"&gt;and&lt;/span&gt; \&lt;/div&gt;&lt;div class='line' id='LC53'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;base_char&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="n"&gt;aliud&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;base_char&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="ow"&gt;and&lt;/span&gt; \&lt;/div&gt;&lt;div class='line' id='LC54'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;subj_consonants&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="n"&gt;aliud&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;subj_consonants&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="ow"&gt;and&lt;/span&gt; \&lt;/div&gt;&lt;div class='line' id='LC55'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;punctuation&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="n"&gt;aliud&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;punctuation&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="ow"&gt;and&lt;/span&gt; \&lt;/div&gt;&lt;div class='line' id='LC56'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;rnam_bcad&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="n"&gt;aliud&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;rnam_bcad&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="ow"&gt;and&lt;/span&gt; \&lt;/div&gt;&lt;div class='line' id='LC57'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;halanta&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="n"&gt;aliud&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;halanta&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="ow"&gt;and&lt;/span&gt; \&lt;/div&gt;&lt;div class='line' id='LC58'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;anusvara_candrabindu&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="n"&gt;aliud&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;anusvara_candrabindu&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="ow"&gt;and&lt;/span&gt; \&lt;/div&gt;&lt;div class='line' id='LC59'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;vowel1&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="n"&gt;aliud&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;vowel1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="ow"&gt;and&lt;/span&gt; \&lt;/div&gt;&lt;div class='line' id='LC60'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;vowel2&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="n"&gt;aliud&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;vowel2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC61'&gt;&lt;br/&gt;&lt;/div&gt;&lt;div class='line' id='LC62'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="c"&gt;#///////////////////////////////////////////////////////////////////////////&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC63'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;__init__&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC64'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="n"&gt;dstring_object&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC65'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="n"&gt;unknown_char&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;False&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC66'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="n"&gt;base_char&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;None&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC67'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="n"&gt;subj_consonants&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;None&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC68'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="n"&gt;punctuation&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;False&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC69'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="n"&gt;rnam_bcad&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;False&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC70'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="n"&gt;halanta&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;False&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC71'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="n"&gt;anusvara_candrabindu&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;None&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC72'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="n"&gt;vowel1&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;None&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC73'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="n"&gt;vowel2&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;None&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC74'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC75'&gt;&lt;span class="sd"&gt;                DCharacterBOD.__init__&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC76'&gt;&lt;br/&gt;&lt;/div&gt;&lt;div class='line' id='LC77'&gt;&lt;span class="sd"&gt;                .. code-block:: none&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC78'&gt;&lt;br/&gt;&lt;/div&gt;&lt;div class='line' id='LC79'&gt;&lt;span class="sd"&gt;                    unknown_char                    : bool&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC80'&gt;&lt;span class="sd"&gt;                    base_char                       : None or a string with the NAME of the character,&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC81'&gt;&lt;span class="sd"&gt;                                                      not the character itself.&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC82'&gt;&lt;span class="sd"&gt;                    subj_consonants                 : None or a list of the NAME of the characters,&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC83'&gt;&lt;span class="sd"&gt;                                                      not the characters themselves.&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC84'&gt;&lt;span class="sd"&gt;                    rnam_bcad                       : bool&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC85'&gt;&lt;span class="sd"&gt;                    punctuation                     : bool&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC86'&gt;&lt;span class="sd"&gt;                    halanta                         : bool&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC87'&gt;&lt;span class="sd"&gt;                    anusvara_candrabindu            : None, or a string&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC88'&gt;&lt;span class="sd"&gt;                                                      see symbol.SYMB_DIACRITICS__ANUSV_CANDR&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC89'&gt;&lt;span class="sd"&gt;                    vowel1                 : None, or a string&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC90'&gt;&lt;span class="sd"&gt;                    vowel2                   see symbol.SYMB_VOWELS&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC91'&gt;&lt;span class="sd"&gt;         &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC92'&gt;&lt;br/&gt;&lt;/div&gt;&lt;div class='line' id='LC93'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="n"&gt;DCharacterMotherClass&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;__init__&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC94'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="n"&gt;dstring_object&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;None&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC95'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="n"&gt;unknown_char&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;unknown_char&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC96'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="n"&gt;base_char&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;base_char&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC97'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="n"&gt;punctuation&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;punctuation&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC98'&gt;&lt;br/&gt;&lt;/div&gt;&lt;div class='line' id='LC99'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;subj_consonants&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;subj_consonants&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC100'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;rnam_bcad&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;rnam_bcad&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC101'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;halanta&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;halanta&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC102'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;anusvara_candrabindu&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;anusvara_candrabindu&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC103'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;vowel1&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;vowel1&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC104'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;vowel2&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;vowel2&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC105'&gt;&lt;br/&gt;&lt;/div&gt;&lt;div class='line' id='LC106'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;dstring_object&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;dstring_object&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC107'&gt;&lt;br/&gt;&lt;/div&gt;&lt;div class='line' id='LC108'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="c"&gt;#///////////////////////////////////////////////////////////////////////////&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC109'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;__repr__&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC110'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC111'&gt;&lt;span class="sd"&gt;                DCharacterBOD.__repr__&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC112'&gt;&lt;span class="sd"&gt;        &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC113'&gt;&lt;br/&gt;&lt;/div&gt;&lt;div class='line' id='LC114'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;unknown_char=&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="nb"&gt;repr&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;unknown_char&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;; &amp;quot;&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; \&lt;/div&gt;&lt;div class='line' id='LC115'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="s"&gt;&amp;quot;base_char=&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="nb"&gt;repr&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;base_char&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;; &amp;quot;&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; \&lt;/div&gt;&lt;div class='line' id='LC116'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="s"&gt;&amp;quot;subj_consonants=&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="nb"&gt;repr&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;subj_consonants&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;; &amp;quot;&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; \&lt;/div&gt;&lt;div class='line' id='LC117'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="s"&gt;&amp;quot;rnam_bcad=&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="nb"&gt;repr&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;rnam_bcad&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;; &amp;quot;&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; \&lt;/div&gt;&lt;div class='line' id='LC118'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="s"&gt;&amp;quot;punctuation=&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="nb"&gt;repr&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;punctuation&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;; &amp;quot;&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; \&lt;/div&gt;&lt;div class='line' id='LC119'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="s"&gt;&amp;quot;halanta=&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="nb"&gt;repr&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;halanta&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;; &amp;quot;&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt;\&lt;/div&gt;&lt;div class='line' id='LC120'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="s"&gt;&amp;quot;anusvara_candrabindu=&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="nb"&gt;repr&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;anusvara_candrabindu&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;; &amp;quot;&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; \&lt;/div&gt;&lt;div class='line' id='LC121'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="s"&gt;&amp;quot;vowel1=&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="nb"&gt;repr&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;vowel1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;; &amp;quot;&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt;\&lt;/div&gt;&lt;div class='line' id='LC122'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="s"&gt;&amp;quot;vowel2=&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="nb"&gt;repr&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;vowel2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC123'&gt;&lt;br/&gt;&lt;/div&gt;&lt;div class='line' id='LC124'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="c"&gt;#///////////////////////////////////////////////////////////////////////////&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC125'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;__setattr__&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;key&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;value&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC126'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC127'&gt;&lt;span class="sd"&gt;                DCharacterBOD.__setattr__&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC128'&gt;&lt;span class="sd"&gt;        &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC129'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="nb"&gt;object&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;__setattr__&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;key&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;value&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC130'&gt;&lt;br/&gt;&lt;/div&gt;&lt;div class='line' id='LC131'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="c"&gt;# we don&amp;#39;t launch an alert :&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC132'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="c"&gt;#&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC133'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="c"&gt;# * if there&amp;#39;s no .dstring_object&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC134'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="c"&gt;# * if dstring_object.ignore_alert is True&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC135'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="c"&gt;# * if the attribute &amp;quot;dstring_object&amp;quot; has been modified.&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC136'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="c"&gt;#&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC137'&gt;&lt;br/&gt;&lt;/div&gt;&lt;div class='line' id='LC138'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;dstring_object&amp;#39;&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;__dict__&lt;/span&gt; &lt;span class="ow"&gt;and&lt;/span&gt; \&lt;/div&gt;&lt;div class='line' id='LC139'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;dstring_object&lt;/span&gt; &lt;span class="ow"&gt;is&lt;/span&gt; &lt;span class="ow"&gt;not&lt;/span&gt; &lt;span class="bp"&gt;None&lt;/span&gt; &lt;span class="ow"&gt;and&lt;/span&gt; \&lt;/div&gt;&lt;div class='line' id='LC140'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="ow"&gt;not&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;dstring_object&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ignore_alert&lt;/span&gt; &lt;span class="ow"&gt;and&lt;/span&gt; \&lt;/div&gt;&lt;div class='line' id='LC141'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="n"&gt;key&lt;/span&gt; &lt;span class="o"&gt;!=&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;dstring_object&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC142'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;dstring_object&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;alert__dchars_have_changed&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC143'&gt;&lt;br/&gt;&lt;/div&gt;&lt;div class='line' id='LC144'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="c"&gt;#///////////////////////////////////////////////////////////////////////////&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC145'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;init_from_transliteration&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;src&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;transliteration_method&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC146'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC147'&gt;&lt;span class="sd"&gt;                DCharacterBOD.init_from_transliteration&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC148'&gt;&lt;br/&gt;&lt;/div&gt;&lt;div class='line' id='LC149'&gt;&lt;span class="sd"&gt;                src             : string&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC150'&gt;&lt;span class="sd"&gt;                prev_dchar      : DCharacterBOD object&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC151'&gt;&lt;span class="sd"&gt;                transliteration_method: string&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC152'&gt;&lt;br/&gt;&lt;/div&gt;&lt;div class='line' id='LC153'&gt;&lt;span class="sd"&gt;                Return &amp;lt;self&amp;gt;.&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC154'&gt;&lt;span class="sd"&gt;        &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC155'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;reset&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC156'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="c"&gt;# Pylint can&amp;#39;t know that &amp;lt;self&amp;gt; has a &amp;#39;trans__init_from_transliteration&amp;#39; member&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC157'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="c"&gt;# created when &amp;lt;self&amp;gt; has been initialized by new_dstring() :&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC158'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="c"&gt;# pylint: disable=E1101&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC159'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="c"&gt;# -&amp;gt; &amp;quot;Instance of &amp;#39;DStringBOD&amp;#39; has no &amp;#39;trans__init_from_transliteration&amp;#39; member&amp;quot;&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC160'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;DCharacterBOD&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;trans__init_from_transliteration&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;transliteration_method&lt;/span&gt;&lt;span class="p"&gt;](&lt;/span&gt;&lt;span class="n"&gt;dchar&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC161'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="n"&gt;src&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;src&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC162'&gt;&lt;br/&gt;&lt;/div&gt;&lt;div class='line' id='LC163'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="c"&gt;#///////////////////////////////////////////////////////////////////////////&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC164'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;get_sourcestr_representation&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC165'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC166'&gt;&lt;span class="sd"&gt;                DCharacterBOD.get_sourcestr_representation&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC167'&gt;&lt;br/&gt;&lt;/div&gt;&lt;div class='line' id='LC168'&gt;&lt;span class="sd"&gt;                Return a string&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC169'&gt;&lt;span class="sd"&gt;        &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC170'&gt;&lt;br/&gt;&lt;/div&gt;&lt;div class='line' id='LC171'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="c"&gt;#.......................................................................&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC172'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="c"&gt;# unknown char ? Nothing to do :&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC173'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="c"&gt;#.......................................................................&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC174'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;unknown_char&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC175'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;dstring_object&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;options&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;anonymize the unknown characters&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC176'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;UNKNOWN_CHAR_SYMBOL&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC177'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="k"&gt;else&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC178'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;base_char&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC179'&gt;&lt;br/&gt;&lt;/div&gt;&lt;div class='line' id='LC180'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="c"&gt;#.......................................................................&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC181'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="c"&gt;# ok, the function will decompose &amp;lt;self&amp;gt; :&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC182'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="c"&gt;#.......................................................................&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC183'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="n"&gt;res&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[]&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC184'&gt;&lt;br/&gt;&lt;/div&gt;&lt;div class='line' id='LC185'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;base_char&lt;/span&gt; &lt;span class="ow"&gt;is&lt;/span&gt; &lt;span class="ow"&gt;not&lt;/span&gt; &lt;span class="bp"&gt;None&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC186'&gt;&lt;br/&gt;&lt;/div&gt;&lt;div class='line' id='LC187'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;punctuation&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC188'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="c"&gt;# punctuation symbol :&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC189'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="n"&gt;res&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;append&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="n"&gt;SYMB_PUNCTUATION&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get_default_symbol&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;base_char&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;)&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC190'&gt;&lt;br/&gt;&lt;/div&gt;&lt;div class='line' id='LC191'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="k"&gt;else&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC192'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;base_char&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;SYMB_OTHER_SYMBOLS&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC193'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="c"&gt;# &amp;quot;other symbol&amp;quot; : not punctuation nor consonant :&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC194'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="n"&gt;res&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;append&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="n"&gt;SYMB_OTHER_SYMBOLS&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get_default_symbol&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;base_char&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;)&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC195'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="k"&gt;elif&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;base_char&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;SYMB_CONSONANTS&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC196'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="c"&gt;# normal consonant :&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC197'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="n"&gt;res&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;append&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="n"&gt;SYMB_CONSONANTS&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get_default_symbol&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;base_char&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;)&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC198'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="k"&gt;elif&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;base_char&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;SYMB_FIXEDFORM_SUBJOINED_CONSONANTS&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC199'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="c"&gt;# special, fixedform subjoined consonant :&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC200'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="n"&gt;res&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;append&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="n"&gt;SYMB_FIXEDFORM_SUBJOINED_CONSONANTS&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get_default_symbol&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC201'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;base_char&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;)&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC202'&gt;&lt;br/&gt;&lt;/div&gt;&lt;div class='line' id='LC203'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="c"&gt;# subj_consonants ?&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC204'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;subj_consonants&lt;/span&gt; &lt;span class="ow"&gt;is&lt;/span&gt; &lt;span class="ow"&gt;not&lt;/span&gt; &lt;span class="bp"&gt;None&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC205'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;subj_c&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;subj_consonants&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC206'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="n"&gt;res&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;append&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="n"&gt;SYMB_SUBJOINED_CONSONANTS&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get_default_symbol&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;subj_c&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;)&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC207'&gt;&lt;br/&gt;&lt;/div&gt;&lt;div class='line' id='LC208'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="c"&gt;# dependent vowel ?&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC209'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;vowel1&lt;/span&gt; &lt;span class="ow"&gt;is&lt;/span&gt; &lt;span class="ow"&gt;not&lt;/span&gt; &lt;span class="bp"&gt;None&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC210'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="n"&gt;res&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;append&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="n"&gt;SYMB_VOWELS&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get_default_symbol&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;vowel1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;)&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC211'&gt;&lt;br/&gt;&lt;/div&gt;&lt;div class='line' id='LC212'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;vowel2&lt;/span&gt; &lt;span class="ow"&gt;is&lt;/span&gt; &lt;span class="ow"&gt;not&lt;/span&gt; &lt;span class="bp"&gt;None&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC213'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="n"&gt;res&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;append&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="n"&gt;SYMB_VOWELS&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get_default_symbol&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;vowel2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;)&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC214'&gt;&lt;br/&gt;&lt;/div&gt;&lt;div class='line' id='LC215'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="c"&gt;# halanta symbol ?&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC216'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;halanta&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC217'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="n"&gt;res&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;append&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="n"&gt;SYMB_DIACRITICS__HALANTA&lt;/span&gt; &lt;span class="p"&gt;)&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC218'&gt;&lt;br/&gt;&lt;/div&gt;&lt;div class='line' id='LC219'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="c"&gt;# anusvara/candrabindu symbol ?&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC220'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;anusvara_candrabindu&lt;/span&gt; &lt;span class="ow"&gt;is&lt;/span&gt; &lt;span class="ow"&gt;not&lt;/span&gt; &lt;span class="bp"&gt;None&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC221'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="n"&gt;res&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;append&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="n"&gt;SYMB_DIACRITICS&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get_default_symbol&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;anusvara_candrabindu&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;)&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC222'&gt;&lt;br/&gt;&lt;/div&gt;&lt;div class='line' id='LC223'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="c"&gt;# rnam bcad symbol ?&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC224'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;rnam_bcad&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC225'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="n"&gt;res&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;append&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="n"&gt;SYMB_DIACRITICS__RNAM_BCAD&lt;/span&gt; &lt;span class="p"&gt;)&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC226'&gt;&lt;br/&gt;&lt;/div&gt;&lt;div class='line' id='LC227'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="n"&gt;res&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;join&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;res&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC228'&gt;&lt;br/&gt;&lt;/div&gt;&lt;div class='line' id='LC229'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="c"&gt;# we have to delete the fake symbol for &amp;#39;a&amp;#39; since there&amp;#39;s no symbol in Tibetan for&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC230'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="c"&gt;# the vowel &amp;#39;a&amp;#39;.&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC231'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="n"&gt;res&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;res&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;replace&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;FAKE_A__SYMBOL&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC232'&gt;&lt;br/&gt;&lt;/div&gt;&lt;div class='line' id='LC233'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;res&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC234'&gt;&lt;br/&gt;&lt;/div&gt;&lt;div class='line' id='LC235'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="c"&gt;#///////////////////////////////////////////////////////////////////////////&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC236'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;is_identical_to&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;aliud&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC237'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC238'&gt;&lt;span class="sd"&gt;                DCharacterBOD.is_identical_to&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC239'&gt;&lt;br/&gt;&lt;/div&gt;&lt;div class='line' id='LC240'&gt;&lt;span class="sd"&gt;                aliud   :       DCharacterBOD object&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC241'&gt;&lt;br/&gt;&lt;/div&gt;&lt;div class='line' id='LC242'&gt;&lt;span class="sd"&gt;                Test every attribute of a DCharacterBOD object except .dstring_object&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC243'&gt;&lt;span class="sd"&gt;        &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC244'&gt;&lt;br/&gt;&lt;/div&gt;&lt;div class='line' id='LC245'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;unknown_char&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="n"&gt;aliud&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;unknown_char&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="ow"&gt;and&lt;/span&gt; \&lt;/div&gt;&lt;div class='line' id='LC246'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;base_char&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="n"&gt;aliud&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;base_char&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="ow"&gt;and&lt;/span&gt; \&lt;/div&gt;&lt;div class='line' id='LC247'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;subj_consonants&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="n"&gt;aliud&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;subj_consonants&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="ow"&gt;and&lt;/span&gt; \&lt;/div&gt;&lt;div class='line' id='LC248'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;punctuation&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="n"&gt;aliud&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;punctuation&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="ow"&gt;and&lt;/span&gt; \&lt;/div&gt;&lt;div class='line' id='LC249'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;rnam_bcad&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="n"&gt;aliud&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;rnam_bcad&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="ow"&gt;and&lt;/span&gt; \&lt;/div&gt;&lt;div class='line' id='LC250'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;halanta&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="n"&gt;aliud&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;halanta&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="ow"&gt;and&lt;/span&gt; \&lt;/div&gt;&lt;div class='line' id='LC251'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;anusvara_candrabindu&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="n"&gt;aliud&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;anusvara_candrabindu&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="ow"&gt;and&lt;/span&gt; \&lt;/div&gt;&lt;div class='line' id='LC252'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;vowel1&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="n"&gt;aliud&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;vowel1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="ow"&gt;and&lt;/span&gt; \&lt;/div&gt;&lt;div class='line' id='LC253'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;vowel2&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="n"&gt;aliud&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;vowel2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC254'&gt;&lt;br/&gt;&lt;/div&gt;&lt;div class='line' id='LC255'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="c"&gt;#///////////////////////////////////////////////////////////////////////////&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC256'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;reset&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC257'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC258'&gt;&lt;span class="sd"&gt;                DCharacterBOD.reset&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC259'&gt;&lt;span class="sd"&gt;        &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC260'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;unknown_char&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;True&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC261'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;base_char&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;None&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC262'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;subj_consonants&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;None&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC263'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;punctuation&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;False&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC264'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;rnam_bcad&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;False&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC265'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;halanta&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;False&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC266'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;anusvara_candrabindu&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;None&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC267'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;vowel1&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;None&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC268'&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;vowel2&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;None&lt;/span&gt;&lt;/div&gt;&lt;div class='line' id='LC269'&gt;&lt;br/&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/div&gt;
+          &lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/table&gt;
+  &lt;/div&gt;
+
+          &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;a href="#jump-to-line" rel="facebox[.linejump]" data-hotkey="l" class="js-jump-to-line" style="display:none"&gt;Jump to Line&lt;/a&gt;
+        &lt;div id="jump-to-line" style="display:none"&gt;
+          &lt;form accept-charset="UTF-8" class="js-jump-to-line-form"&gt;
+            &lt;input class="linejump-input js-jump-to-line-field" type="text" placeholder="Jump to line&amp;hellip;"&gt;
+            &lt;button type="submit" class="button"&gt;Go&lt;/button&gt;
+          &lt;/form&gt;
+        &lt;/div&gt;
+
+      &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="js-frame-loading-template" class="frame frame-loading large-loading-area" style="display:none;"&gt;
+  &lt;img class="js-frame-loading-spinner" src="https://a248.e.akamai.net/assets.github.com/images/spinners/octocat-spinner-128.gif" height="64" width="64"&gt;
+&lt;/div&gt;
+
+
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class="modal-backdrop"&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+      &lt;div id="footer-push"&gt;&lt;/div&gt;&lt;!-- hack for sticky footer --&gt;
+    &lt;/div&gt;&lt;!-- end of wrapper - hack for sticky footer --&gt;
+
+      &lt;!-- footer --&gt;
+      &lt;div id="footer"&gt;
+  &lt;div class="container clearfix"&gt;
+
+      &lt;dl class="footer_nav"&gt;
+        &lt;dt&gt;GitHub&lt;/dt&gt;
+        &lt;dd&gt;&lt;a href="/about"&gt;About us&lt;/a&gt;&lt;/dd&gt;
+        &lt;dd&gt;&lt;a href="/blog"&gt;Blog&lt;/a&gt;&lt;/dd&gt;
+        &lt;dd&gt;&lt;a href="/contact"&gt;Contact &amp;amp; support&lt;/a&gt;&lt;/dd&gt;
+        &lt;dd&gt;&lt;a href="https://enterprise.github.com/"&gt;GitHub Enterprise&lt;/a&gt;&lt;/dd&gt;
+        &lt;dd&gt;&lt;a href="https://status.github.com/"&gt;Site status&lt;/a&gt;&lt;/dd&gt;
+      &lt;/dl&gt;
+
+      &lt;dl class="footer_nav"&gt;
+        &lt;dt&gt;Applications&lt;/dt&gt;
+        &lt;dd&gt;&lt;a href="http://mac.github.com/"&gt;GitHub for Mac&lt;/a&gt;&lt;/dd&gt;
+        &lt;dd&gt;&lt;a href="http://windows.github.com/"&gt;GitHub for Windows&lt;/a&gt;&lt;/dd&gt;
+        &lt;dd&gt;&lt;a href="http://eclipse.github.com/"&gt;GitHub for Eclipse&lt;/a&gt;&lt;/dd&gt;
+        &lt;dd&gt;&lt;a href="http://mobile.github.com/"&gt;GitHub mobile apps&lt;/a&gt;&lt;/dd&gt;
+      &lt;/dl&gt;
+
+      &lt;dl class="footer_nav"&gt;
+        &lt;dt&gt;Services&lt;/dt&gt;
+        &lt;dd&gt;&lt;a href="http://get.gaug.es/"&gt;Gauges: Web analytics&lt;/a&gt;&lt;/dd&gt;
+        &lt;dd&gt;&lt;a href="https://speakerdeck.com"&gt;Speaker Deck: Presentations&lt;/a&gt;&lt;/dd&gt;
+        &lt;dd&gt;&lt;a href="https://gist.github.com"&gt;Gist: Code snippets&lt;/a&gt;&lt;/dd&gt;
+        &lt;dd&gt;&lt;a href="https://jobs.github.com/"&gt;Job board&lt;/a&gt;&lt;/dd&gt;
+      &lt;/dl&gt;
+
+      &lt;dl class="footer_nav"&gt;
+        &lt;dt&gt;Documentation&lt;/dt&gt;
+        &lt;dd&gt;&lt;a href="https://help.github.com/"&gt;GitHub Help&lt;/a&gt;&lt;/dd&gt;
+        &lt;dd&gt;&lt;a href="http://developer.github.com/"&gt;Developer API&lt;/a&gt;&lt;/dd&gt;
+        &lt;dd&gt;&lt;a href="http://github.github.com/github-flavored-markdown/"&gt;GitHub Flavored Markdown&lt;/a&gt;&lt;/dd&gt;
+        &lt;dd&gt;&lt;a href="http://pages.github.com/"&gt;GitHub Pages&lt;/a&gt;&lt;/dd&gt;
+      &lt;/dl&gt;
+
+      &lt;dl class="footer_nav"&gt;
+        &lt;dt&gt;More&lt;/dt&gt;
+        &lt;dd&gt;&lt;a href="http://training.github.com/"&gt;Training&lt;/a&gt;&lt;/dd&gt;
+        &lt;dd&gt;&lt;a href="/edu"&gt;Students &amp;amp; teachers&lt;/a&gt;&lt;/dd&gt;
+        &lt;dd&gt;&lt;a href="http://shop.github.com"&gt;The Shop&lt;/a&gt;&lt;/dd&gt;
+        &lt;dd&gt;&lt;a href="/plans"&gt;Plans &amp;amp; pricing&lt;/a&gt;&lt;/dd&gt;
+        &lt;dd&gt;&lt;a href="http://octodex.github.com/"&gt;The Octodex&lt;/a&gt;&lt;/dd&gt;
+      &lt;/dl&gt;
+
+      &lt;hr class="footer-divider"&gt;
+
+
+    &lt;p class="right"&gt;&amp;copy; 2013 &lt;span title="0.13478s from fe17.rs.github.com"&gt;GitHub&lt;/span&gt;, Inc. All rights reserved.&lt;/p&gt;
+    &lt;a class="left" href="/"&gt;
+      &lt;span class="mega-octicon octicon-mark-github"&gt;&lt;/span&gt;
+    &lt;/a&gt;
+    &lt;ul id="legal"&gt;
+        &lt;li&gt;&lt;a href="/site/terms"&gt;Terms of Service&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="/site/privacy"&gt;Privacy&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="/security"&gt;Security&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+
+  &lt;/div&gt;&lt;!-- /.container --&gt;
+
+&lt;/div&gt;&lt;!-- /.#footer --&gt;
+
+
+    &lt;div class="fullscreen-overlay js-fullscreen-overlay" id="fullscreen_overlay"&gt;
+  &lt;div class="fullscreen-container js-fullscreen-container"&gt;
+    &lt;div class="textarea-wrap"&gt;
+      &lt;textarea name="fullscreen-contents" id="fullscreen-contents" class="js-fullscreen-contents" placeholder="" data-suggester="fullscreen_suggester"&gt;&lt;/textarea&gt;
+          &lt;div class="suggester-container"&gt;
+              &lt;div class="suggester fullscreen-suggester js-navigation-container" id="fullscreen_suggester"
+                 data-url="/suizokukan/dchars/suggestions/commit"&gt;
+              &lt;/div&gt;
+          &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="fullscreen-sidebar"&gt;
+    &lt;a href="#" class="exit-fullscreen js-exit-fullscreen tooltipped leftwards" title="Exit Zen Mode"&gt;
+      &lt;span class="mega-octicon octicon-screen-normal"&gt;&lt;/span&gt;
+    &lt;/a&gt;
+    &lt;a href="#" class="theme-switcher js-theme-switcher tooltipped leftwards"
+      title="Switch themes"&gt;
+      &lt;span class="octicon octicon-color-mode"&gt;&lt;/span&gt;
+    &lt;/a&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+
+
+    &lt;div id="ajax-error-message" class="flash flash-error"&gt;
+      &lt;span class="octicon octicon-alert"&gt;&lt;/span&gt;
+      &lt;a href="#" class="octicon octicon-remove-close close ajax-error-dismiss"&gt;&lt;/a&gt;
+      Something went wrong with that request. Please try again.
+    &lt;/div&gt;
+
+    
+    &lt;span id='server_response_time' data-time='0.13527' data-host='fe17'&gt;&lt;/span&gt;
+    
+  &lt;/body&gt;
+&lt;/html&gt;
+
+</pre>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">dchars.languages.bod.dcharacter</a><ul>
+<li><a class="reference internal" href="#documentation">Documentation</a></li>
+<li><a class="reference internal" href="#source-code">Source code</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="dchars.languages.bod.buffer.html"
+                        title="previous chapter">dchars.languages.bod.buffer</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="dchars.languages.bod.dstring.html"
+                        title="next chapter">dchars.languages.bod.dstring</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/dchars.languages.bod.dcharacter.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="dchars.languages.bod.dstring.html" title="dchars.languages.bod.dstring"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="dchars.languages.bod.buffer.html" title="dchars.languages.bod.buffer"
+             >previous</a> |</li>
+        <li><a href="index.html">DChars 0.3.8 documentation</a> &raquo;</li>
+          <li><a href="source_code.html" >source code</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2012, suizokukan (Xavier Faure).
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

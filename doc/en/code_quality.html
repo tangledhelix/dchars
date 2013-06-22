@@ -1,0 +1,138 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>code quality &mdash; DChars 0.3.8 documentation</title>
+    
+    <link rel="stylesheet" href="_static/theme.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '0.3.8',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="DChars 0.3.8 documentation" href="index.html" />
+    <link rel="up" title="development" href="development.html" />
+    <link rel="next" title="directories’ structure" href="direcstructure.html" />
+    <link rel="prev" title="&lt;no title&gt;" href="roadmap.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="direcstructure.html" title="directories’ structure"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="roadmap.html" title="&lt;no title&gt;"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">DChars 0.3.8 documentation</a> &raquo;</li>
+          <li><a href="development.html" accesskey="U">development</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="code-quality-title">
+<h1>code quality<a class="headerlink" href="#code-quality-title" title="Permalink to this headline">¶</a></h1>
+<p>Code quality matters : feel free to write the author to improve it !</p>
+<div class="section" id="global-tests">
+<h2>global tests<a class="headerlink" href="#global-tests" title="Permalink to this headline">¶</a></h2>
+<p>We verify code&#8217;s quality with two tests : <br /> <tt class="docutils literal"><span class="pre">./header_please.py</span></tt> verifies that each file begins with a regular header <br /> <tt class="docutils literal"><span class="pre">./pylint_tests</span></tt> launches Pylint and gives a mark to every file in the project. Pylint&#8217;s configuration&#8217;s file has been modified this way : <br /> * max-line-length=100 <br /> * disable=W0142 (used * or ** magic) <br /> * max-public-methods=25 <br /> * max-args=10 <br /> * max-locals=20</p>
+</div>
+<div class="section" id="unittesting">
+<h2>unittesting<a class="headerlink" href="#unittesting" title="Permalink to this headline">¶</a></h2>
+<p>This program uses <tt class="docutils literal"><span class="pre">nosetest</span></tt> for unit testing; unit tests are stored in <tt class="docutils literal"><span class="pre">/tests/</span></tt>. To launch the unit tests : <tt class="docutils literal"><span class="pre">./unittests.sh</span></tt></p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">code quality</a><ul>
+<li><a class="reference internal" href="#global-tests">global tests</a></li>
+<li><a class="reference internal" href="#unittesting">unittesting</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="roadmap.html"
+                        title="previous chapter">&lt;no title&gt;</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="direcstructure.html"
+                        title="next chapter">directories&#8217; structure</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/code_quality.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="direcstructure.html" title="directories’ structure"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="roadmap.html" title="&lt;no title&gt;"
+             >previous</a> |</li>
+        <li><a href="index.html">DChars 0.3.8 documentation</a> &raquo;</li>
+          <li><a href="development.html" >development</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2012, suizokukan (Xavier Faure).
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>
