@@ -270,7 +270,7 @@ def create_uml_image():
         Return the name of the file.
     """
     print("_"*30, "create_uml_image")
-    command("pyreverse2 --ignore tests --project=dchars -A --output=dot dchars/")
+    command("pyreverse --ignore tests --project=dchars -A --output=dot dchars/")
     command("dot -Tbmp classes_dchars.dot -o doc/classes_dchars.bmp")
     command("convert doc/classes_dchars.bmp doc/classes_dchars.png")
     command("rm doc/classes_dchars.bmp")
