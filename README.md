@@ -6,6 +6,11 @@
 ----
 ----
 
+*how* *to* *install* *DChars* : (download this file](http://94.23.197.37/dchars/doc/userversion/dchars_v0.3.6.tar.gz) and unflat the tarball as a subdirectory of your Python3 project. And no, there's currently no way to install DChars with "make", "make install" but I'm working in order to fix this problem.
+
+----
+----
+
 *D(etailed)* *char(acter)s* *for* *Biblical* *Hebrew*, *Ancient* *Greek*, *Sanskrit*, *Latin* *and* *Tibetan*
 
 DChars (Detailed Characters) is a **Python3** module aiming to modify easily the diacritics signs of complex unicode characters and to get their transliteration. DChars’ code is licensed under the **GPLv3** licence and is free. Current available languages are Ancient Greek, Latin, Biblical Hebrew, Sanskrit (devanāgarī) and Tibetan.
