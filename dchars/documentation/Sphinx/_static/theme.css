@@ -1,0 +1,21 @@
+@import url("nature.css");
+
+.descname
+{
+color: pink;
+}
+
+.section
+{
+color: brown;
+}
+
+.class
+{
+color: red;
+}
+
+.method
+{
+color: green;
+}

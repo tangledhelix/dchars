@@ -1,0 +1,23 @@
+.. |br| raw:: html
+
+   <br />
+
+==========================================================
+..sort
+==========================================================
+
+-------------
+Documentation
+-------------
+
+.. automodule:: ..sort
+   :members:
+   :special-members:
+
+-----------
+Source code
+-----------
+
+.. literalinclude:: ../../../..//sort.py
+   :language: python
+   :linenos:

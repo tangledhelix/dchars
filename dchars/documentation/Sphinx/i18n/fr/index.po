@@ -1,0 +1,43 @@
+# French translations for DChars package.
+# Copyright (C) 2012, suizokukan (Xavier Faure)
+# This file is distributed under the same license as the DChars package.
+# Automatically generated, 2013.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: DChars 0.1.2\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-03-22 13:32\n"
+"PO-Revision-Date: 2013-03-22 13:32\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: fr\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+# da1a1e39ec29440a91aa2681dc52cff0
+#: index.rst:7
+msgid "INDEX_TITLE"
+msgstr "DChars"
+
+# d93a1f776c694f1c931105ff97c22e2d
+#: index.rst:19
+msgid "$INDEX_INTRODUCTION$"
+msgstr "DChars (Detailed Characters) est un module pour Python3 permettant de modifier facilement les signes diacritiques de caractères unicodes complexes et d'en obtenir une translittération. DChars est un module libre (GPL3) et gratuit. Les langues actuellement reconnues sont le grec ancien, le latin, l'hébreu (biblique), le sanskrit (écrit en devanāgarī) et le tibétain."
+
+# 4d90e2d23d6e476888ce5d89c1f73416
+#: index.rst:23
+msgid "Download last version :"
+msgstr "Téléchargez la dernière version :"
+
+# 5d3329600e2d4ea396545c08068cc68e
+#: index.rst:36
+msgid ""
+"If interested, take a look at the developper's directory (`► dev <../../dev/"
+">`_) or at the overall UML diagram (`► UML <../classes_dchars.png>`_)."
+msgstr ""
+"Si vous êtes intéressé(e), jetez un œil au répertoire de développement (`► dev <../../dev/"
+">`_) ou au diagramme UML de l’ensemble des classes (`► UML <../classes_logotheras.png>`_). |br| Dans tous les cas, n'hésitez pas à écrire à l'auteur : suizokukan, <suizokukan _A.T_ orange•fr>"
+
