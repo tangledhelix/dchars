@@ -485,3 +485,19 @@ def dstring__init_from_translit_str(dstring, dcharactertype, src):
         new_dcharacter.unknown_char = True
         new_dcharacter.base_char = src[i]
         dstring.append( new_dcharacter )
+
+#///////////////////////////////////////////////////////////////////////////////
+def dstring__trans__get_transliteration(dstring_object):
+    """
+        function dstring__trans__get_transliteration
+
+        Return a (unicode) string corresponding to the <dstring_object>.
+    """
+
+    res = []
+
+    for dchar in dstring_object:
+        res.append( dchar__get_translit_str(dstring_object = dstring_object,
+                                            dchar = dchar))
+
+    return "".join( res )

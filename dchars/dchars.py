@@ -84,10 +84,10 @@ LANGUAGES = {
                          CONFIG_INI["bod"]["transliteration method"],
                             {"sorting method"         : CONFIG_INI["bod"]["sorting method"],
                              "expected structure"     : CONFIG_INI["bod"]["expected structure"],
-                             "look up in the buffers" : CONFIG_INI["bod"]["look up in the buffers"],
-                             "fill the buffers"       : CONFIG_INI["bod"]["fill the buffers"],
+                             "look up in the buffers" : CONFIG_INI["bod"]["look up in the buffers"] == "yes",
+                             "fill the buffers"       : CONFIG_INI["bod"]["fill the buffers"] == "yes",
                              "anonymize the unknown characters" : \
-                                CONFIG_INI["bod"]["anonymize the unknown characters"],
+                                CONFIG_INI["bod"]["anonymize the unknown characters"] == "yes",
                              },
                         ),
 
@@ -97,7 +97,15 @@ LANGUAGES = {
                                          {"sorting method": \
                                           CONFIG_INI["grc"]["sorting method"],
                                           "anonymize the unknown characters" : \
-                                          CONFIG_INI["grc"]["anonymize the unknown characters"],}),
+                                          CONFIG_INI["grc"]["anonymize the unknown characters"] == "yes",
+                                          "gutenberg:ignore accents" : \
+                                          CONFIG_INI["grc.gutenberg"]["ignore accents"] == "yes",
+                                          "gutenberg:ignore smooth breathing" : \
+                                          CONFIG_INI["grc.gutenberg"]["ignore smooth breathing"] == "yes",
+                                          "gutenberg:ignore diaeresis" : \
+                                          CONFIG_INI["grc.gutenberg"]["ignore diaeresis"] == "yes",
+                                          "gutenberg:ignore iota subscript" : \
+                                          CONFIG_INI["grc.gutenberg"]["ignore iota subscript"] == "yes",}),
 
                 BIBLICAL_HEBREW :       ("hbo",
                                          "DStringHBO",
@@ -105,7 +113,7 @@ LANGUAGES = {
                                          {"sorting method": \
                                           CONFIG_INI["hbo"]["sorting method"],
                                           "anonymize the unknown characters" : \
-                                          CONFIG_INI["hbo"]["anonymize the unknown characters"],}),
+                                          CONFIG_INI["hbo"]["anonymize the unknown characters"] == "yes",}),
 
                 "latīna"        :       ("lat",
                                          "DStringLAT",
@@ -113,7 +121,7 @@ LANGUAGES = {
                                          {"sorting method": \
                                           CONFIG_INI["lat"]["sorting method"],
                                           "anonymize the unknown characters" : \
-                                          CONFIG_INI["lat"]["anonymize the unknown characters"],}),
+                                          CONFIG_INI["lat"]["anonymize the unknown characters"] == "yes",}),
 
                 "संस्कृतम्"         :       ("san",
                                          "DStringSAN",
@@ -121,7 +129,7 @@ LANGUAGES = {
                                          {"sorting method": \
                                           CONFIG_INI["san"]["sorting method"],
                                           "anonymize the unknown characters" : \
-                                          CONFIG_INI["san"]["anonymize the unknown characters"],}),
+                                          CONFIG_INI["san"]["anonymize the unknown characters"] == "yes",}),
             }
 
 # dict : key(language's name, iso639-3) : corresponding dstring type

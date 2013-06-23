@@ -48,6 +48,7 @@ import unicodedata
 import dchars.languages.grc.transliterations.basic as basictrans
 import dchars.languages.grc.transliterations.betacode as betacodetrans
 import dchars.languages.grc.transliterations.perseus as perseustrans
+import dchars.languages.grc.transliterations.gutenberg as gutenbergtrans
 
 ################################################################################
 # we complete the function unicodedata.normalize('NFC', ...)
@@ -146,12 +147,14 @@ class DCharacterGRC(DCharacterMotherClass):
           "basic" : basictrans.dchar__get_translit_str,
           "betacode": betacodetrans.dchar__get_translit_str,
           "perseus" : perseustrans.dchar__get_translit_str,
+          "gutenberg" : gutenbergtrans.dchar__get_translit_str,
           }
 
     trans__init_from_transliteration = {
           "basic" : basictrans.dchar__init_from_translit_str,
           "betacode": betacodetrans.dchar__init_from_translit_str,
           "perseus" : perseustrans.dchar__init_from_translit_str,
+          "gutenberg" : None,
           }
 
     #///////////////////////////////////////////////////////////////////////////
@@ -238,7 +241,7 @@ class DCharacterGRC(DCharacterMotherClass):
                "mekos="+repr(self.mekos)
 
     #///////////////////////////////////////////////////////////////////////////
-    def get_transliteration(self, transliteration_method):
+    def get_transliteration(self, transliteration_method, options):
         """
                 DCharacterGRC.get_transliteration
 
@@ -246,7 +249,8 @@ class DCharacterGRC(DCharacterMotherClass):
         """
         return DCharacterGRC.trans__get_transliteration[transliteration_method](
             dstring_object = self.dstring_object,
-            dchar = self)
+            dchar = self,
+            options = options)
 
     #///////////////////////////////////////////////////////////////////////////
     def init_from_transliteration(self, src, transliteration_method):

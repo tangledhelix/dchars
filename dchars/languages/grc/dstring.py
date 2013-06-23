@@ -47,6 +47,7 @@ from dchars.utilities.lstringtools import number_of_occurences
 import dchars.languages.grc.transliterations.basic as basictrans
 import dchars.languages.grc.transliterations.betacode as betacodetrans
 import dchars.languages.grc.transliterations.perseus as perseustrans
+import dchars.languages.grc.transliterations.gutenberg as gutenbergtrans
 
 ################################################################################
 class DStringGRC(DStringMotherClass):
@@ -77,6 +78,14 @@ class DStringGRC(DStringMotherClass):
           "basic" : basictrans.dstring__init_from_translit_str,
           "betacode": betacodetrans.dstring__init_from_translit_str,
           "perseus" : perseustrans.dstring__init_from_translit_str,
+          "gutenberg" : None,
+          }
+
+    trans__get_transliteration = {
+          "basic"       : basictrans.dstring__trans__get_transliteration,
+          "betacode"    : betacodetrans.dstring__trans__get_transliteration,
+          "perseus"     : perseustrans.dstring__trans__get_transliteration,
+          "gutenberg"   : gutenbergtrans.dstring__trans__get_transliteration,
           }
 
     #///////////////////////////////////////////////////////////////////////////
@@ -94,17 +103,13 @@ class DStringGRC(DStringMotherClass):
         """
                 DStringGRC.get_transliteration
         """
-        # Pylint can't know that <self> has a 'transliteration_method' member
+
+        # Pylint can't know that <self> has a 'trans__get_transliteration_method' member
         # created when <self> has been initialized by new_dstring() :
         # pylint: disable=E1101
-        # -> "Instance of 'DStringGRC' has no 'transliteration_method' member"
-
-        res = []
-
-        for dchar in self:
-            res.append( dchar.get_transliteration(self.transliteration_method) )
-
-        return "".join( res )
+        # -> "Instance of 'DStringBOD' has no 'trans__get_transliteration_method' member"
+        res = DStringGRC.trans__get_transliteration[self.transliteration_method](self)
+        return res
 
     #///////////////////////////////////////////////////////////////////////////
     def init_from_str(self, str_src):
@@ -374,4 +379,3 @@ class DStringGRC(DStringMotherClass):
                 src = src)
 
         return self
-

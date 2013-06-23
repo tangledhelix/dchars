@@ -63,6 +63,11 @@ class TESTSDStringGRC(unittest.TestCase):
         string = DSTRING_GRC("Α")
         self.assertEqual( string[0].base_char, "α" )
 
+        string = DSTRING_GRC("Ἰ")
+        self.assertEqual( string[0].base_char, "ι" )
+        self.assertEqual( string[0].capital_letter, True )
+        self.assertEqual( string[0].pneuma, "ψιλὸν" )
+
     #///////////////////////////////////////////////////////////////////////////
     def test_alternative_characters(self):
         """
@@ -127,11 +132,12 @@ class TESTSDStringGRC(unittest.TestCase):
                      "ᾄ ἕ",
                      "δὲ ὅτι μὲν καθ' ἕνα πάντων ἀμείνων καὶ ἰσχυρό",
                      "ὅτι. μὲν",
-                     "ϋ",   # 03CB
-                     "ῧ",   # 1FE7
+                     "ϋ",       # 03CB
+                     "ῧ",       # 1FE7
                      "ῤ",
-                     "ῧͅ",   # 1FE7 + 0345
+                     "ῧͅ",       # 1FE7 + 0345
                      "ᾎ̈",
+                     "Ἰ",       # 1F38
                      ):
 
             string = DSTRING_GRC(txt1)
@@ -184,6 +190,7 @@ class TESTSDStringGRC(unittest.TestCase):
                      "ῧͅ" # (1FE7) 03CB+0342; 0345
                      "μῧͅμ" # μ + (1FE7) 03CB+0342; 0345 + μ
                      "ᾎ̈",
+                     "Ἰ",       # 1F38
                      ):
             string1 = DSTRING_GRC(txt1)
             txt2 = string1.get_sourcestr_representation()
