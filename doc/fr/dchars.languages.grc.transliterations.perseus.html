@@ -7,7 +7,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>dchars.languages.grc.transliterations.perseus &mdash; DChars 0.3.8 documentation</title>
+    <title>dchars.languages.grc.transliterations.perseus &mdash; DChars 0.3.9 documentation</title>
     
     <link rel="stylesheet" href="_static/theme.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '',
-        VERSION:     '0.3.8',
+        VERSION:     '0.3.9',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <script type="text/javascript" src="_static/translations.js"></script>
-    <link rel="top" title="DChars 0.3.8 documentation" href="index.html" />
+    <link rel="top" title="DChars 0.3.9 documentation" href="index.html" />
     <link rel="up" title="code source" href="source_code.html" />
     <link rel="next" title="dchars.languages.hbo.__init__" href="dchars.languages.hbo.__init__.html" />
     <link rel="prev" title="dchars.languages.grc.transliterations.betacode" href="dchars.languages.grc.transliterations.betacode.html" /> 
@@ -46,7 +46,7 @@
         <li class="right" >
           <a href="dchars.languages.grc.transliterations.betacode.html" title="dchars.languages.grc.transliterations.betacode"
              accesskey="P">précédent</a> |</li>
-        <li><a href="index.html">DChars 0.3.8 documentation</a> &raquo;</li>
+        <li><a href="index.html">DChars 0.3.9 documentation</a> &raquo;</li>
           <li><a href="source_code.html" accesskey="U">code source</a> &raquo;</li> 
       </ul>
     </div>  
@@ -58,8 +58,36 @@
             
   <div class="section" id="dchars-languages-grc-transliterations-perseus">
 <h1>dchars.languages.grc.transliterations.perseus<a class="headerlink" href="#dchars-languages-grc-transliterations-perseus" title="Lien permanent vers ce titre">¶</a></h1>
-<div class="section" id="documentation">
-<h2>Documentation<a class="headerlink" href="#documentation" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="section" id="module-dchars.languages.grc.transliterations.perseus">
+<span id="documentation"></span><h2>Documentation<a class="headerlink" href="#module-dchars.languages.grc.transliterations.perseus" title="Lien permanent vers ce titre">¶</a></h2>
+<p>❏DChars❏ : dchars/languages/grc/transliterations/perseus.py</p>
+<dl class="function">
+<dt id="dchars.languages.grc.transliterations.perseus.dchar__get_translit_str">
+<tt class="descclassname">dchars.languages.grc.transliterations.perseus.</tt><tt class="descname">dchar__get_translit_str</tt><big>(</big><em>dstring_object</em>, <em>dchar</em><big>)</big><a class="headerlink" href="#dchars.languages.grc.transliterations.perseus.dchar__get_translit_str" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>function get_transliteration</p>
+<p>dchar   :       DCharacterGRC object</p>
+<p>Return a transliterared string corresponding to &lt;char&gt;.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="dchars.languages.grc.transliterations.perseus.dchar__init_from_translit_str">
+<tt class="descclassname">dchars.languages.grc.transliterations.perseus.</tt><tt class="descname">dchar__init_from_translit_str</tt><big>(</big><em>dchar</em>, <em>src</em><big>)</big><a class="headerlink" href="#dchars.languages.grc.transliterations.perseus.dchar__init_from_translit_str" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>function init_from_transliteration()</p>
+<p>dchar   :       DCharacterGRC object
+src     :       string</p>
+<p>Initialize and return &lt;char&gt;.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="dchars.languages.grc.transliterations.perseus.dstring__init_from_translit_str">
+<tt class="descclassname">dchars.languages.grc.transliterations.perseus.</tt><tt class="descname">dstring__init_from_translit_str</tt><big>(</big><em>dstring</em>, <em>dcharactertype</em>, <em>src</em><big>)</big><a class="headerlink" href="#dchars.languages.grc.transliterations.perseus.dstring__init_from_translit_str" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>function dstring__init_from_translit_str()</p>
+<p>dstring         :       DString object
+dcharactertype  :       type of DCharacterGRC
+src             :       string</p>
+<p>Initialize &lt;dstring&gt;.</p>
+</dd></dl>
+
 </div>
 <div class="section" id="source-code">
 <h2>Source code<a class="headerlink" href="#source-code" title="Lien permanent vers ce titre">¶</a></h2>
@@ -1050,7 +1078,7 @@
   <h3><a href="index.html">Table des matières</a></h3>
   <ul>
 <li><a class="reference internal" href="#">dchars.languages.grc.transliterations.perseus</a><ul>
-<li><a class="reference internal" href="#documentation">Documentation</a></li>
+<li><a class="reference internal" href="#module-dchars.languages.grc.transliterations.perseus">Documentation</a></li>
 <li><a class="reference internal" href="#source-code">Source code</a></li>
 </ul>
 </li>
@@ -1099,7 +1127,7 @@
         <li class="right" >
           <a href="dchars.languages.grc.transliterations.betacode.html" title="dchars.languages.grc.transliterations.betacode"
              >précédent</a> |</li>
-        <li><a href="index.html">DChars 0.3.8 documentation</a> &raquo;</li>
+        <li><a href="index.html">DChars 0.3.9 documentation</a> &raquo;</li>
           <li><a href="source_code.html" >code source</a> &raquo;</li> 
       </ul>
     </div>

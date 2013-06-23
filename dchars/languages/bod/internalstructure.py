@@ -1541,15 +1541,17 @@ def get_intstructures_from_dstring(dstring_object):
 
         return a ListOfInternalStructures object which describes <dstring_object>.
 
-        ************
-        * CONTENTS *
-        ************
+        .. code-block:: python
 
-        (1) we cut the <dstring_object> into several <istructs>
-        (2) we clean the istructs
-            (2.1) we clean the wrong istructs
-            (2.2) we clean the equivalent istructs
-        (3) istructs -> istructs_ok ---> (sort) ---> istructs_ok
+            ************
+            * CONTENTS *
+            ************
+
+            (1) we cut the <dstring_object> into several <istructs>
+            (2) we clean the istructs
+                (2.1) we clean the wrong istructs
+                (2.2) we clean the equivalent istructs
+            (3) istructs -> istructs_ok ---> (sort) ---> istructs_ok
 
     """
     anonymize_the_unknown_chars = dstring_object.options["anonymize the unknown characters"]
@@ -1941,43 +1943,45 @@ def get_intstruct_from_str(_src,
 
         This function CAN BE VERY SLOW for long <_src> strings.
 
-        ************
-        * CONTENTS *
-        ************
+        .. code-block:: python
 
-        (1) the quickest way to answer is to look in the buffer
-        (2) the big loop
-            (2.1) initialization of <future_istructs> from <char> :
-            (2.2) halanta
-            (2.3) rnam bcad
-            (2.4) anusvara/candrabindu
-            (2.5) other characteristics
-                  (2.5.1) punctuation symbol
-                  (2.5.2) other symbol
-                  (2.5.3) everything but punctuation symbol or the so-called "other symbol"
-                          (2.5.3.1) no subjoined consonant
-                          (2.5.3.2) one subjoined consonant
-                          (2.5.3.3) at least two subjoined consonant
-                          (2.5.3.4) vowels & diacritic signs for all new future istructs
-                                    having a new main consonant
-                          (2.5.3.5) we add the postsuffix 'u to (a copy of) the current istruct
-                  (2.5.4) we clean the doublets
-                  (2.5.5) postsuffixes འིས ('is), འམ ('am), འང ('ang), འི ('i)
-                  (2.5.6) postsuffix འོ ('o)
-        (3) finishing off
-            (3.1) we clean the wrong istructs
-            (3.2) we clean the equivalent istructs
-            (3.3) special case : the 'oM' syllable
-            (3.4) special cases : ambiguous syllables
-                  (3.4.1) : "sra"
-                  (3.4.2) : "rla"
-                  (3.4.3) : "sla"
-                  (3.4.4) : "rwa"
-                  (3.4.5) : "lwa"
-                  (3.4.6) : "swa"
-            (3.5) the unknown characters are added
-            (3.6) <istructs> is sorted
-            (3.7) filling the buffers
+            ************
+            * CONTENTS *
+            ************
+
+            (1) the quickest way to answer is to look in the buffer
+            (2) the big loop
+                (2.1) initialization of <future_istructs> from <char> :
+                (2.2) halanta
+                (2.3) rnam bcad
+                (2.4) anusvara/candrabindu
+                (2.5) other characteristics
+                      (2.5.1) punctuation symbol
+                      (2.5.2) other symbol
+                      (2.5.3) everything but punctuation symbol or the so-called "other symbol"
+                              (2.5.3.1) no subjoined consonant
+                              (2.5.3.2) one subjoined consonant
+                              (2.5.3.3) at least two subjoined consonant
+                              (2.5.3.4) vowels & diacritic signs for all new future istructs
+                                        having a new main consonant
+                              (2.5.3.5) we add the postsuffix 'u to (a copy of) the current istruct
+                      (2.5.4) we clean the doublets
+                      (2.5.5) postsuffixes འིས ('is), འམ ('am), འང ('ang), འི ('i)
+                      (2.5.6) postsuffix འོ ('o)
+            (3) finishing off
+                (3.1) we clean the wrong istructs
+                (3.2) we clean the equivalent istructs
+                (3.3) special case : the 'oM' syllable
+                (3.4) special cases : ambiguous syllables
+                      (3.4.1) : "sra"
+                      (3.4.2) : "rla"
+                      (3.4.3) : "sla"
+                      (3.4.4) : "rwa"
+                      (3.4.5) : "lwa"
+                      (3.4.6) : "swa"
+                (3.5) the unknown characters are added
+                (3.6) <istructs> is sorted
+                (3.7) filling the buffers
     """
 
     dstring_object.alert_off()

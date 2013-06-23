@@ -7,7 +7,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>dchars.languages.san.dcharacter &mdash; DChars 0.3.8 documentation</title>
+    <title>dchars.languages.san.dcharacter &mdash; DChars 0.3.9 documentation</title>
     
     <link rel="stylesheet" href="_static/theme.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '',
-        VERSION:     '0.3.8',
+        VERSION:     '0.3.9',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <script type="text/javascript" src="_static/translations.js"></script>
-    <link rel="top" title="DChars 0.3.8 documentation" href="index.html" />
+    <link rel="top" title="DChars 0.3.9 documentation" href="index.html" />
     <link rel="up" title="code source" href="source_code.html" />
     <link rel="next" title="dchars.languages.san.dstring" href="dchars.languages.san.dstring.html" />
     <link rel="prev" title="dchars.languages.san.__init__" href="dchars.languages.san.__init__.html" /> 
@@ -46,7 +46,7 @@
         <li class="right" >
           <a href="dchars.languages.san.__init__.html" title="dchars.languages.san.__init__"
              accesskey="P">précédent</a> |</li>
-        <li><a href="index.html">DChars 0.3.8 documentation</a> &raquo;</li>
+        <li><a href="index.html">DChars 0.3.9 documentation</a> &raquo;</li>
           <li><a href="source_code.html" accesskey="U">code source</a> &raquo;</li> 
       </ul>
     </div>  
@@ -58,8 +58,131 @@
             
   <div class="section" id="dchars-languages-san-dcharacter">
 <h1>dchars.languages.san.dcharacter<a class="headerlink" href="#dchars-languages-san-dcharacter" title="Lien permanent vers ce titre">¶</a></h1>
-<div class="section" id="documentation">
-<h2>Documentation<a class="headerlink" href="#documentation" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="section" id="module-dchars.languages.san.dcharacter">
+<span id="documentation"></span><h2>Documentation<a class="headerlink" href="#module-dchars.languages.san.dcharacter" title="Lien permanent vers ce titre">¶</a></h2>
+<p>❏DChars❏ : dchars/languages/san/dcharacter.py</p>
+<dl class="class">
+<dt id="dchars.languages.san.dcharacter.DCharacterSAN">
+<em class="property">class </em><tt class="descclassname">dchars.languages.san.dcharacter.</tt><tt class="descname">DCharacterSAN</tt><big>(</big><em>dstring_object</em>, <em>unknown_char=False</em>, <em>base_char=None</em>, <em>punctuation=False</em>, <em>accent=None</em>, <em>nukta=False</em>, <em>anusvara_candrabindu=None</em>, <em>virama=False</em>, <em>anudatta=False</em>, <em>is_an_independent_vowel=False</em>, <em>dependentvowel=None</em><big>)</big><a class="headerlink" href="#dchars.languages.san.dcharacter.DCharacterSAN" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>class DCharacterSAN</p>
+<p>DO NOT CREATE A DStringSAN object directly but use instead the
+dchars.py::new_dstring function.</p>
+<p>DCharacterSAN.__init__</p>
+<div class="highlight-none"><div class="highlight"><pre>unknown_char                    : bool
+base_char                       : None or a string with the NAME of the character,
+                                  not the character itself.
+accent                          : None or a string
+                                  (&quot;DEVANAGARI STRESS SIGN UDATTA&quot;,
+                                   &quot;DEVANAGARI GRAVE ACCENT&quot;
+                                   &quot;DEVANAGARI ACUTE ACCENT&quot;
+                                  )
+                                  but not &quot;DEVANAGARI STRESS SIGN ANUDATTA&quot;,
+                                  see anudatta below.
+punctuation                     : bool
+nukta                           : bool
+anusvara_candrabindu            : None, or a string
+                                  (&quot;DEVANAGARI SIGN ANUSVARA&quot;,
+                                   &quot;DEVANAGARI SIGN INVERTED CANDRABINDU&quot;,
+                                   &#39;DEVANAGARI SIGN CANDRABINDU&#39;
+                                  )
+virama                          : bool
+anudatta                        : bool
+is_an_independent_vowel         : bool
+dependentvowel                  : None, or a string
+                                  see symbol.SYMB_DEPENDENT_VOWELS
+</pre></div>
+</div>
+<dl class="method">
+<dt id="dchars.languages.san.dcharacter.DCharacterSAN.__eq__">
+<tt class="descname">__eq__</tt><big>(</big><em>aliud</em><big>)</big><a class="headerlink" href="#dchars.languages.san.dcharacter.DCharacterSAN.__eq__" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>aliud   :       DCharacterSAN object</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dchars.languages.san.dcharacter.DCharacterSAN.__init__">
+<tt class="descname">__init__</tt><big>(</big><em>dstring_object</em>, <em>unknown_char=False</em>, <em>base_char=None</em>, <em>punctuation=False</em>, <em>accent=None</em>, <em>nukta=False</em>, <em>anusvara_candrabindu=None</em>, <em>virama=False</em>, <em>anudatta=False</em>, <em>is_an_independent_vowel=False</em>, <em>dependentvowel=None</em><big>)</big><a class="headerlink" href="#dchars.languages.san.dcharacter.DCharacterSAN.__init__" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><div class="highlight-none"><div class="highlight"><pre>unknown_char                    : bool
+base_char                       : None or a string with the NAME of the character,
+                                  not the character itself.
+accent                          : None or a string
+                                  (&quot;DEVANAGARI STRESS SIGN UDATTA&quot;,
+                                   &quot;DEVANAGARI GRAVE ACCENT&quot;
+                                   &quot;DEVANAGARI ACUTE ACCENT&quot;
+                                  )
+                                  but not &quot;DEVANAGARI STRESS SIGN ANUDATTA&quot;,
+                                  see anudatta below.
+punctuation                     : bool
+nukta                           : bool
+anusvara_candrabindu            : None, or a string
+                                  (&quot;DEVANAGARI SIGN ANUSVARA&quot;,
+                                   &quot;DEVANAGARI SIGN INVERTED CANDRABINDU&quot;,
+                                   &#39;DEVANAGARI SIGN CANDRABINDU&#39;
+                                  )
+virama                          : bool
+anudatta                        : bool
+is_an_independent_vowel         : bool
+dependentvowel                  : None, or a string
+                                  see symbol.SYMB_DEPENDENT_VOWELS
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="dchars.languages.san.dcharacter.DCharacterSAN.__repr__">
+<tt class="descname">__repr__</tt><big>(</big><big>)</big><a class="headerlink" href="#dchars.languages.san.dcharacter.DCharacterSAN.__repr__" title="Lien permanent vers cette définition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dchars.languages.san.dcharacter.DCharacterSAN.get_sourcestr_representation">
+<tt class="descname">get_sourcestr_representation</tt><big>(</big><big>)</big><a class="headerlink" href="#dchars.languages.san.dcharacter.DCharacterSAN.get_sourcestr_representation" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Return a string.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dchars.languages.san.dcharacter.DCharacterSAN.get_transliteration">
+<tt class="descname">get_transliteration</tt><big>(</big><em>prev_dchar</em>, <em>transliteration_method</em><big>)</big><a class="headerlink" href="#dchars.languages.san.dcharacter.DCharacterSAN.get_transliteration" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>prev_dchar              :       None or a DCharacterSAN object
+transliteration_method  :       str</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dchars.languages.san.dcharacter.DCharacterSAN.init_from_transliteration">
+<tt class="descname">init_from_transliteration</tt><big>(</big><em>src</em>, <em>transliteration_method</em><big>)</big><a class="headerlink" href="#dchars.languages.san.dcharacter.DCharacterSAN.init_from_transliteration" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>src                     : string
+transliteration_method  :       str</p>
+<p>Return &lt;self&gt;.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dchars.languages.san.dcharacter.DCharacterSAN.reset">
+<tt class="descname">reset</tt><big>(</big><big>)</big><a class="headerlink" href="#dchars.languages.san.dcharacter.DCharacterSAN.reset" title="Lien permanent vers cette définition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dchars.languages.san.dcharacter.DCharacterSAN.sortingvalue">
+<tt class="descname">sortingvalue</tt><big>(</big><big>)</big><a class="headerlink" href="#dchars.languages.san.dcharacter.DCharacterSAN.sortingvalue" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Return an SortingValue object</p>
+<dl class="docutils">
+<dt>Output <span class="classifier-delimiter">:</span> <span class="classifier">a list of number :</span></dt>
+<dd><dl class="first last docutils">
+<dt>[(un)known_char,</dt>
+<dd>base_char,
+nukta,
+virama/dependent vowel,
+anusvara/candrabindu,
+anudatta,
+accent]</dd>
+</dl>
+</dd>
+</dl>
+<p>!!! BEWARE : the number #4 (anusvara/candrabindu) will be equal to 999 if
+!!! this character is followed by a visarga : see DStringSAN.sortingvalue()</p>
+<p>!!! BEWARE : if you modify this function, don&#8217;t forget to change the
+!!! attribute DCharacterSAN.sortingvalue_for_visarga</p>
+</dd></dl>
+
+</dd></dl>
+
 </div>
 <div class="section" id="source-code">
 <h2>Source code<a class="headerlink" href="#source-code" title="Lien permanent vers ce titre">¶</a></h2>
@@ -1218,7 +1341,7 @@
   <h3><a href="index.html">Table des matières</a></h3>
   <ul>
 <li><a class="reference internal" href="#">dchars.languages.san.dcharacter</a><ul>
-<li><a class="reference internal" href="#documentation">Documentation</a></li>
+<li><a class="reference internal" href="#module-dchars.languages.san.dcharacter">Documentation</a></li>
 <li><a class="reference internal" href="#source-code">Source code</a></li>
 </ul>
 </li>
@@ -1267,7 +1390,7 @@
         <li class="right" >
           <a href="dchars.languages.san.__init__.html" title="dchars.languages.san.__init__"
              >précédent</a> |</li>
-        <li><a href="index.html">DChars 0.3.8 documentation</a> &raquo;</li>
+        <li><a href="index.html">DChars 0.3.9 documentation</a> &raquo;</li>
           <li><a href="source_code.html" >code source</a> &raquo;</li> 
       </ul>
     </div>

@@ -7,7 +7,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>dchars.languages.grc.dcharacter &mdash; DChars 0.3.8 documentation</title>
+    <title>dchars.languages.grc.dcharacter &mdash; DChars 0.3.9 documentation</title>
     
     <link rel="stylesheet" href="_static/theme.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '',
-        VERSION:     '0.3.8',
+        VERSION:     '0.3.9',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <script type="text/javascript" src="_static/translations.js"></script>
-    <link rel="top" title="DChars 0.3.8 documentation" href="index.html" />
+    <link rel="top" title="DChars 0.3.9 documentation" href="index.html" />
     <link rel="up" title="code source" href="source_code.html" />
     <link rel="next" title="dchars.languages.grc.dstring" href="dchars.languages.grc.dstring.html" />
     <link rel="prev" title="dchars.languages.grc.__init__" href="dchars.languages.grc.__init__.html" /> 
@@ -46,7 +46,7 @@
         <li class="right" >
           <a href="dchars.languages.grc.__init__.html" title="dchars.languages.grc.__init__"
              accesskey="P">précédent</a> |</li>
-        <li><a href="index.html">DChars 0.3.8 documentation</a> &raquo;</li>
+        <li><a href="index.html">DChars 0.3.9 documentation</a> &raquo;</li>
           <li><a href="source_code.html" accesskey="U">code source</a> &raquo;</li> 
       </ul>
     </div>  
@@ -58,8 +58,93 @@
             
   <div class="section" id="dchars-languages-grc-dcharacter">
 <h1>dchars.languages.grc.dcharacter<a class="headerlink" href="#dchars-languages-grc-dcharacter" title="Lien permanent vers ce titre">¶</a></h1>
-<div class="section" id="documentation">
-<h2>Documentation<a class="headerlink" href="#documentation" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="section" id="module-dchars.languages.grc.dcharacter">
+<span id="documentation"></span><h2>Documentation<a class="headerlink" href="#module-dchars.languages.grc.dcharacter" title="Lien permanent vers ce titre">¶</a></h2>
+<p>❏DChars❏ : dchars/languages/grc/dcharacter.py</p>
+<dl class="class">
+<dt id="dchars.languages.grc.dcharacter.DCharacterGRC">
+<em class="property">class </em><tt class="descclassname">dchars.languages.grc.dcharacter.</tt><tt class="descname">DCharacterGRC</tt><big>(</big><em>dstring_object</em>, <em>unknown_char=False</em>, <em>base_char=None</em>, <em>contextual_form=None</em>, <em>punctuation=False</em>, <em>capital_letter=False</em>, <em>tonos=None</em>, <em>pneuma=None</em>, <em>hypogegrammene=False</em>, <em>dialutika=False</em>, <em>mekos=None</em><big>)</big><a class="headerlink" href="#dchars.languages.grc.dcharacter.DCharacterGRC" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>class DCharacterGRC</p>
+<p>DCharacterGRC.__init__</p>
+<div class="highlight-none"><div class="highlight"><pre>unknown_char                    : bool
+base_char                       : None or a string
+contextual_form                 : None or a string
+                                  (&quot;initial+medium+final&quot;+&quot;initial&quot;,
+                                   &quot;initial+medium&quot;, &quot;final&quot;, &quot;medium+final&quot;)
+punctuation                     : True, False
+capital_letter                  : True, False
+
+mekos(μῆκος)                    : None, &quot;βραχύ&quot;, &quot;μακρόν&quot;
+tonos(τόνος)                    : None, &quot;ὀξεῖα&quot;, &quot;βαρεῖα&quot;, &quot;περισπωμένη&quot;
+pneuma(πνεῦμα)                  : None, &quot;ψιλὸν&quot;, &quot;δασὺ&quot;
+hypogegrammene(ὑπογεγραμμένη)   : True, False
+dialutika(διαλυτικά)            : True, False
+</pre></div>
+</div>
+<dl class="method">
+<dt id="dchars.languages.grc.dcharacter.DCharacterGRC.__eq__">
+<tt class="descname">__eq__</tt><big>(</big><em>aliud</em><big>)</big><a class="headerlink" href="#dchars.languages.grc.dcharacter.DCharacterGRC.__eq__" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>aliud   :       DCharacterGRC object</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dchars.languages.grc.dcharacter.DCharacterGRC.__init__">
+<tt class="descname">__init__</tt><big>(</big><em>dstring_object</em>, <em>unknown_char=False</em>, <em>base_char=None</em>, <em>contextual_form=None</em>, <em>punctuation=False</em>, <em>capital_letter=False</em>, <em>tonos=None</em>, <em>pneuma=None</em>, <em>hypogegrammene=False</em>, <em>dialutika=False</em>, <em>mekos=None</em><big>)</big><a class="headerlink" href="#dchars.languages.grc.dcharacter.DCharacterGRC.__init__" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><div class="highlight-none"><div class="highlight"><pre>unknown_char                    : bool
+base_char                       : None or a string
+contextual_form                 : None or a string
+                                  (&quot;initial+medium+final&quot;+&quot;initial&quot;,
+                                   &quot;initial+medium&quot;, &quot;final&quot;, &quot;medium+final&quot;)
+punctuation                     : True, False
+capital_letter                  : True, False
+
+mekos(μῆκος)                    : None, &quot;βραχύ&quot;, &quot;μακρόν&quot;
+tonos(τόνος)                    : None, &quot;ὀξεῖα&quot;, &quot;βαρεῖα&quot;, &quot;περισπωμένη&quot;
+pneuma(πνεῦμα)                  : None, &quot;ψιλὸν&quot;, &quot;δασὺ&quot;
+hypogegrammene(ὑπογεγραμμένη)   : True, False
+dialutika(διαλυτικά)            : True, False
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="dchars.languages.grc.dcharacter.DCharacterGRC.__repr__">
+<tt class="descname">__repr__</tt><big>(</big><big>)</big><a class="headerlink" href="#dchars.languages.grc.dcharacter.DCharacterGRC.__repr__" title="Lien permanent vers cette définition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dchars.languages.grc.dcharacter.DCharacterGRC.get_sourcestr_representation">
+<tt class="descname">get_sourcestr_representation</tt><big>(</big><big>)</big><a class="headerlink" href="#dchars.languages.grc.dcharacter.DCharacterGRC.get_sourcestr_representation" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Return a string.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dchars.languages.grc.dcharacter.DCharacterGRC.get_transliteration">
+<tt class="descname">get_transliteration</tt><big>(</big><em>transliteration_method</em><big>)</big><a class="headerlink" href="#dchars.languages.grc.dcharacter.DCharacterGRC.get_transliteration" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>method  : string</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dchars.languages.grc.dcharacter.DCharacterGRC.init_from_transliteration">
+<tt class="descname">init_from_transliteration</tt><big>(</big><em>src</em>, <em>transliteration_method</em><big>)</big><a class="headerlink" href="#dchars.languages.grc.dcharacter.DCharacterGRC.init_from_transliteration" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>src     :       string
+transliteration_method  : string</p>
+<p>Return &lt;self&gt;.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dchars.languages.grc.dcharacter.DCharacterGRC.reset">
+<tt class="descname">reset</tt><big>(</big><big>)</big><a class="headerlink" href="#dchars.languages.grc.dcharacter.DCharacterGRC.reset" title="Lien permanent vers cette définition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dchars.languages.grc.dcharacter.DCharacterGRC.sortingvalue">
+<tt class="descname">sortingvalue</tt><big>(</big><big>)</big><a class="headerlink" href="#dchars.languages.grc.dcharacter.DCharacterGRC.sortingvalue" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Return an SortingValue object</p>
+</dd></dl>
+
+</dd></dl>
+
 </div>
 <div class="section" id="source-code">
 <h2>Source code<a class="headerlink" href="#source-code" title="Lien permanent vers ce titre">¶</a></h2>
@@ -946,7 +1031,7 @@
   <h3><a href="index.html">Table des matières</a></h3>
   <ul>
 <li><a class="reference internal" href="#">dchars.languages.grc.dcharacter</a><ul>
-<li><a class="reference internal" href="#documentation">Documentation</a></li>
+<li><a class="reference internal" href="#module-dchars.languages.grc.dcharacter">Documentation</a></li>
 <li><a class="reference internal" href="#source-code">Source code</a></li>
 </ul>
 </li>
@@ -995,7 +1080,7 @@
         <li class="right" >
           <a href="dchars.languages.grc.__init__.html" title="dchars.languages.grc.__init__"
              >précédent</a> |</li>
-        <li><a href="index.html">DChars 0.3.8 documentation</a> &raquo;</li>
+        <li><a href="index.html">DChars 0.3.9 documentation</a> &raquo;</li>
           <li><a href="source_code.html" >code source</a> &raquo;</li> 
       </ul>
     </div>

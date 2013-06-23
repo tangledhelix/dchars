@@ -7,7 +7,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>dchars.languages.grc.dstring &mdash; DChars 0.3.8 documentation</title>
+    <title>dchars.languages.grc.dstring &mdash; DChars 0.3.9 documentation</title>
     
     <link rel="stylesheet" href="_static/theme.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '',
-        VERSION:     '0.3.8',
+        VERSION:     '0.3.9',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <script type="text/javascript" src="_static/translations.js"></script>
-    <link rel="top" title="DChars 0.3.8 documentation" href="index.html" />
+    <link rel="top" title="DChars 0.3.9 documentation" href="index.html" />
     <link rel="up" title="code source" href="source_code.html" />
     <link rel="next" title="dchars.languages.grc.symbols" href="dchars.languages.grc.symbols.html" />
     <link rel="prev" title="dchars.languages.grc.dcharacter" href="dchars.languages.grc.dcharacter.html" /> 
@@ -46,7 +46,7 @@
         <li class="right" >
           <a href="dchars.languages.grc.dcharacter.html" title="dchars.languages.grc.dcharacter"
              accesskey="P">précédent</a> |</li>
-        <li><a href="index.html">DChars 0.3.8 documentation</a> &raquo;</li>
+        <li><a href="index.html">DChars 0.3.9 documentation</a> &raquo;</li>
           <li><a href="source_code.html" accesskey="U">code source</a> &raquo;</li> 
       </ul>
     </div>  
@@ -58,8 +58,57 @@
             
   <div class="section" id="dchars-languages-grc-dstring">
 <h1>dchars.languages.grc.dstring<a class="headerlink" href="#dchars-languages-grc-dstring" title="Lien permanent vers ce titre">¶</a></h1>
-<div class="section" id="documentation">
-<h2>Documentation<a class="headerlink" href="#documentation" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="section" id="module-dchars.languages.grc.dstring">
+<span id="documentation"></span><h2>Documentation<a class="headerlink" href="#module-dchars.languages.grc.dstring" title="Lien permanent vers ce titre">¶</a></h2>
+<p>❏DChars❏ : dchars/languages/grc/dstring.py</p>
+<dl class="class">
+<dt id="dchars.languages.grc.dstring.DStringGRC">
+<em class="property">class </em><tt class="descclassname">dchars.languages.grc.dstring.</tt><tt class="descname">DStringGRC</tt><big>(</big><em>str_src=None</em><big>)</big><a class="headerlink" href="#dchars.languages.grc.dstring.DStringGRC" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>class DStringGRC</p>
+<p>DO NOT CREATE A DStringGRC object directly but use instead the
+dchars.py::new_dstring function.</p>
+<p>DStringGRC.__init__</p>
+<dl class="method">
+<dt id="dchars.languages.grc.dstring.DStringGRC.__init__">
+<tt class="descname">__init__</tt><big>(</big><em>str_src=None</em><big>)</big><a class="headerlink" href="#dchars.languages.grc.dstring.DStringGRC.__init__" title="Lien permanent vers cette définition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dchars.languages.grc.dstring.DStringGRC.get_transliteration">
+<tt class="descname">get_transliteration</tt><big>(</big><big>)</big><a class="headerlink" href="#dchars.languages.grc.dstring.DStringGRC.get_transliteration" title="Lien permanent vers cette définition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dchars.languages.grc.dstring.DStringGRC.init_from_str">
+<tt class="descname">init_from_str</tt><big>(</big><em>str_src</em><big>)</big><a class="headerlink" href="#dchars.languages.grc.dstring.DStringGRC.init_from_str" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Function called by __init__(), initialize &lt;self&gt; and return
+&lt;indexes_of_unrecognized_chars&gt;.</p>
+<p>str_src : str</p>
+<p>HOW IT WORKS :
+* (1) str_src -&gt; (decomposition) unicodedata.normalize(&#8216;NFD&#8217;,) = normalized_src
+* (2) = normalized_src -&gt; (default symbols required) :
+*     replace_by_the_default_symbols() -&gt; normalized_src
+* (3) initialisation from the recognized characters.
+*     re.finditer(DStringGRC.pattern) give the symbols{letter+diacritics}
+*     (3.1) base_char
+*     (3.2) contextual_form
+*     (3.3) tonos (τόνος)
+*     (3.4) mekos (μῆκος)
+*     (3.5) pneuma (πνεῦμα)
+*     (3.6) hypogegrammene (ὑπογεγραμμένη)
+*     (3.7) dialutika (διαλυτικά)
+*     (3.8) we add the new character</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dchars.languages.grc.dstring.DStringGRC.init_from_transliteration">
+<tt class="descname">init_from_transliteration</tt><big>(</big><em>src</em><big>)</big><a class="headerlink" href="#dchars.languages.grc.dstring.DStringGRC.init_from_transliteration" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>src     :       string</p>
+<p>Return &lt;self&gt;</p>
+</dd></dl>
+
+</dd></dl>
+
 </div>
 <div class="section" id="source-code">
 <h2>Source code<a class="headerlink" href="#source-code" title="Lien permanent vers ce titre">¶</a></h2>
@@ -828,7 +877,7 @@
   <h3><a href="index.html">Table des matières</a></h3>
   <ul>
 <li><a class="reference internal" href="#">dchars.languages.grc.dstring</a><ul>
-<li><a class="reference internal" href="#documentation">Documentation</a></li>
+<li><a class="reference internal" href="#module-dchars.languages.grc.dstring">Documentation</a></li>
 <li><a class="reference internal" href="#source-code">Source code</a></li>
 </ul>
 </li>
@@ -877,7 +926,7 @@
         <li class="right" >
           <a href="dchars.languages.grc.dcharacter.html" title="dchars.languages.grc.dcharacter"
              >précédent</a> |</li>
-        <li><a href="index.html">DChars 0.3.8 documentation</a> &raquo;</li>
+        <li><a href="index.html">DChars 0.3.9 documentation</a> &raquo;</li>
           <li><a href="source_code.html" >code source</a> &raquo;</li> 
       </ul>
     </div>
