@@ -58,6 +58,9 @@ DSTRING_GRC__UNKNOWNCHAR = new_dstring(language="Ἑλληνικὴ γλῶττ�
 LIST_OF_EXAMPLES = (
     ("", ''),
     ("ῥα", "rha"),
+    ("œῥα", "œrha"),
+    ("(ῥα", "(rha"),
+    (")ῥα", ")rha"),
 
     # examples given by Frank Zago :
     ("Ὁ δὲ Καῖσαρ Οὐερκιγγετόριγα εὐθὺς ὲν δεσμοῖς ἔδησε καὶ ἐς τὰ ἐπινίκια μετὰ τοῦτο πέμψας ἀπέκτεινε.",

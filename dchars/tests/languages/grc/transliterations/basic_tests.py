@@ -138,6 +138,8 @@ class TESTSDStringGRC(unittest.TestCase):
                      'ἆ ἆ',
                      'ἆ ἆ '
                      'σς',
+                     '(σς',
+                     ')σς',
                      "0(μαχαίρᾱς) 1",
                      "[(μαχαίρᾱς) ]",
                      "{(μαχαίρᾱς) }",
@@ -195,6 +197,12 @@ class TESTSDStringGRC(unittest.TestCase):
         """
         string = DSTRING_GRC("²ἆ²")
         self.assertEqual( str(string), "²ἆ²" )
+
+        string = DSTRING_GRC(")ἆ)")
+        self.assertEqual( str(string), ")ἆ)" )
+
+        string = DSTRING_GRC("(ἆ(")
+        self.assertEqual( str(string), "(ἆ(" )
 
         string = DSTRING_GRC().init_from_transliteration("²)/\\a²)/\\a²")
         self.assertEqual( str(string), "²ἆ²ἆ²" )
