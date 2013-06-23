@@ -306,19 +306,21 @@ def dchar__get_translit_str(dstring_object, dchar):
 
     str_res = "".join( res )
 
-    if dstring_object.options["gutenberg:ignore accents"]:
-        str_res = str_res.replace("/", "")
-        str_res = str_res.replace("\\", "")
-        str_res = str_res.replace("^", "")
+    if not dchar.unknown_char and not dchar.punctuation:
 
-    if dstring_object.options["gutenberg:ignore smooth breathing"]:
-        str_res = str_res.replace(")", "")
+        if dstring_object.options["gutenberg:ignore accents"]:
+            str_res = str_res.replace("/", "")
+            str_res = str_res.replace("\\", "")
+            str_res = str_res.replace("^", "")
 
-    if dstring_object.options["gutenberg:ignore iota subscript"]:
-        str_res = str_res.replace("|", "")
+        if dstring_object.options["gutenberg:ignore smooth breathing"]:
+            str_res = str_res.replace(")", "")
 
-    if dstring_object.options["gutenberg:ignore diaeresis"]:
-        str_res = str_res.replace("\"", "")
+        if dstring_object.options["gutenberg:ignore iota subscript"]:
+            str_res = str_res.replace("|", "")
+
+        if dstring_object.options["gutenberg:ignore diaeresis"]:
+            str_res = str_res.replace("\"", "")
 
     return str_res
 

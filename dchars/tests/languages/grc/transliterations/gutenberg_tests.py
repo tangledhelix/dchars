@@ -60,8 +60,8 @@ LIST_OF_EXAMPLES = (
     ("ῥα", "rha"),
 
     # examples given by Frank Zago :
-    ("Ὁ δὲ Καῖσαρ Οὐερκιγγετόριγα εὐθὺς ὲν δεσμοῖς ἔδησε καὶ ἐς τὰ ἐπινίκια μετὰ τοῦτο πέμψας ἀπέκτεινε.",
-     "Ho de Kaisar Ouerkingetoriga euthus en desmois edêse kai es ta epinikia meta touto pempsas apekteine."),
+    ("Ὁ δὲ Καῖσαρ (Οὐερκιγγετόριγα) εὐθὺς ὲν δεσμοῖς ἔδησε καὶ ἐς τὰ ἐπινίκια μετὰ τοῦτο πέμψας ἀπέκτεινε.",
+     "Ho de Kaisar (Ouerkingetoriga) euthus en desmois edêse kai es ta epinikia meta touto pempsas apekteine."),
 
     ("Ὁ Οὐερκιγγετόριξ... καί τι καὐπὸ τῶν [Γερμανῶν] τῶν τοῖς Ῥωμαῖοις συμμαχούντων ἐσφάλη.",
      "Ho Ouerkingetorix... kai ti kaupo tôn [Germanôn] tôn tois Rhômaiois summachountôn esphalê."),
