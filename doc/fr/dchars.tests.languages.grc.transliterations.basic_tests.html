@@ -322,7 +322,15 @@ not have a method with the specified name.</p>
 215
 216
 217
-218</pre></div></td><td class="code"><div class="highlight"><pre><span class="c">#!/usr/bin/python3</span>
+218
+219
+220
+221
+222
+223
+224
+225
+226</pre></div></td><td class="code"><div class="highlight"><pre><span class="c">#!/usr/bin/python3</span>
 <span class="c"># -*- coding: utf-8 -*-</span>
 <span class="c">################################################################################</span>
 <span class="c">#    DChars Copyright (C) 2012 Suizokukan</span>
@@ -462,6 +470,8 @@ not have a method with the specified name.</p>
                      <span class="s">&#39;ἆ ἆ&#39;</span><span class="p">,</span>
                      <span class="s">&#39;ἆ ἆ &#39;</span>
                      <span class="s">&#39;σς&#39;</span><span class="p">,</span>
+                     <span class="s">&#39;(σς&#39;</span><span class="p">,</span>
+                     <span class="s">&#39;)σς&#39;</span><span class="p">,</span>
                      <span class="s">&quot;0(μαχαίρᾱς) 1&quot;</span><span class="p">,</span>
                      <span class="s">&quot;[(μαχαίρᾱς) ]&quot;</span><span class="p">,</span>
                      <span class="s">&quot;{(μαχαίρᾱς) }&quot;</span><span class="p">,</span>
@@ -519,6 +529,12 @@ not have a method with the specified name.</p>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">string</span> <span class="o">=</span> <span class="n">DSTRING_GRC</span><span class="p">(</span><span class="s">&quot;²ἆ²&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span> <span class="nb">str</span><span class="p">(</span><span class="n">string</span><span class="p">),</span> <span class="s">&quot;²ἆ²&quot;</span> <span class="p">)</span>
+
+        <span class="n">string</span> <span class="o">=</span> <span class="n">DSTRING_GRC</span><span class="p">(</span><span class="s">&quot;)ἆ)&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span> <span class="nb">str</span><span class="p">(</span><span class="n">string</span><span class="p">),</span> <span class="s">&quot;)ἆ)&quot;</span> <span class="p">)</span>
+
+        <span class="n">string</span> <span class="o">=</span> <span class="n">DSTRING_GRC</span><span class="p">(</span><span class="s">&quot;(ἆ(&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span> <span class="nb">str</span><span class="p">(</span><span class="n">string</span><span class="p">),</span> <span class="s">&quot;(ἆ(&quot;</span> <span class="p">)</span>
 
         <span class="n">string</span> <span class="o">=</span> <span class="n">DSTRING_GRC</span><span class="p">()</span><span class="o">.</span><span class="n">init_from_transliteration</span><span class="p">(</span><span class="s">&quot;²)/</span><span class="se">\\</span><span class="s">a²)/</span><span class="se">\\</span><span class="s">a²&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span> <span class="nb">str</span><span class="p">(</span><span class="n">string</span><span class="p">),</span> <span class="s">&quot;²ἆ²ἆ²&quot;</span> <span class="p">)</span>

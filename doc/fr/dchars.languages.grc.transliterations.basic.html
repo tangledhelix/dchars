@@ -88,6 +88,13 @@ src             :       string</p>
 <p>Initialize &lt;dstring&gt;.</p>
 </dd></dl>
 
+<dl class="function">
+<dt id="dchars.languages.grc.transliterations.basic.dstring__trans__get_transliteration">
+<tt class="descclassname">dchars.languages.grc.transliterations.basic.</tt><tt class="descname">dstring__trans__get_transliteration</tt><big>(</big><em>dstring_object</em><big>)</big><a class="headerlink" href="#dchars.languages.grc.transliterations.basic.dstring__trans__get_transliteration" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>function dstring__trans__get_transliteration</p>
+<p>Return a (unicode) string corresponding to the &lt;dstring_object&gt;.</p>
+</dd></dl>
+
 </div>
 <div class="section" id="source-code">
 <h2>Source code<a class="headerlink" href="#source-code" title="Lien permanent vers ce titre">¶</a></h2>
@@ -489,7 +496,23 @@ src             :       string</p>
 396
 397
 398
-399</pre></div></td><td class="code"><div class="highlight"><pre><span class="c">#!/usr/bin/python3</span>
+399
+400
+401
+402
+403
+404
+405
+406
+407
+408
+409
+410
+411
+412
+413
+414
+415</pre></div></td><td class="code"><div class="highlight"><pre><span class="c">#!/usr/bin/python3</span>
 <span class="c"># -*- coding: utf-8 -*-</span>
 <span class="c">################################################################################</span>
 <span class="c">#    DChars Copyright (C) 2012 Suizokukan</span>
@@ -888,6 +911,22 @@ src             :       string</p>
         <span class="n">new_dcharacter</span><span class="o">.</span><span class="n">unknown_char</span> <span class="o">=</span> <span class="bp">True</span>
         <span class="n">new_dcharacter</span><span class="o">.</span><span class="n">base_char</span> <span class="o">=</span> <span class="n">src</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
         <span class="n">dstring</span><span class="o">.</span><span class="n">append</span><span class="p">(</span> <span class="n">new_dcharacter</span> <span class="p">)</span>
+
+<span class="c">#///////////////////////////////////////////////////////////////////////////////</span>
+<span class="k">def</span> <span class="nf">dstring__trans__get_transliteration</span><span class="p">(</span><span class="n">dstring_object</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        function dstring__trans__get_transliteration</span>
+
+<span class="sd">        Return a (unicode) string corresponding to the &lt;dstring_object&gt;.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">res</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">for</span> <span class="n">dchar</span> <span class="ow">in</span> <span class="n">dstring_object</span><span class="p">:</span>
+        <span class="n">res</span><span class="o">.</span><span class="n">append</span><span class="p">(</span> <span class="n">dchar__get_translit_str</span><span class="p">(</span><span class="n">dstring_object</span> <span class="o">=</span> <span class="n">dstring_object</span><span class="p">,</span>
+                                            <span class="n">dchar</span> <span class="o">=</span> <span class="n">dchar</span><span class="p">))</span>
+
+    <span class="k">return</span> <span class="s">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span> <span class="n">res</span> <span class="p">)</span>
 </pre></div>
 </td></tr></table></div>
 </div>

@@ -3,6 +3,15 @@ CHANGELOG_TITLE
 ===============
 
 ------------------
+0.3.9 [2013_06_XX]
+------------------
+
+  * (grc) added a dstring__trans__get_transliteration(dstring_object) function to
+    all transliteration methods.
+  * (grc) first draft for the 'gutenberg' transliteration method (see http://www.pgdp.net/wiki/Greek)
+  * (grc) new options : gutenberg:ignore accents, gutenberg:ignore iota subscript, ...
+
+------------------
 0.3.8 [2013_06_21]
 ------------------
 
