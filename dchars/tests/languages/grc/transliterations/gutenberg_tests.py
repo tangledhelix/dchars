@@ -34,6 +34,7 @@ DSTRING_GRC = new_dstring(language="Ἑλληνικὴ γλῶττα",
                                      "gutenberg:ignore accents" : True,
                                      "gutenberg:ignore iota subscript" : True,
                                      "gutenberg:ignore diaeresis" : True,
+                                     "transliteration for upsilon" : "u",
                                     },
                           )
 
@@ -44,6 +45,7 @@ DSTRING_GRC__FULL = new_dstring(language="Ἑλληνικὴ γλῶττα",
                                      "gutenberg:ignore accents" : False,
                                      "gutenberg:ignore iota subscript" : False,
                                      "gutenberg:ignore diaeresis" : False,
+                                     "transliteration for upsilon" : "u",
                                     },
                           )
 
@@ -122,6 +124,26 @@ class TESTSDStringGRC(unittest.TestCase):
             string = DSTRING_GRC__FULL(grc)
             grc_gutenberg2 = string.get_transliteration()
             self.assertEqual( grc_gutenberg, grc_gutenberg2 )
+
+    #///////////////////////////////////////////////////////////////////////////
+    def test_get_transliteration__upsilon(self):
+        """
+                TESTSDStringGRC.test_get_transliteration__upsilon
+        """
+        DSTRING_GRC__UPSILON = new_dstring(language="Ἑλληνικὴ γλῶττα",
+                          transliteration_method = "gutenberg",
+                          options = {"anonymize the unknown characters" : False,
+                                     "gutenberg:ignore smooth breathing" : True,
+                                     "gutenberg:ignore accents" : True,
+                                     "gutenberg:ignore iota subscript" : True,
+                                     "gutenberg:ignore diaeresis" : True,
+                                     "transliteration for upsilon" : "y",
+                                    },
+                          )
+
+        string = DSTRING_GRC__UPSILON("πύργον")
+        grc_gutenberg2 = string.get_transliteration()
+        self.assertEqual( "pyrgon", grc_gutenberg2 )
 
     #///////////////////////////////////////////////////////////////////////////
     def test_unknown_characters(self):

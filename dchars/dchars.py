@@ -105,7 +105,10 @@ LANGUAGES = {
                                           "gutenberg:ignore diaeresis" : \
                                           CONFIG_INI["grc.gutenberg"]["ignore diaeresis"] == "yes",
                                           "gutenberg:ignore iota subscript" : \
-                                          CONFIG_INI["grc.gutenberg"]["ignore iota subscript"] == "yes",}),
+                                          CONFIG_INI["grc.gutenberg"]["ignore iota subscript"] == "yes",
+                                          "gutenberg:transliteration for upsilon" : \
+                                          CONFIG_INI["grc.gutenberg"]["transliteration for upsilon"],
+                                          }),
 
                 BIBLICAL_HEBREW :       ("hbo",
                                          "DStringHBO",

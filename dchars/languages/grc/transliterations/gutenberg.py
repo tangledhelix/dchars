@@ -22,7 +22,6 @@
     ❏DChars❏ : dchars/languages/grc/transliterations/gutenberg.py
 
     Transliteration defined on http://www.pgdp.net/wiki/Greek
-    * caveat : υ is always transliterated 'u' (never 'y')
     * diaeresis is always ignored
 
     * todo :
@@ -406,5 +405,9 @@ def dstring__trans__get_transliteration(dstring_object):
     str_res = str_res.replace("hO", "Ho")
     str_res = str_res.replace("hU", "Hu")
     str_res = str_res.replace("hÔ", "Hô")
+
+    if dstring_object.options["transliteration for upsilon"] == "y":
+        str_res = str_res.replace("u", "y")
+        str_res = str_res.replace("U", "Y")
 
     return str_res
