@@ -58,9 +58,6 @@ DSTRING_GRC__UNKNOWNCHAR = new_dstring(language="Ἑλληνικὴ γλῶττ�
 LIST_OF_EXAMPLES = (
     ("", ''),
     ("ῥα", "rha"),
-    ("œῥα", "œrha"),
-    ("(ῥα", "(rha"),
-    (")ῥα", ")rha"),
 
     # examples given by Frank Zago :
     ("Ὁ δὲ Καῖσαρ Οὐερκιγγετόριγα εὐθὺς ὲν δεσμοῖς ἔδησε καὶ ἐς τὰ ἐπινίκια μετὰ τοῦτο πέμψας ἀπέκτεινε.",
@@ -84,6 +81,12 @@ LIST_OF_EXAMPLES = (
 
 LIST_OF_EXAMPLES__FULL = (
     ("",        ''),
+
+    ("ῥα", "rha"),
+    ("œῥα", "œrha"),
+    ("(ῥα", "(rha"),
+    (")ῥα", ")rha"),
+
 
     # from http://www.pgdp.net/wiki/Transliterating_Greek/Marking_Accents 
     ("τῷ Ἰουδαϊσμῷ ἀπὸ μέρους",
@@ -140,7 +143,7 @@ class TESTSDStringGRC(unittest.TestCase):
                                      "gutenberg:ignore accents" : True,
                                      "gutenberg:ignore iota subscript" : True,
                                      "gutenberg:ignore diaeresis" : True,
-                                     "transliteration for upsilon" : "y",
+                                     "gutenberg:transliteration for upsilon" : "y",
                                     },
                           )
 
