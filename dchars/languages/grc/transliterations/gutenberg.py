@@ -406,6 +406,7 @@ def dstring__trans__get_transliteration(dstring_object):
     str_res = str_res.replace("hU", "Hu")
     str_res = str_res.replace("hÔ", "Hô")
 
+    # alternative transliteration of upsilon :
     if dstring_object.options["transliteration for upsilon"] == "y":
         str_res = str_res.replace("u", "y")
         str_res = str_res.replace("U", "Y")

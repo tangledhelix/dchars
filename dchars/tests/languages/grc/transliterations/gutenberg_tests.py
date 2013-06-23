@@ -58,25 +58,25 @@ DSTRING_GRC__UNKNOWNCHAR = new_dstring(language="Ἑλληνικὴ γλῶττ�
 LIST_OF_EXAMPLES = (
     ("", ''),
     ("ῥα", "rha"),
-    ("Ὁ δὲ Καῖσαρ Οὐερκιγγετόριγα εὺθὺς ὲν δεσμοῖς ἔδησε καὶ ἐς τὰ ὲπινίκια μετὰ τοῦτο πέμψας ἀπέκτεινε.",
+
+    # examples given by Frank Zago :
+    ("Ὁ δὲ Καῖσαρ Οὐερκιγγετόριγα εὐθὺς ὲν δεσμοῖς ἔδησε καὶ ἐς τὰ ἐπινίκια μετὰ τοῦτο πέμψας ἀπέκτεινε.",
      "Ho de Kaisar Ouerkingetoriga euthus en desmois edêse kai es ta epinikia meta touto pempsas apekteine."),
 
-    ("Ὁ Οὐερκιγγετόριξ... καί τι καὑπὸ τῶν [Γερμανῶν] τῶν τοῖς Ῥωμαἰοις συμμαχούντων ὲσφἀλη.",
+    ("Ὁ Οὐερκιγγετόριξ... καί τι καὐπὸ τῶν [Γερμανῶν] τῶν τοῖς Ῥωμαῖοις συμμαχούντων ἐσφάλη.",
      "Ho Ouerkingetorix... kai ti kaupo tôn [Germanôn] tôn tois Rhômaiois summachountôn esphalê."),
 
-# ***
-#    ("Ὁ Οὐερκιγγετόριξ... ἑν φιλίᾳ ποτὲ τῷ Καίσαρι ἑγεγόνει.",
-#     "Ho Ouerkingetorix... *en philia pote tô Kaisari *egegonei."),
+    ("Ὁ Οὐερκιγγετόριξ... ἐν φιλίᾳ ποτὲ τῷ Καίσαρι ἐγεγόνει.",
+     "Ho Ouerkingetorix... en philia pote tô Kaisari egegonei."),
 
-#    ("Ἀρόερνοι.--Ἔθνοςμαχιμώτατον τῶν πρὸς τῇ Κελτικ*ᾑ Γαλατῶν.",
-#     "Aroernoi.--Ethnosmachimôtaton tôn pros tê Keltikê Galatôn."),
+    ("Ἀρόερνοι.--Ἔθνοςμαχιμώτατον τῶν πρὸς τῇ Κελτικῇ Γαλατῶν.",
+     "Aroernoi.--Ethnosmachimôtaton tôn pros tê Keltikê Galatôn."),
 
-#    ("*Οί Κελτοἰ... *ἁνὰ μέσον Ῥήνου... καὶ τῶν Πυρηναίων ὀρῶν... ἀθρόοι καὶ κατἁ πλῆθος ἑμπίπτοντες, ἀθρόοι κατελύοντο.",
-#     "Hoi Keltoi... ana meson Rhênou... kai tôn Purênaiôn orôn... athrooi kai kata plêthos empiptontes, athrooi kateluonto."),
+    ("Οἱ Κελτοἰ... ἀνὰ μέσον Ῥήνου... καὶ τῶν Πυρηναίων ὀρῶν... ἀθρόοι καὶ κατὰ πλῆθος ἐμπίπτοντες, ἀθρόοι κατελύοντο.",
+     "Hoi Keltoi... ana meson Rhênou... kai tôn Purênaiôn orôn... athrooi kai kata plêthos empiptontes, athrooi kateluonto."),
 
-#    ("Καὶ πύργον τινὰ παραχρῆμα... ἑλόντες, ἔπειτα καὶ τὰ λοιπὰ οὐ χαλεπῶς ἑχειρώσαντο",
-#     "Kai p*yrgon tina parachrêma... helontes, epeita kai ta loipa ou chalepôs *echeirôsanto",)
-
+    ("Καὶ πύργον τινὰ παραχρῆμα... ἑλόντες, ἔπειτα καὶ τὰ λοιπὰ οὐ χαλεπῶς ἐχειρώσαντο",
+     "Kai purgon tina parachrêma... helontes, epeita kai ta loipa ou chalepôs echeirôsanto",)
 )
 
 LIST_OF_EXAMPLES__FULL = (
