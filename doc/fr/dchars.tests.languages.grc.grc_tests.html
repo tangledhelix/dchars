@@ -523,7 +523,14 @@ not have a method with the specified name.</p>
 391
 392
 393
-394</pre></div></td><td class="code"><div class="highlight"><pre><span class="c">#!/usr/bin/python3</span>
+394
+395
+396
+397
+398
+399
+400
+401</pre></div></td><td class="code"><div class="highlight"><pre><span class="c">#!/usr/bin/python3</span>
 <span class="c"># -*- coding: utf-8 -*-</span>
 <span class="c">################################################################################</span>
 <span class="c">#    DChars Copyright (C) 2012 Suizokukan</span>
@@ -587,6 +594,11 @@ not have a method with the specified name.</p>
 
         <span class="n">string</span> <span class="o">=</span> <span class="n">DSTRING_GRC</span><span class="p">(</span><span class="s">&quot;Α&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span> <span class="n">string</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">base_char</span><span class="p">,</span> <span class="s">&quot;α&quot;</span> <span class="p">)</span>
+
+        <span class="n">string</span> <span class="o">=</span> <span class="n">DSTRING_GRC</span><span class="p">(</span><span class="s">&quot;Ἰ&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span> <span class="n">string</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">base_char</span><span class="p">,</span> <span class="s">&quot;ι&quot;</span> <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span> <span class="n">string</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">capital_letter</span><span class="p">,</span> <span class="bp">True</span> <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span> <span class="n">string</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">pneuma</span><span class="p">,</span> <span class="s">&quot;ψιλὸν&quot;</span> <span class="p">)</span>
 
     <span class="c">#///////////////////////////////////////////////////////////////////////////</span>
     <span class="k">def</span> <span class="nf">test_alternative_characters</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -652,11 +664,12 @@ not have a method with the specified name.</p>
                      <span class="s">&quot;ᾄ ἕ&quot;</span><span class="p">,</span>
                      <span class="s">&quot;δὲ ὅτι μὲν καθ&#39; ἕνα πάντων ἀμείνων καὶ ἰσχυρό&quot;</span><span class="p">,</span>
                      <span class="s">&quot;ὅτι. μὲν&quot;</span><span class="p">,</span>
-                     <span class="s">&quot;ϋ&quot;</span><span class="p">,</span>   <span class="c"># 03CB</span>
-                     <span class="s">&quot;ῧ&quot;</span><span class="p">,</span>   <span class="c"># 1FE7</span>
+                     <span class="s">&quot;ϋ&quot;</span><span class="p">,</span>       <span class="c"># 03CB</span>
+                     <span class="s">&quot;ῧ&quot;</span><span class="p">,</span>       <span class="c"># 1FE7</span>
                      <span class="s">&quot;ῤ&quot;</span><span class="p">,</span>
-                     <span class="s">&quot;ῧͅ&quot;</span><span class="p">,</span>   <span class="c"># 1FE7 + 0345</span>
+                     <span class="s">&quot;ῧͅ&quot;</span><span class="p">,</span>       <span class="c"># 1FE7 + 0345</span>
                      <span class="s">&quot;ᾎ̈&quot;</span><span class="p">,</span>
+                     <span class="s">&quot;Ἰ&quot;</span><span class="p">,</span>       <span class="c"># 1F38</span>
                      <span class="p">):</span>
 
             <span class="n">string</span> <span class="o">=</span> <span class="n">DSTRING_GRC</span><span class="p">(</span><span class="n">txt1</span><span class="p">)</span>
@@ -709,6 +722,7 @@ not have a method with the specified name.</p>
                      <span class="s">&quot;ῧͅ&quot;</span> <span class="c"># (1FE7) 03CB+0342; 0345</span>
                      <span class="s">&quot;μῧͅμ&quot;</span> <span class="c"># μ + (1FE7) 03CB+0342; 0345 + μ</span>
                      <span class="s">&quot;ᾎ̈&quot;</span><span class="p">,</span>
+                     <span class="s">&quot;Ἰ&quot;</span><span class="p">,</span>       <span class="c"># 1F38</span>
                      <span class="p">):</span>
             <span class="n">string1</span> <span class="o">=</span> <span class="n">DSTRING_GRC</span><span class="p">(</span><span class="n">txt1</span><span class="p">)</span>
             <span class="n">txt2</span> <span class="o">=</span> <span class="n">string1</span><span class="o">.</span><span class="n">get_sourcestr_representation</span><span class="p">()</span>

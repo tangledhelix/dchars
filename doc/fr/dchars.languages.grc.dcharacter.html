@@ -120,7 +120,7 @@ dialutika(διαλυτικά)            : True, False
 
 <dl class="method">
 <dt id="dchars.languages.grc.dcharacter.DCharacterGRC.get_transliteration">
-<tt class="descname">get_transliteration</tt><big>(</big><em>transliteration_method</em><big>)</big><a class="headerlink" href="#dchars.languages.grc.dcharacter.DCharacterGRC.get_transliteration" title="Lien permanent vers cette définition">¶</a></dt>
+<tt class="descname">get_transliteration</tt><big>(</big><em>transliteration_method</em>, <em>options</em><big>)</big><a class="headerlink" href="#dchars.languages.grc.dcharacter.DCharacterGRC.get_transliteration" title="Lien permanent vers cette définition">¶</a></dt>
 <dd><p>method  : string</p>
 </dd></dl>
 
@@ -582,7 +582,11 @@ transliteration_method  : string</p>
 432
 433
 434
-435</pre></div></td><td class="code"><div class="highlight"><pre><span class="c">#!/usr/bin/python3</span>
+435
+436
+437
+438
+439</pre></div></td><td class="code"><div class="highlight"><pre><span class="c">#!/usr/bin/python3</span>
 <span class="c"># -*- coding: utf-8 -*-</span>
 <span class="c">################################################################################</span>
 <span class="c">#    DChars Copyright (C) 2012 Suizokukan</span>
@@ -632,6 +636,7 @@ transliteration_method  : string</p>
 <span class="kn">import</span> <span class="nn">dchars.languages.grc.transliterations.basic</span> <span class="kn">as</span> <span class="nn">basictrans</span>
 <span class="kn">import</span> <span class="nn">dchars.languages.grc.transliterations.betacode</span> <span class="kn">as</span> <span class="nn">betacodetrans</span>
 <span class="kn">import</span> <span class="nn">dchars.languages.grc.transliterations.perseus</span> <span class="kn">as</span> <span class="nn">perseustrans</span>
+<span class="kn">import</span> <span class="nn">dchars.languages.grc.transliterations.gutenberg</span> <span class="kn">as</span> <span class="nn">gutenbergtrans</span>
 
 <span class="c">################################################################################</span>
 <span class="c"># we complete the function unicodedata.normalize(&#39;NFC&#39;, ...)</span>
@@ -730,12 +735,14 @@ transliteration_method  : string</p>
           <span class="s">&quot;basic&quot;</span> <span class="p">:</span> <span class="n">basictrans</span><span class="o">.</span><span class="n">dchar__get_translit_str</span><span class="p">,</span>
           <span class="s">&quot;betacode&quot;</span><span class="p">:</span> <span class="n">betacodetrans</span><span class="o">.</span><span class="n">dchar__get_translit_str</span><span class="p">,</span>
           <span class="s">&quot;perseus&quot;</span> <span class="p">:</span> <span class="n">perseustrans</span><span class="o">.</span><span class="n">dchar__get_translit_str</span><span class="p">,</span>
+          <span class="s">&quot;gutenberg&quot;</span> <span class="p">:</span> <span class="n">gutenbergtrans</span><span class="o">.</span><span class="n">dchar__get_translit_str</span><span class="p">,</span>
           <span class="p">}</span>
 
     <span class="n">trans__init_from_transliteration</span> <span class="o">=</span> <span class="p">{</span>
           <span class="s">&quot;basic&quot;</span> <span class="p">:</span> <span class="n">basictrans</span><span class="o">.</span><span class="n">dchar__init_from_translit_str</span><span class="p">,</span>
           <span class="s">&quot;betacode&quot;</span><span class="p">:</span> <span class="n">betacodetrans</span><span class="o">.</span><span class="n">dchar__init_from_translit_str</span><span class="p">,</span>
           <span class="s">&quot;perseus&quot;</span> <span class="p">:</span> <span class="n">perseustrans</span><span class="o">.</span><span class="n">dchar__init_from_translit_str</span><span class="p">,</span>
+          <span class="s">&quot;gutenberg&quot;</span> <span class="p">:</span> <span class="bp">None</span><span class="p">,</span>
           <span class="p">}</span>
 
     <span class="c">#///////////////////////////////////////////////////////////////////////////</span>
@@ -822,7 +829,7 @@ transliteration_method  : string</p>
                <span class="s">&quot;mekos=&quot;</span><span class="o">+</span><span class="nb">repr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">mekos</span><span class="p">)</span>
 
     <span class="c">#///////////////////////////////////////////////////////////////////////////</span>
-    <span class="k">def</span> <span class="nf">get_transliteration</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">transliteration_method</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">get_transliteration</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">transliteration_method</span><span class="p">,</span> <span class="n">options</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">                DCharacterGRC.get_transliteration</span>
 
@@ -830,7 +837,8 @@ transliteration_method  : string</p>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">DCharacterGRC</span><span class="o">.</span><span class="n">trans__get_transliteration</span><span class="p">[</span><span class="n">transliteration_method</span><span class="p">](</span>
             <span class="n">dstring_object</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">dstring_object</span><span class="p">,</span>
-            <span class="n">dchar</span> <span class="o">=</span> <span class="bp">self</span><span class="p">)</span>
+            <span class="n">dchar</span> <span class="o">=</span> <span class="bp">self</span><span class="p">,</span>
+            <span class="n">options</span> <span class="o">=</span> <span class="n">options</span><span class="p">)</span>
 
     <span class="c">#///////////////////////////////////////////////////////////////////////////</span>
     <span class="k">def</span> <span class="nf">init_from_transliteration</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">src</span><span class="p">,</span> <span class="n">transliteration_method</span><span class="p">):</span>

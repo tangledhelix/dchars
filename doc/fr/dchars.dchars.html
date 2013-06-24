@@ -282,7 +282,18 @@ options                 : dict of strings</p>
 207
 208
 209
-210</pre></div></td><td class="code"><div class="highlight"><pre><span class="c">#!/usr/bin/python3</span>
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221</pre></div></td><td class="code"><div class="highlight"><pre><span class="c">#!/usr/bin/python3</span>
 <span class="c"># -*- coding: utf-8 -*-</span>
 <span class="c">################################################################################</span>
 <span class="c">#    DChars Copyright (C) 2012 Suizokukan</span>
@@ -368,10 +379,10 @@ options                 : dict of strings</p>
                          <span class="n">CONFIG_INI</span><span class="p">[</span><span class="s">&quot;bod&quot;</span><span class="p">][</span><span class="s">&quot;transliteration method&quot;</span><span class="p">],</span>
                             <span class="p">{</span><span class="s">&quot;sorting method&quot;</span>         <span class="p">:</span> <span class="n">CONFIG_INI</span><span class="p">[</span><span class="s">&quot;bod&quot;</span><span class="p">][</span><span class="s">&quot;sorting method&quot;</span><span class="p">],</span>
                              <span class="s">&quot;expected structure&quot;</span>     <span class="p">:</span> <span class="n">CONFIG_INI</span><span class="p">[</span><span class="s">&quot;bod&quot;</span><span class="p">][</span><span class="s">&quot;expected structure&quot;</span><span class="p">],</span>
-                             <span class="s">&quot;look up in the buffers&quot;</span> <span class="p">:</span> <span class="n">CONFIG_INI</span><span class="p">[</span><span class="s">&quot;bod&quot;</span><span class="p">][</span><span class="s">&quot;look up in the buffers&quot;</span><span class="p">],</span>
-                             <span class="s">&quot;fill the buffers&quot;</span>       <span class="p">:</span> <span class="n">CONFIG_INI</span><span class="p">[</span><span class="s">&quot;bod&quot;</span><span class="p">][</span><span class="s">&quot;fill the buffers&quot;</span><span class="p">],</span>
+                             <span class="s">&quot;look up in the buffers&quot;</span> <span class="p">:</span> <span class="n">CONFIG_INI</span><span class="p">[</span><span class="s">&quot;bod&quot;</span><span class="p">][</span><span class="s">&quot;look up in the buffers&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s">&quot;yes&quot;</span><span class="p">,</span>
+                             <span class="s">&quot;fill the buffers&quot;</span>       <span class="p">:</span> <span class="n">CONFIG_INI</span><span class="p">[</span><span class="s">&quot;bod&quot;</span><span class="p">][</span><span class="s">&quot;fill the buffers&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s">&quot;yes&quot;</span><span class="p">,</span>
                              <span class="s">&quot;anonymize the unknown characters&quot;</span> <span class="p">:</span> \
-                                <span class="n">CONFIG_INI</span><span class="p">[</span><span class="s">&quot;bod&quot;</span><span class="p">][</span><span class="s">&quot;anonymize the unknown characters&quot;</span><span class="p">],</span>
+                                <span class="n">CONFIG_INI</span><span class="p">[</span><span class="s">&quot;bod&quot;</span><span class="p">][</span><span class="s">&quot;anonymize the unknown characters&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s">&quot;yes&quot;</span><span class="p">,</span>
                              <span class="p">},</span>
                         <span class="p">),</span>
 
@@ -381,7 +392,18 @@ options                 : dict of strings</p>
                                          <span class="p">{</span><span class="s">&quot;sorting method&quot;</span><span class="p">:</span> \
                                           <span class="n">CONFIG_INI</span><span class="p">[</span><span class="s">&quot;grc&quot;</span><span class="p">][</span><span class="s">&quot;sorting method&quot;</span><span class="p">],</span>
                                           <span class="s">&quot;anonymize the unknown characters&quot;</span> <span class="p">:</span> \
-                                          <span class="n">CONFIG_INI</span><span class="p">[</span><span class="s">&quot;grc&quot;</span><span class="p">][</span><span class="s">&quot;anonymize the unknown characters&quot;</span><span class="p">],}),</span>
+                                          <span class="n">CONFIG_INI</span><span class="p">[</span><span class="s">&quot;grc&quot;</span><span class="p">][</span><span class="s">&quot;anonymize the unknown characters&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s">&quot;yes&quot;</span><span class="p">,</span>
+                                          <span class="s">&quot;gutenberg:ignore accents&quot;</span> <span class="p">:</span> \
+                                          <span class="n">CONFIG_INI</span><span class="p">[</span><span class="s">&quot;grc.gutenberg&quot;</span><span class="p">][</span><span class="s">&quot;ignore accents&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s">&quot;yes&quot;</span><span class="p">,</span>
+                                          <span class="s">&quot;gutenberg:ignore smooth breathing&quot;</span> <span class="p">:</span> \
+                                          <span class="n">CONFIG_INI</span><span class="p">[</span><span class="s">&quot;grc.gutenberg&quot;</span><span class="p">][</span><span class="s">&quot;ignore smooth breathing&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s">&quot;yes&quot;</span><span class="p">,</span>
+                                          <span class="s">&quot;gutenberg:ignore diaeresis&quot;</span> <span class="p">:</span> \
+                                          <span class="n">CONFIG_INI</span><span class="p">[</span><span class="s">&quot;grc.gutenberg&quot;</span><span class="p">][</span><span class="s">&quot;ignore diaeresis&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s">&quot;yes&quot;</span><span class="p">,</span>
+                                          <span class="s">&quot;gutenberg:ignore iota subscript&quot;</span> <span class="p">:</span> \
+                                          <span class="n">CONFIG_INI</span><span class="p">[</span><span class="s">&quot;grc.gutenberg&quot;</span><span class="p">][</span><span class="s">&quot;ignore iota subscript&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s">&quot;yes&quot;</span><span class="p">,</span>
+                                          <span class="s">&quot;gutenberg:transliteration for upsilon&quot;</span> <span class="p">:</span> \
+                                          <span class="n">CONFIG_INI</span><span class="p">[</span><span class="s">&quot;grc.gutenberg&quot;</span><span class="p">][</span><span class="s">&quot;transliteration for upsilon&quot;</span><span class="p">],</span>
+                                          <span class="p">}),</span>
 
                 <span class="n">BIBLICAL_HEBREW</span> <span class="p">:</span>       <span class="p">(</span><span class="s">&quot;hbo&quot;</span><span class="p">,</span>
                                          <span class="s">&quot;DStringHBO&quot;</span><span class="p">,</span>
@@ -389,7 +411,7 @@ options                 : dict of strings</p>
                                          <span class="p">{</span><span class="s">&quot;sorting method&quot;</span><span class="p">:</span> \
                                           <span class="n">CONFIG_INI</span><span class="p">[</span><span class="s">&quot;hbo&quot;</span><span class="p">][</span><span class="s">&quot;sorting method&quot;</span><span class="p">],</span>
                                           <span class="s">&quot;anonymize the unknown characters&quot;</span> <span class="p">:</span> \
-                                          <span class="n">CONFIG_INI</span><span class="p">[</span><span class="s">&quot;hbo&quot;</span><span class="p">][</span><span class="s">&quot;anonymize the unknown characters&quot;</span><span class="p">],}),</span>
+                                          <span class="n">CONFIG_INI</span><span class="p">[</span><span class="s">&quot;hbo&quot;</span><span class="p">][</span><span class="s">&quot;anonymize the unknown characters&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s">&quot;yes&quot;</span><span class="p">,}),</span>
 
                 <span class="s">&quot;latīna&quot;</span>        <span class="p">:</span>       <span class="p">(</span><span class="s">&quot;lat&quot;</span><span class="p">,</span>
                                          <span class="s">&quot;DStringLAT&quot;</span><span class="p">,</span>
@@ -397,7 +419,7 @@ options                 : dict of strings</p>
                                          <span class="p">{</span><span class="s">&quot;sorting method&quot;</span><span class="p">:</span> \
                                           <span class="n">CONFIG_INI</span><span class="p">[</span><span class="s">&quot;lat&quot;</span><span class="p">][</span><span class="s">&quot;sorting method&quot;</span><span class="p">],</span>
                                           <span class="s">&quot;anonymize the unknown characters&quot;</span> <span class="p">:</span> \
-                                          <span class="n">CONFIG_INI</span><span class="p">[</span><span class="s">&quot;lat&quot;</span><span class="p">][</span><span class="s">&quot;anonymize the unknown characters&quot;</span><span class="p">],}),</span>
+                                          <span class="n">CONFIG_INI</span><span class="p">[</span><span class="s">&quot;lat&quot;</span><span class="p">][</span><span class="s">&quot;anonymize the unknown characters&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s">&quot;yes&quot;</span><span class="p">,}),</span>
 
                 <span class="s">&quot;संस्कृतम्&quot;</span>         <span class="p">:</span>       <span class="p">(</span><span class="s">&quot;san&quot;</span><span class="p">,</span>
                                          <span class="s">&quot;DStringSAN&quot;</span><span class="p">,</span>
@@ -405,7 +427,7 @@ options                 : dict of strings</p>
                                          <span class="p">{</span><span class="s">&quot;sorting method&quot;</span><span class="p">:</span> \
                                           <span class="n">CONFIG_INI</span><span class="p">[</span><span class="s">&quot;san&quot;</span><span class="p">][</span><span class="s">&quot;sorting method&quot;</span><span class="p">],</span>
                                           <span class="s">&quot;anonymize the unknown characters&quot;</span> <span class="p">:</span> \
-                                          <span class="n">CONFIG_INI</span><span class="p">[</span><span class="s">&quot;san&quot;</span><span class="p">][</span><span class="s">&quot;anonymize the unknown characters&quot;</span><span class="p">],}),</span>
+                                          <span class="n">CONFIG_INI</span><span class="p">[</span><span class="s">&quot;san&quot;</span><span class="p">][</span><span class="s">&quot;anonymize the unknown characters&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s">&quot;yes&quot;</span><span class="p">,}),</span>
             <span class="p">}</span>
 
 <span class="c"># dict : key(language&#39;s name, iso639-3) : corresponding dstring type</span>
