@@ -25,6 +25,7 @@
 from distutils.core import setup
 
 from dchars.system import numversion as numversion
+
 VERSION = numversion.VersionOfTheProgram().numversion
 
 setup(name='DChars',
@@ -35,5 +36,5 @@ setup(name='DChars',
       author='Xavier Faure(suizokukan)',
       author_email='suizokukan _A.T_ orange•fr',
       url='94.23.197.37/dchars/',
-      packages=['dchars'],
+      packages="dchars/",
      )

@@ -85,6 +85,7 @@ MODULES = {
 
          "dchars.languages.grc.transliterations" : ( ("__init__.py", False),
                                                      ("betacode.py", False),
+                                                     ("gutenberg.py", False),
                                                      ("basic.py", False),
                                                      ("perseus.py", False),
                                   ),
@@ -157,6 +158,7 @@ MODULES = {
          "dchars.tests.languages.grc.transliterations": ( ("__init__.py", False),
                                                           ("betacode_tests.py", False),
                                                           ("basic_tests.py", False),
+                                                          ("gutenberg_tests.py", False),
                                                           ("perseus_tests.py", False),
                                                         ),
 

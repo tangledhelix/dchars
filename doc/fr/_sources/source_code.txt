@@ -95,6 +95,7 @@ dchars.languages.grc.transliterations
    dchars.languages.grc.transliterations.__init__
    dchars.languages.grc.transliterations.basic
    dchars.languages.grc.transliterations.betacode
+   dchars.languages.grc.transliterations.gutenberg
    dchars.languages.grc.transliterations.perseus
 
 --------------------------------------------------------------------------------
@@ -249,6 +250,7 @@ dchars.tests.languages.grc.transliterations
    dchars.tests.languages.grc.transliterations.__init__
    dchars.tests.languages.grc.transliterations.basic_tests
    dchars.tests.languages.grc.transliterations.betacode_tests
+   dchars.tests.languages.grc.transliterations.gutenberg_tests
    dchars.tests.languages.grc.transliterations.perseus_tests
 
 --------------------------------------------------------------------------------
