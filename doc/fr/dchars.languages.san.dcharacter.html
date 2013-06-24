@@ -92,15 +92,15 @@ dependentvowel                  : None, or a string
                                   see symbol.SYMB_DEPENDENT_VOWELS
 </pre></div>
 </div>
-<dl class="method">
+<dl class="function">
 <dt id="dchars.languages.san.dcharacter.DCharacterSAN.__eq__">
-<tt class="descname">__eq__</tt><big>(</big><em>aliud</em><big>)</big><a class="headerlink" href="#dchars.languages.san.dcharacter.DCharacterSAN.__eq__" title="Lien permanent vers cette définition">¶</a></dt>
+<tt class="descname">__eq__</tt><big>(</big><em>self</em>, <em>aliud</em><big>)</big><a class="headerlink" href="#dchars.languages.san.dcharacter.DCharacterSAN.__eq__" title="Lien permanent vers cette définition">¶</a></dt>
 <dd><p>aliud   :       DCharacterSAN object</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="function">
 <dt id="dchars.languages.san.dcharacter.DCharacterSAN.__init__">
-<tt class="descname">__init__</tt><big>(</big><em>dstring_object</em>, <em>unknown_char=False</em>, <em>base_char=None</em>, <em>punctuation=False</em>, <em>accent=None</em>, <em>nukta=False</em>, <em>anusvara_candrabindu=None</em>, <em>virama=False</em>, <em>anudatta=False</em>, <em>is_an_independent_vowel=False</em>, <em>dependentvowel=None</em><big>)</big><a class="headerlink" href="#dchars.languages.san.dcharacter.DCharacterSAN.__init__" title="Lien permanent vers cette définition">¶</a></dt>
+<tt class="descname">__init__</tt><big>(</big><em>self</em>, <em>dstring_object</em>, <em>unknown_char=False</em>, <em>base_char=None</em>, <em>punctuation=False</em>, <em>accent=None</em>, <em>nukta=False</em>, <em>anusvara_candrabindu=None</em>, <em>virama=False</em>, <em>anudatta=False</em>, <em>is_an_independent_vowel=False</em>, <em>dependentvowel=None</em><big>)</big><a class="headerlink" href="#dchars.languages.san.dcharacter.DCharacterSAN.__init__" title="Lien permanent vers cette définition">¶</a></dt>
 <dd><div class="highlight-none"><div class="highlight"><pre>unknown_char                    : bool
 base_char                       : None or a string with the NAME of the character,
                                   not the character itself.
@@ -127,40 +127,40 @@ dependentvowel                  : None, or a string
 </div>
 </dd></dl>
 
-<dl class="method">
+<dl class="function">
 <dt id="dchars.languages.san.dcharacter.DCharacterSAN.__repr__">
-<tt class="descname">__repr__</tt><big>(</big><big>)</big><a class="headerlink" href="#dchars.languages.san.dcharacter.DCharacterSAN.__repr__" title="Lien permanent vers cette définition">¶</a></dt>
+<tt class="descname">__repr__</tt><big>(</big><em>self</em><big>)</big><a class="headerlink" href="#dchars.languages.san.dcharacter.DCharacterSAN.__repr__" title="Lien permanent vers cette définition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="function">
 <dt id="dchars.languages.san.dcharacter.DCharacterSAN.get_sourcestr_representation">
-<tt class="descname">get_sourcestr_representation</tt><big>(</big><big>)</big><a class="headerlink" href="#dchars.languages.san.dcharacter.DCharacterSAN.get_sourcestr_representation" title="Lien permanent vers cette définition">¶</a></dt>
+<tt class="descname">get_sourcestr_representation</tt><big>(</big><em>self</em><big>)</big><a class="headerlink" href="#dchars.languages.san.dcharacter.DCharacterSAN.get_sourcestr_representation" title="Lien permanent vers cette définition">¶</a></dt>
 <dd><p>Return a string.</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="function">
 <dt id="dchars.languages.san.dcharacter.DCharacterSAN.get_transliteration">
-<tt class="descname">get_transliteration</tt><big>(</big><em>prev_dchar</em>, <em>transliteration_method</em><big>)</big><a class="headerlink" href="#dchars.languages.san.dcharacter.DCharacterSAN.get_transliteration" title="Lien permanent vers cette définition">¶</a></dt>
+<tt class="descname">get_transliteration</tt><big>(</big><em>self</em>, <em>prev_dchar</em>, <em>transliteration_method</em><big>)</big><a class="headerlink" href="#dchars.languages.san.dcharacter.DCharacterSAN.get_transliteration" title="Lien permanent vers cette définition">¶</a></dt>
 <dd><p>prev_dchar              :       None or a DCharacterSAN object
 transliteration_method  :       str</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="function">
 <dt id="dchars.languages.san.dcharacter.DCharacterSAN.init_from_transliteration">
-<tt class="descname">init_from_transliteration</tt><big>(</big><em>src</em>, <em>transliteration_method</em><big>)</big><a class="headerlink" href="#dchars.languages.san.dcharacter.DCharacterSAN.init_from_transliteration" title="Lien permanent vers cette définition">¶</a></dt>
+<tt class="descname">init_from_transliteration</tt><big>(</big><em>self</em>, <em>src</em>, <em>transliteration_method</em><big>)</big><a class="headerlink" href="#dchars.languages.san.dcharacter.DCharacterSAN.init_from_transliteration" title="Lien permanent vers cette définition">¶</a></dt>
 <dd><p>src                     : string
 transliteration_method  :       str</p>
 <p>Return &lt;self&gt;.</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="function">
 <dt id="dchars.languages.san.dcharacter.DCharacterSAN.reset">
-<tt class="descname">reset</tt><big>(</big><big>)</big><a class="headerlink" href="#dchars.languages.san.dcharacter.DCharacterSAN.reset" title="Lien permanent vers cette définition">¶</a></dt>
+<tt class="descname">reset</tt><big>(</big><em>self</em><big>)</big><a class="headerlink" href="#dchars.languages.san.dcharacter.DCharacterSAN.reset" title="Lien permanent vers cette définition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="function">
 <dt id="dchars.languages.san.dcharacter.DCharacterSAN.sortingvalue">
-<tt class="descname">sortingvalue</tt><big>(</big><big>)</big><a class="headerlink" href="#dchars.languages.san.dcharacter.DCharacterSAN.sortingvalue" title="Lien permanent vers cette définition">¶</a></dt>
+<tt class="descname">sortingvalue</tt><big>(</big><em>self</em><big>)</big><a class="headerlink" href="#dchars.languages.san.dcharacter.DCharacterSAN.sortingvalue" title="Lien permanent vers cette définition">¶</a></dt>
 <dd><p>Return an SortingValue object</p>
 <dl class="docutils">
 <dt>Output <span class="classifier-delimiter">:</span> <span class="classifier">a list of number :</span></dt>

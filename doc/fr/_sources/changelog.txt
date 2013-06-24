@@ -3,7 +3,13 @@ CHANGELOG_TITLE
 ===============
 
 ------------------
-0.3.9 [2013_06_XX]
+0.4.0 [2013_06_XX]
+------------------
+
+  * setup.py
+
+------------------
+0.3.9 [2013_06_24]
 ------------------
 
   * (grc) added a dstring__trans__get_transliteration(dstring_object) function to
