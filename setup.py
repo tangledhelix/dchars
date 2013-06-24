@@ -24,13 +24,16 @@
 
 from distutils.core import setup
 
+from dchars.system import numversion as numversion
+VERSION = numversion.VersionOfTheProgram().numversion
+
 setup(name='DChars',
-      version='1.0',
+      version=VERSION,
       description="DChars (Detailed Characters) is a Python3 module aiming " + \
                   "to modify easily the diacritics signs of complex unicode " + \
                   "characters and to get their transliteration.",
       author='Xavier Faure(suizokukan)',
-      author_email='(suizokukan _A.T_ orange•fr)',
+      author_email='suizokukan _A.T_ orange•fr',
       url='94.23.197.37/dchars/',
       packages=['dchars'],
      )

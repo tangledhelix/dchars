@@ -36,6 +36,7 @@ MODULES = {
                                     ("projects_files.py", True),
                                     ("pylint.rc", True),
                                     ("pylint_tests.py", True),
+                                    ("setup.py", False),
                                     ("sort.py", False),
                                   ),
 
