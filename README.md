@@ -6,7 +6,9 @@
 ----
 ----
 
-*how* *to* *install* *DChars* : [download this file](http://94.23.197.37/dchars/doc/userversion/dchars_v0.3.6.tar.gz) and unflat the tarball as a subdirectory of your Python3 project. And no, there's currently no way to install DChars with "make", "make install" but I'm trying to fix this problem.
+*how* *to* *install* *DChars* : [download this file](http://94.23.197.37/dchars/doc/userversion/dchars_v0.3.6.tar.gz) and unflat the tarball as a subdirectory of your Python3 project. 
+
+Alternatively (experimental), try : ’’’sudo python setup.py install --record install.txt’’’
 
 ----
 ----
