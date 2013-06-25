@@ -37,7 +37,11 @@ import os.path
 # "Unable to import 'configparser'"
 import configparser
 CONFIG_INI = configparser.ConfigParser()
-CONFIG_INI.read( os.path.join("dchars", "config.ini") )
+# about the following line :
+# why os.path.join(os.path.split(__file__) and not simply "dchars" ?
+# -> once installed, DChars have to know the exact path to config.ini,
+# hence the following line (idea given by Frank Zago)
+CONFIG_INI.read( os.path.join(os.path.split(__file__), "config.ini") )
 
 #...............................................................................
 # LANGUAGES : informations about each language. Please use three kinds of keys
