@@ -37,8 +37,6 @@ I salute him, the fully enlightened Buddha, the best of speakers, who preached t
 ref : https://groups.google.com/forum/#!msg/grantha-lipi/a3jWe5gvdTs/CkGu2_Te36EJ
 )
 
-
-
   * (24) supprimer le couplage DCharacter/istructs
   * (23) bodsan
   * (22) http://94.23.197.37/dchars/doc/en/howto_use.html : un par langue

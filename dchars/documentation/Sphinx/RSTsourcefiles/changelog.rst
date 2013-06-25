@@ -3,10 +3,11 @@ CHANGELOG_TITLE
 ===============
 
 ------------------
-0.4.0 [2013_06_XX]
+0.4.0 [2013_06_25]
 ------------------
 
-  * setup.py (thank you Frank Zago !)
+  * (config.ini, grc:gutenberg) new possibility for [grc.gutenberg]transliteration for upsilon = u or y (tested)
+  * setup.py (thank you Frank Zago !) : DChars can be installed via the usual setup.py procedure.
 
 ------------------
 0.3.9 [2013_06_24]

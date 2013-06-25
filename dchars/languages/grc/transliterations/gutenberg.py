@@ -72,7 +72,9 @@ LOWER_CASE = {"α"     : "a",
               'σ'     : "s",
               'σ2'    : "s",
               'τ'     : "t",
-              'υ'     : "u",
+              # see infra for more details 
+              # -> confer the option [grc.gutenberg]transliteration for upsilon
+              'υ'     : "y",
               'φ'     : "ph",
               'χ'     : "ch",
               'ψ'     : "ps",
@@ -409,8 +411,14 @@ def dstring__trans__get_transliteration(dstring_object):
     str_res = str_res.replace("hÔ", "Hô")
 
     # alternative transliteration of upsilon :
-    if dstring_object.options["gutenberg:transliteration for upsilon"] == "y":
-        str_res = str_res.replace("u", "y")
-        str_res = str_res.replace("U", "Y")
+    if dstring_object.options["gutenberg:transliteration for upsilon"] == "u":
+        str_res = str_res.replace("y", "u")
+        str_res = str_res.replace("Y", "U")
+
+    elif dstring_object.options["gutenberg:transliteration for upsilon"] == "u or y":
+        str_res = str_res.replace("ay", "au")
+        str_res = str_res.replace("ey", "eu")
+        str_res = str_res.replace("êy", "êu")
+        str_res = str_res.replace("oy", "ou")
 
     return str_res
