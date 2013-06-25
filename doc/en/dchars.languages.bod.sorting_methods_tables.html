@@ -1,0 +1,331 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>dchars.languages.bod.sorting_methods_tables &mdash; DChars 0.4.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/theme.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '0.4.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="DChars 0.4.0 documentation" href="index.html" />
+    <link rel="up" title="source code" href="source_code.html" />
+    <link rel="next" title="dchars.languages.bod.syllabic_structure" href="dchars.languages.bod.syllabic_structure.html" />
+    <link rel="prev" title="dchars.languages.bod.internalstructure" href="dchars.languages.bod.internalstructure.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="dchars.languages.bod.syllabic_structure.html" title="dchars.languages.bod.syllabic_structure"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="dchars.languages.bod.internalstructure.html" title="dchars.languages.bod.internalstructure"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">DChars 0.4.0 documentation</a> &raquo;</li>
+          <li><a href="source_code.html" accesskey="U">source code</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="dchars-languages-bod-sorting-methods-tables">
+<h1>dchars.languages.bod.sorting_methods_tables<a class="headerlink" href="#dchars-languages-bod-sorting-methods-tables" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="module-dchars.languages.bod.sorting_methods_tables">
+<span id="documentation"></span><h2>Documentation<a class="headerlink" href="#module-dchars.languages.bod.sorting_methods_tables" title="Permalink to this headline">¶</a></h2>
+<p>❏DChars❏ : dchars/languages/bod/sorting_methods_tables.py</p>
+</div>
+<div class="section" id="source-code">
+<h2>Source code<a class="headerlink" href="#source-code" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97</pre></div></td><td class="code"><div class="highlight"><pre><span class="c">#!/usr/bin/python3</span>
+<span class="c"># -*- coding: utf-8 -*-</span>
+<span class="c">################################################################################</span>
+<span class="c">#    DChars Copyright (C) 2012 Suizokukan</span>
+<span class="c">#    Contact: suizokukan _A.T._ orange dot fr</span>
+<span class="c">#</span>
+<span class="c">#    This file is part of DChars.</span>
+<span class="c">#    DChars is free software: you can redistribute it and/or modify</span>
+<span class="c">#    it under the terms of the GNU General Public License as published by</span>
+<span class="c">#    the Free Software Foundation, either version 3 of the License, or</span>
+<span class="c">#    (at your option) any later version.</span>
+<span class="c">#</span>
+<span class="c">#    DChars is distributed in the hope that it will be useful,</span>
+<span class="c">#    but WITHOUT ANY WARRANTY; without even the implied warranty of</span>
+<span class="c">#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span>
+<span class="c">#    GNU General Public License for more details.</span>
+<span class="c">#</span>
+<span class="c">#    You should have received a copy of the GNU General Public License</span>
+<span class="c">#    along with DChars.  If not, see &lt;http://www.gnu.org/licenses/&gt;.</span>
+<span class="c">################################################################################</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    ❏DChars❏ : dchars/languages/bod/sorting_methods_tables.py</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="c">#===============================================================================</span>
+<span class="c"># &quot;basic&quot; sorting method</span>
+<span class="c">#===============================================================================</span>
+
+<span class="c"># vowels value</span>
+<span class="n">BASIC_SORTMETHOD__VOWELS_VALUE</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="bp">None</span>            <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="s">&quot;A&quot;</span>             <span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
+    <span class="s">&quot;AA&quot;</span>            <span class="p">:</span> <span class="mi">101</span><span class="p">,</span>
+    <span class="s">&quot;I&quot;</span>             <span class="p">:</span> <span class="mi">102</span><span class="p">,</span>
+    <span class="s">&quot;II&quot;</span>            <span class="p">:</span> <span class="mi">103</span><span class="p">,</span>
+    <span class="s">&quot;REVERSED I&quot;</span>    <span class="p">:</span> <span class="mi">104</span><span class="p">,</span>
+    <span class="s">&quot;REVERSED II&quot;</span>   <span class="p">:</span> <span class="mi">105</span><span class="p">,</span>
+    <span class="s">&quot;U&quot;</span>             <span class="p">:</span> <span class="mi">106</span><span class="p">,</span>
+    <span class="s">&quot;UU&quot;</span>            <span class="p">:</span> <span class="mi">107</span><span class="p">,</span>
+    <span class="s">&quot;E&quot;</span>             <span class="p">:</span> <span class="mi">108</span><span class="p">,</span>
+    <span class="s">&quot;AI&quot;</span>            <span class="p">:</span> <span class="mi">109</span><span class="p">,</span>
+    <span class="s">&quot;O&quot;</span>             <span class="p">:</span> <span class="mi">110</span><span class="p">,</span>
+    <span class="s">&quot;AU&quot;</span>            <span class="p">:</span> <span class="mi">111</span><span class="p">,</span>
+    <span class="s">&quot;VOCALIC R&quot;</span>     <span class="p">:</span> <span class="mi">112</span><span class="p">,</span>
+    <span class="s">&quot;VOCALIC RR&quot;</span>    <span class="p">:</span> <span class="mi">113</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="c"># consonants value</span>
+<span class="n">BASIC_SORTMETHOD__CONS_VALUE</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="bp">None</span> <span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
+    <span class="s">&#39;K&#39;</span>  <span class="p">:</span> <span class="mi">101</span><span class="p">,</span>
+    <span class="s">&#39;KH&#39;</span> <span class="p">:</span> <span class="mi">102</span><span class="p">,</span>
+    <span class="s">&#39;G&#39;</span>  <span class="p">:</span> <span class="mi">103</span><span class="p">,</span>
+    <span class="s">&#39;GH&#39;</span> <span class="p">:</span> <span class="mi">104</span><span class="p">,</span>
+    <span class="s">&#39;NG&#39;</span> <span class="p">:</span> <span class="mi">105</span><span class="p">,</span>
+    <span class="s">&#39;C&#39;</span>  <span class="p">:</span> <span class="mi">106</span><span class="p">,</span>
+    <span class="s">&#39;CH&#39;</span> <span class="p">:</span> <span class="mi">107</span><span class="p">,</span>
+    <span class="s">&#39;J&#39;</span>  <span class="p">:</span> <span class="mi">108</span><span class="p">,</span>
+    <span class="s">&#39;NY&#39;</span> <span class="p">:</span> <span class="mi">109</span><span class="p">,</span>
+    <span class="s">&#39;T&#39;</span>  <span class="p">:</span> <span class="mi">110</span><span class="p">,</span>
+    <span class="s">&#39;TH&#39;</span> <span class="p">:</span> <span class="mi">111</span><span class="p">,</span>
+    <span class="s">&#39;TT&#39;</span> <span class="p">:</span> <span class="mi">112</span><span class="p">,</span>
+    <span class="s">&#39;TTH&#39;</span><span class="p">:</span> <span class="mi">113</span><span class="p">,</span>
+    <span class="s">&#39;D&#39;</span>  <span class="p">:</span> <span class="mi">114</span><span class="p">,</span>
+    <span class="s">&#39;DH&#39;</span> <span class="p">:</span> <span class="mi">115</span><span class="p">,</span>
+    <span class="s">&#39;DD&#39;</span> <span class="p">:</span> <span class="mi">116</span><span class="p">,</span>
+    <span class="s">&#39;DDH&#39;</span><span class="p">:</span> <span class="mi">117</span><span class="p">,</span>
+    <span class="s">&#39;N&#39;</span>  <span class="p">:</span> <span class="mi">118</span><span class="p">,</span>
+    <span class="s">&#39;NN&#39;</span> <span class="p">:</span> <span class="mi">119</span><span class="p">,</span>
+    <span class="s">&#39;P&#39;</span>  <span class="p">:</span> <span class="mi">120</span><span class="p">,</span>
+    <span class="s">&#39;PH&#39;</span> <span class="p">:</span> <span class="mi">121</span><span class="p">,</span>
+    <span class="s">&#39;B&#39;</span>  <span class="p">:</span> <span class="mi">122</span><span class="p">,</span>
+    <span class="s">&#39;BH&#39;</span> <span class="p">:</span> <span class="mi">123</span><span class="p">,</span>
+    <span class="s">&#39;M&#39;</span>  <span class="p">:</span> <span class="mi">124</span><span class="p">,</span>
+    <span class="s">&#39;TS&#39;</span> <span class="p">:</span> <span class="mi">125</span><span class="p">,</span>
+    <span class="s">&#39;TSH&#39;</span><span class="p">:</span> <span class="mi">126</span><span class="p">,</span>
+    <span class="s">&#39;DZ&#39;</span> <span class="p">:</span> <span class="mi">127</span><span class="p">,</span>
+    <span class="s">&#39;DZH&#39;</span><span class="p">:</span> <span class="mi">128</span><span class="p">,</span>
+    <span class="s">&#39;W&#39;</span>  <span class="p">:</span> <span class="mi">129</span><span class="p">,</span>
+    <span class="s">&#39;ZH&#39;</span> <span class="p">:</span> <span class="mi">130</span><span class="p">,</span>
+    <span class="s">&#39;Z&#39;</span>  <span class="p">:</span> <span class="mi">131</span><span class="p">,</span>
+    <span class="s">&#39;-&#39;</span>  <span class="p">:</span> <span class="mi">132</span><span class="p">,</span>
+    <span class="s">&#39;Y&#39;</span>  <span class="p">:</span> <span class="mi">133</span><span class="p">,</span>
+    <span class="s">&#39;R&#39;</span>  <span class="p">:</span> <span class="mi">134</span><span class="p">,</span>
+    <span class="s">&#39;L&#39;</span>  <span class="p">:</span> <span class="mi">135</span><span class="p">,</span>
+    <span class="s">&#39;SH&#39;</span> <span class="p">:</span> <span class="mi">136</span><span class="p">,</span>
+    <span class="s">&#39;SS&#39;</span> <span class="p">:</span> <span class="mi">137</span><span class="p">,</span>
+    <span class="s">&#39;S&#39;</span>  <span class="p">:</span> <span class="mi">138</span><span class="p">,</span>
+    <span class="s">&#39;H&#39;</span>  <span class="p">:</span> <span class="mi">139</span><span class="p">,</span>
+    <span class="s">&#39;KSS&#39;</span><span class="p">:</span> <span class="mi">140</span><span class="p">,</span>
+    <span class="s">&#39;FIXED-FORM R&#39;</span><span class="p">:</span> <span class="mi">141</span><span class="p">,</span>
+    <span class="s">&#39;KK&#39;</span> <span class="p">:</span> <span class="mi">142</span><span class="p">,</span>
+    <span class="s">&#39;RR&#39;</span> <span class="p">:</span> <span class="mi">143</span><span class="p">,</span>
+    <span class="s">&#39;TIB. TRANS. OF CHIN. SOUND F&#39;</span><span class="p">:</span> <span class="mi">145</span><span class="p">,</span>
+    <span class="s">&#39;TIB. TRANS. OF CHIN. SOUND V&#39;</span><span class="p">:</span> <span class="mi">146</span><span class="p">,</span>
+    <span class="s">&#39;A&#39;</span>  <span class="p">:</span> <span class="mi">147</span><span class="p">,</span>
+    <span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">dchars.languages.bod.sorting_methods_tables</a><ul>
+<li><a class="reference internal" href="#module-dchars.languages.bod.sorting_methods_tables">Documentation</a></li>
+<li><a class="reference internal" href="#source-code">Source code</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="dchars.languages.bod.internalstructure.html"
+                        title="previous chapter">dchars.languages.bod.internalstructure</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="dchars.languages.bod.syllabic_structure.html"
+                        title="next chapter">dchars.languages.bod.syllabic_structure</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/dchars.languages.bod.sorting_methods_tables.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="dchars.languages.bod.syllabic_structure.html" title="dchars.languages.bod.syllabic_structure"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="dchars.languages.bod.internalstructure.html" title="dchars.languages.bod.internalstructure"
+             >previous</a> |</li>
+        <li><a href="index.html">DChars 0.4.0 documentation</a> &raquo;</li>
+          <li><a href="source_code.html" >source code</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2012, suizokukan (Xavier Faure).
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

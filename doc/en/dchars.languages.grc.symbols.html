@@ -1,0 +1,483 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>dchars.languages.grc.symbols &mdash; DChars 0.4.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/theme.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '0.4.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="DChars 0.4.0 documentation" href="index.html" />
+    <link rel="up" title="source code" href="source_code.html" />
+    <link rel="next" title="dchars.languages.grc.transliterations.__init__" href="dchars.languages.grc.transliterations.__init__.html" />
+    <link rel="prev" title="dchars.languages.grc.dstring" href="dchars.languages.grc.dstring.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="dchars.languages.grc.transliterations.__init__.html" title="dchars.languages.grc.transliterations.__init__"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="dchars.languages.grc.dstring.html" title="dchars.languages.grc.dstring"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">DChars 0.4.0 documentation</a> &raquo;</li>
+          <li><a href="source_code.html" accesskey="U">source code</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="dchars-languages-grc-symbols">
+<h1>dchars.languages.grc.symbols<a class="headerlink" href="#dchars-languages-grc-symbols" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="module-dchars.languages.grc.symbols">
+<span id="documentation"></span><h2>Documentation<a class="headerlink" href="#module-dchars.languages.grc.symbols" title="Permalink to this headline">¶</a></h2>
+<p>❏DChars❏ : dchars/languages/grc/symbols.py</p>
+</div>
+<div class="section" id="source-code">
+<h2>Source code<a class="headerlink" href="#source-code" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>  1
+  2
+  3
+  4
+  5
+  6
+  7
+  8
+  9
+ 10
+ 11
+ 12
+ 13
+ 14
+ 15
+ 16
+ 17
+ 18
+ 19
+ 20
+ 21
+ 22
+ 23
+ 24
+ 25
+ 26
+ 27
+ 28
+ 29
+ 30
+ 31
+ 32
+ 33
+ 34
+ 35
+ 36
+ 37
+ 38
+ 39
+ 40
+ 41
+ 42
+ 43
+ 44
+ 45
+ 46
+ 47
+ 48
+ 49
+ 50
+ 51
+ 52
+ 53
+ 54
+ 55
+ 56
+ 57
+ 58
+ 59
+ 60
+ 61
+ 62
+ 63
+ 64
+ 65
+ 66
+ 67
+ 68
+ 69
+ 70
+ 71
+ 72
+ 73
+ 74
+ 75
+ 76
+ 77
+ 78
+ 79
+ 80
+ 81
+ 82
+ 83
+ 84
+ 85
+ 86
+ 87
+ 88
+ 89
+ 90
+ 91
+ 92
+ 93
+ 94
+ 95
+ 96
+ 97
+ 98
+ 99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173</pre></div></td><td class="code"><div class="highlight"><pre><span class="c">#!/usr/bin/python3</span>
+<span class="c"># -*- coding: utf-8 -*-</span>
+<span class="c">################################################################################</span>
+<span class="c">#    DChars Copyright (C) 2012 Suizokukan</span>
+<span class="c">#    Contact: suizokukan _A.T._ orange dot fr</span>
+<span class="c">#</span>
+<span class="c">#    This file is part of DChars.</span>
+<span class="c">#    DChars is free software: you can redistribute it and/or modify</span>
+<span class="c">#    it under the terms of the GNU General Public License as published by</span>
+<span class="c">#    the Free Software Foundation, either version 3 of the License, or</span>
+<span class="c">#    (at your option) any later version.</span>
+<span class="c">#</span>
+<span class="c">#    DChars is distributed in the hope that it will be useful,</span>
+<span class="c">#    but WITHOUT ANY WARRANTY; without even the implied warranty of</span>
+<span class="c">#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span>
+<span class="c">#    GNU General Public License for more details.</span>
+<span class="c">#</span>
+<span class="c">#    You should have received a copy of the GNU General Public License</span>
+<span class="c">#    along with DChars.  If not, see &lt;http://www.gnu.org/licenses/&gt;.</span>
+<span class="c">################################################################################</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    ❏DChars❏ : dchars/languages/grc/symbols.py</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="c"># problem with Pylint :</span>
+<span class="c"># pylint: disable=E0611</span>
+<span class="c"># many errors like &quot;No name &#39;extensions&#39; in module &#39;dchars&#39;&quot;</span>
+<span class="kn">from</span> <span class="nn">dchars.utilities.name2symbols</span> <span class="kn">import</span> <span class="n">Name2Symbols</span>
+
+<span class="c">#...............................................................................</span>
+<span class="c"># symbols used by the Ancient Greek :</span>
+<span class="c">#</span>
+<span class="c"># CAVEAT ! If you modify these dictionaries, don&#39;t forget to modify thei</span>
+<span class="c"># corresponding transliteration&#39;s dictionaries !</span>
+<span class="c">#</span>
+<span class="c">#...............................................................................</span>
+<span class="n">SYMB_LOWER_CASE</span> <span class="o">=</span> <span class="n">Name2Symbols</span><span class="p">(</span>
+    <span class="p">{</span> <span class="s">&#39;α&#39;</span>       <span class="p">:</span> <span class="p">(</span><span class="s">&#39;α&#39;</span><span class="p">,),</span>
+      <span class="s">&#39;β&#39;</span>       <span class="p">:</span> <span class="p">(</span><span class="s">&#39;β&#39;</span><span class="p">,),</span>
+      <span class="s">&#39;β2&#39;</span>      <span class="p">:</span> <span class="p">(</span><span class="s">&#39;ϐ&#39;</span><span class="p">,),</span>
+      <span class="s">&#39;γ&#39;</span>       <span class="p">:</span> <span class="p">(</span><span class="s">&#39;γ&#39;</span><span class="p">,),</span>
+      <span class="s">&#39;δ&#39;</span>       <span class="p">:</span> <span class="p">(</span><span class="s">&#39;δ&#39;</span><span class="p">,),</span>
+      <span class="s">&#39;ε&#39;</span>       <span class="p">:</span> <span class="p">(</span><span class="s">&#39;ε&#39;</span><span class="p">,),</span>
+      <span class="s">&#39;ζ&#39;</span>       <span class="p">:</span> <span class="p">(</span><span class="s">&#39;ζ&#39;</span><span class="p">,),</span>
+      <span class="s">&#39;η&#39;</span>       <span class="p">:</span> <span class="p">(</span><span class="s">&#39;η&#39;</span><span class="p">,),</span>
+      <span class="s">&#39;θ&#39;</span>       <span class="p">:</span> <span class="p">(</span><span class="s">&#39;θ&#39;</span><span class="p">,</span><span class="s">&#39;ϑ&#39;</span><span class="p">),</span>
+      <span class="s">&#39;ι&#39;</span>       <span class="p">:</span> <span class="p">(</span><span class="s">&#39;ι&#39;</span><span class="p">,),</span>
+      <span class="s">&#39;κ&#39;</span>       <span class="p">:</span> <span class="p">(</span><span class="s">&#39;κ&#39;</span><span class="p">,</span><span class="s">&#39;ϰ&#39;</span><span class="p">),</span> <span class="c">#0x03B0, 0x03F0</span>
+      <span class="s">&#39;λ&#39;</span>       <span class="p">:</span> <span class="p">(</span><span class="s">&#39;λ&#39;</span><span class="p">,),</span>
+      <span class="s">&#39;μ&#39;</span>       <span class="p">:</span> <span class="p">(</span><span class="s">&#39;μ&#39;</span><span class="p">,),</span>
+      <span class="s">&#39;ν&#39;</span>       <span class="p">:</span> <span class="p">(</span><span class="s">&#39;ν&#39;</span><span class="p">,),</span>
+      <span class="s">&#39;ξ&#39;</span>       <span class="p">:</span> <span class="p">(</span><span class="s">&#39;ξ&#39;</span><span class="p">,),</span>
+      <span class="s">&#39;ο&#39;</span>       <span class="p">:</span> <span class="p">(</span><span class="s">&#39;ο&#39;</span><span class="p">,),</span>
+      <span class="s">&#39;π&#39;</span>       <span class="p">:</span> <span class="p">(</span><span class="s">&#39;π&#39;</span><span class="p">,</span><span class="s">&#39;ϖ&#39;</span><span class="p">),</span> <span class="c"># 0x03C0, 0x03D6</span>
+      <span class="s">&#39;ρ&#39;</span>       <span class="p">:</span> <span class="p">(</span><span class="s">&#39;ρ&#39;</span><span class="p">,</span><span class="s">&#39;ϱ&#39;</span><span class="p">),</span> <span class="c"># 0x03C1, 0x03F1</span>
+      <span class="s">&#39;σ&#39;</span>       <span class="p">:</span> <span class="p">(</span><span class="s">&#39;σ&#39;</span><span class="p">,</span><span class="s">&#39;ϲ&#39;</span><span class="p">),</span> <span class="c"># 0x03C3, 0x03F2</span>
+      <span class="s">&#39;σ2&#39;</span>      <span class="p">:</span> <span class="p">(</span><span class="s">&#39;ς&#39;</span><span class="p">,),</span>
+      <span class="s">&#39;τ&#39;</span>       <span class="p">:</span> <span class="p">(</span><span class="s">&#39;τ&#39;</span><span class="p">,),</span>
+      <span class="s">&#39;υ&#39;</span>       <span class="p">:</span> <span class="p">(</span><span class="s">&#39;υ&#39;</span><span class="p">,),</span>
+      <span class="s">&#39;φ&#39;</span>       <span class="p">:</span> <span class="p">(</span><span class="s">&#39;φ&#39;</span><span class="p">,),</span>
+      <span class="s">&#39;χ&#39;</span>       <span class="p">:</span> <span class="p">(</span><span class="s">&#39;χ&#39;</span><span class="p">,),</span>
+      <span class="s">&#39;ψ&#39;</span>       <span class="p">:</span> <span class="p">(</span><span class="s">&#39;ψ&#39;</span><span class="p">,),</span>
+      <span class="s">&#39;ω&#39;</span>       <span class="p">:</span> <span class="p">(</span><span class="s">&#39;ω&#39;</span><span class="p">,),</span>
+      <span class="s">&#39;ϝ&#39;</span>       <span class="p">:</span> <span class="p">(</span><span class="s">&#39;ϝ&#39;</span><span class="p">,),</span>
+      <span class="s">&#39;ϗ&#39;</span>       <span class="p">:</span> <span class="p">(</span><span class="s">&#39;ϗ&#39;</span><span class="p">),</span> <span class="c"># 0x03CF = GREEK KAI SYMBOL</span>
+      <span class="s">&#39;ϡ&#39;</span>       <span class="p">:</span> <span class="p">(</span><span class="s">&#39;ϡ&#39;</span><span class="p">),</span> <span class="c"># 0x03E0 = GREEK SMALL LETTER SAMPI</span>
+      <span class="s">&#39;ϛ&#39;</span>       <span class="p">:</span> <span class="p">(</span><span class="s">&#39;ϛ&#39;</span><span class="p">),</span> <span class="c"># 0x03DB = GREEK SMALL LETTER STIGMA</span>
+      <span class="s">&#39;ϙ&#39;</span>       <span class="p">:</span> <span class="p">(</span><span class="s">&#39;ϙ&#39;</span><span class="p">,</span> <span class="s">&#39;ϟ&#39;</span><span class="p">),</span> <span class="c"># 0x03D9, 0x03DF (KOPPA)</span>
+      <span class="p">})</span>
+
+<span class="n">SYMB_UPPER_CASE</span> <span class="o">=</span> <span class="n">Name2Symbols</span><span class="p">(</span>
+    <span class="p">{</span> <span class="s">&#39;α&#39;</span>       <span class="p">:</span> <span class="p">(</span><span class="s">&#39;Α&#39;</span><span class="p">,),</span>
+      <span class="s">&#39;β&#39;</span>       <span class="p">:</span> <span class="p">(</span><span class="s">&#39;Β&#39;</span><span class="p">,),</span>
+      <span class="s">&#39;γ&#39;</span>       <span class="p">:</span> <span class="p">(</span><span class="s">&#39;Γ&#39;</span><span class="p">,),</span>
+      <span class="s">&#39;δ&#39;</span>       <span class="p">:</span> <span class="p">(</span><span class="s">&#39;Δ&#39;</span><span class="p">,),</span>
+      <span class="s">&#39;ε&#39;</span>       <span class="p">:</span> <span class="p">(</span><span class="s">&#39;Ε&#39;</span><span class="p">,),</span>
+      <span class="s">&#39;ζ&#39;</span>       <span class="p">:</span> <span class="p">(</span><span class="s">&#39;Ζ&#39;</span><span class="p">,),</span>
+      <span class="s">&#39;η&#39;</span>       <span class="p">:</span> <span class="p">(</span><span class="s">&#39;Η&#39;</span><span class="p">,),</span>
+      <span class="s">&#39;θ&#39;</span>       <span class="p">:</span> <span class="p">(</span><span class="s">&#39;Θ&#39;</span><span class="p">,),</span>
+      <span class="s">&#39;ι&#39;</span>       <span class="p">:</span> <span class="p">(</span><span class="s">&#39;Ι&#39;</span><span class="p">,),</span>
+      <span class="s">&#39;κ&#39;</span>       <span class="p">:</span> <span class="p">(</span><span class="s">&#39;Κ&#39;</span><span class="p">,),</span>
+      <span class="s">&#39;λ&#39;</span>       <span class="p">:</span> <span class="p">(</span><span class="s">&#39;Λ&#39;</span><span class="p">,),</span>
+      <span class="s">&#39;μ&#39;</span>       <span class="p">:</span> <span class="p">(</span><span class="s">&#39;Μ&#39;</span><span class="p">,),</span>
+      <span class="s">&#39;ν&#39;</span>       <span class="p">:</span> <span class="p">(</span><span class="s">&#39;Ν&#39;</span><span class="p">,),</span>
+      <span class="s">&#39;ξ&#39;</span>       <span class="p">:</span> <span class="p">(</span><span class="s">&#39;Ξ&#39;</span><span class="p">,),</span>
+      <span class="s">&#39;ο&#39;</span>       <span class="p">:</span> <span class="p">(</span><span class="s">&#39;Ο&#39;</span><span class="p">,),</span>
+      <span class="s">&#39;π&#39;</span>       <span class="p">:</span> <span class="p">(</span><span class="s">&#39;Π&#39;</span><span class="p">,),</span>
+      <span class="s">&#39;ρ&#39;</span>       <span class="p">:</span> <span class="p">(</span><span class="s">&#39;Ρ&#39;</span><span class="p">,),</span>
+      <span class="s">&#39;σ&#39;</span>       <span class="p">:</span> <span class="p">(</span><span class="s">&#39;Σ&#39;</span><span class="p">,),</span>
+      <span class="s">&#39;τ&#39;</span>       <span class="p">:</span> <span class="p">(</span><span class="s">&#39;Τ&#39;</span><span class="p">,),</span>
+      <span class="s">&#39;υ&#39;</span>       <span class="p">:</span> <span class="p">(</span><span class="s">&#39;Υ&#39;</span><span class="p">,</span><span class="s">&#39;ϒ&#39;</span><span class="p">),</span> <span class="c"># 0x03A5, 0x03D2</span>
+      <span class="s">&#39;φ&#39;</span>       <span class="p">:</span> <span class="p">(</span><span class="s">&#39;Φ&#39;</span><span class="p">,),</span>
+      <span class="s">&#39;χ&#39;</span>       <span class="p">:</span> <span class="p">(</span><span class="s">&#39;Χ&#39;</span><span class="p">,),</span>
+      <span class="s">&#39;ψ&#39;</span>       <span class="p">:</span> <span class="p">(</span><span class="s">&#39;Ψ&#39;</span><span class="p">,),</span>
+      <span class="s">&#39;ω&#39;</span>       <span class="p">:</span> <span class="p">(</span><span class="s">&#39;Ω&#39;</span><span class="p">,),</span>
+      <span class="s">&#39;ϝ&#39;</span>       <span class="p">:</span> <span class="p">(</span><span class="s">&#39;Ϝ&#39;</span><span class="p">,</span><span class="s">&#39;F&#39;</span><span class="p">),</span>    <span class="c">#0x3DC, 0x46</span>
+      <span class="s">&#39;ϗ&#39;</span>       <span class="p">:</span> <span class="p">(</span><span class="s">&#39;Ϗ&#39;</span><span class="p">),</span> <span class="c"># 0x03CF = GREEK CAPITAL KAI SYMBOL</span>
+      <span class="s">&#39;ϡ&#39;</span>       <span class="p">:</span> <span class="p">(</span><span class="s">&#39;Ϡ&#39;</span><span class="p">),</span> <span class="c"># 0x03E0 = GREEK LETTER SAMPI</span>
+      <span class="s">&#39;ϛ&#39;</span>       <span class="p">:</span> <span class="p">(</span><span class="s">&#39;Ϛ&#39;</span><span class="p">),</span> <span class="c"># 0x03DA = GREEK LETTER STIGMA</span>
+      <span class="s">&#39;ϙ&#39;</span>       <span class="p">:</span> <span class="p">(</span><span class="s">&#39;Ϙ&#39;</span><span class="p">),</span> <span class="c"># 0x03D8 (KOPPA)</span>
+      <span class="p">})</span>
+
+<span class="n">SYMB_OTHER_SYMBOLS</span> <span class="o">=</span> <span class="n">Name2Symbols</span><span class="p">(</span>
+    <span class="p">{</span>
+     <span class="s">&#39;0&#39;</span>        <span class="p">:</span> <span class="p">(</span><span class="s">&#39;0&#39;</span><span class="p">,),</span>
+     <span class="s">&#39;1&#39;</span>        <span class="p">:</span> <span class="p">(</span><span class="s">&#39;1&#39;</span><span class="p">,),</span>
+     <span class="s">&#39;2&#39;</span>        <span class="p">:</span> <span class="p">(</span><span class="s">&#39;2&#39;</span><span class="p">,),</span>
+     <span class="s">&#39;3&#39;</span>        <span class="p">:</span> <span class="p">(</span><span class="s">&#39;3&#39;</span><span class="p">,),</span>
+     <span class="s">&#39;4&#39;</span>        <span class="p">:</span> <span class="p">(</span><span class="s">&#39;4&#39;</span><span class="p">,),</span>
+     <span class="s">&#39;5&#39;</span>        <span class="p">:</span> <span class="p">(</span><span class="s">&#39;5&#39;</span><span class="p">,),</span>
+     <span class="s">&#39;6&#39;</span>        <span class="p">:</span> <span class="p">(</span><span class="s">&#39;6&#39;</span><span class="p">,),</span>
+     <span class="s">&#39;7&#39;</span>        <span class="p">:</span> <span class="p">(</span><span class="s">&#39;7&#39;</span><span class="p">,),</span>
+     <span class="s">&#39;8&#39;</span>        <span class="p">:</span> <span class="p">(</span><span class="s">&#39;8&#39;</span><span class="p">,),</span>
+     <span class="s">&#39;9&#39;</span>        <span class="p">:</span> <span class="p">(</span><span class="s">&#39;9&#39;</span><span class="p">,),</span>
+    <span class="p">})</span>
+
+<span class="n">SYMB_PUNCTUATION</span> <span class="o">=</span> <span class="n">Name2Symbols</span><span class="p">(</span>
+    <span class="p">{</span><span class="s">&#39;-&#39;</span>        <span class="p">:</span> <span class="p">(</span><span class="s">&#39;-&#39;</span><span class="p">,),</span>
+     <span class="s">&#39;)&#39;</span>        <span class="p">:</span> <span class="p">(</span><span class="s">&#39;)&#39;</span><span class="p">,),</span>
+     <span class="s">&#39;(&#39;</span>        <span class="p">:</span> <span class="p">(</span><span class="s">&#39;(&#39;</span><span class="p">,),</span>
+     <span class="s">&#39;[&#39;</span>        <span class="p">:</span> <span class="p">(</span><span class="s">&#39;[&#39;</span><span class="p">,),</span>
+     <span class="s">&#39;]&#39;</span>        <span class="p">:</span> <span class="p">(</span><span class="s">&#39;]&#39;</span><span class="p">,),</span>
+     <span class="s">&#39;{&#39;</span>        <span class="p">:</span> <span class="p">(</span><span class="s">&#39;{&#39;</span><span class="p">,),</span>
+     <span class="s">&#39;}&#39;</span>        <span class="p">:</span> <span class="p">(</span><span class="s">&#39;}&#39;</span><span class="p">,),</span>
+     <span class="s">&#39; &#39;</span>        <span class="p">:</span> <span class="p">(</span><span class="s">&#39; &#39;</span><span class="p">,),</span>
+     <span class="s">&#39;.&#39;</span>        <span class="p">:</span> <span class="p">(</span><span class="s">&#39;.&#39;</span><span class="p">,),</span>
+     <span class="s">&#39;,&#39;</span>        <span class="p">:</span> <span class="p">(</span><span class="s">&#39;,&#39;</span><span class="p">,),</span>
+     <span class="s">&#39;;&#39;</span>        <span class="p">:</span> <span class="p">(</span><span class="s">&#39;;&#39;</span><span class="p">,),</span>
+     <span class="s">&#39;!&#39;</span>        <span class="p">:</span> <span class="p">(</span><span class="s">&#39;!&#39;</span><span class="p">,),</span>
+     <span class="s">&#39;·&#39;</span>        <span class="p">:</span> <span class="p">(</span><span class="s">&#39;·&#39;</span><span class="p">,),</span>
+     <span class="s">&#39;&quot;&#39;</span>        <span class="p">:</span> <span class="p">(</span><span class="s">&#39;&quot;&#39;</span><span class="p">,</span><span class="s">&#39;‘&#39;</span><span class="p">,</span><span class="s">&quot;’&quot;</span><span class="p">,),</span>
+     <span class="s">&quot;&#39;&quot;</span>        <span class="p">:</span> <span class="p">(</span><span class="s">&quot;&#39;&quot;</span><span class="p">,</span><span class="s">&quot;᾽&quot;</span><span class="p">),</span>
+     <span class="s">&quot;—&quot;</span>        <span class="p">:</span> <span class="p">(</span><span class="s">&quot;_&quot;</span><span class="p">,),</span>
+     <span class="s">&quot;:&quot;</span>        <span class="p">:</span> <span class="p">(</span><span class="s">&quot;:&quot;</span><span class="p">),</span>
+     <span class="s">&#39;</span><span class="se">\n</span><span class="s">&#39;</span>       <span class="p">:</span> <span class="p">(</span><span class="s">&#39;</span><span class="se">\n</span><span class="s">&#39;</span><span class="p">,),</span>
+     <span class="s">&#39;</span><span class="se">\r</span><span class="s">&#39;</span>       <span class="p">:</span> <span class="p">(</span><span class="s">&#39;</span><span class="se">\r</span><span class="s">&#39;</span><span class="p">,),</span>
+     <span class="s">&#39;</span><span class="se">\t</span><span class="s">&#39;</span>       <span class="p">:</span> <span class="p">(</span><span class="s">&#39;</span><span class="se">\t</span><span class="s">&#39;</span><span class="p">,),</span>
+    <span class="p">})</span>
+
+<span class="n">SYMB_DIACRITICS</span> <span class="o">=</span> <span class="n">Name2Symbols</span><span class="p">(</span>
+    <span class="p">{</span><span class="s">&quot;τόνος.βαρεῖα&quot;</span>          <span class="p">:</span> <span class="p">(</span> <span class="nb">chr</span><span class="p">(</span><span class="mh">0x300</span><span class="p">),),</span>        <span class="c"># ὰ</span>
+     <span class="s">&quot;τόνος.ὀξεῖα&quot;</span>           <span class="p">:</span> <span class="p">(</span> <span class="nb">chr</span><span class="p">(</span><span class="mh">0x301</span><span class="p">),</span> <span class="nb">chr</span><span class="p">(</span><span class="mh">0x030D</span><span class="p">)),</span>  <span class="c"># ά, α̍</span>
+     <span class="s">&quot;μῆκος.μακρόν&quot;</span>          <span class="p">:</span> <span class="p">(</span> <span class="nb">chr</span><span class="p">(</span><span class="mh">0x304</span><span class="p">),),</span>        <span class="c"># ᾱ</span>
+     <span class="s">&quot;μῆκος.βραχύ&quot;</span>           <span class="p">:</span> <span class="p">(</span> <span class="nb">chr</span><span class="p">(</span><span class="mh">0x306</span><span class="p">),),</span>        <span class="c"># ᾰ</span>
+     <span class="s">&quot;τόνος.περισπωμένη&quot;</span>     <span class="p">:</span> <span class="p">(</span> <span class="nb">chr</span><span class="p">(</span><span class="mh">0x342</span><span class="p">),),</span>        <span class="c"># ᾶ</span>
+     <span class="s">&quot;πνεῦμα.ψιλὸν&quot;</span>          <span class="p">:</span> <span class="p">(</span> <span class="nb">chr</span><span class="p">(</span><span class="mh">0x313</span><span class="p">),),</span>        <span class="c"># ἀ</span>
+     <span class="s">&quot;πνεῦμα.δασὺ&quot;</span>           <span class="p">:</span> <span class="p">(</span> <span class="nb">chr</span><span class="p">(</span><span class="mh">0x314</span><span class="p">),),</span>        <span class="c"># ἁ</span>
+     <span class="s">&quot;ὑπογεγραμμένη&quot;</span>         <span class="p">:</span> <span class="p">(</span> <span class="nb">chr</span><span class="p">(</span><span class="mh">0x345</span><span class="p">),),</span>        <span class="c"># ᾳ</span>
+     <span class="s">&quot;διαλυτικά&quot;</span>             <span class="p">:</span> <span class="p">(</span> <span class="nb">chr</span><span class="p">(</span><span class="mh">0x308</span><span class="p">),),</span>        <span class="c"># ϋ</span>
+     <span class="p">})</span>
+<span class="c"># we define these constants in order to avoir multiple calls to SYMB_DIACRITICS.get_default_symbol :</span>
+<span class="n">DEFAULTSYMB__PNEUMAPSILON</span> <span class="o">=</span> <span class="n">SYMB_DIACRITICS</span><span class="o">.</span><span class="n">get_default_symbol</span><span class="p">(</span><span class="s">&#39;πνεῦμα.ψιλὸν&#39;</span><span class="p">)</span>
+<span class="n">DEFAULTSYMB__PNEUMADASU</span> <span class="o">=</span> <span class="n">SYMB_DIACRITICS</span><span class="o">.</span><span class="n">get_default_symbol</span><span class="p">(</span><span class="s">&#39;πνεῦμα.δασὺ&#39;</span><span class="p">)</span>
+<span class="n">DEFAULTSYMB__TONOSOXEIA</span> <span class="o">=</span> <span class="n">SYMB_DIACRITICS</span><span class="o">.</span><span class="n">get_default_symbol</span><span class="p">(</span><span class="s">&#39;τόνος.ὀξεῖα&#39;</span><span class="p">)</span>
+<span class="n">DEFAULTSYMB__TONOSBAREIA</span> <span class="o">=</span> <span class="n">SYMB_DIACRITICS</span><span class="o">.</span><span class="n">get_default_symbol</span><span class="p">(</span><span class="s">&#39;τόνος.βαρεῖα&#39;</span><span class="p">)</span>
+<span class="n">DEFAULTSYMB__TONOSPERISPOMENE</span> <span class="o">=</span> <span class="n">SYMB_DIACRITICS</span><span class="o">.</span><span class="n">get_default_symbol</span><span class="p">(</span><span class="s">&#39;τόνος.περισπωμένη&#39;</span><span class="p">)</span>
+<span class="n">DEFAULTSYMB__MEKOSBRAXU</span> <span class="o">=</span> <span class="n">SYMB_DIACRITICS</span><span class="o">.</span><span class="n">get_default_symbol</span><span class="p">(</span><span class="s">&#39;μῆκος.βραχύ&#39;</span><span class="p">)</span>
+<span class="n">DEFAULTSYMB__MEKOSMAKRON</span> <span class="o">=</span> <span class="n">SYMB_DIACRITICS</span><span class="o">.</span><span class="n">get_default_symbol</span><span class="p">(</span><span class="s">&#39;μῆκος.μακρόν&#39;</span><span class="p">)</span>
+<span class="n">DEFAULTSYMB__HUPOGEGRAMMENE</span> <span class="o">=</span> <span class="n">SYMB_DIACRITICS</span><span class="o">.</span><span class="n">get_default_symbol</span><span class="p">(</span><span class="s">&#39;ὑπογεγραμμένη&#39;</span><span class="p">)</span>
+<span class="n">DEFAULTSYMB__DIALYTIKA</span> <span class="o">=</span> <span class="n">SYMB_DIACRITICS</span><span class="o">.</span><span class="n">get_default_symbol</span><span class="p">(</span><span class="s">&#39;διαλυτικά&#39;</span><span class="p">)</span>
+
+<span class="c">#...............................................................................</span>
+<span class="c"># we calculate these tuples which are often used in order to speed up the code :</span>
+<span class="c">#...............................................................................</span>
+<span class="n">SYMB_DIACRITICS__TONOS</span> <span class="o">=</span> <span class="p">(</span><span class="n">SYMB_DIACRITICS</span><span class="p">[</span><span class="s">&#39;τόνος.βαρεῖα&#39;</span><span class="p">]</span> <span class="o">+</span> \
+                          <span class="n">SYMB_DIACRITICS</span><span class="p">[</span><span class="s">&#39;τόνος.ὀξεῖα&#39;</span><span class="p">]</span> <span class="o">+</span> \
+                          <span class="n">SYMB_DIACRITICS</span><span class="p">[</span><span class="s">&#39;τόνος.περισπωμένη&#39;</span><span class="p">])</span>
+
+<span class="n">SYMB_DIACRITICS__MEKOS</span> <span class="o">=</span> <span class="p">(</span><span class="n">SYMB_DIACRITICS</span><span class="p">[</span><span class="s">&#39;μῆκος.μακρόν&#39;</span><span class="p">]</span> <span class="o">+</span> \
+                          <span class="n">SYMB_DIACRITICS</span><span class="p">[</span><span class="s">&#39;μῆκος.βραχύ&#39;</span><span class="p">])</span>
+
+<span class="n">SYMB_DIACRITICS__PNEUMA</span> <span class="o">=</span> <span class="p">(</span><span class="n">SYMB_DIACRITICS</span><span class="p">[</span><span class="s">&#39;πνεῦμα.ψιλὸν&#39;</span><span class="p">]</span> <span class="o">+</span> \
+                           <span class="n">SYMB_DIACRITICS</span><span class="p">[</span><span class="s">&#39;πνεῦμα.δασὺ&#39;</span><span class="p">])</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">dchars.languages.grc.symbols</a><ul>
+<li><a class="reference internal" href="#module-dchars.languages.grc.symbols">Documentation</a></li>
+<li><a class="reference internal" href="#source-code">Source code</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="dchars.languages.grc.dstring.html"
+                        title="previous chapter">dchars.languages.grc.dstring</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="dchars.languages.grc.transliterations.__init__.html"
+                        title="next chapter">dchars.languages.grc.transliterations.__init__</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/dchars.languages.grc.symbols.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="dchars.languages.grc.transliterations.__init__.html" title="dchars.languages.grc.transliterations.__init__"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="dchars.languages.grc.dstring.html" title="dchars.languages.grc.dstring"
+             >previous</a> |</li>
+        <li><a href="index.html">DChars 0.4.0 documentation</a> &raquo;</li>
+          <li><a href="source_code.html" >source code</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2012, suizokukan (Xavier Faure).
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

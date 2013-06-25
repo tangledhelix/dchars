@@ -1,0 +1,563 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>dchars.utilities.name2symbols &mdash; DChars 0.4.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/theme.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '0.4.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="DChars 0.4.0 documentation" href="index.html" />
+    <link rel="up" title="source code" href="source_code.html" />
+    <link rel="next" title="dchars.utilities.orderedset" href="dchars.utilities.orderedset.html" />
+    <link rel="prev" title="dchars.utilities.lstringtools" href="dchars.utilities.lstringtools.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="dchars.utilities.orderedset.html" title="dchars.utilities.orderedset"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="dchars.utilities.lstringtools.html" title="dchars.utilities.lstringtools"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">DChars 0.4.0 documentation</a> &raquo;</li>
+          <li><a href="source_code.html" accesskey="U">source code</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="dchars-utilities-name2symbols">
+<h1>dchars.utilities.name2symbols<a class="headerlink" href="#dchars-utilities-name2symbols" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="module-dchars.utilities.name2symbols">
+<span id="documentation"></span><h2>Documentation<a class="headerlink" href="#module-dchars.utilities.name2symbols" title="Permalink to this headline">¶</a></h2>
+<p>❏DChars❏ : dchars/name2symbols.py</p>
+<p>E.g :</p>
+<div class="highlight-none"><div class="highlight"><pre>SYMB_DIACRITICS_NAME2NUM = Name2Symbols(
+{&quot;τόνος.βαρεῖα&quot;          : ( chr(0x300),),        # ὰ
+ &quot;τόνος.ὀξεῖα&quot;           : ( chr(0x301), chr(0x030D)),  # ά, α̍
+ &quot;μῆκος.μακρόν&quot;          : ( chr(0x304),),        # ᾱ
+ &quot;μῆκος.βραχύ&quot;           : ( chr(0x306),),        # ᾰ
+ &quot;τόνος.περισπωμένη&quot;     : ( chr(0x342),),        # ᾶ
+ &quot;πνεῦμα.ψιλὸν&quot;          : ( chr(0x313),),        # ἀ
+ &quot;πνεῦμα.δασὺ&quot;           : ( chr(0x314),),        # ἁ
+ &quot;ὑπογεγραμμένη&quot;         : ( chr(0x345),),        # ᾳ
+ &quot;διαλυτικά&quot;             : ( chr(0x308),),        # ϋ
+ })
+</pre></div>
+</div>
+<dl class="class">
+<dt id="dchars.utilities.name2symbols.Name2Symbols">
+<em class="property">class </em><tt class="descclassname">dchars.utilities.name2symbols.</tt><tt class="descname">Name2Symbols</tt><big>(</big><em>src</em><big>)</big><a class="headerlink" href="#dchars.utilities.name2symbols.Name2Symbols" title="Permalink to this definition">¶</a></dt>
+<dd><p>class Name2Symbols : associate a name with several symbols, the first
+of these symbols being the default symbol.</p>
+<p>E.g. : &#8220;τόνος.ὀξεῖα&#8221; : (chr(0x301), chr(0x030D))  # ά, α̍</p>
+<p>Name2Symbols.__init__</p>
+<p>Initialize &lt;self&gt;, create the reversed dictionary of self (&lt;defaultsymbol2name&gt;)
+and initialize self.substitutions in order to speed up the function
+replace_by_the_default_symbols().</p>
+<dl class="function">
+<dt id="dchars.utilities.name2symbols.Name2Symbols.__init__">
+<tt class="descname">__init__</tt><big>(</big><em>self</em>, <em>src</em><big>)</big><a class="headerlink" href="#dchars.utilities.name2symbols.Name2Symbols.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize &lt;self&gt;, create the reversed dictionary of self (&lt;defaultsymbol2name&gt;)
+and initialize self.substitutions in order to speed up the function
+replace_by_the_default_symbols().</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="dchars.utilities.name2symbols.Name2Symbols.are_these_symbols_in_a_string">
+<tt class="descname">are_these_symbols_in_a_string</tt><big>(</big><em>self</em>, <em>name</em>, <em>string</em><big>)</big><a class="headerlink" href="#dchars.utilities.name2symbols.Name2Symbols.are_these_symbols_in_a_string" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return True if &lt;string&gt; contains one of the symbols defined
+in self[name].</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="dchars.utilities.name2symbols.Name2Symbols.default_symbols">
+<tt class="descname">default_symbols</tt><big>(</big><em>self</em><big>)</big><a class="headerlink" href="#dchars.utilities.name2symbols.Name2Symbols.default_symbols" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return all default symbols.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="dchars.utilities.name2symbols.Name2Symbols.default_symbols__pattern">
+<tt class="descname">default_symbols__pattern</tt><big>(</big><em>self</em><big>)</big><a class="headerlink" href="#dchars.utilities.name2symbols.Name2Symbols.default_symbols__pattern" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return all default symbols, special function for regex since
+some symbols have to be treated apart.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="dchars.utilities.name2symbols.Name2Symbols.get_default_symbol">
+<tt class="descname">get_default_symbol</tt><big>(</big><em>self</em>, <em>name</em><big>)</big><a class="headerlink" href="#dchars.utilities.name2symbols.Name2Symbols.get_default_symbol" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the default symbol of self[name].</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="dchars.utilities.name2symbols.Name2Symbols.get_the_name_for_this_symbol">
+<tt class="descname">get_the_name_for_this_symbol</tt><big>(</big><em>self</em>, <em>symbol</em><big>)</big><a class="headerlink" href="#dchars.utilities.name2symbols.Name2Symbols.get_the_name_for_this_symbol" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return either a string either None, if symbol doesn&#8217;t belong
+to self.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="dchars.utilities.name2symbols.Name2Symbols.replace_by_the_default_symbols">
+<tt class="descname">replace_by_the_default_symbols</tt><big>(</big><em>self</em>, <em>src</em><big>)</big><a class="headerlink" href="#dchars.utilities.name2symbols.Name2Symbols.replace_by_the_default_symbols" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="dchars.utilities.name2symbols.Name2Symbols.__weakref__">
+<tt class="descname">__weakref__</tt><a class="headerlink" href="#dchars.utilities.name2symbols.Name2Symbols.__weakref__" title="Permalink to this definition">¶</a></dt>
+<dd><p>list of weak references to the object (if defined)</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="source-code">
+<h2>Source code<a class="headerlink" href="#source-code" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>  1
+  2
+  3
+  4
+  5
+  6
+  7
+  8
+  9
+ 10
+ 11
+ 12
+ 13
+ 14
+ 15
+ 16
+ 17
+ 18
+ 19
+ 20
+ 21
+ 22
+ 23
+ 24
+ 25
+ 26
+ 27
+ 28
+ 29
+ 30
+ 31
+ 32
+ 33
+ 34
+ 35
+ 36
+ 37
+ 38
+ 39
+ 40
+ 41
+ 42
+ 43
+ 44
+ 45
+ 46
+ 47
+ 48
+ 49
+ 50
+ 51
+ 52
+ 53
+ 54
+ 55
+ 56
+ 57
+ 58
+ 59
+ 60
+ 61
+ 62
+ 63
+ 64
+ 65
+ 66
+ 67
+ 68
+ 69
+ 70
+ 71
+ 72
+ 73
+ 74
+ 75
+ 76
+ 77
+ 78
+ 79
+ 80
+ 81
+ 82
+ 83
+ 84
+ 85
+ 86
+ 87
+ 88
+ 89
+ 90
+ 91
+ 92
+ 93
+ 94
+ 95
+ 96
+ 97
+ 98
+ 99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174</pre></div></td><td class="code"><div class="highlight"><pre><span class="c">#!/usr/bin/python3</span>
+<span class="c"># -*- coding: utf-8 -*-</span>
+<span class="c">################################################################################</span>
+<span class="c">#    DChars Copyright (C) 2012 Suizokukan</span>
+<span class="c">#    Contact: suizokukan _A.T._ orange dot fr</span>
+<span class="c">#</span>
+<span class="c">#    This file is part of DChars.</span>
+<span class="c">#    DChars is free software: you can redistribute it and/or modify</span>
+<span class="c">#    it under the terms of the GNU General Public License as published by</span>
+<span class="c">#    the Free Software Foundation, either version 3 of the License, or</span>
+<span class="c">#    (at your option) any later version.</span>
+<span class="c">#</span>
+<span class="c">#    DChars is distributed in the hope that it will be useful,</span>
+<span class="c">#    but WITHOUT ANY WARRANTY; without even the implied warranty of</span>
+<span class="c">#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span>
+<span class="c">#    GNU General Public License for more details.</span>
+<span class="c">#</span>
+<span class="c">#    You should have received a copy of the GNU General Public License</span>
+<span class="c">#    along with DChars.  If not, see &lt;http://www.gnu.org/licenses/&gt;.</span>
+<span class="c">################################################################################</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    ❏DChars❏ : dchars/name2symbols.py</span>
+
+<span class="sd">    E.g :</span>
+
+<span class="sd">    .. code-block:: none</span>
+
+<span class="sd">        SYMB_DIACRITICS_NAME2NUM = Name2Symbols(</span>
+<span class="sd">        {&quot;τόνος.βαρεῖα&quot;          : ( chr(0x300),),        # ὰ</span>
+<span class="sd">         &quot;τόνος.ὀξεῖα&quot;           : ( chr(0x301), chr(0x030D)),  # ά, α̍</span>
+<span class="sd">         &quot;μῆκος.μακρόν&quot;          : ( chr(0x304),),        # ᾱ</span>
+<span class="sd">         &quot;μῆκος.βραχύ&quot;           : ( chr(0x306),),        # ᾰ</span>
+<span class="sd">         &quot;τόνος.περισπωμένη&quot;     : ( chr(0x342),),        # ᾶ</span>
+<span class="sd">         &quot;πνεῦμα.ψιλὸν&quot;          : ( chr(0x313),),        # ἀ</span>
+<span class="sd">         &quot;πνεῦμα.δασὺ&quot;           : ( chr(0x314),),        # ἁ</span>
+<span class="sd">         &quot;ὑπογεγραμμένη&quot;         : ( chr(0x345),),        # ᾳ</span>
+<span class="sd">         &quot;διαλυτικά&quot;             : ( chr(0x308),),        # ϋ</span>
+<span class="sd">         })</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">import</span> <span class="nn">re</span>
+
+<span class="c">################################################################################</span>
+<span class="k">class</span> <span class="nc">Name2Symbols</span><span class="p">(</span><span class="nb">dict</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        class Name2Symbols : associate a name with several symbols, the first</span>
+<span class="sd">        of these symbols being the default symbol.</span>
+
+<span class="sd">        E.g. : &quot;τόνος.ὀξεῖα&quot; : (chr(0x301), chr(0x030D))  # ά, α̍</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c">#///////////////////////////////////////////////////////////////////////////</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">src</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">                Name2Symbols.__init__</span>
+
+<span class="sd">                Initialize &lt;self&gt;, create the reversed dictionary of self (&lt;defaultsymbol2name&gt;)</span>
+<span class="sd">                and initialize self.substitutions in order to speed up the function</span>
+<span class="sd">                replace_by_the_default_symbols().</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="c">#.......................................................................</span>
+        <span class="c"># initialisation of the dictionary in &lt;self&gt; :</span>
+        <span class="c">#.......................................................................</span>
+        <span class="nb">dict</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">src</span><span class="p">)</span>
+
+        <span class="c">#.......................................................................</span>
+        <span class="c"># creation of self.defaultsymbol2name :</span>
+        <span class="c">#.......................................................................</span>
+        <span class="c"># defaultsymbol2name[ chr(0x301) ] = &quot;τόνος.ὀξεῖα&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">defaultsymbol2name</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">default_symbols</span><span class="p">(),</span>
+                                  <span class="bp">self</span><span class="o">.</span><span class="n">keys</span><span class="p">()))</span>
+
+        <span class="c">#.......................................................................</span>
+        <span class="c"># creation of self.symbol2name :</span>
+        <span class="c">#.......................................................................</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">symbol2name</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">[</span><span class="n">key</span><span class="p">]:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">symbol2name</span><span class="p">[</span><span class="n">value</span><span class="p">]</span> <span class="o">=</span> <span class="n">key</span>
+
+        <span class="c">#.......................................................................</span>
+        <span class="c"># initialisation of self.substitutions, a list used by</span>
+        <span class="c"># self.replace_by_the_default_symbols() :</span>
+        <span class="c">#.......................................................................</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">substitutions</span> <span class="o">=</span> <span class="p">[]</span> <span class="c"># ( (str)source, (str)dest) )</span>
+                                <span class="c"># &lt;source&gt; will be replaced by &lt;dest&gt; by</span>
+                                <span class="c"># calling self.replace_by_the_default_symbols()</span>
+
+        <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">symbol</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="p">[</span><span class="n">name</span><span class="p">]):</span>
+
+                <span class="c"># if index == 0 we get the default value when in fact we want</span>
+                <span class="c"># fake values.</span>
+                <span class="k">if</span> <span class="n">index</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                    <span class="n">default_value</span> <span class="o">=</span> <span class="n">symbol</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">substitutions</span><span class="o">.</span><span class="n">append</span><span class="p">(</span> <span class="p">(</span><span class="n">symbol</span><span class="p">,</span> <span class="n">default_value</span><span class="p">)</span> <span class="p">)</span>
+
+    <span class="c">#///////////////////////////////////////////////////////////////////////////</span>
+    <span class="k">def</span> <span class="nf">are_these_symbols_in_a_string</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">string</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">                Name2Symbols.are_these_symbols_in_a_string</span>
+
+<span class="sd">                Return True if &lt;string&gt; contains one of the symbols defined</span>
+<span class="sd">                in self[name].</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">string</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">False</span>
+
+        <span class="n">res</span> <span class="o">=</span> <span class="bp">False</span>
+
+        <span class="k">for</span> <span class="n">symbol</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">[</span><span class="n">name</span><span class="p">]:</span>
+            <span class="k">if</span> <span class="n">symbol</span> <span class="ow">in</span> <span class="n">string</span><span class="p">:</span>
+                <span class="n">res</span> <span class="o">=</span> <span class="bp">True</span>
+                <span class="k">break</span>
+
+        <span class="k">return</span> <span class="n">res</span>
+
+    <span class="c">#///////////////////////////////////////////////////////////////////////////</span>
+    <span class="k">def</span> <span class="nf">default_symbols</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">                Name2Symbols.default_symbols</span>
+
+<span class="sd">                Return all default symbols.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="p">[</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_default_symbol</span><span class="p">(</span><span class="n">name</span><span class="p">)</span> <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="bp">self</span> <span class="p">]</span>
+
+        <span class="k">return</span> <span class="n">res</span>
+
+    <span class="c">#///////////////////////////////////////////////////////////////////////////</span>
+    <span class="k">def</span> <span class="nf">default_symbols__pattern</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">                Name2Symbols.default_symbols__pattern</span>
+
+<span class="sd">                Return all default symbols, special function for regex since</span>
+<span class="sd">                some symbols have to be treated apart.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">d_symbols</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span> <span class="n">re</span><span class="o">.</span><span class="n">escape</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">default_symbols</span><span class="p">()</span> <span class="p">)</span>
+        <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="n">d_symbols</span><span class="p">)</span>
+
+    <span class="c">#///////////////////////////////////////////////////////////////////////////</span>
+    <span class="k">def</span> <span class="nf">get_default_symbol</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">                Name2Symbols.get_default_symbol</span>
+
+<span class="sd">                Return the default symbol of self[name].</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="p">[</span><span class="n">name</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+
+    <span class="c">#///////////////////////////////////////////////////////////////////////////</span>
+    <span class="k">def</span> <span class="nf">replace_by_the_default_symbols</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">src</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">                Name2Symbols.replace_by_the_default_symbols</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="n">src</span><span class="p">[:]</span>
+
+        <span class="k">for</span> <span class="n">substitution_src</span><span class="p">,</span> <span class="n">substitution_dest</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">substitutions</span><span class="p">:</span>
+            <span class="n">res</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span> <span class="n">substitution_src</span><span class="p">,</span> <span class="n">substitution_dest</span> <span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">res</span>
+
+    <span class="c">#///////////////////////////////////////////////////////////////////////////</span>
+    <span class="k">def</span> <span class="nf">get_the_name_for_this_symbol</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">symbol</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">                Name2Symbols.get_the_name_for_this_symbol</span>
+
+<span class="sd">                Return either a string either None, if symbol doesn&#39;t belong</span>
+<span class="sd">                to self.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">if</span> <span class="n">symbol</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">symbol2name</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">symbol2name</span><span class="p">[</span><span class="n">symbol</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">None</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">dchars.utilities.name2symbols</a><ul>
+<li><a class="reference internal" href="#module-dchars.utilities.name2symbols">Documentation</a></li>
+<li><a class="reference internal" href="#source-code">Source code</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="dchars.utilities.lstringtools.html"
+                        title="previous chapter">dchars.utilities.lstringtools</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="dchars.utilities.orderedset.html"
+                        title="next chapter">dchars.utilities.orderedset</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/dchars.utilities.name2symbols.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="dchars.utilities.orderedset.html" title="dchars.utilities.orderedset"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="dchars.utilities.lstringtools.html" title="dchars.utilities.lstringtools"
+             >previous</a> |</li>
+        <li><a href="index.html">DChars 0.4.0 documentation</a> &raquo;</li>
+          <li><a href="source_code.html" >source code</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2012, suizokukan (Xavier Faure).
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

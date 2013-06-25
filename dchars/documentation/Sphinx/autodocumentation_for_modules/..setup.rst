@@ -1,0 +1,23 @@
+.. |br| raw:: html
+
+   <br />
+
+==========================================================
+..setup
+==========================================================
+
+-------------
+Documentation
+-------------
+
+.. automodule:: ..setup
+   :members:
+   :special-members:
+
+-----------
+Source code
+-----------
+
+.. literalinclude:: ../../../..//setup.py
+   :language: python
+   :linenos:

@@ -1,0 +1,154 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>how to use DChars &mdash; DChars 0.4.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/theme.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '0.4.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="DChars 0.4.0 documentation" href="index.html" />
+    <link rel="next" title="development" href="development.html" />
+    <link rel="prev" title="installation" href="howto_install.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="development.html" title="development"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="howto_install.html" title="installation"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">DChars 0.4.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="howto-use-title">
+<h1>how to use DChars<a class="headerlink" href="#howto-use-title" title="Permalink to this headline">¶</a></h1>
+<p>Once you have installed DChars as a subdirectory of your project you have to import the module with <tt class="docutils literal"><span class="pre">import</span> <span class="pre">dchars</span></tt>. The following code gives some examples of what can be achieved using DChars :</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c">#...........................................................................</span>
+<span class="c"># Let&#39;s use by instance the Sanskrit module :</span>
+<span class="c">#...........................................................................</span>
+<span class="c"># we import the &quot;new_dstring&quot; object in order to set DSTRING_SAN :</span>
+<span class="kn">from</span> <span class="nn">dchars.dchars</span> <span class="kn">import</span> <span class="n">new_dstring</span>
+<span class="n">DSTRING_SAN</span> <span class="o">=</span> <span class="n">new_dstring</span><span class="p">(</span><span class="n">language</span><span class="o">=</span><span class="s">&#39;संस्कृतम्&#39;</span><span class="p">,</span> <span class="n">transliteration_method</span><span class="o">=</span><span class="s">&quot;iso15919&quot;</span><span class="p">)</span>
+
+<span class="c"># We set the string from a source-string :</span>
+<span class="c"># this is the first part of the first verse of the Rig-Veda :</span>
+<span class="n">string</span> <span class="o">=</span> <span class="n">DSTRING_SAN</span><span class="p">(</span><span class="s">&quot;अ॒ग्निमी॑ळे पु॒रोहि॑तं य॒ज्ञस्य॑ दे॒वमृ॒त्विज॑म् ।&quot;</span><span class="p">)</span>
+
+<span class="c"># We can use &lt;string&gt; as a usual Python string :</span>
+<span class="k">print</span><span class="p">(</span><span class="n">string</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>                            <span class="c"># -&gt; अ॒</span>
+
+<span class="n">string</span> <span class="o">+=</span> <span class="n">DSTRING_SAN</span><span class="p">(</span><span class="s">&quot;होता॑रं रत्न॒धात॑मम् ॥&quot;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">string</span><span class="o">.</span><span class="n">get_transliteration</span><span class="p">())</span>         <span class="c"># -&gt; a̱gnimī́ḷē pu̱rōhítaṁ ya̱jñasyá dē̱vamr̥̱tvijám .hōtā́raṁ ratna̱dhātámam ..</span>
+
+<span class="c">#...........................................................................</span>
+<span class="c"># Let&#39;s inspect and modify this string :</span>
+<span class="c">#...........................................................................</span>
+<span class="k">print</span><span class="p">(</span><span class="n">string</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">punctuation</span><span class="p">)</span>               <span class="c"># -&gt; True</span>
+<span class="k">print</span><span class="p">(</span><span class="n">string</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">base_char</span><span class="p">)</span>                  <span class="c"># -&gt; &quot;A&quot;</span>
+<span class="k">print</span><span class="p">(</span><span class="n">string</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">base_char</span><span class="p">)</span>                  <span class="c"># -&gt; &quot;DEVANAGARI LETTER GA&quot;</span>
+<span class="k">print</span><span class="p">(</span><span class="n">string</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">anudatta</span><span class="p">)</span>                   <span class="c"># -&gt; True</span>
+<span class="n">string</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">anudatta</span> <span class="o">=</span> <span class="bp">False</span>
+<span class="n">string</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">accent</span> <span class="o">=</span> <span class="s">&quot;DEVANAGARI STRESS SIGN UDATTA&quot;</span>
+<span class="k">print</span><span class="p">(</span><span class="n">string</span><span class="o">.</span><span class="n">get_transliteration</span><span class="p">())</span>         <span class="c"># -&gt; &quot;ágnimī́ḷē pu̱rōhítaṁ ya̱jñasyá dē̱vamr̥̱tvijám .hōtā́raṁ ratna̱dhātámam ..&quot;</span>
+
+<span class="c">#...........................................................................</span>
+<span class="c"># Let&#39;s read a file and display its transliteration, line by line :</span>
+<span class="c">#...........................................................................</span>
+<span class="k">with</span> <span class="n">DSTRING_SAN</span><span class="p">()</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">sourcefile</span><span class="p">,</span> <span class="s">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">src</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">src</span><span class="o">.</span><span class="n">readlines</span><span class="p">():</span>
+        <span class="k">print</span><span class="p">(</span> <span class="n">line</span><span class="o">.</span><span class="n">get_transliteration</span><span class="p">()</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="howto_install.html"
+                        title="previous chapter">installation</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="development.html"
+                        title="next chapter">development</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/howto_use.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="development.html" title="development"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="howto_install.html" title="installation"
+             >previous</a> |</li>
+        <li><a href="index.html">DChars 0.4.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2012, suizokukan (Xavier Faure).
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

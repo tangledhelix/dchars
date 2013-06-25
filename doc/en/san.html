@@ -1,0 +1,659 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Sanskrit(devanāgarī) &mdash; DChars 0.4.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/theme.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '0.4.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="DChars 0.4.0 documentation" href="index.html" />
+    <link rel="up" title="known languages and writing systems" href="supported_languages.html" />
+    <link rel="next" title="GPL3 license" href="license.html" />
+    <link rel="prev" title="Latin" href="lat.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="license.html" title="GPL3 license"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="lat.html" title="Latin"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">DChars 0.4.0 documentation</a> &raquo;</li>
+          <li><a href="supported_languages.html" accesskey="U">known languages and writing systems</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="san-title">
+<h1>Sanskrit(devanāgarī)<a class="headerlink" href="#san-title" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="what-is-this">
+<h2>Language and writing system<a class="headerlink" href="#what-is-this" title="Permalink to this headline">¶</a></h2>
+<p>This document explains how DChars deal with Sanskrit and its usual writing system, the devanāgarī. Sanskrit is named &#8216;san&#8217; by the norm ISO-639-3, hence the name of the specific module dedicated to this language : dchars.languages.san .</p>
+</div>
+<div class="section" id="simple-examples">
+<h2>simple examples<a class="headerlink" href="#simple-examples" title="Permalink to this headline">¶</a></h2>
+<p>Some simple examples of what can be done with this module. Feel free to write DChars&#8217; author for further informations.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">dchars.dchars</span> <span class="kn">import</span> <span class="n">new_dstring</span>
+<span class="n">DSTRING_SAN</span> <span class="o">=</span> <span class="n">new_dstring</span><span class="p">(</span><span class="n">language</span><span class="o">=</span><span class="s">&#39;संस्कृतम्&#39;</span><span class="p">)</span>
+
+<span class="c"># ------------------------------------</span>
+<span class="c"># let&#39;s start with a Sanskrit string :</span>
+<span class="c"># ------------------------------------</span>
+<span class="c"># let&#39;s take the first verse from the Rig-Veda :</span>
+<span class="n">string</span> <span class="o">=</span> <span class="n">DSTRING_SAN</span><span class="p">(</span><span class="s">&quot;अ॒ग्निमी॑ळे पु॒रोहि॑तं य॒ज्ञस्य॑ दे॒वमृ॒त्विज॑म् ।&quot;</span><span class="p">)</span>
+<span class="c"># is this DString object valid (i.e. no problem with the Sanskrit string ?)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">string</span><span class="o">.</span><span class="n">validity</span><span class="p">)</span>                  <span class="c"># -&gt; True : no problem</span>
+
+<span class="c"># get the (default) transliteration :</span>
+<span class="k">print</span><span class="p">(</span><span class="n">string</span><span class="o">.</span><span class="n">get_transliteration</span><span class="p">())</span>     <span class="c"># -&gt; &quot;a̱gnimī́ḷē pu̱rōhítaṁ ya̱jñasyá dē̱vamr̥̱tvijám .&quot;</span>
+
+<span class="c"># is there an anuudatta on the character #0 ?</span>
+<span class="k">print</span><span class="p">(</span><span class="n">string</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">anudatta</span><span class="p">)</span>               <span class="c"># -&gt; True</span>
+<span class="c"># what&#39;s the basic character of the character #0 ?</span>
+<span class="k">print</span><span class="p">(</span><span class="n">string</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">base_char</span><span class="p">)</span>              <span class="c"># -&gt; &quot;A&quot;</span>
+<span class="c"># what&#39;s the basic character of the character #1 ?</span>
+<span class="k">print</span><span class="p">(</span><span class="n">string</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">base_char</span><span class="p">)</span>              <span class="c"># -&gt; &quot;DEVANAGARI LETTER GA&quot;</span>
+<span class="c"># what&#39;s the dependent vowel of the character #1 ?</span>
+<span class="k">print</span><span class="p">(</span><span class="n">string</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">dependentvowel</span><span class="p">)</span>         <span class="c"># -&gt; None</span>
+<span class="c"># what&#39;s the basic character of the character #2 ?</span>
+<span class="k">print</span><span class="p">(</span><span class="n">string</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">base_char</span><span class="p">)</span>              <span class="c"># -&gt; &quot;DEVANAGARI LETTER NA&quot;</span>
+<span class="c"># what&#39;s the dependent vowel of the character #2 ?</span>
+<span class="k">print</span><span class="p">(</span><span class="n">string</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">dependentvowel</span><span class="p">)</span>         <span class="c"># -&gt; &quot;I&quot;</span>
+
+<span class="c"># let&#39;s add a stress accent to character #0 :</span>
+<span class="n">string</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">accent</span> <span class="o">=</span> <span class="s">&quot;DEVANAGARI STRESS SIGN UDATTA&quot;</span>
+<span class="k">print</span><span class="p">(</span><span class="n">string</span><span class="p">)</span>                           <span class="c"># -&gt; अ॒॑ग्निमी॑ळे पु॒रोहि॑तं य॒ज्ञस्य॑ दे॒वमृ॒त्विज॑म् ।</span>
+<span class="k">print</span><span class="p">(</span><span class="n">string</span><span class="o">.</span><span class="n">get_transliteration</span><span class="p">())</span>     <span class="c"># -&gt; á̱gnimī́ḷē pu̱rōhítaṁ ya̱jñasyá dē̱vamr̥̱tvijám .</span>
+
+<span class="c"># is the last character a punctuation sign ?</span>
+<span class="k">print</span><span class="p">(</span><span class="n">string</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">punctuation</span><span class="p">)</span>           <span class="c"># -&gt; True, since we read &quot;।&quot; (danda)</span>
+
+<span class="c"># --------------------------------------------------------------------------</span>
+<span class="c"># now, let&#39;s start with a transliterated string (using the default method) :</span>
+<span class="c"># --------------------------------------------------------------------------</span>
+<span class="n">string</span> <span class="o">=</span> <span class="n">DSTRING_SAN</span><span class="p">()</span><span class="o">.</span><span class="n">init_from_transliteration</span><span class="p">(</span><span class="s">&#39;ya̱jñasyá&#39;</span><span class="p">)</span>
+<span class="c"># we have a DSTRING_SAN object whose length is equal to 5 (5 DCharacterSAN objects) :</span>
+<span class="k">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">string</span><span class="p">),</span> <span class="n">string</span><span class="p">)</span>              <span class="c"># -&gt; 5</span>
+<span class="c"># let&#39;s add two characters : space + pu̱</span>
+<span class="n">string</span> <span class="o">+=</span> <span class="n">DSTRING_SAN</span><span class="p">(</span><span class="s">&quot; पु॒&quot;</span><span class="p">)</span>
+<span class="c"># the string we get is now...</span>
+<span class="k">print</span><span class="p">(</span><span class="n">string</span><span class="p">)</span>                           <span class="c"># -&gt; &quot;य॒जञसय॑ पु॒&quot;</span>
+<span class="k">print</span><span class="p">(</span><span class="n">string</span><span class="o">.</span><span class="n">get_transliteration</span><span class="p">())</span>     <span class="c"># -&gt; &quot;ya̱jñasyá pu̱&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="transliteration-methods">
+<h2>transliteration&#8217;s methods<a class="headerlink" href="#transliteration-methods" title="Permalink to this headline">¶</a></h2>
+<p>Two methods are available : &#8216;iso15919&#8217; and &#8216;itrans&#8217;. This module uses &#8216;iso15919&#8217; as the default method for transliteration.</p>
+<div class="section" id="iso15919-method">
+<h3>&#8216;iso15919&#8217;<a class="headerlink" href="#iso15919-method" title="Permalink to this headline">¶</a></h3>
+<p>Only a subsequent part of the norm ISO15919 has been used. See below for more details.</p>
+<div class="highlight-none"><div class="highlight"><pre>* (Rig-Veda, I.1) :
+  अ॒ग्निमी॑ळे पु॒रोहि॑तं य॒ज्ञस्य॑ दे॒वमृ॒त्विज॑म् । होता॑रं रत्न॒धात॑मम् ॥
+  a̱gnimī́ḷē pu̱rōhítaṁ ya̱jñasyá dē̱vamr̥̱tvijám . hōtā́raṁ ratna̱dhātámam ..
+
+* transliterated characters defining one DCharacterSAN are defined in this order : base_char | accent | anudatta | nukta | anusvara_candrabindu
+  (confer san/transliterations/iso15919.py::PATTERN)
+  E.g. : &quot;१॒॑&quot; (१(0x0967) + anudatta(0x0952) + udatta(0x0951)) =&gt; &quot;1̱́&quot; (&#39;1&#39; + 0x0331anudatta + 0x0301=accent)
+
+* &quot;SHORT E&quot; and &quot;E&quot;, &quot;SHORT O&quot; and &quot;O&quot; are different vowels; &quot;E&quot; and &quot;O&quot; are the natural vowels of Sanskrit and are rendered as ē and ō.
+* r̥(0072+0325) is a vowel, not ṛ(1E5B).
+* vowels in hiatus are preceded by a &quot;:&quot; (&#39;रआ&#39; = &quot;ra:ā&quot;)
+* visarga is transliterated by a &quot;ḥ&quot; (&quot;कं॒ः&quot; = &#39;ka̱ṁḥ&#39;)
+* chandrabindu is transliterated by a &quot;m̐&quot; (&#39;माँ&#39; = &#39;mām̐&#39;) ALWAYS PLACED AFTER THE CHARACTER,
+  ignoring a rule followed by ISO15919 (see NOTE-ISO15919-1 below)
+* the module knows how to handle consonants with nutka : &quot;क़॒॑&quot; = &quot;qá̱&quot;
+
+* Nepali r̆ (ONE/TWO-WAY URPHA OPTION) has not been taken in account.
+* r- (adscript consonant) has been ignored
+* no vowels ligatures (dr̥, ru, rū, hr̥) or half consonants ligatures.
+* the program reads r̥̄ = r + 0325 + 0304 AND r + 0304 + 0325.
+* the program reads l̥̄ = l + 0325 + 0304 AND l + 0304 + 0325.
+* the program reads &#39;ḥ&#39; [0068+0323] AND &#39;ḥ&#39; [1E25]
+* udatta + anudatta : the program produces 0x0331 + 0x0301 (not 0x0301 + 0x0331)
+* udatta + anudatta : the program reads 0x0331 + 0x0301 AND 0x0301 + 0x0331
+* the program produces r̥̄ = r + 0325 + 0304, not r + 0304 + 0325.
+* the program produces l̥̄= l + 0325 + 0304, not l + 0304 + 0325
+* the program produces &#39;ḥ&#39; [1E25]
+* consonants with anudatta : the program produces compact symbols like
+  ḵ (1E35), not k + 0331
+* consonants with anudatta : the program reads compact symbols like
+  ḵ (1E35) AND uncompact symbols like k + 0331
+* consonants with dot like ṛ : the program produces compact symbols like
+  ṛ (1E5B), not r+0x0323
+* consonants with dot like ṛ : the program reads compact symbols like
+  ṛ (1E5B) AND uncompact symbols r+0x0323.
+* anusvara &amp; candrabindu : ISO 15919 has two options about anusvāra and this
+  program always uses the &quot;simplified nasalization option&quot; : &quot;ṁ&quot;
+* e and ē, o and ō are different; Sanskrit has ē and ō.
+* DEVANAGARI SIGN INVERTED CANDRABINDU ignored
+
+* (NOTE-ISO15919-1) (ignored rule) : When used with a semi-vowel (y, r, l, ḷ or v),
+  candrabindu is placed before the semi-vowel. For example, यँ is written m̐ya and not yam̐.
+</pre></div>
+</div>
+</div>
+<div class="section" id="itrans-method">
+<h3>&#8216;itrans&#8217;<a class="headerlink" href="#itrans-method" title="Permalink to this headline">¶</a></h3>
+<p>See for instance <a class="reference external" href="https://en.wikipedia.org/wiki/ITRANS">https://en.wikipedia.org/wiki/ITRANS</a> .</p>
+<div class="highlight-none"><div class="highlight"><pre>* (Rig-Veda, I.1) :
+  &quot;अ॒ग्निमी॑ळे पु॒रोहि॑तं य॒ज्ञस्य॑ दे॒वमृ॒त्विज॑म् । होता॑रं रत्न॒धात॑मम् ॥&quot;
+  a\_gnimI\&#39;Le pu\_rohi\&#39;taM ya\_j~nasya\&#39; de\_vamR^i\_tvija\&#39;m . hotA\&#39;raM ratna\_dhAta\&#39;mam ..
+
+* transliterated characters defining one DCharacterSAN are defined in this order : base_char | anudatta | accent | virama | anusvara_candrabindu
+  (confer san/transliterations/itrans.py::PATTERN)
+  * e.g. : &quot;१॒॑&quot; = &quot;1\\_\\&#39;&quot;
+  * e.g. : &#39;रआ&#39; = &quot;ra/A&quot;
+
+* &quot;SHORT E&quot; and &quot;E&quot;, &quot;SHORT O&quot; and &quot;O&quot; are different vowels; &quot;E&quot; and &quot;O&quot; are the natural vowels of Sanskrit and are rendered as &quot;e&quot; and &quot;o&quot;.
+* r̥(0072+0325) is a vowel, not ṛ(1E5B).
+* some vowels in hiatus are preceded by a &quot;+&quot; and some vowels by &quot;/&quot; (see san/transliterations/itrans.py::VOWELS_IN_HIATUS)
+* visarga is transliterated by a &quot;H&quot; (&quot;कं॒ः&quot; = &#39;ka\\_MH&#39;)
+* chandrabindu is transliterated by a &quot;.N&quot; (&quot;कं॒ः&quot; = &#39;ka\\_MH&#39;)
+* the module knows how to handle consonants with nutka : &quot;क़&quot; = &quot;qa&quot;
+* a R^i vowel in hiatus seems to be transliterated as R^i
+  (according to text003_rigveda_samhita_1_1.itrans.txt :
+   e.g.: ##1.044.03c##  dhU\_make\&#39;tu\_M bhAR^i\&#39;jIka\_M vyu\&#39;ShTiShu ya\_j~nAnA\&#39;madhvara\_shriya\&#39;m ..)
+* if a vowel is in hiatus but have the anusvara or a candrabindu character,
+  it&#39;s transliterated as a hiatus but as a stand-alone vowel (???, according to
+  according by text003_rigveda_samhita_1_1.itrans.txt)
+
+* this transliteration method is based on two documents :
+  * (1) http://www.aczoom.com/itrans/#itransencoding (reproduced below)
+  * (2) http://www.detlef108.de/RV-D-IT.txt &lt;-&gt; http://www.detlef108.de/RV-D-UTF8.html
+
+*   -----------------------------------------------------------
+    Extract from http://www.aczoom.com/itrans/#itransencoding :
+    -----------------------------------------------------------
+      &quot;
+      &quot; Vowels (dependent and independent):
+      &quot; -------
+      &quot; a     aa / A       i      ii / I       u     uu / U
+      &quot; RRi / R^i    RRI / R^I    LLi / L^i    LLI / L^I
+      &quot; e     ai     o     au     aM    aH
+      &quot;
+      &quot; Consonants:
+      &quot; -----------
+      &quot; k     kh     g     gh     ~N
+      &quot; ch    Ch     j     jh     ~n
+      &quot; T     Th     D     Dh     N
+      &quot; t     th     d     dh     n
+      &quot; p     ph     b     bh     m
+      &quot; y     r      l     v / w
+      &quot; sh    Sh     s     h      L
+      &quot; x / kSh     GY / j~n / dny     shr
+      &quot; R (for marathi half-RA)
+      &quot; L / ld (marathi LLA)
+      &quot; Y (bengali)
+      &quot;
+      &quot; Consonants with a nukta (dot) under them (mainly for Urdu devanagari):
+      &quot; -----------------------------------------
+      &quot; k  with a dot:      q
+      &quot; kh with a dot:      K
+      &quot; g  with a dot:      G
+      &quot; j  with a dot:      z / J
+      &quot; p  with a dot:      f
+      &quot; D  with a dot:      .D
+      &quot; Dh with a dot:      .Dh
+      &quot;
+      &quot; Specials/Accents:
+      &quot; -----------------
+      &quot; Anusvara:       .n / M / .m  (dot on top of previous consonant/vowel)
+      &quot; Avagraha:       .a    (`S&#39; like symbol basically to replace a after o)
+      &quot; Ardhachandra:   .c    (for vowel sound as in english words `cat&#39; or `talk&#39;)
+      &quot; Chandra-Bindu:  .N    (chandra-bindu on top of previous letter)
+      &quot; Halant:             .h    (to get half-form of the consonant - no vowel - virama)
+      &quot; Visarga:        H     (visarga - looks like a colon character)
+      &quot; Om:         OM, AUM (Om symbol)
+      &quot;
+      &quot; [As shown, many codes have multiple choices, example &quot;RRi / R^i&quot; implies you
+      &quot;  can use either &quot;RRi&quot; or &quot;R^i&quot;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="possibilities">
+<h2>general informations<a class="headerlink" href="#possibilities" title="Permalink to this headline">¶</a></h2>
+<p>Current known limitations and possibilities of this module :</p>
+<div class="highlight-none"><div class="highlight"><pre>* metric symbols : digits+anusvara+udatta are ok (see NOTE1 below, e.g. : &quot;१॒॑&quot;) but not special characters
+  belonging to the so-called &quot;Devanagari extended&quot; (A8E0–A8FF).
+
+* a DCharacterSAN is defined by the following attributes (confer dchars/languages/san/dchars.py::DCharacterSAN.__init__) :
+  * unknown_char                    : bool
+  * base_char                       : None or a string with the NAME of the character,
+  *                                   not the character itself.
+  * accent                          : None or a string :
+                                              (&quot;DEVANAGARI STRESS SIGN UDATTA&quot;,
+                                               &quot;DEVANAGARI GRAVE ACCENT&quot;
+                                               &quot;DEVANAGARI ACUTE ACCENT&quot;
+                                              )
+                                              but not &quot;DEVANAGARI STRESS SIGN ANUDATTA&quot;, see anudatta below.
+  * punctuation                     : bool
+  * nukta                           : bool
+  * anusvara_candrabindu            : None, or a string
+                                              (&quot;DEVANAGARI SIGN ANUSVARA&quot;,
+                                               &quot;DEVANAGARI SIGN INVERTED CANDRABINDU&quot;,
+                                               &#39;DEVANAGARI SIGN CANDRABINDU&#39;
+                                              )
+  * virama                          : bool
+  * anudatta                        : bool
+  * is_an_independent_vowel         : bool
+  * dependentvowel                  : None, or a string (see symbol.SYMB_DEPENDENT_VOWELS)
+
+* (NOTE1) : from, http://en.wikipedia.org/wiki/Vedic_accent : &quot;If an independent svarita syllable
+  is next before an udātta syllable, instead of putting the anudātta mark and the svarita mark on
+  the same syllable, a figure 1 (if the svarita vowel is short) or a figure 3 (if the svarita
+  vowel is long) is written between, and that figure has the svarita mark and the anudātta mark.&quot;
+</pre></div>
+</div>
+</div>
+<div class="section" id="how-it-works">
+<h2>how it works<a class="headerlink" href="#how-it-works" title="Permalink to this headline">¶</a></h2>
+<p>This long description sums up the functionnement of this module. Let&#8217;s hope it will help anyone to read more easily the code !</p>
+<div class="highlight-none"><div class="highlight"><pre>############################################################################
+#
+# (0)   general remarks on DStringSAN and DCharacterSAN
+#
+# (1)   reciprocal functions : DStringSAN.init_from_str &lt;&gt; DStringSAN.get_sourcestr_representation
+# (1.1) DStringSAN.init_from_str(&quot;अ॒ग्निमी॑ळे&quot;)
+# (1.2) DStringSAN.get_sourcestr_representation()
+#
+# (2)   transliterations
+#
+# (2.1)   transliteration&#39;s method : &quot;iso15919&quot; : reciprocal functions
+# (2.1.1) dstring__init_from_translit_str(), dchar__init_from_translit_str()
+# (2.2.2) dchar__get_translit_str()
+#
+# (2.2)   transliteration&#39;s method : &quot;itrans&quot; : reciprocal functions
+# (2.2.1) dstring__init_from_translit_str(), dchar__init_from_translit_str()
+# (2.2.2) dchar__get_translit_str()
+#
+# (3)   exceptions
+#
+############################################################################
+
+ABBREVIATIONS :
+* NFC = unicodedata.normalize(&#39;NFC&#39;, string)
+* NFD = unicodedata.normalize(&#39;NFD&#39;, string)
+
+############################################################################
+# (0)   general remarks on DStringSAN and DCharacterSAN
+############################################################################
+
+* From a string like &quot;अ॒ग्निमी॑ळे&quot; you can build a DStringSAN object by writing :
+string = DStringSAN(&quot;अ॒ग्निमी॑ळे&quot;); you modify this object and then you get the
+corresponding string by calling DStringSAN.get_sourcestr_representation()
+* You can initialize a DStringSAN with a transliterated string :
+DStringSAN().init_from_transliteration(&quot;ba&quot;); you can modify this
+object and then you get the new transliterated string by calling
+DStringSAN.get_the_transliteration().
+
+* A DStringSAN is an object derived from DString, i.e. a list of DCharacterSAN
+objects. You can access a DStringSAN as a list made of characters.
+* A DStringSAN object has the (bool)&quot;.validity&quot; attribute set to False if
+something is wrong after a call to DStringSAN.init_from_str(); in this
+case the (list)&quot;.errors&quot; attribute contains some informations about the error.
+* CAVEAT : THE &quot;validity&quot; ATTRIBUTE IS NOT SET AFTER A CALL TO
+DStringSAN.init_from_transliteration()
+
+* use print(string) or print(str(string)) to display the original text in a
+DStringSAN object and print(repr(string)) to get the very detailed informations
+about the string.
+
+* to initialize a DStringSAN object you need :
+  * either a source-string like &quot;अ॒ग्निमी॑ळे&quot; : DStringSAN(&quot;अ॒ग्निमी॑ळे&quot;).
+    Conversely, you can get this source-string by a call to the function
+    DStringSAN.get_sourcestr_representation().
+    * you have the identities :
+          DStringSAN.get_sourcestr_representation( DStringSAN( src ) ) = src
+      and DStringSAN( DStringSAN.get_sourcestr_representation (src ) ) = src
+
+      ONLY FOR A SUBSET OF THE CHARACTERS AVAILABLE. See the documentation and
+      the code to see which characters can do that; typically this module
+      uses compact unicode characters when they exist : these characters should
+      be prefered to the (uncompact) compounds of characters.
+      This identities are controlled in the test files by the functions named
+      test_from_srcstr_2_srcstr().
+
+  * either a transliterated string like &quot;a̱gnimī́ḷē&quot; (see below the format of this
+    string, depending to the choosed transliterations&#39;s method), by calling :
+    DStringSAN().init_from_transliteration(&quot;a̱gnimī́ḷē&quot;). Conversely you can
+    get the transliterated string by calling DStringSAN.get_the_transliteration()
+
+############################################################################
+# (1)   reciprocal functions : DStringSAN.init_from_str &lt;&gt; DStringSAN.get_sourcestr_representation
+############################################################################
+
+* characters are divided into SYMB_CONSONANTS, SYMB_INDEPENDENT_VOWELS, SYMB_DEPENDENT_VOWELS,
+  SYMB_OTHER_SYMBOLS, SYMB_PUNCTUATION, SYMB_DIACRITICS
+
+* dchars/languages/san/symbols.py::SYMB_CONSONANTS, SYMB_INDEPENDENT_VOWELS, ... are Name2Symbols
+
+* dchars/languages/san/dchars.py::stringSAN.pattern = re.compile(&quot;((?P&lt;basechar&gt;{0})((?P&lt;dependentvowel&gt;{1})?)(?P&lt;diacritics&gt;({2})*))&quot;)
+
+  * pattern_basechar = SYMB_CONSONANTS + SYMB_INDEPENDENT_VOWELS + SYMB_OTHER_SYMBOLS + SYMB_PUNCTUATION
+  * pattern_dependentvowel = SYMB_DEPENDENT_VOWELS
+  * pattern_diacritics = SYMB_DIACRITICS
+
+* As expected with reciprocal function, we have init_from_str( get_sourcestr_representation( src ) ) = src
+and get_sourcestr_representation( init_from_str( src ) ) = src if src is made of certain characters.
+
+############################################################################
+# (1.1) DStringSAN.init_from_str(&quot;अ॒ग्निमी॑ळे&quot;)
+############################################################################
+
+This function initializes a DStringSAN object from a string.
+
+* DStringSAN(&quot;अ॒ग्निमी॑ळे&quot;)
+
+  * DStringSAN.init_from_str(&quot;अ॒ग्निमी॑ळे&quot;)
+    * src ---&gt; NFD -----&gt; src
+    * for element in re.finditer(DStringSAN.pattern, src)
+      * new_character = DCharacterSAN(unknown_char = False,
+                                      base_char = base_char,
+                                      accent = accent,
+                                      punctuation = punctuation,
+                                      nukta = nukta,
+                                      anusvara_candrabindu = anusvara_candrabindu,
+                                      virama = virama,
+                                      anudatta = anudatta,
+                                      is_a_vowel = is_a_vowel,
+                                      dependentvowel = dependentvowel)
+
+############################################################################
+# (1.2) DStringSAN.get_sourcestr_representation()
+############################################################################
+
+This function gives the representation string corresponding to a DStringSAN object.
+The transliterated character(s) corresponding to the &quot;a&quot; vowel are deleted at the
+end of the function.
+
+* DStringSAN.get_sourcestr_representation(&quot;अ॒ग्निमी॑ळे&quot;)
+  * [...]
+    if self.accent is not None:
+        res.append( SYMB_DIACRITICS.get_default_symbol(self.accent) )
+
+    if self.nukta:
+        res.append( SYMB_DIACRITICS.get_default_symbol(&quot;DEVANAGARI SIGN NUKTA&quot;) )
+
+    if self.anusvara_candrabindu is not None:
+        res.append( SYMB_DIACRITICS.get_default_symbol(self.anusvara_candrabindu) )
+    [...]
+
+  * res = res.replace(FAKE_A__SYMBOL, &quot;&quot;)
+  * res ----&gt; COMPLETE_NORMALIZE_NFC ----&gt; res
+  * res ----&gt; NFC ----&gt; res
+
+############################################################################
+# (2)   transliterations
+############################################################################
+
+Unknown characters are silently ignored.
+
+############################################################################
+# (2.1)   transliteration&#39;s method : &quot;iso15919&quot; : reciprocal functions
+############################################################################
+
+transliterated string -&gt; srcstring : the dependent vowel of a consonant is
+not set by dchar__init_from_translit_str() but by dstring__init_from_translit_str()
+Since &quot;ka&quot; isn&#39;t &quot;कऄ&quot; but &quot;क&quot; the choice of the right devanagari character
+belongs to a function able to analyze a string of characters, not a stand-alone
+character.
+
+############################################################################
+# (2.1.1) dstring__init_from_translit_str(), dchar__init_from_translit_str()
+############################################################################
+
+These functions initialize a DStringSAN object from a transliterated string.
+The function dstring__init_from_translit_str() is called by DStringSAN.init_from_transliteration()
+
+IN GENERAL :
+* DStringSAN().init_from_transliteration(src, method=&quot;iso15919&quot;) =&gt; iso15919.py::dstring__init_from_translit_str
+* ... calling for each character DCharacterSAN.init_from_transliteration(method = &quot;iso15919&quot;)
+  =&gt; iso15919.py::dchar__init_from_translit_str()
+
+IN DETAILS :
+* PATTERN is a regex used to cut one complex character into its element
+  ( &quot;ba&quot; = base_char=&quot;b&quot;, dependent_vowel=&quot;a&quot; ...)
+* PATTERN2 is a regex used to cut a string into some complex characters ( e.g : &quot;bama&quot; -&gt; /ba/ + /ma/ )
+* TRANS_EQUIVALENCES is a list of substitutions for the transliterated strings, if we want to treat
+  similarly two different transliterated strings.
+
+* DStringSAN().init_from_transliteration(&quot;ba&quot;, method=&quot;iso15919&quot;)
+
+  * dchars/languages/san/transliterations/iso15919.py::dstring__init_from_translit_str(src=&quot;ba&quot;)
+    * src ---&gt; TRANS_EQUIVALENCES ---&gt; src
+    * for element in re.finditer(PATTERN2, _src):
+          string = element.string[element.start():element.end()]
+          new_character = dcharactertype().init_from_transliteration(string, &quot;iso15919&quot;)
+
+          * -----------------------------------------------------------------
+          * dcharactertype().init_from_transliteration calls in fact
+          * iso15919.py::dchar__init_from_translit_str(), id est :
+          * -----------------------------------------------------------------
+          * dchar__init_from_trans_lstring(&quot;ba&quot;)
+            * element = re.match(PATTERN, src)
+            * [...]
+                accent = element.group(&#39;accent&#39;)
+                if accent == &#39;&#39;:
+                    dchar.accent = None
+                else:
+                    dchar.accent = DIACRITICS_INVERSED[accent]
+              [...]
+
+############################################################################
+# (2.1.2) dchar__get_translit_str()
+############################################################################
+
+This function gives the representation string corresponding to a DCharacterSAN object.
+This function is called by DCharacterSAN.get_transliteration(), this last function
+being called by DString.get_transliteration().
+
+* DString.get_transliteration :
+  for dchar in self:
+      res.append( dchar.get_transliteration(method = &quot;iso15919&quot;) )
+
+      * --------------------------------------------------------------------
+      * dchar.get_transliteration(method = &quot;iso15919&quot;) calls in fact
+      * iso15919.py::dchar__get_translit_str(), id est :
+      * --------------------------------------------------------------------
+      * dchar__get_translit_str(dchar)
+
+        * [...]
+            if dchar.accent is not None:
+                res.append( DIACRITICS[dchar.accent] )
+
+            if dchar.anudatta:
+                res.append( DIACRITICS[&#39;DEVANAGARI STRESS SIGN ANUDATTA&#39;] )
+          [...]
+
+          res ----&gt; NFC ---&gt; res
+
+############################################################################
+# (2.2)   transliteration&#39;s method : &quot;itrans&quot; : reciprocal functions
+############################################################################
+
+############################################################################
+# (2.2.1) dstring__init_from_translit_str(), dchar__init_from_translit_str()
+############################################################################
+
+These functions initialize a DStringSAN object from a transliterated string.
+The function dstring__init_from_translit_str() is called by DStringSAN.init_from_transliteration()
+
+IN GENERAL :
+* DStringSAN().init_from_transliteration(src, method=&quot;itrans&quot;) =&gt; itrans.py::dstring__init_from_translit_str
+* ... calling for each character DCharacterSAN.init_from_transliteration(method = &quot;itrans&quot;)
+  =&gt; itrans.py::dchar__init_from_translit_str()
+
+IN DETAILS :
+* PATTERN is a regex used to cut one complex character into its element
+  ( &quot;ba&quot; = base_char=&quot;b&quot;, dependent_vowel=&quot;a&quot; ...)
+* PATTERN2 is a regex used to cut a string into some complex characters ( e.g : &quot;bama&quot; -&gt; /ba/ + /ma/ )
+* TRANS_EQUIVALENCES is a list of substitutions for the transliterated strings, if we want to treat
+  similarly two different transliterated strings.
+
+* DStringSAN().init_from_transliteration(&quot;ba&quot;, method=&quot;itrans&quot;)
+
+  * dchars/languages/san/transliterations/itrans.py::dstring__init_from_translit_str(src=&quot;ba&quot;)
+    * src ---&gt; TRANS_EQUIVALENCES ---&gt; src
+    * for element in re.finditer(PATTERN2, _src):
+          string = element.string[element.start():element.end()]
+          new_character = dcharactertype().init_from_transliteration(string, &quot;itrans&quot;)
+
+          * -----------------------------------------------------------------
+          * dcharactertype().init_from_transliteration calls in fact
+          * itrans.py::dchar__init_from_translit_str(), id est :
+          * -----------------------------------------------------------------
+          * dchar__init_from_trans_lstring(&quot;ba&quot;)
+            * element = re.match(PATTERN, src)
+            * [...]
+                accent = element.group(&#39;accent&#39;)
+                if accent == &#39;&#39;:
+                    dchar.accent = None
+                else:
+                    dchar.accent = DIACRITICS_INVERSED[accent]
+              [...]
+
+############################################################################
+# (2.2.2) dchar__get_translit_str()
+############################################################################
+
+This function gives the representation string corresponding to a DCharacterSAN object.
+This function is called by DCharacterSAN.get_transliteration(), this last function
+being called by DString.get_transliteration().
+
+* DString.get_transliteration :
+  for dchar in self:
+      res.append( dchar.get_transliteration(method = &quot;itrans&quot;) )
+
+      * --------------------------------------------------------------------
+      * dchar.get_transliteration(method = &quot;itrans&quot;) calls in fact
+      * itrans.py::dchar__get_translit_str(), id est :
+      * --------------------------------------------------------------------
+      * dchar__get_translit_str(dchar)
+
+        * [...]
+           if dchar.anudatta:
+                res.append( DIACRITICS[&#39;DEVANAGARI STRESS SIGN ANUDATTA&#39;] )
+
+            if dchar.accent is not None:
+                res.append( DIACRITICS[dchar.accent] )
+          [...]
+
+############################################################################
+# (3)   exceptions
+############################################################################
+
+As a module of the DChars project, the code may raise a DCharsError exception
+defined in dchars/errors/errors.py .
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Sanskrit(devanāgarī)</a><ul>
+<li><a class="reference internal" href="#what-is-this">Language and writing system</a></li>
+<li><a class="reference internal" href="#simple-examples">simple examples</a></li>
+<li><a class="reference internal" href="#transliteration-methods">transliteration&#8217;s methods</a><ul>
+<li><a class="reference internal" href="#iso15919-method">&#8216;iso15919&#8217;</a></li>
+<li><a class="reference internal" href="#itrans-method">&#8216;itrans&#8217;</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#possibilities">general informations</a></li>
+<li><a class="reference internal" href="#how-it-works">how it works</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="lat.html"
+                        title="previous chapter">Latin</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="license.html"
+                        title="next chapter">GPL3 license</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/san.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="license.html" title="GPL3 license"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="lat.html" title="Latin"
+             >previous</a> |</li>
+        <li><a href="index.html">DChars 0.4.0 documentation</a> &raquo;</li>
+          <li><a href="supported_languages.html" >known languages and writing systems</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2012, suizokukan (Xavier Faure).
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

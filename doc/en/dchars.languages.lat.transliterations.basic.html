@@ -1,0 +1,828 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>dchars.languages.lat.transliterations.basic &mdash; DChars 0.4.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/theme.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '0.4.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="DChars 0.4.0 documentation" href="index.html" />
+    <link rel="up" title="source code" href="source_code.html" />
+    <link rel="next" title="dchars.languages.san.__init__" href="dchars.languages.san.__init__.html" />
+    <link rel="prev" title="dchars.languages.lat.transliterations.__init__" href="dchars.languages.lat.transliterations.__init__.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="dchars.languages.san.__init__.html" title="dchars.languages.san.__init__"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="dchars.languages.lat.transliterations.__init__.html" title="dchars.languages.lat.transliterations.__init__"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">DChars 0.4.0 documentation</a> &raquo;</li>
+          <li><a href="source_code.html" accesskey="U">source code</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="dchars-languages-lat-transliterations-basic">
+<h1>dchars.languages.lat.transliterations.basic<a class="headerlink" href="#dchars-languages-lat-transliterations-basic" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="module-dchars.languages.lat.transliterations.basic">
+<span id="documentation"></span><h2>Documentation<a class="headerlink" href="#module-dchars.languages.lat.transliterations.basic" title="Permalink to this headline">¶</a></h2>
+<p>❏DChars❏ : dchars/languages/lat/transliterations/basic.py</p>
+<dl class="function">
+<dt id="dchars.languages.lat.transliterations.basic.dchar__get_translit_str">
+<tt class="descclassname">dchars.languages.lat.transliterations.basic.</tt><tt class="descname">dchar__get_translit_str</tt><big>(</big><em>dstring_object</em>, <em>dchar</em><big>)</big><a class="headerlink" href="#dchars.languages.lat.transliterations.basic.dchar__get_translit_str" title="Permalink to this definition">¶</a></dt>
+<dd><p>function dchar__get_translit_str()</p>
+<p>dchar : DCharacterLAT object</p>
+<p>Return a transliterared string corresponding to &lt;char&gt;.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="dchars.languages.lat.transliterations.basic.dchar__init_from_translit_str">
+<tt class="descclassname">dchars.languages.lat.transliterations.basic.</tt><tt class="descname">dchar__init_from_translit_str</tt><big>(</big><em>dchar</em>, <em>src</em><big>)</big><a class="headerlink" href="#dchars.languages.lat.transliterations.basic.dchar__init_from_translit_str" title="Permalink to this definition">¶</a></dt>
+<dd><p>function init_from_transliteration()</p>
+<p>dchar   :       DCharacterLAT object
+src     :       string</p>
+<p>Initialize and return &lt;dchar&gt;.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="dchars.languages.lat.transliterations.basic.dstring__init_from_translit_str">
+<tt class="descclassname">dchars.languages.lat.transliterations.basic.</tt><tt class="descname">dstring__init_from_translit_str</tt><big>(</big><em>dstring</em>, <em>dcharactertype</em>, <em>src</em><big>)</big><a class="headerlink" href="#dchars.languages.lat.transliterations.basic.dstring__init_from_translit_str" title="Permalink to this definition">¶</a></dt>
+<dd><p>function dstring__init_from_translit_str()</p>
+<p>dstring         :       DString object
+dcharactertype  :       type of DCharacterLAT
+src             :       string</p>
+<p>Initialize &lt;dstring&gt;.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="source-code">
+<h2>Source code<a class="headerlink" href="#source-code" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>  1
+  2
+  3
+  4
+  5
+  6
+  7
+  8
+  9
+ 10
+ 11
+ 12
+ 13
+ 14
+ 15
+ 16
+ 17
+ 18
+ 19
+ 20
+ 21
+ 22
+ 23
+ 24
+ 25
+ 26
+ 27
+ 28
+ 29
+ 30
+ 31
+ 32
+ 33
+ 34
+ 35
+ 36
+ 37
+ 38
+ 39
+ 40
+ 41
+ 42
+ 43
+ 44
+ 45
+ 46
+ 47
+ 48
+ 49
+ 50
+ 51
+ 52
+ 53
+ 54
+ 55
+ 56
+ 57
+ 58
+ 59
+ 60
+ 61
+ 62
+ 63
+ 64
+ 65
+ 66
+ 67
+ 68
+ 69
+ 70
+ 71
+ 72
+ 73
+ 74
+ 75
+ 76
+ 77
+ 78
+ 79
+ 80
+ 81
+ 82
+ 83
+ 84
+ 85
+ 86
+ 87
+ 88
+ 89
+ 90
+ 91
+ 92
+ 93
+ 94
+ 95
+ 96
+ 97
+ 98
+ 99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288
+289
+290
+291
+292
+293
+294
+295
+296
+297
+298
+299
+300
+301
+302
+303
+304
+305
+306
+307
+308
+309
+310
+311
+312
+313
+314
+315
+316
+317
+318
+319
+320
+321
+322
+323
+324
+325
+326
+327
+328
+329
+330
+331
+332</pre></div></td><td class="code"><div class="highlight"><pre><span class="c">#!/usr/bin/python3</span>
+<span class="c"># -*- coding: utf-8 -*-</span>
+<span class="c">################################################################################</span>
+<span class="c">#    DChars Copyright (C) 2012 Suizokukan</span>
+<span class="c">#    Contact: suizokukan _A.T._ orange dot fr</span>
+<span class="c">#</span>
+<span class="c">#    This file is part of DChars.</span>
+<span class="c">#    DChars is free software: you can redistribute it and/or modify</span>
+<span class="c">#    it under the terms of the GNU General Public License as published by</span>
+<span class="c">#    the Free Software Foundation, either version 3 of the License, or</span>
+<span class="c">#    (at your option) any later version.</span>
+<span class="c">#</span>
+<span class="c">#    DChars is distributed in the hope that it will be useful,</span>
+<span class="c">#    but WITHOUT ANY WARRANTY; without even the implied warranty of</span>
+<span class="c">#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span>
+<span class="c">#    GNU General Public License for more details.</span>
+<span class="c">#</span>
+<span class="c">#    You should have received a copy of the GNU General Public License</span>
+<span class="c">#    along with DChars.  If not, see &lt;http://www.gnu.org/licenses/&gt;.</span>
+<span class="c">################################################################################</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    ❏DChars❏ : dchars/languages/lat/transliterations/basic.py</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">from</span> <span class="nn">dchars.utilities.regexstring</span> <span class="kn">import</span> <span class="n">regexstring_list</span>
+<span class="kn">from</span> <span class="nn">dchars.utilities.dicttools</span> <span class="kn">import</span> <span class="n">invertdict</span>
+<span class="kn">from</span> <span class="nn">dchars.utilities.lstringtools</span> <span class="kn">import</span> <span class="n">isort_a_lstrings_bylen_nodup</span>
+<span class="kn">from</span> <span class="nn">dchars.utilities.lstringtools</span> <span class="kn">import</span> <span class="n">prepare_list_to_strformat</span>
+<span class="kn">from</span> <span class="nn">dchars.symbols.symbols</span> <span class="kn">import</span> <span class="n">UNKNOWN_CHAR_SYMBOL</span>
+<span class="kn">import</span> <span class="nn">re</span>
+
+<span class="c">################################################################################</span>
+<span class="c"># transliteration&#39;s equivalences :</span>
+<span class="c">################################################################################</span>
+<span class="n">TRANS_EQUIVALENCES</span> <span class="o">=</span> <span class="p">()</span>
+
+<span class="c">################################################################################</span>
+<span class="c"># transliteration&#39;s symbols :</span>
+<span class="c">################################################################################</span>
+
+<span class="c">#</span>
+<span class="c"># * CAVEAT ! If you modify these dictionaries, don&#39;t forget to modify thei</span>
+<span class="c">#            corresponding symbols&#39;s dictionaries in symbols.py !</span>
+<span class="c">#</span>
+<span class="c"># LOWER_CASE[base_char] = transliterated character</span>
+<span class="n">LOWER_CASE</span> <span class="o">=</span> <span class="p">{</span><span class="s">&quot;a&quot;</span>     <span class="p">:</span> <span class="s">&quot;a&quot;</span><span class="p">,</span>
+              <span class="s">&quot;b&quot;</span>     <span class="p">:</span> <span class="s">&quot;b&quot;</span><span class="p">,</span>
+              <span class="s">&#39;c&#39;</span>     <span class="p">:</span> <span class="s">&quot;c&quot;</span><span class="p">,</span>
+              <span class="s">&#39;d&#39;</span>     <span class="p">:</span> <span class="s">&quot;d&quot;</span><span class="p">,</span>
+              <span class="s">&#39;e&#39;</span>     <span class="p">:</span> <span class="s">&quot;e&quot;</span><span class="p">,</span>
+              <span class="s">&#39;f&#39;</span>     <span class="p">:</span> <span class="s">&quot;f&quot;</span><span class="p">,</span>
+              <span class="s">&#39;g&#39;</span>     <span class="p">:</span> <span class="s">&quot;g&quot;</span><span class="p">,</span>
+              <span class="s">&#39;h&#39;</span>     <span class="p">:</span> <span class="s">&quot;h&quot;</span><span class="p">,</span>
+              <span class="s">&#39;i&#39;</span>     <span class="p">:</span> <span class="s">&quot;i&quot;</span><span class="p">,</span>
+              <span class="s">&#39;j&#39;</span>     <span class="p">:</span> <span class="s">&quot;j&quot;</span><span class="p">,</span>
+              <span class="s">&#39;k&#39;</span>     <span class="p">:</span> <span class="s">&quot;k&quot;</span><span class="p">,</span>
+              <span class="s">&#39;l&#39;</span>     <span class="p">:</span> <span class="s">&quot;l&quot;</span><span class="p">,</span>
+              <span class="s">&#39;m&#39;</span>     <span class="p">:</span> <span class="s">&quot;m&quot;</span><span class="p">,</span>
+              <span class="s">&#39;n&#39;</span>     <span class="p">:</span> <span class="s">&quot;n&quot;</span><span class="p">,</span>
+              <span class="s">&#39;o&#39;</span>     <span class="p">:</span> <span class="s">&quot;o&quot;</span><span class="p">,</span>
+              <span class="s">&#39;p&#39;</span>     <span class="p">:</span> <span class="s">&quot;p&quot;</span><span class="p">,</span>
+              <span class="s">&#39;q&#39;</span>     <span class="p">:</span> <span class="s">&quot;q&quot;</span><span class="p">,</span>
+              <span class="s">&#39;r&#39;</span>     <span class="p">:</span> <span class="s">&quot;r&quot;</span><span class="p">,</span>
+              <span class="s">&#39;s&#39;</span>     <span class="p">:</span> <span class="s">&quot;s&quot;</span><span class="p">,</span>
+              <span class="s">&#39;t&#39;</span>     <span class="p">:</span> <span class="s">&quot;t&quot;</span><span class="p">,</span>
+              <span class="s">&#39;u&#39;</span>     <span class="p">:</span> <span class="s">&quot;u&quot;</span><span class="p">,</span>
+              <span class="s">&#39;v&#39;</span>     <span class="p">:</span> <span class="s">&quot;v&quot;</span><span class="p">,</span>
+              <span class="s">&#39;w&#39;</span>     <span class="p">:</span> <span class="s">&quot;w&quot;</span><span class="p">,</span>
+              <span class="s">&#39;x&#39;</span>     <span class="p">:</span> <span class="s">&quot;x&quot;</span><span class="p">,</span>
+              <span class="s">&#39;y&#39;</span>     <span class="p">:</span> <span class="s">&quot;y&quot;</span><span class="p">,</span>
+              <span class="s">&#39;z&#39;</span>     <span class="p">:</span> <span class="s">&quot;z&quot;</span><span class="p">,</span>
+              <span class="p">}</span>
+
+<span class="c"># UPPER_CASE[base_char] = transliterated character</span>
+<span class="n">UPPER_CASE</span> <span class="o">=</span> <span class="p">{</span><span class="s">&quot;a&quot;</span>     <span class="p">:</span> <span class="s">&quot;A&quot;</span><span class="p">,</span>
+              <span class="s">&quot;b&quot;</span>     <span class="p">:</span> <span class="s">&quot;B&quot;</span><span class="p">,</span>
+              <span class="s">&#39;c&#39;</span>     <span class="p">:</span> <span class="s">&quot;C&quot;</span><span class="p">,</span>
+              <span class="s">&#39;d&#39;</span>     <span class="p">:</span> <span class="s">&quot;D&quot;</span><span class="p">,</span>
+              <span class="s">&#39;e&#39;</span>     <span class="p">:</span> <span class="s">&quot;E&quot;</span><span class="p">,</span>
+              <span class="s">&#39;f&#39;</span>     <span class="p">:</span> <span class="s">&quot;F&quot;</span><span class="p">,</span>
+              <span class="s">&#39;g&#39;</span>     <span class="p">:</span> <span class="s">&quot;G&quot;</span><span class="p">,</span>
+              <span class="s">&#39;h&#39;</span>     <span class="p">:</span> <span class="s">&quot;H&quot;</span><span class="p">,</span>
+              <span class="s">&#39;i&#39;</span>     <span class="p">:</span> <span class="s">&quot;I&quot;</span><span class="p">,</span>
+              <span class="s">&#39;j&#39;</span>     <span class="p">:</span> <span class="s">&quot;J&quot;</span><span class="p">,</span>
+              <span class="s">&#39;k&#39;</span>     <span class="p">:</span> <span class="s">&quot;K&quot;</span><span class="p">,</span>
+              <span class="s">&#39;l&#39;</span>     <span class="p">:</span> <span class="s">&quot;L&quot;</span><span class="p">,</span>
+              <span class="s">&#39;m&#39;</span>     <span class="p">:</span> <span class="s">&quot;M&quot;</span><span class="p">,</span>
+              <span class="s">&#39;n&#39;</span>     <span class="p">:</span> <span class="s">&quot;N&quot;</span><span class="p">,</span>
+              <span class="s">&#39;o&#39;</span>     <span class="p">:</span> <span class="s">&quot;O&quot;</span><span class="p">,</span>
+              <span class="s">&#39;p&#39;</span>     <span class="p">:</span> <span class="s">&quot;P&quot;</span><span class="p">,</span>
+              <span class="s">&#39;q&#39;</span>     <span class="p">:</span> <span class="s">&quot;Q&quot;</span><span class="p">,</span>
+              <span class="s">&#39;r&#39;</span>     <span class="p">:</span> <span class="s">&quot;R&quot;</span><span class="p">,</span>
+              <span class="s">&#39;s&#39;</span>     <span class="p">:</span> <span class="s">&quot;S&quot;</span><span class="p">,</span>
+              <span class="s">&#39;t&#39;</span>     <span class="p">:</span> <span class="s">&quot;T&quot;</span><span class="p">,</span>
+              <span class="s">&#39;u&#39;</span>     <span class="p">:</span> <span class="s">&quot;U&quot;</span><span class="p">,</span>
+              <span class="s">&#39;v&#39;</span>     <span class="p">:</span> <span class="s">&quot;V&quot;</span><span class="p">,</span>
+              <span class="s">&#39;w&#39;</span>     <span class="p">:</span> <span class="s">&quot;W&quot;</span><span class="p">,</span>
+              <span class="s">&#39;x&#39;</span>     <span class="p">:</span> <span class="s">&quot;X&quot;</span><span class="p">,</span>
+              <span class="s">&#39;y&#39;</span>     <span class="p">:</span> <span class="s">&quot;Y&quot;</span><span class="p">,</span>
+              <span class="s">&#39;z&#39;</span>     <span class="p">:</span> <span class="s">&#39;Z&#39;</span><span class="p">,</span>
+             <span class="p">}</span>
+
+<span class="c"># PUNCTUATION[base_char] = transliterated character</span>
+<span class="n">PUNCTUATION</span> <span class="o">=</span> <span class="p">{</span> <span class="s">&#39;-&#39;</span>       <span class="p">:</span> <span class="s">&#39;-&#39;</span><span class="p">,</span>
+                <span class="s">&#39;)&#39;</span>       <span class="p">:</span> <span class="s">&#39;)&#39;</span><span class="p">,</span>
+                <span class="s">&#39;(&#39;</span>       <span class="p">:</span> <span class="s">&#39;(&#39;</span><span class="p">,</span>
+                <span class="s">&#39;[&#39;</span>       <span class="p">:</span> <span class="s">&#39;[&#39;</span><span class="p">,</span>
+                <span class="s">&#39;]&#39;</span>       <span class="p">:</span> <span class="s">&#39;]&#39;</span><span class="p">,</span>
+                <span class="s">&#39;{&#39;</span>       <span class="p">:</span> <span class="s">&#39;{&#39;</span><span class="p">,</span>
+                <span class="s">&#39;}&#39;</span>       <span class="p">:</span> <span class="s">&#39;}&#39;</span><span class="p">,</span>
+                <span class="s">&#39;0&#39;</span>       <span class="p">:</span> <span class="s">&#39;0&#39;</span><span class="p">,</span>
+                <span class="s">&#39;1&#39;</span>       <span class="p">:</span> <span class="s">&#39;1&#39;</span><span class="p">,</span>
+                <span class="s">&#39;2&#39;</span>       <span class="p">:</span> <span class="s">&#39;2&#39;</span><span class="p">,</span>
+                <span class="s">&#39;3&#39;</span>       <span class="p">:</span> <span class="s">&#39;3&#39;</span><span class="p">,</span>
+                <span class="s">&#39;4&#39;</span>       <span class="p">:</span> <span class="s">&#39;4&#39;</span><span class="p">,</span>
+                <span class="s">&#39;5&#39;</span>       <span class="p">:</span> <span class="s">&#39;5&#39;</span><span class="p">,</span>
+                <span class="s">&#39;6&#39;</span>       <span class="p">:</span> <span class="s">&#39;6&#39;</span><span class="p">,</span>
+                <span class="s">&#39;7&#39;</span>       <span class="p">:</span> <span class="s">&#39;7&#39;</span><span class="p">,</span>
+                <span class="s">&#39;8&#39;</span>       <span class="p">:</span> <span class="s">&#39;8&#39;</span><span class="p">,</span>
+                <span class="s">&#39;9&#39;</span>       <span class="p">:</span> <span class="s">&#39;9&#39;</span><span class="p">,</span>
+                <span class="s">&#39; &#39;</span>       <span class="p">:</span> <span class="s">&#39; &#39;</span><span class="p">,</span>
+                <span class="s">&#39;.&#39;</span>       <span class="p">:</span> <span class="s">&#39;.&#39;</span><span class="p">,</span>
+                <span class="s">&#39;,&#39;</span>       <span class="p">:</span> <span class="s">&#39;,&#39;</span><span class="p">,</span>
+                <span class="s">&#39;;&#39;</span>       <span class="p">:</span> <span class="s">&#39;;&#39;</span><span class="p">,</span>
+                <span class="s">&#39;!&#39;</span>       <span class="p">:</span> <span class="s">&#39;!&#39;</span><span class="p">,</span>
+                <span class="s">&#39;?&#39;</span>       <span class="p">:</span> <span class="s">&#39;?&#39;</span><span class="p">,</span>
+                <span class="s">&#39;&quot;&#39;</span>       <span class="p">:</span> <span class="s">&#39;&quot;&#39;</span><span class="p">,</span>
+                <span class="s">&quot;&#39;&quot;</span>       <span class="p">:</span> <span class="s">&quot;&#39;&quot;</span><span class="p">,</span>
+                <span class="s">&quot;:&quot;</span>       <span class="p">:</span> <span class="s">&quot;:&quot;</span><span class="p">,</span>
+                <span class="s">&#39;</span><span class="se">\n</span><span class="s">&#39;</span>      <span class="p">:</span> <span class="s">&#39;</span><span class="se">\n</span><span class="s">&#39;</span><span class="p">,</span>
+                <span class="s">&#39;</span><span class="se">\r</span><span class="s">&#39;</span>      <span class="p">:</span> <span class="s">&#39;</span><span class="se">\r</span><span class="s">&#39;</span><span class="p">,</span>
+                <span class="s">&#39;</span><span class="se">\t</span><span class="s">&#39;</span>      <span class="p">:</span> <span class="s">&#39;</span><span class="se">\t</span><span class="s">&#39;</span><span class="p">,</span>
+                <span class="s">&quot;‘&quot;</span>       <span class="p">:</span> <span class="s">&#39;&lt;2018&gt;&#39;</span><span class="p">,</span>
+                <span class="s">&quot;’&quot;</span>       <span class="p">:</span> <span class="s">&#39;&lt;2019&gt;&#39;</span><span class="p">,</span>
+                <span class="s">&quot;᾽&quot;</span>       <span class="p">:</span> <span class="s">&#39;&lt;1FBD&gt;&#39;</span><span class="p">,</span>
+              <span class="p">}</span>
+
+<span class="n">LOWER_CASE_INVERSED</span> <span class="o">=</span> <span class="n">invertdict</span><span class="p">(</span><span class="n">LOWER_CASE</span><span class="p">,</span> <span class="n">accept_duplicated_values</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">UPPER_CASE_INVERSED</span> <span class="o">=</span> <span class="n">invertdict</span><span class="p">(</span><span class="n">UPPER_CASE</span><span class="p">)</span>
+<span class="n">PUNCTUATION_INVERSED</span> <span class="o">=</span> <span class="n">invertdict</span><span class="p">(</span><span class="n">PUNCTUATION</span><span class="p">)</span>
+
+<span class="n">DIACRITICS</span> <span class="o">=</span>  <span class="p">{</span>
+                <span class="s">&quot;stress&quot;</span>        <span class="p">:</span> <span class="s">&quot;/&quot;</span><span class="p">,</span>
+                <span class="s">&quot;short&quot;</span>         <span class="p">:</span> <span class="s">&quot;*&quot;</span><span class="p">,</span>
+                <span class="s">&quot;long&quot;</span>          <span class="p">:</span> <span class="s">&quot;_&quot;</span><span class="p">,</span>
+                <span class="s">&quot;diaeresis&quot;</span>     <span class="p">:</span> <span class="s">&quot;+&quot;</span><span class="p">,</span>
+              <span class="p">}</span>
+<span class="n">DIACRITICS_INVERSED</span> <span class="o">=</span> <span class="n">invertdict</span><span class="p">(</span><span class="n">DIACRITICS</span><span class="p">)</span>
+
+<span class="c">################################################################################</span>
+<span class="c"># transliteration&#39;s patterns :</span>
+<span class="c"># PATTERN  is used to cut one complex characters into its elements.</span>
+<span class="c"># PATTERN2 is used to cut several complex characters into a list of complex characters.</span>
+<span class="c">################################################################################</span>
+
+<span class="c"># in order to build the pattern strings for the regexes we have to SORT the</span>
+<span class="c"># result : (|a|b|t|th) won&#39;t find &#39;th&#39; in &quot;theatre&quot; but (th|a|b|t) will.</span>
+<span class="c"># We delete the possible duplicates in the resulting string.</span>
+<span class="n">DIAERESIS</span> <span class="o">=</span> <span class="n">isort_a_lstrings_bylen_nodup</span><span class="p">(</span>
+                 <span class="p">[</span><span class="n">re</span><span class="o">.</span><span class="n">escape</span><span class="p">(</span><span class="n">DIACRITICS</span><span class="p">[</span><span class="s">&#39;diaeresis&#39;</span><span class="p">])]</span> <span class="p">)</span>
+<span class="n">LENGTH</span> <span class="o">=</span> <span class="n">isort_a_lstrings_bylen_nodup</span><span class="p">(</span>
+                 <span class="p">[</span><span class="n">re</span><span class="o">.</span><span class="n">escape</span><span class="p">(</span><span class="n">DIACRITICS</span><span class="p">[</span><span class="s">&#39;short&#39;</span><span class="p">]),</span>
+                 <span class="n">re</span><span class="o">.</span><span class="n">escape</span><span class="p">(</span><span class="n">DIACRITICS</span><span class="p">[</span><span class="s">&#39;long&#39;</span><span class="p">])]</span> <span class="p">)</span>
+<span class="n">STRESS</span> <span class="o">=</span> <span class="n">isort_a_lstrings_bylen_nodup</span><span class="p">(</span>
+                <span class="p">[</span><span class="n">re</span><span class="o">.</span><span class="n">escape</span><span class="p">(</span><span class="n">DIACRITICS</span><span class="p">[</span><span class="s">&#39;stress&#39;</span><span class="p">]),])</span>
+<span class="n">LETTERS</span> <span class="o">=</span> <span class="n">isort_a_lstrings_bylen_nodup</span><span class="p">(</span>
+                <span class="n">regexstring_list</span><span class="p">(</span><span class="nb">tuple</span><span class="p">(</span><span class="n">LOWER_CASE_INVERSED</span><span class="o">.</span><span class="n">keys</span><span class="p">()))</span> <span class="o">+</span> \
+                <span class="n">regexstring_list</span><span class="p">(</span><span class="nb">tuple</span><span class="p">(</span><span class="n">UPPER_CASE_INVERSED</span><span class="o">.</span><span class="n">keys</span><span class="p">()))</span> <span class="o">+</span> \
+                <span class="n">regexstring_list</span><span class="p">(</span><span class="nb">tuple</span><span class="p">(</span><span class="n">PUNCTUATION_INVERSED</span><span class="o">.</span><span class="n">keys</span><span class="p">()))</span> <span class="p">)</span>
+
+<span class="n">PATTERN_TXT</span> <span class="o">=</span> <span class="s">&quot;((?P&lt;base_char&gt;({0}))&quot;</span> \
+              <span class="s">&quot;(?P&lt;trans_stress&gt;({1}))?&quot;</span> \
+              <span class="s">&quot;(?P&lt;trans_length&gt;({2}))?&quot;</span> \
+              <span class="s">&quot;(?P&lt;trans_diaeresis&gt;({3}))?&quot;</span> \
+              <span class="s">&quot;)&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s">&quot;|&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">prepare_list_to_strformat</span><span class="p">(</span><span class="n">LETTERS</span><span class="p">)),</span>
+                         <span class="s">&quot;|&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">prepare_list_to_strformat</span><span class="p">(</span><span class="n">STRESS</span><span class="p">)),</span>
+                         <span class="s">&quot;|&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">prepare_list_to_strformat</span><span class="p">(</span><span class="n">LENGTH</span><span class="p">)),</span>
+                         <span class="s">&quot;|&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">prepare_list_to_strformat</span><span class="p">(</span><span class="n">DIAERESIS</span><span class="p">)),</span>
+                         <span class="p">)</span>
+<span class="c"># we inverse the effect of prepare_list_to_strformat()</span>
+<span class="n">PATTERN_TXT</span> <span class="o">=</span> <span class="n">PATTERN_TXT</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;{{&#39;</span><span class="p">,</span> <span class="s">&#39;{&#39;</span><span class="p">)</span>
+<span class="n">PATTERN_TXT</span> <span class="o">=</span> <span class="n">PATTERN_TXT</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;}}&#39;</span><span class="p">,</span> <span class="s">&#39;}&#39;</span><span class="p">)</span>
+<span class="n">PATTERN</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">PATTERN_TXT</span><span class="p">)</span>
+
+<span class="n">PATTERN_TXT2</span> <span class="o">=</span> <span class="s">&quot;(({0})&quot;</span> \
+                <span class="s">&quot;({1})?&quot;</span> \
+                <span class="s">&quot;({2})?&quot;</span> \
+                <span class="s">&quot;({3})?&quot;</span> \
+                <span class="s">&quot;)&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s">&quot;|&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">prepare_list_to_strformat</span><span class="p">(</span><span class="n">LETTERS</span><span class="p">)),</span>
+                           <span class="s">&quot;|&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">prepare_list_to_strformat</span><span class="p">(</span><span class="n">STRESS</span><span class="p">)),</span>
+                           <span class="s">&quot;|&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">prepare_list_to_strformat</span><span class="p">(</span><span class="n">LENGTH</span><span class="p">)),</span>
+                           <span class="s">&quot;|&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">prepare_list_to_strformat</span><span class="p">(</span><span class="n">DIAERESIS</span><span class="p">)),</span>
+                          <span class="p">)</span>
+<span class="c"># we inverse the effect of prepare_list_to_strformat()</span>
+<span class="n">PATTERN_TXT2</span> <span class="o">=</span> <span class="n">PATTERN_TXT2</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;{{&#39;</span><span class="p">,</span> <span class="s">&#39;{&#39;</span><span class="p">)</span>
+<span class="n">PATTERN_TXT2</span> <span class="o">=</span> <span class="n">PATTERN_TXT2</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;}}&#39;</span><span class="p">,</span> <span class="s">&#39;}&#39;</span><span class="p">)</span>
+
+<span class="n">PATTERN2</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">PATTERN_TXT2</span><span class="p">)</span>
+
+<span class="c">#///////////////////////////////////////////////////////////////////////////////</span>
+<span class="k">def</span> <span class="nf">dchar__get_translit_str</span><span class="p">(</span><span class="n">dstring_object</span><span class="p">,</span> <span class="n">dchar</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        function dchar__get_translit_str()</span>
+
+<span class="sd">        dchar : DCharacterLAT object</span>
+
+<span class="sd">        Return a transliterared string corresponding to &lt;char&gt;.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">if</span> <span class="n">dchar</span><span class="o">.</span><span class="n">unknown_char</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">dstring_object</span><span class="o">.</span><span class="n">options</span><span class="p">[</span><span class="s">&quot;anonymize the unknown characters&quot;</span><span class="p">]:</span>
+            <span class="k">return</span> <span class="n">UNKNOWN_CHAR_SYMBOL</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">dchar</span><span class="o">.</span><span class="n">base_char</span>
+
+    <span class="k">if</span> <span class="n">dchar</span><span class="o">.</span><span class="n">base_char</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+
+        <span class="k">if</span> <span class="n">dchar</span><span class="o">.</span><span class="n">punctuation</span><span class="p">:</span>
+            <span class="n">res</span><span class="o">.</span><span class="n">append</span><span class="p">(</span> <span class="n">PUNCTUATION</span><span class="p">[</span><span class="n">dchar</span><span class="o">.</span><span class="n">base_char</span><span class="p">]</span> <span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">dchar</span><span class="o">.</span><span class="n">capital_letter</span><span class="p">:</span>
+                <span class="c"># lower case :</span>
+                <span class="n">res</span><span class="o">.</span><span class="n">append</span><span class="p">(</span> <span class="n">LOWER_CASE</span><span class="p">[</span><span class="n">dchar</span><span class="o">.</span><span class="n">base_char</span><span class="p">]</span> <span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="c"># upper case :</span>
+                <span class="n">res</span><span class="o">.</span><span class="n">append</span><span class="p">(</span> <span class="n">UPPER_CASE</span><span class="p">[</span><span class="n">dchar</span><span class="o">.</span><span class="n">base_char</span><span class="p">]</span> <span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">dchar</span><span class="o">.</span><span class="n">stress</span><span class="p">:</span>
+        <span class="n">res</span><span class="o">.</span><span class="n">append</span><span class="p">(</span> <span class="n">DIACRITICS</span><span class="p">[</span><span class="s">&#39;stress&#39;</span><span class="p">]</span> <span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">dchar</span><span class="o">.</span><span class="n">length</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="n">res</span><span class="o">.</span><span class="n">append</span><span class="p">(</span> <span class="n">DIACRITICS</span><span class="p">[</span><span class="n">dchar</span><span class="o">.</span><span class="n">length</span><span class="p">]</span> <span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">dchar</span><span class="o">.</span><span class="n">diaeresis</span><span class="p">:</span>
+        <span class="n">res</span><span class="o">.</span><span class="n">append</span><span class="p">(</span> <span class="n">DIACRITICS</span><span class="p">[</span><span class="s">&#39;diaeresis&#39;</span><span class="p">]</span> <span class="p">)</span>
+
+    <span class="k">return</span> <span class="s">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span> <span class="n">res</span> <span class="p">)</span>
+
+<span class="c">#///////////////////////////////////////////////////////////////////////////////</span>
+<span class="k">def</span> <span class="nf">dchar__init_from_translit_str</span><span class="p">(</span><span class="n">dchar</span><span class="p">,</span> <span class="n">src</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        function init_from_transliteration()</span>
+
+<span class="sd">        dchar   :       DCharacterLAT object</span>
+<span class="sd">        src     :       string</span>
+
+<span class="sd">        Initialize and return &lt;dchar&gt;.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">element</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">PATTERN</span><span class="p">,</span> <span class="n">src</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">element</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="n">dchar</span><span class="o">.</span><span class="n">unknown_char</span> <span class="o">=</span> <span class="bp">True</span>
+
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">dchar</span><span class="o">.</span><span class="n">unknown_char</span> <span class="o">=</span> <span class="bp">False</span>
+
+        <span class="n">trans_length</span> <span class="o">=</span> <span class="n">element</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="s">&#39;trans_length&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">trans_length</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="n">dchar</span><span class="o">.</span><span class="n">length</span> <span class="o">=</span> <span class="bp">None</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">dchar</span><span class="o">.</span><span class="n">length</span> <span class="o">=</span> <span class="n">DIACRITICS_INVERSED</span><span class="p">[</span><span class="n">trans_length</span><span class="p">]</span>
+
+        <span class="n">dchar</span><span class="o">.</span><span class="n">stress</span> <span class="o">=</span> <span class="n">element</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="s">&#39;trans_stress&#39;</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span>
+
+        <span class="n">dchar</span><span class="o">.</span><span class="n">diaeresis</span> <span class="o">=</span> <span class="n">element</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="s">&#39;trans_diaeresis&#39;</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span>
+
+        <span class="n">base_char</span> <span class="o">=</span> <span class="n">element</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="s">&#39;base_char&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">base_char</span> <span class="ow">in</span> <span class="n">LOWER_CASE_INVERSED</span><span class="p">:</span>
+            <span class="c"># lower case :</span>
+            <span class="n">dchar</span><span class="o">.</span><span class="n">base_char</span> <span class="o">=</span> <span class="n">LOWER_CASE_INVERSED</span><span class="p">[</span><span class="n">base_char</span><span class="p">]</span>
+            <span class="n">dchar</span><span class="o">.</span><span class="n">capital_letter</span> <span class="o">=</span> <span class="bp">False</span>
+            <span class="n">dchar</span><span class="o">.</span><span class="n">punctuation</span> <span class="o">=</span> <span class="bp">False</span>
+
+        <span class="k">elif</span> <span class="n">base_char</span> <span class="ow">in</span> <span class="n">UPPER_CASE_INVERSED</span><span class="p">:</span>
+            <span class="c"># upper case :</span>
+            <span class="n">dchar</span><span class="o">.</span><span class="n">base_char</span> <span class="o">=</span> <span class="n">UPPER_CASE_INVERSED</span><span class="p">[</span><span class="n">base_char</span><span class="p">]</span>
+            <span class="n">dchar</span><span class="o">.</span><span class="n">capital_letter</span> <span class="o">=</span> <span class="bp">True</span>
+            <span class="n">dchar</span><span class="o">.</span><span class="n">punctuation</span> <span class="o">=</span> <span class="bp">False</span>
+
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c"># other symbols :</span>
+            <span class="n">dchar</span><span class="o">.</span><span class="n">base_char</span> <span class="o">=</span> <span class="n">PUNCTUATION_INVERSED</span><span class="p">[</span><span class="n">base_char</span><span class="p">]</span>
+            <span class="n">dchar</span><span class="o">.</span><span class="n">capital_letter</span> <span class="o">=</span> <span class="bp">False</span>
+            <span class="n">dchar</span><span class="o">.</span><span class="n">punctuation</span> <span class="o">=</span> <span class="bp">True</span>
+
+    <span class="k">return</span> <span class="n">dchar</span>
+
+<span class="c">#///////////////////////////////////////////////////////////////////////////////</span>
+<span class="k">def</span> <span class="nf">dstring__init_from_translit_str</span><span class="p">(</span><span class="n">dstring</span><span class="p">,</span> <span class="n">dcharactertype</span><span class="p">,</span> <span class="n">src</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        function dstring__init_from_translit_str()</span>
+
+<span class="sd">        dstring         :       DString object</span>
+<span class="sd">        dcharactertype  :       type of DCharacterLAT</span>
+<span class="sd">        src             :       string</span>
+
+<span class="sd">        Initialize &lt;dstring&gt;.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">_src</span> <span class="o">=</span> <span class="n">src</span><span class="p">[:]</span>
+    <span class="k">for</span> <span class="n">start</span><span class="p">,</span> <span class="n">dest</span> <span class="ow">in</span> <span class="n">TRANS_EQUIVALENCES</span><span class="p">:</span>
+        <span class="n">_src</span> <span class="o">=</span> <span class="n">_src</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span> <span class="n">start</span><span class="p">,</span> <span class="n">dest</span> <span class="p">)</span>
+
+    <span class="n">last_real_index</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+    <span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">re</span><span class="o">.</span><span class="n">finditer</span><span class="p">(</span><span class="n">PATTERN2</span><span class="p">,</span> <span class="n">_src</span><span class="p">):</span>
+
+        <span class="n">real_indexes</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="n">element</span><span class="o">.</span><span class="n">start</span><span class="p">(),</span> <span class="n">element</span><span class="o">.</span><span class="n">end</span><span class="p">())</span>
+
+        <span class="c"># we add the unknown chars placed BEFORE OR WITHIN the recognized characters :</span>
+        <span class="c"># pylint: disable=W0612</span>
+        <span class="c"># Unused variable &#39;i&#39;</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span> <span class="n">last_real_index</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="nb">min</span><span class="p">(</span><span class="n">real_indexes</span><span class="p">)</span> <span class="p">):</span>
+            <span class="n">new_dcharacter</span> <span class="o">=</span> <span class="n">dcharactertype</span><span class="p">(</span><span class="n">dstring_object</span><span class="o">=</span><span class="n">dstring</span><span class="p">)</span>
+            <span class="n">new_dcharacter</span><span class="o">.</span><span class="n">unknown_char</span> <span class="o">=</span> <span class="bp">True</span>
+            <span class="n">dstring</span><span class="o">.</span><span class="n">append</span><span class="p">(</span> <span class="n">new_dcharacter</span> <span class="p">)</span>
+
+        <span class="c"># we add the character read by the regex :</span>
+        <span class="n">string</span> <span class="o">=</span> <span class="n">element</span><span class="o">.</span><span class="n">string</span><span class="p">[</span><span class="n">element</span><span class="o">.</span><span class="n">start</span><span class="p">():</span><span class="n">element</span><span class="o">.</span><span class="n">end</span><span class="p">()]</span>
+        <span class="n">new_character</span> <span class="o">=</span> <span class="n">dcharactertype</span><span class="p">(</span><span class="n">dstring_object</span><span class="o">=</span><span class="n">dstring</span><span class="p">)</span><span class="o">.</span><span class="n">init_from_transliteration</span><span class="p">(</span><span class="n">string</span><span class="p">,</span>
+                                                                                         <span class="s">&quot;basic&quot;</span><span class="p">)</span>
+        <span class="n">dstring</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">new_character</span><span class="p">)</span>
+
+        <span class="n">last_real_index</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">real_indexes</span><span class="p">)</span>
+
+    <span class="c"># we add the unknown chars placed AFTER the recognized characters :</span>
+    <span class="c"># pylint: disable=W0612</span>
+    <span class="c"># Unused variable &#39;i&#39;</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span> <span class="n">last_real_index</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">_src</span><span class="p">)</span> <span class="p">):</span>
+        <span class="n">new_dcharacter</span> <span class="o">=</span> <span class="n">dcharactertype</span><span class="p">(</span><span class="n">dstring_object</span><span class="o">=</span><span class="n">dstring</span><span class="p">)</span>
+        <span class="n">new_dcharacter</span><span class="o">.</span><span class="n">unknown_char</span> <span class="o">=</span> <span class="bp">True</span>
+        <span class="n">dstring</span><span class="o">.</span><span class="n">append</span><span class="p">(</span> <span class="n">new_dcharacter</span> <span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">dchars.languages.lat.transliterations.basic</a><ul>
+<li><a class="reference internal" href="#module-dchars.languages.lat.transliterations.basic">Documentation</a></li>
+<li><a class="reference internal" href="#source-code">Source code</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="dchars.languages.lat.transliterations.__init__.html"
+                        title="previous chapter">dchars.languages.lat.transliterations.__init__</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="dchars.languages.san.__init__.html"
+                        title="next chapter">dchars.languages.san.__init__</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/dchars.languages.lat.transliterations.basic.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="dchars.languages.san.__init__.html" title="dchars.languages.san.__init__"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="dchars.languages.lat.transliterations.__init__.html" title="dchars.languages.lat.transliterations.__init__"
+             >previous</a> |</li>
+        <li><a href="index.html">DChars 0.4.0 documentation</a> &raquo;</li>
+          <li><a href="source_code.html" >source code</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2012, suizokukan (Xavier Faure).
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>
