@@ -34,7 +34,7 @@ DSTRING_GRC = new_dstring(language="Ἑλληνικὴ γλῶττα",
                                      "gutenberg:ignore accents" : True,
                                      "gutenberg:ignore iota subscript" : True,
                                      "gutenberg:ignore diaeresis" : True,
-                                     "transliteration for upsilon" : "u",
+                                     "gutenberg:transliteration for upsilon" : "u",
                                     },
                           )
 
@@ -45,7 +45,7 @@ DSTRING_GRC__FULL = new_dstring(language="Ἑλληνικὴ γλῶττα",
                                      "gutenberg:ignore accents" : False,
                                      "gutenberg:ignore iota subscript" : False,
                                      "gutenberg:ignore diaeresis" : False,
-                                     "transliteration for upsilon" : "u",
+                                     "gutenberg:transliteration for upsilon" : "u",
                                     },
                           )
 
