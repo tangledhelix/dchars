@@ -74,36 +74,36 @@
 <p>VersionOfTheProgram.__init__</p>
 <p>Ouvre le fichier dans lequel se trouve le numéro de version
 et initialise l&#8217;objet.</p>
-<dl class="function">
+<dl class="method">
 <dt id="dchars.system.numversion.VersionOfTheProgram.__init__">
-<tt class="descname">__init__</tt><big>(</big><em>self</em><big>)</big><a class="headerlink" href="#dchars.system.numversion.VersionOfTheProgram.__init__" title="Lien permanent vers cette définition">¶</a></dt>
+<tt class="descname">__init__</tt><big>(</big><big>)</big><a class="headerlink" href="#dchars.system.numversion.VersionOfTheProgram.__init__" title="Lien permanent vers cette définition">¶</a></dt>
 <dd><p>Ouvre le fichier dans lequel se trouve le numéro de version
 et initialise l&#8217;objet.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="method">
 <dt id="dchars.system.numversion.VersionOfTheProgram.__repr__">
-<tt class="descname">__repr__</tt><big>(</big><em>self</em><big>)</big><a class="headerlink" href="#dchars.system.numversion.VersionOfTheProgram.__repr__" title="Lien permanent vers cette définition">¶</a></dt>
+<tt class="descname">__repr__</tt><big>(</big><big>)</big><a class="headerlink" href="#dchars.system.numversion.VersionOfTheProgram.__repr__" title="Lien permanent vers cette définition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="function">
+<dl class="method">
 <dt id="dchars.system.numversion.VersionOfTheProgram.__str__">
-<tt class="descname">__str__</tt><big>(</big><em>self</em><big>)</big><a class="headerlink" href="#dchars.system.numversion.VersionOfTheProgram.__str__" title="Lien permanent vers cette définition">¶</a></dt>
+<tt class="descname">__str__</tt><big>(</big><big>)</big><a class="headerlink" href="#dchars.system.numversion.VersionOfTheProgram.__str__" title="Lien permanent vers cette définition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="function">
+<dl class="method">
 <dt id="dchars.system.numversion.VersionOfTheProgram.only_the_release_number">
-<tt class="descname">only_the_release_number</tt><big>(</big><em>self</em><big>)</big><a class="headerlink" href="#dchars.system.numversion.VersionOfTheProgram.only_the_release_number" title="Lien permanent vers cette définition">¶</a></dt>
+<tt class="descname">only_the_release_number</tt><big>(</big><big>)</big><a class="headerlink" href="#dchars.system.numversion.VersionOfTheProgram.only_the_release_number" title="Lien permanent vers cette définition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="function">
+<dl class="method">
 <dt id="dchars.system.numversion.VersionOfTheProgram.only_the_version_number">
-<tt class="descname">only_the_version_number</tt><big>(</big><em>self</em><big>)</big><a class="headerlink" href="#dchars.system.numversion.VersionOfTheProgram.only_the_version_number" title="Lien permanent vers cette définition">¶</a></dt>
+<tt class="descname">only_the_version_number</tt><big>(</big><big>)</big><a class="headerlink" href="#dchars.system.numversion.VersionOfTheProgram.only_the_version_number" title="Lien permanent vers cette définition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="function">
+<dl class="method">
 <dt id="dchars.system.numversion.VersionOfTheProgram.short_description">
-<tt class="descname">short_description</tt><big>(</big><em>self</em><big>)</big><a class="headerlink" href="#dchars.system.numversion.VersionOfTheProgram.short_description" title="Lien permanent vers cette définition">¶</a></dt>
+<tt class="descname">short_description</tt><big>(</big><big>)</big><a class="headerlink" href="#dchars.system.numversion.VersionOfTheProgram.short_description" title="Lien permanent vers cette définition">¶</a></dt>
 <dd><p>This function returns a compact description of the number of the
 version.</p>
 </dd></dl>
@@ -233,7 +233,8 @@ version.</p>
 112
 113
 114
-115</pre></div></td><td class="code"><div class="highlight"><pre><span class="c">#!/usr/bin/python3</span>
+115
+116</pre></div></td><td class="code"><div class="highlight"><pre><span class="c">#!/usr/bin/python3</span>
 <span class="c"># -*- coding: utf-8 -*-</span>
 <span class="c">################################################################################</span>
 <span class="c">#    DChars Copyright (C) 2012 Suizokukan</span>
@@ -297,8 +298,9 @@ version.</p>
         <span class="c"># We ensure that the appropriate file exists :</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">full_name_of_the_file</span><span class="p">):</span>
             <span class="c"># the file doesn&#39;t exist :</span>
-            <span class="k">raise</span> <span class="n">DCharsError</span><span class="p">(</span><span class="s">&quot;The file where the number of version is kept doesn&#39;t exist; &quot;</span><span class="o">+</span> \
-                              <span class="s">&quot;name of the file : &quot;</span><span class="o">+</span><span class="n">full_name_of_the_file</span><span class="p">)</span>
+            <span class="k">raise</span> <span class="n">DCharsError</span><span class="p">(</span><span class="n">context</span> <span class="o">=</span> <span class="s">&quot;VersionOfTheProgram.__init__&quot;</span><span class="p">,</span>
+                              <span class="n">message</span> <span class="o">=</span> <span class="s">&quot;The file where the number of version is kept doesn&#39;t exist; &quot;</span><span class="o">+</span> \
+                                        <span class="s">&quot;name of the file : &quot;</span><span class="o">+</span><span class="n">full_name_of_the_file</span><span class="p">)</span>
 
         <span class="k">else</span><span class="p">:</span>
             <span class="c"># the file exists : we read the number of the version :</span>
