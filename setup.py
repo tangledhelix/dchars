@@ -38,6 +38,6 @@ setup(name='DChars',
       url='94.23.197.37/dchars/',
       download_url='94.23.197.37/dchars/',
       packages=find_packages(),
-      packages_data = { 'dchars': [ "config.ini",
+      package_data = { 'dchars': [ "config.ini",
                                     "system/numversion", ]}
      )
