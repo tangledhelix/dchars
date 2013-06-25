@@ -6,7 +6,7 @@ CHANGELOG_TITLE
 0.4.0 [2013_06_XX]
 ------------------
 
-  * setup.py
+  * setup.py (thank you Frank Zago !)
 
 ------------------
 0.3.9 [2013_06_24]
