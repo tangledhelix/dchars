@@ -57,8 +57,18 @@
             
   <div class="section" id="dchars-dchars">
 <h1>dchars.dchars<a class="headerlink" href="#dchars-dchars" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="documentation">
-<h2>Documentation<a class="headerlink" href="#documentation" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="module-dchars.dchars">
+<span id="documentation"></span><h2>Documentation<a class="headerlink" href="#module-dchars.dchars" title="Permalink to this headline">¶</a></h2>
+<p>❏DChars❏ : dchars/dchars.py</p>
+<dl class="function">
+<dt id="dchars.dchars.new_dstring">
+<tt class="descclassname">dchars.dchars.</tt><tt class="descname">new_dstring</tt><big>(</big><em>language</em>, <em>transliteration_method=None</em>, <em>options=None</em><big>)</big><a class="headerlink" href="#dchars.dchars.new_dstring" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a DString* type, e.g. DStringBOD for Tibetan.</p>
+<p>_language               : str
+transliteration_method  : str / None to use defaulttransliteration
+options                 : dict of strings</p>
+</dd></dl>
+
 </div>
 <div class="section" id="source-code">
 <h2>Source code<a class="headerlink" href="#source-code" title="Permalink to this headline">¶</a></h2>
@@ -325,11 +335,11 @@
 <span class="c"># &quot;Unable to import &#39;configparser&#39;&quot;</span>
 <span class="kn">import</span> <span class="nn">configparser</span>
 <span class="n">CONFIG_INI</span> <span class="o">=</span> <span class="n">configparser</span><span class="o">.</span><span class="n">ConfigParser</span><span class="p">()</span>
-<span class="c"># about the following line :</span>
-<span class="c"># why os.path.join(os.path.split(__file__) and not simply &quot;dchars&quot; ?</span>
+<span class="c"># about the following line : why not simply CONFIG_INI.read( &quot;dchars&quot;, &quot;config.ini&quot;) ?</span>
 <span class="c"># -&gt; once installed, DChars have to know the exact path to config.ini,</span>
 <span class="c"># hence the following line (idea given by Frank Zago)</span>
-<span class="n">CONFIG_INI</span><span class="o">.</span><span class="n">read</span><span class="p">(</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">__file__</span><span class="p">),</span> <span class="s">&quot;config.ini&quot;</span><span class="p">)</span> <span class="p">)</span>
+<span class="n">CONFIG_INI</span><span class="o">.</span><span class="n">read</span><span class="p">(</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">realpath</span><span class="p">(</span><span class="n">__file__</span><span class="p">)),</span> 
+                              <span class="s">&quot;config.ini&quot;</span> <span class="p">))</span>
 
 <span class="c">#...............................................................................</span>
 <span class="c"># LANGUAGES : informations about each language. Please use three kinds of keys</span>
@@ -525,7 +535,7 @@
   <h3><a href="index.html">Table Of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">dchars.dchars</a><ul>
-<li><a class="reference internal" href="#documentation">Documentation</a></li>
+<li><a class="reference internal" href="#module-dchars.dchars">Documentation</a></li>
 <li><a class="reference internal" href="#source-code">Source code</a></li>
 </ul>
 </li>

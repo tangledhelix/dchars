@@ -58,8 +58,99 @@
             
   <div class="section" id="dchars-languages-bod-dstring">
 <h1>dchars.languages.bod.dstring<a class="headerlink" href="#dchars-languages-bod-dstring" title="Lien permanent vers ce titre">¶</a></h1>
-<div class="section" id="documentation">
-<h2>Documentation<a class="headerlink" href="#documentation" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="section" id="module-dchars.languages.bod.dstring">
+<span id="documentation"></span><h2>Documentation<a class="headerlink" href="#module-dchars.languages.bod.dstring" title="Lien permanent vers ce titre">¶</a></h2>
+<p>❏DChars❏ : dchars/languages/bod/dstring.py</p>
+<dl class="class">
+<dt id="dchars.languages.bod.dstring.DStringBOD">
+<em class="property">class </em><tt class="descclassname">dchars.languages.bod.dstring.</tt><tt class="descname">DStringBOD</tt><big>(</big><em>str_src=None</em><big>)</big><a class="headerlink" href="#dchars.languages.bod.dstring.DStringBOD" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>class DStringBOD</p>
+<p>DO NOT CREATE A DStringBOD object directly but use instead the
+dchars.py::new_dstring() function.</p>
+<p>DStringBOD.__init__</p>
+<dl class="method">
+<dt id="dchars.languages.bod.dstring.DStringBOD.__init__">
+<tt class="descname">__init__</tt><big>(</big><em>str_src=None</em><big>)</big><a class="headerlink" href="#dchars.languages.bod.dstring.DStringBOD.__init__" title="Lien permanent vers cette définition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dchars.languages.bod.dstring.DStringBOD.__setattr__">
+<tt class="descname">__setattr__</tt><big>(</big><em>key</em>, <em>value</em><big>)</big><a class="headerlink" href="#dchars.languages.bod.dstring.DStringBOD.__setattr__" title="Lien permanent vers cette définition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dchars.languages.bod.dstring.DStringBOD.__str__">
+<tt class="descname">__str__</tt><big>(</big><big>)</big><a class="headerlink" href="#dchars.languages.bod.dstring.DStringBOD.__str__" title="Lien permanent vers cette définition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dchars.languages.bod.dstring.DStringBOD.alert__dchars_have_changed">
+<tt class="descname">alert__dchars_have_changed</tt><big>(</big><big>)</big><a class="headerlink" href="#dchars.languages.bod.dstring.DStringBOD.alert__dchars_have_changed" title="Lien permanent vers cette définition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dchars.languages.bod.dstring.DStringBOD.alert__istructs_have_changed">
+<tt class="descname">alert__istructs_have_changed</tt><big>(</big><big>)</big><a class="headerlink" href="#dchars.languages.bod.dstring.DStringBOD.alert__istructs_have_changed" title="Lien permanent vers cette définition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dchars.languages.bod.dstring.DStringBOD.are_the_options_valid">
+<tt class="descname">are_the_options_valid</tt><big>(</big><big>)</big><a class="headerlink" href="#dchars.languages.bod.dstring.DStringBOD.are_the_options_valid" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Raise an error if self.options isn&#8217;t correctly initialized.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dchars.languages.bod.dstring.DStringBOD.get_new_subfix">
+<tt class="descname">get_new_subfix</tt><big>(</big><big>)</big><a class="headerlink" href="#dchars.languages.bod.dstring.DStringBOD.get_new_subfix" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Return a TriggerList associated to the alert__istructs_have_changed()
+function.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dchars.languages.bod.dstring.DStringBOD.get_transliteration">
+<tt class="descname">get_transliteration</tt><big>(</big><big>)</big><a class="headerlink" href="#dchars.languages.bod.dstring.DStringBOD.get_transliteration" title="Lien permanent vers cette définition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dchars.languages.bod.dstring.DStringBOD.init_from_str">
+<tt class="descname">init_from_str</tt><big>(</big><em>_str_src</em><big>)</big><a class="headerlink" href="#dchars.languages.bod.dstring.DStringBOD.init_from_str" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Function called by __init__(), initialize &lt;self&gt; and return
+&lt;indexes_of_unrecognized_chars&gt;.</p>
+<p>_str_src : str</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dchars.languages.bod.dstring.DStringBOD.init_from_transliteration">
+<tt class="descname">init_from_transliteration</tt><big>(</big><em>trans_src</em><big>)</big><a class="headerlink" href="#dchars.languages.bod.dstring.DStringBOD.init_from_transliteration" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>trans_src     :       string</p>
+<p>Return &lt;self&gt;</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dchars.languages.bod.dstring.DStringBOD.is_identical_to">
+<tt class="descname">is_identical_to</tt><big>(</big><em>aliud</em><big>)</big><a class="headerlink" href="#dchars.languages.bod.dstring.DStringBOD.is_identical_to" title="Lien permanent vers cette définition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dchars.languages.bod.dstring.DStringBOD.load_the_buffers">
+<tt class="descname">load_the_buffers</tt><big>(</big><big>)</big><a class="headerlink" href="#dchars.languages.bod.dstring.DStringBOD.load_the_buffers" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Return True if the buffers have been successfully loaded.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dchars.languages.bod.dstring.DStringBOD.seems_to_be_a_sanskrit_string">
+<tt class="descname">seems_to_be_a_sanskrit_string</tt><big>(</big><em>strict_answer=False</em><big>)</big><a class="headerlink" href="#dchars.languages.bod.dstring.DStringBOD.seems_to_be_a_sanskrit_string" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Return a boolean.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dchars.languages.bod.dstring.DStringBOD.sortingvalue">
+<tt class="descname">sortingvalue</tt><big>(</big><big>)</big><a class="headerlink" href="#dchars.languages.bod.dstring.DStringBOD.sortingvalue" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Return an SortingValue object</p>
+</dd></dl>
+
+</dd></dl>
+
 </div>
 <div class="section" id="source-code">
 <h2>Source code<a class="headerlink" href="#source-code" title="Lien permanent vers ce titre">¶</a></h2>
@@ -912,7 +1003,7 @@
   <h3><a href="index.html">Table des matières</a></h3>
   <ul>
 <li><a class="reference internal" href="#">dchars.languages.bod.dstring</a><ul>
-<li><a class="reference internal" href="#documentation">Documentation</a></li>
+<li><a class="reference internal" href="#module-dchars.languages.bod.dstring">Documentation</a></li>
 <li><a class="reference internal" href="#source-code">Source code</a></li>
 </ul>
 </li>
