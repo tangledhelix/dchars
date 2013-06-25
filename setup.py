@@ -22,8 +22,7 @@
         ❏DChars❏ setup.py
 """
 
-from distutils.core import setup
-
+from setuptools import setup, find_packages
 from dchars.system import numversion as numversion
 
 VERSION = numversion.VersionOfTheProgram().numversion
@@ -34,7 +33,11 @@ setup(name='DChars',
                   "to modify easily the diacritics signs of complex unicode " + \
                   "characters and to get their transliteration.",
       author='Xavier Faure(suizokukan)',
+      license='GPLv3',
       author_email='suizokukan _A.T_ orange•fr',
       url='94.23.197.37/dchars/',
-      packages="dchars/",
+      download_url='94.23.197.37/dchars/',
+      packages=find_packages(),
+      packages_data = { 'dchars': [ "config.ini",
+                                    "system/numversion", ]}
      )
