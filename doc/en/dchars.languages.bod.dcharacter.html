@@ -79,15 +79,15 @@ vowel1                 : None, or a string
 vowel2                   see symbol.SYMB_VOWELS
 </pre></div>
 </div>
-<dl class="method">
+<dl class="function">
 <dt id="dchars.languages.bod.dcharacter.DCharacterBOD.__eq__">
-<tt class="descname">__eq__</tt><big>(</big><em>aliud</em><big>)</big><a class="headerlink" href="#dchars.languages.bod.dcharacter.DCharacterBOD.__eq__" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">__eq__</tt><big>(</big><em>self</em>, <em>aliud</em><big>)</big><a class="headerlink" href="#dchars.languages.bod.dcharacter.DCharacterBOD.__eq__" title="Permalink to this definition">¶</a></dt>
 <dd><p>aliud   :       DCharacterBOD object</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="function">
 <dt id="dchars.languages.bod.dcharacter.DCharacterBOD.__init__">
-<tt class="descname">__init__</tt><big>(</big><em>dstring_object</em>, <em>unknown_char=False</em>, <em>base_char=None</em>, <em>subj_consonants=None</em>, <em>punctuation=False</em>, <em>rnam_bcad=False</em>, <em>halanta=False</em>, <em>anusvara_candrabindu=None</em>, <em>vowel1=None</em>, <em>vowel2=None</em><big>)</big><a class="headerlink" href="#dchars.languages.bod.dcharacter.DCharacterBOD.__init__" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">__init__</tt><big>(</big><em>self</em>, <em>dstring_object</em>, <em>unknown_char=False</em>, <em>base_char=None</em>, <em>subj_consonants=None</em>, <em>punctuation=False</em>, <em>rnam_bcad=False</em>, <em>halanta=False</em>, <em>anusvara_candrabindu=None</em>, <em>vowel1=None</em>, <em>vowel2=None</em><big>)</big><a class="headerlink" href="#dchars.languages.bod.dcharacter.DCharacterBOD.__init__" title="Permalink to this definition">¶</a></dt>
 <dd><div class="highlight-none"><div class="highlight"><pre>unknown_char                    : bool
 base_char                       : None or a string with the NAME of the character,
                                   not the character itself.
@@ -104,41 +104,41 @@ vowel2                   see symbol.SYMB_VOWELS
 </div>
 </dd></dl>
 
-<dl class="method">
+<dl class="function">
 <dt id="dchars.languages.bod.dcharacter.DCharacterBOD.__repr__">
-<tt class="descname">__repr__</tt><big>(</big><big>)</big><a class="headerlink" href="#dchars.languages.bod.dcharacter.DCharacterBOD.__repr__" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">__repr__</tt><big>(</big><em>self</em><big>)</big><a class="headerlink" href="#dchars.languages.bod.dcharacter.DCharacterBOD.__repr__" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="function">
 <dt id="dchars.languages.bod.dcharacter.DCharacterBOD.__setattr__">
-<tt class="descname">__setattr__</tt><big>(</big><em>key</em>, <em>value</em><big>)</big><a class="headerlink" href="#dchars.languages.bod.dcharacter.DCharacterBOD.__setattr__" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">__setattr__</tt><big>(</big><em>self</em>, <em>key</em>, <em>value</em><big>)</big><a class="headerlink" href="#dchars.languages.bod.dcharacter.DCharacterBOD.__setattr__" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="function">
 <dt id="dchars.languages.bod.dcharacter.DCharacterBOD.get_sourcestr_representation">
-<tt class="descname">get_sourcestr_representation</tt><big>(</big><big>)</big><a class="headerlink" href="#dchars.languages.bod.dcharacter.DCharacterBOD.get_sourcestr_representation" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">get_sourcestr_representation</tt><big>(</big><em>self</em><big>)</big><a class="headerlink" href="#dchars.languages.bod.dcharacter.DCharacterBOD.get_sourcestr_representation" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return a string</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="function">
 <dt id="dchars.languages.bod.dcharacter.DCharacterBOD.init_from_transliteration">
-<tt class="descname">init_from_transliteration</tt><big>(</big><em>src</em>, <em>transliteration_method</em><big>)</big><a class="headerlink" href="#dchars.languages.bod.dcharacter.DCharacterBOD.init_from_transliteration" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">init_from_transliteration</tt><big>(</big><em>self</em>, <em>src</em>, <em>transliteration_method</em><big>)</big><a class="headerlink" href="#dchars.languages.bod.dcharacter.DCharacterBOD.init_from_transliteration" title="Permalink to this definition">¶</a></dt>
 <dd><p>src             : string
 prev_dchar      : DCharacterBOD object
 transliteration_method: string</p>
 <p>Return &lt;self&gt;.</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="function">
 <dt id="dchars.languages.bod.dcharacter.DCharacterBOD.is_identical_to">
-<tt class="descname">is_identical_to</tt><big>(</big><em>aliud</em><big>)</big><a class="headerlink" href="#dchars.languages.bod.dcharacter.DCharacterBOD.is_identical_to" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">is_identical_to</tt><big>(</big><em>self</em>, <em>aliud</em><big>)</big><a class="headerlink" href="#dchars.languages.bod.dcharacter.DCharacterBOD.is_identical_to" title="Permalink to this definition">¶</a></dt>
 <dd><p>aliud   :       DCharacterBOD object</p>
 <p>Test every attribute of a DCharacterBOD object except .dstring_object</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="function">
 <dt id="dchars.languages.bod.dcharacter.DCharacterBOD.reset">
-<tt class="descname">reset</tt><big>(</big><big>)</big><a class="headerlink" href="#dchars.languages.bod.dcharacter.DCharacterBOD.reset" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">reset</tt><big>(</big><em>self</em><big>)</big><a class="headerlink" href="#dchars.languages.bod.dcharacter.DCharacterBOD.reset" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
