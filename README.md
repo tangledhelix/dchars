@@ -10,6 +10,9 @@
 
 Alternatively (experimental) (```setuptools``` required), try : ```
 sudo python3 setup.py install --record install.txt```
+uninstallation :
+```cat install.txt | xargs rm -rf```
+
 
 ----
 ----
