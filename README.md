@@ -8,10 +8,9 @@
 
 *how* *to* *install* *DChars* : 
 
-**The right way** (```setuptools``` required) : [download the tar ball](http://94.23.197.37/dchars/) and ```sudo python3 setup.py install --record install.txt```
+**The right way** (```setuptools``` required) : [download the tar ball](http://94.23.197.37/dchars/), expand it, go to the dchars/ subdirectory and type ```sudo python3 setup.py install --record install.txt```.
 
-Uninstallation :
-```cat install.txt | xargs rm -rf```
+Uninstallation : ```cat install.txt | xargs rm -rf```
 
 **Alternatively**, [download the tar ball](http://94.23.197.37/dchars/) and expand the tarball as a subdirectory of your Python3 project. 
 
