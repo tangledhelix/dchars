@@ -386,7 +386,7 @@ class TESTSDStringBOD(unittest.TestCase):
         # set their respective indexes to the same value;
         #
         string1.istructs[0].indexes = None # they are equal to [0,]
-        string2.istructs[0].indexes = None # they are equal to [0, 1, 2]
+        string2.istructs[0].indexes = None # they are equal to [0, 1]
 
         self.assertTrue( string1.istructs.is_identical_to(string2.istructs) )
         self.assertEqual( string1.istructs[0].punctuation_or_other_symbol, 'SYLLABLE OM' )
