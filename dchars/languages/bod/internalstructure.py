@@ -528,30 +528,6 @@ class InternalStructure(object):
     pickle_markers = "".join( [chr(num) for num in range(0, 0x0018+1)] )
 
     #///////////////////////////////////////////////////////////////////////////
-    def __eq__(self, aliud):
-        """
-                InternalStructure.__eq__
-        """
-        return self.unknown_character == aliud.unknown_character and \
-               self.punctuation_or_other_symbol == aliud.punctuation_or_other_symbol and \
-               self.prefix == aliud.prefix and \
-               self.superfix == aliud.superfix and \
-               self.consonant == aliud.consonant and \
-               self.vowel1 == aliud.vowel1 and \
-               self.vowel2 == aliud.vowel2 and \
-               self.subfix == aliud.subfix and \
-               self.suffix1 == aliud.suffix1 and \
-               self.suffix2 == aliud.suffix2 and \
-               self.postsuffix_u == aliud.postsuffix_u and \
-               self.gramm_postsuffix == aliud.gramm_postsuffix and \
-               self.postsuffix_o == aliud.postsuffix_o and \
-               self.anusvara_candrabindu == aliud.anusvara_candrabindu and \
-               self.rnam_bcad == aliud.rnam_bcad and \
-               self.halanta == aliud.halanta and \
-               self.indexes == aliud.indexes and \
-               self.real_indexes == aliud.real_indexes
-
-    #///////////////////////////////////////////////////////////////////////////
     def __init__(self,
                  dstring_object,
                  unknown_character = False,
