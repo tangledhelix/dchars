@@ -849,7 +849,9 @@ def get_intstruct_from_trans_str( _src, dstring_object ):
     #...........................................................................
     # buffering ?
     #...........................................................................
-    if fill_the_buffers and _src not in ewts_buffer.EWTS_BUFFER__FROM_TRANS_STR:
+    if fill_the_buffers and \
+       _src not in ewts_buffer.EWTS_BUFFER__FROM_TRANS_STR and \
+       not res.contains_unknown_characters():
         ewts_buffer.EWTS_BUFFER__FROM_TRANS_STR[_src] = res.pickle_repr()
 
     #...........................................................................

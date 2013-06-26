@@ -151,7 +151,15 @@ class DStringBOD(DStringMotherClass):
         """
                 DStringBOD.__str__
         """
-        return "".join([str(char) for char in self])
+        # why not :
+        #       return "".join([str(char) for char in self])
+        # 
+        # -> the normal way to get the string representation of a DStringBOD
+        # object is to use the istructs representation. By calling str(char)
+        # we would call DCharacterBOD.get_sourcestr_representation(), simply 
+        # sticking the string representations of the characters.
+        #
+        return self.istructs.get_the_corresponding_string()
 
     #///////////////////////////////////////////////////////////////////////////
     def alert__dchars_have_changed(self):

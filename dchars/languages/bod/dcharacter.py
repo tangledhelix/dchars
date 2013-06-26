@@ -166,6 +166,11 @@ class DCharacterBOD(DCharacterMotherClass):
                 DCharacterBOD.get_sourcestr_representation
 
                 Return a string
+
+                This function IS NOT THE REGULAR WAY to get the string representation
+                of a DString object by sticking string representations of the
+                different DCharacters. Use this fonction only to get the string
+                representation of ONE DCharacter.
         """
 
         #.......................................................................

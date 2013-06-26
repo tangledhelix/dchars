@@ -4,8 +4,8 @@ ROADMAP_TITLE
 
 .. code-block:: none
 
-  * (26) a-t-on besoin de "".join([str(char) for char in self]) => [ DCharacterBOD.get_sourcestr_representation() ]
-    -> non le supprimer dans 0.3.9 (ou alors composition de deux fonctions)
+  * (27) (bod) tester les indexes quand le buffer est utilisé.
+  * (26) istruct.__eq__ est-il utile ?
   * (25) bodsan : http://www.virtualvinodh.com/tibetan
 
     अनिरोधम् अनुत्पादम् अनुच्छेदम् अशाश्वतम् ।
@@ -41,7 +41,6 @@ ref : https://groups.google.com/forum/#!msg/grantha-lipi/a3jWe5gvdTs/CkGu2_Te36E
   * (23) bodsan
   * (22) http://94.23.197.37/dchars/doc/en/howto_use.html : un par langue
   * (21) donner un exemple pour sort.py
-  * (20) 0.3.7 : supprimer la correction dynamique des caractères.
   * (19) "सिद्धि", "སི་དདྷི་" = + prefix : vérifier que l'on a bien le préfixe
   * (18) bodsan : l'Illuminator contient des exemples intéressants de translittérations.
   * (17) (bod) utiliser des tables annexes pour alléger le code !

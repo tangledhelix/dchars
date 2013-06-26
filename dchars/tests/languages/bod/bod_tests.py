@@ -385,8 +385,6 @@ class TESTSDStringBOD(unittest.TestCase):
         # in order to compare the istructs in the two strings we have to
         # set their respective indexes to the same value;
         #
-        # their real_indexes are both equal to [0,]
-        #
         string1.istructs[0].indexes = None # they are equal to [0,]
         string2.istructs[0].indexes = None # they are equal to [0, 1, 2]
 

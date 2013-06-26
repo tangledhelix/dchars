@@ -231,4 +231,3 @@ with open( buffer.BUFFER__FROM_STR__FNAME, "wb" ) as dest:
 
 with open( ewts_buffer.EWTS_BUFFER__FROM_TRANS_STR__FNAME, "wb" ) as dest:
     dest.write( pickle.dumps(ewts_buffer.EWTS_BUFFER__FROM_TRANS_STR) )
-

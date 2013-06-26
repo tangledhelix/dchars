@@ -134,6 +134,20 @@ class ListOfInternalStructures(list):
                        if not internalstruct.bad_internalstruct])
 
     #///////////////////////////////////////////////////////////////////////////
+    def contains_unknown_characters(self):
+        """
+                ListOfInternalStructures.contains_unknown_characters
+        """
+        res = False
+
+        for istruct in self:
+            if istruct.unknown_character:
+                res = True
+                break
+
+        return res
+
+    #///////////////////////////////////////////////////////////////////////////
     def get_all_items_linked_to_index(self, index):
         """
                 ListOfInternalStructures.get_all_items_linked_to_index
@@ -166,7 +180,7 @@ class ListOfInternalStructures(list):
         # let's use indexes :
         #.......................................................................
         if not use_real_indexes:
-            # $$$traduire$$$amorce : <table> commence avec les lignes dont les index sont égaux à 0.
+            # beginning : <table> begins with lignes whose indexes are equal to 0.
             table = [ [index_line,] for index_line, line in enumerate(self) if 0 in line.indexes]
 
             # we extract the lines matching the expected result :
@@ -322,7 +336,8 @@ class ListOfInternalStructures(list):
 
                 return a (str)string, not a DString !
         """
-        return "".join( [istruct.get_the_corresponding_string() for istruct in self] )
+        return "".join( [istruct.get_the_corresponding_string(anonymize_the_unknown_chars = \
+                                            self.anonymize_the_unknown_chars) for istruct in self ])
 
     #///////////////////////////////////////////////////////////////////////////
     def get_first_item_with_the_index(self, index):
@@ -510,7 +525,31 @@ class InternalStructure(object):
 
     """
 
-    pickle_markers = "".join( [chr(num) for num in range(0, 0x0016+1)] )
+    pickle_markers = "".join( [chr(num) for num in range(0, 0x0018+1)] )
+
+    #///////////////////////////////////////////////////////////////////////////
+    def __eq__(self, aliud):
+        """
+                InternalStructure.__eq__
+        """
+        return self.unknown_character == aliud.unknown_character and \
+               self.punctuation_or_other_symbol == aliud.punctuation_or_other_symbol and \
+               self.prefix == aliud.prefix and \
+               self.superfix == aliud.superfix and \
+               self.consonant == aliud.consonant and \
+               self.vowel1 == aliud.vowel1 and \
+               self.vowel2 == aliud.vowel2 and \
+               self.subfix == aliud.subfix and \
+               self.suffix1 == aliud.suffix1 and \
+               self.suffix2 == aliud.suffix2 and \
+               self.postsuffix_u == aliud.postsuffix_u and \
+               self.gramm_postsuffix == aliud.gramm_postsuffix and \
+               self.postsuffix_o == aliud.postsuffix_o and \
+               self.anusvara_candrabindu == aliud.anusvara_candrabindu and \
+               self.rnam_bcad == aliud.rnam_bcad and \
+               self.halanta == aliud.halanta and \
+               self.indexes == aliud.indexes and \
+               self.real_indexes == aliud.real_indexes
 
     #///////////////////////////////////////////////////////////////////////////
     def __init__(self,
@@ -1060,7 +1099,10 @@ class InternalStructure(object):
                 res.append( SYMB_CONSONANTS.get_default_symbol(self.superfix) )
 
             if self.consonant is not None:
-                res.append( SYMB_CONSONANTS.get_default_symbol(self.consonant) )
+                if self.superfix is None:
+                    res.append( SYMB_CONSONANTS.get_default_symbol(self.consonant) )
+                else:
+                    res.append( SYMB_SUBJOINED_CONSONANTS.get_default_symbol(self.consonant) )
 
             if self.subfix is not None:
                 for subj_c in self.subfix:
@@ -1174,12 +1216,10 @@ class InternalStructure(object):
 
                 Initialize and return self.
 
-                <src> is a string defining <self>, EXCEPT :
+                <src> is a string defining the attributes of <self> BUT
 
                 .bad_internalstruct (assumed as False)
                 .dstring_object (initialized as None)
-                .indexes (initialized as None)
-                .real_indexes (initialized as None)
 
                 Recriprocal function of self.pickle_repr()
         """
@@ -1285,6 +1325,14 @@ class InternalStructure(object):
                 elif char == chr(0x0016):
                     self.anusvara_candrabindu = current_substring
 
+                elif char == chr(0x0017):
+                    first_number, length = map(int, current_substring.split(";"))
+                    self.indexes = OrderedSet(range(first_number, length+1))
+
+                elif char == chr(0x0018):
+                    first_number, length = map(int, current_substring.split(";"))
+                    self.real_indexes = OrderedSet(range(first_number, length+1))
+
                 else:
                     raise DCharsError( context = "InternalStructure.init_from_pickle_repr",
                                        message = "unknown marker = "+repr(char))
@@ -1308,7 +1356,7 @@ class InternalStructure(object):
                 Assume that .bad_internalstruct is True and doesn't record the
                 value of .dstring_object, .indexes and .real_indexes.
 
-                Recriprocal function of self.init_from_pickle_repr()
+                Reciprocal function of self.init_from_pickle_repr()
         """
         res = []
 
@@ -1373,6 +1421,9 @@ class InternalStructure(object):
                 res.append( chr(0x0015) )
             else:
                 res.append( str(self.anusvara_candrabindu) + chr(0x0016) )
+
+        res.append( str(min(self.indexes)) + ";" + str(len(self.indexes)) + chr(0x0017) )
+        res.append( str(min(self.real_indexes)) + ";" + str(len(self.real_indexes)) + chr(0x0018) )
 
         return "".join(res)
 
@@ -2858,7 +2909,9 @@ def get_intstruct_from_str(_src,
     #...........................................................................
     # (3.7) filling the buffers
     #...........................................................................
-    if fill_the_buffers and _src not in bod_buffer.BUFFER__FROM_STR:
+    if fill_the_buffers and \
+       _src not in bod_buffer.BUFFER__FROM_STR and \
+       not res.contains_unknown_characters():
         bod_buffer.BUFFER__FROM_STR[_src] = res.pickle_repr()
 
     #...........................................................................
