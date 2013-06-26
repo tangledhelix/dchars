@@ -1327,11 +1327,11 @@ class InternalStructure(object):
 
                 elif char == chr(0x0017):
                     first_number, length = map(int, current_substring.split(";"))
-                    self.indexes = OrderedSet(range(first_number, length))
+                    self.indexes = OrderedSet(range(first_number, first_number+length))
 
                 elif char == chr(0x0018):
                     first_number, length = map(int, current_substring.split(";"))
-                    self.real_indexes = OrderedSet(range(first_number, length))
+                    self.real_indexes = OrderedSet(range(first_number, first_number+length))
 
                 else:
                     raise DCharsError( context = "InternalStructure.init_from_pickle_repr",

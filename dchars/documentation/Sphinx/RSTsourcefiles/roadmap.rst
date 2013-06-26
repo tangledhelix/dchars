@@ -4,7 +4,7 @@ ROADMAP_TITLE
 
 .. code-block:: none
 
-  * (27) (bod) tester les indexes quand le buffer est utilisé.
+  * (27) (bod) tester l'identité de BOD et BOD_BUFF pour (1) mots simples se trouvent dans buff (2) mots bigarrés, ...
   * (26) istruct.__eq__ est-il utile ?
   * (25) bodsan : http://www.virtualvinodh.com/tibetan
 

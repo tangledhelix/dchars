@@ -56,12 +56,14 @@ DSTRING_BOD_T = new_dstring(language="བོད་ཡིག",
                           transliteration_method='ewts',
                           options = {"expected structure" : "always Tibetan",
                                      "fill the buffers"       : False,
+                                     "anonymize the unknown characters" : True,
                                      "look up in the buffers" : False},
                           )
 DSTRING_BOD_O = new_dstring(language="བོད་ཡིག",
                           transliteration_method='ewts',
                           options = {"expected structure" : "Tibetan or Sanskrit",
                                      "fill the buffers"       : False,
+                                     "anonymize the unknown characters" : True,
                                      "look up in the buffers" : False},
                           )
 
@@ -69,6 +71,7 @@ DSTRING_BOD_BUFF = new_dstring(language="བོད་ཡིག",
                           transliteration_method='ewts',
                           options = {"expected structure" : "always Tibetan",
                                      "fill the buffers"       : False,
+                                     "anonymize the unknown characters" : True,
                                      "look up in the buffers" : True},
                           )
 
@@ -76,18 +79,22 @@ DSTRING_BOD_S = new_dstring(language="བོད་ཡིག",
                           transliteration_method='ewts',
                           options = {"expected structure" : "always Sanskrit",
                                      "fill the buffers"       : False,
+                                     "anonymize the unknown characters" : True,
                                      "look up in the buffers" : False},
                           )
+
 DSTRING_BOD_T = new_dstring(language="བོད་ཡིག",
                           transliteration_method='ewts',
                           options = {"expected structure" : "always Tibetan",
                                      "fill the buffers"       : False,
+                                     "anonymize the unknown characters" : True,
                                      "look up in the buffers" : False},
                           )
 DSTRING_BOD_O = new_dstring(language="བོད་ཡིག",
                           transliteration_method='ewts',
                           options = {"expected structure" : "Tibetan or Sanskrit",
                                      "fill the buffers"       : False,
+                                     "anonymize the unknown characters" : True,
                                      "look up in the buffers" : False},
                           )
 
@@ -1382,18 +1389,17 @@ class TESTSDStringBOD(unittest.TestCase):
             # in order to compare two "pickled" istructs, we have to neutralize
             # some data :
             for istruct in istructs1:
-                istruct.indexes = None
-                istruct.real_indexes = None
                 istruct.bad_internalstruct = False
                 istruct.dstring_object = None
 
-            pickle_strings = istructs1.pickle_repr()
-            istructs2 = ListOfInternalStructures(
-                anonymize_the_unknown_chars=True).init_from_pickle_repr(
+            if not istructs1.contains_unknown_characters():
+
+                pickle_strings = istructs1.pickle_repr()
+                istructs2 = ListOfInternalStructures(
+                    anonymize_the_unknown_chars=True).init_from_pickle_repr(
                     src = pickle_strings,
                     dstring_object = string1 )
-
-            self.assertTrue( istructs1.is_identical_to(istructs2) )
+                self.assertTrue( istructs1.is_identical_to(istructs2) )
 
     # #///////////////////////////////////////////////////////////////////////////
     # def test_different_structures(self):
