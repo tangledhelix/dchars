@@ -4,7 +4,6 @@ ROADMAP_TITLE
 
 .. code-block:: none
 
-  * (27) (bod) tester l'identité de BOD et BOD_BUFF pour (1) mots simples se trouvent dans buff (2) mots bigarrés, ...
   * (26) bodsan : http://www.virtualvinodh.com/tibetan
 
     अनिरोधम् अनुत्पादम् अनुच्छेदम् अशाश्वतम् ।
