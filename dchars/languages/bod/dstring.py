@@ -153,18 +153,18 @@ class DStringBOD(DStringMotherClass):
         return self.get_sourcestr_representation()
 
     #///////////////////////////////////////////////////////////////////////////
-    def alert__dchars_have_changed(self):
+    def update_istructs(self):
         """
-                DStringBod.alert__dchars_have_changed
+                DStringBod.update_istructs
 
         """
         self.istructs = istruct.get_intstructures_from_dstring(self)
-        self.alert__istructs_have_changed()
+        self.update_dchars()
 
     #///////////////////////////////////////////////////////////////////////////
-    def alert__istructs_have_changed(self):
+    def update_dchars(self):
         """
-                DStringBOD.alert__istructs_have_changed
+                DStringBOD.update_dchars
         """
         self.clear()
 
@@ -280,7 +280,7 @@ class DStringBOD(DStringMotherClass):
                                                                           dstring_object = self ))
 
         # let's modify the list of DCharacters :
-        self.alert__istructs_have_changed()
+        self.update_dchars()
 
     #///////////////////////////////////////////////////////////////////////////
     def init_from_transliteration(self, trans_src):

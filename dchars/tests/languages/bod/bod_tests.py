@@ -427,12 +427,12 @@ class TESTSDStringBOD(unittest.TestCase):
         string = DSTRING_BOD("བཐུ") # bthu
 
         string.istructs[0].prefix = "G" # ག as a prefix
-        string.alert__istructs_have_changed()
+        string.update_dchars()
         self.assertEqual( string[0].base_char, 'G' )
         self.assertEqual( str(string), "གཐུ")
 
         string[0].base_char = "B" # བ as a prefix
-        string.alert__dchars_have_changed()
+        string.update_istructs()
         self.assertEqual( string.istructs[0].prefix, 'B' )
         self.assertEqual( str(string), "བཐུ")
 
@@ -442,7 +442,7 @@ class TESTSDStringBOD(unittest.TestCase):
         string = DSTRING_BOD("བགྲིབས") # bgribs
 
         string[0].base_char = "L" # ལ as a superfix
-        string.alert__dchars_have_changed()
+        string.update_istructs()
         self.assertEqual( string.istructs[0].prefix, None )
         self.assertEqual( string.istructs[0].superfix, "L" )
         self.assertEqual( str(string), "ལྒྲིབས")
@@ -456,13 +456,13 @@ class TESTSDStringBOD(unittest.TestCase):
                           "(subfix)['R'](vowel1)I(suffix1)B(suffix2)S" )
 
         string.istructs[0].superfix = "R" # ར as a superfix
-        string.alert__istructs_have_changed()
+        string.update_dchars()
         self.assertEqual( str(string.istructs),
                           "(prefix)B(superfix)R(consonant)G" + \
                           "(subfix)['R'](vowel1)I(suffix1)B(suffix2)S" )
 
         string[1].base_char = "S" # ས as a superfix
-        string.alert__dchars_have_changed()
+        string.update_istructs()
         self.assertEqual( str(string.istructs),
                           "(prefix)B(superfix)S(consonant)G" + \
                           "(subfix)['R'](vowel1)I(suffix1)B(suffix2)S" )
@@ -476,13 +476,13 @@ class TESTSDStringBOD(unittest.TestCase):
                           "(subfix)['R'](vowel1)I(suffix1)B(suffix2)S" )
 
         string.istructs[0].consonant = "K" # ཀ as a main consonant
-        string.alert__istructs_have_changed()
+        string.update_dchars()
         self.assertEqual( str(string.istructs),
                           "(prefix)B(superfix)S(consonant)K" + \
                           "(subfix)['R'](vowel1)I(suffix1)B(suffix2)S" )
 
         string[1].subj_consonants[0] = "G" # ག as a main consonant
-        string.alert__dchars_have_changed()
+        string.update_istructs()
         self.assertEqual( str(string.istructs),
                           "(prefix)B(superfix)S(consonant)G" + \
                           "(subfix)['R'](vowel1)I(suffix1)B(suffix2)S" )
@@ -494,7 +494,7 @@ class TESTSDStringBOD(unittest.TestCase):
         #.......................................................................
         string1 = DSTRING_BOD("ཀཀཀ")
         string1.istructs[1].consonant = "G"
-        string.alert__istructs_have_changed()
+        string.update_dchars()
         self.assertEqual( str(string1), chr(0x0F40)+chr(0x0F42)+chr(0x0F40) )
 
         #.......................................................................
@@ -506,11 +506,11 @@ class TESTSDStringBOD(unittest.TestCase):
         string = DSTRING_BOD("བསྒྲིབས")
 
         string.istructs[0].suffix1 = "D" # ད as a suffix1
-        string.alert__istructs_have_changed()
+        string.update_dchars()
         self.assertEqual( str(string), str(string2) )
 
         string[-2].base_char = "B" # བ as a suffix1
-        string.alert__dchars_have_changed()
+        string.update_istructs()
         self.assertEqual( str(string), str(string1) )
 
         #.......................................................................
@@ -522,11 +522,11 @@ class TESTSDStringBOD(unittest.TestCase):
         string = DSTRING_BOD("བསྒྲིབས")
 
         string.istructs[0].suffix2 = "D" # ད as a suffix2
-        string.alert__istructs_have_changed()
+        string.update_dchars()
         self.assertEqual( str(string), str(string2) )
 
         string[-1].base_char = "S" # ས as a suffix2
-        string.alert__dchars_have_changed()
+        string.update_istructs()
         self.assertEqual( str(string), str(string1) )
 
         #.......................................................................
@@ -538,11 +538,11 @@ class TESTSDStringBOD(unittest.TestCase):
         string = DSTRING_BOD("བསྒྲིབས")
 
         string.istructs[0].vowel1 = "II"
-        string.alert__istructs_have_changed()
+        string.update_dchars()
         self.assertEqual( str(string), str(string2) )
 
         string[1].vowel1 = "I"
-        string.alert__dchars_have_changed()
+        string.update_istructs()
         self.assertEqual( str(string), str(string1) )
 
         #.......................................................................
@@ -554,11 +554,11 @@ class TESTSDStringBOD(unittest.TestCase):
         string = DSTRING_BOD("རྡོེ")
 
         string.istructs[0].vowel2 = None
-        string.alert__istructs_have_changed()
+        string.update_dchars()
         self.assertEqual( str(string), str(string2) )
 
         string[0].vowel2 = "E"
-        string.alert__dchars_have_changed()
+        string.update_istructs()
         self.assertEqual( str(string), str(string1) )
 
         #.......................................................................
@@ -570,7 +570,7 @@ class TESTSDStringBOD(unittest.TestCase):
         string = DSTRING_BOD("ཁིའུའིའོ")
 
         string.istructs[0].postsuffix_u = False
-        string.alert__istructs_have_changed()
+        string.update_dchars()
         self.assertEqual( str(string), str(string2) )
 
         string.insert( 1,
@@ -578,7 +578,7 @@ class TESTSDStringBOD(unittest.TestCase):
                                      base_char = "-",
                                      vowel1 = "U") )
 
-        string.alert__dchars_have_changed()
+        string.update_istructs()
         self.assertEqual( str(string), str(string1) )
 
         #.......................................................................
@@ -590,13 +590,13 @@ class TESTSDStringBOD(unittest.TestCase):
         string = DSTRING_BOD("དྷའི")
 
         string.istructs[0].gramm_postsuffix = None
-        string.alert__istructs_have_changed()
+        string.update_dchars()
         self.assertEqual( str(string), str(string2) )
 
         string.append( DCharacterBOD(dstring_object = string,
                                      base_char = "-",
                                      vowel1 = "I") )
-        string.alert__dchars_have_changed()
+        string.update_istructs()
         self.assertEqual( str(string), str(string1) )
 
         #.......................................................................
@@ -608,13 +608,13 @@ class TESTSDStringBOD(unittest.TestCase):
         string = DSTRING_BOD("དྷའིའོ")
 
         string.istructs[0].postsuffix_o = False
-        string.alert__istructs_have_changed()
+        string.update_dchars()
         self.assertEqual( str(string), str(string2) )
 
         string.append( DCharacterBOD(dstring_object = string,
                                      base_char = "-",
                                      vowel1 = "O") )
-        string.alert__dchars_have_changed()
+        string.update_istructs()
         self.assertEqual( str(string), str(string1) )
 
         #.......................................................................
@@ -626,11 +626,11 @@ class TESTSDStringBOD(unittest.TestCase):
         string = DSTRING_BOD("སྂ")
 
         string.istructs[0].anusvara_candrabindu = None
-        string.alert__istructs_have_changed()
+        string.update_dchars()
         self.assertEqual( str(string), str(string2) )
 
         string[0].anusvara_candrabindu = "SIGN NYI ZLA NAA DA"
-        string.alert__dchars_have_changed()
+        string.update_istructs()
         self.assertEqual( str(string), str(string1) )
 
         #.......................................................................
@@ -642,11 +642,11 @@ class TESTSDStringBOD(unittest.TestCase):
         string = DSTRING_BOD("གཏིཿ")
 
         string.istructs[0].rnam_bcad = False
-        string.alert__istructs_have_changed()
+        string.update_dchars()
         self.assertEqual( str(string), str(string2) )
 
         string[1].rnam_bcad = True
-        string.alert__dchars_have_changed()
+        string.update_istructs()
         self.assertEqual( str(string), str(string1) )
 
         #.......................................................................
@@ -659,12 +659,12 @@ class TESTSDStringBOD(unittest.TestCase):
 
         string.istructs[0].vowel1 = 'A'
         string.istructs[0].halanta = False
-        string.alert__istructs_have_changed()
+        string.update_dchars()
         self.assertEqual( str(string), str(string2) )
 
         string[0].vowel1 = None
         string[0].halanta = True
-        string.alert__dchars_have_changed()
+        string.update_istructs()
         self.assertEqual( str(string), str(string1) )
 
     #///////////////////////////////////////////////////////////////////////////
