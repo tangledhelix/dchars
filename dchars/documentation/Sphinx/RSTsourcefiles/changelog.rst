@@ -6,6 +6,7 @@ CHANGELOG_TITLE
 0.4.2 [2013_06_XX]
 ------------------
 
+  * new function : dchars.py::sort_a_list_of_words()
   * (bod) alert__dchars_have_changed() > update_istructs()
   * (bod) alert__istructs_have_changed() > update_dchars()
   * no more triggerlists in the project : they were used by several files for Tibetan
@@ -15,7 +16,7 @@ CHANGELOG_TITLE
 0.4.1 [2013_06_27]
 ------------------
 
-  * (bod) new function : ListOfInternalStructures.contains_unknown_character
+  * (bod) new function : ListOfInternalStructures.contains_unknown_character()
   * (bod) no more words stored in the buffers with unknown characters.
   * (bod) new buffers : words stored in the buffers are now stored with their real_indexes and indexes.
           The two buffers are bigger (2 x 400.000)

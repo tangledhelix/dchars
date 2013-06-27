@@ -4,6 +4,9 @@ ROADMAP_TITLE
 
 .. code-block:: none
 
+  * (28) pas moyen de trier grc : dstring.sortingvalue ?
+  * (27) nom de la méthode pour trier : (bod) default ou basic ? voir *tables*.py
+
   * (26) bodsan : http://www.virtualvinodh.com/tibetan
 
     अनिरोधम् अनुत्पादम् अनुच्छेदम् अशाश्वतम् ।

@@ -224,3 +224,20 @@ def new_dstring(language, transliteration_method=None, options=None):
 
     return dstring
 
+#///////////////////////////////////////////////////////////////////////////////
+def sort_a_list_of_words(words, dstring_object):
+    """
+        sort_a_list_of_words function :
+        * words : iterable of (unicode) words, like ["Μῆνιν", "ἄειδε", ...]
+        * dstring_object, DSTRING object, like new_dstring(language="grc")
+
+        Return an object whose type is type(words), sorted.
+    """
+    # list of (unicode) words -> list of (DString*) words
+    dstring_words = map(dstring_object, words)
+
+    # we sort the list :
+    sorted_words = sorted(dstring_words, key=dstring_object.sortingvalue)
+
+    # we return a list of (unicode) words :
+    return type(words)(map(dstring_object.__str__, sorted_words))
