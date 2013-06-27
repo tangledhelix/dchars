@@ -8,7 +8,8 @@ CHANGELOG_TITLE
 
   * (bod) new function : ListOfInternalStructures.contains_unknown_character
   * (bod) no more words stored in the buffers with unknown characters.
-  * (bod) words stored in the buffers are now stored with their real_indexes and indexes.
+  * (bod) new buffers : words stored in the buffers are now stored with their real_indexes and indexes.
+          The two buffers are bigger (2 x 400.000)
 
 ------------------
 0.4.0 [2013_06_25]
