@@ -3,7 +3,14 @@ CHANGELOG_TITLE
 ===============
 
 ------------------
-0.4.1 [2013_06_XX]
+0.4.2 [2013_06_XX]
+------------------
+
+  * no more triggerlists in the project : they were used by several files for Tibetan/
+  * (bod) no more automatic updates for istructs when dchars have changed neither automatic updates for dchars when istructs have changed.
+
+------------------
+0.4.1 [2013_06_27]
 ------------------
 
   * (bod) new function : ListOfInternalStructures.contains_unknown_character

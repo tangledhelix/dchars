@@ -28,7 +28,6 @@ import os.path
 # problem with Pylint :
 # pylint: disable=E0611
 # many errors like "No name 'extensions' in module 'dchars'"
-from dchars.utilities.triggerlist import TriggerList
 from dchars.errors.errors import DCharsError
 from dchars.languages.bod.dcharacter import DCharacterBOD
 from dchars.languages.bod.symbols import TSHEG_SYMBOL, SPACE_SYMBOL
@@ -111,7 +110,7 @@ class DStringBOD(DStringMotherClass):
         """
                 DStringBOD.__init__
         """
-        DStringMotherClass.__init__(self, alert_function = self.alert__dchars_have_changed)
+        DStringMotherClass.__init__(self)
 
         # internal structure(s) corresponding to self's content :
         # Should be initialized by self.init_from_transliteration() or
@@ -151,15 +150,7 @@ class DStringBOD(DStringMotherClass):
         """
                 DStringBOD.__str__
         """
-        # why not :
-        #       return "".join([str(char) for char in self])
-        # 
-        # -> the normal way to get the string representation of a DStringBOD
-        # object is to use the istructs representation. By calling str(char)
-        # we would call DCharacterBOD.get_sourcestr_representation(), simply 
-        # sticking the string representations of the characters.
-        #
-        return self.istructs.get_the_corresponding_string()
+        return self.get_sourcestr_representation()
 
     #///////////////////////////////////////////////////////////////////////////
     def alert__dchars_have_changed(self):
@@ -175,16 +166,12 @@ class DStringBOD(DStringMotherClass):
         """
                 DStringBOD.alert__istructs_have_changed
         """
-        self.alert_off()
-
         self.clear()
 
         if 'istructs' in self.__dict__:
             for char in self.istructs.get_the_corresponding_dchars(dcharactertype=DCharacterBOD,
                                                                    dstring_object=self):
                 self.append( char )
-
-        self.alert_on()
 
     #///////////////////////////////////////////////////////////////////////////
     def are_the_options_valid(self):
@@ -214,14 +201,22 @@ class DStringBOD(DStringMotherClass):
                                          str(self.options) )
 
     #///////////////////////////////////////////////////////////////////////////
-    def get_new_subfix(self):
+    def get_sourcestr_representation(self):
         """
-                DStringBOD.get_new_subfix
+                DStringBOD.get_sourcestr_representation
 
-                Return a TriggerList associated to the alert__istructs_have_changed()
-                function.
+                Return a string.
         """
-        return TriggerList( alert_function = self.alert__istructs_have_changed )
+        # why not :
+        #       return "".join([str(char) for char in self])    ?
+        # 
+        # -> the normal way to get the string representation of a DStringBOD
+        # object is to use the istructs representation. By calling str(char)
+        # we would call DCharacterBOD.get_sourcestr_representation(), simply 
+        # sticking the string representations of the characters.
+        #
+        return self.istructs.get_the_corresponding_string()
+
 
     #///////////////////////////////////////////////////////////////////////////
     def get_transliteration(self):
@@ -284,9 +279,6 @@ class DStringBOD(DStringMotherClass):
                     self.istructs.extend( istruct.get_intstruct_from_str( _src = TSHEG_SYMBOL,
                                                                           dstring_object = self ))
 
-        # by modifying all the InternalStructure objects (istruct.dstring__object = self) we
-        # don't launch an alert since istruct.__setitem__ doesn't launch an alert.
-        self.istructs.set_the_dstring_object( self )
         # let's modify the list of DCharacters :
         self.alert__istructs_have_changed()
 
@@ -299,8 +291,6 @@ class DStringBOD(DStringMotherClass):
 
                 Return <self>
         """
-        self.alert_off()
-
         # this is the function used to get the internal structure from a transliterated string :
         #
         # Pylint can't know that <self> has a 'transliteration_method' member
@@ -341,17 +331,12 @@ class DStringBOD(DStringMotherClass):
                     self.istructs.extend( get_intstruct( _src = SPACE_SYMBOL,
                                                         dstring_object = self ))
 
-        # the call to get_intstruct has set the alert on.
-        self.alert_off()
-
         # internalstructures -> string
         for internalstructure in self.istructs:
             for dchar in internalstructure.get_the_corresponding_dchars(
                     dstring_object = self,
                     dcharactertype = DCharacterBOD):
                 self.append( dchar )
-
-        self.alert_on()
 
         return self
 

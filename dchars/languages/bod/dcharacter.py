@@ -122,26 +122,6 @@ class DCharacterBOD(DCharacterMotherClass):
                "vowel2="+repr(self.vowel2)
 
     #///////////////////////////////////////////////////////////////////////////
-    def __setattr__(self, key, value):
-        """
-                DCharacterBOD.__setattr__
-        """
-        object.__setattr__(self, key, value)
-
-        # we don't launch an alert :
-        #
-        # * if there's no .dstring_object
-        # * if dstring_object.ignore_alert is True
-        # * if the attribute "dstring_object" has been modified.
-        #
-
-        if 'dstring_object' in self.__dict__ and \
-           self.dstring_object is not None and \
-           not self.dstring_object.ignore_alert and \
-           key != "dstring_object":
-            self.dstring_object.alert__dchars_have_changed()
-
-    #///////////////////////////////////////////////////////////////////////////
     def init_from_transliteration(self, src, transliteration_method):
         """
                 DCharacterBOD.init_from_transliteration

@@ -26,11 +26,10 @@
 # pylint: disable=E0611
 # "No name 'errors' in module 'dchars.dchars'"
 from dchars.errors.errors import DCharsError
-from dchars.utilities.triggerlist import TriggerList
 import io
 
 ################################################################################
-class DStringMotherClass(TriggerList):
+class DStringMotherClass(list):
     """
         class DStringMotherClass, motherclass for all DString* classes
     """
@@ -91,11 +90,12 @@ class DStringMotherClass(TriggerList):
         return self.sortingvalue() > aliud.sortingvalue()
 
     #///////////////////////////////////////////////////////////////////////////
-    def __init__(self, iterable = None, alert_function = None):
+    def __init__(self, iterable = None):
         """
                 DStringMotherClass.__init__
         """
-        TriggerList.__init__(self, iterable = iterable, alert_function = alert_function)
+        if iterable is not None:
+            list.__init__(self, iterable)
 
         self.srcfile = None
 

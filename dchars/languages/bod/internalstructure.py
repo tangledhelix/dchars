@@ -25,7 +25,6 @@
     * function get_internal_structure()
 """
 
-from dchars.utilities.triggerlist import TriggerList
 from copy import deepcopy
 import re
 
@@ -597,7 +596,6 @@ class InternalStructure(object):
         else:
             self.real_indexes = real_indexes
 
-        self.ignore_alert = False
         self.dstring_object = dstring_object
 
     #///////////////////////////////////////////////////////////////////////////
@@ -653,12 +651,6 @@ class InternalStructure(object):
         """
                 InternalStructure.__setattr__
         """
-
-        if key == "ignore_alert":
-            return
-
-        if 'ignore_alert' in self.__dict__ and self.ignore_alert:
-            return
 
         #.......................................................................
         # we check that <key, value> are acceptable arguments.
@@ -743,16 +735,6 @@ class InternalStructure(object):
         #.......................................................................
         object.__setattr__(self, key, value)
 
-        #.......................................................................
-        # alert : this internal structure has changed.
-        #.......................................................................
-        # we don't launch an alert if the attribute "dstring_object" has been
-        # modified.
-        #.......................................................................
-        if "dstring_object" in self.__dict__ and \
-           self.dstring_object is not None and key != "dstring_object":
-            self.dstring_object.alert__istructs_have_changed()
-
     #///////////////////////////////////////////////////////////////////////////
     def __str__(self):
         """
@@ -813,20 +795,6 @@ class InternalStructure(object):
             res.append( "(halanta)" )
 
         return "".join(res)
-
-    #///////////////////////////////////////////////////////////////////////////
-    def alert_off(self):
-        """
-                InternalStructure.alert_off
-        """
-        self.ignore_alert = False
-
-    #///////////////////////////////////////////////////////////////////////////
-    def alert_on(self):
-        """
-                InternalStructure.alert_on
-        """
-        self.ignore_alert = True
 
     #///////////////////////////////////////////////////////////////////////////
     def check_default_value(self,
@@ -898,8 +866,6 @@ class InternalStructure(object):
                 By returning a list and not a DString object we avoid some problems
                 with the trigger list.
         """
-        self.alert_off()
-
         res = []
 
         if self.unknown_character:
@@ -933,11 +899,11 @@ class InternalStructure(object):
                     res.append( new_dchar )
                 else:
                     # superfix character followed by the main consonant :
-                    res[-1].subj_consonants = TriggerList( iterable = [self.consonant,] )
+                    res[-1].subj_consonants = [self.consonant,]
 
             if self.subfix is not None:
                 if res[-1].subj_consonants is None:
-                    res[-1].subj_consonants = TriggerList()
+                    res[-1].subj_consonants = []
 
                 for subj_c in self.subfix:
                     res[-1].subj_consonants.append( subj_c )
@@ -1020,16 +986,6 @@ class InternalStructure(object):
                 new_dchar.base_char = "-"
                 new_dchar.vowel1 = "O"
                 res.append( new_dchar )
-
-        self.alert_on()
-
-        #.......................................................................
-        # we set the .dstring_object attribute and the subj_consonants.alert_function : :
-        for dchar in res:
-            dchar.dstring_object = dstring_object
-
-            if dchar.subj_consonants is not None:
-                dchar.subj_consonants.alert_function = dstring_object.alert__dchars_have_changed
 
         return res
 
@@ -1283,8 +1239,7 @@ class InternalStructure(object):
                     self.vowel2 = current_substring
 
                 elif char == chr(0x0011):
-                    self.subfix = dstring_object.get_new_subfix()
-                    self.subfix.extend( current_substring.split(";") )
+                    self.subfix = current_substring.split(";")
 
                 elif char == chr(0x0012):
                     self.suffix1 = current_substring
@@ -1682,7 +1637,7 @@ def get_intstructures_from_dstring(dstring_object):
                     # superfix-3(subfix) : we set the subfix consonant(s) of
                     # the last istruct :
                     if future_istructs[-1].subfix is None:
-                        future_istructs[-1].subfix = TriggerList()
+                        future_istructs[-1].subfix = []
 
                     for subj_c in dchar.subj_consonants[1:]:
                         future_istructs[-1].subfix.append( subj_c )
@@ -1721,7 +1676,7 @@ def get_intstructures_from_dstring(dstring_object):
                     if dchar.subj_consonants is not None:
 
                         if future_istructs[-1].subfix is None:
-                            future_istructs[-1].subfix = TriggerList()
+                            future_istructs[-1].subfix = []
 
                         for subj_c in dchar.subj_consonants:
                             future_istructs[-1].subfix.append( subj_c )
@@ -1811,7 +1766,7 @@ def get_intstructures_from_dstring(dstring_object):
                 future_istructs[-1].vowel1 = dchar.vowel1
                 future_istructs[-1].vowel2 = dchar.vowel2
                 if dchar.subj_consonants is not None:
-                    future_istructs[-1].subfix = TriggerList( dchar.subj_consonants )
+                    future_istructs[-1].subfix = dchar.subj_consonants[:]
                 future_istructs[-1].indexes.add( index_dchar )
                 future_istructs[-1].anusvara_candrabindu = dchar.anusvara_candrabindu
                 future_istructs[-1].rnam_bcad = dchar.rnam_bcad
@@ -1949,12 +1904,6 @@ def get_intstructures_from_dstring(dstring_object):
     #...........................................................................
     for istruct in istructs_ok:
         istruct.dstring_object = dstring_object
-    #...........................................................................
-    # for each non empty istruct.subfix, we can set the .alert_function attribute :
-    #...........................................................................
-    for istruct in istructs_ok:
-        if istruct.subfix is not None:
-            istruct.subfix.alert_function = dstring_object.alert__dchars_have_changed
 
     return istructs_ok
 
@@ -2010,8 +1959,6 @@ def get_intstruct_from_str(_src,
                 (3.6) <istructs> is sorted
                 (3.7) filling the buffers
     """
-
-    dstring_object.alert_off()
 
     anonymize_the_unknown_chars = dstring_object.options["anonymize the unknown characters"]
 
@@ -2236,8 +2183,7 @@ def get_intstruct_from_str(_src,
 
                                 future_istructs.append( deepcopy(istruct) )
                                 future_istructs[-1].consonant = base_char__consonant
-                                future_istructs[-1].subfix = TriggerList(
-                                    [subj_consonants__name[0],] )
+                                future_istructs[-1].subfix = [subj_consonants__name[0], ]
                                 future_istructs[-1].indexes.update( indexes )
                                 future_istructs[-1].real_indexes.add( real_index_char  )
 
@@ -2275,9 +2221,8 @@ def get_intstruct_from_str(_src,
                                 future_istructs.append( deepcopy(istruct) )
                                 future_istructs[-1].superfix = base_char__consonant
                                 future_istructs[-1].consonant = subj_consonants__name[0]
-                                future_istructs[-1].subfix = TriggerList(
-                                    [subj_consonants__name[index] \
-                                     for index in range(1, len(subj_consonants__name)) ] )
+                                future_istructs[-1].subfix = [subj_consonants__name[index] \
+                                     for index in range(1, len(subj_consonants__name)) ]
                                 future_istructs[-1].indexes.update( indexes )
                                 future_istructs[-1].real_indexes.add( real_index_char  )
 
@@ -2412,7 +2357,7 @@ def get_intstruct_from_str(_src,
                             vowel2 = _base_char__vowel2))
 
                         if subj_consonants is not None:
-                            future_istructs[-1].subfix = TriggerList( subj_consonants__name )
+                            future_istructs[-1].subfix = subj_consonants__name[:]
 
                         future_istructs[-1].indexes.update( indexes )
                         future_istructs[-1].real_indexes.add( real_index_char  )
@@ -2730,7 +2675,7 @@ def get_intstruct_from_str(_src,
             istruct.superfix = None
             istruct.consonant = 'S'
             if istruct.subfix is None:
-                istruct.subfix = TriggerList( ['R',] )
+                istruct.subfix = ['R',]
             else:
                 istruct.subfix.insert(0, "R")
 
@@ -2752,7 +2697,7 @@ def get_intstruct_from_str(_src,
             istruct.superfix = None
             istruct.consonant = 'R'
             if istruct.subfix is None:
-                istruct.subfix = TriggerList( ['L',] )
+                istruct.subfix = ['L',]
             else:
                 istruct.subfix.insert(0, "L")
 
@@ -2774,7 +2719,7 @@ def get_intstruct_from_str(_src,
             istruct.superfix = None
             istruct.consonant = 'S'
             if istruct.subfix is None:
-                istruct.subfix = TriggerList( ['L',] )
+                istruct.subfix = ['L',]
             else:
                 istruct.subfix.insert(0, "L")
 
@@ -2796,7 +2741,7 @@ def get_intstruct_from_str(_src,
             istruct.superfix = None
             istruct.consonant = 'R'
             if istruct.subfix is None:
-                istruct.subfix = TriggerList( ['W',] )
+                istruct.subfix = ['W',]
             else:
                 istruct.subfix.insert(0, "W")
 
@@ -2818,7 +2763,7 @@ def get_intstruct_from_str(_src,
             istruct.superfix = None
             istruct.consonant = 'L'
             if istruct.subfix is None:
-                istruct.subfix = TriggerList( ['W',] )
+                istruct.subfix = ['W',]
             else:
                 istruct.subfix.insert(0, "W")
 
@@ -2840,7 +2785,7 @@ def get_intstruct_from_str(_src,
             istruct.superfix = None
             istruct.consonant = 'S'
             if istruct.subfix is None:
-                istruct.subfix = TriggerList( ['W',] )
+                istruct.subfix = ['W',]
             else:
                 istruct.subfix.insert(0, "W")
 
@@ -2895,14 +2840,5 @@ def get_intstruct_from_str(_src,
     #...........................................................................
     for istruct in res:
         istruct.dstring_object = dstring_object
-
-    #...........................................................................
-    # for each non empty istruct.subfix, we can set the .alert_function attribute :
-    #...........................................................................
-    for istruct in res:
-        if istruct.subfix is not None:
-            istruct.subfix.alert_function = dstring_object.alert__istructs_have_changed
-
-    dstring_object.alert_on()
 
     return(res)

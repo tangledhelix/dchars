@@ -22,7 +22,6 @@
     ❏DChars❏ : dchars/languages/bod/transliterations/ewts.py
 """
 
-from dchars.utilities.triggerlist import TriggerList
 import re
 from copy import deepcopy
 
@@ -704,7 +703,7 @@ def get_intstruct_from_trans_str( _src, dstring_object ):
             istruct.superfix = None
             istruct.consonant = 'S'
             if istruct.subfix is None:
-                istruct.subfix = TriggerList( ['R',] )
+                istruct.subfix = ['R',]
             else:
                 istruct.subfix.insert(0, "R")
 
@@ -725,7 +724,7 @@ def get_intstruct_from_trans_str( _src, dstring_object ):
             istruct.superfix = None
             istruct.consonant = 'R'
             if istruct.subfix is None:
-                istruct.subfix = TriggerList( ['L',] )
+                istruct.subfix = ['L',]
             else:
                 istruct.subfix.insert(0, "L")
 
@@ -746,7 +745,7 @@ def get_intstruct_from_trans_str( _src, dstring_object ):
             istruct.superfix = None
             istruct.consonant = 'S'
             if istruct.subfix is None:
-                istruct.subfix = TriggerList( ['L',] )
+                istruct.subfix = ['L',]
             else:
                 istruct.subfix.insert(0, "L")
 
@@ -767,7 +766,7 @@ def get_intstruct_from_trans_str( _src, dstring_object ):
             istruct.superfix = None
             istruct.consonant = 'R'
             if istruct.subfix is None:
-                istruct.subfix = TriggerList( ['W',] )
+                istruct.subfix = ['W',]
             else:
                 istruct.subfix.insert(0, "W")
 
@@ -788,7 +787,7 @@ def get_intstruct_from_trans_str( _src, dstring_object ):
             istruct.superfix = None
             istruct.consonant = 'L'
             if istruct.subfix is None:
-                istruct.subfix = TriggerList( ['W',] )
+                istruct.subfix = ['W',]
             else:
                 istruct.subfix.insert(0, "W")
 
@@ -809,7 +808,7 @@ def get_intstruct_from_trans_str( _src, dstring_object ):
             istruct.superfix = None
             istruct.consonant = 'S'
             if istruct.subfix is None:
-                istruct.subfix = TriggerList( ['W',] )
+                istruct.subfix = ['W',]
             else:
                 istruct.subfix.insert(0, "W")
 
