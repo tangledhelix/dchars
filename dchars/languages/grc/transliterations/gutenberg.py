@@ -420,5 +420,6 @@ def dstring__trans__get_transliteration(dstring_object):
         str_res = str_res.replace("ey", "eu")
         str_res = str_res.replace("êy", "êu")
         str_res = str_res.replace("oy", "ou")
+        str_res = str_res.replace("Oy", "Ou")
 
     return str_res
