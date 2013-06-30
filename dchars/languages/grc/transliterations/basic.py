@@ -39,8 +39,8 @@ TRANS_EQUIVALENCES = ()
 ################################################################################
 
 #
-# * CAVEAT ! If you modify these dictionaries, don't forget to modify thei
-#            corresponding symbols's dictionaries in symbols.py !
+# * CAVEAT ! If you modify these dictionaries, don't forget to modify their
+#            corresponding symbols' dictionaries in symbols.py !
 #
 # * CAVEAT ! No duplicate value allowed in these dictionaries !
 #

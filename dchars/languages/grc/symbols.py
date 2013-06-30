@@ -30,7 +30,7 @@ from dchars.utilities.name2symbols import Name2Symbols
 #...............................................................................
 # symbols used by the Ancient Greek :
 #
-# CAVEAT ! If you modify these dictionaries, don't forget to modify thei
+# CAVEAT ! If you modify these dictionaries, don't forget to modify their
 # corresponding transliteration's dictionaries !
 #
 #...............................................................................

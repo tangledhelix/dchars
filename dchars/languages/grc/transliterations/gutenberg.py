@@ -45,8 +45,8 @@ TRANS_EQUIVALENCES = ()
 ################################################################################
 
 #
-# * CAVEAT ! If you modify these dictionaries, don't forget to modify thei
-#            corresponding symbols's dictionaries in symbols.py !
+# * CAVEAT ! If you modify these dictionaries, don't forget to modify their
+#            corresponding symbols' dictionaries in symbols.py !
 #
 # * CAVEAT ! No duplicate value allowed in these dictionaries !
 #
@@ -420,6 +420,9 @@ def dstring__trans__get_transliteration(dstring_object):
         str_res = str_res.replace("ey", "eu")
         str_res = str_res.replace("êy", "êu")
         str_res = str_res.replace("oy", "ou")
+        str_res = str_res.replace("Ay", "Au")
+        str_res = str_res.replace("Ey", "Eu")
+        str_res = str_res.replace("Êy", "Êu")
         str_res = str_res.replace("Oy", "Ou")
 
     return str_res
