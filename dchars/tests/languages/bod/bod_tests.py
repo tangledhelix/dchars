@@ -1471,12 +1471,14 @@ class TESTSDStringBOD(unittest.TestCase):
 
             self.assertEqual( len(dstring.istructs), 3 )
 
-            self.assertTrue( dstring.istructs[0].check_default_value( unknown_character = True,
-                                                                      punctuation_or_other_symbol = "²" ))
+            self.assertTrue( dstring.istructs[0].check_default_value( 
+                                unknown_character = True,
+                                punctuation_or_other_symbol = "²" ))
             self.assertTrue( dstring.istructs[1].check_default_value( consonant = "A",
                                                                       vowel1 = "I" ))
-            self.assertTrue( dstring.istructs[2].check_default_value( unknown_character = True,
-                                                                      punctuation_or_other_symbol = "²" ))
+            self.assertTrue( dstring.istructs[2].check_default_value( 
+                                unknown_character = True,
+                                punctuation_or_other_symbol = "²" ))
             self.assertEqual( bod, str(dstring) )
 
         #.......................................................................

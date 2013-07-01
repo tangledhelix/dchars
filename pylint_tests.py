@@ -33,7 +33,7 @@ CONSOLE.writeln("TEST : pylint_test.py")
 CONSOLE.writeln("="*80)
 CONSOLE.use_the_default_color()
 
-COMMANDSTRING = "pylint2 --rcfile=pylint.rc {0} > z"
+COMMANDSTRING = "pylint --rcfile=pylint.rc {0} > z"
 
 NBR_FILES = 0
 WORST_MARK = 10

@@ -4,6 +4,7 @@ ROADMAP_TITLE
 
 .. code-block:: none
 
+  * (20) nom trop long: dstring__trans__get_transliteration
   * (19) bodsan : http://www.virtualvinodh.com/tibetan
 
     अनिरोधम् अनुत्पादम् अनुच्छेदम् अशाश्वतम् ।

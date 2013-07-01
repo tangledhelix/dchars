@@ -1489,16 +1489,16 @@ class TESTSDStringBOD(unittest.TestCase):
     #                             "tA", "(consonant)T(vowel1)AA",
     #                             "tA", "(consonant)T(vowel1)AA",),
 
-    #             ("bsgrad",      "bsgrad", "(prefix)B(superfix)S(consonant)G" + \
-    #                             "(subfix)['R'](vowel1)A(suffix1)D",
-    #                             "bsgrad", "(prefix)B(superfix)S(consonant)G" + \
-    #                             "(subfix)['R'](vowel1)A(suffix1)D",
-    #                             "b?sgrada", "(consonant)B; (consonant)S" +\
-    #                             "(subfix)['G', 'R'](vowel1)A(suffix1)D",),
+    #             ("bsgrad",    "bsgrad", "(prefix)B(superfix)S(consonant)G" + \
+    #                           "(subfix)['R'](vowel1)A(suffix1)D",
+    #                           "bsgrad", "(prefix)B(superfix)S(consonant)G" + \
+    #                           "(subfix)['R'](vowel1)A(suffix1)D",
+    #                           "b?sgrada", "(consonant)B; (consonant)S" +\
+    #                           "(subfix)['G', 'R'](vowel1)A(suffix1)D",),
 
-    #             ("panDi",       "panDi", "(consonant)P(vowel1)A(suffix1)N; (consonant)DD(vowel1)I",
-    #                             "panaDi","(consonant)P(vowel1)A(suffix1)N; (consonant)DD(vowel1)I",
-    #                             "panaDi","(consonant)P(vowel1)A(suffix1)N; (consonant)DD(vowel1)I",
+    #             ("panDi",     "panDi", "(consonant)P(vowel1)A(suffix1)N; (consonant)DD(vowel1)I",
+    #                           "panaDi","(consonant)P(vowel1)A(suffix1)N; (consonant)DD(vowel1)I",
+    #                           "panaDi","(consonant)P(vowel1)A(suffix1)N; (consonant)DD(vowel1)I",
     #                             ),
     #             ):
 

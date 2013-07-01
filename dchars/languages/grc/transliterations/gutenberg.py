@@ -22,10 +22,6 @@
     ❏DChars❏ : dchars/languages/grc/transliterations/gutenberg.py
 
     Transliteration defined on http://www.pgdp.net/wiki/Greek
-    * diaeresis is always ignored
-
-    * todo :
-    (1) tests avec http://www.pgdp.net/wiki/Transliterating_Greek/Marking_Accents (à la fin, deux exemples)
 """
 
 from dchars.utilities.regexstring import regexstring_list
@@ -346,7 +342,7 @@ def dstring__trans__get_transliteration(dstring_object):
 
         if index_dchar >= 1:
 
-            if preceding_dchar.base_char in ('α','ε','η','ο') and \
+            if preceding_dchar.base_char in ('α', 'ε', 'η', 'ο') and \
                dchar.base_char in ('υ', 'ι') and \
                not dchar.dialutika and \
                preceding_dchar.pneuma is None and \
@@ -375,7 +371,8 @@ def dstring__trans__get_transliteration(dstring_object):
     #
     # from http://www.pgdp.net/wiki/Greek
     #
-    # The letter γ (gamma) is usually transliterated as g, but n is used instead when it occurs before certain letters:
+    # The letter γ (gamma) is usually transliterated as g, but n is used instead when it
+    # occurs before certain letters:
     #
     #           Greek 	Transliteration
     #           γγ 	ng

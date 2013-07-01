@@ -62,9 +62,10 @@ class VersionOfTheProgram(object):
         # We ensure that the appropriate file exists :
         if not os.path.exists(full_name_of_the_file):
             # the file doesn't exist :
+            msg = "The file where the number of version is kept doesn't exist; " + \
+                  "name of the file : " + full_name_of_the_file
             raise DCharsError(context = "VersionOfTheProgram.__init__",
-                              message = "The file where the number of version is kept doesn't exist; "+ \
-                                        "name of the file : "+full_name_of_the_file)
+                              message = msg)
 
         else:
             # the file exists : we read the number of the version :
