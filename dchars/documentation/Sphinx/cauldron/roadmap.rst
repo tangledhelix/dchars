@@ -4,7 +4,9 @@ ROADMAP_TITLE
 
 .. code-block:: none
 
-  * (26) bodsan : http://www.virtualvinodh.com/tibetan
+  * (21) détecter les mauvais noms de langue/de translitération grâce à LANGUAGES_AND_TRANSLITERATIONS
+  * (20) nom trop long: dstring__trans__get_transliteration
+  * (19) bodsan : http://www.virtualvinodh.com/tibetan
 
     अनिरोधम् अनुत्पादम् अनुच्छेदम् अशाश्वतम् ।
 
@@ -35,27 +37,23 @@ I salute him, the fully enlightened Buddha, the best of speakers, who preached t
 ref : https://groups.google.com/forum/#!msg/grantha-lipi/a3jWe5gvdTs/CkGu2_Te36EJ
 )
 
-  * (24) supprimer le couplage DCharacter/istructs
-  * (23) bodsan
-  * (22) http://94.23.197.37/dchars/doc/en/howto_use.html : un par langue
-  * (21) donner un exemple pour sort.py
-  * (19) "सिद्धि", "སི་དདྷི་" = + prefix : vérifier que l'on a bien le préfixe
-  * (18) bodsan : l'Illuminator contient des exemples intéressants de translittérations.
-  * (17) (bod) utiliser des tables annexes pour alléger le code !
-  * (16) vérifier comment le "jh" sanskrit est translittéré en tibétain.
-  * (15) "DEVANAGARI " > "" (bod + san)
-  * (14) ko+o = kau selon http://www.thlib.org/reference/transliteration/wyconverter.php
-  * (13) ཁས khas sans tsheg : toujours ajouter tsheg pour "always Sanskrit" ?
-  * (12) option : use ca cha ja jha instead of tsa tsha dza dzha = no
-  * (11) (lat) e dans l'o, e dans l'a
-  * (10) (bod) new test : TESTSDStringBOD.test_different_structures
-  * (09) "ཏནདྲ" tandra / ཏནདར tand.ra/ problème avec shamba'i'i
-  * (07) fixed form for R ?
-  * (06) documenter les langues (sauf bod, !! revoir l'ordre des diacritiques à partir du code !!! :
-         même ordre dans get_sourcestr_representation() et dchar__get_translit_str()
-  * (05) (toutes langues) accélérer le code : accélérer len(constante) > len_constante
-  * (04) (bod) quid de KAKE_A ?
-  * (03) (bod.ewts) vérifier que la liste suivant est bien traitée par le programme :
+  * (18) http://94.23.197.37/dchars/doc/en/howto_use.html : un par langue
+  * (17) donner un exemple pour sort.py
+  * (16) "सिद्धि", "སི་དདྷི་" = + prefix : vérifier que l'on a bien le préfixe
+  * (15) bodsan : l'Illuminator contient des exemples intéressants de translittérations.
+  * (14) (bod) utiliser des tables annexes pour alléger le code !
+  * (13) vérifier comment le "jh" sanskrit est translittéré en tibétain.
+  * (12) "DEVANAGARI " > "" (bod + san)
+  * (11) ko+o = kau selon http://www.thlib.org/reference/transliteration/wyconverter.php
+  * (10) ཁས khas sans tsheg : toujours ajouter tsheg pour "always Sanskrit" ?
+  * (09) option : use ca cha ja jha instead of tsa tsha dza dzha = no
+  * (08) (lat) e dans l'o, e dans l'a
+  * (07) (bod) new test : TESTSDStringBOD.test_different_structures
+  * (06) "ཏནདྲ" tandra / ཏནདར tand.ra/ problème avec shamba'i'i
+  * (05) fixed form for R ?
+  * (04) (toutes langues) accélérer le code : accélérer len(constante) > len_constante
+  * (03) (bod) quid de KAKE_A ?
+  * (02) (bod.ewts) vérifier que la liste suivant est bien traitée par le programme :
     # anusvara = 0F7E TIBETAN SIGN RJES SU NGA RO
     # visarga  = 0F7F TIBETAN SIGN RNAM BCAD
     # chandrabindu = 0F83 TIBETAN SIGN SNA LDAN
@@ -63,8 +61,7 @@ ref : https://groups.google.com/forum/#!msg/grantha-lipi/a3jWe5gvdTs/CkGu2_Te36E
     # avagraha = 0F85 TIBETAN MARK PALUTA
     # jihvamuliya = 0F88 TIBETAN SIGN LCE TSA CAN [NON]
     # upadhmaniya = 0F89 TIBETAN SIGN MCHU CAN [NON]
-  * (02) virer les print(), les $$$ et ???
-  * (01) bod.bodsan
+  * (01) virer les print(), les $$$ et ???
   * (00) Old Norse (?)
 
   * (bod)DOC :
@@ -86,7 +83,6 @@ ref : https://groups.google.com/forum/#!msg/grantha-lipi/a3jWe5gvdTs/CkGu2_Te36E
   * (bod) si un caractère est inconnu, unknown_character = True et le caractère est contenu dans punctuation_or_other_symbol
 
   * (bod) les deux buffers ne sont utilisés que pour "expected structure" = "Tibetan or Sanskrit"
-
 
 DOC : toutes langues : Le DChar de chaque langue doit avoir une fonction sortingvalue().
 

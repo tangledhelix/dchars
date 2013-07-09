@@ -3,13 +3,25 @@ CHANGELOG_TITLE
 ===============
 
 ------------------
-0.4.1 [2013_06_XX]
+0.4.2 [2013_06_XX]
 ------------------
 
-  * (bod) new function : ListOfInternalStructures.contains_unknown_character
+  * if a wrong transliteration method's name if passed to new_dstring(), an exception is raised.
+  * new file : dchars/languages_name.py, defining LANGUAGES_NAME and LANGUAGES_AND_TRANSLITERATIONS
+  * new file : successivetransformations.py (in order to automate successive transliterations from a source text)
+  * new function : dchars.py::sort_a_list_of_words()
+  * (bod) alert__dchars_have_changed() > update_istructs()
+  * (bod) alert__istructs_have_changed() > update_dchars()
+  * no more triggerlists in the project : they were used by several files for Tibetan
+  * (bod) no more automatic updates for istructs when dchars have changed neither automatic updates for dchars when istructs have changed.
+
+------------------
+0.4.1 [2013_06_27]
+------------------
+
+  * (bod) new function : ListOfInternalStructures.contains_unknown_character()
   * (bod) no more words stored in the buffers with unknown characters.
-  * (bod) new buffers : words stored in the buffers are now stored with their real_indexes and indexes.
-          The two buffers are bigger (2 x 400.000)
+  * (bod) new buffers : words stored in the buffers are now stored with their real_indexes and indexes. The two buffers are bigger (2 x 400.000)
 
 ------------------
 0.4.0 [2013_06_25]

@@ -45,7 +45,7 @@ MODULES = {
                                    ("dcharacter.py", False),
                                    ("dchars.py", False),
                                    ("dstring.py", False),
-                                   ("languages_name", False),
+                                   ("languages_name.py", False),
                                    ("successivetransformations.py", False),
                                   ),
 
@@ -132,7 +132,6 @@ MODULES = {
                                      ("dicttools_tests.py", False),
                                      ("orderedset_tests.py", False),
                                      ("sortingvalue_tests.py", False),
-                                     ("triggerlist_tests.py", False),
                                   ),
 
          "dchars.tests.languages": ( ("__init__.py", False),
@@ -214,7 +213,6 @@ MODULES = {
                                    ("orderedset.py", False),
                                    ("regexstring.py", False),
                                    ("sortingvalue.py", False),
-                                   ("triggerlist.py", False),
                                  )
 }
 

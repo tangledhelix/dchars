@@ -23,6 +23,8 @@ dchars
    dchars.dcharacter
    dchars.dchars
    dchars.dstring
+   dchars.languages_name
+   dchars.successivetransformations
 
 --------------------------------------------------------------------------------
 dchars.errors
@@ -198,7 +200,6 @@ dchars.tests
    dchars.tests.dicttools_tests
    dchars.tests.orderedset_tests
    dchars.tests.sortingvalue_tests
-   dchars.tests.triggerlist_tests
 
 --------------------------------------------------------------------------------
 dchars.tests.languages
@@ -328,5 +329,4 @@ dchars.utilities
    dchars.utilities.orderedset
    dchars.utilities.regexstring
    dchars.utilities.sortingvalue
-   dchars.utilities.triggerlist
 

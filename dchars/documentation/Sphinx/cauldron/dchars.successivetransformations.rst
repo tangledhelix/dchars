@@ -3,14 +3,14 @@
    <br />
 
 ==========================================================
-dchars.tests.triggerlist_tests
+dchars.successivetransformations
 ==========================================================
 
 -------------
 Documentation
 -------------
 
-.. automodule:: dchars.tests.triggerlist_tests
+.. automodule:: dchars.successivetransformations
    :members:
    :special-members:
 
@@ -18,6 +18,6 @@ Documentation
 Source code
 -----------
 
-.. literalinclude:: ../../../../dchars/tests/triggerlist_tests.py
+.. literalinclude:: ../../../../dchars/successivetransformations.py
    :language: python
    :linenos:

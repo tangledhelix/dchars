@@ -147,21 +147,6 @@ def new_dstring(language, transliteration_method=None, options=None):
     #...........................................................................
     _language = LANGUAGES_NAME[language]
 
-
-    #...........................................................................
-    # error : unknown transliteration method
-    #...........................................................................
-    if not transliteration_method in LANGUAGES_AND_TRANSLITERATIONS[_language]:
-        
-        msg = "unknown transliteration method : '{0}'; known methods={1}".format(
-            transliteration_method,
-            LANGUAGES_AND_TRANSLITERATIONS[_language]
-            )
-
-        raise DCharsError( context = "dchars/dchars.py",
-                           message = msg,
-                         )
-
     #...........................................................................
     # we get the informations from LANGUAGES :
     #...........................................................................
@@ -193,6 +178,17 @@ def new_dstring(language, transliteration_method=None, options=None):
     if _transliteration_method is None:
         _transliteration_method = default_trans_method
 
+    # error : unknown transliteration method
+    if not _transliteration_method in LANGUAGES_AND_TRANSLITERATIONS[_language]:
+        
+        msg = "unknown transliteration method : '{0}'; known methods={1}".format(
+            _transliteration_method,
+            LANGUAGES_AND_TRANSLITERATIONS[_language]
+            )
+
+        raise DCharsError( context = "dchars/dchars.py",
+                           message = msg,
+                         )
     #...........................................................................
     # _options is either equal to <options> either equal to the default options :
     #...........................................................................

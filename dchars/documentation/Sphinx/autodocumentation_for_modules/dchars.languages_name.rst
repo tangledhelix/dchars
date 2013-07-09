@@ -3,14 +3,14 @@
    <br />
 
 ==========================================================
-dchars.utilities.triggerlist
+dchars.languages_name
 ==========================================================
 
 -------------
 Documentation
 -------------
 
-.. automodule:: dchars.utilities.triggerlist
+.. automodule:: dchars.languages_name
    :members:
    :special-members:
 
@@ -18,6 +18,6 @@ Documentation
 Source code
 -----------
 
-.. literalinclude:: ../../../../dchars/utilities/triggerlist.py
+.. literalinclude:: ../../../../dchars/languages_name.py
    :language: python
    :linenos:
