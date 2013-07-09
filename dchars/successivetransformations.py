@@ -21,6 +21,7 @@
 """
     ❏DChars❏ : dchars/successivetransformations.py
 """
+from dchars.error import DCharsError
 
 ################################################################################
 class Transformation(object):
