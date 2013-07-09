@@ -6,6 +6,7 @@ CHANGELOG_TITLE
 0.4.2 [2013_06_XX]
 ------------------
 
+  * new file : successivetransformations.py (in order to automate successive transliterations from a source text)
   * new function : dchars.py::sort_a_list_of_words()
   * (bod) alert__dchars_have_changed() > update_istructs()
   * (bod) alert__istructs_have_changed() > update_dchars()
