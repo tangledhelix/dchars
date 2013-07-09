@@ -59,3 +59,25 @@ LANGUAGES_NAME = {
         "san"                   :       "संस्कृतम्",
         "Sanskrit"              :       "संस्कृतम्",
     }
+
+
+LANGUAGES_AND_TRANSLITERATIONS = {
+                                        "བོད་ཡིག"         : ("default",
+                                                                "ewts",
+                                                                "bodsan",
+                                                                ),
+                                                                
+                                        "latīna"                : ("basic", ),
+                                        
+                                        BIBLICAL_HEBREW__NAME   : ( "basic", ),
+                                        
+                                        "Ἑλληνικὴ γλῶττα"       : ( "basic",
+                                                                    "betacode",
+                                                                    "gutenberg",
+                                                                    "perseus",
+                                                                    ),
+
+                                        "संस्कृतम्"                 : ( "iso15919",
+                                                                      "itrans",
+                                                                    ),
+                                 }
