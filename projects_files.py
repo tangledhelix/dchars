@@ -45,6 +45,7 @@ MODULES = {
                                    ("dcharacter.py", False),
                                    ("dchars.py", False),
                                    ("dstring.py", False),
+                                   ("successivetransformations.py", False),
                                   ),
 
          "dchars.errors"        : ( ("__init__.py", False),

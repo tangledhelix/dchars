@@ -60,9 +60,9 @@ LIST_OF_EXAMPLES = (
     ("ῥα", "rha"),
 
     # examples given by Frank Zago :
-    ("Ὁ δὲ Καῖσαρ (Οὐερκιγγετόριγα) εὐθὺς ὲν δεσμοῖς ἔδησε καὶ " + \ 
+    ("Ὁ δὲ Καῖσαρ (Οὐερκιγγετόριγα) εὐθὺς ὲν δεσμοῖς ἔδησε καὶ " + \
      "ἐς τὰ ἐπινίκια μετὰ τοῦτο πέμψας ἀπέκτεινε.",
-     "Ho de Kaisar (Ouerkingetoriga) euthus en desmois edêse kai " + \ 
+     "Ho de Kaisar (Ouerkingetoriga) euthus en desmois edêse kai " + \
      "es ta epinikia meta touto pempsas apekteine."),
 
     ("Ὁ Οὐερκιγγετόριξ... καί τι καὐπὸ τῶν [Γερμανῶν] τῶν τοῖς Ῥωμαῖοις συμμαχούντων ἐσφάλη.",
@@ -74,9 +74,9 @@ LIST_OF_EXAMPLES = (
     ("Ἀρόερνοι.--Ἔθνοςμαχιμώτατον τῶν πρὸς τῇ Κελτικῇ Γαλατῶν.",
      "Aroernoi.--Ethnosmachimôtaton tôn pros tê Keltikê Galatôn."),
 
-    ("Οἱ Κελτοἰ... ἀνὰ μέσον Ῥήνου... καὶ τῶν Πυρηναίων ὀρῶν... " + \ 
+    ("Οἱ Κελτοἰ... ἀνὰ μέσον Ῥήνου... καὶ τῶν Πυρηναίων ὀρῶν... " + \
      "ἀθρόοι καὶ κατὰ πλῆθος ἐμπίπτοντες, ἀθρόοι κατελύοντο.",
-     "Hoi Keltoi... ana meson Rhênou... kai tôn Purênaiôn orôn... " + \ 
+     "Hoi Keltoi... ana meson Rhênou... kai tôn Purênaiôn orôn... " + \
      "athrooi kai kata plêthos empiptontes, athrooi kateluonto."),
 
     ("Καὶ πύργον τινὰ παραχρῆμα... ἑλόντες, ἔπειτα καὶ τὰ λοιπὰ οὐ χαλεπῶς ἐχειρώσαντο",
