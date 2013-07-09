@@ -27,7 +27,9 @@
 # "No name 'errors' in module 'dchars.errors'"
 from dchars.errors.errors import DCharsError
 import os.path
-from dchars.languages_name import LANGUAGES_NAME, BIBLICAL_HEBREW__NAME
+from dchars.languages_name import LANGUAGES_NAME, \
+                                  BIBLICAL_HEBREW__NAME, \
+                                  LANGUAGES_AND_TRANSLITERATIONS
 
 #...............................................................................
 # CONFIG_INI : options read in the configuration file.
@@ -144,6 +146,21 @@ def new_dstring(language, transliteration_method=None, options=None):
     # original language's name :
     #...........................................................................
     _language = LANGUAGES_NAME[language]
+
+
+    #...........................................................................
+    # error : unknown transliteration method
+    #...........................................................................
+    if not transliteration_method in LANGUAGES_AND_TRANSLITERATIONS[_language]:
+        
+        msg = "unknown transliteration method : '{0}'; known methods={1}".format(
+            transliteration_method,
+            LANGUAGES_AND_TRANSLITERATIONS[_language]
+            )
+
+        raise DCharsError( context = "dchars/dchars.py",
+                           message = msg,
+                         )
 
     #...........................................................................
     # we get the informations from LANGUAGES :
