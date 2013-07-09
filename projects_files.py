@@ -45,6 +45,7 @@ MODULES = {
                                    ("dcharacter.py", False),
                                    ("dchars.py", False),
                                    ("dstring.py", False),
+                                   ("languages_name", False),
                                    ("successivetransformations.py", False),
                                   ),
 

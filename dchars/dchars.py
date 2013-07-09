@@ -27,6 +27,7 @@
 # "No name 'errors' in module 'dchars.errors'"
 from dchars.errors.errors import DCharsError
 import os.path
+from dchars.languages_name import LANGUAGES_NAME, BIBLICAL_HEBREW__NAME
 
 #...............................................................................
 # CONFIG_INI : options read in the configuration file.
@@ -47,39 +48,12 @@ CONFIG_INI.read( os.path.join(os.path.dirname(os.path.realpath(__file__)),
 # LANGUAGES : informations about each language. Please use three kinds of keys
 #             for each language : English name, iso639-3 name and original name.
 #
-#  language's name -> (iso639-3 name,
+#                     (iso639-3 name,
 #                      string type's name,
 #                      default transliteration method,
 #                      default options)
 #
 #...............................................................................
-BIBLICAL_HEBREW = "עִבְֿרִיתֿ מִקְרָאִיתֿ"  # defined here to simplify the
-                                # output of the following dictionary
-                                # on editors unable to display right-to-left
-                                # writing systems.
-
-# names accepted by calling new_dstring() :
-LANGUAGES_NAME = {
-        "བོད་ཡིག"                  : "བོད་ཡིག",
-        "bod"                   : "བོད་ཡིག",
-        "Tibetan"               : "བོད་ཡིག",
-
-        "Ἑλληνικὴ γλῶττα"       :       "Ἑλληνικὴ γλῶττα",
-        "grc"                   :       "Ἑλληνικὴ γλῶττα",
-        "Ancient Greek"         :       "Ἑλληνικὴ γλῶττα",
-
-        BIBLICAL_HEBREW         :       BIBLICAL_HEBREW,
-        "hbo"                   :       BIBLICAL_HEBREW,
-        "Biblical Hebrew"       :       BIBLICAL_HEBREW,
-
-        "latīna"                :       "latīna",
-        "lat"                   :       "latīna",
-        "Latin"                 :       "latīna",
-
-        "संस्कृतम्"                 :       "संस्कृतम्",
-        "san"                   :       "संस्कृतम्",
-        "Sanskrit"              :       "संस्कृतम्",
-    }
 
 LANGUAGES = {
                 "བོད་ཡིག"         :
@@ -114,7 +88,7 @@ LANGUAGES = {
                                           CONFIG_INI["grc.gutenberg"]["transliteration for upsilon"],
                                           }),
 
-                BIBLICAL_HEBREW :       ("hbo",
+                BIBLICAL_HEBREW__NAME :  ("hbo",
                                          "DStringHBO",
                                          CONFIG_INI["hbo"]["transliteration method"],
                                          {"sorting method": \
