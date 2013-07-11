@@ -60,6 +60,27 @@ LANGUAGES_NAME = {
         "Sanskrit"              :       "संस्कृतम्",
     }
 
+ISO_639_3_NAME = {
+        "བོད་ཡིག"                  : "bod",
+        "bod"                   : "bod",
+        "Tibetan"               : "bod",
+
+        "Ἑλληνικὴ γλῶττα"       :       "grc",
+        "grc"                   :       "grc",
+        "Ancient Greek"         :       "grc",
+
+        BIBLICAL_HEBREW__NAME   :       "hbo",
+        "hbo"                   :       "hbo",
+        "Biblical Hebrew"       :       "hbo",
+
+        "latīna"                :       "lat",
+        "lat"                   :       "lat",
+        "Latin"                 :       "lat",
+
+        "संस्कृतम्"                 :       "san",
+        "san"                   :       "san",
+        "Sanskrit"              :       "san",
+    }
 
 LANGUAGES_AND_TRANSLITERATIONS = {
                                         "བོད་ཡིག"         : ("default",
