@@ -30,7 +30,6 @@ MODULES = {
           # CAVEAT : must be ".", not "" :
           "."                   : ( ("console.py", True),
                                     ("bod__create_buffers.py", True),
-                                    ("config_ini_data.py", False),
                                     ("create_documentation.py", True),
                                     ("header_please_test.py", True),
                                     ("header_template.txt", True),
@@ -43,6 +42,8 @@ MODULES = {
 
          "dchars"              : ( ("__init__.py", False),
                                    ("config.ini", False),
+                                   ("config_ini.py", True),
+                                   ("config_ini_data.py", True),
                                    ("dcharacter.py", False),
                                    ("dchars.py", False),
                                    ("dstring.py", False),

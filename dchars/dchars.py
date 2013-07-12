@@ -30,7 +30,6 @@ import os.path
 from dchars.languages_name import LANGUAGES_NAME, \
                                   BIBLICAL_HEBREW__NAME, \
                                   LANGUAGES_AND_TRANSLITERATIONS
-from dchars.config_ini_data import DATA as CONFIG_INI_DATA
 
 #...............................................................................
 # CONFIG_INI : options read in the configuration file.
@@ -230,53 +229,4 @@ def sort_a_list_of_words(words, dstring_object):
 
     # we return a list of (unicode) words :
     return type(words)(map(dstring_object.__str__, sorted_words))
-
-#///////////////////////////////////////////////////////////////////////////////
-def write_config_ini():
-    """
-        write_config_ini function :
-
-        Overwrite the config.ini file with an header and the expected comments.
-        The usual way to write a config.ini file would not allow to write the
-        header and the comments, so we use a less sophisticated approach.
-    """
-
-    with open( os.path.join(os.path.dirname(os.path.realpath(__file__)),
-                            "config.ini2" ),
-               "w") as config_file:
-
-        #-----------------------------------------------------------------------
-        # header :
-        #-----------------------------------------------------------------------
-        config_file.write( "#"*80 + "\n" )
-        config_file.write( "#" + "\n" )
-        config_file.write( "# " + "DChars : default values used by DString* objects" + "\n" )
-        config_file.write( "#" + "\n" )
-        config_file.write( "# " + "file automatically created by dchars.py::write_config_ini()" + "\n" )
-        config_file.write( "#" + "\n" )
-        config_file.write( "#"*80 + "\n" )
-
-        #-----------------------------------------------------------------------
-        # sections, language by language
-        #-----------------------------------------------------------------------
-        for language_name in CONFIG_INI_DATA:
-            config_file.write( "[" + language_name + "]" + "\n" )
-
-            config_file.write( "# " + "-"*78 + "\n" )
-            config_file.write( "# " + CONFIG_INI_DATA[language_name].header + "\n" )
-            config_file.write( "# " + "-"*78 + "\n" )
-
-            for data in CONFIG_INI_DATA[language_name]:
-
-                if data.subsection != "":
-                    config_file.write( "[" + data.subsection + "]" + "\n" )
-
-                _values = ('\"{0}\"'.format(string) for string in data.values)
-                config_file.write( "# " + " or ".join(_values) + "\n" )
-                config_file.write( data.name + " = " + data.defaultvalue + "\n" )
-
-                config_file.write( "\n" )
-
-            
-
 

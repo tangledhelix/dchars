@@ -21,7 +21,7 @@
 """
     ❏DChars❏ : dchars/config_ini_data.py
 
-    Data related to the config.ini file
+    Data related to the config.ini file, especially the dict <DATA>.
 """
 
 ################################################################################
@@ -73,38 +73,40 @@ class ConfigValuesForOneLanguage(list):
 # བོད་ཡིག (Tibetan)
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-bod_data = ConfigValuesForOneLanguage(header = "བོད་ཡིག (Tibetan)")
-bod_data.append( ConfigValue( subsection = '',
+BOD_DATA = ConfigValuesForOneLanguage(header = "བོད་ཡིག (Tibetan)")
+BOD_DATA.append( ConfigValue( subsection = '',
                               values = ("ewts", "bodsan"),
                               name = 'transliteration method',
                               defaultvalue = 'ewts' ))
 
-bod_data.append( ConfigValue( subsection = '',
+BOD_DATA.append( ConfigValue( subsection = '',
                               values = ("yes", "no"),
                               name = 'anonymize the unknown characters',
                               defaultvalue = 'no' ))
 
-bod_data.append( ConfigValue( subsection = '',
-                              values = ("always Tibetan", "Tibetan or Sanskrit", "always Sanskrit"),
+BOD_DATA.append( ConfigValue( subsection = '',
+                              values = ("always Tibetan",
+                                        "Tibetan or Sanskrit",
+                                        "always Sanskrit"),
                               name = 'expected structure',
                               defaultvalue = 'Tibetan or Sanskrit' ))
 
-bod_data.append( ConfigValue( subsection = '',
+BOD_DATA.append( ConfigValue( subsection = '',
                               values = ("yes", "no"),
                               name = 'look up in the buffers',
                               defaultvalue = 'yes' ))
 
-bod_data.append( ConfigValue( subsection = '',
+BOD_DATA.append( ConfigValue( subsection = '',
                               values = ("yes", "no"),
                               name = 'fill the buffers',
                               defaultvalue = 'no' ))
 
-bod_data.append( ConfigValue( subsection = '',
+BOD_DATA.append( ConfigValue( subsection = '',
                               values = ("basic",),
                               name = 'sorting method',
                               defaultvalue = 'basic' ))
 
-bod_data.append( ConfigValue( subsection = 'bod.bodsan',
+BOD_DATA.append( ConfigValue( subsection = 'bod.bodsan',
                               values = ("high", "normal", "low"),
                               name = 'san2bod quality',
                               defaultvalue = 'high' ))
@@ -113,43 +115,43 @@ bod_data.append( ConfigValue( subsection = 'bod.bodsan',
 # Ἑλληνικὴ γλῶττα (Ancient Greek)
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-grc_data = ConfigValuesForOneLanguage(header = "Ἑλληνικὴ γλῶττα (Ancient Greek)")
-grc_data.append( ConfigValue( subsection = '',
+GRC_DATA = ConfigValuesForOneLanguage(header = "Ἑλληνικὴ γλῶττα (Ancient Greek)")
+GRC_DATA.append( ConfigValue( subsection = '',
                               values = ("basic", "betacode", "perseus", "gutenberg"),
                               name = 'transliteration method',
                               defaultvalue = 'basic' ))
 
-grc_data.append( ConfigValue( subsection = '',
+GRC_DATA.append( ConfigValue( subsection = '',
                               values = ("yes", "no"),
                               name = 'anonymize the unknown characters',
                               defaultvalue = 'no' ))
 
-grc_data.append( ConfigValue( subsection = '',
+GRC_DATA.append( ConfigValue( subsection = '',
                               values = ("default",),
                               name = 'sorting method',
                               defaultvalue = 'default' ))
 
-grc_data.append( ConfigValue( subsection = 'grc.gutenberg',
+GRC_DATA.append( ConfigValue( subsection = 'grc.gutenberg',
                               values = ("yes", "no"),
                               name = 'ignore smooth breathing',
                               defaultvalue = 'yes' ))
 
-grc_data.append( ConfigValue( subsection = '',
+GRC_DATA.append( ConfigValue( subsection = '',
                               values = ("yes", "no"),
                               name = 'ignore accents',
                               defaultvalue = 'yes' ))
 
-grc_data.append( ConfigValue( subsection = '',
+GRC_DATA.append( ConfigValue( subsection = '',
                               values = ("yes", "no"),
                               name = 'ignore iota subscript',
                               defaultvalue = 'yes' ))
 
-grc_data.append( ConfigValue( subsection = '',
+GRC_DATA.append( ConfigValue( subsection = '',
                               values = ("yes", "no"),
                               name = 'ignore diaeresis',
                               defaultvalue = 'yes' ))
 
-grc_data.append( ConfigValue( subsection = '',
+GRC_DATA.append( ConfigValue( subsection = '',
                               values = ("u", "y", "u or y"),
                               name = 'transliteration for upsilon',
                               defaultvalue = 'u or y' ))
@@ -158,18 +160,18 @@ grc_data.append( ConfigValue( subsection = '',
 #  "עִבְֿרִיתֿ מִקְרָאִיתֿ"  (Biblical Hebrew)
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-hbo_data = ConfigValuesForOneLanguage(header = '"עִבְֿרִיתֿ מִקְרָאִיתֿ" (Biblical Hebrew)')
-hbo_data.append( ConfigValue( subsection = '',
+HBO_DATA = ConfigValuesForOneLanguage(header = '"עִבְֿרִיתֿ מִקְרָאִיתֿ" (Biblical Hebrew)')
+HBO_DATA.append( ConfigValue( subsection = '',
                               values = ("basic",),
                               name = 'transliteration method',
                               defaultvalue = 'basic' ))
 
-hbo_data.append( ConfigValue( subsection = '',
+HBO_DATA.append( ConfigValue( subsection = '',
                               values = ("yes", "no"),
                               name = 'anonymize the unknown characters',
                               defaultvalue = 'no' ))
 
-hbo_data.append( ConfigValue( subsection = '',
+HBO_DATA.append( ConfigValue( subsection = '',
                               values = ("default",),
                               name = 'sorting method',
                               defaultvalue = 'default' ))
@@ -178,18 +180,18 @@ hbo_data.append( ConfigValue( subsection = '',
 # latīna (Latin)
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-lat_data = ConfigValuesForOneLanguage(header = 'latīna (Latin)')
-lat_data.append( ConfigValue( subsection = '',
+LAT_DATA = ConfigValuesForOneLanguage(header = 'latīna (Latin)')
+LAT_DATA.append( ConfigValue( subsection = '',
                               values = ("basic",),
                               name = 'transliteration method',
                               defaultvalue = 'basic' ))
 
-lat_data.append( ConfigValue( subsection = '',
+LAT_DATA.append( ConfigValue( subsection = '',
                               values = ("yes", "no"),
                               name = 'anonymize the unknown characters',
                               defaultvalue = 'no' ))
 
-lat_data.append( ConfigValue( subsection = '',
+LAT_DATA.append( ConfigValue( subsection = '',
                               values = ("default",),
                               name = 'sorting method',
                               defaultvalue = 'default' ))
@@ -198,18 +200,18 @@ lat_data.append( ConfigValue( subsection = '',
 # संस्कृतम् (Sanskrit)
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-san_data = ConfigValuesForOneLanguage(header = 'संस्कृतम् (Sanskrit)')
-san_data.append( ConfigValue( subsection = '',
+SAN_DATA = ConfigValuesForOneLanguage(header = 'संस्कृतम् (Sanskrit)')
+SAN_DATA.append( ConfigValue( subsection = '',
                               values = ("iso15919", "itrans"),
                               name = 'transliteration method',
                               defaultvalue = 'iso15919' ))
 
-san_data.append( ConfigValue( subsection = '',
+SAN_DATA.append( ConfigValue( subsection = '',
                               values = ("yes", "no"),
                               name = 'anonymize the unknown characters',
                               defaultvalue = 'no' ))
 
-san_data.append( ConfigValue( subsection = '',
+SAN_DATA.append( ConfigValue( subsection = '',
                               values = ("default",),
                               name = 'sorting method',
                               defaultvalue = 'default' ))
@@ -222,9 +224,9 @@ san_data.append( ConfigValue( subsection = '',
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 DATA = {
-        "bod"   : bod_data,
-        "grc"   : grc_data,
-        "hbo"   : hbo_data,
-        "lat"   : lat_data,
-        "san"   : san_data,
+        "bod"   : BOD_DATA,
+        "grc"   : GRC_DATA,
+        "hbo"   : HBO_DATA,
+        "lat"   : LAT_DATA,
+        "san"   : SAN_DATA,
        }
