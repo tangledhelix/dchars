@@ -6,6 +6,7 @@ CHANGELOG_TITLE
 0.4.3 [2013_06_07]
 ------------------
 
+  * (Pylint, name too long) "dstring__trans__get_transliteration" > dstring__trans__get_trans
   * dchars.py/write_config_ini() creates the config.ini file
   * new file : dchars/config_ini_data.py with the informations relative to the config.ini file
 

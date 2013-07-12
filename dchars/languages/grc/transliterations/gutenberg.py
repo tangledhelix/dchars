@@ -323,9 +323,9 @@ def dchar__get_translit_str(dstring_object, dchar):
     return str_res
 
 #///////////////////////////////////////////////////////////////////////////////
-def dstring__trans__get_transliteration(dstring_object):
+def dstring__trans__get_trans(dstring_object):
     """
-        function dstring__trans__get_transliteration
+        function dstring__trans__get_trans
 
         Return a (unicode) string corresponding to the <dstring_object>.
     """

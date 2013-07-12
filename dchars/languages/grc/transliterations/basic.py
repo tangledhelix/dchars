@@ -399,9 +399,9 @@ def dstring__init_from_translit_str(dstring, dcharactertype, src):
         dstring.append( new_dcharacter )
 
 #///////////////////////////////////////////////////////////////////////////////
-def dstring__trans__get_transliteration(dstring_object):
+def dstring__trans__get_trans(dstring_object):
     """
-        function dstring__trans__get_transliteration
+        function dstring__trans__get_trans
 
         Return a (unicode) string corresponding to the <dstring_object>.
     """

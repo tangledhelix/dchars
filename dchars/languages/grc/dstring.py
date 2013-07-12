@@ -82,10 +82,10 @@ class DStringGRC(DStringMotherClass):
           }
 
     trans__get_transliteration = {
-          "basic"       : basictrans.dstring__trans__get_transliteration,
-          "betacode"    : betacodetrans.dstring__trans__get_transliteration,
-          "perseus"     : perseustrans.dstring__trans__get_transliteration,
-          "gutenberg"   : gutenbergtrans.dstring__trans__get_transliteration,
+          "basic"       : basictrans.dstring__trans__get_trans,
+          "betacode"    : betacodetrans.dstring__trans__get_trans,
+          "perseus"     : perseustrans.dstring__trans__get_trans,
+          "gutenberg"   : gutenbergtrans.dstring__trans__get_trans,
           }
 
     #///////////////////////////////////////////////////////////////////////////
