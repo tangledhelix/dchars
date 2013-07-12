@@ -26,7 +26,11 @@ import unittest, os.path
 
 from dchars.dchars import new_dstring
 from dchars.languages.bod.dcharacter import UNKNOWN_CHAR_SYMBOL
-DSTRING_LAT = new_dstring(language="latīna", transliteration_method="basic")
+DSTRING_LAT = new_dstring(language="latīna",
+                          transliteration_method="basic",
+                          options = {"anonymize the unknown characters" : True,
+                                     },
+                         )
 
 LIST_OF_RECIPROCAL_EXAMPLES = (
     ('',        ''      ),

@@ -3,10 +3,22 @@ CHANGELOG_TITLE
 ===============
 
 ------------------
-0.4.2 [2013_06_XX]
+0.4.3 [2013_06_07]
 ------------------
 
-  * if a wrong transliteration method's name if passed to new_dstring(), an exception is raised.
+  * dchars.py/write_config_ini() creates the config.ini file
+  * new file : dchars/config_ini_data.py with the informations relative to the config.ini file
+
+  * code quality :
+
+    * header_please_test.py ok
+    * 131 tests, all ok
+
+------------------
+0.4.2 [2013_06_05]
+------------------
+
+  * if a wrong transliteration method's name is passed to new_dstring(), an exception is raised.
   * new file : dchars/languages_name.py, defining LANGUAGES_NAME and LANGUAGES_AND_TRANSLITERATIONS
   * new file : successivetransformations.py (in order to automate successive transliterations from a source text)
   * new function : dchars.py::sort_a_list_of_words()

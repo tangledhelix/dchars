@@ -4,7 +4,6 @@ ROADMAP_TITLE
 
 .. code-block:: none
 
-  * (21) détecter les mauvais noms de langue/de translitération grâce à LANGUAGES_AND_TRANSLITERATIONS
   * (20) nom trop long: dstring__trans__get_transliteration
   * (19) bodsan : http://www.virtualvinodh.com/tibetan
 
