@@ -47,7 +47,7 @@ from dchars.utilities.orderedset import OrderedSet
 # sort.py's version is linked to the equivalent DChars' version :
 from dchars.system import numversion as numversion
 __version__ = numversion.VersionOfTheProgram().numversion
-__version__ += "-sort#4"
+__version__ += "-sort#5"
 
 #-------------------------------------------------------------------------------
 def get_arguments():
@@ -161,7 +161,7 @@ def modifications_tibspellchecker( srclist ):
             src.istructs[0].postsuffix_o = False
             src.istructs[0].postsuffix_u = False
 
-            src.alert__istructs_have_changed()
+            src.update_dchars()
 
             if ARGS.bod_addewts == "yes":
                 transl = " # " + src.get_transliteration() + " / " + str(src.istructs)
@@ -313,7 +313,7 @@ if ARGS.source is not None:
                             if istruct.punctuation_or_other_symbol is None:
                                 new_syllable = DSTRING("")
                                 new_syllable.istructs.append( istruct )
-                                new_syllable.alert__istructs_have_changed()
+                                new_syllable.update_dchars()
                                 if new_syllable not in DATA:
                                     DATA.append( new_syllable )
 
@@ -327,7 +327,7 @@ if ARGS.source is not None:
                             if istruct.punctuation_or_other_symbol is None:
                                 new_syllable = DSTRING("")
                                 new_syllable.istructs.append( istruct )
-                                new_syllable.alert__istructs_have_changed()
+                                new_syllable.update_dchars()
                                 if new_syllable not in DATA:
                                     DATA.append( new_syllable )
 

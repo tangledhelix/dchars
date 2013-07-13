@@ -51,6 +51,16 @@ class ConfigValue(object):
         self.name = name
         self.defaultvalue = defaultvalue
 
+    #///////////////////////////////////////////////////////////////////////////
+    def __repr__( self ):
+        """
+                ConfigValue.__repr__
+        """
+        return "subsection={0}; values={1}; name={2}; defaultvalue={3}".format( self.subsection,
+                                                                                self.values,
+                                                                                self.name,
+                                                                                self.defaultvalue )
+
 ################################################################################        
 class ConfigValuesForOneLanguage(list):
     """
