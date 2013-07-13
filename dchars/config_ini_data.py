@@ -116,38 +116,6 @@ class ConfigValuesForOneLanguage(list):
 
         return res
 
-#///////////////////////////////////////////////////////////////////////////////
-def check(src):
-    """
-        check() :
-
-        Check if the values given to the options are consistent with DATA.
-
-        src     :       something like src = configparser.ConfigParser()
-    """
-    for section in src.sections():
-
-        dot = section.find(".")
-        if dot == -1:
-            # no dot :
-            language = section
-        else:
-            # at least one dot in language name :
-            language = section[:dot]
-
-        for name, value in list(src[section].items()):
-
-            if not CONFIG_INI_DATA[language].known_name( name ):
-                msg = "unknown name : '{0}'; check config_ini_data.py".format(name)
-                raise DCharsError( context = "config_ini.py::check",
-                                   message = msg)
-
-            if not CONFIG_INI_DATA[language].name_have_a_known_value( name, value ):
-                msg = "unknown value '{0}' for name {1}; check config_ini_data.py. ".format(value,
-                                                                                            name)
-                raise DCharsError( context = "config_ini.py::check",
-                                   message = msg)
-
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # བོད་ཡིག (Tibetan)
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
