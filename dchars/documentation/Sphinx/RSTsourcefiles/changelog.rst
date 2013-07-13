@@ -3,7 +3,7 @@ CHANGELOG_TITLE
 ===============
 
 ------------------
-0.4.4 [2013_06_08]
+0.4.4 [2013_06_13]
 ------------------
 
   * config_ini.py::check() checks if names and values correspond to config_ini_data.DATA

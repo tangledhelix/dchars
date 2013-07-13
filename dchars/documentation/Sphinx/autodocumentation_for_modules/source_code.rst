@@ -20,6 +20,8 @@ dchars
    :maxdepth: 2
 
    dchars.__init__
+   dchars.config_ini
+   dchars.config_ini_data
    dchars.dcharacter
    dchars.dchars
    dchars.dstring

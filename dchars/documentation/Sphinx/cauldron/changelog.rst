@@ -3,6 +3,18 @@ CHANGELOG_TITLE
 ===============
 
 ------------------
+0.4.4 [2013_06_13]
+------------------
+
+  * config_ini.py::check() checks if names and values correspond to config_ini_data.DATA
+  * fixed a bug in projects_files.py : config_ini and config_ini_data are not dev-only files.
+
+  * code quality :
+
+    * header_please_test.py ok
+    * 131 tests, all ok
+
+------------------
 0.4.3 [2013_06_07]
 ------------------
 
