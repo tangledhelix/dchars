@@ -42,8 +42,8 @@ MODULES = {
 
          "dchars"              : ( ("__init__.py", False),
                                    ("config.ini", False),
-                                   ("config_ini.py", True),
-                                   ("config_ini_data.py", True),
+                                   ("config_ini.py", False),
+                                   ("config_ini_data.py", False),
                                    ("dcharacter.py", False),
                                    ("dchars.py", False),
                                    ("dstring.py", False),

@@ -69,6 +69,43 @@ class ConfigValuesForOneLanguage(list):
         list.__init__(self)
         self.header = header
 
+    #///////////////////////////////////////////////////////////////////////////
+    def known_name(self, name):
+        """
+                ConfigValuesForOneLanguage.known_name
+
+                name    :       (str)
+
+                Return either True if <name> exists in self, either False
+        """
+        res = False
+
+        for configvalue in self:
+            if configvalue.name == name:
+                res = True
+                break
+
+        return res
+
+    #///////////////////////////////////////////////////////////////////////////
+    def name_have_a_known_value(self, name, value):
+        """
+                ConfigValuesForOneLanguage.name_have_a_known_value
+
+                name    :       (str)
+                value   :       (str)
+
+                Return either True if <value> is a correct value for <name>, either False
+        """
+        res = False
+
+        for configvalue in self:
+            if configvalue.name == name and value in configvalue.values:
+                res = True
+                break
+
+        return res
+
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # བོད་ཡིག (Tibetan)
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

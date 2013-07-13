@@ -30,6 +30,7 @@ import os.path
 from dchars.languages_name import LANGUAGES_NAME, \
                                   BIBLICAL_HEBREW__NAME, \
                                   LANGUAGES_AND_TRANSLITERATIONS
+import dchars.config_ini
 
 #...............................................................................
 # CONFIG_INI : options read in the configuration file.
@@ -45,6 +46,8 @@ CONFIG_INI = configparser.ConfigParser()
 # hence the following line (idea given by Frank Zago)
 CONFIG_INI.read( os.path.join(os.path.dirname(os.path.realpath(__file__)), 
                               "config.ini" ))
+
+dchars.config_ini.check(CONFIG_INI)
 
 #...............................................................................
 # LANGUAGES : informations about each language. Please use three kinds of keys

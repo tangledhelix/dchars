@@ -21,11 +21,44 @@
 """
     ❏DChars❏ : dchars/config_ini.py
 
-    function write_config_ini()
+    functions check() and write_config_ini()
 """
 
 import os.path
 from dchars.config_ini_data import DATA as CONFIG_INI_DATA
+from dchars.errors.errors import DCharsError
+
+#///////////////////////////////////////////////////////////////////////////////
+def check(src):
+    """
+        check() :
+
+        Check if the values given to the options are consistent with DATA.
+
+        src     :       something like src = configparser.ConfigParser()
+    """
+    for section in src.sections():
+
+        dot = section.find(".")
+        if dot == -1:
+            # no dot :
+            language = section
+        else:
+            # at least one dot in language name :
+            language = section[:dot]
+
+        for name, value in list(src[section].items()):
+
+            if not CONFIG_INI_DATA[language].known_name( name ):
+                msg = "unknown name : '{0}'; check config_ini_data.py".format(name)
+                raise DCharsError( context = "config_ini.py::check",
+                                   message = msg)
+
+            if not CONFIG_INI_DATA[language].name_have_a_known_value( name, value ):
+                msg = "unknown value '{0}' for name {1}; check config_ini_data.py. ".format(value,
+                                                                                            name)
+                raise DCharsError( context = "config_ini.py::check",
+                                   message = msg)
 
 #///////////////////////////////////////////////////////////////////////////////
 def write_config_ini():
@@ -55,6 +88,12 @@ def write_config_ini():
                            "# the options; but if you want to change the name or the\n" + \
                            "# number of the options you have to modify dchars.py and/or\n" + \
                            "# config_ini_data.py and/or config_ini.py." + "\n" )
+        config_file.write( "#" + "\n" )
+        config_file.write( "# " + "Beware : sections' name follows the norm ISO 639-3 : grc,\n" )
+        config_file.write( "# " + "         lat, hbo, ...\n" )
+        config_file.write( "# " + "Beware : sections' name can use subdivision(s) thanks to a,\n" )
+        config_file.write( "# " + "         dot like [grc.gutenberg] but the first letters must\n" )
+        config_file.write( "# " + "         be the ISO 639-3 name of the language\n")
         config_file.write( "#" + "\n" )
         config_file.write( "#"*80 + "\n" )
         config_file.write( "\n" )
