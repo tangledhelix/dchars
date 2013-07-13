@@ -3,6 +3,18 @@ CHANGELOG_TITLE
 ===============
 
 ------------------
+0.4.5 [2013_06_13]
+------------------
+
+  * added timestamp to the header of config.ini
+  * ConfigValue.subsection must be filled every time the subsection is different from "".
+
+  * code quality :
+
+    * header_please_test.py ok
+    * 131 tests, all ok
+
+------------------
 0.4.4 [2013_06_13]
 ------------------
 
