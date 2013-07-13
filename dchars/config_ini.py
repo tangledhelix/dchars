@@ -25,40 +25,9 @@
 """
 
 import os.path
+import datetime
 from dchars.config_ini_data import DATA as CONFIG_INI_DATA
 from dchars.errors.errors import DCharsError
-
-#///////////////////////////////////////////////////////////////////////////////
-def check(src):
-    """
-        check() :
-
-        Check if the values given to the options are consistent with DATA.
-
-        src     :       something like src = configparser.ConfigParser()
-    """
-    for section in src.sections():
-
-        dot = section.find(".")
-        if dot == -1:
-            # no dot :
-            language = section
-        else:
-            # at least one dot in language name :
-            language = section[:dot]
-
-        for name, value in list(src[section].items()):
-
-            if not CONFIG_INI_DATA[language].known_name( name ):
-                msg = "unknown name : '{0}'; check config_ini_data.py".format(name)
-                raise DCharsError( context = "config_ini.py::check",
-                                   message = msg)
-
-            if not CONFIG_INI_DATA[language].name_have_a_known_value( name, value ):
-                msg = "unknown value '{0}' for name {1}; check config_ini_data.py. ".format(value,
-                                                                                            name)
-                raise DCharsError( context = "config_ini.py::check",
-                                   message = msg)
 
 #///////////////////////////////////////////////////////////////////////////////
 def write_config_ini():
@@ -82,7 +51,8 @@ def write_config_ini():
         config_file.write( "# " + "DChars : default values used by DString* objects" + "\n" )
         config_file.write( "#" + "\n" )
         config_file.write( "# " + "file automatically created by the function" + "\n" )
-        config_file.write( "# " + "config_ini.py::write_config_ini()" + "\n" )
+        config_file.write( "# " + "config_ini.py::write_config_ini() ." + "\n" )
+        config_file.write( "# " + "Creation time : "+str(datetime.datetime.now())[:19] + "\n" )
         config_file.write( "# " + "\n" )
         config_file.write( "# You can modify this file by changing the values affected to\n" +\
                            "# the options; but if you want to change the name or the\n" + \
@@ -109,10 +79,14 @@ def write_config_ini():
 
             config_file.write( "[" + language_name + "]" + "\n" )
 
+            current_subsection = ""     # e.g. "grc.gutenberg"
             for data in CONFIG_INI_DATA[language_name]:
 
-                if data.subsection != "":
-                    config_file.write( "[" + data.subsection + "]" + "\n" )
+                if current_subsection != data.subsection:
+
+                    if data.subsection != "":
+                        config_file.write( "[" + data.subsection + "]" + "\n" )
+                    current_subsection = data.subsection
 
                 _values = ('\"{0}\"'.format(string) for string in data.values)
                 config_file.write( "# " + " or ".join(_values) + "\n" )
