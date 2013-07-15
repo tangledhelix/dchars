@@ -36,6 +36,8 @@ from dchars.languages.lat.symbols import DEFAULTSYMB__STRESS, \
                                          SYMB_UPPER_CASE
 from dchars.symbols.symbols import UNKNOWN_CHAR_SYMBOL
 
+import itertools
+import copy
 import unicodedata
 
 # known transliterations :
@@ -142,6 +144,63 @@ class DCharacterLAT(DCharacterMotherClass):
                "length="+repr(self.length) + "; " + \
                "stress="+repr(self.stress) + "; " + \
                "diaeresis="+repr(self.diaeresis)
+
+    #///////////////////////////////////////////////////////////////////////////
+    def get_usefull_combinations(self):
+        """
+                DStringCharacterLAT.get_usefull_combinations
+
+                Yield, one dchar at a time,  all the usefull combinations of characters,
+                i.e. only the 'interesting' characters (not punctuation if it's too simple
+                by example).
+
+                NB : this function has nothing to do with linguistic or a strict
+                     approach of the language. This function allows only to get the
+                     most common and/or usefull characters of the writing system.
+        """
+        combinations = (itertools.product(
+                                           # base_char : we don't use the list stored in symbols.py
+                                           # since we would the character's order.
+                                           ( 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h',
+                                             'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p',
+                                             'q', 'r', 's', 't', 'u', 'v', 'w', 'x',
+                                             'y', 'z', ),
+                                             
+                                           # capital_letter
+                                           (False, True),
+                                           
+                                           # length
+                                           ( None, "short", "long",),
+                                           
+                                           # stress
+                                           (False, True),
+                                           
+                                           # diaeresis
+                                           (False, True),
+                                           ))
+        
+        for base_char, capital_letter, length, stress, diaeresis in combinations:
+
+            add_this_dchar = True
+
+            if base_char not in ('a', 'e', 'i', 'o', 'u'):
+                if length is not None or \
+                   stress == True or \
+                   diaeresis == True:
+                   
+                    add_this_dchar = False
+
+            if add_this_dchar:
+                self.__init__( dstring_object = self.dstring_object,
+                               base_char = base_char,
+                               punctuation = False,
+                               capital_letter = capital_letter,
+                               length = length,
+                               stress = stress,
+                               diaeresis = diaeresis)
+
+                yield copy.copy(self)
+
 
     #///////////////////////////////////////////////////////////////////////////
     def get_transliteration(self,
