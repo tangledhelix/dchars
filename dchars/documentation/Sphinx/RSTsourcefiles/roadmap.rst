@@ -4,6 +4,7 @@ ROADMAP_TITLE
 
 .. code-block:: none
 
+  * (20) utiliser ou non la forme bis du bêta
   * (19) bodsan : http://www.virtualvinodh.com/tibetan
 
     अनिरोधम् अनुत्पादम् अनुच्छेदम् अशाश्वतम् ।

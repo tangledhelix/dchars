@@ -94,6 +94,26 @@ class TESTSDStringGRC(unittest.TestCase):
         self.assertEqual( string1, string2 )
 
     #///////////////////////////////////////////////////////////////////////////
+    def test_beta_and_sigma(self):
+        """
+                TESTSDStringGRC.test_beta_and_sigma
+        """
+
+        txt = DSTRING_GRC("βϐσς")
+
+        self.assertEqual( txt[0].base_char, "β" )
+        self.assertEqual( txt[0].contextual_form, "initial" )
+
+        self.assertEqual( txt[1].base_char, "β" )
+        self.assertEqual( txt[1].contextual_form, "medium+final" )
+
+        self.assertEqual( txt[2].base_char, "σ" )
+        self.assertEqual( txt[2].contextual_form, "initial+medium" )
+
+        self.assertEqual( txt[3].base_char, "σ" )
+        self.assertEqual( txt[3].contextual_form, "final" )
+
+    #///////////////////////////////////////////////////////////////////////////
     def test_emptystring(self):
         """
                 TESTSDStringGRC.test_emptystring
@@ -138,6 +158,7 @@ class TESTSDStringGRC(unittest.TestCase):
                      "ῧͅ",       # 1FE7 + 0345
                      "ᾎ̈",
                      "Ἰ",       # 1F38
+                     "βϐσς",
                      ):
 
             string = DSTRING_GRC(txt1)
@@ -191,6 +212,7 @@ class TESTSDStringGRC(unittest.TestCase):
                      "μῧͅμ" # μ + (1FE7) 03CB+0342; 0345 + μ
                      "ᾎ̈",
                      "Ἰ",       # 1F38
+                     "βϐσς",
                      ):
             string1 = DSTRING_GRC(txt1)
             txt2 = string1.get_sourcestr_representation()

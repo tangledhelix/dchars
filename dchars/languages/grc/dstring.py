@@ -99,6 +99,19 @@ class DStringGRC(DStringMotherClass):
             self.init_from_str(str_src)
 
     #///////////////////////////////////////////////////////////////////////////
+    def get_usefull_combinations(self):
+        """
+                DStringGRC.get_usefull_combinations
+        """
+        self.clear
+
+        dchar = DCharacterGRC(self)
+        for dchar in dchar.get_usefull_combinations():
+            self.append( dchar )
+        
+        return self
+
+    #///////////////////////////////////////////////////////////////////////////
     def get_transliteration(self):
         """
                 DStringGRC.get_transliteration
@@ -217,10 +230,12 @@ class DStringGRC(DStringMotherClass):
             if base_char == 'β' and not capital_letter:
                 contextual_form = "initial"
             elif base_char == 'ϐ' and not capital_letter:
+                base_char = 'β'
                 contextual_form = "medium+final"
             elif base_char == 'σ' and not capital_letter:
                 contextual_form = "initial+medium"
             elif base_char == 'ς' and not capital_letter:
+                base_char = 'σ'
                 contextual_form = "final"
             else:
                 contextual_form = "initial+medium+final"

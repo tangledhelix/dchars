@@ -43,6 +43,7 @@ from dchars.languages.grc.symbols import SYMB_LOWER_CASE, \
                                          DEFAULTSYMB__HUPOGEGRAMMENE, \
                                          DEFAULTSYMB__DIALYTIKA
 import unicodedata
+import copy
 
 # known transliterations :
 import dchars.languages.grc.transliterations.basic as basictrans
@@ -241,6 +242,36 @@ class DCharacterGRC(DCharacterMotherClass):
                "mekos="+repr(self.mekos)
 
     #///////////////////////////////////////////////////////////////////////////
+    def get_usefull_combinations(self):
+        """
+                DStringCharacterGRC.get_usefull_combinations
+        """
+        import itertools
+        combinations = (itertools.product( ( 'α', 'β', 'γ', 'δ', 'ε', 'ζ', 'η', 'θ', 'ι',
+                                             'κ', 'λ', 'μ', 'ν', 'ξ', 'ο', 'π', 'ρ', 'σ',
+                                             'τ', 'υ', 'φ', 'χ', 'ψ', 'ω',
+                                             'ϝ', 'ϗ', 'ϡ', 'ϛ', 'ϙ', ),
+                                             
+                                           (False, True),
+                                           (False, True),
+                                           ))
+
+        for base_char, capital_letter, hypogegrammene in combinations:
+
+            self.__init__( dstring_object = self.dstring_object,
+                           base_char = base_char,
+                           contextual_form = None,
+                           punctuation = False,
+                           capital_letter = capital_letter,
+                           tonos = None,
+                           pneuma = None,
+                           hypogegrammene = hypogegrammene,
+                           dialutika = False,
+                           mekos=None)
+
+            yield copy.copy(self)
+
+    #///////////////////////////////////////////////////////////////////////////
     def get_transliteration(self, transliteration_method, options):
         """
                 DCharacterGRC.get_transliteration
@@ -298,7 +329,18 @@ class DCharacterGRC(DCharacterMotherClass):
                 res.append( self.base_char )
             elif not self.capital_letter:
                 # lower case :
-                res.append( SYMB_LOWER_CASE.get_default_symbol(self.base_char) )
+
+                base_char = self.base_char
+                if base_char =='β' and \
+                   not self.capital_letter and \
+                   self.contextual_form == "medium+final":
+                    base_char = "ϐ"
+                elif base_char =='σ' and \
+                     not self.capital_letter and \
+                     self.contextual_form == "final":
+                    base_char = "ς"
+
+                res.append( SYMB_LOWER_CASE.get_default_symbol(base_char) )
             else:
                 # upper case :
                 res.append( SYMB_UPPER_CASE.get_default_symbol(self.base_char) )

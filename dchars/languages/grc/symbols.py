@@ -37,7 +37,8 @@ from dchars.utilities.name2symbols import Name2Symbols
 SYMB_LOWER_CASE = Name2Symbols(
     { 'α'       : ('α',),
       'β'       : ('β',),
-      'β2'      : ('ϐ',),
+      # 'ϐ' is not a base_char but its presence is required here.
+      'ϐ'       : ('ϐ',),
       'γ'       : ('γ',),
       'δ'       : ('δ',),
       'ε'       : ('ε',),
@@ -53,8 +54,9 @@ SYMB_LOWER_CASE = Name2Symbols(
       'ο'       : ('ο',),
       'π'       : ('π','ϖ'), # 0x03C0, 0x03D6
       'ρ'       : ('ρ','ϱ'), # 0x03C1, 0x03F1
-      'σ'       : ('σ','ϲ'), # 0x03C3, 0x03F2
-      'σ2'      : ('ς',),
+      'σ'       : ('σ','ϲ',), # 0x03C3, 0x03F2,
+      # 'ς' is not a base_char but its presence is required here.
+      'ς'       : ('ς',),
       'τ'       : ('τ',),
       'υ'       : ('υ',),
       'φ'       : ('φ',),

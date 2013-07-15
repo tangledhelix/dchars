@@ -78,6 +78,15 @@ class TESTSDStringGRC(unittest.TestCase):
     """
 
     #///////////////////////////////////////////////////////////////////////////
+    def test_beta_and_sigma(self):
+        """
+                TESTSDStringGRC.test_beta_and_sigma
+        """
+
+        txt = DSTRING_GRC("βϐσς")
+        self.assertEqual( txt.get_transliteration(), "BBSS" )
+        
+    #///////////////////////////////////////////////////////////////////////////
     def test_from_srcstr_2_srcstr(self):
         """
                 TESTSDStringGRC.test_from_srcstr_2_srcstr()
