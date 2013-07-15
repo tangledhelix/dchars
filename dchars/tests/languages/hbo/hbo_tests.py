@@ -56,9 +56,56 @@ class TESTSDStringHBO(unittest.TestCase):
         # oבּo and oבo have the same base character :
         string = DSTRING_HBO("בּ")
         self.assertEqual( string[0].base_char, "ב" )
+        self.assertEqual( string[0].contextual_form, "initial+medium+final" )
 
         string = DSTRING_HBO("ב")
         self.assertEqual( string[0].base_char, "ב" )
+        self.assertEqual( string[0].contextual_form, "initial+medium+final" )
+
+        # (kaf/final kaf) oכo and oךo have the same base character :
+        string = DSTRING_HBO("כ")
+        self.assertEqual( string[0].base_char, "כ" )
+        self.assertEqual( string[0].contextual_form, "initial+medium+final" )
+
+        string = DSTRING_HBO("ך")
+        self.assertEqual( string[0].base_char, "כ" )
+        self.assertEqual( string[0].contextual_form, "final" )
+
+        # (mem/final mem) oמo and oםo have the same base character :
+        string = DSTRING_HBO("מ")
+        self.assertEqual( string[0].base_char, "מ" )
+        self.assertEqual( string[0].contextual_form, "initial+medium+final" )
+
+        string = DSTRING_HBO("ם")
+        self.assertEqual( string[0].base_char, "מ" )
+        self.assertEqual( string[0].contextual_form, "final" )
+
+        # (nun/final nun) oנo and oןo have the same base character :
+        string = DSTRING_HBO("נ")
+        self.assertEqual( string[0].base_char, "נ" )
+        self.assertEqual( string[0].contextual_form, "initial+medium+final" )
+
+        string = DSTRING_HBO("ן")
+        self.assertEqual( string[0].base_char, "נ" )
+        self.assertEqual( string[0].contextual_form, "final" )
+
+        # (pe/final pe) oפo and oףo have the same base character :
+        string = DSTRING_HBO("פ")
+        self.assertEqual( string[0].base_char, "פ" )
+        self.assertEqual( string[0].contextual_form, "initial+medium+final" )
+
+        string = DSTRING_HBO("ף")
+        self.assertEqual( string[0].base_char, "פ" )
+        self.assertEqual( string[0].contextual_form, "final" )
+
+        # (tsadi/final tsadi) oצo and oץo have the same base character :
+        string = DSTRING_HBO("צ")
+        self.assertEqual( string[0].base_char, "צ" )
+        self.assertEqual( string[0].contextual_form, "initial+medium+final" )
+
+        string = DSTRING_HBO("ץ")
+        self.assertEqual( string[0].base_char, "צ" )
+        self.assertEqual( string[0].contextual_form, "final" )
 
     #///////////////////////////////////////////////////////////////////////////
     def test_emptystring(self):

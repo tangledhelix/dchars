@@ -257,7 +257,25 @@ class DCharacterHBO(DCharacterMotherClass):
         res = []
 
         if self.base_char is not None:
-            res.append( self.base_char )
+
+            base_char = self.base_char
+
+            if base_char == "כ" and self.contextual_form == "final":
+                base_char = "ך"
+
+            if base_char == "מ" and self.contextual_form == "final":
+                base_char = "ם"
+
+            if base_char == "נ" and self.contextual_form == "final":
+                base_char = "ן"
+
+            if base_char == "פ" and self.contextual_form == "final":
+                base_char = "ף"
+
+            if base_char == "צ" and self.contextual_form == "final":
+                base_char = "ץ"
+                
+            res.append( base_char )
 
         if self.shin_sin_dot is not None:
             res.append( SYMB_POINTS.get_default_symbol(self.shin_sin_dot) )
@@ -290,6 +308,174 @@ class DCharacterHBO(DCharacterMotherClass):
             res = res.replace(src, dest)
 
         return res
+
+    #///////////////////////////////////////////////////////////////////////////
+    def get_usefull_combinations(self):
+        """
+                DStringCharacterHBO.get_usefull_combinations
+
+                Yield, one dchar at a time,  all the usefull combinations of characters,
+                i.e. only the 'interesting' characters (not punctuation if it's too simple
+                by example).
+
+                NB : this function has nothing to do with linguistic or a strict
+                     approach of the language. This function allows only to get the
+                     most common and/or usefull characters of the writing system.
+        """
+        combinations = (itertools.product(
+                                           # base_char : we don't use the list stored in symbols.py
+                                           # since we would the character's order.
+                                           ( 'ALEF', 'BET', 'GIMEL', 'DALET', 'HE', 'VAV',
+                                             'ZAYIN', 'HET', 'TET', 'YOD', 'KAF',
+                                             'LAMED', 'MEM', 'NUN',
+                                             'SAMEKH', 'AYIN', 'PE', 'TSADI',
+                                             'QOF', 'RESH', 'SHIN', 'TAV'),
+
+                                           # contextual_form :
+                                           ("initial+medium+final", "final"),
+
+                                           # shin_sin_dot :
+                                           (None, "HEBREW POINT SHIN DOT", "HEBREW POINT SIN DOT"),
+
+                                           # daghesh_mapiq :
+                                           (False, True),
+
+                                           # methegh :
+                                           (False, True),
+
+                                           # specialpoint :
+                                           (None, "HEBREW MARK UPPER DOT", "HEBREW MARK LOWER DOT"),
+
+                                           # vowel :
+                                           (None,
+                                            "HEBREW POINT SHEVA",
+                                            "HEBREW POINT HATAF SEGOL",
+                                            "HEBREW POINT HATAF PATAH",
+                                            "HEBREW POINT HATAF QAMATS",
+                                            "HEBREW POINT HIRIQ",
+                                            "HEBREW POINT TSERE",
+                                            "HEBREW POINT SEGOL",
+                                            "HEBREW POINT PATAH",
+                                            "HEBREW POINT QAMATS",
+                                            "HEBREW POINT HOLAM",
+                                            "HEBREW POINT HOLAM HASER FOR VAV",
+                                            "HEBREW POINT QUBUTS"
+                                            "HEBREW POINT QAMATS QATAN"),
+
+                                           # raphe :
+                                           (False, True),
+
+                                           # cantillation_mark :
+                                           (None,
+                                             "HEBREW ACCENT ETNAHTA",
+                                             "HEBREW ACCENT SEGOL",
+                                             "HEBREW ACCENT SHALSHELET",
+                                             "HEBREW ACCENT ZAQEF QATAN",
+                                             "HEBREW ACCENT ZAQEF GADOL",
+                                             "HEBREW ACCENT TIPEHA",
+                                             "HEBREW ACCENT REVIA",
+                                             "HEBREW ACCENT ZARQA",
+                                             "HEBREW ACCENT PASHTA",
+                                             "HEBREW ACCENT YETIV",
+                                             "HEBREW ACCENT TEVIR",
+                                             "HEBREW ACCENT GERESH",
+                                             "HEBREW ACCENT GERESH MUQDAM",
+                                             "HEBREW ACCENT GERSHAYIM",
+                                             "HEBREW ACCENT QARNEY PARA",
+                                             "HEBREW ACCENT TELISHA GEDOLA",
+                                             "HEBREW ACCENT PAZER",
+                                             "HEBREW ACCENT ATNAH HAFUKH",
+                                             "HEBREW ACCENT MUNAH",
+                                             "HEBREW ACCENT MAHAPAKH",
+                                             "HEBREW ACCENT MERKHA",
+                                             "HEBREW ACCENT MERKHA KEFULA",
+                                             "HEBREW ACCENT DARGA",
+                                             "HEBREW ACCENT QADMA",
+                                             "HEBREW ACCENT TELISHA QETANA",
+                                             "HEBREW ACCENT YERAH BEN YOMO",
+                                             "HEBREW ACCENT OLE",
+                                             "HEBREW ACCENT ILUY",
+                                             "HEBREW ACCENT DEHI",
+                                             "HEBREW ACCENT ZINOR",
+                                             "HEBREW MARK MASORA CIRCLE",
+                                             ),
+                                             
+                                           # contextual_form
+                                           ("initial", "medium", "final",
+                                            "initial+medium", "medium+final",
+                                            "initial+medium+final"),
+                                           ))
+        
+        for base_char, contextual_form, capital_letter, \
+            tonos, pneuma, hypogegrammene, dialutika, mekos in combinations:
+
+            add_this_dchar = True
+
+            if base_char == 'ρ':
+                if contextual_form != "initial+medium+final" or \
+                   tonos is not None or \
+                   hypogegrammene == True or \
+                   dialutika == True or \
+                   mekos is not None:
+                   
+                    add_this_dchar = False
+
+            elif base_char in ('β', 'σ'):
+                if tonos is not None or \
+                   pneuma is not None or \
+                   hypogegrammene == True or \
+                   dialutika == True or \
+                   mekos is not None:
+                   
+                    add_this_dchar = False
+
+            elif base_char in ('α', 'η', 'ω'):
+                if contextual_form != "initial+medium+final" or \
+                   dialutika == True or \
+                   mekos is not None:
+                   
+                    add_this_dchar = False
+
+            elif base_char in ('ε', 'ο'):
+                if contextual_form != "initial+medium+final" or \
+                   hypogegrammene == True or \
+                   tonos == "περισπωμένη" or \
+                   hypogegrammene == True or \
+                   dialutika == True or \
+                   mekos is not None:
+                   
+                    add_this_dchar = False
+
+            elif base_char in ('ι', 'υ'):
+                if contextual_form != "initial+medium+final" or \
+                   hypogegrammene == True or \
+                   mekos is not None:
+                   
+                    add_this_dchar = False
+
+            else:
+                if contextual_form != "initial+medium+final" or \
+                   tonos is not None or \
+                   pneuma is not None or \
+                   hypogegrammene == True or \
+                   dialutika == True or \
+                   mekos is not None:
+                   
+                    add_this_dchar = False
+
+            if add_this_dchar:
+                self.__init__( dstring_object = self.dstring_object,
+                               base_char = base_char,
+                               contextual_form = contextual_form,
+                               punctuation = False,
+                               capital_letter = capital_letter,
+                               tonos = tonos,
+                               pneuma = pneuma,
+                               hypogegrammene = hypogegrammene,
+                               dialutika = dialutika,
+                               mekos=mekos)
+
+                yield copy.copy(self)
 
     #///////////////////////////////////////////////////////////////////////////
     def reset(self):
