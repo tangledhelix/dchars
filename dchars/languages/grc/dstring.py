@@ -102,12 +102,28 @@ class DStringGRC(DStringMotherClass):
     def get_usefull_combinations(self):
         """
                 DStringGRC.get_usefull_combinations
+
+                Return a DString with all the usefull combinations of characters,
+                i.e. only the 'interesting' characters (not punctuation if it's too simple
+                by example). The DChars stored in the dstring will be unique, id est, two
+                dchars will not have the same appearence (__str__())
+
+                NB : this function has nothing to do with linguistic or a strict
+                     approach of the language. This function allows only to get the
+                     most common and/or usefull characters of the writing system.
         """
-        self.clear
+        self.clear()
 
         dchar = DCharacterGRC(self)
         for dchar in dchar.get_usefull_combinations():
-            self.append( dchar )
+
+            already_present = False
+            for dchar2 in self:
+                if str(dchar) == str(dchar2):
+                    already_present = True
+                
+            if not already_present:
+                self.append( dchar )
         
         return self
 

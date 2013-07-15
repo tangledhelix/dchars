@@ -44,6 +44,7 @@ from dchars.languages.grc.symbols import SYMB_LOWER_CASE, \
                                          DEFAULTSYMB__DIALYTIKA
 import unicodedata
 import copy
+import itertools
 
 # known transliterations :
 import dchars.languages.grc.transliterations.basic as basictrans
@@ -245,31 +246,117 @@ class DCharacterGRC(DCharacterMotherClass):
     def get_usefull_combinations(self):
         """
                 DStringCharacterGRC.get_usefull_combinations
+
+                Yield, one dchar at a time,  all the usefull combinations of characters,
+                i.e. only the 'interesting' characters (not punctuation if it's too simple
+                by example).
+
+                NB : this function has nothing to do with linguistic or a strict
+                     approach of the language. This function allows only to get the
+                     most common and/or usefull characters of the writing system.
         """
-        import itertools
-        combinations = (itertools.product( ( 'α', 'β', 'γ', 'δ', 'ε', 'ζ', 'η', 'θ', 'ι',
+        combinations = (itertools.product(
+                                           # base_char : we don't use the list stored in symbols.py
+                                           # since we would the character's order.
+                                           ( 'α', 'β', 'γ', 'δ', 'ε', 'ζ', 'η', 'θ', 'ι',
                                              'κ', 'λ', 'μ', 'ν', 'ξ', 'ο', 'π', 'ρ', 'σ',
                                              'τ', 'υ', 'φ', 'χ', 'ψ', 'ω',
                                              'ϝ', 'ϗ', 'ϡ', 'ϛ', 'ϙ', ),
                                              
+                                           # contextual_form
+                                           ("initial", "medium", "final",
+                                            "initial+medium", "medium+final",
+                                            "initial+medium+final"),
+                                            
+                                           # capital_letter
                                            (False, True),
+                                           
+                                           # tonos
+                                           ( None, "ὀξεῖα", "βαρεῖα", "περισπωμένη" ),
+                                           
+                                           # pneuma
+                                           ( None, "ψιλὸν",  "δασὺ" ),
+                                           
+                                           # hypogegrammene
                                            (False, True),
+                                           
+                                           # dialutika
+                                           (False, True),
+                                           
+                                           # mekos
+                                           ( None, "βραχύ", "μακρόν" ),
                                            ))
+        
+        for base_char, contextual_form, capital_letter, \
+            tonos, pneuma, hypogegrammene, dialutika, mekos in combinations:
 
-        for base_char, capital_letter, hypogegrammene in combinations:
+            add_this_dchar = True
 
-            self.__init__( dstring_object = self.dstring_object,
-                           base_char = base_char,
-                           contextual_form = None,
-                           punctuation = False,
-                           capital_letter = capital_letter,
-                           tonos = None,
-                           pneuma = None,
-                           hypogegrammene = hypogegrammene,
-                           dialutika = False,
-                           mekos=None)
+            if base_char == 'ρ':
+                if contextual_form != "initial+medium+final" or \
+                   tonos is not None or \
+                   hypogegrammene == True or \
+                   dialutika == True or \
+                   mekos is not None:
+                   
+                    add_this_dchar = False
 
-            yield copy.copy(self)
+            elif base_char in ('β', 'σ'):
+                if tonos is not None or \
+                   pneuma is not None or \
+                   hypogegrammene == True or \
+                   dialutika == True or \
+                   mekos is not None:
+                   
+                    add_this_dchar = False
+
+            elif base_char in ('α', 'η', 'ω'):
+                if contextual_form != "initial+medium+final" or \
+                   dialutika == True or \
+                   mekos is not None:
+                   
+                    add_this_dchar = False
+
+            elif base_char in ('ε', 'ο'):
+                if contextual_form != "initial+medium+final" or \
+                   hypogegrammene == True or \
+                   tonos == "περισπωμένη" or \
+                   hypogegrammene == True or \
+                   dialutika == True or \
+                   mekos is not None:
+                   
+                    add_this_dchar = False
+
+            elif base_char in ('ι', 'υ'):
+                if contextual_form != "initial+medium+final" or \
+                   hypogegrammene == True or \
+                   mekos is not None:
+                   
+                    add_this_dchar = False
+
+            else:
+                if contextual_form != "initial+medium+final" or \
+                   tonos is not None or \
+                   pneuma is not None or \
+                   hypogegrammene == True or \
+                   dialutika == True or \
+                   mekos is not None:
+                   
+                    add_this_dchar = False
+
+            if add_this_dchar:
+                self.__init__( dstring_object = self.dstring_object,
+                               base_char = base_char,
+                               contextual_form = contextual_form,
+                               punctuation = False,
+                               capital_letter = capital_letter,
+                               tonos = tonos,
+                               pneuma = pneuma,
+                               hypogegrammene = hypogegrammene,
+                               dialutika = dialutika,
+                               mekos=mekos)
+
+                yield copy.copy(self)
 
     #///////////////////////////////////////////////////////////////////////////
     def get_transliteration(self, transliteration_method, options):
