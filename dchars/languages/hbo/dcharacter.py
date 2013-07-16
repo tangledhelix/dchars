@@ -40,6 +40,9 @@ from dchars.languages.hbo.symbols import SYMB_POINTS, \
 # known transliterations :
 import dchars.languages.hbo.transliterations.basic as basictrans
 
+import copy
+import itertools
+
 ################################################################################
 # we complete the function unicodedata.normalize('NFC', ...)
 #
@@ -153,6 +156,7 @@ class DCharacterHBO(DCharacterMotherClass):
 
                     unknown_char                    : bool
                     base_char                       : None or a string
+                                                      E.g : "צ", not "TSADI" or "ץ" (final tsadi)
                     contextual_form                 : None or a string
                                                       ("initial+medium+final", "final")
                     punctuation                     : True, False
@@ -322,29 +326,67 @@ class DCharacterHBO(DCharacterMotherClass):
                      approach of the language. This function allows only to get the
                      most common and/or usefull characters of the writing system.
         """
+        # base_char : we don't use the list stored in symbols.py
+        # since we would lost the character's order.
+        base_characters = ( 'א',
+                            'ב',
+                            'ג',
+                            'ד',
+                            'ה',
+                            'ו',
+                            'ז',
+                            'ח',
+                            'ט',
+                            'י',
+                            'כ',
+                            'ל',
+                            'מ',
+                            'נ',
+                            'ס',
+                            'ע',
+                            'פ',
+                            'צ',
+                            'ק',
+                            'ר',
+                            'ש',
+                            'ת' )
+
+        #-----------------------------------------------------------------------
+        # (1/2) simple characters
+        #-----------------------------------------------------------------------
+        for base_char in base_characters:
+            for shin_sin_dot in (None,
+                                 "HEBREW POINT SHIN DOT",
+                                 "HEBREW POINT SIN DOT"):
+
+                if base_char != 'SHIN':
+                    shin_sin_dot = None
+                
+                self.__init__( dstring_object = self.dstring_object,
+                               base_char = base_char,
+                               contextual_form = None,
+                               shin_sin_dot = None,
+                               daghesh_mapiq = False,
+                               methegh = False,
+                               specialpoint = None,
+                               vowel = None,
+                               raphe = False,
+                               cantillation_mark = None )
+
+                yield copy.copy(self)
+
+        #-----------------------------------------------------------------------
+        # (2/2) complex characters
+        #-----------------------------------------------------------------------
         combinations = (itertools.product(
-                                           # base_char : we don't use the list stored in symbols.py
-                                           # since we would the character's order.
-                                           ( 'ALEF', 'BET', 'GIMEL', 'DALET', 'HE', 'VAV',
-                                             'ZAYIN', 'HET', 'TET', 'YOD', 'KAF',
-                                             'LAMED', 'MEM', 'NUN',
-                                             'SAMEKH', 'AYIN', 'PE', 'TSADI',
-                                             'QOF', 'RESH', 'SHIN', 'TAV'),
+                                           # base_char :
+                                           base_characters,
 
                                            # contextual_form :
                                            ("initial+medium+final", "final"),
 
                                            # shin_sin_dot :
                                            (None, "HEBREW POINT SHIN DOT", "HEBREW POINT SIN DOT"),
-
-                                           # daghesh_mapiq :
-                                           (False, True),
-
-                                           # methegh :
-                                           (False, True),
-
-                                           # specialpoint :
-                                           (None, "HEBREW MARK UPPER DOT", "HEBREW MARK LOWER DOT"),
 
                                            # vowel :
                                            (None,
@@ -359,122 +401,40 @@ class DCharacterHBO(DCharacterMotherClass):
                                             "HEBREW POINT QAMATS",
                                             "HEBREW POINT HOLAM",
                                             "HEBREW POINT HOLAM HASER FOR VAV",
-                                            "HEBREW POINT QUBUTS"
+                                            "HEBREW POINT QUBUTS",
                                             "HEBREW POINT QAMATS QATAN"),
-
-                                           # raphe :
-                                           (False, True),
-
-                                           # cantillation_mark :
-                                           (None,
-                                             "HEBREW ACCENT ETNAHTA",
-                                             "HEBREW ACCENT SEGOL",
-                                             "HEBREW ACCENT SHALSHELET",
-                                             "HEBREW ACCENT ZAQEF QATAN",
-                                             "HEBREW ACCENT ZAQEF GADOL",
-                                             "HEBREW ACCENT TIPEHA",
-                                             "HEBREW ACCENT REVIA",
-                                             "HEBREW ACCENT ZARQA",
-                                             "HEBREW ACCENT PASHTA",
-                                             "HEBREW ACCENT YETIV",
-                                             "HEBREW ACCENT TEVIR",
-                                             "HEBREW ACCENT GERESH",
-                                             "HEBREW ACCENT GERESH MUQDAM",
-                                             "HEBREW ACCENT GERSHAYIM",
-                                             "HEBREW ACCENT QARNEY PARA",
-                                             "HEBREW ACCENT TELISHA GEDOLA",
-                                             "HEBREW ACCENT PAZER",
-                                             "HEBREW ACCENT ATNAH HAFUKH",
-                                             "HEBREW ACCENT MUNAH",
-                                             "HEBREW ACCENT MAHAPAKH",
-                                             "HEBREW ACCENT MERKHA",
-                                             "HEBREW ACCENT MERKHA KEFULA",
-                                             "HEBREW ACCENT DARGA",
-                                             "HEBREW ACCENT QADMA",
-                                             "HEBREW ACCENT TELISHA QETANA",
-                                             "HEBREW ACCENT YERAH BEN YOMO",
-                                             "HEBREW ACCENT OLE",
-                                             "HEBREW ACCENT ILUY",
-                                             "HEBREW ACCENT DEHI",
-                                             "HEBREW ACCENT ZINOR",
-                                             "HEBREW MARK MASORA CIRCLE",
-                                             ),
-                                             
-                                           # contextual_form
-                                           ("initial", "medium", "final",
-                                            "initial+medium", "medium+final",
-                                            "initial+medium+final"),
-                                           ))
+                                             ))
         
-        for base_char, contextual_form, capital_letter, \
-            tonos, pneuma, hypogegrammene, dialutika, mekos in combinations:
+        for base_char, contextual_form, shin_sin_dot, \
+            vowel in combinations:
 
             add_this_dchar = True
 
-            if base_char == 'ρ':
-                if contextual_form != "initial+medium+final" or \
-                   tonos is not None or \
-                   hypogegrammene == True or \
-                   dialutika == True or \
-                   mekos is not None:
-                   
+            if base_char == 'ש':
+                if contextual_form != "initial+medium+final":
                     add_this_dchar = False
 
-            elif base_char in ('β', 'σ'):
-                if tonos is not None or \
-                   pneuma is not None or \
-                   hypogegrammene == True or \
-                   dialutika == True or \
-                   mekos is not None:
-                   
-                    add_this_dchar = False
-
-            elif base_char in ('α', 'η', 'ω'):
-                if contextual_form != "initial+medium+final" or \
-                   dialutika == True or \
-                   mekos is not None:
-                   
-                    add_this_dchar = False
-
-            elif base_char in ('ε', 'ο'):
-                if contextual_form != "initial+medium+final" or \
-                   hypogegrammene == True or \
-                   tonos == "περισπωμένη" or \
-                   hypogegrammene == True or \
-                   dialutika == True or \
-                   mekos is not None:
-                   
-                    add_this_dchar = False
-
-            elif base_char in ('ι', 'υ'):
-                if contextual_form != "initial+medium+final" or \
-                   hypogegrammene == True or \
-                   mekos is not None:
-                   
+            elif base_char in ('כ', 'מ', 'נ', 'פ', 'צ'):
+                if shin_sin_dot != None:
                     add_this_dchar = False
 
             else:
                 if contextual_form != "initial+medium+final" or \
-                   tonos is not None or \
-                   pneuma is not None or \
-                   hypogegrammene == True or \
-                   dialutika == True or \
-                   mekos is not None:
-                   
+                   shin_sin_dot != None:
                     add_this_dchar = False
 
             if add_this_dchar:
                 self.__init__( dstring_object = self.dstring_object,
                                base_char = base_char,
                                contextual_form = contextual_form,
-                               punctuation = False,
-                               capital_letter = capital_letter,
-                               tonos = tonos,
-                               pneuma = pneuma,
-                               hypogegrammene = hypogegrammene,
-                               dialutika = dialutika,
-                               mekos=mekos)
-
+                               shin_sin_dot = shin_sin_dot,
+                               daghesh_mapiq = False,
+                               methegh = False,
+                               specialpoint = None,
+                               vowel = vowel,
+                               raphe = None,
+                               cantillation_mark = None, )
+                
                 yield copy.copy(self)
 
     #///////////////////////////////////////////////////////////////////////////

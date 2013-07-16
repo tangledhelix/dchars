@@ -35,7 +35,7 @@ from dchars.utilities.name2symbols import Name2Symbols
 # corresponding transliteration's dictionaries !
 #
 #...............................................................................
-# NB : Even if I choosed that letters' names are derived from the unicode names
+# NB : Even if I choosed letters' names derived from the unicode names
 #      of these letters, I could use other names such as "alef", "א", and so on.
 #
 SYMB_LETTERS = Name2Symbols(

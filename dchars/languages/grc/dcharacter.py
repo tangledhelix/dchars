@@ -255,13 +255,38 @@ class DCharacterGRC(DCharacterMotherClass):
                      approach of the language. This function allows only to get the
                      most common and/or usefull characters of the writing system.
         """
+
+        # base_char : we don't use the list stored in symbols.py
+        # since we would lost the character's order.
+        base_characters  = ( 'α', 'β', 'γ', 'δ', 'ε', 'ζ', 'η', 'θ', 'ι',
+                             'κ', 'λ', 'μ', 'ν', 'ξ', 'ο', 'π', 'ρ', 'σ',
+                             'τ', 'υ', 'φ', 'χ', 'ψ', 'ω',
+                             'ϝ', 'ϗ', 'ϡ', 'ϛ', 'ϙ', )
+
+        #-----------------------------------------------------------------------
+        # (1/2) simple characters
+        #-----------------------------------------------------------------------
+        for base_char in base_characters:
+            for capital_letter in (False, True):
+                self.__init__( dstring_object = self.dstring_object,
+                               base_char = base_char,
+                               contextual_form = "initial+medium+final",
+                               punctuation = False,
+                               capital_letter = capital_letter,
+                               tonos = None,
+                               pneuma = None,
+                               hypogegrammene = False,
+                               dialutika = False,
+                               mekos = None)
+
+                yield copy.copy(self)
+
+        #-----------------------------------------------------------------------
+        # (2/2) complex characters
+        #-----------------------------------------------------------------------
         combinations = (itertools.product(
-                                           # base_char : we don't use the list stored in symbols.py
-                                           # since we would the character's order.
-                                           ( 'α', 'β', 'γ', 'δ', 'ε', 'ζ', 'η', 'θ', 'ι',
-                                             'κ', 'λ', 'μ', 'ν', 'ξ', 'ο', 'π', 'ρ', 'σ',
-                                             'τ', 'υ', 'φ', 'χ', 'ψ', 'ω',
-                                             'ϝ', 'ϗ', 'ϡ', 'ϛ', 'ϙ', ),
+                                           # base_chars
+                                           base_characters,
                                              
                                            # contextual_form
                                            ("initial", "medium", "final",

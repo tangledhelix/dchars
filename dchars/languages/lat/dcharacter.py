@@ -158,13 +158,35 @@ class DCharacterLAT(DCharacterMotherClass):
                      approach of the language. This function allows only to get the
                      most common and/or usefull characters of the writing system.
         """
+
+        # base_char : we don't use the list stored in symbols.py
+        # since we would lost the character's order.
+        base_characters  = ( 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h',
+                             'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p',
+                             'q', 'r', 's', 't', 'u', 'v', 'w', 'x',
+                             'y', 'z', )
+
+        #-----------------------------------------------------------------------
+        # (1/2) simple characters
+        #-----------------------------------------------------------------------
+        for base_char in base_characters:
+            for capital_letter in (False, True):
+                self.__init__( dstring_object = self.dstring_object,
+                               base_char = base_char,
+                               punctuation = False,
+                               capital_letter = capital_letter,
+                               stress = False,
+                               length = None,
+                               diaeresis = False)
+
+                yield copy.copy(self)
+
+        #-----------------------------------------------------------------------
+        # (2/2) complex characters
+        #-----------------------------------------------------------------------
         combinations = (itertools.product(
-                                           # base_char : we don't use the list stored in symbols.py
-                                           # since we would the character's order.
-                                           ( 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h',
-                                             'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p',
-                                             'q', 'r', 's', 't', 'u', 'v', 'w', 'x',
-                                             'y', 'z', ),
+                                           # base_char :
+                                           base_characters,    
                                              
                                            # capital_letter
                                            (False, True),
