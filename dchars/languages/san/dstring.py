@@ -91,6 +91,37 @@ class DStringSAN(DStringMotherClass):
             self.init_from_str(str_src)
 
     #///////////////////////////////////////////////////////////////////////////
+    def get_usefull_combinations(self):
+        """
+                DStringSAN.get_usefull_combinations
+
+                Return a DString with all the usefull combinations of characters,
+                i.e. only the 'interesting' characters (not punctuation if it's too simple
+                by example). The DChars stored in the dstring will be unique, id est, two
+                dchars will not have the same appearence (__str__())
+
+                NB : this function has nothing to do with linguistic or a strict
+                     approach of the language. This function allows only to get the
+                     most common and/or usefull characters of the writing system.
+
+                NB : function required by the dchars-fe project.
+        """
+        self.clear()
+
+        dchar = DCharacterSAN(self)
+        for dchar in dchar.get_usefull_combinations():
+
+            already_present = False
+            for dchar2 in self:
+                if str(dchar) == str(dchar2):
+                    already_present = True
+                
+            if not already_present:
+                self.append( dchar )
+        
+        return self
+
+    #///////////////////////////////////////////////////////////////////////////
     def get_transliteration(self):
         """
                 DStringSAN.get_transliteration

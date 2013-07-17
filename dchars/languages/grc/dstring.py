@@ -111,6 +111,8 @@ class DStringGRC(DStringMotherClass):
                 NB : this function has nothing to do with linguistic or a strict
                      approach of the language. This function allows only to get the
                      most common and/or usefull characters of the writing system.
+
+                NB : function required by the dchars-fe project.
         """
         self.clear()
 

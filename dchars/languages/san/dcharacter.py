@@ -43,6 +43,8 @@ from dchars.languages.san.symbols import DEFAULTSYMB__VIRAMA, \
                                          DEFAULTSYMB__NUKTA
 
 import unicodedata
+import copy
+import itertools
 
 ################################################################################
 # known transliterations :
@@ -209,6 +211,181 @@ class DCharacterSAN(DCharacterMotherClass):
                "dependentvowel="+repr(self.dependentvowel)
 
     #///////////////////////////////////////////////////////////////////////////
+    def get_usefull_combinations(self):
+        """
+                DStringCharacterSAN.get_usefull_combinations
+
+                Yield, one dchar at a time,  all the usefull combinations of characters,
+                i.e. only the 'interesting' characters (not punctuation if it's too simple
+                by example).
+
+                NB : this function has nothing to do with linguistic or a strict
+                     approach of the language. This function allows only to get the
+                     most common and/or usefull characters of the writing system.
+
+                NB : function required by the dchars-fe project.
+        """
+
+        # base_char : we don't use the list stored in symbols.py
+        # since we would lost the character's order.
+        base_characters__vowels = (
+                                      'SHORT A',
+                                      'A',
+                                      'AA',
+                                      'I',
+                                      'II',
+                                      'U',
+                                      'UU',
+                                      'VOCALIC R',
+                                      'VOCALIC RR',
+                                      'VOCALIC L',
+                                      'VOCALIC LL',
+                                      'SHORT E',
+                                      'E',
+                                      'SHORT O',
+                                      'O',
+                                      'AI',
+                                      'AU',
+                                    )
+
+        base_characters  = ( 'DEVANAGARI LETTER KA',
+                             'DEVANAGARI LETTER KHA',
+                             'DEVANAGARI LETTER GA',
+                             'DEVANAGARI LETTER GHA',
+                             'DEVANAGARI LETTER NGA',
+                             'DEVANAGARI LETTER CA',
+                             'DEVANAGARI LETTER CHA',
+                             'DEVANAGARI LETTER JA',
+                             'DEVANAGARI LETTER JHA',
+                             'DEVANAGARI LETTER NYA',
+                             'DEVANAGARI LETTER TTA',
+                             'DEVANAGARI LETTER TTHA',
+                             'DEVANAGARI LETTER DDA',
+                             'DEVANAGARI LETTER DDHA',
+                             'DEVANAGARI LETTER NNA',
+                             'DEVANAGARI LETTER TA',
+                             'DEVANAGARI LETTER THA',
+                             'DEVANAGARI LETTER DA',
+                             'DEVANAGARI LETTER DHA',
+                             'DEVANAGARI LETTER NA',
+                             'DEVANAGARI LETTER PA',
+                             'DEVANAGARI LETTER PHA',
+                             'DEVANAGARI LETTER BA',
+                             'DEVANAGARI LETTER BHA',
+                             'DEVANAGARI LETTER MA',
+                             'DEVANAGARI LETTER YA',
+                             'DEVANAGARI LETTER RA',
+                             'DEVANAGARI LETTER LA',
+                             'DEVANAGARI LETTER LLA',
+                             'DEVANAGARI LETTER VA',
+                             'DEVANAGARI LETTER SHA',
+                             'DEVANAGARI LETTER SSA',
+                             'DEVANAGARI LETTER SA',
+                             'DEVANAGARI LETTER HA',
+                             'DEVANAGARI SIGN VISARGA', )
+
+        #-----------------------------------------------------------------------
+        # (1/2) simple characters
+        #-----------------------------------------------------------------------
+        for base_char in base_characters__vowels:
+                    
+            self.__init__( dstring_object = self.dstring_object,
+                           base_char = base_char,
+                           accent = None,
+                           punctuation = None,
+                           nukta = False,
+                           anusvara_candrabindu = None,
+                           virama = False,
+                           anudatta = False,
+                           is_an_independent_vowel = True,
+                           dependentvowel = None,
+                         )
+
+            yield copy.copy(self)
+        
+        for base_char in base_characters:
+                    
+            self.__init__( dstring_object = self.dstring_object,
+                           base_char = base_char,
+                           accent = None,
+                           punctuation = None,
+                           nukta = False,
+                           anusvara_candrabindu = None,
+                           virama = False,
+                           anudatta = False,
+                           is_an_independent_vowel = False,
+                           dependentvowel = None,
+                         )
+
+            yield copy.copy(self)
+
+        #-----------------------------------------------------------------------
+        # (2/2) complex characters
+        #-----------------------------------------------------------------------
+        combinations = (itertools.product(
+                                           # base_chars
+                                           base_characters,
+                                             
+                                           # anusvara_candrabindu
+                                           #(None,
+                                           # "DEVANAGARI SIGN ANUSVARA",
+                                           # "DEVANAGARI SIGN INVERTED CANDRABINDU",
+                                           # 'DEVANAGARI SIGN CANDRABINDU',
+                                           # ),
+                                           
+                                           # virama
+                                           #( False, True ),
+                                           
+                                           # anudatta
+                                           #( False, True ),
+
+                                           # dependentvowel
+                                           (      None,
+                                                  'AA',
+                                                  'I',
+                                                  'II',
+                                                  'U',
+                                                  'UU',
+                                                  'VOCALIC R',
+                                                  'VOCALIC RR',
+                                                  #'CANDRA E',
+                                                  #'SHORT E',
+                                                  'E',
+                                                  'AI',
+                                                  #'CANDRA O',
+                                                  #'SHORT O',
+                                                  'O',
+                                                  'AU',
+                                                  'VOCALIC L',
+                                                  'VOCALIC LL',
+                                           ),
+
+                                           ))
+
+        for base_char, dependentvowel in combinations:
+
+            add_this_char = True
+            
+            if base_char == 'DEVANAGARI SIGN VISARGA':
+                if dependentvowel is not None:
+                    add_this_char = False                                  
+
+            if add_this_char:
+                self.__init__( dstring_object = self.dstring_object,
+                               base_char = base_char,
+                               accent = None,
+                               punctuation = None,
+                               nukta = False,
+                               anusvara_candrabindu = None,
+                               virama = False,
+                               anudatta = False,
+                               is_an_independent_vowel = False,
+                               dependentvowel = dependentvowel,
+                              )
+
+            yield copy.copy(self)
+
+    #///////////////////////////////////////////////////////////////////////////
     def get_transliteration(self,
                             prev_dchar,
                             transliteration_method):
@@ -222,22 +399,6 @@ class DCharacterSAN(DCharacterMotherClass):
             dstring_object = self.dstring_object,
             prev_dchar=prev_dchar,
             dchar=self)
-
-    #///////////////////////////////////////////////////////////////////////////
-    def init_from_transliteration(self,
-                                  src,
-                                  transliteration_method):
-        """
-                DCharacterSAN.init_from_transliteration
-
-                src                     : string
-                transliteration_method  :       str
-
-                Return <self>.
-        """
-        self.reset()
-        return DCharacterSAN.trans__init_from_transliteration[transliteration_method](dchar = self,
-                                                                                      src = src)
 
     #///////////////////////////////////////////////////////////////////////////
     def get_sourcestr_representation(self):
@@ -331,6 +492,21 @@ class DCharacterSAN(DCharacterMotherClass):
         self.is_an_independent_vowel = False
         self.dependentvowel = None
 
+    #///////////////////////////////////////////////////////////////////////////
+    def init_from_transliteration(self,
+                                  src,
+                                  transliteration_method):
+        """
+                DCharacterSAN.init_from_transliteration
+
+                src                     : string
+                transliteration_method  :       str
+
+                Return <self>.
+        """
+        self.reset()
+        return DCharacterSAN.trans__init_from_transliteration[transliteration_method](dchar = self,
+                                                                                      src = src)
     #///////////////////////////////////////////////////////////////////////////
     def sortingvalue(self):
         """
