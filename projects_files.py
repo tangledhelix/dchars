@@ -70,11 +70,19 @@ MODULES = {
                                   ),
 
          "dchars.languages.bod.transliterations" : ( ("__init__.py", False),
+                                  ),
+
+         "dchars.languages.bod.transliterations.bodsan" : (
+                                                     ("__init__.py", False),
 
                                                      ("bodsan.py", False),
                                                      ("bodsan_symbols.py", False),
-                                                     ("ewts_buffer.py", False),
+                                  ),
 
+         "dchars.languages.bod.transliterations.ewts" : (
+                                                     ("__init__.py", False),
+
+                                                     ("ewts_buffer.py", False),
                                                      ("ewts.py", False),
                                                      ("ewts_buffer_trans_str.data", False),
                                                      ("ewts_symbols.py", False),
@@ -88,10 +96,26 @@ MODULES = {
                                   ),
 
          "dchars.languages.grc.transliterations" : ( ("__init__.py", False),
-                                                     ("betacode.py", False),
-                                                     ("gutenberg.py", False),
+                                  ),
+
+         "dchars.languages.grc.transliterations.basic" : ( ("__init__.py", False),
                                                      ("basic.py", False),
+                                                     ("ucombinations.py", False),
+                                  ),
+
+         "dchars.languages.grc.transliterations.betacode" : ( ("__init__.py", False),
+                                                     ("betacode.py", False),
+                                                     ("ucombinations.py", False),
+                                  ),
+
+         "dchars.languages.grc.transliterations.gutenberg" : ( ("__init__.py", False),
+                                                     ("gutenberg.py", False),
+                                                     ("ucombinations.py", False),
+                                  ),
+
+         "dchars.languages.grc.transliterations.perseus" : ( ("__init__.py", False),
                                                      ("perseus.py", False),
+                                                     ("ucombinations.py", False),
                                   ),
 
          "dchars.languages.hbo" : ( ("__init__.py", False),
@@ -101,6 +125,9 @@ MODULES = {
                                   ),
 
          "dchars.languages.hbo.transliterations" : ( ("__init__.py", False),
+                                  ),
+
+         "dchars.languages.hbo.transliterations.basic" : ( ("__init__.py", False),
                                                      ("basic.py", False),
                                   ),
 
@@ -111,9 +138,12 @@ MODULES = {
                                   ),
 
          "dchars.languages.lat.transliterations" : ( ("__init__.py", False),
-                                                     ("basic.py", False),
                                   ),
 
+         "dchars.languages.lat.transliterations.basic" : ( ("__init__.py", False),
+                                                     ("basic.py", False),
+                                  ),
+                            
          "dchars.languages.san" : ( ("__init__.py", False),
                                     ("dcharacter.py", False),
                                     ("dstring.py", False),
@@ -121,7 +151,13 @@ MODULES = {
                                   ),
 
          "dchars.languages.san.transliterations" : ( ("__init__.py", False),
+                                  ),
+
+         "dchars.languages.san.transliterations.iso15919" : ( ("__init__.py", False),
                                                      ("iso15919.py", False),
+                                  ),
+
+         "dchars.languages.san.transliterations.itrans" : ( ("__init__.py", False),
                                                      ("itrans.py", False),
                                   ),
 
