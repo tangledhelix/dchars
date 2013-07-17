@@ -1917,7 +1917,7 @@ def get_intstruct_from_str(_src,
 
         Return a ListOfInternalStructures object
 
-        This function CAN BE VERY SLOW for long <_src> strings.
+        This function CAN BE VERY SLOW for long <_src> strings if no buffer is used.
 
         .. code-block:: python
 
@@ -1959,7 +1959,6 @@ def get_intstruct_from_str(_src,
                 (3.6) <istructs> is sorted
                 (3.7) filling the buffers
     """
-
     anonymize_the_unknown_chars = dstring_object.options["anonymize the unknown characters"]
 
     if len(_src) == 0:

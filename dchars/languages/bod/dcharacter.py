@@ -35,6 +35,9 @@ from dchars.languages.bod.symbols import SYMB_CONSONANTS, \
                                          SYMB_DIACRITICS__HALANTA, \
                                          SYMB_DIACRITICS__RNAM_BCAD
 
+import copy
+import itertools
+
 ################################################################################
 class DCharacterBOD(DCharacterMotherClass):
     """
@@ -86,8 +89,8 @@ class DCharacterBOD(DCharacterMotherClass):
                     halanta                         : bool
                     anusvara_candrabindu            : None, or a string
                                                       see symbol.SYMB_DIACRITICS__ANUSV_CANDR
-                    vowel1                 : None, or a string
-                    vowel2                   see symbol.SYMB_VOWELS
+                    vowel1                          : None, or a string
+                    vowel2                            see symbol.SYMB_VOWELS
          """
 
         DCharacterMotherClass.__init__(self,
@@ -120,6 +123,125 @@ class DCharacterBOD(DCharacterMotherClass):
                "anusvara_candrabindu="+repr(self.anusvara_candrabindu) + "; " + \
                "vowel1="+repr(self.vowel1) + "; " +\
                "vowel2="+repr(self.vowel2)
+
+    #///////////////////////////////////////////////////////////////////////////
+    def get_usefull_combinations(self):
+        """
+                DStringCharacterBOD.get_usefull_combinations
+
+                Yield, one dchar at a time,  all the usefull combinations of characters,
+                i.e. only the 'interesting' characters (not punctuation if it's too simple
+                by example).
+
+                NB : this function has nothing to do with linguistic or a strict
+                     approach of the language. This function allows only to get the
+                     most common and/or usefull characters of the writing system.
+
+                NB : function required by the dchars-fe project.
+        """
+
+        # base_char : we don't use the list stored in symbols.py
+        # since we would lost the character's order.
+        base_characters  = ('K',
+                            'KH',
+                            'G',
+                            'GH',
+                            'NG',
+                            'C',
+                            'CH',
+                            'J',
+                            'NY',
+                            'TT',
+                            'TTH',
+                            'DD',
+                            'DDH',
+                            'NN',
+                            'T',
+                            'TH',
+                            'D',
+                            'DH',
+                            'N',
+                            'P',
+                            'PH',
+                            'B',
+                            'BH',
+                            'M',
+                            'TS',
+                            'TSH',
+                            'DZ',
+                            'DZH',
+                            'W',
+                            'ZH',
+                            'Z',
+                            '-',
+                            'Y',
+                            'R',
+                            'L',
+                            'SH',
+                            'SS',
+                            'S',
+                            'H',
+                            'KSS',
+                            
+                            'KK',
+                            'RR',
+
+                            'A',
+                           )
+
+        #-----------------------------------------------------------------------
+        # (1/2) simple characters
+        #-----------------------------------------------------------------------
+        for base_char in base_characters:
+                    
+            self.__init__( dstring_object = self.dstring_object,
+                           base_char = base_char,
+                           subj_consonants = None,
+                           rnam_bcad = False,
+                           punctuation = False,
+                           halanta = False,
+                           anusvara_candrabindu = None,
+                           vowel1 = None )
+
+            yield copy.copy(self)
+
+        #-----------------------------------------------------------------------
+        # (2/2) complex characters
+        #-----------------------------------------------------------------------
+        combinations = (itertools.product(
+                                           # base_chars
+                                           base_characters,
+
+                                           # vowel
+                                           (      None,
+                                                  'AA',
+                                                  'I',
+                                                  'II',
+                                                  'U',
+                                                  'UU',
+                                                  'VOCALIC R',
+                                                  'VOCALIC RR',
+                                                  'VOCALIC L',
+                                                  'VOCALIC LL',
+                                                  'E',
+                                                  'AI',
+                                                  'O',
+                                                  'AU',
+                                           )))
+
+        for base_char, vowel in combinations:
+
+            self.__init__( dstring_object = self.dstring_object,
+                           base_char = base_char,
+                           subj_consonants = None,
+                           rnam_bcad = False,
+                           punctuation = False,
+                           halanta = False,
+                           anusvara_candrabindu = None,
+                           vowel1 = vowel,
+                           vowel2 = None )
+
+            yield copy.copy(self)
 
     #///////////////////////////////////////////////////////////////////////////
     def init_from_transliteration(self, src, transliteration_method):

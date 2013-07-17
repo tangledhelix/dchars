@@ -153,27 +153,6 @@ class DStringBOD(DStringMotherClass):
         return self.get_sourcestr_representation()
 
     #///////////////////////////////////////////////////////////////////////////
-    def update_istructs(self):
-        """
-                DStringBod.update_istructs
-
-        """
-        self.istructs = istruct.get_intstructures_from_dstring(self)
-        self.update_dchars()
-
-    #///////////////////////////////////////////////////////////////////////////
-    def update_dchars(self):
-        """
-                DStringBOD.update_dchars
-        """
-        self.clear()
-
-        if 'istructs' in self.__dict__:
-            for char in self.istructs.get_the_corresponding_dchars(dcharactertype=DCharacterBOD,
-                                                                   dstring_object=self):
-                self.append( char )
-
-    #///////////////////////////////////////////////////////////////////////////
     def are_the_options_valid(self):
         """
                 DStringBOD.are_the_options_valid
@@ -217,6 +196,38 @@ class DStringBOD(DStringMotherClass):
         #
         return self.istructs.get_the_corresponding_string()
 
+    #///////////////////////////////////////////////////////////////////////////
+    def get_usefull_combinations(self):
+        """
+                DStringBOD.get_usefull_combinations
+
+                Return a DString with all the usefull combinations of characters,
+                i.e. only the 'interesting' characters (not punctuation if it's too simple
+                by example). The DChars stored in the dstring will be unique, id est, two
+                dchars will not have the same appearence (__str__())
+
+                NB : this function has nothing to do with linguistic or a strict
+                     approach of the language. This function allows only to get the
+                     most common and/or usefull characters of the writing system.
+
+                NB : function required by the dchars-fe project.
+        """
+        self.clear()
+
+        dchar = DCharacterBOD(self)
+        for dchar in dchar.get_usefull_combinations():
+
+            already_present = False
+            for dchar2 in self:
+                if str(dchar) == str(dchar2):
+                    already_present = True
+                
+            if not already_present:
+                self.append( dchar )
+
+        self.update_istructs()
+        
+        return self
 
     #///////////////////////////////////////////////////////////////////////////
     def get_transliteration(self):
@@ -410,3 +421,23 @@ class DStringBOD(DStringMotherClass):
         """
         return self.istructs.seems_to_be_a_sanskrit_string(strict_answer)
 
+    #///////////////////////////////////////////////////////////////////////////
+    def update_istructs(self):
+        """
+                DStringBod.update_istructs
+
+        """
+        self.istructs = istruct.get_intstructures_from_dstring(self)
+        self.update_dchars()
+
+    #///////////////////////////////////////////////////////////////////////////
+    def update_dchars(self):
+        """
+                DStringBOD.update_dchars
+        """
+        self.clear()
+
+        if 'istructs' in self.__dict__:
+            for char in self.istructs.get_the_corresponding_dchars(dcharactertype=DCharacterBOD,
+                                                                   dstring_object=self):
+                self.append( char )
