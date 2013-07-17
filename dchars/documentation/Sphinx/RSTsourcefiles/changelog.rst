@@ -3,13 +3,20 @@ CHANGELOG_TITLE
 ===============
 
 ------------------
-0.4.6 [2013_06_XX]
+0.4.6 [2013_06_17]
 ------------------
-  
+
+  * "DEVANAGARI LETTER " > ""
+  * no more "DStringCharacterGRC" in the comments > "DCharacterGRC"
   * (all languages) get_usefull_combinations() for all transliteration's methods
   * (all languages) one directory per transliteration method.
   * (grc) in transliterations' method, symbols.py doesn't use anymore unused dchar_base like "σ2".
   * (grc) fixed a bug concerning ϐ and σ, no longer 'base_char'
+
+  * code quality :
+
+    * header_please_test.py ok
+    * 136 tests, all ok
 
 ------------------
 0.4.5 [2013_06_13]

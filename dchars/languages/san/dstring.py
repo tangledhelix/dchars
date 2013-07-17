@@ -256,7 +256,7 @@ class DStringSAN(DStringMotherClass):
             dependentvowel = data['dependentvowel']
             diacritics = data['diacritics']
 
-            # base_char as "क" becomes "DEVANAGARI LETTER KA"
+            # base_char as "क" becomes "KA"
             base_char__punctuation = SYMB_PUNCTUATION.get_the_name_for_this_symbol(base_char)
             base_char__other_symbols = SYMB_OTHER_SYMBOLS.get_the_name_for_this_symbol(base_char)
             base_char__consonant = SYMB_CONSONANTS.get_the_name_for_this_symbol(base_char)

@@ -161,43 +161,43 @@ UNCOMPACT_CHARACTERS = (
 # * CAVEAT ! No duplicate value allowed in these dictionaries !
 #
 CONSONANTS = {
-                 'DEVANAGARI LETTER KA'            : 'k',
-                 'DEVANAGARI LETTER KHA'           : 'kh',
-                 'DEVANAGARI LETTER GA'            : 'g',
-                 'DEVANAGARI LETTER GHA'           : 'gh',
-                 'DEVANAGARI LETTER NGA'           : 'ṅ',
-                 'DEVANAGARI LETTER CA'            : 'c',
-                 'DEVANAGARI LETTER CHA'           : 'ch',
-                 'DEVANAGARI LETTER JA'            : 'j',
-                 'DEVANAGARI LETTER JHA'           : 'jh',
-                 'DEVANAGARI LETTER NYA'           : 'ñ',
-                 'DEVANAGARI LETTER TTA'           : 'ṭ',
-                 'DEVANAGARI LETTER TTHA'          : 'ṭh',
-                 'DEVANAGARI LETTER DDA'           : 'ḍ',
-                 'DEVANAGARI LETTER DDHA'          : 'ḍh',
-                 'DEVANAGARI LETTER NNA'           : 'ṇ',
-                 'DEVANAGARI LETTER TA'            : 't',
-                 'DEVANAGARI LETTER THA'           : 'th',
-                 'DEVANAGARI LETTER DA'            : 'd',
-                 'DEVANAGARI LETTER DHA'           : 'dh',
-                 'DEVANAGARI LETTER NA'            : 'n',
-                 'DEVANAGARI LETTER PA'            : 'p',
-                 'DEVANAGARI LETTER PHA'           : 'ph',
-                 'DEVANAGARI LETTER BA'            : 'b',
-                 'DEVANAGARI LETTER BHA'           : 'bh',
-                 'DEVANAGARI LETTER MA'            : 'm',
-                 'DEVANAGARI LETTER YA'            : 'y',
-                 'DEVANAGARI LETTER RA'            : 'r',
-                 'DEVANAGARI LETTER LA'            : 'l',
+                 'KA'            : 'k',
+                 'KHA'           : 'kh',
+                 'GA'            : 'g',
+                 'GHA'           : 'gh',
+                 'NGA'           : 'ṅ',
+                 'CA'            : 'c',
+                 'CHA'           : 'ch',
+                 'JA'            : 'j',
+                 'JHA'           : 'jh',
+                 'NYA'           : 'ñ',
+                 'TTA'           : 'ṭ',
+                 'TTHA'          : 'ṭh',
+                 'DDA'           : 'ḍ',
+                 'DDHA'          : 'ḍh',
+                 'NNA'           : 'ṇ',
+                 'TA'            : 't',
+                 'THA'           : 'th',
+                 'DA'            : 'd',
+                 'DHA'           : 'dh',
+                 'NA'            : 'n',
+                 'PA'            : 'p',
+                 'PHA'           : 'ph',
+                 'BA'            : 'b',
+                 'BHA'           : 'bh',
+                 'MA'            : 'm',
+                 'YA'            : 'y',
+                 'RA'            : 'r',
+                 'LA'            : 'l',
                  # (http://en.wikipedia.org/wiki/ISO_15919) In ISO 15919,
                  # ḷ(1E37=006C 0323) = ळ.
                  # l̥(006C 0325) = ऌ /  ॢ
-                 'DEVANAGARI LETTER LLA'           : 'ḷ',
-                 'DEVANAGARI LETTER VA'            : 'v',
-                 'DEVANAGARI LETTER SHA'           : 'ś',
-                 'DEVANAGARI LETTER SSA'           : 'ṣ',
-                 'DEVANAGARI LETTER SA'            : 's',
-                 'DEVANAGARI LETTER HA'            : 'h',
+                 'LLA'           : 'ḷ',
+                 'VA'            : 'v',
+                 'SHA'           : 'ś',
+                 'SSA'           : 'ṣ',
+                 'SA'            : 's',
+                 'HA'            : 'h',
 
                  'DEVANAGARI SIGN VISARGA'         : 'ḥ',
              }
@@ -216,7 +216,7 @@ CONSONANTS_WITH_NUKTA = {
 
                 #...............................................................
                 # the following symbols exist as independent character in Unicode
-                # (e.g. : j+nukta = DEVANAGARI LETTER ZA) but do not respect
+                # (e.g. : j+nukta = ZA) but do not respect
                 # the rule NFC(NFD(char)) == char
                 #...............................................................
                 'ka+nukta'             : 'q',
@@ -241,19 +241,19 @@ CONSONANTS_WITH_NUKTA = {
 
 # id est, CONSONANTS_WITH_NUKTA_TO_CONSONANT['w'] = 'v' + nukta
 CONSONANTS_WITH_NUKTA_TO_CONSONANT = {
-                 'q'    : 'DEVANAGARI LETTER KA',
-                 'ḵẖ'   : 'DEVANAGARI LETTER KHA',
-                 'ġ'    : 'DEVANAGARI LETTER GA',
-                 'z'    : 'DEVANAGARI LETTER JA',
-                 'ṛ'    : 'DEVANAGARI LETTER DHA',
-                 'ṛh'   : 'DEVANAGARI LETTER DDHA',
-                 'f'    : 'DEVANAGARI LETTER PHA',
-                 'ẏ'    : 'DEVANAGARI LETTER YA',
+                 'q'    : 'KA',
+                 'ḵẖ'   : 'KHA',
+                 'ġ'    : 'GA',
+                 'z'    : 'JA',
+                 'ṛ'    : 'DHA',
+                 'ṛh'   : 'DDHA',
+                 'f'    : 'PHA',
+                 'ẏ'    : 'YA',
 
-                 'w'    : 'DEVANAGARI LETTER VA',
-                 'h̤'    : 'DEVANAGARI LETTER HA',
-                 's̤'    : 'DEVANAGARI LETTER SA',
-                 't̤'    : 'DEVANAGARI LETTER TA',
+                 'w'    : 'VA',
+                 'h̤'    : 'HA',
+                 's̤'    : 'SA',
+                 't̤'    : 'TA',
                  }
 
 # the name of the vowels (the keys of this dictionary) must be consistent
@@ -449,7 +449,7 @@ def dchar__get_translit_str(dstring_object, prev_dchar, dchar):
                 res.append( CONSONANTS[dchar.base_char] )
             else:
                 # consonant with nukta point :
-                # dchar.base_char(DEVANAGARI LETTER KA) -> "q"
+                # dchar.base_char(KA) -> "q"
                 letter = CONSONANTS_WITH_NUKTA_TO_CONSONANT_INVERSED[dchar.base_char]
                 res.append( letter )
 

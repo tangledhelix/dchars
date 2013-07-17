@@ -248,40 +248,40 @@ class DCharacterSAN(DCharacterMotherClass):
                                       'AU',
                                     )
 
-        base_characters  = ( 'DEVANAGARI LETTER KA',
-                             'DEVANAGARI LETTER KHA',
-                             'DEVANAGARI LETTER GA',
-                             'DEVANAGARI LETTER GHA',
-                             'DEVANAGARI LETTER NGA',
-                             'DEVANAGARI LETTER CA',
-                             'DEVANAGARI LETTER CHA',
-                             'DEVANAGARI LETTER JA',
-                             'DEVANAGARI LETTER JHA',
-                             'DEVANAGARI LETTER NYA',
-                             'DEVANAGARI LETTER TTA',
-                             'DEVANAGARI LETTER TTHA',
-                             'DEVANAGARI LETTER DDA',
-                             'DEVANAGARI LETTER DDHA',
-                             'DEVANAGARI LETTER NNA',
-                             'DEVANAGARI LETTER TA',
-                             'DEVANAGARI LETTER THA',
-                             'DEVANAGARI LETTER DA',
-                             'DEVANAGARI LETTER DHA',
-                             'DEVANAGARI LETTER NA',
-                             'DEVANAGARI LETTER PA',
-                             'DEVANAGARI LETTER PHA',
-                             'DEVANAGARI LETTER BA',
-                             'DEVANAGARI LETTER BHA',
-                             'DEVANAGARI LETTER MA',
-                             'DEVANAGARI LETTER YA',
-                             'DEVANAGARI LETTER RA',
-                             'DEVANAGARI LETTER LA',
-                             'DEVANAGARI LETTER LLA',
-                             'DEVANAGARI LETTER VA',
-                             'DEVANAGARI LETTER SHA',
-                             'DEVANAGARI LETTER SSA',
-                             'DEVANAGARI LETTER SA',
-                             'DEVANAGARI LETTER HA',
+        base_characters  = ( 'KA',
+                             'KHA',
+                             'GA',
+                             'GHA',
+                             'NGA',
+                             'CA',
+                             'CHA',
+                             'JA',
+                             'JHA',
+                             'NYA',
+                             'TTA',
+                             'TTHA',
+                             'DDA',
+                             'DDHA',
+                             'NNA',
+                             'TA',
+                             'THA',
+                             'DA',
+                             'DHA',
+                             'NA',
+                             'PA',
+                             'PHA',
+                             'BA',
+                             'BHA',
+                             'MA',
+                             'YA',
+                             'RA',
+                             'LA',
+                             'LLA',
+                             'VA',
+                             'SHA',
+                             'SSA',
+                             'SA',
+                             'HA',
                              'DEVANAGARI SIGN VISARGA', )
 
         #-----------------------------------------------------------------------
@@ -578,73 +578,73 @@ class DCharacterSAN(DCharacterMotherClass):
                 res.append(16)
             elif self.base_char == 'DEVANAGARI SIGN VISARGA':
                 res.append(100)
-            elif self.base_char == 'DEVANAGARI LETTER KA':
+            elif self.base_char == 'KA':
                 res.append(101)
-            elif self.base_char == 'DEVANAGARI LETTER KHA':
+            elif self.base_char == 'KHA':
                 res.append(102)
-            elif self.base_char == 'DEVANAGARI LETTER GA':
+            elif self.base_char == 'GA':
                 res.append(103)
-            elif self.base_char == 'DEVANAGARI LETTER GHA':
+            elif self.base_char == 'GHA':
                 res.append(104)
-            elif self.base_char == 'DEVANAGARI LETTER NGA':
+            elif self.base_char == 'NGA':
                 res.append(105)
-            elif self.base_char == 'DEVANAGARI LETTER CA':
+            elif self.base_char == 'CA':
                 res.append(106)
-            elif self.base_char == 'DEVANAGARI LETTER CHA':
+            elif self.base_char == 'CHA':
                 res.append(107)
-            elif self.base_char == 'DEVANAGARI LETTER JA':
+            elif self.base_char == 'JA':
                 res.append(108)
-            elif self.base_char == 'DEVANAGARI LETTER JHA':
+            elif self.base_char == 'JHA':
                 res.append(109)
-            elif self.base_char == 'DEVANAGARI LETTER NYA':
+            elif self.base_char == 'NYA':
                 res.append(110)
-            elif self.base_char == 'DEVANAGARI LETTER TTA':
+            elif self.base_char == 'TTA':
                 res.append(111)
-            elif self.base_char == 'DEVANAGARI LETTER TTHA':
+            elif self.base_char == 'TTHA':
                 res.append(112)
-            elif self.base_char == 'DEVANAGARI LETTER DDA':
+            elif self.base_char == 'DDA':
                 res.append(113)
-            elif self.base_char == 'DEVANAGARI LETTER DDHA':
+            elif self.base_char == 'DDHA':
                 res.append(114)
-            elif self.base_char == 'DEVANAGARI LETTER NNA':
+            elif self.base_char == 'NNA':
                 res.append(115)
-            elif self.base_char == 'DEVANAGARI LETTER TA':
+            elif self.base_char == 'TA':
                 res.append(116)
-            elif self.base_char == 'DEVANAGARI LETTER THA':
+            elif self.base_char == 'THA':
                 res.append(117)
-            elif self.base_char == 'DEVANAGARI LETTER DA':
+            elif self.base_char == 'DA':
                 res.append(118)
-            elif self.base_char == 'DEVANAGARI LETTER DHA':
+            elif self.base_char == 'DHA':
                 res.append(119)
-            elif self.base_char == 'DEVANAGARI LETTER NA':
+            elif self.base_char == 'NA':
                 res.append(120)
-            elif self.base_char == 'DEVANAGARI LETTER PA':
+            elif self.base_char == 'PA':
                 res.append(121)
-            elif self.base_char == 'DEVANAGARI LETTER PHA':
+            elif self.base_char == 'PHA':
                 res.append(122)
-            elif self.base_char == 'DEVANAGARI LETTER BA':
+            elif self.base_char == 'BA':
                 res.append(123)
-            elif self.base_char == 'DEVANAGARI LETTER BHA':
+            elif self.base_char == 'BHA':
                 res.append(124)
-            elif self.base_char == 'DEVANAGARI LETTER MA':
+            elif self.base_char == 'MA':
                 res.append(125)
-            elif self.base_char == 'DEVANAGARI LETTER YA':
+            elif self.base_char == 'YA':
                 res.append(126)
-            elif self.base_char == 'DEVANAGARI LETTER RA':
+            elif self.base_char == 'RA':
                 res.append(127)
-            elif self.base_char == 'DEVANAGARI LETTER LA':
+            elif self.base_char == 'LA':
                 res.append(128)
-            elif self.base_char == 'DEVANAGARI LETTER LLA':
+            elif self.base_char == 'LLA':
                 res.append(129)
-            elif self.base_char == 'DEVANAGARI LETTER VA':
+            elif self.base_char == 'VA':
                 res.append(130)
-            elif self.base_char == 'DEVANAGARI LETTER SHA':
+            elif self.base_char == 'SHA':
                 res.append(131)
-            elif self.base_char == 'DEVANAGARI LETTER SSA':
+            elif self.base_char == 'SSA':
                 res.append(132)
-            elif self.base_char == 'DEVANAGARI LETTER SA':
+            elif self.base_char == 'SA':
                 res.append(133)
-            elif self.base_char == 'DEVANAGARI LETTER HA':
+            elif self.base_char == 'HA':
                 res.append(134)
             else:
                 # E.g. "1", ...

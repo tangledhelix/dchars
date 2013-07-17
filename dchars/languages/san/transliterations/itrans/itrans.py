@@ -61,43 +61,43 @@ TRANS_EQUIVALENCES = (
 # * CAVEAT ! No duplicate value allowed in these dictionaries !
 #
 CONSONANTS = {
-                 'DEVANAGARI LETTER KA'            : 'k',
-                 'DEVANAGARI LETTER KHA'           : 'kh',
-                 'DEVANAGARI LETTER GA'            : 'g',
-                 'DEVANAGARI LETTER GHA'           : 'gh',
-                 'DEVANAGARI LETTER NGA'           : '~N',
-                 'DEVANAGARI LETTER CA'            : 'ch',
-                 'DEVANAGARI LETTER CHA'           : 'Ch',
-                 'DEVANAGARI LETTER JA'            : 'j',
-                 'DEVANAGARI LETTER JHA'           : 'jh',
-                 'DEVANAGARI LETTER NYA'           : '~n',
-                 'DEVANAGARI LETTER TTA'           : 'T',
-                 'DEVANAGARI LETTER TTHA'          : 'Th',
-                 'DEVANAGARI LETTER DDA'           : 'D',
-                 'DEVANAGARI LETTER DDHA'          : 'Dh',
-                 'DEVANAGARI LETTER NNA'           : 'N',
-                 'DEVANAGARI LETTER TA'            : 't',
-                 'DEVANAGARI LETTER THA'           : 'th',
-                 'DEVANAGARI LETTER DA'            : 'd',
-                 'DEVANAGARI LETTER DHA'           : 'dh',
-                 'DEVANAGARI LETTER NA'            : 'n',
-                 'DEVANAGARI LETTER NNNA'          : 'NNN',     # (???) see above
-                 'DEVANAGARI LETTER PA'            : 'p',
-                 'DEVANAGARI LETTER PHA'           : 'ph',
-                 'DEVANAGARI LETTER BA'            : 'b',
-                 'DEVANAGARI LETTER BHA'           : 'bh',
-                 'DEVANAGARI LETTER MA'            : 'm',
-                 'DEVANAGARI LETTER YA'            : 'y',
-                 'DEVANAGARI LETTER RA'            : 'r',
-                 'DEVANAGARI LETTER RRA'           : 'RRR',     # (???) see above
-                 'DEVANAGARI LETTER LA'            : 'l',
-                 'DEVANAGARI LETTER LLA'           : 'L',
-                 'DEVANAGARI LETTER LLLA'          : 'LLL',     # (???) see above
-                 'DEVANAGARI LETTER VA'            : 'v',
-                 'DEVANAGARI LETTER SHA'           : 'sh',
-                 'DEVANAGARI LETTER SSA'           : 'Sh',
-                 'DEVANAGARI LETTER SA'            : 's',
-                 'DEVANAGARI LETTER HA'            : 'h',
+                 'KA'            : 'k',
+                 'KHA'           : 'kh',
+                 'GA'            : 'g',
+                 'GHA'           : 'gh',
+                 'NGA'           : '~N',
+                 'CA'            : 'ch',
+                 'CHA'           : 'Ch',
+                 'JA'            : 'j',
+                 'JHA'           : 'jh',
+                 'NYA'           : '~n',
+                 'TTA'           : 'T',
+                 'TTHA'          : 'Th',
+                 'DDA'           : 'D',
+                 'DDHA'          : 'Dh',
+                 'NNA'           : 'N',
+                 'TA'            : 't',
+                 'THA'           : 'th',
+                 'DA'            : 'd',
+                 'DHA'           : 'dh',
+                 'NA'            : 'n',
+                 'NNNA'          : 'NNN',     # (???) see above
+                 'PA'            : 'p',
+                 'PHA'           : 'ph',
+                 'BA'            : 'b',
+                 'BHA'           : 'bh',
+                 'MA'            : 'm',
+                 'YA'            : 'y',
+                 'RA'            : 'r',
+                 'RRA'           : 'RRR',     # (???) see above
+                 'LA'            : 'l',
+                 'LLA'           : 'L',
+                 'LLLA'          : 'LLL',     # (???) see above
+                 'VA'            : 'v',
+                 'SHA'           : 'sh',
+                 'SSA'           : 'Sh',
+                 'SA'            : 's',
+                 'HA'            : 'h',
 
                  'DEVANAGARI SIGN VISARGA'         : 'H',
              }
@@ -114,13 +114,13 @@ CONSONANTS_URDU = {
 
 # URDU_CONSONANT_2_CONSONANT['q'] = 'k' + nukta
 URDU_CONSONANT_2_CONSONANT = {
-                 'q'                            : 'DEVANAGARI LETTER KA',
-                 'K'                            : 'DEVANAGARI LETTER KHA',
-                 'G'                            : 'DEVANAGARI LETTER GA',
-                 'z'                            : 'DEVANAGARI LETTER JA',
-                 'f'                            : 'DEVANAGARI LETTER PA',
-                 '.D'                           : 'DEVANAGARI LETTER DDA',
-                 '.Dh'                          : 'DEVANAGARI LETTER DDHA',
+                 'q'                            : 'KA',
+                 'K'                            : 'KHA',
+                 'G'                            : 'GA',
+                 'z'                            : 'JA',
+                 'f'                            : 'PA',
+                 '.D'                           : 'DDA',
+                 '.Dh'                          : 'DDHA',
                  }
 
 # the name of the vowels (the keys of this dictionary) must be consistent
@@ -313,7 +313,7 @@ def dchar__get_translit_str(dstring_object, prev_dchar, dchar):
                 res.append( CONSONANTS[dchar.base_char] )
             else:
                 # Urdu consonant :
-                # dchar.base_char(DEVANAGARI LETTER KA) -> "q"
+                # dchar.base_char(KA) -> "q"
                 urdu_letter = URDU_CONSONANT_2_CONSONANT_INVERSED[dchar.base_char]
                 res.append( urdu_letter )
 

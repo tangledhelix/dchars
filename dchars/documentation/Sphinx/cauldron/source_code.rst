@@ -71,11 +71,29 @@ dchars.languages.bod.transliterations
    :maxdepth: 2
 
    dchars.languages.bod.transliterations.__init__
-   dchars.languages.bod.transliterations.bodsan
-   dchars.languages.bod.transliterations.bodsan_symbols
-   dchars.languages.bod.transliterations.ewts
-   dchars.languages.bod.transliterations.ewts_buffer
-   dchars.languages.bod.transliterations.ewts_symbols
+
+--------------------------------------------------------------------------------
+dchars.languages.bod.transliterations.bodsan
+--------------------------------------------------------------------------------
+
+.. toctree::
+   :maxdepth: 2
+
+   dchars.languages.bod.transliterations.bodsan.__init__
+   dchars.languages.bod.transliterations.bodsan.bodsan
+   dchars.languages.bod.transliterations.bodsan.bodsan_symbols
+
+--------------------------------------------------------------------------------
+dchars.languages.bod.transliterations.ewts
+--------------------------------------------------------------------------------
+
+.. toctree::
+   :maxdepth: 2
+
+   dchars.languages.bod.transliterations.ewts.__init__
+   dchars.languages.bod.transliterations.ewts.ewts
+   dchars.languages.bod.transliterations.ewts.ewts_buffer
+   dchars.languages.bod.transliterations.ewts.ewts_symbols
 
 --------------------------------------------------------------------------------
 dchars.languages.grc
@@ -97,10 +115,50 @@ dchars.languages.grc.transliterations
    :maxdepth: 2
 
    dchars.languages.grc.transliterations.__init__
-   dchars.languages.grc.transliterations.basic
-   dchars.languages.grc.transliterations.betacode
-   dchars.languages.grc.transliterations.gutenberg
-   dchars.languages.grc.transliterations.perseus
+
+--------------------------------------------------------------------------------
+dchars.languages.grc.transliterations.basic
+--------------------------------------------------------------------------------
+
+.. toctree::
+   :maxdepth: 2
+
+   dchars.languages.grc.transliterations.basic.__init__
+   dchars.languages.grc.transliterations.basic.basic
+   dchars.languages.grc.transliterations.basic.ucombinations
+
+--------------------------------------------------------------------------------
+dchars.languages.grc.transliterations.betacode
+--------------------------------------------------------------------------------
+
+.. toctree::
+   :maxdepth: 2
+
+   dchars.languages.grc.transliterations.betacode.__init__
+   dchars.languages.grc.transliterations.betacode.betacode
+   dchars.languages.grc.transliterations.betacode.ucombinations
+
+--------------------------------------------------------------------------------
+dchars.languages.grc.transliterations.gutenberg
+--------------------------------------------------------------------------------
+
+.. toctree::
+   :maxdepth: 2
+
+   dchars.languages.grc.transliterations.gutenberg.__init__
+   dchars.languages.grc.transliterations.gutenberg.gutenberg
+   dchars.languages.grc.transliterations.gutenberg.ucombinations
+
+--------------------------------------------------------------------------------
+dchars.languages.grc.transliterations.perseus
+--------------------------------------------------------------------------------
+
+.. toctree::
+   :maxdepth: 2
+
+   dchars.languages.grc.transliterations.perseus.__init__
+   dchars.languages.grc.transliterations.perseus.perseus
+   dchars.languages.grc.transliterations.perseus.ucombinations
 
 --------------------------------------------------------------------------------
 dchars.languages.hbo
@@ -122,7 +180,16 @@ dchars.languages.hbo.transliterations
    :maxdepth: 2
 
    dchars.languages.hbo.transliterations.__init__
-   dchars.languages.hbo.transliterations.basic
+
+--------------------------------------------------------------------------------
+dchars.languages.hbo.transliterations.basic
+--------------------------------------------------------------------------------
+
+.. toctree::
+   :maxdepth: 2
+
+   dchars.languages.hbo.transliterations.basic.__init__
+   dchars.languages.hbo.transliterations.basic.basic
 
 --------------------------------------------------------------------------------
 dchars.languages.lat
@@ -144,7 +211,16 @@ dchars.languages.lat.transliterations
    :maxdepth: 2
 
    dchars.languages.lat.transliterations.__init__
-   dchars.languages.lat.transliterations.basic
+
+--------------------------------------------------------------------------------
+dchars.languages.lat.transliterations.basic
+--------------------------------------------------------------------------------
+
+.. toctree::
+   :maxdepth: 2
+
+   dchars.languages.lat.transliterations.basic.__init__
+   dchars.languages.lat.transliterations.basic.basic
 
 --------------------------------------------------------------------------------
 dchars.languages.san
@@ -166,8 +242,26 @@ dchars.languages.san.transliterations
    :maxdepth: 2
 
    dchars.languages.san.transliterations.__init__
-   dchars.languages.san.transliterations.iso15919
-   dchars.languages.san.transliterations.itrans
+
+--------------------------------------------------------------------------------
+dchars.languages.san.transliterations.iso15919
+--------------------------------------------------------------------------------
+
+.. toctree::
+   :maxdepth: 2
+
+   dchars.languages.san.transliterations.iso15919.__init__
+   dchars.languages.san.transliterations.iso15919.iso15919
+
+--------------------------------------------------------------------------------
+dchars.languages.san.transliterations.itrans
+--------------------------------------------------------------------------------
+
+.. toctree::
+   :maxdepth: 2
+
+   dchars.languages.san.transliterations.itrans.__init__
+   dchars.languages.san.transliterations.itrans.itrans
 
 --------------------------------------------------------------------------------
 dchars.symbols

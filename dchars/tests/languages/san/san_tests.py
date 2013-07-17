@@ -56,10 +56,10 @@ class TESTSDStringSAN(unittest.TestCase):
 
         # क and कि have the same base character :
         string = DSTRING_SAN("क")
-        self.assertEqual( string[0].base_char, "DEVANAGARI LETTER KA" )
+        self.assertEqual( string[0].base_char, "KA" )
 
         string = DSTRING_SAN("कि")
-        self.assertEqual( string[0].base_char, "DEVANAGARI LETTER KA" )
+        self.assertEqual( string[0].base_char, "KA" )
 
     #///////////////////////////////////////////////////////////////////////////
     def test_emptystring(self):
@@ -297,17 +297,17 @@ class TESTSDStringSAN(unittest.TestCase):
                 self.assertEqual( string[index].unknown_char, False )
 
         # string[1] = NA + nukta
-        self.assertEqual( string[1].base_char, "DEVANAGARI LETTER NA" )
+        self.assertEqual( string[1].base_char, "NA" )
         self.assertEqual( string[1].nukta, True )
         self.assertEqual( string[1].punctuation, False )
 
         # string[8] = KA + nukta
-        self.assertEqual( string[8].base_char, "DEVANAGARI LETTER KA" )
+        self.assertEqual( string[8].base_char, "KA" )
         self.assertEqual( string[8].nukta, True )
         self.assertEqual( string[8].punctuation, False )
 
         # string[9] = SA + nukta
-        self.assertEqual( string[9].base_char, "DEVANAGARI LETTER SA" )
+        self.assertEqual( string[9].base_char, "SA" )
         self.assertEqual( string[9].nukta, True )
         self.assertEqual( string[9].punctuation, False )
 
@@ -324,17 +324,17 @@ class TESTSDStringSAN(unittest.TestCase):
                 self.assertEqual( string[index].unknown_char, False )
 
         # string[1] = NA + nukta
-        self.assertEqual( string[1].base_char, "DEVANAGARI LETTER NA" )
+        self.assertEqual( string[1].base_char, "NA" )
         self.assertEqual( string[1].nukta, True )
         self.assertEqual( string[1].punctuation, False )
 
         # string[8] = KA + nukta
-        self.assertEqual( string[8].base_char, "DEVANAGARI LETTER KA" )
+        self.assertEqual( string[8].base_char, "KA" )
         self.assertEqual( string[8].nukta, True )
         self.assertEqual( string[8].punctuation, False )
 
         # string[9] = SA + nukta
-        self.assertEqual( string[9].base_char, "DEVANAGARI LETTER SA" )
+        self.assertEqual( string[9].base_char, "SA" )
         self.assertEqual( string[9].nukta, True )
         self.assertEqual( string[9].punctuation, False )
 

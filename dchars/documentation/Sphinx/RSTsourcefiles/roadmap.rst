@@ -4,7 +4,6 @@ ROADMAP_TITLE
 
 .. code-block:: none
 
-  * (22) DStringCharacterGRC > DCharacterGRC 
   * (21) utiliser ou non la forme bis du bêta
   * (20) DEVANAAGI LETTER -> ""
   * (20) buffériser get_intstructures_from_dstring() : buffer dchar->intstruct

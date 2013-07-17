@@ -441,7 +441,7 @@ def get_usefull_combinations(self):
     #-----------------------------------------------------------------------
     for base_char in base_characters:
         for capital_letter in (False, True):
-            dchar = DStringCharacterGRC( dstring_object = self.dstring_object,
+            dchar = DCharacterGRC( dstring_object = self.dstring_object,
                                          base_char = base_char,
                                          contextual_form = "initial+medium+final",
                                          punctuation = False,

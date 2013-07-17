@@ -22,7 +22,7 @@ $INDEX_INTRODUCTION$
 
 Download last version :
 
-`► dchars_v0.4.5.tar.gz <../../doc/userversion/dchars_v0.4.5.tar.gz>`_
+`► dchars_v0.4.6.tar.gz <../../doc/userversion/dchars_v0.4.6.tar.gz>`_
 
 If interested, take a look at the developper's directory (`► dev <../../dev/>`_) or at the overall UML diagram (`► UML <../classes_dchars.png>`_).
 

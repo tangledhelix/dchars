@@ -180,64 +180,64 @@ def get_intstruct_from_trans_str( _src, dstring_object ):
                     # _base_char will be added as a main consonant :
                     #...........................................................
                     if (dstring_object.options["san2bod quality"] == "normal" and \
-                        dchar_san.base_char=='DEVANAGARI LETTER VA'):
+                        dchar_san.base_char=='VA'):
                         #====================
                         # @@BOD2SAN-NORM-002
                         # the व(va) becomes ब(ba) if "san2bod quality" == "normal"
                         #====================
-                        _base_char = "DEVANAGARI LETTER BA"
+                        _base_char = "BA"
 
                     elif (dstring_object.options["san2bod quality"] == "low" and \
-                        dchar_san.base_char=='DEVANAGARI LETTER VA'):
+                        dchar_san.base_char=='VA'):
                         #===================
                         # @@BOD2SAN-LOW-002
                         # the व(va) becomes ब(ba) if "san2bod quality" == "normal"
                         #===================
-                        _base_char = "DEVANAGARI LETTER BA"
+                        _base_char = "BA"
 
                     elif (dstring_object.options["san2bod quality"] == "low" and \
-                        dchar_san.base_char in ('DEVANAGARI LETTER TTA',
-                                                'DEVANAGARI LETTER TTHA',
-                                                'DEVANAGARI LETTER DDA',
-                                                'DEVANAGARI LETTER DDHA',
-                                                'DEVANAGARI LETTER NNA')):
+                        dchar_san.base_char in ('TTA',
+                                                'TTHA',
+                                                'DDA',
+                                                'DDHA',
+                                                'NNA')):
                         #===================
                         # @@BOD2SAN-LOW-007
                         # retroflex consonant > non-retroflex consonant
                         # retroflex consonant + aspiration > non-retroflex
                         # consonant without aspiration
                         #===================
-                        _base_char = {'DEVANAGARI LETTER TTA'   : "DEVANAGARI LETTER TA",
-                                      'DEVANAGARI LETTER TTHA'  : "DEVANAGARI LETTER TA",
-                                      'DEVANAGARI LETTER DDA'   : "DEVANAGARI LETTER DA",
-                                      'DEVANAGARI LETTER DDHA'  : "DEVANAGARI LETTER DA",
-                                      'DEVANAGARI LETTER NNA'   : "DEVANAGARI LETTER NA"
+                        _base_char = {'TTA'   : "TA",
+                                      'TTHA'  : "TA",
+                                      'DDA'   : "DA",
+                                      'DDHA'  : "DA",
+                                      'NNA'   : "NA"
                                       }[dchar_san.base_char]
 
                     elif (dstring_object.options["san2bod quality"] == "low" and \
-                        dchar_san.base_char in ('DEVANAGARI LETTER KHA',
-                                                'DEVANAGARI LETTER GHA',
-                                                'DEVANAGARI LETTER THA',
-                                                'DEVANAGARI LETTER CHA',
-                                                'DEVANAGARI LETTER JHA',
-                                                'DEVANAGARI LETTER TTHA',
-                                                'DEVANAGARI LETTER DDHA',
-                                                'DEVANAGARI LETTER PHA',
-                                                'DEVANAGARI LETTER BHA')):
+                        dchar_san.base_char in ('KHA',
+                                                'GHA',
+                                                'THA',
+                                                'CHA',
+                                                'JHA',
+                                                'TTHA',
+                                                'DDHA',
+                                                'PHA',
+                                                'BHA')):
                         #===================
                         # @@BOD2SAN-LOW-008
                         # consonant + aspiration > consonant without aspiration
                         #===================
-                        _base_char = {'DEVANAGARI LETTER KHA'   : "DEVANAGARI LETTER KA",
-                                      'DEVANAGARI LETTER GHA'   : "DEVANAGARI LETTER GA",
-                                      'DEVANAGARI LETTER THA'   : "DEVANAGARI LETTER TA",
-                                      'DEVANAGARI LETTER CHA'   : "DEVANAGARI LETTER CA",
-                                      'DEVANAGARI LETTER JHA'   : "DEVANAGARI LETTER JA",
-                                      'DEVANAGARI LETTER DHA'   : "DEVANAGARI LETTER DA",
-                                      'DEVANAGARI LETTER TTHA'  : "DEVANAGARI LETTER TTA",
-                                      'DEVANAGARI LETTER DDHA'  : "DEVANAGARI LETTER DDA",
-                                      'DEVANAGARI LETTER PHA'   : "DEVANAGARI LETTER PA",
-                                      'DEVANAGARI LETTER BHA'   : "DEVANAGARI LETTER BA"
+                        _base_char = {'KHA'   : "KA",
+                                      'GHA'   : "GA",
+                                      'THA'   : "TA",
+                                      'CHA'   : "CA",
+                                      'JHA'   : "JA",
+                                      'DHA'   : "DA",
+                                      'TTHA'  : "TTA",
+                                      'DDHA'  : "DDA",
+                                      'PHA'   : "PA",
+                                      'BHA'   : "BA"
                                       }[dchar_san.base_char]
 
                     else:
