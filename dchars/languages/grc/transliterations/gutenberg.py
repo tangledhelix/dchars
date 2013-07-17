@@ -49,7 +49,6 @@ TRANS_EQUIVALENCES = ()
 # LOWER_CASE[base_char] = transliterated character
 LOWER_CASE = {"α"     : "a",
               "β"     : "b",
-              'β2'    : "b",
               'γ'     : "g",
               'δ'     : "d",
               'ε'     : "e",
@@ -66,7 +65,6 @@ LOWER_CASE = {"α"     : "a",
               'π'     : "p",
               'ρ'     : "r",
               'σ'     : "s",
-              'σ2'    : "s",
               'τ'     : "t",
               # see infra for more details 
               # -> confer the option [grc.gutenberg]transliteration for upsilon

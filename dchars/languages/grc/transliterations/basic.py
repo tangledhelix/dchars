@@ -47,7 +47,6 @@ TRANS_EQUIVALENCES = ()
 # LOWER_CASE[base_char] = transliterated character
 LOWER_CASE = {"α"     : "a",
               "β"     : "b",
-              'β2'    : "b",
               'γ'     : "g",
               'δ'     : "d",
               'ε'     : "e",
@@ -64,7 +63,6 @@ LOWER_CASE = {"α"     : "a",
               'π'     : "p",
               'ρ'     : "r",
               'σ'     : "s",
-              'σ2'    : "s",
               'τ'     : "t",
               'υ'     : "u",
               'φ'     : "ph",
@@ -413,3 +411,47 @@ def dstring__trans__get_trans(dstring_object):
                                             dchar = dchar))
 
     return "".join( res )
+
+#///////////////////////////////////////////////////////////////////////////
+def get_usefull_combinations(self):
+    """
+            DStringGRC.get_usefull_combinations
+
+            Return a DString with all the usefull combinations of characters,
+            i.e. only the 'interesting' characters (not punctuation if it's too simple
+            by example).
+            
+            NB : this function has nothing to do with linguistic or a strict
+                 approach of the language. This function allows only to get the
+                 most common and/or usefull characters of the writing system.
+
+            NB : function required by the dchars-fe project.
+    """
+    res = []
+
+    # base_char : we don't use the list stored in symbols.py
+    # since we would lost the character's order.
+    base_characters  = ( 'α', 'β', 'γ', 'δ', 'ε', 'ζ', 'η', 'θ', 'ι',
+                         'κ', 'λ', 'μ', 'ν', 'ξ', 'ο', 'π', 'ρ', 'σ',
+                         'τ', 'υ', 'φ', 'χ', 'ψ', 'ω',
+                         'ϝ', 'ϗ', 'ϡ', 'ϛ', 'ϙ', )
+
+    #-----------------------------------------------------------------------
+    # (1/2) simple characters
+    #-----------------------------------------------------------------------
+    for base_char in base_characters:
+        for capital_letter in (False, True):
+            dchar = DStringCharacterGRC( dstring_object = self.dstring_object,
+                                         base_char = base_char,
+                                         contextual_form = "initial+medium+final",
+                                         punctuation = False,
+                                         capital_letter = capital_letter,
+                                         tonos = None,
+                                         pneuma = None,
+                                         hypogegrammene = False,
+                                         dialutika = False,
+                                         mekos = None )
+
+            txt = dchar__get_translit_str(dchar)
+
+    return "".join(res)

@@ -245,7 +245,7 @@ class DCharacterGRC(DCharacterMotherClass):
     #///////////////////////////////////////////////////////////////////////////
     def get_usefull_combinations(self):
         """
-                DStringCharacterGRC.get_usefull_combinations
+                DCharacterGRC.get_usefull_combinations
 
                 Yield, one dchar at a time,  all the usefull combinations of characters,
                 i.e. only the 'interesting' characters (not punctuation if it's too simple
