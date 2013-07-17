@@ -43,6 +43,7 @@ from dchars.utilities.lstringtools import number_of_occurences
 
 # known transliterations :
 import dchars.languages.lat.transliterations.basic.basic as basictrans
+import dchars.languages.lat.transliterations.basic.ucombinations as basictrans_ucombinations
 
 ################################################################################
 class DStringLAT(DStringMotherClass):
@@ -72,6 +73,10 @@ class DStringLAT(DStringMotherClass):
 
     trans__get_transliteration = {
           "basic" : basictrans.dchar__init_from_translit_str,
+          }
+
+    trans__get_transl_ucombinations = {
+          "basic" : basictrans_ucombinations.get_usefull_combinations,
           }
 
     #///////////////////////////////////////////////////////////////////////////
@@ -114,6 +119,24 @@ class DStringLAT(DStringMotherClass):
                 self.append( dchar )
         
         return self
+
+    #///////////////////////////////////////////////////////////////////////////
+    def get_usefull_transl_combinations(self):
+        """
+                DStringLAT.get_usefull_transl_combinations
+
+                Return a (str)string with all the usefull combinations of TRANSLITTERATED
+                characters, i.e. only the 'interesting' characters (not punctuation if
+                 it's too simple by example). 
+
+                NB : this function has nothing to do with linguistic or a strict
+                     approach of the language. This function allows only to get the
+                     most common and/or usefull characters of the writing system.
+
+                NB : function required by the dchars-fe project.
+        """
+        res = DStringLAT.trans__get_transl_ucombinations[self.transliteration_method]()
+        return res
 
     #///////////////////////////////////////////////////////////////////////////
     def get_transliteration(self):

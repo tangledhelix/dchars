@@ -6,6 +6,7 @@ CHANGELOG_TITLE
 0.4.6 [2013_06_XX]
 ------------------
   
+  * (all languages) get_usefull_combinations() for all transliteration's methods
   * (all languages) one directory per transliteration method.
   * (grc) in transliterations' method, symbols.py doesn't use anymore unused dchar_base like "σ2".
   * (grc) fixed a bug concerning ϐ and σ, no longer 'base_char'

@@ -41,6 +41,7 @@ import dchars.languages.bod.internalstructure as istruct
 # known transliterations :
 ################################################################################
 import dchars.languages.bod.transliterations.ewts.ewts as trans_ewts
+import dchars.languages.bod.transliterations.ewts.ucombinations as trans_ewts_ucombinations
 
 import dchars.languages.bod.transliterations.bodsan.bodsan as trans_bodsan
 
@@ -104,6 +105,10 @@ class DStringBOD(DStringMotherClass):
         "bodsan" : trans_bodsan.get_intstruct_from_trans_str,
         }
 
+    trans__get_transl_ucombinations = {
+        "ewts"   : trans_ewts_ucombinations.get_usefull_combinations,
+        # "bodsan" : ...
+        }
 
     #///////////////////////////////////////////////////////////////////////////
     def __init__(self, str_src = None):
@@ -115,6 +120,9 @@ class DStringBOD(DStringMotherClass):
         # internal structure(s) corresponding to self's content :
         # Should be initialized by self.init_from_transliteration() or
         # by self.init_from_str().
+        #
+        # We can't set self.istructs to an empty ListOfInternalStructures object,
+        # since this objects needs option(s) to be initialized.
         self.istructs = None
 
         self.are_the_options_valid()
@@ -128,9 +136,6 @@ class DStringBOD(DStringMotherClass):
 
         if str_src is not None:
             self.init_from_str(str_src)
-
-        # either str_src is None or a string we have to initialize .istructs :
-        self.update_istructs()
 
     #///////////////////////////////////////////////////////////////////////////
     def __setattr__(self, key, value):
@@ -231,6 +236,24 @@ class DStringBOD(DStringMotherClass):
         self.update_istructs()
         
         return self
+
+    #///////////////////////////////////////////////////////////////////////////
+    def get_usefull_transl_combinations(self):
+        """
+                DStringBOD.get_usefull_transl_combinations
+
+                Return a (str)string with all the usefull combinations of TRANSLITTERATED
+                characters, i.e. only the 'interesting' characters (not punctuation if
+                 it's too simple by example). 
+
+                NB : this function has nothing to do with linguistic or a strict
+                     approach of the language. This function allows only to get the
+                     most common and/or usefull characters of the writing system.
+
+                NB : function required by the dchars-fe project.
+        """
+        res = DStringBOD.trans__get_transl_ucombinations[self.transliteration_method]()
+        return res
 
     #///////////////////////////////////////////////////////////////////////////
     def get_transliteration(self):

@@ -45,9 +45,16 @@ from dchars.utilities.lstringtools import number_of_occurences
 
 # known transliterations :
 import dchars.languages.grc.transliterations.basic.basic as basictrans
+import dchars.languages.grc.transliterations.basic.ucombinations as basictrans_ucombinations
+
 import dchars.languages.grc.transliterations.betacode.betacode as betacodetrans
+import dchars.languages.grc.transliterations.betacode.ucombinations as betacodetrans_ucombinations
+
 import dchars.languages.grc.transliterations.perseus.perseus as perseustrans
+import dchars.languages.grc.transliterations.perseus.ucombinations as perseustrans_ucombinations
+
 import dchars.languages.grc.transliterations.gutenberg.gutenberg as gutenbergtrans
+import dchars.languages.grc.transliterations.gutenberg.ucombinations as gutenbergtrans_ucombinations
 
 ################################################################################
 class DStringGRC(DStringMotherClass):
@@ -86,6 +93,13 @@ class DStringGRC(DStringMotherClass):
           "betacode"    : betacodetrans.dstring__trans__get_trans,
           "perseus"     : perseustrans.dstring__trans__get_trans,
           "gutenberg"   : gutenbergtrans.dstring__trans__get_trans,
+          }
+
+    trans__get_transl_ucombinations = {
+          "basic" : basictrans_ucombinations.get_usefull_combinations,
+          "betacode" : betacodetrans_ucombinations.get_usefull_combinations,
+          "gutenberg" : gutenbergtrans_ucombinations.get_usefull_combinations,
+          "perseus" : perseustrans_ucombinations.get_usefull_combinations,
           }
 
     #///////////////////////////////////////////////////////////////////////////
@@ -128,6 +142,24 @@ class DStringGRC(DStringMotherClass):
                 self.append( dchar )
         
         return self
+
+    #///////////////////////////////////////////////////////////////////////////
+    def get_usefull_transl_combinations(self):
+        """
+                DStringGRC.get_usefull_transl_combinations
+
+                Return a (str)string with all the usefull combinations of TRANSLITTERATED
+                characters, i.e. only the 'interesting' characters (not punctuation if
+                 it's too simple by example). 
+
+                NB : this function has nothing to do with linguistic or a strict
+                     approach of the language. This function allows only to get the
+                     most common and/or usefull characters of the writing system.
+
+                NB : function required by the dchars-fe project.
+        """
+        res = DStringGRC.trans__get_transl_ucombinations[self.transliteration_method]()
+        return res
 
     #///////////////////////////////////////////////////////////////////////////
     def get_transliteration(self):

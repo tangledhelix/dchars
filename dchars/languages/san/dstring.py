@@ -50,7 +50,10 @@ from dchars.languages.san.dcharacter import DCharacterSAN
 # known transliterations :
 ################################################################################
 import dchars.languages.san.transliterations.itrans.itrans as trans_itrans
+import dchars.languages.san.transliterations.itrans.ucombinations as trans_itrans_ucombinations
+
 import dchars.languages.san.transliterations.iso15919.iso15919 as trans_iso15919
+import dchars.languages.san.transliterations.iso15919.ucombinations as trans_iso15919_ucombinations
 
 ################################################################################
 class DStringSAN(DStringMotherClass):
@@ -78,6 +81,11 @@ class DStringSAN(DStringMotherClass):
     trans__init_from_transliteration = {
           "itrans"   : trans_itrans.dstring__init_from_translit_str,
           "iso15919" : trans_iso15919.dstring__init_from_translit_str,
+          }
+
+    trans__get_transl_ucombinations = {
+          "itrans" : trans_itrans_ucombinations.get_usefull_combinations,
+          "iso15919" : trans_iso15919_ucombinations.get_usefull_combinations,
           }
 
     #///////////////////////////////////////////////////////////////////////////
@@ -121,6 +129,24 @@ class DStringSAN(DStringMotherClass):
         
         return self
 
+    #///////////////////////////////////////////////////////////////////////////
+    def get_usefull_transl_combinations(self):
+        """
+                DStringSAN.get_usefull_transl_combinations
+
+                Return a (str)string with all the usefull combinations of TRANSLITTERATED
+                characters, i.e. only the 'interesting' characters (not punctuation if
+                 it's too simple by example). 
+
+                NB : this function has nothing to do with linguistic or a strict
+                     approach of the language. This function allows only to get the
+                     most common and/or usefull characters of the writing system.
+
+                NB : function required by the dchars-fe project.
+        """
+        res = DStringSAN.trans__get_transl_ucombinations[self.transliteration_method]()
+        return res
+    
     #///////////////////////////////////////////////////////////////////////////
     def get_transliteration(self):
         """
