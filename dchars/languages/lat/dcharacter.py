@@ -41,7 +41,7 @@ import copy
 import unicodedata
 
 # known transliterations :
-import dchars.languages.lat.transliterations.basic as basictrans
+import dchars.languages.lat.transliterations.basic.basic as basictrans
 
 ################################################################################
 # we complete the function unicodedata.normalize('NFC', ...)

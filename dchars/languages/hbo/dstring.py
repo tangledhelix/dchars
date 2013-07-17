@@ -47,7 +47,7 @@ import unicodedata
 from dchars.utilities.lstringtools import number_of_occurences
 
 # known transliterations :
-import dchars.languages.hbo.transliterations.basic as basictrans
+import dchars.languages.hbo.transliterations.basic.basic as basictrans
 
 ################################################################################
 class DStringHBO(DStringMotherClass):

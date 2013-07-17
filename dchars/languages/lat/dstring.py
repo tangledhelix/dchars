@@ -42,7 +42,7 @@ import unicodedata
 from dchars.utilities.lstringtools import number_of_occurences
 
 # known transliterations :
-import dchars.languages.lat.transliterations.basic as basictrans
+import dchars.languages.lat.transliterations.basic.basic as basictrans
 
 ################################################################################
 class DStringLAT(DStringMotherClass):

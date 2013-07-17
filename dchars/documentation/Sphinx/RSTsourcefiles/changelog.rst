@@ -5,7 +5,8 @@ CHANGELOG_TITLE
 ------------------
 0.4.6 [2013_06_XX]
 ------------------
-
+  
+  - (all languages) one directory for transliteration method
   * (grc) fixed a bug concerning ϐ and σ, no longer 'base_char'
 
 ------------------

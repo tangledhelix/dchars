@@ -38,7 +38,7 @@ from dchars.languages.hbo.symbols import SYMB_POINTS, \
                                          DEFAULTSYMB__METEG, \
                                          DEFAULTSYMB__RAFE
 # known transliterations :
-import dchars.languages.hbo.transliterations.basic as basictrans
+import dchars.languages.hbo.transliterations.basic.basic as basictrans
 
 import copy
 import itertools

@@ -34,15 +34,15 @@ from dchars.languages.bod.symbols import TSHEG_SYMBOL, SPACE_SYMBOL
 from dchars.dstring import DStringMotherClass
 
 import dchars.languages.bod.buffer as bod_buffer
-import dchars.languages.bod.transliterations.ewts_buffer as ewts_buffer
+import dchars.languages.bod.transliterations.ewts.ewts_buffer as ewts_buffer
 import dchars.languages.bod.internalstructure as istruct
 
 ################################################################################
 # known transliterations :
 ################################################################################
-import dchars.languages.bod.transliterations.ewts as trans_ewts
+import dchars.languages.bod.transliterations.ewts.ewts as trans_ewts
 
-import dchars.languages.bod.transliterations.bodsan as trans_bodsan
+import dchars.languages.bod.transliterations.bodsan.bodsan as trans_bodsan
 
 ################################################################################
 # substitutions :

@@ -49,8 +49,8 @@ import itertools
 ################################################################################
 # known transliterations :
 ################################################################################
-import dchars.languages.san.transliterations.itrans as trans_itrans
-import dchars.languages.san.transliterations.iso15919 as trans_iso15919
+import dchars.languages.san.transliterations.itrans.itrans as trans_itrans
+import dchars.languages.san.transliterations.iso15919.iso15919 as trans_iso15919
 
 ################################################################################
 # we complete the function unicodedata.normalize('NFC', ...)

@@ -47,10 +47,10 @@ import copy
 import itertools
 
 # known transliterations :
-import dchars.languages.grc.transliterations.basic as basictrans
-import dchars.languages.grc.transliterations.betacode as betacodetrans
-import dchars.languages.grc.transliterations.perseus as perseustrans
-import dchars.languages.grc.transliterations.gutenberg as gutenbergtrans
+import dchars.languages.grc.transliterations.basic.basic as basictrans
+import dchars.languages.grc.transliterations.betacode.betacode as betacodetrans
+import dchars.languages.grc.transliterations.perseus.perseus as perseustrans
+import dchars.languages.grc.transliterations.gutenberg.gutenberg as gutenbergtrans
 
 ################################################################################
 # we complete the function unicodedata.normalize('NFC', ...)

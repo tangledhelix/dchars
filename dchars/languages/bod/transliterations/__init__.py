@@ -19,5 +19,5 @@
 #    along with DChars.  If not, see <http://www.gnu.org/licenses/>.
 ################################################################################
 """
-    ❏DChars❏ : dchars/languages/bod/__init__.py
+    ❏DChars❏ : dchars/languages/bod/transliterations/__init__.py
 """
