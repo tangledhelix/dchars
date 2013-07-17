@@ -201,7 +201,8 @@ class DCharacterBOD(DCharacterMotherClass):
                            punctuation = False,
                            halanta = False,
                            anusvara_candrabindu = None,
-                           vowel1 = None )
+                           vowel1 = None,
+                           vowel2 = None )
 
             yield copy.copy(self)
 

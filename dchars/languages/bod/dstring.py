@@ -129,6 +129,9 @@ class DStringBOD(DStringMotherClass):
         if str_src is not None:
             self.init_from_str(str_src)
 
+        # either str_src is None or a string we have to initialize .istructs :
+        self.update_istructs()
+
     #///////////////////////////////////////////////////////////////////////////
     def __setattr__(self, key, value):
         """
