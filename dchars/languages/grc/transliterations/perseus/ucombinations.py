@@ -23,7 +23,7 @@
 """
 from dchars.dchars import new_dstring
 from dchars.languages.grc.dcharacter import DCharacterGRC
-from dchars.languages.grc.transliterations.basic.basic import dchar__get_translit_str
+from dchars.languages.grc.transliterations.perseus.perseus import dchar__get_translit_str
 
 import itertools
 
