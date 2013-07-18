@@ -94,6 +94,7 @@ dchars.languages.bod.transliterations.ewts
    dchars.languages.bod.transliterations.ewts.ewts
    dchars.languages.bod.transliterations.ewts.ewts_buffer
    dchars.languages.bod.transliterations.ewts.ewts_symbols
+   dchars.languages.bod.transliterations.ewts.ucombinations
 
 --------------------------------------------------------------------------------
 dchars.languages.grc
@@ -190,6 +191,7 @@ dchars.languages.hbo.transliterations.basic
 
    dchars.languages.hbo.transliterations.basic.__init__
    dchars.languages.hbo.transliterations.basic.basic
+   dchars.languages.hbo.transliterations.basic.ucombinations
 
 --------------------------------------------------------------------------------
 dchars.languages.lat
@@ -221,6 +223,7 @@ dchars.languages.lat.transliterations.basic
 
    dchars.languages.lat.transliterations.basic.__init__
    dchars.languages.lat.transliterations.basic.basic
+   dchars.languages.lat.transliterations.basic.ucombinations
 
 --------------------------------------------------------------------------------
 dchars.languages.san
@@ -252,6 +255,7 @@ dchars.languages.san.transliterations.iso15919
 
    dchars.languages.san.transliterations.iso15919.__init__
    dchars.languages.san.transliterations.iso15919.iso15919
+   dchars.languages.san.transliterations.iso15919.ucombinations
 
 --------------------------------------------------------------------------------
 dchars.languages.san.transliterations.itrans
@@ -262,6 +266,7 @@ dchars.languages.san.transliterations.itrans
 
    dchars.languages.san.transliterations.itrans.__init__
    dchars.languages.san.transliterations.itrans.itrans
+   dchars.languages.san.transliterations.itrans.ucombinations
 
 --------------------------------------------------------------------------------
 dchars.symbols

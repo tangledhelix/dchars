@@ -47,6 +47,7 @@ CONFIG_INI = configparser.ConfigParser()
 CONFIG_INI.read( os.path.join(os.path.dirname(os.path.realpath(__file__)), 
                               "config.ini" ))
 
+# we check the accurency of the informations stored in the config.ini file :
 dchars.config_ini.check(CONFIG_INI)
 
 #...............................................................................

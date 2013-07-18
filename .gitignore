@@ -3,6 +3,5 @@
 __pycache__
 .doctrees
 #*
-
-
-
+dchars/documentation/*
+doc/

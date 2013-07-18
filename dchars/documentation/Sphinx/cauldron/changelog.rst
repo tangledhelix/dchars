@@ -3,6 +3,20 @@ CHANGELOG_TITLE
 ===============
 
 ------------------
+0.4.7 [2013_06_18]
+------------------
+
+  * added some files to setup.py needed by dchars.
+  * added to project_files.py some forgotten files
+  * modified .gitignore so that doc/ and dchars/documentation/ directories are not
+    added to git files.
+
+  * code quality :
+
+    * header_please_test.py ok
+    * 136 tests, all ok
+
+------------------
 0.4.6 [2013_06_17]
 ------------------
 

@@ -29,10 +29,7 @@ import os.path
 EWTS_BUFFER_LOADED = False
 
 EWTS_BUFFER__FROM_TRANS_STR = {}          # -> get_intstruct_from_trans_str()
-EWTS_BUFFER__FROM_TRANS_STR__FNAME = os.path.join("dchars",
-                                            "languages",
-                                            "bod",
-                                            "transliterations",
-                                            "ewts",
-                                            "ewts_buffer_trans_str.data")
+EWTS_BUFFER__FROM_TRANS_STR__FNAME = os.path.join( os.path.abspath( os.path.dirname(__file__)),
+                                                   "ewts_buffer_trans_str.data" )
+
 

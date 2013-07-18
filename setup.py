@@ -25,6 +25,8 @@
 from setuptools import setup, find_packages
 from dchars.system import numversion as numversion
 
+import os.path
+
 VERSION = numversion.VersionOfTheProgram().numversion
 
 setup(name='DChars',
@@ -39,5 +41,18 @@ setup(name='DChars',
       download_url='94.23.197.37/dchars/',
       packages=find_packages(),
       package_data = { 'dchars': [ "config.ini",
-                                    "system/numversion", ]}
+                                   
+                                   os.path.join("system",
+                                                "numversion"),
+                                                
+                                   os.path.join("languages",
+                                                "bod",
+                                                "buffer_str.data"),
+                                                
+                                   os.path.join("languages",
+                                                "bod",
+                                                "transliterations",
+                                                "ewts",
+                                                "ewts_buffer_trans_str.data"),
+                                    ]}
      )

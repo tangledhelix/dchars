@@ -31,8 +31,8 @@ BUFFER_LOADED = False
 # buffer used to build istructs from unicode strings :
 BUFFER__FROM_STR = {}                # -> internalstructure.py::get_intstruct_from_str()
 # file name :
-BUFFER__FROM_STR__FNAME = os.path.join("dchars",
-                                       "languages",
-                                       "bod",
-                                       "buffer_str.data")
+BUFFER__FROM_STR__FNAME = os.path.join( os.path.abspath( os.path.dirname(__file__)),
+                                        "buffer_str.data" )
+
+
 

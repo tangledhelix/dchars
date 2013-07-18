@@ -81,12 +81,12 @@ MODULES = {
 
          "dchars.languages.bod.transliterations.ewts" : (
                                                      ("__init__.py", False),
-
                                                      ("ewts_buffer.py", False),
                                                      ("ewts.py", False),
                                                      ("ewts_buffer_trans_str.data", False),
                                                      ("ewts_symbols.py", False),
                                                      ("ewts_words.txt", False),
+                                                     ("ucombinations.py", False),
                                   ),
 
          "dchars.languages.grc" : ( ("__init__.py", False),
@@ -129,6 +129,7 @@ MODULES = {
 
          "dchars.languages.hbo.transliterations.basic" : ( ("__init__.py", False),
                                                      ("basic.py", False),
+                                                     ("ucombinations.py", False),
                                   ),
 
          "dchars.languages.lat" : ( ("__init__.py", False),
@@ -142,6 +143,7 @@ MODULES = {
 
          "dchars.languages.lat.transliterations.basic" : ( ("__init__.py", False),
                                                      ("basic.py", False),
+                                                     ("ucombinations.py", False),
                                   ),
                             
          "dchars.languages.san" : ( ("__init__.py", False),
@@ -155,10 +157,12 @@ MODULES = {
 
          "dchars.languages.san.transliterations.iso15919" : ( ("__init__.py", False),
                                                      ("iso15919.py", False),
+                                                     ("ucombinations.py", False),
                                   ),
 
          "dchars.languages.san.transliterations.itrans" : ( ("__init__.py", False),
                                                      ("itrans.py", False),
+                                                     ("ucombinations.py", False),
                                   ),
 
          "dchars.symbols" : ( ("__init__.py", False),
