@@ -37,8 +37,8 @@ class Transformation(object):
 
                 dstring_type    :       object created by dchars.py::new_dstring()
                                         function
-                direction       :       (str) either "text->transliteration" either
-                                        "transliteration->text"
+                direction       :       (int) either +1 (=text->transliteration)
+                                        either -1 (transliteration->text)
         """
         self.dstring_type = dstring_type
         self.direction = direction
@@ -66,10 +66,10 @@ class Transformation(object):
                 Initialize self.result and return self.result.
         """
 
-        if self.direction == "text->transliteration":
+        if self.direction == +1:
             self.result = self.dstring_type(sourcetext).get_transliteration()
             
-        elif self.direction == "transliteration->text":
+        elif self.direction == -1:
             self.result = str(self.dstring_type().init_from_transliteration(sourcetext))
 
         else:

@@ -3,14 +3,14 @@ CHANGELOG_TITLE
 ===============
 
 ------------------
-0.4.7 [2013_06_18]
+0.4.7 [2013_06_19]
 ------------------
 
+  * Transformation.direction can be set to +1 or -1 and not to strings anymore
   * fixed some relative paths so that they become absolute
   * added some files to setup.py needed by dchars
   * added to project_files.py some forgotten files
-  * modified .gitignore so that doc/ and dchars/documentation/ directories are not
-    added to git files.
+  * modified .gitignore so that doc/ and dchars/documentation/ directories are not added to git files.
 
   * code quality :
 
