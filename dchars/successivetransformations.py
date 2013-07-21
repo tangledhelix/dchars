@@ -31,14 +31,15 @@ class Transformation(object):
     """
 
     #///////////////////////////////////////////////////////////////////////////
-    def __init__(self, dstring_type, direction):
+    def __init__(self, dstring_type = None, direction = 0):
         """
                 Transformation.__init__
 
                 dstring_type    :       object created by dchars.py::new_dstring()
                                         function
-                direction       :       (int) either +1 (=text->transliteration)
-                                        either -1 (transliteration->text)
+                direction       :       (int) either +1 (=text->transliteration),
+                                        either -1 (transliteration->text),
+                                        either 0 (unset)
         """
         self.dstring_type = dstring_type
         self.direction = direction

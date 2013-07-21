@@ -5,7 +5,6 @@ ROADMAP_TITLE
 .. code-block:: none
 
   * (21) utiliser ou non la forme bis du bêta
-  * (20) DEVANAAGI LETTER -> ""
   * (20) buffériser get_intstructures_from_dstring() : buffer dchar->intstruct
   * (19) bodsan : http://www.virtualvinodh.com/tibetan
 
