@@ -32,6 +32,12 @@ import io
 class DStringMotherClass(list):
     """
         class DStringMotherClass, motherclass for all DString* classes
+
+		the three following attributes are created by the call to dchars.py::new_dstring() :
+        
+        self.iso639_3_name             : (str)
+        self.transliteration_method    : (str)
+        self.options                   : (dict)
     """
 
     #///////////////////////////////////////////////////////////////////////////

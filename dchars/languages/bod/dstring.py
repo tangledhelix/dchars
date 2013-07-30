@@ -114,6 +114,13 @@ class DStringBOD(DStringMotherClass):
     def __init__(self, str_src = None):
         """
                 DStringBOD.__init__
+
+		        the three following attributes have been created by the call to 
+				dchars.py::new_dstring() :
+				
+                self.iso639_3_name             : (str)
+                self.transliteration_method    : (str)
+                self.options                   : (dict)
         """
         DStringMotherClass.__init__(self)
 
