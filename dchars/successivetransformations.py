@@ -107,18 +107,25 @@ class SuccessiveTransformations(list):
                                     direction = direction, ))
 
     #///////////////////////////////////////////////////////////////////////////
-    def apply(self, sourcetext):
+    def apply(self, sourcetext, limit_to_the_number_of_transformations=999):
         """
                 SuccessiveTransformations.apply
+				
+				sourcetext    : (str)
+				limit_to_the_number_of_transformations : (int)
 
                 Apply the successive transformations to <sourcetext>, return
                 the last result.
         """
         for index_transf, transf in enumerate(self):
-
-            if index_transf == 0:
-                transf.apply(sourcetext)
+            
+            if index_transf+1 > limit_to_the_number_of_transformations:
+                break
+				
             else:
-                transf.apply( self[index_transf-1].result )
+                if index_transf == 0:
+                    transf.apply(sourcetext)
+                else:
+                    transf.apply( self[index_transf-1].result )
 
         return self[-1].result
