@@ -3,9 +3,12 @@ CHANGELOG_TITLE
 ===============
 
 ------------------
-0.4.7 [2013_06_19]
+0.4.7 [2013_07_30]
 ------------------
 
+  * modified dchars.py to take in account the strange behaviour of the configparser module which needs to open (on Windows systems) the file utf-8 files with a call to codecs.open .
+  * SuccessiveTransformations.apply : new argument 'limit_to_the_number_of_transformations'
+  * added commentaries in DString*:__init__ about the three attributes iss639_3_name, transliteration_method, options
   * Transformation.direction can be set to +1 or -1 and not to strings anymore
   * fixed some relative paths so that they become absolute
   * added some files to setup.py needed by dchars
@@ -18,7 +21,7 @@ CHANGELOG_TITLE
     * 136 tests, all ok
 
 ------------------
-0.4.6 [2013_06_17]
+0.4.6 [2013_07_17]
 ------------------
 
   * "DEVANAGARI LETTER " > ""
@@ -34,7 +37,7 @@ CHANGELOG_TITLE
     * 136 tests, all ok
 
 ------------------
-0.4.5 [2013_06_13]
+0.4.5 [2013_07_13]
 ------------------
 
   * added timestamp to the header of config.ini
@@ -46,7 +49,7 @@ CHANGELOG_TITLE
     * 131 tests, all ok
 
 ------------------
-0.4.4 [2013_06_13]
+0.4.4 [2013_07_13]
 ------------------
 
   * config_ini.py::check() checks if names and values correspond to config_ini_data.DATA
@@ -58,7 +61,7 @@ CHANGELOG_TITLE
     * 131 tests, all ok
 
 ------------------
-0.4.3 [2013_06_07]
+0.4.3 [2013_07_07]
 ------------------
 
   * new file : dchars/config_ini.py with the function write_config_ini()
@@ -72,7 +75,7 @@ CHANGELOG_TITLE
     * 131 tests, all ok
 
 ------------------
-0.4.2 [2013_06_05]
+0.4.2 [2013_07_05]
 ------------------
 
   * if a wrong transliteration method's name is passed to new_dstring(), an exception is raised.
