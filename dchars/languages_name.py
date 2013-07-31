@@ -83,10 +83,9 @@ ISO_639_3_NAME = {
     }
 
 LANGUAGES_AND_TRANSLITERATIONS = {
-                                        "བོད་ཡིག"         : ("default",
-                                                                "ewts",
-                                                                "bodsan",
-                                                                ),
+                                        "བོད་ཡིག"         : ("ewts",
+                                                          "bodsan",
+                                                         ),
                                                                 
                                         "latīna"                : ("basic", ),
                                         
