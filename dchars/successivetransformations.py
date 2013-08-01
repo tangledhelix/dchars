@@ -46,7 +46,7 @@ class Transformation(object):
 
         # <result> will store the result of the transformation after the
         # function self.apply() being called.
-        self.result = None
+        self.result = ""
 
     #///////////////////////////////////////////////////////////////////////////
     def __str__(self):
@@ -78,6 +78,22 @@ class Transformation(object):
                                message = "invalid direction : "+str(self.direction))
 
         return self.result
+
+    #///////////////////////////////////////////////////////////////////////////
+    def is_ready_to_be_applied(self):
+        """
+                Transformation.is_ready_to_be_applied
+
+                Verify that <self> is ok.
+        """
+
+        if dstring_type is None:
+            return False
+
+        if direction == 0:
+            return False
+
+        return True
 
 ################################################################################
 class SuccessiveTransformations(list):

@@ -3,11 +3,18 @@ CHANGELOG_TITLE
 ===============
 
 ------------------
-0.4.8 [2013_07_XX]
+0.4.8 [2013_08_01]
 ------------------
 
+  * new function : Transformation.is_ready_to_be_applied()
+  * Transformation.result if set by default to "" (and not None)
   * languages_name.py::LANGUAGES_AND_TRANSLITERATIONS define "ewts" and "bodsan" as 
     transliteration methods; there's no 'default' method for Tibetan.
+
+  * code quality :
+
+    * header_please_test.py ok
+    * 136 tests, all ok
 
 ------------------
 0.4.7 [2013_07_30]
