@@ -420,4 +420,8 @@ def dstring__trans__get_trans(dstring_object):
         str_res = str_res.replace("Êy", "Êu")
         str_res = str_res.replace("Oy", "Ou")
 
+    # No "hh" ?
+    if dstring_object.options["gutenberg:hh becomes h"] == "yes":
+        str_res = str_res.replace("hh", "h")
+
     return str_res

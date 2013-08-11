@@ -199,6 +199,11 @@ GRC_DATA.append( ConfigValue( subsection = 'grc.gutenberg',
                               defaultvalue = 'yes' ))
 
 GRC_DATA.append( ConfigValue( subsection = 'grc.gutenberg',
+                              values = ("yes", "no"),
+                              name = 'hh becomes h',
+                              defaultvalue = 'yes' ))
+
+GRC_DATA.append( ConfigValue( subsection = 'grc.gutenberg',
                               values = ("u", "y", "u or y"),
                               name = 'transliteration for upsilon',
                               defaultvalue = 'u or y' ))

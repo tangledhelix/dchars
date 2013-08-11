@@ -2,6 +2,13 @@
 CHANGELOG_TITLE
 ===============
 
+
+------------------
+0.4.9 [2013_08_XX]
+------------------
+
+  * (grc.gutenberg) : new option "hh becomes h" (patch from Frank Zago !)
+
 ------------------
 0.4.8 [2013_08_01]
 ------------------
