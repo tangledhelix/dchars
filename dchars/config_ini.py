@@ -64,7 +64,8 @@ def check(src):
 #///////////////////////////////////////////////////////////////////////////////
 def write_config_ini():
     """
-        write_config_ini function :
+        write_config_ini function : write CONFIG_INI_DATA content to a
+        config file.
 
         Overwrite the config.ini file with an header and the expected comments.
         The usual way to write a config.ini file would not allow to write the
