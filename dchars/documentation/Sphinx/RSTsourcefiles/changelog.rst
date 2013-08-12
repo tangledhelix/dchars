@@ -2,11 +2,11 @@
 CHANGELOG_TITLE
 ===============
 
-
 ------------------
 0.4.9 [2013_08_XX]
 ------------------
 
+  * new attribute for ConfigValue class : the 'optionname' stores the name of the option in dchars.py::LANGUAGE
   * (grc.gutenberg) : new option "hh becomes h" (patch from Frank Zago !)
 
 ------------------

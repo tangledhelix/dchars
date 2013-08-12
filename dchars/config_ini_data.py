@@ -47,7 +47,7 @@ class ConfigValue(object):
                 values          :       (tuple of str)
                 name            :       (str)
                 defaultvalue    :       (str)
-                optionname      :       (str)
+                optionname      :       (str)   (name of the option in dchars.py::LANGUAGES)
         """
         self.subsection = subsection
         self.values = values
