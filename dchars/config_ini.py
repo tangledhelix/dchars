@@ -122,8 +122,10 @@ def write_config_ini():
                     current_subsection = data.subsection
 
                 _values = ('\"{0}\"'.format(string) for string in data.values)
-                config_file.write( "# available values : " + " or ".join(_values) + "\n" )
-                config_file.write( "# stored in <LANGUAGES> as : " + data.optionname + "\n" )
+                config_file.write( "# accepted values : " + " or ".join(_values) + "\n" )
+                full_optionname = "LANGUAGES['{0}']['{1}']".format( language_name,
+                                                                    data.optionname )
+                config_file.write( "# stored in <LANGUAGES> as " + full_optionname + "\n" )
                 config_file.write( data.name + " = " + data.defaultvalue + "\n" )
 
                 config_file.write( "\n" )
