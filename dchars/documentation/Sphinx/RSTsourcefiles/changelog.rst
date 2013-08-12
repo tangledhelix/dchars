@@ -6,6 +6,7 @@ CHANGELOG_TITLE
 0.4.9 [2013_08_XX]
 ------------------
 
+  * (config_ini.py) modified write_config_ini() so that the option's name appear in the config.ini file as a commentary.
   * new attribute for ConfigValue class : the 'optionname' stores the name of the option in dchars.py::LANGUAGE
   * (grc.gutenberg) : new option "hh becomes h" (patch from Frank Zago !)
 
