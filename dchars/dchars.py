@@ -82,6 +82,7 @@ LANGUAGES = {
                 "Ἑλληνικὴ γλῶττα":      ("grc",
                                          "DStringGRC",
                                          CONFIG_INI["grc"]["transliteration method"],
+                                         
                                          {"sorting method": \
                                           CONFIG_INI["grc"]["sorting method"],
                                           "anonymize the unknown characters" : \
@@ -101,6 +102,7 @@ LANGUAGES = {
                 BIBLICAL_HEBREW__NAME :  ("hbo",
                                          "DStringHBO",
                                          CONFIG_INI["hbo"]["transliteration method"],
+                                         
                                          {"sorting method": \
                                           CONFIG_INI["hbo"]["sorting method"],
                                           "anonymize the unknown characters" : \
@@ -109,6 +111,7 @@ LANGUAGES = {
                 "latīna"        :       ("lat",
                                          "DStringLAT",
                                          CONFIG_INI["lat"]["transliteration method"],
+                                         
                                          {"sorting method": \
                                           CONFIG_INI["lat"]["sorting method"],
                                           "anonymize the unknown characters" : \
@@ -117,6 +120,7 @@ LANGUAGES = {
                 "संस्कृतम्"         :       ("san",
                                          "DStringSAN",
                                          CONFIG_INI["san"]["transliteration method"],
+                                         
                                          {"sorting method": \
                                           CONFIG_INI["san"]["sorting method"],
                                           "anonymize the unknown characters" : \
