@@ -31,7 +31,7 @@ from dchars.languages_name import LANGUAGES_NAME, \
                                   BIBLICAL_HEBREW__NAME, \
                                   LANGUAGES_AND_TRANSLITERATIONS
 import dchars.config_ini
-
+import dchars.config_ini_data
 #...............................................................................
 # CONFIG_INI : options read in the configuration file.
 #...............................................................................
