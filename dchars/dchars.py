@@ -31,7 +31,7 @@ from dchars.languages_name import LANGUAGES_NAME, \
                                   BIBLICAL_HEBREW__NAME, \
                                   LANGUAGES_AND_TRANSLITERATIONS
 import dchars.config_ini
-import dchars.config_ini_data
+from dchars.config_ini_data import DATA
 #...............................................................................
 # CONFIG_INI : options read in the configuration file.
 #...............................................................................
@@ -66,65 +66,100 @@ dchars.config_ini.check(CONFIG_INI)
 #...............................................................................
 
 LANGUAGES = {
+
+                #...............................................................
                 "བོད་ཡིག"         :
-                        ("bod",
-                         "DStringBOD" ,
-                         CONFIG_INI["bod"]["transliteration method"],
-                            {"sorting method"         : CONFIG_INI["bod"]["sorting method"],
-                             "expected structure"     : CONFIG_INI["bod"]["expected structure"],
-                             "look up in the buffers" : CONFIG_INI["bod"]["look up in the buffers"] == "yes",
-                             "fill the buffers"       : CONFIG_INI["bod"]["fill the buffers"] == "yes",
-                             "anonymize the unknown characters" : \
-                                CONFIG_INI["bod"]["anonymize the unknown characters"] == "yes",
-                             },
-                        ),
+                ("bod",
+                 "DStringBOD" ,
+                  CONFIG_INI["bod"]["transliteration method"],
+                  
+                  {DATA["bod"].get_optionname("sorting method")        : \
+                   CONFIG_INI["bod"]["sorting method"],
+                   
+                   DATA["bod"].get_optionname("expected structure")    : \
+                   CONFIG_INI["bod"]["expected structure"],
+                   
+                   DATA["bod"].get_optionname("look up in the buffers"): \
+                   CONFIG_INI["bod"]["look up in the buffers"] == "yes",
+                   
+                   DATA["bod"].get_optionname("fill the buffers")      : \
+                   CONFIG_INI["bod"]["fill the buffers"] == "yes",
+                   
+                   DATA["bod"].get_optionname("anonymize the unknown characters") : \
+                   CONFIG_INI["bod"]["anonymize the unknown characters"] == "yes",
+                 },
+                ),
 
-                "Ἑλληνικὴ γλῶττα":      ("grc",
-                                         "DStringGRC",
-                                         CONFIG_INI["grc"]["transliteration method"],
+                #...............................................................
+                "Ἑλληνικὴ γλῶττα":
+                ("grc",
+                 "DStringGRC",
+                 CONFIG_INI["grc"]["transliteration method"],
                                          
-                                         {"sorting method": \
-                                          CONFIG_INI["grc"]["sorting method"],
-                                          "anonymize the unknown characters" : \
-                                          CONFIG_INI["grc"]["anonymize the unknown characters"] == "yes",
-                                          "gutenberg:ignore accents" : \
-                                          CONFIG_INI["grc.gutenberg"]["ignore accents"] == "yes",
-                                          "gutenberg:ignore smooth breathing" : \
-                                          CONFIG_INI["grc.gutenberg"]["ignore smooth breathing"] == "yes",
-                                          "gutenberg:ignore diaeresis" : \
-                                          CONFIG_INI["grc.gutenberg"]["ignore diaeresis"] == "yes",
-                                          "gutenberg:ignore iota subscript" : \
-                                          CONFIG_INI["grc.gutenberg"]["ignore iota subscript"] == "yes",
-                                          "gutenberg:transliteration for upsilon" : \
-                                          CONFIG_INI["grc.gutenberg"]["transliteration for upsilon"],
-                                          }),
+                 {DATA["grc"].get_optionname("sorting method"): \
+                  CONFIG_INI["grc"]["sorting method"],
+                                          
+                  DATA["grc"].get_optionname("anonymize the unknown characters"): \
+                  CONFIG_INI["grc"]["anonymize the unknown characters"] == "yes",
+                  
+                  DATA["grc"].get_optionname("ignore accents"): \
+                  CONFIG_INI["grc.gutenberg"]["ignore accents"] == "yes",
+                  
+                  DATA["grc"].get_optionname("ignore smooth breathing"): \
+                  CONFIG_INI["grc.gutenberg"]["ignore smooth breathing"] == "yes",
+                  
+                  DATA["grc"].get_optionname("ignore diaeresis"): \
+                  CONFIG_INI["grc.gutenberg"]["ignore diaeresis"] == "yes",
+                  
+                  DATA["grc"].get_optionname("ignore iota subscript"): \
+                  CONFIG_INI["grc.gutenberg"]["ignore iota subscript"] == "yes",
+                  
+                  DATA["grc"].get_optionname("transliteration for upsilon"): \
+                  CONFIG_INI["grc.gutenberg"]["transliteration for upsilon"],
+                 }
+                ),
 
-                BIBLICAL_HEBREW__NAME :  ("hbo",
-                                         "DStringHBO",
-                                         CONFIG_INI["hbo"]["transliteration method"],
+                #...............................................................
+                BIBLICAL_HEBREW__NAME :
+                ("hbo",
+                 "DStringHBO",
+                 CONFIG_INI["hbo"]["transliteration method"],
                                          
-                                         {"sorting method": \
-                                          CONFIG_INI["hbo"]["sorting method"],
-                                          "anonymize the unknown characters" : \
-                                          CONFIG_INI["hbo"]["anonymize the unknown characters"] == "yes",}),
+                 {DATA["hbo"].get_optionname("sorting method"): \
+                  CONFIG_INI["hbo"]["sorting method"],
 
-                "latīna"        :       ("lat",
-                                         "DStringLAT",
-                                         CONFIG_INI["lat"]["transliteration method"],
-                                         
-                                         {"sorting method": \
-                                          CONFIG_INI["lat"]["sorting method"],
-                                          "anonymize the unknown characters" : \
-                                          CONFIG_INI["lat"]["anonymize the unknown characters"] == "yes",}),
+                  DATA["hbo"].get_optionname("anonymize the unknown characters"): \
+                  CONFIG_INI["hbo"]["anonymize the unknown characters"] == "yes",
+                 }
+                ),
 
-                "संस्कृतम्"         :       ("san",
-                                         "DStringSAN",
-                                         CONFIG_INI["san"]["transliteration method"],
+                #...............................................................
+                "latīna" :
+                ("lat",
+                 "DStringLAT",
+                 CONFIG_INI["lat"]["transliteration method"],
                                          
-                                         {"sorting method": \
-                                          CONFIG_INI["san"]["sorting method"],
-                                          "anonymize the unknown characters" : \
-                                          CONFIG_INI["san"]["anonymize the unknown characters"] == "yes",}),
+                 {DATA["lat"].get_optionname("sorting method"): \
+                  CONFIG_INI["lat"]["sorting method"],
+                  
+                  DATA["lat"].get_optionname("anonymize the unknown characters"): \
+                  CONFIG_INI["lat"]["anonymize the unknown characters"] == "yes",
+                 }
+                ),
+
+                #...............................................................
+                "संस्कृतम्" :
+                ("san",
+                 "DStringSAN",
+                 CONFIG_INI["san"]["transliteration method"],
+                                         
+                {DATA["san"].get_optionname("sorting method"): \
+                 CONFIG_INI["san"]["sorting method"],
+                 
+                 DATA["san"].get_optionname("anonymize the unknown characters"): \
+                 CONFIG_INI["san"]["anonymize the unknown characters"] == "yes",
+                 }
+                ),
             }
 
 # dict : key(language's name, iso639-3) : corresponding dstring type

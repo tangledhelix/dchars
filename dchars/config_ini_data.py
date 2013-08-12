@@ -24,6 +24,8 @@
     Data related to the config.ini file, especially the dict <DATA>.
 """
 
+from dchars.errors.errors import DCharsError
+
 ################################################################################
 class ConfigValue(object):
     """
@@ -119,6 +121,28 @@ class ConfigValuesForOneLanguage(list):
 
         return res
 
+    #///////////////////////////////////////////////////////////////////////////
+    def get_optionname(self, name):
+        """
+                ConfigValuesForOneLanguage.get_optionname
+
+                name    :       (str)
+        """
+        found = False
+        res = None
+        
+        for configvalue in self:
+            if configvalue.name == name:
+                found = True
+                res = configvalue.optionname
+
+        if not found:
+            msg = "unknown name = {0}; known names = {1}.".format( name,
+                                                                   [cv.name for cv in self] )
+            raise DCharsError( context = "ConfigValuesForOneLanguage.get_optionname",
+                               message = msg )
+        return res
+
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # བོད་ཡིག (Tibetan)
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -128,13 +152,13 @@ BOD_DATA.append( ConfigValue( subsection = '',
                               values = ("ewts", "bodsan"),
                               name = 'transliteration method',
                               defaultvalue = 'ewts',
-                              optioname = "transliteration method" ))
+                              optionname = "transliteration method" ))
 
 BOD_DATA.append( ConfigValue( subsection = '',
                               values = ("yes", "no"),
                               name = 'anonymize the unknown characters',
                               defaultvalue = 'no',
-                              optioname = "anonymize the unknown characters" ))
+                              optionname = "anonymize the unknown characters" ))
 
 BOD_DATA.append( ConfigValue( subsection = '',
                               values = ("always Tibetan",
@@ -142,31 +166,31 @@ BOD_DATA.append( ConfigValue( subsection = '',
                                         "always Sanskrit"),
                               name = 'expected structure',
                               defaultvalue = 'Tibetan or Sanskrit',
-                              optioname = "expected structure" ))
+                              optionname = "expected structure" ))
 
 BOD_DATA.append( ConfigValue( subsection = '',
                               values = ("yes", "no"),
                               name = 'look up in the buffers',
                               defaultvalue = 'yes',
-                              optioname = "look up in the buffers" ))
+                              optionname = "look up in the buffers" ))
 
 BOD_DATA.append( ConfigValue( subsection = '',
                               values = ("yes", "no"),
                               name = 'fill the buffers',
                               defaultvalue = 'no',
-                              optioname = "fill the buffers" ))
+                              optionname = "fill the buffers" ))
 
 BOD_DATA.append( ConfigValue( subsection = '',
                               values = ("basic",),
                               name = 'sorting method',
                               defaultvalue = 'basic',
-                              optioname = "sorting method" ))
+                              optionname = "sorting method" ))
 
 BOD_DATA.append( ConfigValue( subsection = 'bod.bodsan',
                               values = ("high", "normal", "low"),
                               name = 'san2bod quality',
                               defaultvalue = 'high',
-                              optioname = "bodsan.san2bod quality" ))
+                              optionname = "bodsan.san2bod quality" ))
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # Ἑλληνικὴ γλῶττα (Ancient Greek)
@@ -177,55 +201,55 @@ GRC_DATA.append( ConfigValue( subsection = '',
                               values = ("basic", "betacode", "perseus", "gutenberg"),
                               name = 'transliteration method',
                               defaultvalue = 'basic',
-                              optioname = "transliteration method" ))
+                              optionname = "transliteration method" ))
 
 GRC_DATA.append( ConfigValue( subsection = '',
                               values = ("yes", "no"),
                               name = 'anonymize the unknown characters',
                               defaultvalue = 'no',
-                              optioname = "anonymize the unknown characters" ))
+                              optionname = "anonymize the unknown characters" ))
 
 GRC_DATA.append( ConfigValue( subsection = '',
                               values = ("default",),
                               name = 'sorting method',
                               defaultvalue = 'default',
-                              optioname = "sorting method" ))
+                              optionname = "sorting method" ))
 
 GRC_DATA.append( ConfigValue( subsection = 'grc.gutenberg',
                               values = ("yes", "no"),
                               name = 'ignore smooth breathing',
                               defaultvalue = 'yes',
-                              optioname = "gutenberg:ignore smooth breathing" ))
+                              optionname = "gutenberg:ignore smooth breathing" ))
 
 GRC_DATA.append( ConfigValue( subsection = 'grc.gutenberg',
                               values = ("yes", "no"),
                               name = 'ignore accents',
                               defaultvalue = 'yes',
-                              optioname = "gutenberg:ignore accents" ))
+                              optionname = "gutenberg:ignore accents" ))
 
 GRC_DATA.append( ConfigValue( subsection = 'grc.gutenberg',
                               values = ("yes", "no"),
                               name = 'ignore iota subscript',
                               defaultvalue = 'yes',
-                              optioname = "gutenberg:ignore iota subscript" ))
+                              optionname = "gutenberg:ignore iota subscript" ))
 
 GRC_DATA.append( ConfigValue( subsection = 'grc.gutenberg',
                               values = ("yes", "no"),
                               name = 'ignore diaeresis',
                               defaultvalue = 'yes',
-                              optioname = "gutenberg:ignore diaeresis" ))
+                              optionname = "gutenberg:ignore diaeresis" ))
 
 GRC_DATA.append( ConfigValue( subsection = 'grc.gutenberg',
                               values = ("yes", "no"),
                               name = 'hh becomes h',
                               defaultvalue = 'yes',
-                              optioname = "gutenberg:hh becomes h" ))
+                              optionname = "gutenberg:hh becomes h" ))
 
 GRC_DATA.append( ConfigValue( subsection = 'grc.gutenberg',
                               values = ("u", "y", "u or y"),
                               name = 'transliteration for upsilon',
                               defaultvalue = 'u or y',
-                              optioname = "gutenberg:transliteration for upsilon" ))
+                              optionname = "gutenberg:transliteration for upsilon" ))
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 #  "עִבְֿרִיתֿ מִקְרָאִיתֿ"  (Biblical Hebrew)
@@ -236,19 +260,19 @@ HBO_DATA.append( ConfigValue( subsection = '',
                               values = ("basic",),
                               name = 'transliteration method',
                               defaultvalue = 'basic',
-                              optioname = "transliteration method" ))
+                              optionname = "transliteration method" ))
 
 HBO_DATA.append( ConfigValue( subsection = '',
                               values = ("yes", "no"),
                               name = 'anonymize the unknown characters',
                               defaultvalue = 'no',
-                              optioname = "anonymize the unknown characters" ))
+                              optionname = "anonymize the unknown characters" ))
 
 HBO_DATA.append( ConfigValue( subsection = '',
                               values = ("default",),
                               name = 'sorting method',
                               defaultvalue = 'default',
-                              optioname = "sorting method" ))
+                              optionname = "sorting method" ))
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # latīna (Latin)
@@ -259,19 +283,19 @@ LAT_DATA.append( ConfigValue( subsection = '',
                               values = ("basic",),
                               name = 'transliteration method',
                               defaultvalue = 'basic',
-                              optioname = "transliteration method" ))
+                              optionname = "transliteration method" ))
 
 LAT_DATA.append( ConfigValue( subsection = '',
                               values = ("yes", "no"),
                               name = 'anonymize the unknown characters',
                               defaultvalue = 'no',
-                              optioname = "anonymize the unknown characters" ))
+                              optionname = "anonymize the unknown characters" ))
 
 LAT_DATA.append( ConfigValue( subsection = '',
                               values = ("default",),
                               name = 'sorting method',
                               defaultvalue = 'default',
-                              optioname = "sorting method" ))
+                              optionname = "sorting method" ))
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # संस्कृतम् (Sanskrit)
@@ -282,19 +306,19 @@ SAN_DATA.append( ConfigValue( subsection = '',
                               values = ("iso15919", "itrans"),
                               name = 'transliteration method',
                               defaultvalue = 'iso15919',
-                              optioname = "transliteration method" ))
+                              optionname = "transliteration method" ))
 
 SAN_DATA.append( ConfigValue( subsection = '',
                               values = ("yes", "no"),
                               name = 'anonymize the unknown characters',
                               defaultvalue = 'no',
-                              optioname = "anonymize the unknown characters" ))
+                              optionname = "anonymize the unknown characters" ))
 
 SAN_DATA.append( ConfigValue( subsection = '',
                               values = ("default",),
                               name = 'sorting method',
                               defaultvalue = 'default',
-                              optioname = "sorting method" ))
+                              optionname = "sorting method" ))
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
