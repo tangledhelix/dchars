@@ -70,7 +70,7 @@ LANGUAGES = {
                 #...............................................................
                 "བོད་ཡིག"         :
                 ("bod",
-                 "DStringBOD" ,
+                 "DStringBOD",
                   CONFIG_INI["bod"]["transliteration method"],
                   
                   {DATA["bod"].get_optionname("sorting method")        : \
@@ -80,13 +80,13 @@ LANGUAGES = {
                    CONFIG_INI["bod"]["expected structure"],
                    
                    DATA["bod"].get_optionname("look up in the buffers"): \
-                   CONFIG_INI["bod"]["look up in the buffers"] == "yes",
+                   CONFIG_INI["bod"]["look up in the buffers"],
                    
                    DATA["bod"].get_optionname("fill the buffers")      : \
-                   CONFIG_INI["bod"]["fill the buffers"] == "yes",
+                   CONFIG_INI["bod"]["fill the buffers"],
                    
                    DATA["bod"].get_optionname("anonymize the unknown characters") : \
-                   CONFIG_INI["bod"]["anonymize the unknown characters"] == "yes",
+                   CONFIG_INI["bod"]["anonymize the unknown characters"],
                  },
                 ),
 
@@ -100,19 +100,19 @@ LANGUAGES = {
                   CONFIG_INI["grc"]["sorting method"],
                                           
                   DATA["grc"].get_optionname("anonymize the unknown characters"): \
-                  CONFIG_INI["grc"]["anonymize the unknown characters"] == "yes",
+                  CONFIG_INI["grc"]["anonymize the unknown characters"],
                   
                   DATA["grc"].get_optionname("ignore accents"): \
-                  CONFIG_INI["grc.gutenberg"]["ignore accents"] == "yes",
+                  CONFIG_INI["grc.gutenberg"]["ignore accents"],
                   
                   DATA["grc"].get_optionname("ignore smooth breathing"): \
-                  CONFIG_INI["grc.gutenberg"]["ignore smooth breathing"] == "yes",
+                  CONFIG_INI["grc.gutenberg"]["ignore smooth breathing"],
                   
                   DATA["grc"].get_optionname("ignore diaeresis"): \
-                  CONFIG_INI["grc.gutenberg"]["ignore diaeresis"] == "yes",
+                  CONFIG_INI["grc.gutenberg"]["ignore diaeresis"],
                   
                   DATA["grc"].get_optionname("ignore iota subscript"): \
-                  CONFIG_INI["grc.gutenberg"]["ignore iota subscript"] == "yes",
+                  CONFIG_INI["grc.gutenberg"]["ignore iota subscript"],
                   
                   DATA["grc"].get_optionname("transliteration for upsilon"): \
                   CONFIG_INI["grc.gutenberg"]["transliteration for upsilon"],
@@ -132,7 +132,7 @@ LANGUAGES = {
                   CONFIG_INI["hbo"]["sorting method"],
 
                   DATA["hbo"].get_optionname("anonymize the unknown characters"): \
-                  CONFIG_INI["hbo"]["anonymize the unknown characters"] == "yes",
+                  CONFIG_INI["hbo"]["anonymize the unknown characters"],
                  }
                 ),
 
@@ -146,7 +146,7 @@ LANGUAGES = {
                   CONFIG_INI["lat"]["sorting method"],
                   
                   DATA["lat"].get_optionname("anonymize the unknown characters"): \
-                  CONFIG_INI["lat"]["anonymize the unknown characters"] == "yes",
+                  CONFIG_INI["lat"]["anonymize the unknown characters"],
                  }
                 ),
 
@@ -160,7 +160,7 @@ LANGUAGES = {
                  CONFIG_INI["san"]["sorting method"],
                  
                  DATA["san"].get_optionname("anonymize the unknown characters"): \
-                 CONFIG_INI["san"]["anonymize the unknown characters"] == "yes",
+                 CONFIG_INI["san"]["anonymize the unknown characters"],
                  }
                 ),
             }
