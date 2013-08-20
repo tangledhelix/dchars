@@ -116,6 +116,9 @@ LANGUAGES = {
                   
                   DATA["grc"].get_optionname("transliteration for upsilon"): \
                   CONFIG_INI["grc.gutenberg"]["transliteration for upsilon"],
+
+                  DATA["grc"].get_optionname("hh becomes h"): \
+                  CONFIG_INI["grc.gutenberg"]["hh becomes h"],
                  }
                 ),
 
