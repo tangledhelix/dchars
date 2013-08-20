@@ -95,6 +95,12 @@ class DStringBOD(DStringMotherClass):
         dchars.py::new_dstring() function.
     """
 
+    # transliterations' methods : available direction(s) :
+    trans__directions = {
+          "ewts"        : trans_ewts.AVAILABLE_DIRECTIONS,
+          "bodsan"      : trans_bodsan.AVAILABLE_DIRECTIONS,
+        }
+
     trans__get_transliteration = {
           "ewts"   : trans_ewts.dstring__get_translit_str,
           "bodsan" : trans_bodsan.dstring__get_translit_str,

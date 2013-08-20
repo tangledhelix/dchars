@@ -74,6 +74,11 @@ class DStringHBO(DStringMotherClass):
     pattern = re.compile("((?P<basechar>{0})(?P<diacritics>({1})+)?)".format( pattern_basechar,
                                                                               pattern_diacritics ))
 
+    # transliterations' methods : available direction(s) :
+    trans__directions = {
+          "basic"       : basictrans.AVAILABLE_DIRECTIONS,
+        }
+
     # transliteration's functions :
     trans__init_from_transliteration = {
           "basic" : basictrans.dstring__init_from_translit_str,

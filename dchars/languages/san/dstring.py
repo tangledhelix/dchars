@@ -77,6 +77,12 @@ class DStringSAN(DStringMotherClass):
                                              pattern_dependentvowel,
                                              pattern_diacritics ))
 
+    # transliterations' methods : available direction(s) :
+    trans__directions = {
+          "itrans"      : trans_itrans.AVAILABLE_DIRECTIONS,
+          "iso15919"    : trans_iso15919.AVAILABLE_DIRECTIONS,
+        }
+
     # transliteration's functions :
     trans__init_from_transliteration = {
           "itrans"   : trans_itrans.dstring__init_from_translit_str,
