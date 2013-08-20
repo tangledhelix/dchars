@@ -46,6 +46,15 @@ from dchars.languages.san.symbols import SYMB_CONSONANTS as SAN__SYMB_CONSONANTS
                                          SYMB_PUNCTUATION as SAN__SYMB_PUNCTUATION, \
                                          SYMB_DIACRITICS as SAN__SYMB_DIACRITICS
 
+################################################################################
+# List of the available directions for this transliteration method :
+#
+#  +1 (text->transliteration)
+#  -1 (transliteration->text)
+#
+################################################################################
+AVAILABLE_DIRECTIONS = (-1, +1)
+
 #///////////////////////////////////////////////////////////////////////////////
 def get_intstruct_from_trans_str( _src, dstring_object ):
     """

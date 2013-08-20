@@ -31,6 +31,15 @@ from dchars.symbols.symbols import UNKNOWN_CHAR_SYMBOL
 import re, unicodedata
 
 ################################################################################
+# List of the available directions for this transliteration method :
+#
+#  +1 (text->transliteration)
+#  -1 (transliteration->text)
+#
+################################################################################
+AVAILABLE_DIRECTIONS = (-1, +1)
+
+################################################################################
 # transliteration's equivalences :
 #
 #  used in dstring__init_from_translit_str.
