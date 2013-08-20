@@ -144,7 +144,7 @@ class DStringBOD(DStringMotherClass):
         # created when <self> has been initialized by new_dstring() :
         # pylint: disable=E1101
         # -> "Instance of 'DStringBOD' has no 'options' member"
-        if self.options["look up in the buffers"] and not bod_buffer.BUFFER_LOADED:
+        if self.options["look up in the buffers"] == 'yes' and not bod_buffer.BUFFER_LOADED:
             bod_buffer.BUFFER_LOADED = self.load_the_buffers()
 
         if str_src is not None:

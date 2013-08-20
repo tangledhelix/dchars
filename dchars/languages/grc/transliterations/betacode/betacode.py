@@ -299,7 +299,7 @@ def dchar__get_translit_str(dstring_object, dchar):
     res = []
 
     if dchar.unknown_char:
-        if dstring_object.options["anonymize the unknown characters"]:
+        if dstring_object.options["anonymize the unknown characters"] == 'yes':
             return UNKNOWN_CHAR_SYMBOL
         else:
             return dchar.base_char

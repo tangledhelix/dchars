@@ -214,7 +214,7 @@ ARGS = get_arguments()
 
 # B) creation of the DSTRING object
 DSTRING = new_dstring( language = ARGS.language,
-                       options = {"look up in the buffers" : True,
+                       options = {"look up in the buffers" : 'yes',
                                   "sorting method" : ARGS.sorting_method})
 
 # C) processing

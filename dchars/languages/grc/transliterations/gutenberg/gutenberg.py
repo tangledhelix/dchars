@@ -265,7 +265,7 @@ def dchar__get_translit_str(dstring_object, dchar):
     res = []
 
     if dchar.unknown_char:
-        if dstring_object.options["anonymize the unknown characters"]:
+        if dstring_object.options["anonymize the unknown characters"] == 'yes':
             return UNKNOWN_CHAR_SYMBOL
         else:
             return dchar.base_char
@@ -313,18 +313,18 @@ def dchar__get_translit_str(dstring_object, dchar):
 
     if not dchar.unknown_char and not dchar.punctuation:
 
-        if dstring_object.options["gutenberg:ignore accents"]:
+        if dstring_object.options["gutenberg:ignore accents"] == 'yes':
             str_res = str_res.replace("/", "")
             str_res = str_res.replace("\\", "")
             str_res = str_res.replace("^", "")
 
-        if dstring_object.options["gutenberg:ignore smooth breathing"]:
+        if dstring_object.options["gutenberg:ignore smooth breathing"] == 'yes':
             str_res = str_res.replace(")", "")
 
-        if dstring_object.options["gutenberg:ignore iota subscript"]:
+        if dstring_object.options["gutenberg:ignore iota subscript"] == 'yes':
             str_res = str_res.replace("|", "")
 
-        if dstring_object.options["gutenberg:ignore diaeresis"]:
+        if dstring_object.options["gutenberg:ignore diaeresis"] == 'yes':
             str_res = str_res.replace("\"", "")
 
     return str_res

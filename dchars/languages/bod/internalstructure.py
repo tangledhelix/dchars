@@ -1536,7 +1536,7 @@ def get_intstructures_from_dstring(dstring_object):
             (3) istructs -> istructs_ok ---> (sort) ---> istructs_ok
 
     """
-    anonymize_the_unknown_chars = dstring_object.options["anonymize the unknown characters"]
+    anonymize_the_unknown_chars = dstring_object.options["anonymize the unknown characters"] == 'yes'
 
     # list of InternalStructure objects.
     istructs = ListOfInternalStructures(anonymize_the_unknown_chars)
@@ -1895,7 +1895,7 @@ def get_intstructures_from_dstring(dstring_object):
 
     sorted_istructs_ok = sorted( istructs_ok, key=InternalStructure.get_min_of_indexes)
     istructs_ok = ListOfInternalStructures(
-        anonymize_the_unknown_chars = dstring_object.options["anonymize the unknown characters"] )
+        anonymize_the_unknown_chars = dstring_object.options["anonymize the unknown characters"] == 'yes' )
 
     istructs_ok.extend( sorted_istructs_ok )
 
@@ -1959,14 +1959,14 @@ def get_intstruct_from_str(_src,
                 (3.6) <istructs> is sorted
                 (3.7) filling the buffers
     """
-    anonymize_the_unknown_chars = dstring_object.options["anonymize the unknown characters"]
+    anonymize_the_unknown_chars = dstring_object.options["anonymize the unknown characters"] == 'yes'
 
     if len(_src) == 0:
         return ListOfInternalStructures(anonymize_the_unknown_chars)
 
-    expected_structure = dstring_object.options["expected structure"]
-    fill_the_buffers = dstring_object.options["fill the buffers"]
-    look_up_in_the_buffers = dstring_object.options["look up in the buffers"]
+    expected_structure = dstring_object.options["expected structure"] == 'yes'
+    fill_the_buffers = dstring_object.options["fill the buffers"] == 'yes'
+    look_up_in_the_buffers = dstring_object.options["look up in the buffers"] == 'yes'
 
     #...........................................................................
     # (1) the quickest way to answer is to look in the buffer

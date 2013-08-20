@@ -35,24 +35,24 @@ from dchars.languages.bod.dcharacter import DCharacterBOD
 DSTRING_BOD = new_dstring(language="བོད་ཡིག",
                           transliteration_method='ewts',
                           options = {"expected structure" : "Tibetan or Sanskrit",
-                                     "look up in the buffers" : False,
+                                     "look up in the buffers" : 'no',
                                      "sorting method" : "basic",
-                                     "anonymize the unknown characters" : False},)
+                                     "anonymize the unknown characters" : 'no'},)
 
 DSTRING_BOD_BUFF = new_dstring(language="བོད་ཡིག",
                           transliteration_method='ewts',
                           options = {"expected structure" : "Tibetan or Sanskrit",
-                                     "look up in the buffers" : True,
+                                     "look up in the buffers" : 'yes',
                                      "sorting method" : "basic",
-                                     "anonymize the unknown characters" : False},)
+                                     "anonymize the unknown characters" : 'no'},)
 
 
 DSTRING_BOD__UNKNOWNCHAR = new_dstring(language="བོད་ཡིག",
                           transliteration_method='ewts',
                            options = {"expected structure" : "Tibetan or Sanskrit",
-                                     "look up in the buffers" : False,
+                                     "look up in the buffers" : 'no',
                                      "sorting method" : "basic",
-                                     "anonymize the unknown characters" : True},)
+                                     "anonymize the unknown characters" : 'yes'},)
 
 LIST_OF_EXAMPLES = (
     "ཀ", # 'ka'

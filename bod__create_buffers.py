@@ -49,8 +49,8 @@ import dchars.languages.bod.transliterations.ewts_buffer as ewts_buffer
 DSTRING_BOD_BUFF = new_dstring(language="བོད་ཡིག",
                                transliteration_method='ewts',
                                options = {"expected structure"          : "Tibetan or Sanskrit",
-                                          "look up in the buffers"      : False,
-                                          "fill the buffers"            : True},
+                                          "look up in the buffers"      : 'no',
+                                          "fill the buffers"            : 'yes'},
                               )
 
 #...............................................................................

@@ -29,12 +29,12 @@ from dchars.symbols.symbols import UNKNOWN_CHAR_SYMBOL
 
 DSTRING_GRC = new_dstring(language="Ἑλληνικὴ γλῶττα",
                           transliteration_method = "perseus",
-                          options = {"anonymize the unknown characters" : False},
+                          options = {"anonymize the unknown characters" : 'no'},
                           )
 
 DSTRING_GRC__UNKNOWNCHAR = new_dstring(language="Ἑλληνικὴ γλῶττα",
                                        transliteration_method = "perseus",
-                                       options = {"anonymize the unknown characters" : True},
+                                       options = {"anonymize the unknown characters" : 'yes'},
                                       )
 
 LIST_OF_RECIPROCAL_EXAMPLES = (

@@ -29,11 +29,11 @@ from dchars.dchars import new_dstring
 from dchars.languages.bod.dcharacter import UNKNOWN_CHAR_SYMBOL
 
 DSTRING_GRC = new_dstring(language="Ἑλληνικὴ γλῶττα",
-                          options = {"anonymize the unknown characters" : False},
+                          options = {"anonymize the unknown characters" : 'no'},
                           )
 
 DSTRING_GRC__UNKNOWNCHAR = new_dstring(language="Ἑλληνικὴ γλῶττα",
-                                       options = {"anonymize the unknown characters" : True},
+                                       options = {"anonymize the unknown characters" : 'yes'},
                                       )
 
 

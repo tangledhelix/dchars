@@ -6,6 +6,7 @@ CHANGELOG_TITLE
 0.5.0 [2013_08_XX]
 ------------------
 
+  * bool options defined by "yes"/"no", not by a bool anymore.
   * trans__directions added to every DString*** object.
   * AVAILABLE_DIRECTIONS defined for every transliteration.
 

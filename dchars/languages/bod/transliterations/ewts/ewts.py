@@ -122,9 +122,9 @@ def get_intstruct_from_trans_str( _src, dstring_object ):
     """
 
     expected_structure = dstring_object.options["expected structure"]
-    look_up_in_the_buffers = dstring_object.options["look up in the buffers"]
-    fill_the_buffers = dstring_object.options["fill the buffers"]
-    anonymize_the_unknown_chars = dstring_object.options["anonymize the unknown characters"]
+    look_up_in_the_buffers = dstring_object.options["look up in the buffers"] == 'yes'
+    fill_the_buffers = dstring_object.options["fill the buffers"] == 'yes'
+    anonymize_the_unknown_chars = dstring_object.options["anonymize the unknown characters"] == 'yes'
 
     if len(_src) == 0:
         return ListOfInternalStructures(

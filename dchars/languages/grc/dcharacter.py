@@ -423,7 +423,7 @@ class DCharacterGRC(DCharacterMotherClass):
         # unknown char ? Nothing to do :
         #.......................................................................
         if self.unknown_char:
-            if self.dstring_object.options["anonymize the unknown characters"]:
+            if self.dstring_object.options["anonymize the unknown characters"] == 'yes':
                 return UNKNOWN_CHAR_SYMBOL
             else:
                 return self.base_char

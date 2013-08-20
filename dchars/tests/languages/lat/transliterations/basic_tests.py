@@ -28,7 +28,7 @@ from dchars.dchars import new_dstring
 from dchars.languages.bod.dcharacter import UNKNOWN_CHAR_SYMBOL
 DSTRING_LAT = new_dstring(language="latīna",
                           transliteration_method="basic",
-                          options = {"anonymize the unknown characters" : True,
+                          options = {"anonymize the unknown characters" : "yes",
                                      },
                          )
 
