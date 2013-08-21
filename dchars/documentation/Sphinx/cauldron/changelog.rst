@@ -3,6 +3,21 @@ CHANGELOG_TITLE
 ===============
 
 ------------------
+0.5.0 [2013_08_20]
+------------------
+
+  * lot of small fixes thanks to Pylint
+  * bool options defined by "yes"/"no", not by a bool anymore.
+  * trans__directions added to every DString*** object in order to verify if a transliteration's method is available in both direction ( transliteration <-> text ) or not.
+  * AVAILABLE_DIRECTIONS defined for every transliteration.
+
+  * code quality :
+
+    * header_please_test.py ok
+    * 136 tests, all ok
+    * Pylint's worst mark : 9.47
+
+------------------
 0.4.9 [2013_08_12]
 ------------------
 

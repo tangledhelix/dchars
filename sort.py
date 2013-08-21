@@ -82,8 +82,8 @@ def get_arguments():
     parser.add_argument('--bod_addewts',
                     type=str,
                     choices = ("yes", "no"),
-                    help="Use this option to add the EWTS transliteration of each form written to" + \
-                         "stdout.",
+                    help="Use this option to add the EWTS transliteration of each form written" + \
+                         "to stdout.",
                     default = "no",
         )
 
@@ -115,64 +115,64 @@ def modifications_tibspellchecker( srclist ):
     """
     res = []
 
-    for src in srclist:
+    for src_e in srclist:
 
-        # src + /A if no suffix :
-        if src.istructs[0].suffix1 is None and \
-           src.istructs[0].suffix2 is None and \
-           not src.istructs[0].postsuffix_u and \
-           not src.istructs[0].postsuffix_o and \
-           src.istructs[0].gramm_postsuffix is None:
-
-            if ARGS.bod_addewts == "yes":
-                transl = " # " + src.get_transliteration() + " / " + str(src.istructs)
-            else:
-                transl = ""
-            res.append( str(src) + "/A" + transl )
-
-        # src + /B if suffix1 == "-" :
-        elif src.istructs[0].suffix1 == "-" and \
-           src.istructs[0].suffix2 is None and \
-           not src.istructs[0].postsuffix_u and \
-           not src.istructs[0].postsuffix_o and \
-           src.istructs[0].gramm_postsuffix is None:
+        # src_e + /A if no suffix :
+        if src_e.istructs[0].suffix1 is None and \
+           src_e.istructs[0].suffix2 is None and \
+           not src_e.istructs[0].postsuffix_u and \
+           not src_e.istructs[0].postsuffix_o and \
+           src_e.istructs[0].gramm_postsuffix is None:
 
             if ARGS.bod_addewts == "yes":
-                transl = " # " + src.get_transliteration() + " / " + str(src.istructs)
+                transl = " # " + src_e.get_transliteration() + " / " + str(src_e.istructs)
             else:
                 transl = ""
-            res.append( str(src) + "/B" + transl )
+            res.append( str(src_e) + "/A" + transl )
 
-        # src + /C if suffix 'u :
-        elif src.istructs[0].suffix1 is None and \
-           src.istructs[0].suffix2 is None and \
-           src.istructs[0].postsuffix_u and \
-           src.istructs[0].gramm_postsuffix is None and \
-           not src.istructs[0].postsuffix_o:
+        # src_e + /B if suffix1 == "-" :
+        elif src_e.istructs[0].suffix1 == "-" and \
+           src_e.istructs[0].suffix2 is None and \
+           not src_e.istructs[0].postsuffix_u and \
+           not src_e.istructs[0].postsuffix_o and \
+           src_e.istructs[0].gramm_postsuffix is None:
 
             if ARGS.bod_addewts == "yes":
-                transl = " # " + src.get_transliteration() + " / " + str(src.istructs)
+                transl = " # " + src_e.get_transliteration() + " / " + str(src_e.istructs)
             else:
                 transl = ""
-            res.append( str(src) + "/C" + transl )
+            res.append( str(src_e) + "/B" + transl )
+
+        # src_e + /C if suffix 'u :
+        elif src_e.istructs[0].suffix1 is None and \
+           src_e.istructs[0].suffix2 is None and \
+           src_e.istructs[0].postsuffix_u and \
+           src_e.istructs[0].gramm_postsuffix is None and \
+           not src_e.istructs[0].postsuffix_o:
+
+            if ARGS.bod_addewts == "yes":
+                transl = " # " + src_e.get_transliteration() + " / " + str(src_e.istructs)
+            else:
+                transl = ""
+            res.append( str(src_e) + "/C" + transl )
 
         else:
-            src.istructs[0].gramm_postsuffix = None
-            src.istructs[0].postsuffix_o = False
-            src.istructs[0].postsuffix_u = False
+            src_e.istructs[0].gramm_postsuffix = None
+            src_e.istructs[0].postsuffix_o = False
+            src_e.istructs[0].postsuffix_u = False
 
-            src.update_dchars()
+            src_e.update_dchars()
 
             if ARGS.bod_addewts == "yes":
-                transl = " # " + src.get_transliteration() + " / " + str(src.istructs)
+                transl = " # " + src_e.get_transliteration() + " / " + str(src_e.istructs)
             else:
                 transl = ""
 
-            # we add src only if don't create a doublon :
-            if str(src)+"/A" not in res and \
-               str(src)+"/B" not in res and \
-               str(src)+"/C" not in res:
-                res.append( str(src) + transl )
+            # we add src_e only if don't create a doublon :
+            if str(src_e)+"/A" not in res and \
+               str(src_e)+"/B" not in res and \
+               str(src_e)+"/C" not in res:
+                res.append( str(src_e) + transl )
 
     return res
 

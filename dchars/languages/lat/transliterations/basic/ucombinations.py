@@ -44,8 +44,7 @@ def get_usefull_combinations():
     """
     res = []
 
-    LAT = new_dstring( 'lat' )
-    dstring = LAT()
+    dstring = new_dstring( 'lat' )()
 
     # base_char : we don't use the list stored in symbols.py
     # since we would lost the character's order.

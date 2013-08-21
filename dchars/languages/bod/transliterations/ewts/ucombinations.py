@@ -44,7 +44,7 @@ def get_usefull_combinations():
     """
     res = []
 
-    BOD = new_dstring( 'bod' )
+    dstring = new_dstring( 'bod' )()
 
     # base_char : we don't use the list stored in symbols.py
     # since we would lost the character's order.
@@ -97,8 +97,6 @@ def get_usefull_combinations():
     #-----------------------------------------------------------------------
     for base_char in base_characters:
 
-        dstring = BOD()
-
         dchar = DCharacterBOD( dstring_object = dstring,
                                 base_char = base_char,
                                 subj_consonants = None,
@@ -141,8 +139,6 @@ def get_usefull_combinations():
                                        )))
 
     for base_char, vowel in combinations:
-
-        dstring = BOD()
 
         dchar = DCharacterBOD( dstring_object = dstring,
                                 base_char = base_char,

@@ -45,7 +45,7 @@ import pickle
 import os.path
 from dchars.dchars import new_dstring
 import dchars.languages.bod.buffer as buffer
-import dchars.languages.bod.transliterations.ewts_buffer as ewts_buffer
+import dchars.languages.bod.transliterations.ewts.ewts_buffer as ewts_buffer
 DSTRING_BOD_BUFF = new_dstring(language="བོད་ཡིག",
                                transliteration_method='ewts',
                                options = {"expected structure"          : "Tibetan or Sanskrit",

@@ -67,7 +67,7 @@ def get_intstruct_from_trans_str( _src, dstring_object ):
 
     # list of InternalStructure objects.
     istructs = ListOfInternalStructures(anonymize_the_unknown_chars =\
-                                        dstring_object.options["anonymize the unknown characters"] == 'yes')
+                                dstring_object.options["anonymize the unknown characters"] == 'yes')
 
     # we read <_src> through a DSTRING_SAN object :
     dstring_san = new_dstring(language='संस्कृतम्',
@@ -339,7 +339,7 @@ def get_intstruct_from_trans_str( _src, dstring_object ):
                 istructs[-1].anusvara_candrabindu = DIACRITICS_INVERSED[unicode_symb]
 
     res = ListOfInternalStructures(anonymize_the_unknown_chars =\
-                                        dstring_object.options["anonymize the unknown characters"] == 'yes')
+                                dstring_object.options["anonymize the unknown characters"] == 'yes')
 
     # we add a tsheg after a "real" syllable (id est, not a punctuation sign, ...)
     for istruct in istructs:

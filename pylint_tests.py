@@ -54,7 +54,7 @@ with open("pylint.ouput","w") as dest:
         try:
             with open("z","r") as src:
                 pylintdata = src.read()
-        except:
+        except Exception:
             CONSOLE.use_the_color("red")
             print("   >>> Problem by reading ", filename)
             CONSOLE.use_the_default_color()

@@ -44,8 +44,7 @@ def get_usefull_combinations():
     """
     res = []
 
-    GRC = new_dstring( 'grc' )
-    dstring = GRC()
+    dstring = new_dstring( 'grc' )()
 
     # base_char : we don't use the list stored in symbols.py
     # since we would lost the character's order.

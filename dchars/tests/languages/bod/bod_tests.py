@@ -1892,6 +1892,12 @@ class TESTSDStringBOD(unittest.TestCase):
             for words in file__words_sorted.readlines():
                 words_sorted.append( DSTRING_BOD(words.strip()) )
 
+
+            # Pylint isn't ok with the double call to open()...
+            # pylint: disable=E0602
+            # -> Undefined variable 'file__words_shuffled'
+            # pylint: disable=W0612
+            # -> Unused variable 'filename__words_shuffled'
             words_shuffled = []
             for words in file__words_shuffled.readlines():
                 words_shuffled.append( DSTRING_BOD(words.strip()) )

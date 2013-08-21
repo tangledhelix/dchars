@@ -64,7 +64,8 @@ class ConfigValue(object):
         return txt.format( self.subsection,
                            self.values,
                            self.name,
-                           self.defaultvalue )
+                           self.defaultvalue,
+                           self.optionname )
 
 ################################################################################        
 class ConfigValuesForOneLanguage(list):

@@ -153,7 +153,7 @@ class TESTSDStringGRC(unittest.TestCase):
         #-----------------------------------------------
         # [grc.gutenberg]transliteration for upsilon = y
         #-----------------------------------------------
-        DSTRING_GRC__UPSILON = new_dstring(language="Ἑλληνικὴ γλῶττα",
+        dstring_grc__upsilon = new_dstring(language="Ἑλληνικὴ γλῶττα",
                           transliteration_method = "gutenberg",
                           options = {"anonymize the unknown characters" : 'no',
                                      "gutenberg:ignore smooth breathing" : 'yes',
@@ -164,18 +164,18 @@ class TESTSDStringGRC(unittest.TestCase):
                                     },
                           )
 
-        string = DSTRING_GRC__UPSILON("πύργον")
+        string = dstring_grc__upsilon("πύργον")
         grc_gutenberg2 = string.get_transliteration()
         self.assertEqual( "pyrgon", grc_gutenberg2 )
 
-        string = DSTRING_GRC__UPSILON("αὐτης")
+        string = dstring_grc__upsilon("αὐτης")
         grc_gutenberg2 = string.get_transliteration()
         self.assertEqual( "aytês", grc_gutenberg2 )
 
         #-----------------------------------------------
         # [grc.gutenberg]transliteration for upsilon = u
         #-----------------------------------------------
-        DSTRING_GRC__UPSILON = new_dstring(language="Ἑλληνικὴ γλῶττα",
+        dstring_grc__upsilon = new_dstring(language="Ἑλληνικὴ γλῶττα",
                           transliteration_method = "gutenberg",
                           options = {"anonymize the unknown characters" : 'no',
                                      "gutenberg:ignore smooth breathing" : 'yes',
@@ -186,18 +186,18 @@ class TESTSDStringGRC(unittest.TestCase):
                                     },
                           )
 
-        string = DSTRING_GRC__UPSILON("πύργον")
+        string = dstring_grc__upsilon("πύργον")
         grc_gutenberg2 = string.get_transliteration()
         self.assertEqual( "purgon", grc_gutenberg2 )
 
-        string = DSTRING_GRC__UPSILON("αὐτης")
+        string = dstring_grc__upsilon("αὐτης")
         grc_gutenberg2 = string.get_transliteration()
         self.assertEqual( "autês", grc_gutenberg2 )
 
         #----------------------------------------------------
         # [grc.gutenberg]transliteration for upsilon = u or y
         #----------------------------------------------------
-        DSTRING_GRC__UPSILON = new_dstring(language="Ἑλληνικὴ γλῶττα",
+        dstring_grc__upsilon = new_dstring(language="Ἑλληνικὴ γλῶττα",
                           transliteration_method = "gutenberg",
                           options = {"anonymize the unknown characters" : 'no',
                                      "gutenberg:ignore smooth breathing" : 'yes',
@@ -208,11 +208,11 @@ class TESTSDStringGRC(unittest.TestCase):
                                     },
                           )
 
-        string = DSTRING_GRC__UPSILON("πύργον")
+        string = dstring_grc__upsilon("πύργον")
         grc_gutenberg2 = string.get_transliteration()
         self.assertEqual( "pyrgon", grc_gutenberg2 )
 
-        string = DSTRING_GRC__UPSILON("αὐτης")
+        string = dstring_grc__upsilon("αὐτης")
         grc_gutenberg2 = string.get_transliteration()
         self.assertEqual( "autês", grc_gutenberg2 )
 

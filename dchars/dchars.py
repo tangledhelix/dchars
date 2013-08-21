@@ -44,12 +44,12 @@ CONFIG_INI = configparser.ConfigParser()
 # about the following line : why not simply CONFIG_INI.read( "dchars", "config.ini") ?
 # -> once installed, DChars have to know the exact path to config.ini,
 # hence the following line (idea given by Frank Zago)
-config_ini_filename =  os.path.join(os.path.dirname(os.path.realpath(__file__)), 
+CONFIG_INI_FILENAME =  os.path.join(os.path.dirname(os.path.realpath(__file__)), 
                               "config.ini" )
 # Something's wrong with configparser : instead of simply writing
-#     DATA.read( open(config_ini_filename, "r", encoding="utf-8") )
+#     DATA.read( open(CONFIG_INI_FILENAME, "r", encoding="utf-8") )
 # we have to use this strange hack :
-CONFIG_INI.readfp( codecs.open(config_ini_filename, "r", "utf-8") )
+CONFIG_INI.readfp( codecs.open(CONFIG_INI_FILENAME, "r", "utf-8") )
 
 # we check the accurency of the informations stored in the config.ini file :
 dchars.config_ini.check(CONFIG_INI)

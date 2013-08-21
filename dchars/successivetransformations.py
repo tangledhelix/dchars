@@ -87,10 +87,10 @@ class Transformation(object):
                 Verify that <self> is ok.
         """
 
-        if dstring_type is None:
+        if self.dstring_type is None:
             return False
 
-        if direction == 0:
+        if self.direction == 0:
             return False
 
         return True
@@ -123,19 +123,19 @@ class SuccessiveTransformations(list):
                                     direction = direction, ))
 
     #///////////////////////////////////////////////////////////////////////////
-    def apply(self, sourcetext, limit_to_the_number_of_transformations=999):
+    def apply(self, sourcetext, limit_to_the_number_of_transf=999):
         """
                 SuccessiveTransformations.apply
 				
 				sourcetext    : (str)
-				limit_to_the_number_of_transformations : (int)
+				limit_to_the_number_of_transf : (int)
 
                 Apply the successive transformations to <sourcetext>, return
                 the last result.
         """
         for index_transf, transf in enumerate(self):
             
-            if index_transf+1 > limit_to_the_number_of_transformations:
+            if index_transf+1 > limit_to_the_number_of_transf:
                 break
 				
             else:

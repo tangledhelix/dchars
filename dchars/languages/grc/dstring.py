@@ -173,6 +173,11 @@ class DStringGRC(DStringMotherClass):
 
                 NB : function required by the dchars-fe project.
         """
+
+        # Pylint can't know that <self> has a 'transliteration_method' member
+        # created when <self> has been initialized by new_dstring() :
+        # pylint: disable=E1101
+        # -> "Instance of 'DStringGRC' has no 'transliteration_method' member"
         res = DStringGRC.trans__get_transl_ucombinations[self.transliteration_method]()
         return res
 
