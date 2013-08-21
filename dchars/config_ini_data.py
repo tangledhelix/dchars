@@ -123,6 +123,28 @@ class ConfigValuesForOneLanguage(list):
         return res
 
     #///////////////////////////////////////////////////////////////////////////
+    def get_configvalue_for_this_optionname(self, optionname):
+        """
+                ConfigValuesForOneLanguage.get_configvalue_for_this_optionname
+
+                optionname :    (str)
+        """
+        found = False
+        res = None
+        
+        for configvalue in self:
+            if configvalue.optionname == optionname:
+                found = True
+                res = configvalue
+
+        if not found:
+            msg = "unknown optionname = {0}; known optionnames = {1}.".format( name,
+                                                                   [cv.optionname for cv in self] )
+            raise DCharsError( context = "ConfigValuesForOneLanguage.get_configvalue_for_this_optionname",
+                               message = msg )
+        return res
+
+    #///////////////////////////////////////////////////////////////////////////
     def get_optionname(self, name):
         """
                 ConfigValuesForOneLanguage.get_optionname
