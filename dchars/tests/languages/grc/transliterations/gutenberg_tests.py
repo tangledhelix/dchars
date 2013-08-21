@@ -35,6 +35,7 @@ DSTRING_GRC = new_dstring(language="Ἑλληνικὴ γλῶττα",
                                      "gutenberg:ignore iota subscript" : 'yes',
                                      "gutenberg:ignore diaeresis" : 'yes',
                                      "gutenberg:transliteration for upsilon" : "u",
+                                     "gutenberg:ignore makron and brakhu" : "yes",
                                     },
                           )
 
@@ -46,6 +47,7 @@ DSTRING_GRC__FULL = new_dstring(language="Ἑλληνικὴ γλῶττα",
                                      "gutenberg:ignore iota subscript" : 'no',
                                      "gutenberg:ignore diaeresis" : 'no',
                                      "gutenberg:transliteration for upsilon" : "u",
+                                     "gutenberg:ignore makron and brakhu" : "no",
                                     },
                           )
 
@@ -58,6 +60,7 @@ DSTRING_GRC__UNKNOWNCHAR = new_dstring(language="Ἑλληνικὴ γλῶττ�
 LIST_OF_EXAMPLES = (
     ("", ''),
     ("ῥα", "rha"),
+    ("ᾰρεσκος", "areskos"),
 
     # examples given by Frank Zago :
     ("Ὁ δὲ Καῖσαρ (Οὐερκιγγετόριγα) εὐθὺς ὲν δεσμοῖς ἔδησε καὶ " + \
@@ -90,7 +93,7 @@ LIST_OF_EXAMPLES__FULL = (
     ("œῥα", "œrha"),
     ("(ῥα", "(rha"),
     (")ῥα", ")rha"),
-
+    ("ᾰρεσκος", "a-reskos"),
 
     # from http://www.pgdp.net/wiki/Transliterating_Greek/Marking_Accents 
     ("τῷ Ἰουδαϊσμῷ ἀπὸ μέρους",
