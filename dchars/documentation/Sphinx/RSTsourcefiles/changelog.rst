@@ -3,9 +3,10 @@ CHANGELOG_TITLE
 ===============
 
 ------------------
-0.5.1 [2013_08_XX]
+0.5.1 [2013_08_21]
 ------------------
 
+  * new option for grc.gutenberg : "ignore makron and brakhu"
   * fixed a bug in ConfigValue.__repr__()
   * new function : (config_ini_data.py)ConfigValuesForOneLanguage.get_configvalue_for_this_optionname()
 
@@ -29,6 +30,10 @@ CHANGELOG_TITLE
     * header_please_test.py ok
     * 136 tests, all ok
     * Pylint's worst mark : 9.47
+
+--------------------
+OLDER_VERSIONS_TITLE
+--------------------
 
 ------------------
 0.4.9 [2013_08_12]
@@ -69,10 +74,6 @@ CHANGELOG_TITLE
 
     * header_please_test.py ok
     * 136 tests, all ok
-
---------------------
-OLDER_VERSIONS_TITLE
---------------------
 
 ------------------
 0.4.6 [2013_07_17]
