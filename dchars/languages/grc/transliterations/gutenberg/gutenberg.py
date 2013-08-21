@@ -327,6 +327,10 @@ def dchar__get_translit_str(dstring_object, dchar):
         if dstring_object.options["gutenberg:ignore diaeresis"] == 'yes':
             str_res = str_res.replace("\"", "")
 
+        if dstring_object.options["gutenberg:ignore makron and brakhu"] == 'yes':
+            str_res = str_res.replace("-", "")
+            str_res = str_res.replace("_", "")
+
     return str_res
 
 #///////////////////////////////////////////////////////////////////////////////

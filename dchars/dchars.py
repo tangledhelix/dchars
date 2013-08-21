@@ -119,6 +119,9 @@ LANGUAGES = {
 
                   DATA["grc"].get_optionname("hh becomes h"): \
                   CONFIG_INI["grc.gutenberg"]["hh becomes h"],
+
+                  DATA["grc"].get_optionname("ignore makron and brakhu"): \
+                  CONFIG_INI["grc.gutenberg"]["ignore makron and brakhu"],
                  }
                 ),
 

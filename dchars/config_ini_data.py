@@ -123,9 +123,9 @@ class ConfigValuesForOneLanguage(list):
         return res
 
     #///////////////////////////////////////////////////////////////////////////
-    def get_configvalue_for_this_optionname(self, optionname):
+    def get_cvalue_for_this_optionname(self, optionname):
         """
-                ConfigValuesForOneLanguage.get_configvalue_for_this_optionname
+                ConfigValuesForOneLanguage.get_cvalue_for_this_optionname
 
                 optionname :    (str)
         """
@@ -138,9 +138,10 @@ class ConfigValuesForOneLanguage(list):
                 res = configvalue
 
         if not found:
-            msg = "unknown optionname = {0}; known optionnames = {1}.".format( name,
+            msg = "unknown optionname = {0}; known optionnames = {1}.".format( optionname,
                                                                    [cv.optionname for cv in self] )
-            raise DCharsError( context = "ConfigValuesForOneLanguage.get_configvalue_for_this_optionname",
+            raise DCharsError( context = \
+                                  "ConfigValuesForOneLanguage.get_cvalue_for_this_optionname",
                                message = msg )
         return res
 
@@ -273,6 +274,12 @@ GRC_DATA.append( ConfigValue( subsection = 'grc.gutenberg',
                               name = 'transliteration for upsilon',
                               defaultvalue = 'u or y',
                               optionname = "gutenberg:transliteration for upsilon" ))
+
+GRC_DATA.append( ConfigValue( subsection = 'grc.gutenberg',
+                              values = ("yes", "no"),
+                              name = 'ignore makron and brakhu',
+                              defaultvalue = 'yes',
+                              optionname = "gutenberg:ignore makron and brakhu" ))
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 #  "עִבְֿרִיתֿ מִקְרָאִיתֿ"  (Biblical Hebrew)

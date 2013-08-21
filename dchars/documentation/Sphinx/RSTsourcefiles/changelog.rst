@@ -9,6 +9,12 @@ CHANGELOG_TITLE
   * fixed a bug in ConfigValue.__repr__()
   * new function : (config_ini_data.py)ConfigValuesForOneLanguage.get_configvalue_for_this_optionname()
 
+  * code quality :
+
+    * header_please_test.py ok
+    * 136 tests, all ok
+    * Pylint's worst mark : 9.47
+
 ------------------
 0.5.0 [2013_08_20]
 ------------------
