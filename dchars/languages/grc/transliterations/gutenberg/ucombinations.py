@@ -81,7 +81,7 @@ def get_usefull_combinations():
     #-----------------------------------------------------------------------
     combinations = (itertools.product(
                                        # base_chars
-                                       ( 'α', 'β', 'σ' ),
+                                       ( 'α', 'β', 'σ', ),
 
                                        # contextual_form
                                        ("initial", "medium", "final",

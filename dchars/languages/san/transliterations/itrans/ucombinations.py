@@ -154,7 +154,7 @@ def get_usefull_combinations():
     #-----------------------------------------------------------------------
     combinations = (itertools.product(
                                        # base_chars
-                                       ('KA'),
+                                       ('KA',),
 
                                        # anusvara_candrabindu
                                        #(None,
