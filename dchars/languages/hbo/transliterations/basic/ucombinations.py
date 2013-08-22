@@ -102,15 +102,11 @@ def get_usefull_combinations():
         #-----------------------------------------------------------------------
         # (2/2) complex characters
         #-----------------------------------------------------------------------
+
+        #.......................................................................
         combinations = (itertools.product(
                                            # base_char :
-                                           ( 'ב', 'ש', ),
-
-                                           # contextual_form :
-                                           ("initial+medium+final", "final"),
-
-                                           # shin_sin_dot :
-                                           (None, "HEBREW POINT SHIN DOT", "HEBREW POINT SIN DOT"),
+                                           ( 'ב', ),
 
                                            # vowel :
                                            (None,
@@ -129,35 +125,47 @@ def get_usefull_combinations():
                                             "HEBREW POINT QAMATS QATAN"),
                                              ))
         
-        for base_char, contextual_form, shin_sin_dot, \
+        for base_char, \
             vowel in combinations:
 
-            add_this_dchar = True
+            dchar = DCharacterHBO( dstring_object = dstring,
+                                    base_char = base_char,
+                                    contextual_form = "initial+medium+final",
+                                    shin_sin_dot = None,
+                                    daghesh_mapiq = False,
+                                    methegh = False,
+                                    specialpoint = None,
+                                    vowel = vowel,
+                                    raphe = None,
+                                    cantillation_mark = None, )
 
-            if base_char == 'ש':
-                if contextual_form != "initial+medium+final":
-                    add_this_dchar = False
+            txt = dchar__get_translit_str(dstring_object = dstring,
+                                          dchar = dchar)
 
-            elif base_char in ('כ', 'מ', 'נ', 'פ', 'צ'):
-                if shin_sin_dot != None:
-                    add_this_dchar = False
+            res.append( str(dchar) + "{" + txt + "} " )
 
-            else:
-                if contextual_form != "initial+medium+final" or \
-                   shin_sin_dot != None:
-                    add_this_dchar = False
+        #.......................................................................
+        combinations = (itertools.product(
+                                           # base_char :
+                                           ( 'ש', ),
 
-            if add_this_dchar:
-                dchar = DCharacterHBO( dstring_object = dstring,
-                                       base_char = base_char,
-                                       contextual_form = contextual_form,
-                                       shin_sin_dot = shin_sin_dot,
-                                       daghesh_mapiq = False,
-                                       methegh = False,
-                                       specialpoint = None,
-                                       vowel = vowel,
-                                       raphe = None,
-                                       cantillation_mark = None, )
+                                           # shin_sin_dot :
+                                           (None, "HEBREW POINT SHIN DOT", "HEBREW POINT SIN DOT"),
+                                          ))
+        
+        for base_char, shin_sin_dot, \
+            vowel in combinations:
+
+            dchar = DCharacterHBO( dstring_object = dstring,
+                                    base_char = base_char,
+                                    contextual_form = "initial+medium+final",
+                                    shin_sin_dot = shin_sin_dot,
+                                    daghesh_mapiq = False,
+                                    methegh = False,
+                                    specialpoint = None,
+                                    vowel = None,
+                                    raphe = None,
+                                    cantillation_mark = None, )
 
             txt = dchar__get_translit_str(dstring_object = dstring,
                                           dchar = dchar)
