@@ -104,7 +104,7 @@ def get_usefull_combinations():
         #-----------------------------------------------------------------------
         combinations = (itertools.product(
                                            # base_char :
-                                           base_characters,
+                                           ( 'ב', 'ש'),
 
                                            # contextual_form :
                                            ("initial+medium+final", "final"),

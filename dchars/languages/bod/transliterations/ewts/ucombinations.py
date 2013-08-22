@@ -113,13 +113,13 @@ def get_usefull_combinations():
         txt = dstring__get_translit_str(dstring = dstring)
 
         res.append( str(dchar) + "{" + txt + "} " )
-
+ 
     #-----------------------------------------------------------------------
     # (2/2) complex characters
     #-----------------------------------------------------------------------
     combinations = (itertools.product(
                                        # base_chars
-                                       base_characters,
+                                       ('K',),
 
                                        # vowel
                                        (      None,

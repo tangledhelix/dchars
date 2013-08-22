@@ -77,7 +77,7 @@ def get_usefull_combinations():
     #-----------------------------------------------------------------------
     combinations = (itertools.product(
                                        # base_char :
-                                       base_characters,    
+                                       ('a', 'b',),
 
                                        # capital_letter
                                        (False, True),
