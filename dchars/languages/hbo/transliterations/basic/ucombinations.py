@@ -154,7 +154,7 @@ def get_usefull_combinations():
                                           ))
         
         for base_char, shin_sin_dot, \
-            vowel in combinations:
+            in combinations:
 
             dchar = DCharacterHBO( dstring_object = dstring,
                                     base_char = base_char,
