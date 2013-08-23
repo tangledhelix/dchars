@@ -3,10 +3,16 @@ CHANGELOG_TITLE
 ===============
 
 ------------------
-0.5.2 [2013_08_XX]
+0.5.2 [2013_08_23]
 ------------------
 
   * new list of "usefull characters"
+
+  * code quality :
+
+    * header_please_test.py ok
+    * 136 tests, all ok
+    * Pylint's worst mark : 9.47
 
 ------------------
 0.5.1 [2013_08_21]
