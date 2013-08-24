@@ -108,7 +108,7 @@ class SuccessiveTransformations(list):
         """
         res = [ str(stransf) for stransf in self ]
 
-        return "* \n".join(res)
+        return "\n*".join(res)
 
     #///////////////////////////////////////////////////////////////////////////
     def add(self, dstring_type, direction):
