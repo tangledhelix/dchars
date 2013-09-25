@@ -278,5 +278,9 @@ class DStringMotherClass(list):
     def sortingvalue(self):
         """
                 DStringMotherClass.sortingvalue
+
+                This is a basic function which should be overloaded. For some
+                languages (ex : grc) this way to compute a sorting value (by
+                adding the sorting values of each character) is wrong.
         """
         return  [ dchar.sortingvalue() for dchar in self  ]

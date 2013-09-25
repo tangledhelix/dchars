@@ -56,6 +56,8 @@ import dchars.languages.grc.transliterations.perseus.ucombinations as perseustra
 import dchars.languages.grc.transliterations.gutenberg.gutenberg as gutenbergtrans
 import dchars.languages.grc.transliterations.gutenberg.ucombinations as gutenbergtrans_ucombinations
 
+from dchars.utilities.sortingvalue import SortingValue
+
 ################################################################################
 class DStringGRC(DStringMotherClass):
     """
@@ -464,3 +466,62 @@ class DStringGRC(DStringMotherClass):
                 src = src)
 
         return self
+
+    #///////////////////////////////////////////////////////////////////////////
+    def sortingvalue(self):
+        """
+                DStringGRC.sortingvalue
+
+                Return a SortingValue object
+        """
+    #///////////////////////////////////////////////////////////////////////////
+    def sortingvalue(self):
+        """
+                DStringGRC.sortingvalue
+
+                Return a SortingValue object
+        """
+        res = SortingValue()
+
+        if self.options["sorting method"] == "default":
+
+            # base character :
+            data = []
+            for char in self:
+                data.append( char.base_char )
+            res.append(data)
+
+            # pneuma :
+            data = []
+            for char in self:
+                data.append( { None      : 0,
+                               "ψιλὸν"   : 1,
+                               "δασὺ"    : 2, }[char.pneuma])
+            res.append(data)
+
+            # tonos :
+            data = []
+            for char in self:
+                data.append( { None             : 0,
+                               "ὀξεῖα"          : 1,
+                               "βαρεῖα"         : 2,
+                               "περισπωμένη"    : 3, }[char.tonos])
+            res.append(data)
+
+            # hypogegrammene :
+            data = []
+            for char in self:
+                data.append( { False            : 0,
+                               True             : 1, }[char.hypogegrammene])
+            res.append(data)
+
+            # mekos :
+            data = []
+            for char in self:
+                data.append( { None             : 0,
+                               "βραχύ"          : 1,
+                               "μακρόν"         : 2, }[char.mekos])
+            res.append(data)
+
+        return res
+            

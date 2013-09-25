@@ -387,9 +387,11 @@ class TESTSDStringGRC(unittest.TestCase):
         self.assertFalse( DSTRING_GRC("Πλάτων") < DSTRING_GRC("πλάτων") )
         self.assertFalse( DSTRING_GRC("Πλάτων") > DSTRING_GRC("πλάτων") )
 
+        self.assertTrue( DSTRING_GRC("ἂν") < DSTRING_GRC("ἀνακλαίομαι") < DSTRING_GRC("ἀνήρ") )
+
         # with unknown characters :
-        self.assertTrue( DSTRING_GRC("ᾶμω") < DSTRING_GRC("ᾶ²ω") )
-        self.assertFalse( DSTRING_GRC("ᾶμω") > DSTRING_GRC("ᾶ²ω") )
+        self.assertTrue( DSTRING_GRC("ᾶμω") > DSTRING_GRC("ᾶ²ω") )
+        self.assertFalse( DSTRING_GRC("ᾶμω") < DSTRING_GRC("ᾶ²ω") )
 
     #///////////////////////////////////////////////////////////////////////////
     def test_sortingvalue2(self):

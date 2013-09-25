@@ -519,9 +519,12 @@ class DCharacterGRC(DCharacterMotherClass):
         """
                 DCharacterGRC.sortingvalue
 
-                Return an SortingValue object
-        """
+                Return a SortingValue object
 
+                NB : this function has almost no interest; you must use DStringGRC.sortingvalue()
+                     to compare two strings. Use this function if you just want to compare
+                     two characters.
+        """
         res = SortingValue()
 
         if self.dstring_object.options["sorting method"] == "default":
@@ -529,6 +532,13 @@ class DCharacterGRC(DCharacterMotherClass):
             if self.unknown_char:
                 # unknown char :
                 res.append(1)
+
+                # Some base_char may contain more than one character, like "β2".
+                base_char_num = 0
+                for index_char, char in enumerate(self.base_char):
+                    base_char_num += ord(char) << index_char
+                res.append( base_char_num )
+
                 return res
 
             # known char :
