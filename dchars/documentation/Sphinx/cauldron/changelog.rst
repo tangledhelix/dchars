@@ -3,6 +3,18 @@ CHANGELOG_TITLE
 ===============
 
 ------------------
+0.5.3 [2013_08_23]
+------------------
+
+  * the way DChars compute the alphabetical order has been checked and modified to be the same for all languages.
+
+  * code quality :
+
+    * header_please_test.py ok
+    * 136 tests, all ok
+    * Pylint's worst mark : 9.47
+
+------------------
 0.5.2 [2013_08_23]
 ------------------
 

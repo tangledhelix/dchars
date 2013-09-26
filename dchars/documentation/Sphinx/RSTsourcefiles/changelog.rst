@@ -3,7 +3,7 @@ CHANGELOG_TITLE
 ===============
 
 ------------------
-0.5.3 [2013_08_23]
+0.5.3 [2013_09_26]
 ------------------
 
   * the way DChars compute the alphabetical order has been checked and modified to be the same for all languages.
