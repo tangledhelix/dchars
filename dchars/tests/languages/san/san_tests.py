@@ -407,6 +407,16 @@ class TESTSDStringSAN(unittest.TestCase):
         self.assertFalse( DSTRING_SAN(str1) != DSTRING_SAN(str2) )
 
         str1 = "क"
+        str2 = "कक"
+        self.assertTrue( DSTRING_SAN(str1) < DSTRING_SAN(str2) )
+        self.assertFalse( DSTRING_SAN(str1) > DSTRING_SAN(str2) )
+
+        str1 = "कक"
+        str2 = "कं"
+        self.assertTrue( DSTRING_SAN(str1) < DSTRING_SAN(str2) )
+        self.assertFalse( DSTRING_SAN(str1) > DSTRING_SAN(str2) )
+
+        str1 = "क"
         str2 = "कि"
         self.assertTrue( DSTRING_SAN(str1) < DSTRING_SAN(str2) )
         self.assertTrue( DSTRING_SAN(str1) <= DSTRING_SAN(str2) )

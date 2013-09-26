@@ -468,7 +468,7 @@ class DStringBOD(DStringMotherClass):
     #///////////////////////////////////////////////////////////////////////////
     def update_istructs(self):
         """
-                DStringBod.update_istructs
+                DStringBOD.update_istructs
 
         """
         self.istructs = istruct.get_intstructures_from_dstring(self)

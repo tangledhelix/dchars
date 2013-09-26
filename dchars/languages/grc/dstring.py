@@ -481,7 +481,8 @@ class DStringGRC(DStringMotherClass):
             # base character :
             data = []
             for char in self:
-                data.append( (int(char.unknown_char),
+                data.append( ({False:0,
+                               True:1}[char.unknown_char],
                               char.base_char ))
             res.append(data)
 

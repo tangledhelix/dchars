@@ -1868,6 +1868,27 @@ class TESTSDStringBOD(unittest.TestCase):
         self.assertFalse( dstring1 > dstring2 )
         self.assertFalse( dstring1 >= dstring2 )
 
+        #.......................................................................
+        dstring1 = DSTRING_BOD("ཀཀ")     # kaka
+        dstring2 = DSTRING_BOD("ཀ²")     # ka²
+
+        self.assertFalse( dstring1 == dstring2 )
+        self.assertTrue( dstring1 < dstring2 )
+        self.assertTrue( dstring1 <= dstring2 )
+        self.assertFalse( dstring1 > dstring2 )
+        self.assertFalse( dstring1 >= dstring2 )
+
+        #.......................................................................
+        dstring1 = DSTRING_BOD("ཀཀཀ")     # kakaka
+        dstring2 = DSTRING_BOD("ཀ²ཀ")     # ka²ka
+
+        self.assertFalse( dstring1 == dstring2 )
+        self.assertTrue( dstring1 < dstring2 )
+        self.assertTrue( dstring1 <= dstring2 )
+        self.assertFalse( dstring1 > dstring2 )
+        self.assertFalse( dstring1 >= dstring2 )
+
+
     #///////////////////////////////////////////////////////////////////////////
     def test_basic_sortingvalue2(self):
         """

@@ -459,9 +459,12 @@ class DCharacterHBO(DCharacterMotherClass):
         """
                 DCharacterHBO.sortingvalue
 
-                Return an SortingValue object
-        """
+                Return a SortingValue object
 
+                NB : this function has almost no interest; you must use DStringHBO.sortingvalue()
+                     to compare two strings. Use this function if you just want to compare
+                     two characters.
+        """
         res = SortingValue()
 
         if self.dstring_object.options["sorting method"] == "default":

@@ -45,6 +45,7 @@ from dchars.languages.hbo.symbols import SYMB_LETTERS, \
 import re
 import unicodedata
 from dchars.utilities.lstringtools import number_of_occurences
+from dchars.utilities.sortingvalue import SortingValue
 
 # known transliterations :
 import dchars.languages.hbo.transliterations.basic.basic as basictrans
@@ -481,3 +482,88 @@ class DStringHBO(DStringMotherClass):
                 src = src)
 
         return self
+
+    #///////////////////////////////////////////////////////////////////////////
+    def sortingvalue(self):
+        """
+                DStringHBO.sortingvalue
+
+                Return a SortingValue object
+        """
+        res = SortingValue()
+
+        if self.options["sorting method"] == "default":
+
+            # base character :
+            data = []
+            for char in self:
+                data.append( ({False:0,
+                               True:1}[char.unknown_char],
+                              char.base_char ))
+            res.append(data)
+
+            # shin_sin_dot :
+            data = []
+            for char in self:
+                data.append( ({None                     : 0,
+                               "HEBREW POINT SHIN DOT"  : 1,
+                               "HEBREW POINT SIN DOT"   : 2,}[char.shin_sin_dot]
+                             ))
+            res.append(data)
+            
+            # vowel :
+            data = []
+            for char in self:
+                data.append( ({None                             : 0,
+                               "HEBREW POINT PATAH"             : 1,
+                               "HEBREW POINT SEGOL"             : 2,
+                               "HEBREW POINT HIRIQ"             : 3,
+                               "HEBREW POINT QUBUTS"            : 4,
+                               "HEBREW POINT QAMATS"            : 5,
+                               "HEBREW POINT QAMATS QATAN"      : 6,
+                               "HEBREW POINT TSERE"             : 7,
+                               "HEBREW POINT HOLAM"             : 8,
+                               "HEBREW POINT HOLAM HASER FOR VAV": 9,
+                               "HEBREW POINT HATAF SEGOL"       : 10,
+                               "HEBREW POINT HATAF PATAH"       : 11,
+                               "HEBREW POINT HATAF QAMATS"      : 12,
+                               "HEBREW POINT SHEVA"             : 13,}[char.vowel]
+                             ))
+            res.append(data)
+
+            # daghesh_mapiq :
+            data = []
+            for char in self:
+                data.append( ({False:0,
+                               True:1}[char.daghesh_mapiq] ))
+            res.append(data)
+
+            # methegh :
+            data = []
+            for char in self:
+                data.append( ({False:0,
+                               True:1}[char.methegh] ))
+            res.append(data)
+            
+            # raphe :
+            data = []
+            for char in self:
+                data.append( ({False:0,
+                               True:1}[char.raphe] ))
+            res.append(data)
+            
+            # special point :
+            data = []
+            for char in self:
+                data.append( ({None                             : 0,
+                               "HEBREW MARK UPPER DOT"          : 1,
+                               "HEBREW MARK LOWER DOT"          : 2,}[char.specialpoint]
+                             ))
+            res.append(data)
+
+        else:
+            err_msg = "unknown sorting method '{0}'."
+            raise DCharsError( context = "DStringHBO.sortingvalue",
+                               message = err_msg.format(self.options["sorting method"]) )
+
+        return res
