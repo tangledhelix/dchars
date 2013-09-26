@@ -155,8 +155,8 @@ class DCharacterSAN(DCharacterMotherClass):
                 .. code-block:: none
 
                     unknown_char                    : bool
-                    base_char                       : None or a string with the NAME of the character,
-                                                      not the character itself.
+                    base_char                       : None or a string with the NAME of the
+                                                      character not the character itself.
                     accent                          : None or a string
                                                       ("DEVANAGARI STRESS SIGN UDATTA",
                                                        "DEVANAGARI GRAVE ACCENT"
@@ -288,7 +288,7 @@ class DCharacterSAN(DCharacterMotherClass):
         # (1/2) simple characters
         #-----------------------------------------------------------------------
         for base_char in base_characters__vowels:
-                    
+
             self.__init__( dstring_object = self.dstring_object,
                            base_char = base_char,
                            accent = None,
@@ -302,9 +302,9 @@ class DCharacterSAN(DCharacterMotherClass):
                          )
 
             yield copy.copy(self)
-        
+
         for base_char in base_characters:
-                    
+
             self.__init__( dstring_object = self.dstring_object,
                            base_char = base_char,
                            accent = None,
@@ -325,17 +325,17 @@ class DCharacterSAN(DCharacterMotherClass):
         combinations = (itertools.product(
                                            # base_chars
                                            base_characters,
-                                             
+
                                            # anusvara_candrabindu
                                            #(None,
                                            # "DEVANAGARI SIGN ANUSVARA",
                                            # "DEVANAGARI SIGN INVERTED CANDRABINDU",
                                            # 'DEVANAGARI SIGN CANDRABINDU',
                                            # ),
-                                           
+
                                            # virama
                                            #( False, True ),
-                                           
+
                                            # anudatta
                                            #( False, True ),
 
@@ -365,10 +365,10 @@ class DCharacterSAN(DCharacterMotherClass):
         for base_char, dependentvowel in combinations:
 
             add_this_char = True
-            
+
             if base_char == 'DEVANAGARI SIGN VISARGA':
                 if dependentvowel is not None:
-                    add_this_char = False                                  
+                    add_this_char = False
 
             if add_this_char:
                 self.__init__( dstring_object = self.dstring_object,

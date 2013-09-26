@@ -41,14 +41,14 @@ setup(name='DChars',
       download_url='94.23.197.37/dchars/',
       packages=find_packages(),
       package_data = { 'dchars': [ "config.ini",
-                                   
+
                                    os.path.join("system",
                                                 "numversion"),
-                                                
+
                                    os.path.join("languages",
                                                 "bod",
                                                 "buffer_str.data"),
-                                                
+
                                    os.path.join("languages",
                                                 "bod",
                                                 "transliterations",

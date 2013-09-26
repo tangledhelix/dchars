@@ -34,7 +34,7 @@ class DStringMotherClass(list):
         class DStringMotherClass, motherclass for all DString* classes
 
 		the three following attributes are created by the call to dchars.py::new_dstring() :
-        
+
         self.iso639_3_name             : (str)
         self.transliteration_method    : (str)
         self.options                   : (dict)
@@ -226,7 +226,8 @@ class DStringMotherClass(list):
                 .. code-block:: python
 
                     import dchars.dchars as dchars
-                    DSTRING_SAN = dchars.new_dstring(language='संस्कृतम्', transliteration_method="itrans")
+                    DSTRING_SAN = dchars.new_dstring(language='संस्कृतम्',
+                                  transliteration_method="itrans")
 
                     with DSTRING_SAN().open("myfile", 'r') as src:
                         print( src.get_transliteration() )

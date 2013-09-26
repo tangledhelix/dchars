@@ -69,7 +69,7 @@ class Transformation(object):
 
         if self.direction == +1:
             self.result = self.dstring_type(sourcetext).get_transliteration()
-            
+
         elif self.direction == -1:
             self.result = str(self.dstring_type().init_from_transliteration(sourcetext))
 
@@ -117,7 +117,7 @@ class SuccessiveTransformations(list):
 
                 Create a new <Transformation> object at the end of <self>
 
-                dstring_type, direction : see Transformation.__init__ 
+                dstring_type, direction : see Transformation.__init__
         """
         self.append( Transformation(dstring_type = dstring_type,
                                     direction = direction, ))
@@ -126,7 +126,7 @@ class SuccessiveTransformations(list):
     def apply(self, sourcetext, limit_to_the_number_of_transf=999):
         """
                 SuccessiveTransformations.apply
-				
+
 				sourcetext    : (str)
 				limit_to_the_number_of_transf : (int)
 
@@ -134,10 +134,10 @@ class SuccessiveTransformations(list):
                 the last result.
         """
         for index_transf, transf in enumerate(self):
-            
+
             if index_transf+1 > limit_to_the_number_of_transf:
                 break
-				
+
             else:
                 if index_transf == 0:
                     transf.apply(sourcetext)

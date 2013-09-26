@@ -33,7 +33,7 @@ class ConfigValue(object):
         a config.ini file :
 
             [bod.bodsan]                -> subsection (can be empty if no subsection)
-            
+
             # "high", "normal", "low"   -> list of values
             san2bod quality : high      -> name : defaultvalue
     """
@@ -67,7 +67,7 @@ class ConfigValue(object):
                            self.defaultvalue,
                            self.optionname )
 
-################################################################################        
+################################################################################
 class ConfigValuesForOneLanguage(list):
     """
         class ConfigValuesForOneLanguage
@@ -131,7 +131,7 @@ class ConfigValuesForOneLanguage(list):
         """
         found = False
         res = None
-        
+
         for configvalue in self:
             if configvalue.optionname == optionname:
                 found = True
@@ -154,7 +154,7 @@ class ConfigValuesForOneLanguage(list):
         """
         found = False
         res = None
-        
+
         for configvalue in self:
             if configvalue.name == name:
                 found = True

@@ -99,9 +99,9 @@ class DStringSAN(DStringMotherClass):
         """
                 DStringSAN.__init__
 
-		        the three following attributes have been created by the call to 
+		        the three following attributes have been created by the call to
 				dchars.py::new_dstring() :
-				
+
                 self.iso639_3_name             : (str)
                 self.transliteration_method    : (str)
                 self.options                   : (dict)
@@ -136,10 +136,10 @@ class DStringSAN(DStringMotherClass):
             for dchar2 in self:
                 if str(dchar) == str(dchar2):
                     already_present = True
-                
+
             if not already_present:
                 self.append( dchar )
-        
+
         return self
 
     #///////////////////////////////////////////////////////////////////////////
@@ -149,7 +149,7 @@ class DStringSAN(DStringMotherClass):
 
                 Return a (str)string with all the usefull combinations of TRANSLITTERATED
                 characters, i.e. only the 'interesting' characters (not punctuation if
-                 it's too simple by example). 
+                 it's too simple by example).
 
                 NB : this function has nothing to do with linguistic or a strict
                      approach of the language. This function allows only to get the
@@ -164,7 +164,7 @@ class DStringSAN(DStringMotherClass):
         # -> "Instance of 'DStringSAN' has no 'transliteration_method' member"
         res = DStringSAN.trans__get_transl_ucombinations[self.transliteration_method]()
         return res
-    
+
     #///////////////////////////////////////////////////////////////////////////
     def get_transliteration(self):
         """

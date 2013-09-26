@@ -35,7 +35,7 @@ def get_usefull_combinations():
             Return a (str)string with all the usefull combinations of characters,
             i.e. only the 'interesting' characters (not punctuation if it's too simple
             by example).
-            
+
             NB : this function has nothing to do with linguistic or a strict
                  approach of the language. This function allows only to get the
                  most common and/or usefull characters of the writing system.
@@ -58,7 +58,7 @@ def get_usefull_combinations():
     #-----------------------------------------------------------------------
     for base_char in base_characters:
         for capital_letter in (False, True):
-            
+
             dchar = DCharacterLAT( dstring_object = dstring,
                                    base_char = base_char,
                                    punctuation = False,

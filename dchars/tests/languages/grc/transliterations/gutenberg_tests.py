@@ -22,7 +22,7 @@
     ❏DChars❏ : dchars/tests/languages/grc/transliterations/gutenberg_tests.py
 """
 
-import unittest, os.path
+import unittest
 
 from dchars.dchars import new_dstring
 from dchars.symbols.symbols import UNKNOWN_CHAR_SYMBOL
@@ -95,7 +95,7 @@ LIST_OF_EXAMPLES__FULL = (
     (")ῥα", ")rha"),
     ("ᾰρεσκος", "a-reskos"),
 
-    # from http://www.pgdp.net/wiki/Transliterating_Greek/Marking_Accents 
+    # from http://www.pgdp.net/wiki/Transliterating_Greek/Marking_Accents
     ("τῷ Ἰουδαϊσμῷ ἀπὸ μέρους",
      "t^ô| )Iouda\"ism^ô| )ap\\o m/erous"),
 

@@ -85,7 +85,7 @@ class TESTSDStringGRC(unittest.TestCase):
 
         txt = DSTRING_GRC("βϐσς")
         self.assertEqual( txt.get_transliteration(), "BBSS" )
-        
+
     #///////////////////////////////////////////////////////////////////////////
     def test_from_srcstr_2_srcstr(self):
         """

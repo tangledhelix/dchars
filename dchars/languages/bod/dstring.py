@@ -121,9 +121,9 @@ class DStringBOD(DStringMotherClass):
         """
                 DStringBOD.__init__
 
-		        the three following attributes have been created by the call to 
+		        the three following attributes have been created by the call to
 				dchars.py::new_dstring() :
-				
+
                 self.iso639_3_name             : (str)
                 self.transliteration_method    : (str)
                 self.options                   : (dict)
@@ -209,10 +209,10 @@ class DStringBOD(DStringMotherClass):
         """
         # why not :
         #       return "".join([str(char) for char in self])    ?
-        # 
+        #
         # -> the normal way to get the string representation of a DStringBOD
         # object is to use the istructs representation. By calling str(char)
-        # we would call DCharacterBOD.get_sourcestr_representation(), simply 
+        # we would call DCharacterBOD.get_sourcestr_representation(), simply
         # sticking the string representations of the characters.
         #
         return self.istructs.get_the_corresponding_string()
@@ -242,12 +242,12 @@ class DStringBOD(DStringMotherClass):
             for dchar2 in self:
                 if str(dchar) == str(dchar2):
                     already_present = True
-                
+
             if not already_present:
                 self.append( dchar )
 
         self.update_istructs()
-        
+
         return self
 
     #///////////////////////////////////////////////////////////////////////////
@@ -257,7 +257,7 @@ class DStringBOD(DStringMotherClass):
 
                 Return a (str)string with all the usefull combinations of TRANSLITTERATED
                 characters, i.e. only the 'interesting' characters (not punctuation if
-                 it's too simple by example). 
+                 it's too simple by example).
 
                 NB : this function has nothing to do with linguistic or a strict
                      approach of the language. This function allows only to get the

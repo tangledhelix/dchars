@@ -278,7 +278,7 @@ class DCharacterHBO(DCharacterMotherClass):
 
             if base_char == "צ" and self.contextual_form == "final":
                 base_char = "ץ"
-                
+
             res.append( base_char )
 
         if self.shin_sin_dot is not None:
@@ -361,7 +361,7 @@ class DCharacterHBO(DCharacterMotherClass):
 
                 if base_char != 'SHIN':
                     shin_sin_dot = None
-                
+
                 self.__init__( dstring_object = self.dstring_object,
                                base_char = base_char,
                                contextual_form = None,
@@ -404,7 +404,7 @@ class DCharacterHBO(DCharacterMotherClass):
                                             "HEBREW POINT QUBUTS",
                                             "HEBREW POINT QAMATS QATAN"),
                                              ))
-        
+
         for base_char, contextual_form, shin_sin_dot, \
             vowel in combinations:
 
@@ -434,7 +434,7 @@ class DCharacterHBO(DCharacterMotherClass):
                                vowel = vowel,
                                raphe = None,
                                cantillation_mark = None, )
-                
+
                 yield copy.copy(self)
 
     #///////////////////////////////////////////////////////////////////////////

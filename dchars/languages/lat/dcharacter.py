@@ -188,21 +188,21 @@ class DCharacterLAT(DCharacterMotherClass):
         #-----------------------------------------------------------------------
         combinations = (itertools.product(
                                            # base_char :
-                                           base_characters,    
-                                             
+                                           base_characters,
+
                                            # capital_letter
                                            (False, True),
-                                           
+
                                            # length
                                            ( None, "short", "long",),
-                                           
+
                                            # stress
                                            (False, True),
-                                           
+
                                            # diaeresis
                                            (False, True),
                                            ))
-        
+
         for base_char, capital_letter, length, stress, diaeresis in combinations:
 
             add_this_dchar = True
@@ -211,7 +211,7 @@ class DCharacterLAT(DCharacterMotherClass):
                 if length is not None or \
                    stress == True or \
                    diaeresis == True:
-                   
+
                     add_this_dchar = False
 
             if add_this_dchar:

@@ -75,7 +75,7 @@ LOWER_CASE = {"α"     : "a",
               'ρ'     : "r",
               'σ'     : "s",
               'τ'     : "t",
-              # see infra for more details 
+              # see infra for more details
               # -> confer the option [grc.gutenberg]transliteration for upsilon
               'υ'     : "y",
               'φ'     : "ph",
@@ -344,7 +344,7 @@ def dstring__trans__get_trans(dstring_object):
     res = []
 
     # we shift the position of the "rough breathing" in diphthongs from the
-    # second to the first place AT THE BEGINNING OF A WORD (ex : οὐλομένην = 
+    # second to the first place AT THE BEGINNING OF A WORD (ex : οὐλομένην =
     # )oulo-, not o)ulo- ) . If inside a word, we delete the rough breathing
     # (e.g. καὑπὸ = kaupo not khaupo)
     ppreceding_dchar = None
@@ -362,14 +362,14 @@ def dstring__trans__get_trans(dstring_object):
                 # at the beginning of a word :
                 if ppreceding_dchar is None or \
                    ppreceding_dchar.unknown_char or ppreceding_dchar.punctuation:
-                    
+
                     preceding_dchar.pneuma = dchar.pneuma
                     dchar.pneuma = None
 
                 else:
                     # inside a word:
-                    dchar.pneuma = None                
-               
+                    dchar.pneuma = None
+
         ppreceding_dchar = preceding_dchar
         preceding_dchar = dchar
 
@@ -389,7 +389,7 @@ def dstring__trans__get_trans(dstring_object):
     #           γγ 	ng
     #           γκ 	nk
     #           γξ 	nx
-    #           γχ 	nch 
+    #           γχ 	nch
     str_res = str_res.replace("gg", "ng")
     str_res = str_res.replace("gk", "nk")
     str_res = str_res.replace("gx", "nx")
@@ -400,7 +400,7 @@ def dstring__trans__get_trans(dstring_object):
     #
     # Double rho in the middle of a word always has rough breathing on the
     # second rho, so διαρροια should be transliterated as diarrhoia. Do this
-    # even if the breathing mark is omitted in the printed text. 
+    # even if the breathing mark is omitted in the printed text.
     str_res = str_res.replace("rr", "rrh")
 
     #

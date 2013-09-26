@@ -95,9 +95,9 @@ class DStringHBO(DStringMotherClass):
         """
                 DStringHBO.__init__
 
-		        the three following attributes have been created by the call to 
+		        the three following attributes have been created by the call to
 				dchars.py::new_dstring() :
-				
+
                 self.iso639_3_name             : (str)
                 self.transliteration_method    : (str)
                 self.options                   : (dict)
@@ -130,10 +130,10 @@ class DStringHBO(DStringMotherClass):
             for dchar2 in self:
                 if str(dchar) == str(dchar2):
                     already_present = True
-                
+
             if not already_present:
                 self.append( dchar )
-        
+
         return self
 
     #///////////////////////////////////////////////////////////////////////////
@@ -143,7 +143,7 @@ class DStringHBO(DStringMotherClass):
 
                 Return a (str)string with all the usefull combinations of TRANSLITTERATED
                 characters, i.e. only the 'interesting' characters (not punctuation if
-                 it's too simple by example). 
+                 it's too simple by example).
 
                 NB : this function has nothing to do with linguistic or a strict
                      approach of the language. This function allows only to get the
@@ -492,6 +492,10 @@ class DStringHBO(DStringMotherClass):
         """
         res = SortingValue()
 
+        # Pylint can't know that <self> has an 'options' member
+        # created when <self> has been initialized by new_dstring() :
+        # pylint: disable=E1101
+        # -> "Instance of 'DStringHBO' has no 'options' member"
         if self.options["sorting method"] == "default":
 
             # base character :
@@ -510,7 +514,7 @@ class DStringHBO(DStringMotherClass):
                                "HEBREW POINT SIN DOT"   : 2,}[char.shin_sin_dot]
                              ))
             res.append(data)
-            
+
             # vowel :
             data = []
             for char in self:
@@ -544,14 +548,14 @@ class DStringHBO(DStringMotherClass):
                 data.append( ({False:0,
                                True:1}[char.methegh] ))
             res.append(data)
-            
+
             # raphe :
             data = []
             for char in self:
                 data.append( ({False:0,
                                True:1}[char.raphe] ))
             res.append(data)
-            
+
             # special point :
             data = []
             for char in self:
@@ -562,6 +566,10 @@ class DStringHBO(DStringMotherClass):
             res.append(data)
 
         else:
+            # Pylint can't know that <self> has an 'options' member
+            # created when <self> has been initialized by new_dstring() :
+            # pylint: disable=E1101
+            # -> "Instance of 'DStringHBO' has no 'options' member"
             err_msg = "unknown sorting method '{0}'."
             raise DCharsError( context = "DStringHBO.sortingvalue",
                                message = err_msg.format(self.options["sorting method"]) )

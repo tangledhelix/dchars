@@ -86,11 +86,11 @@ LANGUAGES_AND_TRANSLITERATIONS = {
                                         "བོད་ཡིག"         : ("ewts",
                                                           "bodsan",
                                                          ),
-                                                                
+
                                         "latīna"                : ("basic", ),
-                                        
+
                                         BIBLICAL_HEBREW__NAME   : ( "basic", ),
-                                        
+
                                         "Ἑλληνικὴ γλῶττα"       : ( "basic",
                                                                     "betacode",
                                                                     "gutenberg",

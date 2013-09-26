@@ -35,7 +35,7 @@ def get_usefull_combinations():
             Return a (str)string with all the usefull combinations of characters,
             i.e. only the 'interesting' characters (not punctuation if it's too simple
             by example).
-            
+
             NB : this function has nothing to do with linguistic or a strict
                  approach of the language. This function allows only to get the
                  most common and/or usefull characters of the writing system.
@@ -124,7 +124,7 @@ def get_usefull_combinations():
                                             "HEBREW POINT QUBUTS",
                                             "HEBREW POINT QAMATS QATAN"),
                                              ))
-        
+
         for base_char, \
             vowel in combinations:
 
@@ -152,7 +152,7 @@ def get_usefull_combinations():
                                            # shin_sin_dot :
                                            (None, "HEBREW POINT SHIN DOT", "HEBREW POINT SIN DOT"),
                                           ))
-        
+
         for base_char, shin_sin_dot, \
             in combinations:
 

@@ -32,7 +32,7 @@
       sort.py bod sourcefile
 
     * create two lists (see the documentation below) of the syllables stored
-      in several sources, like src1, src2, src3, ... E.g : from src1 
+      in several sources, like src1, src2, src3, ... E.g : from src1
       (e.g. a simple list of unicode Tibetan words) and from src2 (e.g. a
       dictionary written using the EWTS transliteration method) :
       sort.py --sorting_method=basic --modifications=tibetan-spellchecker bod src1 src2
@@ -353,7 +353,7 @@ if ARGS.source is not None:
         #    print(">>3 "+str(data)+"<<"+data.get_transliteration()+"<<"+str(data.istructs))
 
         # C.4) modifications
-        # we use OrderedSet() in order to delete doublons : 
+        # we use OrderedSet() in order to delete doublons :
         # E.g. 'k' will be insert as 'ཀ', so does 'ka' : the two 'ཀ' will be reduced
         # to one 'ཀ'.
         SORTED_BOD_SYLLABLES = OrderedSet(modifications_tibspellchecker(SORTED_BOD_SYLLABLES))

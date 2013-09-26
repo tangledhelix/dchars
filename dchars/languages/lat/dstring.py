@@ -91,9 +91,9 @@ class DStringLAT(DStringMotherClass):
         """
                 DStringLAT.__init__
 
-		        the three following attributes have been created by the call to 
+		        the three following attributes have been created by the call to
 				dchars.py::new_dstring() :
-				
+
                 self.iso639_3_name             : (str)
                 self.transliteration_method    : (str)
                 self.options                   : (dict)
@@ -128,10 +128,10 @@ class DStringLAT(DStringMotherClass):
             for dchar2 in self:
                 if str(dchar) == str(dchar2):
                     already_present = True
-                
+
             if not already_present:
                 self.append( dchar )
-        
+
         return self
 
     #///////////////////////////////////////////////////////////////////////////
@@ -141,7 +141,7 @@ class DStringLAT(DStringMotherClass):
 
                 Return a (str)string with all the usefull combinations of TRANSLITTERATED
                 characters, i.e. only the 'interesting' characters (not punctuation if
-                 it's too simple by example). 
+                 it's too simple by example).
 
                 NB : this function has nothing to do with linguistic or a strict
                      approach of the language. This function allows only to get the
@@ -389,6 +389,10 @@ class DStringLAT(DStringMotherClass):
         """
         res = SortingValue()
 
+        # Pylint can't know that <self> has an 'options' member
+        # created when <self> has been initialized by new_dstring() :
+        # pylint: disable=E1101
+        # -> "Instance of 'DStringLAT' has no 'options' member"
         if self.options["sorting method"] == "default":
 
             # base character :
@@ -408,6 +412,10 @@ class DStringLAT(DStringMotherClass):
             res.append(data)
 
         else:
+            # Pylint can't know that <self> has an 'options' member
+            # created when <self> has been initialized by new_dstring() :
+            # pylint: disable=E1101
+            # -> "Instance of 'DStringLAT' has no 'options' member"
             err_msg = "unknown sorting method '{0}'."
             raise DCharsError( context = "DStringLAT.sortingvalue",
                                message = err_msg.format(self.options["sorting method"]) )

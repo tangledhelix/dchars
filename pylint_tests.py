@@ -38,7 +38,7 @@ COMMANDSTRING = "pylint --rcfile=pylint.rc {0} > z"
 NBR_FILES = 0
 WORST_MARK = 10
 
-with open("pylint.ouput","w") as dest:
+with open("pylint.output","w") as dest:
 
     for filename in get_all_filenames(only_py_files=True):
 

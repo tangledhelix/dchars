@@ -470,7 +470,7 @@ class ListOfInternalStructures(list):
                     return True
 
             return False
-       
+
         else:
 
             for istruct in self:
@@ -1411,7 +1411,7 @@ class InternalStructure(object):
         #=======================================================================
         #
         # for more details, see the documentation (@@BOD-INTERNALSTRUCTURE-009a)
-        # 
+        #
         if self.dstring_object.options["sorting method"] == "basic":
 
             if self.unknown_character:
@@ -1961,7 +1961,7 @@ def get_intstruct_from_str(_src,
                 (3.6) <istructs> is sorted
                 (3.7) filling the buffers
     """
-    anonymize_the_unknown_chars =\
+    anonymize_the_unknown_chars = \
                  dstring_object.options["anonymize the unknown characters"] == 'yes'
 
     if len(_src) == 0:

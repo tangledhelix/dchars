@@ -44,7 +44,7 @@ CONFIG_INI = configparser.ConfigParser()
 # about the following line : why not simply CONFIG_INI.read( "dchars", "config.ini") ?
 # -> once installed, DChars have to know the exact path to config.ini,
 # hence the following line (idea given by Frank Zago)
-CONFIG_INI_FILENAME =  os.path.join(os.path.dirname(os.path.realpath(__file__)), 
+CONFIG_INI_FILENAME =  os.path.join(os.path.dirname(os.path.realpath(__file__)),
                               "config.ini" )
 # Something's wrong with configparser : instead of simply writing
 #     DATA.read( open(CONFIG_INI_FILENAME, "r", encoding="utf-8") )
@@ -72,19 +72,19 @@ LANGUAGES = {
                 ("bod",
                  "DStringBOD",
                   CONFIG_INI["bod"]["transliteration method"],
-                  
+
                   {DATA["bod"].get_optionname("sorting method")        : \
                    CONFIG_INI["bod"]["sorting method"],
-                   
+
                    DATA["bod"].get_optionname("expected structure")    : \
                    CONFIG_INI["bod"]["expected structure"],
-                   
+
                    DATA["bod"].get_optionname("look up in the buffers"): \
                    CONFIG_INI["bod"]["look up in the buffers"],
-                   
+
                    DATA["bod"].get_optionname("fill the buffers")      : \
                    CONFIG_INI["bod"]["fill the buffers"],
-                   
+
                    DATA["bod"].get_optionname("anonymize the unknown characters") : \
                    CONFIG_INI["bod"]["anonymize the unknown characters"],
                  },
@@ -95,25 +95,25 @@ LANGUAGES = {
                 ("grc",
                  "DStringGRC",
                  CONFIG_INI["grc"]["transliteration method"],
-                                         
+
                  {DATA["grc"].get_optionname("sorting method"): \
                   CONFIG_INI["grc"]["sorting method"],
-                                          
+
                   DATA["grc"].get_optionname("anonymize the unknown characters"): \
                   CONFIG_INI["grc"]["anonymize the unknown characters"],
-                  
+
                   DATA["grc"].get_optionname("ignore accents"): \
                   CONFIG_INI["grc.gutenberg"]["ignore accents"],
-                  
+
                   DATA["grc"].get_optionname("ignore smooth breathing"): \
                   CONFIG_INI["grc.gutenberg"]["ignore smooth breathing"],
-                  
+
                   DATA["grc"].get_optionname("ignore diaeresis"): \
                   CONFIG_INI["grc.gutenberg"]["ignore diaeresis"],
-                  
+
                   DATA["grc"].get_optionname("ignore iota subscript"): \
                   CONFIG_INI["grc.gutenberg"]["ignore iota subscript"],
-                  
+
                   DATA["grc"].get_optionname("transliteration for upsilon"): \
                   CONFIG_INI["grc.gutenberg"]["transliteration for upsilon"],
 
@@ -130,7 +130,7 @@ LANGUAGES = {
                 ("hbo",
                  "DStringHBO",
                  CONFIG_INI["hbo"]["transliteration method"],
-                                         
+
                  {DATA["hbo"].get_optionname("sorting method"): \
                   CONFIG_INI["hbo"]["sorting method"],
 
@@ -144,10 +144,10 @@ LANGUAGES = {
                 ("lat",
                  "DStringLAT",
                  CONFIG_INI["lat"]["transliteration method"],
-                                         
+
                  {DATA["lat"].get_optionname("sorting method"): \
                   CONFIG_INI["lat"]["sorting method"],
-                  
+
                   DATA["lat"].get_optionname("anonymize the unknown characters"): \
                   CONFIG_INI["lat"]["anonymize the unknown characters"],
                  }
@@ -158,10 +158,10 @@ LANGUAGES = {
                 ("san",
                  "DStringSAN",
                  CONFIG_INI["san"]["transliteration method"],
-                                         
+
                 {DATA["san"].get_optionname("sorting method"): \
                  CONFIG_INI["san"]["sorting method"],
-                 
+
                  DATA["san"].get_optionname("anonymize the unknown characters"): \
                  CONFIG_INI["san"]["anonymize the unknown characters"],
                  }
@@ -233,7 +233,7 @@ def new_dstring(language, transliteration_method=None, options=None):
 
     # error : unknown transliteration method
     if not _transliteration_method in LANGUAGES_AND_TRANSLITERATIONS[_language]:
-        
+
         msg = "unknown transliteration method : '{0}'; known methods={1}".format(
             _transliteration_method,
             LANGUAGES_AND_TRANSLITERATIONS[_language]
@@ -268,7 +268,7 @@ def new_dstring(language, transliteration_method=None, options=None):
 def sort_a_list_of_words(words, dstring_object):
     """
         sort_a_list_of_words function :
-        
+
         * words : iterable of (unicode) words, like ["Μῆνιν", "ἄειδε", ...]
         * dstring_object, DSTRING object, like new_dstring(language="grc")
 

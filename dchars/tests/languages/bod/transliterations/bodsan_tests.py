@@ -179,12 +179,12 @@ class TESTSDStringBOD(unittest.TestCase):
 # 'bakulaḥ' 'ba ku la'
 # 'kundam' 'kun dam'
 # 'padmarāgaḥ' 'pad ma rāga'
- 
+
 # aucun problème si l'on admet que ś -> sh
 # 'śulkaḥ' 'sho gam'
 # ²"bi sho d+ha na "= viśodhana
 # ²"shA kya " : śākya
 # ² "shrI" : śrī
- 
+
 # aucun problème si l'on admet que c[=च] -> ts [=ཙ]
 # 'cakoraḥ' '[bya]tsa ko ra'

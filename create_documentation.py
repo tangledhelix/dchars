@@ -40,13 +40,13 @@ VERSION = numversion.VersionOfTheProgram().numversion
 with open( os.path.join("dchars",
                         "documentation",
                         "Sphinx",
-                        "RSTconf_template.txt"), 'rt') as RSTconf__template__file:
+                        "RSTconf_template.txt"), 'r') as RSTconf__template__file:
     TEMPLATE__CONF = RSTconf__template__file.read()
 
 with open( os.path.join("dchars",
                         "documentation",
                         "Sphinx",
-                        "RST_template.txt"), 'rt') as RST__template__file:
+                        "RST_template.txt"), 'r') as RST__template__file:
     TEMPLATE__RST = RST__template__file.read()
 
 #///////////////////////////////////////////////////////////////////////////////

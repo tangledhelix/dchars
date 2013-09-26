@@ -289,31 +289,31 @@ class DCharacterGRC(DCharacterMotherClass):
         combinations = (itertools.product(
                                            # base_chars
                                            base_characters,
-                                             
+
                                            # contextual_form
                                            ("initial", "medium", "final",
                                             "initial+medium", "medium+final",
                                             "initial+medium+final"),
-                                            
+
                                            # capital_letter
                                            (False, True),
-                                           
+
                                            # tonos
                                            ( None, "ὀξεῖα", "βαρεῖα", "περισπωμένη" ),
-                                           
+
                                            # pneuma
                                            ( None, "ψιλὸν",  "δασὺ" ),
-                                           
+
                                            # hypogegrammene
                                            (False, True),
-                                           
+
                                            # dialutika
                                            (False, True),
-                                           
+
                                            # mekos
                                            ( None, "βραχύ", "μακρόν" ),
                                            ))
-        
+
         for base_char, contextual_form, capital_letter, \
             tonos, pneuma, hypogegrammene, dialutika, mekos in combinations:
 
@@ -325,7 +325,7 @@ class DCharacterGRC(DCharacterMotherClass):
                    hypogegrammene == True or \
                    dialutika == True or \
                    mekos is not None:
-                   
+
                     add_this_dchar = False
 
             elif base_char in ('β', 'σ'):
@@ -334,14 +334,14 @@ class DCharacterGRC(DCharacterMotherClass):
                    hypogegrammene == True or \
                    dialutika == True or \
                    mekos is not None:
-                   
+
                     add_this_dchar = False
 
             elif base_char in ('α', 'η', 'ω'):
                 if contextual_form != "initial+medium+final" or \
                    dialutika == True or \
                    mekos is not None:
-                   
+
                     add_this_dchar = False
 
             elif base_char in ('ε', 'ο'):
@@ -351,14 +351,14 @@ class DCharacterGRC(DCharacterMotherClass):
                    hypogegrammene == True or \
                    dialutika == True or \
                    mekos is not None:
-                   
+
                     add_this_dchar = False
 
             elif base_char in ('ι', 'υ'):
                 if contextual_form != "initial+medium+final" or \
                    hypogegrammene == True or \
                    mekos is not None:
-                   
+
                     add_this_dchar = False
 
             else:
@@ -368,7 +368,7 @@ class DCharacterGRC(DCharacterMotherClass):
                    hypogegrammene == True or \
                    dialutika == True or \
                    mekos is not None:
-                   
+
                     add_this_dchar = False
 
             if add_this_dchar:

@@ -80,8 +80,8 @@ class DCharacterBOD(DCharacterMotherClass):
                 .. code-block:: none
 
                     unknown_char                    : bool
-                    base_char                       : None or a string with the NAME of the character,
-                                                      not the character itself.
+                    base_char                       : None or a string with the NAME of the
+                                                      character, not the character itself.
                     subj_consonants                 : None or a list of the NAME of the characters,
                                                       not the characters themselves.
                     rnam_bcad                       : bool
@@ -182,7 +182,7 @@ class DCharacterBOD(DCharacterMotherClass):
                             'S',
                             'H',
                             'KSS',
-                            
+
                             'KK',
                             'RR',
 
@@ -193,7 +193,7 @@ class DCharacterBOD(DCharacterMotherClass):
         # (1/2) simple characters
         #-----------------------------------------------------------------------
         for base_char in base_characters:
-                    
+
             self.__init__( dstring_object = self.dstring_object,
                            base_char = base_char,
                            subj_consonants = None,
