@@ -337,9 +337,15 @@ class TESTSDStringLAT(unittest.TestCase):
         self.assertFalse( DSTRING_LAT("romam") < DSTRING_LAT("Romam") )
         self.assertFalse( DSTRING_LAT("romam") > DSTRING_LAT("Romam") )
 
+        self.assertTrue( DSTRING_LAT("Rō") < DSTRING_LAT("Romam") )
+        self.assertFalse( DSTRING_LAT("Rō") > DSTRING_LAT("Romam") )
+
         # with unknown characters :
         self.assertTrue( DSTRING_LAT("ab") < DSTRING_LAT("a²") )
         self.assertFalse( DSTRING_LAT("ab") > DSTRING_LAT("a²") )
+
+        self.assertTrue( DSTRING_LAT("abc") < DSTRING_LAT("a²c") )
+        self.assertFalse( DSTRING_LAT("abc") > DSTRING_LAT("a²c") )
 
     #///////////////////////////////////////////////////////////////////////////
     def test_sortingvalue2(self):

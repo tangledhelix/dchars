@@ -311,6 +311,10 @@ class DCharacterLAT(DCharacterMotherClass):
                 DCharacterLAT.sortingvalue
 
                 Return an SortingValue object
+
+                NB : this function has almost no interest; you must use DStringLAT.sortingvalue()
+                     to compare two strings. Use this function if you just want to compare
+                     two characters.
         """
 
         res = SortingValue()

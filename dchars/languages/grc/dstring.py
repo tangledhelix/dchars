@@ -26,6 +26,9 @@
 # pylint: disable=E0611
 # many errors like "No name 'extensions' in module 'dchars'"
 
+import re
+import unicodedata
+
 from dchars.errors.errors import DCharsError
 from dchars.utilities.lstringtools import isort_a_lstrings_bylen_nodup
 from dchars.dstring import DStringMotherClass
@@ -39,9 +42,8 @@ from dchars.languages.grc.symbols import SYMB_DIACRITICS__TONOS, \
                                          SYMB_DIACRITICS__MEKOS, \
                                          SYMB_DIACRITICS__PNEUMA
 
-import re
-import unicodedata
 from dchars.utilities.lstringtools import number_of_occurences
+from dchars.utilities.sortingvalue import SortingValue
 
 # known transliterations :
 import dchars.languages.grc.transliterations.basic.basic as basictrans
@@ -55,8 +57,6 @@ import dchars.languages.grc.transliterations.perseus.ucombinations as perseustra
 
 import dchars.languages.grc.transliterations.gutenberg.gutenberg as gutenbergtrans
 import dchars.languages.grc.transliterations.gutenberg.ucombinations as gutenbergtrans_ucombinations
-
-from dchars.utilities.sortingvalue import SortingValue
 
 ################################################################################
 class DStringGRC(DStringMotherClass):
@@ -474,13 +474,6 @@ class DStringGRC(DStringMotherClass):
 
                 Return a SortingValue object
         """
-    #///////////////////////////////////////////////////////////////////////////
-    def sortingvalue(self):
-        """
-                DStringGRC.sortingvalue
-
-                Return a SortingValue object
-        """
         res = SortingValue()
 
         if self.options["sorting method"] == "default":
@@ -488,7 +481,8 @@ class DStringGRC(DStringMotherClass):
             # base character :
             data = []
             for char in self:
-                data.append( char.base_char )
+                data.append( (int(char.unknown_char),
+                              char.base_char ))
             res.append(data)
 
             # pneuma :
@@ -522,6 +516,11 @@ class DStringGRC(DStringMotherClass):
                                "βραχύ"          : 1,
                                "μακρόν"         : 2, }[char.mekos])
             res.append(data)
+
+        else:
+            err_msg = "unknown sorting method '{0}'."
+            raise DCharsError( context = "DStringGRC.sortingvalue",
+                               message = err_msg.format(self.options["sorting method"]) )
 
         return res
             

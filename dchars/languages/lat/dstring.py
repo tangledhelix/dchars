@@ -26,6 +26,9 @@
 # pylint: disable=E0611
 # many errors like "No name 'extensions' in module 'dchars'"
 
+import re
+import unicodedata
+
 from dchars.errors.errors import DCharsError
 from dchars.dstring import DStringMotherClass
 from dchars.languages.lat.dcharacter import DCharacterLAT
@@ -37,9 +40,8 @@ from dchars.languages.lat.symbols import SYMB_DIACRITICS__LENGTH, \
                                          SYMB_DIACRITICS__STRESS, \
                                          SYMB_DIACRITICS__DIAERESIS
 
-import re
-import unicodedata
 from dchars.utilities.lstringtools import number_of_occurences
+from dchars.utilities.sortingvalue import SortingValue
 
 # known transliterations :
 import dchars.languages.lat.transliterations.basic.basic as basictrans
@@ -377,3 +379,36 @@ class DStringLAT(DStringMotherClass):
                 src = src)
 
         return self
+
+    #///////////////////////////////////////////////////////////////////////////
+    def sortingvalue(self):
+        """
+                DStringLAT.sortingvalue
+
+                Return a SortingValue object
+        """
+        res = SortingValue()
+
+        if self.options["sorting method"] == "default":
+
+            # base character :
+            data = []
+            for char in self:
+                data.append( (int(char.unknown_char),
+                              char.base_char ))
+            res.append(data)
+
+            # length :
+            data = []
+            for char in self:
+                data.append( { None      : 0,
+                               "short"   : 1,
+                               "long"    : 2, }[char.length])
+            res.append(data)
+
+        else:
+            err_msg = "unknown sorting method '{0}'."
+            raise DCharsError( context = "DStringLAT.sortingvalue",
+                               message = err_msg.format(self.options["sorting method"]) )
+
+        return res
