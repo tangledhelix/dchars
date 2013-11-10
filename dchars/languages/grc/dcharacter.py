@@ -243,6 +243,105 @@ class DCharacterGRC(DCharacterMotherClass):
                "mekos="+repr(self.mekos)
 
     #///////////////////////////////////////////////////////////////////////////
+    def get_sourcestr_representation(self):
+        """
+                DCharacterGRC.get_sourcestr_representation
+
+                Return a string.
+        """
+
+        #.......................................................................
+        # unknown char ? Nothing to do :
+        #.......................................................................
+        if self.unknown_char:
+            if self.dstring_object.options["anonymize the unknown characters"] == 'yes':
+                return UNKNOWN_CHAR_SYMBOL
+            else:
+                return self.base_char
+
+        #.......................................................................
+        # ok, the function can analyse <self> :
+        #.......................................................................
+
+        res = []
+
+        if self.base_char is not None:
+            if self.punctuation:
+                # punctuation symbol :
+                res.append( self.base_char )
+            elif self.base_char in SYMB_OTHER_SYMBOLS:
+                # other symbol :
+                res.append( self.base_char )
+            elif not self.capital_letter:
+                # lower case :
+
+                base_char = self.base_char
+                if base_char =='β' and \
+                   not self.capital_letter and \
+                   self.contextual_form == "medium+final":
+                    base_char = "ϐ"
+                elif base_char =='σ' and \
+                     not self.capital_letter and \
+                     self.contextual_form == "final":
+                    base_char = "ς"
+
+                res.append( SYMB_LOWER_CASE.get_default_symbol(base_char) )
+            else:
+                # upper case :
+                res.append( SYMB_UPPER_CASE.get_default_symbol(self.base_char) )
+
+        # CAVEAT : order matters !
+        # e.g. : pneuma then tonos, NOT tonos then pneuma
+        # unicodedata.normalize('NFC', chr(0x03BF)+chr(0x0314)+chr(0x301) ) = chr(0x1F45) (ok)
+        # unicodedata.normalize('NFC', chr(0x03BF)+chr(0x0301)+chr(0x314) ) =
+        #                                               chr(0x03CC) + chr(0x314) [NOT OK !]
+
+        if self.pneuma == 'ψιλὸν':
+            res.append( DEFAULTSYMB__PNEUMAPSILON )
+        elif self.pneuma == 'δασὺ':
+            res.append( DEFAULTSYMB__PNEUMADASU )
+
+        if self.tonos == 'ὀξεῖα':
+            res.append( DEFAULTSYMB__TONOSOXEIA )
+        elif self.tonos == 'βαρεῖα':
+            res.append( DEFAULTSYMB__TONOSBAREIA )
+        elif self.tonos == 'περισπωμένη':
+            res.append( DEFAULTSYMB__TONOSPERISPOMENE )
+
+        if self.mekos == 'βραχύ':
+            res.append( DEFAULTSYMB__MEKOSBRAXU )
+        elif self.mekos == 'μακρόν':
+            res.append( DEFAULTSYMB__MEKOSMAKRON )
+
+        if self.hypogegrammene == True:
+            res.append( DEFAULTSYMB__HUPOGEGRAMMENE )
+
+        if self.dialutika == True:
+            res.append( DEFAULTSYMB__DIALYTIKA )
+
+        res = "".join(res)
+
+        # (1/2) composition with unicodedata.normalize :
+        res = unicodedata.normalize('NFC', res)
+        # (2/2) composition with COMPLETE_NORMALIZE_NFC :
+        for before, after in COMPLETE_NORMALIZE_NFC:
+            res = res.replace(before, after)
+
+        return res
+
+    #///////////////////////////////////////////////////////////////////////////
+    def get_transliteration(self, transliteration_method, options):
+        """
+                DCharacterGRC.get_transliteration
+
+                method  : string
+        """
+        return DCharacterGRC.trans__get_transliteration[transliteration_method](
+            dstring_object = self.dstring_object,
+            dchar = self,
+            options = options)
+
+    #///////////////////////////////////////////////////////////////////////////
     def get_usefull_combinations(self):
         """
                 DCharacterGRC.get_usefull_combinations
@@ -386,18 +485,6 @@ class DCharacterGRC(DCharacterMotherClass):
                 yield copy.copy(self)
 
     #///////////////////////////////////////////////////////////////////////////
-    def get_transliteration(self, transliteration_method, options):
-        """
-                DCharacterGRC.get_transliteration
-
-                method  : string
-        """
-        return DCharacterGRC.trans__get_transliteration[transliteration_method](
-            dstring_object = self.dstring_object,
-            dchar = self,
-            options = options)
-
-    #///////////////////////////////////////////////////////////////////////////
     def init_from_transliteration(self, src, transliteration_method):
         """
                 DCharacterGRC.init_from_transliteration
@@ -410,93 +497,6 @@ class DCharacterGRC(DCharacterMotherClass):
         self.reset()
         return DCharacterGRC.trans__init_from_transliteration[transliteration_method](dchar = self,
                                                                                       src = src)
-
-    #///////////////////////////////////////////////////////////////////////////
-    def get_sourcestr_representation(self):
-        """
-                DCharacterGRC.get_sourcestr_representation
-
-                Return a string.
-        """
-
-        #.......................................................................
-        # unknown char ? Nothing to do :
-        #.......................................................................
-        if self.unknown_char:
-            if self.dstring_object.options["anonymize the unknown characters"] == 'yes':
-                return UNKNOWN_CHAR_SYMBOL
-            else:
-                return self.base_char
-
-        #.......................................................................
-        # ok, the function can analyse <self> :
-        #.......................................................................
-
-        res = []
-
-        if self.base_char is not None:
-            if self.punctuation:
-                # punctuation symbol :
-                res.append( self.base_char )
-            elif self.base_char in SYMB_OTHER_SYMBOLS:
-                # other symbol :
-                res.append( self.base_char )
-            elif not self.capital_letter:
-                # lower case :
-
-                base_char = self.base_char
-                if base_char =='β' and \
-                   not self.capital_letter and \
-                   self.contextual_form == "medium+final":
-                    base_char = "ϐ"
-                elif base_char =='σ' and \
-                     not self.capital_letter and \
-                     self.contextual_form == "final":
-                    base_char = "ς"
-
-                res.append( SYMB_LOWER_CASE.get_default_symbol(base_char) )
-            else:
-                # upper case :
-                res.append( SYMB_UPPER_CASE.get_default_symbol(self.base_char) )
-
-        # CAVEAT : order matters !
-        # e.g. : pneuma then tonos, NOT tonos then pneuma
-        # unicodedata.normalize('NFC', chr(0x03BF)+chr(0x0314)+chr(0x301) ) = chr(0x1F45) (ok)
-        # unicodedata.normalize('NFC', chr(0x03BF)+chr(0x0301)+chr(0x314) ) =
-        #                                               chr(0x03CC) + chr(0x314) [NOT OK !]
-
-        if self.pneuma == 'ψιλὸν':
-            res.append( DEFAULTSYMB__PNEUMAPSILON )
-        elif self.pneuma == 'δασὺ':
-            res.append( DEFAULTSYMB__PNEUMADASU )
-
-        if self.tonos == 'ὀξεῖα':
-            res.append( DEFAULTSYMB__TONOSOXEIA )
-        elif self.tonos == 'βαρεῖα':
-            res.append( DEFAULTSYMB__TONOSBAREIA )
-        elif self.tonos == 'περισπωμένη':
-            res.append( DEFAULTSYMB__TONOSPERISPOMENE )
-
-        if self.mekos == 'βραχύ':
-            res.append( DEFAULTSYMB__MEKOSBRAXU )
-        elif self.mekos == 'μακρόν':
-            res.append( DEFAULTSYMB__MEKOSMAKRON )
-
-        if self.hypogegrammene == True:
-            res.append( DEFAULTSYMB__HUPOGEGRAMMENE )
-
-        if self.dialutika == True:
-            res.append( DEFAULTSYMB__DIALYTIKA )
-
-        res = "".join(res)
-
-        # (1/2) composition with unicodedata.normalize :
-        res = unicodedata.normalize('NFC', res)
-        # (2/2) composition with COMPLETE_NORMALIZE_NFC :
-        for before, after in COMPLETE_NORMALIZE_NFC:
-            res = res.replace(before, after)
-
-        return res
 
     #///////////////////////////////////////////////////////////////////////////
     def reset(self):
