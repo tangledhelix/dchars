@@ -1353,8 +1353,7 @@ class TESTSDStringBOD(unittest.TestCase):
 
                 for every word in ewts_words : EWTS -> (istruct) -> EWTS
         """
-        with open( os.path.join("dchars",
-                                "tests",
+        with open( os.path.join("tests",
                                 "languages",
                                 "bod",
                                 "transliterations",

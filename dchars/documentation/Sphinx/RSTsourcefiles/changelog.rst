@@ -3,6 +3,19 @@ CHANGELOG_TITLE
 ===============
 
 ------------------
+0.5.4 [2013_11_11]
+------------------
+
+  * added DStringMotherClass.__getitem__() function
+  * moved tests/ to root directory, beside dchars/ directory
+
+  * code quality :
+
+    * header_please_test.py ok
+    * 136 tests, all ok
+    * Pylint's worst mark : 9.47
+
+------------------
 0.5.3 [2013_09_26]
 ------------------
 

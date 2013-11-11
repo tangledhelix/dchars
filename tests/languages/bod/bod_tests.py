@@ -1895,13 +1895,11 @@ class TESTSDStringBOD(unittest.TestCase):
                 TESTSDStringBOD.test_basic_sortingvalue2
         """
 
-        filename__words_sorted = os.path.join("dchars",
-                                              "tests",
+        filename__words_sorted = os.path.join("tests",
                                               "languages",
                                               "bod",
                                               "words.sorted")
-        filename__words_shuffled = os.path.join("dchars",
-                                                "tests",
+        filename__words_shuffled = os.path.join("tests",
                                                 "languages",
                                                 "bod",
                                                 "words.shuffled")

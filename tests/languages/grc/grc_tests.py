@@ -231,20 +231,17 @@ class TESTSDStringGRC(unittest.TestCase):
         """
 
         for src in (
-                        open( os.path.join("dchars",
-                                "tests",
+                        open( os.path.join("tests",
                                 "languages",
                                 "grc",
                                 "text001_Lucian_Dialogues_of_the_Gods.txt"), 'r'),
 
-                        open( os.path.join("dchars",
-                                "tests",
+                        open( os.path.join("tests",
                                 "languages",
                                 "grc",
                                 "text002_Iliad_I_v1_205.txt"), 'r'),
 
-                        open( os.path.join("dchars",
-                                "tests",
+                        open( os.path.join("tests",
                                 "languages",
                                 "grc",
                                 "text003_Euripides_Bacchae_1_104.txt"), 'r')
@@ -402,20 +399,17 @@ class TESTSDStringGRC(unittest.TestCase):
                 We try to compute the "sorting value" of many words.
         """
         for src in (
-                        open( os.path.join("dchars",
-                                "tests",
+                        open( os.path.join("tests",
                                 "languages",
                                 "grc",
                                 "text001_Lucian_Dialogues_of_the_Gods.txt"), 'r'),
 
-                        open( os.path.join("dchars",
-                                "tests",
+                        open( os.path.join("tests",
                                 "languages",
                                 "grc",
                                 "text002_Iliad_I_v1_205.txt"), 'r'),
 
-                        open( os.path.join("dchars",
-                                "tests",
+                        open( os.path.join("tests",
                                 "languages",
                                 "grc",
                                 "text003_Euripides_Bacchae_1_104.txt"), 'r')

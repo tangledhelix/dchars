@@ -140,13 +140,13 @@ class TESTSDStringLAT(unittest.TestCase):
         """
                 TESTSDStringLAT.test_init_from_transliteration2
         """
-        for filename in ( os.path.join("dchars", "tests", "languages", "lat",
+        for filename in ( os.path.join("tests", "languages", "lat",
                                        "text001_Cicero_In_Pisonem.txt"),
 
-                          os.path.join("dchars", "tests", "languages", "lat",
+                          os.path.join("tests", "languages", "lat",
                                        "text002_Virgil_Aeneid_I.txt"),
 
-                          os.path.join("dchars", "tests", "languages", "lat",
+                          os.path.join("tests", "languages", "lat",
                                        "text003_Cicero_In_Catilinam_I.txt")
                         ):
 

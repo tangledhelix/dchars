@@ -232,13 +232,11 @@ class TESTSDStringSAN(unittest.TestCase):
         sourceprefix = re.compile("[\\d|\\w|\\.]+\\s+")
         transprefix = re.compile("##[\\d|\\w|\\.\\s]+##\\s+")
 
-        sourcefile = os.path.join( "dchars",
-                                   "tests",
+        sourcefile = os.path.join( "tests",
                                    "languages",
                                    "san",
                                    "text003_rigveda_samhita__1_10.txt" )
-        transfile  = os.path.join( "dchars",
-                                   "tests",
+        transfile  = os.path.join( "tests",
                                    "languages",
                                    "san",
                                    "text003_rigveda_samhita__1_10.itrans.txt" )
@@ -358,8 +356,7 @@ class TESTSDStringSAN(unittest.TestCase):
         """
                 TESTSDStringSAN.test_init_from_transliteration3
         """
-        sourcefile = os.path.join( "dchars",
-                                   "tests",
+        sourcefile = os.path.join( "tests",
                                    "languages",
                                    "san",
                                    "text003_rigveda_samhita__1_10.txt" )

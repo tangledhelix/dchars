@@ -197,20 +197,17 @@ class TESTSDStringGRC(unittest.TestCase):
         """
                 TESTSDStringGRC.test_init_from_transliteration3
         """
-        for filename in ( os.path.join("dchars",
-                                       "tests",
+        for filename in ( os.path.join("tests",
                                        "languages",
                                        "grc",
                                        "text001_Lucian_Dialogues_of_the_Gods.txt"),
 
-                          os.path.join("dchars",
-                                       "tests",
+                          os.path.join("tests",
                                        "languages",
                                        "grc",
                                        "text002_Iliad_I_v1_205.txt"),
 
-                          os.path.join("dchars",
-                                       "tests",
+                          os.path.join("tests",
                                        "languages",
                                        "grc",
                                        "text003_Euripides_Bacchae_1_104.txt")

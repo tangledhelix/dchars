@@ -104,20 +104,17 @@ class TESTSDStringHBO(unittest.TestCase):
         """
 
         for srcfilename in (
-                         os.path.join("dchars",
-                                      "tests",
+                         os.path.join("tests",
                                       "languages",
                                       "hbo",
                                       "text001_Genesis_I.txt"),
 
-                         os.path.join("dchars",
-                                      "tests",
+                         os.path.join("tests",
                                       "languages",
                                       "hbo",
                                       "text002_Psalms_18.txt"),
 
-                         os.path.join("dchars",
-                                      "tests",
+                         os.path.join("tests",
                                       "languages",
                                       "hbo",
                                       "text003_Jonah_I.txt")
@@ -182,20 +179,17 @@ class TESTSDStringHBO(unittest.TestCase):
         """
                 TESTSDStringHBO.test_init_from_transliteration3
         """
-        for filename in ( os.path.join("dchars",
-                                       "tests",
+        for filename in ( os.path.join("tests",
                                        "languages",
                                        "hbo",
                                        "text001_Genesis_I.txt"),
 
-                          os.path.join("dchars",
-                                       "tests",
+                          os.path.join("tests",
                                        "languages",
                                        "hbo",
                                        "text002_Psalms_18.txt"),
 
-                          os.path.join("dchars",
-                                       "tests",
+                          os.path.join("tests",
                                        "languages",
                                        "hbo",
                                        "text003_Jonah_I.txt"),

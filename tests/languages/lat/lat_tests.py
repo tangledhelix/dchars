@@ -172,20 +172,17 @@ class TESTSDStringLAT(unittest.TestCase):
         """
 
         for filename in (
-                                os.path.join("dchars",
-                                             "tests",
+                                os.path.join("tests",
                                              "languages",
                                              "lat",
                                              "text001_Cicero_In_Pisonem.txt"),
 
-                                os.path.join("dchars",
-                                             "tests",
+                                os.path.join("tests",
                                              "languages",
                                              "lat",
                                              "text002_Virgil_Aeneid_I.txt"),
 
-                                os.path.join("dchars",
-                                             "tests",
+                                os.path.join("tests",
                                              "languages",
                                              "lat",
                                              "text003_Cicero_In_Catilinam_I.txt"),
@@ -355,20 +352,17 @@ class TESTSDStringLAT(unittest.TestCase):
                 We try to compute the "sorting value" of many words.
         """
         for srcfilename in (
-                                os.path.join("dchars",
-                                             "tests",
+                                os.path.join("tests",
                                              "languages",
                                              "lat",
                                              "text001_Cicero_In_Pisonem.txt"),
 
-                                os.path.join("dchars",
-                                             "tests",
+                                os.path.join("tests",
                                              "languages",
                                              "lat",
                                              "text002_Virgil_Aeneid_I.txt"),
 
-                                os.path.join("dchars",
-                                             "tests",
+                                os.path.join("tests",
                                              "languages",
                                              "lat",
                                              "text003_Cicero_In_Catilinam_I.txt"),

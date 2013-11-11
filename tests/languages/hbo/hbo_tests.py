@@ -187,20 +187,17 @@ class TESTSDStringHBO(unittest.TestCase):
         """
 
         for srcfilename in (
-                                os.path.join("dchars",
-                                             "tests",
+                                os.path.join("tests",
                                              "languages",
                                              "hbo",
                                              "text001_Genesis_I.txt"),
 
-                                os.path.join("dchars",
-                                             "tests",
+                                os.path.join("tests",
                                              "languages",
                                              "hbo",
                                              "text002_Psalms_18.txt"),
 
-                                os.path.join("dchars",
-                                             "tests",
+                                os.path.join("tests",
                                              "languages",
                                              "hbo",
                                              "text003_Jonah_I.txt"),
@@ -420,20 +417,17 @@ class TESTSDStringHBO(unittest.TestCase):
                 We try to compute the "sorting value" of many words.
         """
         for srcfilename in (
-                                os.path.join("dchars",
-                                             "tests",
+                                os.path.join("tests",
                                              "languages",
                                              "hbo",
                                              "text001_Genesis_I.txt"),
 
-                                os.path.join("dchars",
-                                             "tests",
+                                os.path.join("tests",
                                              "languages",
                                              "hbo",
                                              "text002_Psalms_18.txt"),
 
-                                os.path.join("dchars",
-                                             "tests",
+                                os.path.join("tests",
                                              "languages",
                                              "hbo",
                                              "text003_Jonah_I.txt"),

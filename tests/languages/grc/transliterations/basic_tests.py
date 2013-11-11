@@ -19,7 +19,7 @@
 #    along with DChars.  If not, see <http://www.gnu.org/licenses/>.
 ################################################################################
 """
-    ❏DChars❏ : dchars/tests/languages/grc/transliterations/betacode_tests.py
+    ❏DChars❏ : dchars/tests/languages/grc/transliterations/basic_tests.py
 """
 
 import unittest, os.path
@@ -28,41 +28,41 @@ from dchars.dchars import new_dstring
 from dchars.symbols.symbols import UNKNOWN_CHAR_SYMBOL
 
 DSTRING_GRC = new_dstring(language="Ἑλληνικὴ γλῶττα",
-                          transliteration_method = "betacode",
+                          transliteration_method = "basic",
                           options = {"anonymize the unknown characters" : 'no'},
                           )
 
 DSTRING_GRC__UNKNOWNCHAR = new_dstring(language="Ἑλληνικὴ γλῶττα",
-                                       transliteration_method = "betacode",
+                                       transliteration_method = "basic",
                                        options = {"anonymize the unknown characters" : 'yes'},
                                       )
 
 
 LIST_OF_RECIPROCAL_EXAMPLES = (
     ("",        ''),
-    ("ά",       'A/'),
-    ("ἁ",       'A('),
-    ("ἅ",       "A(/"),
-    ("ἆ",       "A)="),
-    ("ᾇ",       "A(=|"),
-    ('ϋᾱᾱ̈',     "U+A&A+&"),
-    ('ἆ ἆ',     "A)= A)="),
-    ("ὁ, οἱ",   "O(, OI("),
-    ('ᾯ',       "*(=W|"),
-    ('Ἢ',       "*)\\H"),
-    ("ξ",       "C"),
-    ("Ξ",       "*C"),
-    ("ἐν",      "E)N"),
-    ("πρόσ",    "PRO/S"),
-    ("τῶν",     "TW=N"),
-    ("πρὸσ",    "PRO\\S"),
-    ("προϊέναι","PROI+E/NAI"),
-    ("τῷ",      "TW=|"),
-    ("μαχαίρᾱσ","MAXAI/RA&S"),
-    ("μάχαιρᾰ", "MA/XAIRA'"),
-    ('βἆ',      "BA)="),
-    ('ΠΛΑΤΩΝ',  "*P*L*A*T*W*N"),
-    ('Ἀγαμέμνων',"*)AGAME/MNWN"),
+    ("ά",       '/a'),
+    ("ἁ",       '(a'),
+    ("ἅ",       "(/a"),
+    ("ἆ",       ")/\\a"),
+    ("ᾇ",       "(/\\a+i"),
+    ('ϋᾱᾱ̈',     "u:a_a:_"),
+    ('ἆ ἆ',     ")/\\a )/\\a"),
+    ("ὁ, οἱ",   "(o, o(i"),
+    ('ᾯ',       "(/\\Ô+i"),
+    ('Ἢ',       ")\\Ê"),
+    ("ξ",       "x"),
+    ("Ξ",       "X"),
+    ("ἐν",      ")en"),
+    ("πρόσ",    "pr/os"),
+    ("τῶν",     "t/\\ôn"),
+    ("πρὸσ",    "pr\\os"),
+    ("προϊέναι","proi:/enai"),
+    ("τῷ",      "t/\\ô+i"),
+    ("μαχαίρᾱσ","makha/ira_s"),
+    ("μάχαιρᾰ", "m/akhaira-"),
+    ('βἆ',      "b)/\\a"),
+    ('ΠΛΑΤΩΝ', "PLATÔN"),
+    ('Ἀγαμέμνων', ")Agam/emnôn"),
     )
 
 # pylint: disable=R0904
@@ -74,7 +74,7 @@ class TESTSDStringGRC(unittest.TestCase):
     """
         class TESTSDStringGRC
 
-        We test dchars.languages.grc.transliterations.betacode.py
+        We test dchars.languages.grc.transliterations.basic.py
     """
 
     #///////////////////////////////////////////////////////////////////////////
@@ -84,7 +84,7 @@ class TESTSDStringGRC(unittest.TestCase):
         """
 
         txt = DSTRING_GRC("βϐσς")
-        self.assertEqual( txt.get_transliteration(), "BBSS" )
+        self.assertEqual( txt.get_transliteration(), "bbss" )
 
     #///////////////////////////////////////////////////////////////////////////
     def test_from_srcstr_2_srcstr(self):
@@ -100,47 +100,15 @@ class TESTSDStringGRC(unittest.TestCase):
             self.assertEqual( grc_basic, grc_basic2 )
 
     #///////////////////////////////////////////////////////////////////////////
-    def test_get_transliteration1(self):
+    def test_get_transliteration(self):
         """
-                TESTSDStringGRC.test_get_transliteration1
+                TESTSDStringGRC.test_get_transliteration
         """
         for grc, grc_basic in LIST_OF_RECIPROCAL_EXAMPLES:
 
             string = DSTRING_GRC(grc)
             grc_basic2 = string.get_transliteration()
             self.assertEqual( grc_basic, grc_basic2 )
-
-    #///////////////////////////////////////////////////////////////////////////
-    def test_get_transliteration2(self):
-        """
-                TESTSDStringGRC.test_get_transliteration
-
-                This function uses non-reciprocal characters.
-        """
-        for txt, trans in ( ("",          ""             ),
-                            ("ξ",         "C"            ),
-                            ("Ξ",         "*C"           ),
-                            ("ἐν",        'E)N'          ),
-                            ("ὁ, οἱ",     'O(, OI('      ),
-                            ("πρός",      "PRO/S"        ),
-                            ("τῶν",       "TW=N"         ),
-                            ("πρὸς",      "PRO\\S"       ),
-                            ("προϊέναι",  "PROI+E/NAI"   ),
-                            ("τῷ",        "TW=|"         ),
-                            ("μαχαίρᾱς",  "MAXAI/RA&S"   ),
-                            ("μάχαιρᾰ",   "MA/XAIRA'"    ),
-                            ("ᾧ",         "W(=|"         ),
-                            ("ᾯ",         "*(=W|"        ),
-                            ("ΠΛΑΤΩΝ",    "*P*L*A*T*W*N" ),
-                            ("Πλάτων",    "*PLA/TWN"     ),
-                            ("(12Πλάτων)","(12*PLA/TWN)" ),
-                            ("(9 Πλάτων}","(9 *PLA/TWN}" ),
-                            ("[9 Πλάτων]","[9 *PLA/TWN]" ),
-                            (".;!Πλάτων]",".;!*PLA/TWN]" ),
-                            ("²Πλάτων²",  "²*PLA/TWN²"),
-                          ):
-            string = DSTRING_GRC(txt)
-            self.assertEqual( string.get_transliteration(), trans )
 
     #///////////////////////////////////////////////////////////////////////////
     def test_init_from_transliteration1(self):
@@ -178,16 +146,18 @@ class TESTSDStringGRC(unittest.TestCase):
                      'ϋᾱᾱ̈',
                      'ἆ ἆ',
                      'ἆ ἆ '
-                     '[ἆ ἆ]'
-                     '{ἆ ἆ}'
-                     '{0ἆ ἆ2}'
                      'σς',
+                     '(σς',
+                     ')σς',
+                     "0(μαχαίρᾱς) 1",
+                     "[(μαχαίρᾱς) ]",
+                     "{(μαχαίρᾱς) }",
+                     '{0ἆ ἆ2}'
                      'ΠΛΑΤΩΝ',
                      'Ἀγαμέμνων',
                      '"ᾯ"',
                      'Ἢ',
                      ):
-
             trans1 = DSTRING_GRC(txt).get_transliteration()
             string1 = DSTRING_GRC().init_from_transliteration(trans1)
             trans2 = string1.get_transliteration()
@@ -200,20 +170,17 @@ class TESTSDStringGRC(unittest.TestCase):
         """
                 TESTSDStringGRC.test_init_from_transliteration3
         """
-        for filename in ( os.path.join("dchars",
-                                       "tests",
+        for filename in ( os.path.join("tests",
                                        "languages",
                                        "grc",
                                        "text001_Lucian_Dialogues_of_the_Gods.txt"),
 
-                          os.path.join("dchars",
-                                       "tests",
+                          os.path.join("tests",
                                        "languages",
                                        "grc",
                                        "text002_Iliad_I_v1_205.txt"),
 
-                          os.path.join("dchars",
-                                       "tests",
+                          os.path.join("tests",
                                        "languages",
                                        "grc",
                                        "text003_Euripides_Bacchae_1_104.txt")
@@ -228,6 +195,7 @@ class TESTSDStringGRC(unittest.TestCase):
                 trans2 = string.get_transliteration()
                 self.assertEqual(trans1, trans2)
 
+
     #///////////////////////////////////////////////////////////////////////////
     def test_unknown_characters(self):
         """
@@ -236,25 +204,29 @@ class TESTSDStringGRC(unittest.TestCase):
         string = DSTRING_GRC("²ἆ²")
         self.assertEqual( str(string), "²ἆ²" )
 
-        string = DSTRING_GRC().init_from_transliteration("²A)=²A)=²")
+        string = DSTRING_GRC(")ἆ)")
+        self.assertEqual( str(string), ")ἆ)" )
+
+        string = DSTRING_GRC("(ἆ(")
+        self.assertEqual( str(string), "(ἆ(" )
+
+        string = DSTRING_GRC().init_from_transliteration("²)/\\a²)/\\a²")
         self.assertEqual( str(string), "²ἆ²ἆ²" )
 
-        string = DSTRING_GRC().init_from_transliteration("²A)=²A)=²")
-        self.assertEqual( string.get_transliteration(), "²A)=²A)=²" )
-
+        string = DSTRING_GRC().init_from_transliteration("²)/\\a²)/\\a²")
+        self.assertEqual( string.get_transliteration(), "²)/\\a²)/\\a²" )
 
 
         string = DSTRING_GRC__UNKNOWNCHAR("²ἆ²")
         self.assertEqual( str(string),
                           UNKNOWN_CHAR_SYMBOL+"ἆ"+UNKNOWN_CHAR_SYMBOL )
 
-        string = DSTRING_GRC__UNKNOWNCHAR().init_from_transliteration("²A)=²A)=²")
+        string = DSTRING_GRC__UNKNOWNCHAR().init_from_transliteration("²)/\\a²)/\\a²")
         self.assertEqual( str(string),
                           UNKNOWN_CHAR_SYMBOL+"ἆ"+UNKNOWN_CHAR_SYMBOL+ \
                           "ἆ"+UNKNOWN_CHAR_SYMBOL )
 
-        string = DSTRING_GRC__UNKNOWNCHAR().init_from_transliteration("²A)=²A)=²")
+        string = DSTRING_GRC__UNKNOWNCHAR().init_from_transliteration("²)/\\a²)/\\a²")
         self.assertEqual( string.get_transliteration(),
-                          UNKNOWN_CHAR_SYMBOL+"A)="+UNKNOWN_CHAR_SYMBOL+ \
-                          "A)="+UNKNOWN_CHAR_SYMBOL )
-
+                          UNKNOWN_CHAR_SYMBOL+")/\\a"+UNKNOWN_CHAR_SYMBOL+ \
+                          ")/\\a"+UNKNOWN_CHAR_SYMBOL )

@@ -197,14 +197,12 @@ class TESTSDStringSAN(unittest.TestCase):
                 TESTSDStringSAN.test_get_sourcestr_repr2
         """
 
-        for srcfile in ( os.path.join("dchars",
-                                      "tests",
+        for srcfile in ( os.path.join("tests",
                                       "languages",
                                       "san",
                                       "text001_Rigveda_1.txt"),
 
-                         os.path.join("dchars",
-                                      "tests",
+                         os.path.join("tests",
                                       "languages",
                                       "san",
                                       "text002_Mahabharata_I_1.txt") ):
@@ -455,14 +453,12 @@ class TESTSDStringSAN(unittest.TestCase):
                 We try to compute the "sorting value" of many words.
         """
         for srcfilename in (
-                        os.path.join("dchars",
-                                     "tests",
+                        os.path.join("tests",
                                      "languages",
                                      "san",
                                      "text001_Rigveda_1.txt"),
 
-                        os.path.join("dchars",
-                                     "tests",
+                        os.path.join("tests",
                                      "languages",
                                      "san",
                                      "text002_Mahabharata_I_1.txt") ):

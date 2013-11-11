@@ -176,8 +176,7 @@ class TESTSDStringSAN(unittest.TestCase):
                 TESTSDStringSAN.test_init_from_transliteration2
         """
 
-        sourcefile = os.path.join( "dchars",
-                                   "tests",
+        sourcefile = os.path.join( "tests",
                                    "languages",
                                    "san",
                                    "text003_rigveda_samhita__1_10.txt" )
