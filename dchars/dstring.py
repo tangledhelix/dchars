@@ -27,6 +27,7 @@
 # "No name 'errors' in module 'dchars.dchars'"
 from dchars.errors.errors import DCharsError
 import io
+import copy
 
 ################################################################################
 class DStringMotherClass(list):
@@ -87,6 +88,23 @@ class DStringMotherClass(list):
             return True
 
         return self.sortingvalue() > aliud.sortingvalue()
+
+    #///////////////////////////////////////////////////////////////////////////
+    def __getitem__(self, arg):
+        """
+                DStringMotherClass.__getitem__
+        """
+        # list.__getitem__(self, arg) return either a DCharacter object if <arg>
+        # is an integer either a list object.
+        if type(arg)==int:
+            return list.__getitem__(self, arg)
+
+        else:
+            res = type(self)()
+            for dchar in list.__getitem__(self, arg):
+                res.append( copy.copy( dchar ))
+
+        return res
 
     #///////////////////////////////////////////////////////////////////////////
     def __gt__(self, aliud):
