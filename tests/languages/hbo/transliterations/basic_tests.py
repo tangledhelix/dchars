@@ -179,7 +179,8 @@ class TESTSDStringHBO(unittest.TestCase):
         """
                 TESTSDStringHBO.test_init_from_transliteration3
         """
-        for filename in ( os.path.join("tests",
+        for filename in ( os.path.join("dchars",
+                                       "tests",
                                        "languages",
                                        "hbo",
                                        "text001_Genesis_I.txt"),
