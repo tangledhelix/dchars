@@ -243,6 +243,23 @@ class DCharacterGRC(DCharacterMotherClass):
                "mekos="+repr(self.mekos)
 
     #///////////////////////////////////////////////////////////////////////////
+    def clone(self):
+        """
+                DCharacterGRC.clone
+        """
+        return DCharacterGRC( dstring_object = self.dstring_object,
+                              unknown_char = self.unknown_char,
+                              base_char = self.base_char,
+                              contextual_form = self.contextual_form,
+                              punctuation = self.punctuation,
+                              capital_letter = self.capital_letter,
+                              tonos = self.tonos,
+                              pneuma = self.pneuma,
+                              hypogegrammene = self.hypogegrammene,
+                              dialutika = self.dialutika,
+                              mekos = self.mekos )
+
+    #///////////////////////////////////////////////////////////////////////////
     def get_sourcestr_representation(self):
         """
                 DCharacterGRC.get_sourcestr_representation

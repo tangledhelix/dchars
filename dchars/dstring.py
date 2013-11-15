@@ -180,6 +180,18 @@ class DStringMotherClass(list):
         return "".join( (str(element) for element in self) )
 
     #///////////////////////////////////////////////////////////////////////////
+    def clone(self):
+        """
+                DStringMotherClass.clone
+        """
+        res = type(self)()
+
+        for dchar in self:
+            res.append( dchar.clone() )
+
+        return res        
+
+    #///////////////////////////////////////////////////////////////////////////
     def diff(self, aliud):
         """
                 DStringMotherClass.diff

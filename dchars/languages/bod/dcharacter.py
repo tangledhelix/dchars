@@ -125,6 +125,22 @@ class DCharacterBOD(DCharacterMotherClass):
                "vowel2="+repr(self.vowel2)
 
     #///////////////////////////////////////////////////////////////////////////
+    def clone(self):
+        """
+                DCharacterBOD.clone
+        """
+        return DCharacterBOD( dstring_object = self.dstring_object,
+                              unknown_char = self.unknown_char,
+                              base_char = self.base_char,
+                              subj_consonants = self.subj_consonants,
+                              punctuation = self.punctuation,
+                              rnam_bcad = self.rnam_bcad,
+                              halanta = self.halanta,
+                              anusvara_candrabindu = self.anusvara_candrabindu,
+                              vowel1 = self.vowel1,
+                              vowel2 = self.vowel2 )
+
+    #///////////////////////////////////////////////////////////////////////////
     def get_usefull_combinations(self):
         """
                 DStringCharacterBOD.get_usefull_combinations

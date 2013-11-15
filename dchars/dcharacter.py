@@ -120,6 +120,16 @@ class DCharacterMotherClass(object):
         return self.get_sourcestr_representation()
 
     #///////////////////////////////////////////////////////////////////////////
+    def clone(self):
+        """
+                DCharacterMotherClass.clone
+        """
+        return DCharacterMotherClass( dstring_object = self.dstring_object,
+                                      unknown_char  = self.unknown_char,
+                                      base_char = self.base_char,
+                                      punctuation = self.punctuation )
+
+    #///////////////////////////////////////////////////////////////////////////
     def get_sourcestr_representation(self):
         """
                 DCharacterMotherClass.get_sourcestr_representation

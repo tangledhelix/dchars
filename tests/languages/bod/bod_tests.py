@@ -179,6 +179,21 @@ class TESTSDStringBOD(unittest.TestCase):
     """
 
     #///////////////////////////////////////////////////////////////////////////
+    def test_clone(self):
+        """
+                TESTSDStringBOD.test_clone
+        """
+        string0 = DSTRING_BOD("T")
+        string1 = DSTRING_BOD("T")
+        string2 = string1.clone()
+        self.assertEqual( string1, string2 )
+
+        string1.base_char = "D"
+        string1.vowel1 = "II"
+
+        self.assertEqual( string0, string2 )
+        
+    #///////////////////////////////////////////////////////////////////////////
     def test_emptystring(self):
         """
                 TESTSDStringBOD.test_emptystring

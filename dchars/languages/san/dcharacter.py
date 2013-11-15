@@ -211,6 +211,23 @@ class DCharacterSAN(DCharacterMotherClass):
                "dependentvowel="+repr(self.dependentvowel)
 
     #///////////////////////////////////////////////////////////////////////////
+    def clone(self):
+        """
+                DCharacterSAN.clone
+        """
+        return DCharacterSAN( dstring_object = self.dstring_object,
+                              unknown_char = self.unknown_char,
+                              base_char = self.base_char,
+                              punctuation = self.punctuation,
+                              accent = self.accent,
+                              nukta = self.nukta,
+                              anusvara_candrabindu = self.anusvara_candrabindu,
+                              virama = self.virama,
+                              anudatta = self.anudatta,
+                              is_an_independent_vowel = self.is_an_independent_vowel,
+                              dependentvowel = self.dependentvowel )
+    
+    #///////////////////////////////////////////////////////////////////////////
     def get_usefull_combinations(self):
         """
                 DStringCharacterSAN.get_usefull_combinations

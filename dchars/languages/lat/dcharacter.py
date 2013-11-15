@@ -146,6 +146,29 @@ class DCharacterLAT(DCharacterMotherClass):
                "diaeresis="+repr(self.diaeresis)
 
     #///////////////////////////////////////////////////////////////////////////
+    def clone(self):
+        """
+                DCharacterLAT.clone
+
+                unknown_char                    : bool
+                base_char                       : None or a string
+                punctuation                     : True, False
+                capital_letter                  : True, False
+
+                length                          : None or a string ("short", "long")
+                stress                          : bool
+                diaeresis                       : bool
+        """
+        return DCharacterLAT( dstring_object = self.dstring_object,
+                              unknown_char = self.unknown_char,
+                              base_char = self.base_char,
+                              punctuation = self.punctuation,
+                              capital_letter = self.capital_letter,
+                              length = self.length,
+                              stress = self.stress,
+                              diaeresis = self.diaeresis )
+
+    #///////////////////////////////////////////////////////////////////////////
     def get_usefull_combinations(self):
         """
                 DStringCharacterLAT.get_usefull_combinations

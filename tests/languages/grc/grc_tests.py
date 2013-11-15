@@ -69,6 +69,23 @@ class TESTSDStringGRC(unittest.TestCase):
         self.assertEqual( string[0].pneuma, "ψιλὸν" )
 
     #///////////////////////////////////////////////////////////////////////////
+    def test_clone(self):
+        """
+                TESTSDStringGRC.test_clone
+        """
+        string0 = DSTRING_GRC("α")
+        string1 = DSTRING_GRC("α")
+        string2 = string1.clone()
+        self.assertEqual( string1, string2 )
+
+        string1.base_char = "ω"
+        string1.capital_letter = True
+        string1.tonos = "ὀξεῖα"
+        string1.pneuma = "δασὺ"
+
+        self.assertEqual( string0, string2 )
+
+    #///////////////////////////////////////////////////////////////////////////
     def test_alternative_characters(self):
         """
                 TESTSDStringGRC.test_alternative_characters

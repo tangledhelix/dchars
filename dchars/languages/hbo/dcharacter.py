@@ -214,6 +214,24 @@ class DCharacterHBO(DCharacterMotherClass):
                "cantillation_mark="+repr(self.cantillation_mark)
 
     #///////////////////////////////////////////////////////////////////////////
+    def clone(self):
+        """
+                DCharacterHBO.clone
+        """
+        return DCharacterHBO( dstring_object = self.dstring_object,
+                              unknown_char = self.unknown_char,
+                              base_char = self.base_char,
+                              punctuation = self.punctuation,
+                              contextual_form = self.contextual_form,
+                              shin_sin_dot = self.shin_sin_dot,
+                              daghesh_mapiq = self.daghesh_mapiq,
+                              methegh = self.methegh,
+                              specialpoint = self.specialpoint,
+                              vowel = self.vowel,
+                              raphe = self.raphe,
+                              cantillation_mark = self.cantillation_mark )
+
+    #///////////////////////////////////////////////////////////////////////////
     def get_transliteration(self, transliteration_method):
         """
                 DCharacterHBO.get_transliteration
@@ -223,20 +241,6 @@ class DCharacterHBO(DCharacterMotherClass):
         return DCharacterHBO.trans__get_transliteration[transliteration_method](
             dstring_object = self.dstring_object,
             dchar = self)
-
-    #///////////////////////////////////////////////////////////////////////////
-    def init_from_transliteration(self, src, transliteration_method):
-        """
-                DCharacterHBO.init_from_transliteration
-
-                src     :       string
-                transliteration_method  :       string
-
-                Return <self>.
-        """
-        self.reset()
-        return DCharacterHBO.trans__init_from_transliteration[transliteration_method](dchar = self,
-                                                                                      src = src)
 
     #///////////////////////////////////////////////////////////////////////////
     def get_sourcestr_representation(self):
@@ -436,6 +440,20 @@ class DCharacterHBO(DCharacterMotherClass):
                                cantillation_mark = None, )
 
                 yield copy.copy(self)
+
+    #///////////////////////////////////////////////////////////////////////////
+    def init_from_transliteration(self, src, transliteration_method):
+        """
+                DCharacterHBO.init_from_transliteration
+
+                src     :       string
+                transliteration_method  :       string
+
+                Return <self>.
+        """
+        self.reset()
+        return DCharacterHBO.trans__init_from_transliteration[transliteration_method](dchar = self,
+                                                                                      src = src)
 
     #///////////////////////////////////////////////////////////////////////////
     def reset(self):

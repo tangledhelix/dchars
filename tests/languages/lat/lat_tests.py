@@ -62,6 +62,22 @@ class TESTSDStringLAT(unittest.TestCase):
         self.assertEqual( string[0].base_char, "a" )
 
     #///////////////////////////////////////////////////////////////////////////
+    def test_clone(self):
+        """
+                TESTSDStringLAT.test_clone
+        """
+        string0 = DSTRING_LAT("a")
+        string1 = DSTRING_LAT("a")
+        string2 = string1.clone()
+        self.assertEqual( string1, string2 )
+
+        string1.capital_letter = True
+        string1.stress = True
+        string1.length = 'long'
+
+        self.assertEqual( string0, string2 )
+
+    #///////////////////////////////////////////////////////////////////////////
     def test_emptystring(self):
         """
                 TESTSDStringLAT.test_emptystring

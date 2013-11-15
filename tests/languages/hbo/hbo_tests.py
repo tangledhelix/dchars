@@ -108,11 +108,25 @@ class TESTSDStringHBO(unittest.TestCase):
         self.assertEqual( string[0].contextual_form, "final" )
 
     #///////////////////////////////////////////////////////////////////////////
+    def test_clone(self):
+        """
+                TESTSDStringHBO.test_clone
+        """
+        string0 = DSTRING_HBO("קּ")
+        string1 = DSTRING_HBO("קּ")
+        string2 = string1.clone()
+        self.assertEqual( string1, string2 )
+
+        string1.base_char = "מַֽ"
+        string1.methegh = False
+
+        self.assertEqual( string0, string2 )
+
+    #///////////////////////////////////////////////////////////////////////////
     def test_emptystring(self):
         """
                 TESTSDStringHBO.test_emptystring
         """
-
         string = DSTRING_HBO("")
         self.assertEqual( len(string), 0 )
 

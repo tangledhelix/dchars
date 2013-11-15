@@ -62,6 +62,22 @@ class TESTSDStringSAN(unittest.TestCase):
         self.assertEqual( string[0].base_char, "KA" )
 
     #///////////////////////////////////////////////////////////////////////////
+    def test_clone(self):
+        """
+                TESTSDStringSAN.test_clone
+        """
+        string0 = DSTRING_SAN("क")
+        string1 = DSTRING_SAN("क")
+        string2 = string1.clone()
+        self.assertEqual( string1, string2 )
+
+        string1.base_char = "प"
+        string1.accent = "DEVANAGARI STRESS SIGN UDATTA"
+        string1.dependentvowel = "II"
+
+        self.assertEqual( string0, string2 )
+
+    #///////////////////////////////////////////////////////////////////////////
     def test_emptystring(self):
         """
                 TESTSDStringSAN.test_emptystring
