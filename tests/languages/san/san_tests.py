@@ -71,9 +71,9 @@ class TESTSDStringSAN(unittest.TestCase):
         string2 = string1.clone()
         self.assertEqual( string1, string2 )
 
-        string1.base_char = "प"
-        string1.accent = "DEVANAGARI STRESS SIGN UDATTA"
-        string1.dependentvowel = "II"
+        string1[0].base_char = "प"
+        string1[0].accent = "DEVANAGARI STRESS SIGN UDATTA"
+        string1[0].dependentvowel = "II"
 
         self.assertEqual( string0, string2 )
 

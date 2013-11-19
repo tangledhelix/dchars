@@ -188,8 +188,8 @@ class TESTSDStringBOD(unittest.TestCase):
         string2 = string1.clone()
         self.assertEqual( string1, string2 )
 
-        string1.base_char = "D"
-        string1.vowel1 = "II"
+        string1[0].base_char = "D"
+        string1[0].vowel1 = "II"
 
         self.assertEqual( string0, string2 )
         

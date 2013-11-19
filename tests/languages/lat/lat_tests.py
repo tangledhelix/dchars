@@ -71,9 +71,9 @@ class TESTSDStringLAT(unittest.TestCase):
         string2 = string1.clone()
         self.assertEqual( string1, string2 )
 
-        string1.capital_letter = True
-        string1.stress = True
-        string1.length = 'long'
+        string1[0].capital_letter = True
+        string1[0].stress = True
+        string1[0].length = 'long'
 
         self.assertEqual( string0, string2 )
 

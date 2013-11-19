@@ -50,6 +50,24 @@ class TESTSDStringGRC(unittest.TestCase):
         We test  dchars.languages.grc.dchars::DStringGRC
     """
 
+    ## #///////////////////////////////////////////////////////////////////////////
+    ## def test_add(self):
+    ##     """
+    ##             TESTSDStringGRC.test_add
+    ##     """
+    ##     string1 = DSTRING_GRC("α")
+    ##     string2 = DSTRING_GRC("ι")
+    ##     string3 = string1 + string2
+    ##     self.assertEqual( string1 + string2, string3 )
+    ##     self.assertEqual( type(string3), DSTRING_GRC )
+    ##     string1.tonos = "ὀξεῖα"
+
+    ##     string1 = DSTRING_GRC("α")
+    ##     string2 = DSTRING_GRC("ι")
+    ##     string1 += string2
+    ##     self.assertEqual( string1 + string2, string3 )
+    ##     self.assertEqual( type(string3), DSTRING_GRC )
+
     #///////////////////////////////////////////////////////////////////////////
     def test_base_char(self):
         """
@@ -78,10 +96,10 @@ class TESTSDStringGRC(unittest.TestCase):
         string2 = string1.clone()
         self.assertEqual( string1, string2 )
 
-        string1.base_char = "ω"
-        string1.capital_letter = True
-        string1.tonos = "ὀξεῖα"
-        string1.pneuma = "δασὺ"
+        string1[0].base_char = "ω"
+        string1[0].capital_letter = True
+        string1[0].tonos = "ὀξεῖα"
+        string1[0].pneuma = "δασὺ"
 
         self.assertEqual( string0, string2 )
 

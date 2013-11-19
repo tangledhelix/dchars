@@ -117,8 +117,8 @@ class TESTSDStringHBO(unittest.TestCase):
         string2 = string1.clone()
         self.assertEqual( string1, string2 )
 
-        string1.base_char = "מַֽ"
-        string1.methegh = False
+        string1[0].base_char = "מַֽ"
+        string1[0].methegh = False
 
         self.assertEqual( string0, string2 )
 
