@@ -243,6 +243,13 @@ class DCharacterGRC(DCharacterMotherClass):
                "mekos="+repr(self.mekos)
 
     #///////////////////////////////////////////////////////////////////////////
+    def clearAccentuation(self):
+        """
+                DCharacterGRC.clearAccentuation
+        """
+        self.tonos = None
+        
+    #///////////////////////////////////////////////////////////////////////////
     def clone(self):
         """
                 DCharacterGRC.clone
