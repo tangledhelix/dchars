@@ -46,7 +46,7 @@ class DStringMotherClass(list):
         """
                 DStringMotherClass.__add__
         """
-        res = type(self)()
+        res = self.clone()
 
         for dchar in aliud:
             res.append( dchar.clone() )
