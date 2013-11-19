@@ -49,6 +49,25 @@ class TESTSDStringSAN(unittest.TestCase):
     """
 
     #///////////////////////////////////////////////////////////////////////////
+    def test_add(self):
+        """
+                TESTSDStringSAN.test_add
+        """
+        string1 = DSTRING_SAN("क")
+        string2 = DSTRING_SAN("ए")
+        string3 = string1 + string2
+        self.assertEqual( string1 + string2, string3 )
+        self.assertEqual( type(string3), DSTRING_SAN )
+        string1[0].base_char = "भ"
+        self.assertEqual( DSTRING_SAN("क") + DSTRING_SAN("ए"), string3 )
+
+        string1 = DSTRING_SAN("क")
+        string2 = DSTRING_SAN("ए")
+        string1 += string2
+        self.assertEqual( string1 + string2, string3 )
+        self.assertEqual( type(string3), DSTRING_SAN )
+
+    #///////////////////////////////////////////////////////////////////////////
     def test_base_char(self):
         """
                 TESTSDStringSAN.test_base_char

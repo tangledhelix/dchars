@@ -42,6 +42,18 @@ class DStringMotherClass(list):
     """
 
     #///////////////////////////////////////////////////////////////////////////
+    def __add__(self, aliud):
+        """
+                DStringMotherClass.__add__
+        """
+        res = type(self)()
+
+        for dchar in aliud:
+            res.append( dchar.clone() )
+
+        return res
+
+    #///////////////////////////////////////////////////////////////////////////
     def __enter__(self):
         """
                 DStringMotherClass.__enter__

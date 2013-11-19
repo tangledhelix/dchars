@@ -50,23 +50,24 @@ class TESTSDStringGRC(unittest.TestCase):
         We test  dchars.languages.grc.dchars::DStringGRC
     """
 
-    ## #///////////////////////////////////////////////////////////////////////////
-    ## def test_add(self):
-    ##     """
-    ##             TESTSDStringGRC.test_add
-    ##     """
-    ##     string1 = DSTRING_GRC("α")
-    ##     string2 = DSTRING_GRC("ι")
-    ##     string3 = string1 + string2
-    ##     self.assertEqual( string1 + string2, string3 )
-    ##     self.assertEqual( type(string3), DSTRING_GRC )
-    ##     string1.tonos = "ὀξεῖα"
+    #///////////////////////////////////////////////////////////////////////////
+    def test_add(self):
+        """
+                TESTSDStringGRC.test_add
+        """
+        string1 = DSTRING_GRC("α")
+        string2 = DSTRING_GRC("ι")
+        string3 = string1 + string2
+        self.assertEqual( string1 + string2, string3 )
+        self.assertEqual( type(string3), DSTRING_GRC )
+        string1[0].tonos = "ὀξεῖα"
+        self.assertEqual( DSTRING_GRC("α") + DSTRING_GRC("ι"), string3 )
 
-    ##     string1 = DSTRING_GRC("α")
-    ##     string2 = DSTRING_GRC("ι")
-    ##     string1 += string2
-    ##     self.assertEqual( string1 + string2, string3 )
-    ##     self.assertEqual( type(string3), DSTRING_GRC )
+        string1 = DSTRING_GRC("α")
+        string2 = DSTRING_GRC("ι")
+        string1 += string2
+        self.assertEqual( string1 + string2, string3 )
+        self.assertEqual( type(string3), DSTRING_GRC )
 
     #///////////////////////////////////////////////////////////////////////////
     def test_base_char(self):

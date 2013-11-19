@@ -179,12 +179,31 @@ class TESTSDStringBOD(unittest.TestCase):
     """
 
     #///////////////////////////////////////////////////////////////////////////
+    def test_add(self):
+        """
+                TESTSDStringBOD.test_add
+        """
+        string1 = DSTRING_BOD("ཀོགསཿ")
+        string2 = DSTRING_BOD("ག")
+        string3 = string1 + string2
+        self.assertEqual( string1 + string2, string3 )
+        self.assertEqual( type(string3), DSTRING_BOD )
+        string1[0].base_char = "T"
+        self.assertEqual( DSTRING_BOD("ཀོགསཿ") + DSTRING_BOD("ག"), string3 )
+
+        string1 = DSTRING_BOD("ཀོགསཿ")
+        string2 = DSTRING_BOD("ག")
+        string1 += string2
+        self.assertEqual( string1 + string2, string3 )
+        self.assertEqual( type(string3), DSTRING_BOD )
+
+    #///////////////////////////////////////////////////////////////////////////
     def test_clone(self):
         """
                 TESTSDStringBOD.test_clone
         """
-        string0 = DSTRING_BOD("T")
-        string1 = DSTRING_BOD("T")
+        string0 = DSTRING_BOD("ཀོགསཿ")
+        string1 = DSTRING_BOD("ཀོགསཿ")
         string2 = string1.clone()
         self.assertEqual( string1, string2 )
 

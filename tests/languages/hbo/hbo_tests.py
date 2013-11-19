@@ -48,6 +48,25 @@ class TESTSDStringHBO(unittest.TestCase):
     """
 
     #///////////////////////////////////////////////////////////////////////////
+    def test_add(self):
+        """
+                TESTSDStringHBO.test_add
+        """
+        string1 = DSTRING_HBO("בּ")
+        string2 = DSTRING_HBO("ך")
+        string3 = string1 + string2
+        self.assertEqual( string1 + string2, string3 )
+        self.assertEqual( type(string3), DSTRING_HBO )
+        string1[0].base_char = "מ"
+        self.assertEqual( DSTRING_HBO("בּ") + DSTRING_HBO("ך"), string3 )
+
+        string1 = DSTRING_HBO("בּ")
+        string2 = DSTRING_HBO("ך")
+        string1 += string2
+        self.assertEqual( string1 + string2, string3 )
+        self.assertEqual( type(string3), DSTRING_HBO )
+
+    #///////////////////////////////////////////////////////////////////////////
     def test_base_char(self):
         """
                 TESTSDStringHBO.test_base_char
@@ -117,7 +136,7 @@ class TESTSDStringHBO(unittest.TestCase):
         string2 = string1.clone()
         self.assertEqual( string1, string2 )
 
-        string1[0].base_char = "מַֽ"
+        string1[0].base_char = "מ"
         string1[0].methegh = False
 
         self.assertEqual( string0, string2 )

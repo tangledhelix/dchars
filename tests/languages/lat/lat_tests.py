@@ -49,6 +49,25 @@ class TESTSDStringLAT(unittest.TestCase):
     """
 
     #///////////////////////////////////////////////////////////////////////////
+    def test_add(self):
+        """
+                TESTSDStringLAT.test_add
+        """
+        string1 = DSTRING_LAT("p")
+        string2 = DSTRING_LAT("e")
+        string3 = string1 + string2
+        self.assertEqual( string1 + string2, string3 )
+        self.assertEqual( type(string3), DSTRING_LAT )
+        string1[0].base_char = "c"
+        self.assertEqual( DSTRING_LAT("p") + DSTRING_LAT("e"), string3 )
+
+        string1 = DSTRING_LAT("p")
+        string2 = DSTRING_LAT("e")
+        string1 += string2
+        self.assertEqual( string1 + string2, string3 )
+        self.assertEqual( type(string3), DSTRING_LAT )
+
+    #///////////////////////////////////////////////////////////////////////////
     def test_base_char(self):
         """
                 TESTSDStringLAT.test_base_char
