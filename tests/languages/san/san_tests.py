@@ -63,6 +63,7 @@ class TESTSDStringSAN(unittest.TestCase):
 
         string1 = DSTRING_SAN("क")
         string2 = DSTRING_SAN("ए")
+        string3 = string1 + string2
         string1 += string2
         self.assertEqual( string1 + string2, string3 )
         self.assertEqual( type(string3), DSTRING_SAN )

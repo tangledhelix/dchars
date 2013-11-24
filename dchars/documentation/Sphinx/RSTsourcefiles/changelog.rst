@@ -3,10 +3,12 @@ CHANGELOG_TITLE
 ===============
 
 ------------------
-0.5.4 [2013_11_11]
+0.5.4 [2013_11_24]
 ------------------
 
-  * added DStringMotherClass.__getitem__() function
+  * added DStringMotherClass.__add__() method
+  * added clone() method for all languages
+  * added DStringMotherClass.__getitem__() method
   * moved tests/ to root directory, beside dchars/ directory
 
   * code quality :

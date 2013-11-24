@@ -62,6 +62,7 @@ class TESTSDStringHBO(unittest.TestCase):
 
         string1 = DSTRING_HBO("בּ")
         string2 = DSTRING_HBO("ך")
+        string3 = string1 + string2
         string1 += string2
         self.assertEqual( string1 + string2, string3 )
         self.assertEqual( type(string3), DSTRING_HBO )
