@@ -65,8 +65,8 @@ class TESTSDStringLAT(unittest.TestCase):
         string2 = DSTRING_LAT("e")
         string3 = string1 + string2
         string1 += string2
-        self.assertEqual( string1 + string2, string3 )
-        self.assertEqual( type(string3), DSTRING_LAT )
+        self.assertEqual( string1, string3 )
+        self.assertEqual( type(string1), DSTRING_LAT )
 
     #///////////////////////////////////////////////////////////////////////////
     def test_base_char(self):

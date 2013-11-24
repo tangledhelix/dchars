@@ -65,8 +65,8 @@ class TESTSDStringSAN(unittest.TestCase):
         string2 = DSTRING_SAN("ए")
         string3 = string1 + string2
         string1 += string2
-        self.assertEqual( string1 + string2, string3 )
-        self.assertEqual( type(string3), DSTRING_SAN )
+        self.assertEqual( string1, string3 )
+        self.assertEqual( type(string1), DSTRING_SAN )
 
     #///////////////////////////////////////////////////////////////////////////
     def test_base_char(self):

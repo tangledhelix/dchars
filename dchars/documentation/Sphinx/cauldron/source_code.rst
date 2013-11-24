@@ -290,133 +290,6 @@ dchars.system
    dchars.system.numversion
 
 --------------------------------------------------------------------------------
-dchars.tests
---------------------------------------------------------------------------------
-
-.. toctree::
-   :maxdepth: 2
-
-   dchars.tests.__init__
-   dchars.tests.alphabetical_weight_tests
-   dchars.tests.dicttools_tests
-   dchars.tests.orderedset_tests
-   dchars.tests.sortingvalue_tests
-
---------------------------------------------------------------------------------
-dchars.tests.languages
---------------------------------------------------------------------------------
-
-.. toctree::
-   :maxdepth: 2
-
-   dchars.tests.languages.__init__
-
---------------------------------------------------------------------------------
-dchars.tests.languages.bod
---------------------------------------------------------------------------------
-
-.. toctree::
-   :maxdepth: 2
-
-   dchars.tests.languages.bod.__init__
-   dchars.tests.languages.bod.bod_tests
-
---------------------------------------------------------------------------------
-dchars.tests.languages.bod.transliterations
---------------------------------------------------------------------------------
-
-.. toctree::
-   :maxdepth: 2
-
-   dchars.tests.languages.bod.transliterations.__init__
-   dchars.tests.languages.bod.transliterations.bodsan_tests
-   dchars.tests.languages.bod.transliterations.ewts_tests
-
---------------------------------------------------------------------------------
-dchars.tests.languages.grc
---------------------------------------------------------------------------------
-
-.. toctree::
-   :maxdepth: 2
-
-   dchars.tests.languages.grc.__init__
-   dchars.tests.languages.grc.grc_tests
-
---------------------------------------------------------------------------------
-dchars.tests.languages.grc.transliterations
---------------------------------------------------------------------------------
-
-.. toctree::
-   :maxdepth: 2
-
-   dchars.tests.languages.grc.transliterations.__init__
-   dchars.tests.languages.grc.transliterations.basic_tests
-   dchars.tests.languages.grc.transliterations.betacode_tests
-   dchars.tests.languages.grc.transliterations.gutenberg_tests
-   dchars.tests.languages.grc.transliterations.perseus_tests
-
---------------------------------------------------------------------------------
-dchars.tests.languages.hbo
---------------------------------------------------------------------------------
-
-.. toctree::
-   :maxdepth: 2
-
-   dchars.tests.languages.hbo.__init__
-   dchars.tests.languages.hbo.hbo_tests
-
---------------------------------------------------------------------------------
-dchars.tests.languages.hbo.transliterations
---------------------------------------------------------------------------------
-
-.. toctree::
-   :maxdepth: 2
-
-   dchars.tests.languages.hbo.transliterations.__init__
-   dchars.tests.languages.hbo.transliterations.basic_tests
-
---------------------------------------------------------------------------------
-dchars.tests.languages.lat
---------------------------------------------------------------------------------
-
-.. toctree::
-   :maxdepth: 2
-
-   dchars.tests.languages.lat.__init__
-   dchars.tests.languages.lat.lat_tests
-
---------------------------------------------------------------------------------
-dchars.tests.languages.lat.transliterations
---------------------------------------------------------------------------------
-
-.. toctree::
-   :maxdepth: 2
-
-   dchars.tests.languages.lat.transliterations.__init__
-   dchars.tests.languages.lat.transliterations.basic_tests
-
---------------------------------------------------------------------------------
-dchars.tests.languages.san
---------------------------------------------------------------------------------
-
-.. toctree::
-   :maxdepth: 2
-
-   dchars.tests.languages.san.__init__
-   dchars.tests.languages.san.san_tests
-
---------------------------------------------------------------------------------
-dchars.tests.languages.san.transliterations
---------------------------------------------------------------------------------
-
-.. toctree::
-   :maxdepth: 2
-
-   dchars.tests.languages.san.transliterations.__init__
-   dchars.tests.languages.san.transliterations.iso15919_tests
-   dchars.tests.languages.san.transliterations.itrans_tests
-
---------------------------------------------------------------------------------
 dchars.utilities
 --------------------------------------------------------------------------------
 
@@ -430,4 +303,131 @@ dchars.utilities
    dchars.utilities.orderedset
    dchars.utilities.regexstring
    dchars.utilities.sortingvalue
+
+--------------------------------------------------------------------------------
+tests
+--------------------------------------------------------------------------------
+
+.. toctree::
+   :maxdepth: 2
+
+   tests.__init__
+   tests.alphabetical_weight_tests
+   tests.dicttools_tests
+   tests.orderedset_tests
+   tests.sortingvalue_tests
+
+--------------------------------------------------------------------------------
+tests.languages
+--------------------------------------------------------------------------------
+
+.. toctree::
+   :maxdepth: 2
+
+   tests.languages.__init__
+
+--------------------------------------------------------------------------------
+tests.languages.bod
+--------------------------------------------------------------------------------
+
+.. toctree::
+   :maxdepth: 2
+
+   tests.languages.bod.__init__
+   tests.languages.bod.bod_tests
+
+--------------------------------------------------------------------------------
+tests.languages.bod.transliterations
+--------------------------------------------------------------------------------
+
+.. toctree::
+   :maxdepth: 2
+
+   tests.languages.bod.transliterations.__init__
+   tests.languages.bod.transliterations.bodsan_tests
+   tests.languages.bod.transliterations.ewts_tests
+
+--------------------------------------------------------------------------------
+tests.languages.grc
+--------------------------------------------------------------------------------
+
+.. toctree::
+   :maxdepth: 2
+
+   tests.languages.grc.__init__
+   tests.languages.grc.grc_tests
+
+--------------------------------------------------------------------------------
+tests.languages.grc.transliterations
+--------------------------------------------------------------------------------
+
+.. toctree::
+   :maxdepth: 2
+
+   tests.languages.grc.transliterations.__init__
+   tests.languages.grc.transliterations.basic_tests
+   tests.languages.grc.transliterations.betacode_tests
+   tests.languages.grc.transliterations.gutenberg_tests
+   tests.languages.grc.transliterations.perseus_tests
+
+--------------------------------------------------------------------------------
+tests.languages.hbo
+--------------------------------------------------------------------------------
+
+.. toctree::
+   :maxdepth: 2
+
+   tests.languages.hbo.__init__
+   tests.languages.hbo.hbo_tests
+
+--------------------------------------------------------------------------------
+tests.languages.hbo.transliterations
+--------------------------------------------------------------------------------
+
+.. toctree::
+   :maxdepth: 2
+
+   tests.languages.hbo.transliterations.__init__
+   tests.languages.hbo.transliterations.basic_tests
+
+--------------------------------------------------------------------------------
+tests.languages.lat
+--------------------------------------------------------------------------------
+
+.. toctree::
+   :maxdepth: 2
+
+   tests.languages.lat.__init__
+   tests.languages.lat.lat_tests
+
+--------------------------------------------------------------------------------
+tests.languages.lat.transliterations
+--------------------------------------------------------------------------------
+
+.. toctree::
+   :maxdepth: 2
+
+   tests.languages.lat.transliterations.__init__
+   tests.languages.lat.transliterations.basic_tests
+
+--------------------------------------------------------------------------------
+tests.languages.san
+--------------------------------------------------------------------------------
+
+.. toctree::
+   :maxdepth: 2
+
+   tests.languages.san.__init__
+   tests.languages.san.san_tests
+
+--------------------------------------------------------------------------------
+tests.languages.san.transliterations
+--------------------------------------------------------------------------------
+
+.. toctree::
+   :maxdepth: 2
+
+   tests.languages.san.transliterations.__init__
+   tests.languages.san.transliterations.iso15919_tests
+   tests.languages.san.transliterations.itrans_tests
 

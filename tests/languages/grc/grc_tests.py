@@ -67,8 +67,8 @@ class TESTSDStringGRC(unittest.TestCase):
         string2 = DSTRING_GRC("ι")
         string3 = string1 + string2
         string1 += string2
-        self.assertEqual( string1 + string2, string3 )
-        self.assertEqual( type(string3), DSTRING_GRC )
+        self.assertEqual( string1, string3 )
+        self.assertEqual( type(string1), DSTRING_GRC )
 
     #///////////////////////////////////////////////////////////////////////////
     def test_base_char(self):
