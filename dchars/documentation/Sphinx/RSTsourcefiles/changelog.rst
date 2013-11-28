@@ -11,7 +11,7 @@ CHANGELOG_TITLE
   * code quality :
 
     * header_please_test.py ok
-    * 136 tests, all ok
+    * 137 tests, all ok
     * Pylint's worst mark : 9.47
 
 ------------------
