@@ -3,6 +3,18 @@ CHANGELOG_TITLE
 ===============
 
 ------------------
+0.5.5 [2013_11_28]
+------------------
+
+  * new function : DStringGRC.endsWithABareiaAccent()
+
+  * code quality :
+
+    * header_please_test.py ok
+    * 136 tests, all ok
+    * Pylint's worst mark : 9.47
+
+------------------
 0.5.4 [2013_11_24]
 ------------------
 
