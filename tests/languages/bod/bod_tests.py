@@ -212,7 +212,7 @@ class TESTSDStringBOD(unittest.TestCase):
         string1[0].vowel1 = "II"
 
         self.assertEqual( string0, string2 )
-        
+
     #///////////////////////////////////////////////////////////////////////////
     def test_emptystring(self):
         """

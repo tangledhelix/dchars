@@ -226,7 +226,7 @@ class DCharacterSAN(DCharacterMotherClass):
                               anudatta = self.anudatta,
                               is_an_independent_vowel = self.is_an_independent_vowel,
                               dependentvowel = self.dependentvowel )
-    
+
     #///////////////////////////////////////////////////////////////////////////
     def get_usefull_combinations(self):
         """

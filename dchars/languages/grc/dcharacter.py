@@ -248,7 +248,7 @@ class DCharacterGRC(DCharacterMotherClass):
                 DCharacterGRC.clearAccentuation
         """
         self.tonos = None
-        
+
     #///////////////////////////////////////////////////////////////////////////
     def clone(self):
         """
