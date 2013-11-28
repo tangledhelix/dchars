@@ -130,6 +130,29 @@ class DStringGRC(DStringMotherClass):
             self.init_from_str(str_src)
 
     #///////////////////////////////////////////////////////////////////////////
+    def endsWithABareiaAccent(self):
+        """
+                DStringGRC.endsWithABareiaAccent
+
+                Return True if the last vowel of the word is marked with
+                a βαρεῖα accent.
+
+                "καὶ" : True
+                "καί" : False
+        """
+        res = False
+
+        for dchar in self[::-1]:
+
+            if dchar.base_char in ('α', 'ε', 'η', 'ι', 'ο', 'υ', 'ω'):
+                if dchar.tonos == 'βαρεῖα':
+                    res = True
+
+                break
+
+        return res
+
+    #///////////////////////////////////////////////////////////////////////////
     def get_usefull_combinations(self):
         """
                 DStringGRC.get_usefull_combinations

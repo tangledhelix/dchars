@@ -160,6 +160,23 @@ class TESTSDStringGRC(unittest.TestCase):
         self.assertEqual( len(string), 0 )
 
     #///////////////////////////////////////////////////////////////////////////
+    def test_endsWithABareiaAccent(self):
+        """
+                TESTSDStringGRC.test_endsWithABareiaAccent
+        """
+        word = DSTRING_GRC("καὶ")
+        self.assertEqual( word.endsWithABareiaAccent(), True )
+
+        word = DSTRING_GRC("καί")
+        self.assertEqual( word.endsWithABareiaAccent(), False )
+
+        word = DSTRING_GRC("δοῦλος")
+        self.assertEqual( word.endsWithABareiaAccent(), False )
+
+        word = DSTRING_GRC("ἄνθρωπός")
+        self.assertEqual( word.endsWithABareiaAccent(), False )
+
+    #///////////////////////////////////////////////////////////////////////////
     def test_equivalences(self):
         """
                 TESTSDStringGRC.test_equivalences
