@@ -68,6 +68,25 @@ class TESTSDStringHBO(unittest.TestCase):
         self.assertEqual( type(string1), DSTRING_HBO )
 
     #///////////////////////////////////////////////////////////////////////////
+    def test_alternative_characters(self):
+        """
+                TESTSDStringHBO.test_alternative_characters
+        """
+
+        txt1 = "ℵ" # 0x2135
+        string1 = DSTRING_HBO(txt1)
+        txt2 = "א" # x05D0
+        string2 = DSTRING_HBO(txt2)
+        self.assertEqual( string1, string2 )
+        self.assertEqual( string1[0].base_char, chr(0x05D0) )
+
+        txt1 = chr(0x05C3) # 0x05C3 (original "HEBREW PUNCTUATION SOF PASUQ")
+        string1 = DSTRING_HBO(txt1)
+        txt2 = ":"
+        string2 = DSTRING_HBO(txt2)
+        self.assertEqual( string1, string2 )
+
+    #///////////////////////////////////////////////////////////////////////////
     def test_base_char(self):
         """
                 TESTSDStringHBO.test_base_char
@@ -255,25 +274,6 @@ class TESTSDStringHBO(unittest.TestCase):
                 txt2 = string1.get_sourcestr_representation()
                 string2 = DSTRING_HBO(txt2)
                 self.assertEqual( string1, string2 )
-
-    #///////////////////////////////////////////////////////////////////////////
-    def test_alternative_characters(self):
-        """
-                TESTSDStringHBO.test_alternative_characters
-        """
-
-        txt1 = "ℵ" # 0x2135
-        string1 = DSTRING_HBO(txt1)
-        txt2 = "א" # x05D0
-        string2 = DSTRING_HBO(txt2)
-        self.assertEqual( string1, string2 )
-        self.assertEqual( string1[0].base_char, chr(0x05D0) )
-
-        txt1 = chr(0x05C3) # 0x05C3 (original "HEBREW PUNCTUATION SOF PASUQ")
-        string1 = DSTRING_HBO(txt1)
-        txt2 = ":"
-        string2 = DSTRING_HBO(txt2)
-        self.assertEqual( string1, string2 )
 
     #///////////////////////////////////////////////////////////////////////////
     def test_normalstring(self):

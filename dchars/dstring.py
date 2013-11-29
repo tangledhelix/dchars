@@ -236,22 +236,14 @@ class DStringMotherClass(list):
 
                 <aliud> is a DString*.
         """
-        res = True
-
-        len_aliud = len(aliud)
-        len_self = len(self)
-
-        # <aliud> longer than <self> ? The function returns False.
-        if len_aliud > len_self:
-            return False
-
-        for index in range(len_aliud):
-            if self[len_self -1 - index] != aliud[len_aliud -1 - index]:
-                res = False
-                break
-            index +=1
-
-        return res
+        # A problem here :
+        #
+        #       This function should compare, one by one, all dcharacters in <self>
+        # and in <aliud>. But DChars add some informations about the vowels that
+        # can lead to confusion : e.g. "ཀོགས" (kogs) can be analysed as "kogsa" and
+        # won't by analysed as ending with "ས" (s). To avoid this we compare the
+        # string representation : 
+        return str(self).endswith( str(aliud) )
 
     #///////////////////////////////////////////////////////////////////////////
     def get_sourcestr_representation(self):
@@ -363,17 +355,6 @@ class DStringMotherClass(list):
 
                 <aliud> is a DString*.
         """
-        res = True
-
-        # <aliud> longer than <self> ? The function returns False.
-        if len(aliud) > len(self):
-            return False
-
-        index = 0
-        for dchar in aliud:
-            if dchar != self[index]:
-                res = False
-                break
-            index +=1
-
-        return res
+        # see DStringMotherClass.startswith to understand this (strange) way
+        # to compare the two strings.
+        return str(self).startswith( str(aliud) )

@@ -3,6 +3,18 @@ CHANGELOG_TITLE
 ===============
 
 ------------------
+0.5.6 [2013_11_29]
+------------------
+
+  * new functions : DStringMotherClass.endswith(), .startswith() + tests
+
+  * code quality :
+
+    * header_please_test.py ok
+    * 157 tests, all ok
+    * Pylint's worst mark : 9.47
+
+------------------
 0.5.5 [2013_11_28]
 ------------------
 

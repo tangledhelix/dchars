@@ -231,7 +231,7 @@ class TESTSDStringBOD(unittest.TestCase):
                 TESTSDStringBOD.test_endswith
         """
         string = DSTRING_BOD("ཀོགས")
-        self.assertEqual( string.endswith( DSTRING_BOD("ས") ), True )
+        self.assertEqual( string.endswith( DSTRING_BOD("གས") ), True )
         self.assertEqual( string.endswith( DSTRING_BOD("") ), True )
         self.assertEqual( string.endswith( DSTRING_BOD("ཀོགས") ), True )
         self.assertEqual( string.endswith( DSTRING_BOD("ཀོ") ), False )
