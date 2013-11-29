@@ -228,6 +228,32 @@ class DStringMotherClass(list):
         return "\n".join(res)
 
     #///////////////////////////////////////////////////////////////////////////
+    def endswith(self, aliud):
+        """
+                DStringMotherClass.endswith
+
+                Return True if <self> ends with <aliud>
+
+                <aliud> is a DString*.
+        """
+        res = True
+
+        len_aliud = len(aliud)
+        len_self = len(self)
+
+        # <aliud> longer than <self> ? The function returns False.
+        if len_aliud > len_self:
+            return False
+
+        for index in range(len_aliud):
+            if self[len_self -1 - index] != aliud[len_aliud -1 - index]:
+                res = False
+                break
+            index +=1
+
+        return res
+
+    #///////////////////////////////////////////////////////////////////////////
     def get_sourcestr_representation(self):
         """
                 DStringMotherClass.get_sourcestr_representation
@@ -327,3 +353,27 @@ class DStringMotherClass(list):
                 adding the sorting values of each character) is wrong.
         """
         return  [ dchar.sortingvalue() for dchar in self  ]
+
+    #///////////////////////////////////////////////////////////////////////////
+    def startswith(self, aliud):
+        """
+                DStringMotherClass.startswith
+
+                Return True if <self> begins with <aliud>
+
+                <aliud> is a DString*.
+        """
+        res = True
+
+        # <aliud> longer than <self> ? The function returns False.
+        if len(aliud) > len(self):
+            return False
+
+        index = 0
+        for dchar in aliud:
+            if dchar != self[index]:
+                res = False
+                break
+            index +=1
+
+        return res

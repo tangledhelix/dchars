@@ -226,6 +226,17 @@ class TESTSDStringBOD(unittest.TestCase):
         self.assertEqual( len(string), 0 )
 
     #///////////////////////////////////////////////////////////////////////////
+    def test_endswith(self):
+        """
+                TESTSDStringBOD.test_endswith
+        """
+        string = DSTRING_BOD("ཀོགས")
+        self.assertEqual( string.endswith( DSTRING_BOD("ས") ), True )
+        self.assertEqual( string.endswith( DSTRING_BOD("") ), True )
+        self.assertEqual( string.endswith( DSTRING_BOD("ཀོགས") ), True )
+        self.assertEqual( string.endswith( DSTRING_BOD("ཀོ") ), False )
+
+    #///////////////////////////////////////////////////////////////////////////
     def test_from_srcstr_2_srcstr(self):
         """
                 TESTSDStringBOD.test_from_srcstr_2_srcstr
@@ -1972,3 +1983,13 @@ class TESTSDStringBOD(unittest.TestCase):
 
             self.assertEqual( words_sorted, words_shuffled )
 
+    #///////////////////////////////////////////////////////////////////////////
+    def test_startswith(self):
+        """
+                TESTSDStringBOD.test_startswith
+        """
+        string = DSTRING_BOD("འཇམ་མགོན་ཀོང་སྤྲུལ་བློ་གྲོས་མཐའ་ཡས་")
+        self.assertEqual( string.startswith( DSTRING_BOD("འཇམ") ), True )
+        self.assertEqual( string.startswith( DSTRING_BOD("") ), True )
+        self.assertEqual( string.startswith( DSTRING_BOD("འཇམ་མགོན་ཀོང་སྤྲུལ་བློ་གྲོས་མཐའ་ཡས་") ), True )
+        self.assertEqual( string.startswith( DSTRING_BOD("གོ") ), False )

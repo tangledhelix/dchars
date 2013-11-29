@@ -107,6 +107,17 @@ class TESTSDStringSAN(unittest.TestCase):
         self.assertEqual( len(string), 0 )
 
     #///////////////////////////////////////////////////////////////////////////
+    def test_endswith(self):
+        """
+                TESTSDStringSAN.test_endswith
+        """
+        string = DSTRING_SAN("संस्कृतम्")
+        self.assertEqual( string.endswith( DSTRING_SAN("स्कृतम्") ), True )
+        self.assertEqual( string.endswith( DSTRING_SAN("") ), True )
+        self.assertEqual( string.endswith( DSTRING_SAN("संस्कृतम्") ), True )
+        self.assertEqual( string.endswith( DSTRING_SAN("म") ), False )
+
+    #///////////////////////////////////////////////////////////////////////////
     def test_from_srcstr_2_srcstr(self):
         """
                 TESTSDStringSAN.test_from_srcstr_2_srcstr
@@ -505,3 +516,13 @@ class TESTSDStringSAN(unittest.TestCase):
                     for word in line.split():
                         DSTRING_SAN(word).sortingvalue()
 
+    #///////////////////////////////////////////////////////////////////////////
+    def test_startswith(self):
+        """
+                TESTSDStringSAN.test_startswith
+        """
+        string = DSTRING_SAN("संस्कृतम्")
+        self.assertEqual( string.startswith( DSTRING_SAN("सं") ), True )
+        self.assertEqual( string.startswith( DSTRING_SAN("") ), True )
+        self.assertEqual( string.startswith( DSTRING_SAN("संस्कृतम्") ), True )
+        self.assertEqual( string.startswith( DSTRING_SAN("स्कृ") ), False )

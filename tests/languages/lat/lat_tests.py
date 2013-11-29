@@ -107,6 +107,17 @@ class TESTSDStringLAT(unittest.TestCase):
         self.assertEqual( len(string), 0 )
 
     #///////////////////////////////////////////////////////////////////////////
+    def test_endswith(self):
+        """
+                TESTSDStringLAT.test_endswith
+        """
+        string = DSTRING_LAT("Rōmā")
+        self.assertEqual( string.endswith( DSTRING_LAT("mā") ), True )
+        self.assertEqual( string.endswith( DSTRING_LAT("") ), True )
+        self.assertEqual( string.endswith( DSTRING_LAT("Rōmā") ), True )
+        self.assertEqual( string.endswith( DSTRING_LAT("a") ), False )
+
+    #///////////////////////////////////////////////////////////////////////////
     def test_equivalences(self):
         """
                 TESTSDStringLAT.test_equivalences
@@ -410,3 +421,13 @@ class TESTSDStringLAT(unittest.TestCase):
                     for word in line.split():
                         DSTRING_LAT(word).sortingvalue()
 
+    #///////////////////////////////////////////////////////////////////////////
+    def test_startswith(self):
+        """
+                TESTSDStringLAT.test_startswith
+        """
+        string = DSTRING_LAT("Rōmā")
+        self.assertEqual( string.startswith( DSTRING_LAT("Rō") ), True )
+        self.assertEqual( string.startswith( DSTRING_LAT("") ), True )
+        self.assertEqual( string.startswith( DSTRING_LAT("Rōmā") ), True )
+        self.assertEqual( string.startswith( DSTRING_LAT("S") ), False )

@@ -160,6 +160,17 @@ class TESTSDStringGRC(unittest.TestCase):
         self.assertEqual( len(string), 0 )
 
     #///////////////////////////////////////////////////////////////////////////
+    def test_endswith(self):
+        """
+                TESTSDStringGRC.test_endswith
+        """
+        string = DSTRING_GRC("ὀξεῖα")
+        self.assertEqual( string.endswith( DSTRING_GRC("εῖα") ), True )
+        self.assertEqual( string.endswith( DSTRING_GRC("") ), True )
+        self.assertEqual( string.endswith( DSTRING_GRC("ὀξεῖα") ), True )
+        self.assertEqual( string.endswith( DSTRING_GRC("ά") ), False )
+
+    #///////////////////////////////////////////////////////////////////////////
     def test_endsWithABareiaAccent(self):
         """
                 TESTSDStringGRC.test_endsWithABareiaAccent
@@ -473,3 +484,13 @@ class TESTSDStringGRC(unittest.TestCase):
                 for word in line.split():
                     DSTRING_GRC(word).sortingvalue()
 
+    #///////////////////////////////////////////////////////////////////////////
+    def test_startswith(self):
+        """
+                TESTSDStringGRC.test_startswith
+        """
+        string = DSTRING_GRC("ἀμείνων")
+        self.assertEqual( string.startswith( DSTRING_GRC("ἀμεί") ), True )
+        self.assertEqual( string.startswith( DSTRING_GRC("") ), True )
+        self.assertEqual( string.startswith( DSTRING_GRC("ἀμείνων") ), True )
+        self.assertEqual( string.startswith( DSTRING_GRC("μείνων") ), False )

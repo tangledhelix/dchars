@@ -151,6 +151,17 @@ class TESTSDStringHBO(unittest.TestCase):
         self.assertEqual( len(string), 0 )
 
     #///////////////////////////////////////////////////////////////////////////
+    def test_endswith(self):
+        """
+                TESTSDStringHBO.test_endswith
+        """
+        string = DSTRING_HBO("אטלפבקּק")
+        self.assertEqual( string.endswith( DSTRING_HBO("בקּק") ), True )
+        self.assertEqual( string.endswith( DSTRING_HBO("") ), True )
+        self.assertEqual( string.endswith( DSTRING_HBO("אטלפבקּק") ), True )
+        self.assertEqual( string.endswith( DSTRING_HBO("ב") ), False )
+
+    #///////////////////////////////////////////////////////////////////////////
     def test_from_srcstr_2_srcstr(self):
         """
                 TESTSDStringHBO.test_from_srcstr_2_srcstr
@@ -473,3 +484,13 @@ class TESTSDStringHBO(unittest.TestCase):
                     for word in line.split():
                         DSTRING_HBO(word).sortingvalue()
 
+    #///////////////////////////////////////////////////////////////////////////
+    def test_startswith(self):
+        """
+                TESTSDStringHBO.test_startswith
+        """
+        string = DSTRING_HBO("אטלפבקּק")
+        self.assertEqual( string.startswith( DSTRING_HBO("אט") ), True ) # 2 prem
+        self.assertEqual( string.startswith( DSTRING_HBO("") ), True )
+        self.assertEqual( string.startswith( DSTRING_HBO("אטלפבקּק") ), True )
+        self.assertEqual( string.startswith( DSTRING_HBO("ק") ), False )
