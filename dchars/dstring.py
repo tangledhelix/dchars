@@ -201,7 +201,7 @@ class DStringMotherClass(list):
         for dchar in self:
             res.append( dchar.clone() )
 
-        return res        
+        return res
 
     #///////////////////////////////////////////////////////////////////////////
     def diff(self, aliud):
@@ -242,7 +242,7 @@ class DStringMotherClass(list):
         # and in <aliud>. But DChars add some informations about the vowels that
         # can lead to confusion : e.g. "ཀོགས" (kogs) can be analysed as "kogsa" and
         # won't by analysed as ending with "ས" (s). To avoid this we compare the
-        # string representation : 
+        # string representation :
         return str(self).endswith( str(aliud) )
 
     #///////////////////////////////////////////////////////////////////////////
