@@ -267,11 +267,15 @@ class DCharacterGRC(DCharacterMotherClass):
                               mekos = self.mekos )
 
     #///////////////////////////////////////////////////////////////////////////
-    def get_sourcestr_representation(self):
+    def get_sourcestr_representation(self, ignore_makron = False):
         """
                 DCharacterGRC.get_sourcestr_representation
 
-                Return a string.
+                PARAMETER :
+                o  (bool) ignore_makron : if True, no makron will be added on the
+                                          characters
+
+                RETURN VALUE : a (str) string.
         """
 
         #.......................................................................
@@ -334,7 +338,7 @@ class DCharacterGRC(DCharacterMotherClass):
 
         if self.mekos == 'βραχύ':
             res.append( DEFAULTSYMB__MEKOSBRAXU )
-        elif self.mekos == 'μακρόν':
+        elif self.mekos == 'μακρόν' and not ignore_makron:
             res.append( DEFAULTSYMB__MEKOSMAKRON )
 
         if self.hypogegrammene == True:
