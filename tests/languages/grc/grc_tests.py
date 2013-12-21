@@ -319,6 +319,26 @@ class TESTSDStringGRC(unittest.TestCase):
             self.assertEqual( string1, string2 )
 
     #///////////////////////////////////////////////////////////////////////////
+    def test_get_sourcestr_repr3(self):
+        """
+                TESTSDStringGRC.test_get_sourcestr_repr3
+
+                Testing the 'ignore_makron' parameter.
+        """
+
+        #.......................................................................
+        string1 = DSTRING_GRC("ί̄")
+        string2 = DSTRING_GRC("ί")
+        self.assertEqual( string1.get_sourcestr_representation(ignore_makron = True),
+                          string2.get_sourcestr_representation(ignore_makron = False) )
+
+        #.......................................................................
+        string1 = DSTRING_GRC("ί̄")
+        string2 = DSTRING_GRC("ί̄")
+        self.assertNotEqual( string1.get_sourcestr_representation(ignore_makron = True),
+                             string2.get_sourcestr_representation(ignore_makron = False) )
+
+    #///////////////////////////////////////////////////////////////////////////
     def test_normalstring(self):
         """
                 TESTSDStringGRC.test_normalstring
