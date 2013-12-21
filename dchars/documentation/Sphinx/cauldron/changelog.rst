@@ -3,6 +3,19 @@ CHANGELOG_TITLE
 ===============
 
 ------------------
+0.5.7 [2013_12_21]
+------------------
+
+  * added to DCharacterGRC.get_sourcestr_representation() the 'ignore_makron' parameter
+  * added new function DStringGRC.get_sourcestr_representation() overloading DString.get_sourcestr_representation() to take the 'ignore_markron' parameter in account
+
+  * code quality :
+
+    * header_please_test.py ok
+    * 158 tests, all ok
+    * Pylint's worst mark : 9.47
+
+------------------
 0.5.6 [2013_11_29]
 ------------------
 
