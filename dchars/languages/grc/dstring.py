@@ -153,6 +153,24 @@ class DStringGRC(DStringMotherClass):
         return res
 
     #///////////////////////////////////////////////////////////////////////////
+    def get_sourcestr_representation(self, ignore_makron = False):
+        """
+                DStringGRC.get_sourcestr_representation
+
+                PARAMETER :
+                o  (bool) ignore_makron : if True, no makron will be added on the
+                                          characters
+
+                RETURN VALUE : a (str) string.
+        """
+        res = []
+
+        for dchar in self:
+            res.append( dchar.get_sourcestr_representation(ignore_makron) )
+
+        return "".join(res)
+
+    #///////////////////////////////////////////////////////////////////////////
     def get_usefull_combinations(self):
         """
                 DStringGRC.get_usefull_combinations
