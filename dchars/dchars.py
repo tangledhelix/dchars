@@ -68,6 +68,20 @@ dchars.config_ini.check(CONFIG_INI)
 LANGUAGES = {
 
                 #...............................................................
+                "ænglisc" :
+                ("ang",
+                 "DStringANG",
+                 CONFIG_INI["ang"]["transliteration method"],
+
+                 {DATA["ang"].get_optionname("sorting method"): \
+                  CONFIG_INI["ang"]["sorting method"],
+
+                  DATA["ang"].get_optionname("anonymize the unknown characters"): \
+                  CONFIG_INI["ang"]["anonymize the unknown characters"],
+                 }
+                ),
+
+                #...............................................................
                 "བོད་ཡིག"         :
                 ("bod",
                  "DStringBOD",

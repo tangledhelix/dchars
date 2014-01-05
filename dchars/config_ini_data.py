@@ -168,6 +168,29 @@ class ConfigValuesForOneLanguage(list):
         return res
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# Ænglisc (old English)
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ANG_DATA = ConfigValuesForOneLanguage(header = 'Ænglisc (old English)')
+ANG_DATA.append( ConfigValue( subsection = '',
+                              values = ("basic",),
+                              name = 'transliteration method',
+                              defaultvalue = 'basic',
+                              optionname = "transliteration method" ))
+
+ANG_DATA.append( ConfigValue( subsection = '',
+                              values = ("yes", "no"),
+                              name = 'anonymize the unknown characters',
+                              defaultvalue = 'no',
+                              optionname = "anonymize the unknown characters" ))
+
+ANG_DATA.append( ConfigValue( subsection = '',
+                              values = ("default",),
+                              name = 'sorting method',
+                              defaultvalue = 'default',
+                              optionname = "sorting method" ))
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # བོད་ཡིག (Tibetan)
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -357,6 +380,7 @@ SAN_DATA.append( ConfigValue( subsection = '',
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 DATA = {
+        "ang"   : ANG_DATA
         "bod"   : BOD_DATA,
         "grc"   : GRC_DATA,
         "hbo"   : HBO_DATA,

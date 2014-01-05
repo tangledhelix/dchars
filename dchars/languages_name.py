@@ -39,6 +39,10 @@ BIBLICAL_HEBREW__NAME = "עִבְֿרִיתֿ מִקְרָאִיתֿ"  # defined
 
 # names accepted by calling new_dstring() :
 LANGUAGES_NAME = {
+        "ang"                   : "Ænglisc",
+        "Ænglisc"               : "Ænglisc",
+        "Old English"           : "Ænglisc",
+
         "བོད་ཡིག"                  : "བོད་ཡིག",
         "bod"                   : "བོད་ཡིག",
         "Tibetan"               : "བོད་ཡིག",
@@ -61,6 +65,11 @@ LANGUAGES_NAME = {
     }
 
 ISO_639_3_NAME = {
+
+        "ang"                   : "ang",
+        "Ænglisc"               : "ang",
+        "Old English"           : "ang",
+
         "བོད་ཡིག"                  : "bod",
         "bod"                   : "bod",
         "Tibetan"               : "bod",
@@ -83,6 +92,9 @@ ISO_639_3_NAME = {
     }
 
 LANGUAGES_AND_TRANSLITERATIONS = {
+
+                                        "Ænglisc"      : ("basic",),
+
                                         "བོད་ཡིག"         : ("ewts",
                                                           "bodsan",
                                                          ),
