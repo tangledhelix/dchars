@@ -380,7 +380,7 @@ SAN_DATA.append( ConfigValue( subsection = '',
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 DATA = {
-        "ang"   : ANG_DATA
+        "ang"   : ANG_DATA,
         "bod"   : BOD_DATA,
         "grc"   : GRC_DATA,
         "hbo"   : HBO_DATA,

@@ -26,7 +26,7 @@ import unittest, os.path
 
 from dchars.errors.errors import DCharsError
 from dchars.dchars import new_dstring
-from dchars.languages.bod.dcharacter import UNKNOWN_CHAR_SYMBOL
+from dchars.symbols.symbols import UNKNOWN_CHAR_SYMBOL
 
 DSTRING_HBO = new_dstring(language="עִבְֿרִיתֿ מִקְרָאִיתֿ",
                           options = {"anonymize the unknown characters" : 'no'},
