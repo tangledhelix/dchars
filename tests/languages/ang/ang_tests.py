@@ -117,20 +117,20 @@ class TESTSDStringANG(unittest.TestCase):
         self.assertEqual( string.endswith( DSTRING_ANG("mōdgeþanc") ), True )
         self.assertEqual( string.endswith( DSTRING_ANG("a") ), False )
 
-    ## #///////////////////////////////////////////////////////////////////////////
-    ## def test_equivalences(self):
-    ##     """
-    ##             TESTSDStringANG.test_equivalences
-    ##     """
+    #///////////////////////////////////////////////////////////////////////////
+    def test_equivalences(self):
+        """
+                TESTSDStringANG.test_equivalences
+        """
 
-    ##     for txt1, txt2 in ( ('', ''),
-    ##                         ('Á', 'Á'), # 00C1 / 0041 0301
-    ##                         ('ā́', 'ā́'),   # 0101 0301 / 0061 0304 0301
-    ##                        ):
+        for txt1, txt2 in ( ('', ''),
+                            ('Á', 'Á'),   # 00C1 / 0041 0301
+                            ('ā́', 'ā́'),   # 0101 0301 / 0061 0304 0301
+                           ):
 
-    ##         string = DSTRING_ANG(txt1)
-    ##         txt2 = string.get_sourcestr_representation()
-    ##         self.assertEqual( txt1, txt2 )
+            string = DSTRING_ANG(txt1)
+            txt2 = string.get_sourcestr_representation()
+            self.assertEqual( txt1, txt2 )
 
     #///////////////////////////////////////////////////////////////////////////
     def test_from_srcstr_2_srcstr(self):
