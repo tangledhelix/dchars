@@ -30,7 +30,9 @@ from dchars.errors.errors import DCharsError
 from dchars.utilities.sortingvalue import SortingValue
 from dchars.dcharacter import DCharacterMotherClass
 from dchars.languages.ang.symbols import SYMB_DIACRITICS
-from dchars.languages.ang.symbols import DEFAULTSYMB__STRESS, \
+from dchars.languages.ang.symbols import DEFAULTSYMB__STRESS1, \
+                                         DEFAULTSYMB__STRESS2, \
+                                         DEFAULTSYMB__MAKRON, \
                                          DEFAULTSYMB__UPPERDOT, \
                                          SYMB_LOWER_CASE, \
                                          SYMB_UPPER_CASE
@@ -49,9 +51,24 @@ import dchars.languages.ang.transliterations.basic.basic as basictrans
 ################################################################################
 COMPLETE_NORMALIZE_NFC = (
 
-                # $$$$$$$$
                 # á̄ -> ā́
-                # ( chr(0x00E1) + chr(0x0304), chr(0x0101) + chr(0x0301) ),
+                ( chr(0x00E1) + chr(0x0304), chr(0x0101) + chr(0x0301) ),
+                # é̄ -> ḗ
+                ( chr(0x00E9) + chr(0x0304), chr(0x1E17) ),
+                # í̄ -> ī́
+                ( chr(0x00ED) + chr(0x0304), chr(0x012B) + chr(0x0301) ),
+                # ó́ -> ṓ
+                ( chr(0x00F3) + chr(0x0304), chr(0x1E53) ),
+                # ú̄ -> ū́
+                ( chr(0x00FA) + chr(0x0304), chr(0x016B) + chr(0x0301) ),
+                # ý̄ -> ȳ́
+                ( chr(0x00FD) + chr(0x0304), chr(0x0233) + chr(0x0301) ),
+
+                #  Ḯ -> Ḯ
+                ( chr(0x00CF) + chr(0x0301), chr(0x1E2E) ),
+                # ḯ -> ḯ
+                ( chr(0x00EF) + chr(0x0301), chr(0x1E2F) ),
+
                )
 
 ################################################################################

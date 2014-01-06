@@ -93,7 +93,7 @@ class TESTSDStringANG(unittest.TestCase):
 
         string1[0].capital_letter = True
         string1[0].stress = True
-        string1[0].length = 'long'
+        string1[0].makron = True
 
         self.assertEqual( string0, string2 )
 
@@ -198,9 +198,7 @@ class TESTSDStringANG(unittest.TestCase):
                      "Á",
                      "N",
                      " ",
-                     "iïi",
-                     "ǟ",
-                     "ǟ́",
+                     "iài",
                      ):
             string1 = DSTRING_ANG(txt1)
             txt2 = string1.get_sourcestr_representation()
@@ -245,8 +243,8 @@ class TESTSDStringANG(unittest.TestCase):
 
         self.assertEqual( string[1].base_char, "a" )
         self.assertEqual( string[1].capital_letter, False )
-        self.assertEqual( string[1].stress, True )
-        self.assertEqual( string[1].length, 'long' )
+        self.assertEqual( string[1].stress, 2 )
+        self.assertEqual( string[1].makron, True )
 
         self.assertEqual( str(string), "*ā́*bebiB**" )
 
@@ -262,8 +260,8 @@ class TESTSDStringANG(unittest.TestCase):
 
         self.assertEqual( string[1].base_char, "a" )
         self.assertEqual( string[1].capital_letter, False )
-        self.assertEqual( string[1].stress, True )
-        self.assertEqual( string[1].length, 'long' )
+        self.assertEqual( string[1].stress, 2 )
+        self.assertEqual( string[1].makron, True )
 
         self.assertEqual( str(string), "{0}ā́{0}bebiB{0}{0}".format(UNKNOWN_CHAR_SYMBOL) )
 
@@ -298,12 +296,12 @@ class TESTSDStringANG(unittest.TestCase):
         """
 
         string1 = DSTRING_ANG("a")
-        string1[0].stress = True
+        string1[0].stress = 2
         string2 = DSTRING_ANG("á")
         self.assertEqual( string1, string2)
 
         string1 = DSTRING_ANG("a")
-        string1[0].stress = True
+        string1[0].stress = 2
         string1[0].makron = True
         string2 = DSTRING_ANG("ā́")
         self.assertEqual( string1, string2)

@@ -68,7 +68,7 @@ dchars.config_ini.check(CONFIG_INI)
 LANGUAGES = {
 
                 #...............................................................
-                "ænglisc" :
+                "Ænglisc" :
                 ("ang",
                  "DStringANG",
                  CONFIG_INI["ang"]["transliteration method"],

@@ -139,6 +139,7 @@ SYMB_DIACRITICS = Name2Symbols(
 # we define these constants in order to avoir multiple calls to SYMB_DIACRITICS.get_default_symbol :
 DEFAULTSYMB__STRESS1 = SYMB_DIACRITICS.get_default_symbol("stress1")
 DEFAULTSYMB__STRESS2 = SYMB_DIACRITICS.get_default_symbol("stress2")
+DEFAULTSYMB__MAKRON  = SYMB_DIACRITICS.get_default_symbol("makron")
 DEFAULTSYMB__UPPERDOT = SYMB_DIACRITICS.get_default_symbol("upperdot")
 
 #...............................................................................

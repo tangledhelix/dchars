@@ -19,7 +19,7 @@
 #    along with DChars.  If not, see <http://www.gnu.org/licenses/>.
 ################################################################################
 """
-    ❏DChars❏ : dchars/languages/lat/dstring.py
+    ❏DChars❏ : dchars/languages/ang/dstring.py
 """
 
 # problem with Pylint :
@@ -31,28 +31,29 @@ import unicodedata
 
 from dchars.errors.errors import DCharsError
 from dchars.dstring import DStringMotherClass
-from dchars.languages.lat.dcharacter import DCharacterLAT
-from dchars.languages.lat.symbols import SYMB_PUNCTUATION, \
+from dchars.languages.ang.dcharacter import DCharacterANG
+from dchars.languages.ang.symbols import SYMB_PUNCTUATION, \
                                          SYMB_UPPER_CASE, \
                                          SYMB_LOWER_CASE, \
                                          SYMB_DIACRITICS
-from dchars.languages.lat.symbols import SYMB_DIACRITICS__MAKRON, \
-                                         SYMB_DIACRITICS__STRESS, \
+from dchars.languages.ang.symbols import SYMB_DIACRITICS__MAKRON, \
+                                         SYMB_DIACRITICS__STRESS1, \
+                                         SYMB_DIACRITICS__STRESS2, \
                                          SYMB_DIACRITICS__UPPERDOT
 
 from dchars.utilities.lstringtools import number_of_occurences
 from dchars.utilities.sortingvalue import SortingValue
 
 # known transliterations :
-import dchars.languages.lat.transliterations.basic.basic as basictrans
-import dchars.languages.lat.transliterations.basic.ucombinations as basictrans_ucombinations
+import dchars.languages.ang.transliterations.basic.basic as basictrans
+import dchars.languages.ang.transliterations.basic.ucombinations as basictrans_ucombinations
 
 ################################################################################
-class DStringLAT(DStringMotherClass):
+class DStringANG(DStringMotherClass):
     """
-        class DStringLAT
+        class DStringANG
 
-        DO NOT CREATE A DStringLAT object directly but use instead the
+        DO NOT CREATE A DStringANG object directly but use instead the
         dchars.py::new_dstring function.
     """
 
@@ -89,7 +90,7 @@ class DStringLAT(DStringMotherClass):
     #///////////////////////////////////////////////////////////////////////////
     def __init__(self, str_src = None):
         """
-                DStringLAT.__init__
+                DStringANG.__init__
 
 		        the three following attributes have been created by the call to
 				dchars.py::new_dstring() :
@@ -106,7 +107,7 @@ class DStringLAT(DStringMotherClass):
     #///////////////////////////////////////////////////////////////////////////
     def get_usefull_combinations(self):
         """
-                DStringLAT.get_usefull_combinations
+                DStringANG.get_usefull_combinations
 
                 Return a DString with all the usefull combinations of characters,
                 i.e. only the 'interesting' characters (not punctuation if it's too simple
@@ -121,7 +122,7 @@ class DStringLAT(DStringMotherClass):
         """
         self.clear()
 
-        dchar = DCharacterLAT(self)
+        dchar = DCharacterANG(self)
         for dchar in dchar.get_usefull_combinations():
 
             already_present = False
@@ -137,7 +138,7 @@ class DStringLAT(DStringMotherClass):
     #///////////////////////////////////////////////////////////////////////////
     def get_usefull_transl_combinations(self):
         """
-                DStringLAT.get_usefull_transl_combinations
+                DStringANG.get_usefull_transl_combinations
 
                 Return a (str)string with all the usefull combinations of TRANSLITTERATED
                 characters, i.e. only the 'interesting' characters (not punctuation if
@@ -153,14 +154,14 @@ class DStringLAT(DStringMotherClass):
         # Pylint can't know that <self> has a 'transliteration_method' member
         # created when <self> has been initialized by new_dstring() :
         # pylint: disable=E1101
-        # -> "Instance of 'DStringLAT' has no 'transliteration_method' member"
-        res = DStringLAT.trans__get_transl_ucombinations[self.transliteration_method]()
+        # -> "Instance of 'DStringANG' has no 'transliteration_method' member"
+        res = DStringANG.trans__get_transl_ucombinations[self.transliteration_method]()
         return res
 
     #///////////////////////////////////////////////////////////////////////////
     def get_transliteration(self):
         """
-                DStringLAT.get_transliteration
+                DStringANG.get_transliteration
 
                 We try to use the method defined in self.transliteration_method;
                 if this attribute doesn't exist, the function use the default method.
@@ -169,7 +170,7 @@ class DStringLAT(DStringMotherClass):
         # Pylint can't know that <self> has a 'transliteration_method' member
         # created when <self> has been initialized by new_dstring() :
         # pylint: disable=E1101
-        # -> "Instance of 'DStringLAT' has no 'transliteration_method' member"
+        # -> "Instance of 'DStringANG' has no 'transliteration_method' member"
 
         res = []
 
@@ -183,7 +184,7 @@ class DStringLAT(DStringMotherClass):
     #///////////////////////////////////////////////////////////////////////////
     def init_from_str(self, str_src):
         """
-                DStringLAT.init_from_str
+                DStringANG.init_from_str
 
                 Function called by __init__(), initialize <self> and return
                 <indexes_of_unrecognized_chars>.
@@ -195,7 +196,7 @@ class DStringLAT(DStringMotherClass):
                 * (2) = normalized_src -> (default symbols required) :
                 *     replace_by_the_default_symbols() -> normalized_src
                 * (3) initialisation from the recognized characters.
-                *     re.finditer(DStringLAT.pattern) give the symbols{letter+diacritics}
+                *     re.finditer(DStringANG.pattern) give the symbols{letter+diacritics}
                 *     (3.1) base_char
                 *     (3.2) makron
                 *     (3.3) stress
@@ -218,10 +219,10 @@ class DStringLAT(DStringMotherClass):
 
         #.......................................................................
         # (3) initialisation from the recognized characters.
-        #     re.finditer(DStringLAT.pattern) give the symbols{letter+diacritics}
+        #     re.finditer(DStringANG.pattern) give the symbols{letter+diacritics}
         #.......................................................................
         indexes = []    # indexes of the substring well analyzed : ( start, end )
-        for element in re.finditer(DStringLAT.pattern,
+        for element in re.finditer(DStringANG.pattern,
                                    normalized_src):
 
             #. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
@@ -233,7 +234,7 @@ class DStringLAT(DStringMotherClass):
                 # ... we add the unknown character(s) between the last character and
                 # the current one :
                 for index in range( max(indexes[-1])+1, element.start() ):
-                    new_character = DCharacterLAT(dstring_object = self,
+                    new_character = DCharacterANG(dstring_object = self,
                                                   unknown_char = True,
                                                   base_char = normalized_src[index])
 
@@ -242,7 +243,7 @@ class DStringLAT(DStringMotherClass):
                 # <indexes> is empty :
                 # ... we add the unknown character(s) before the first index in <indexes> :
                 for index in range( 0, element.start() ):
-                    new_character = DCharacterLAT(dstring_object = self,
+                    new_character = DCharacterANG(dstring_object = self,
                                                   unknown_char = True,
                                                   base_char = normalized_src[index])
 
@@ -282,7 +283,7 @@ class DStringLAT(DStringMotherClass):
 
                 if makron_nbr > 1:
                     err_msg = "In '{0}' (start={1}, end={2}), makron defined several times."
-                    raise DCharsError( context = "DStringLAT.init_from_str",
+                    raise DCharsError( context = "DStringANG.init_from_str",
                                        message = err_msg.format(element.string,
                                                                 element.start(),
                                                                 element.end()),)
@@ -292,21 +293,38 @@ class DStringLAT(DStringMotherClass):
                 #. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
                 # (3.3) stress
                 #. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
-                stress_nbr = number_of_occurences( source_string = diacritics,
-                                                   symbols = SYMB_DIACRITICS__STRESS)
+                stress1_nbr = number_of_occurences( source_string = diacritics,
+                                                    symbols = SYMB_DIACRITICS__STRESS1)
+                stress2_nbr = number_of_occurences( source_string = diacritics,
+                                                    symbols = SYMB_DIACRITICS__STRESS2)
 
-                if stress_nbr > 1:
-                    err_msg = "In '{0}' (start={1}, end={2}), stress defined several times."
-                    raise DCharsError( context = "DStringLAT.init_from_str",
+                if stress1_nbr > 1:
+                    err_msg = "In '{0}' (start={1}, end={2}), stress1 defined several times."
+                    raise DCharsError( context = "DStringANG.init_from_str",
+                                       message = err_msg.format(element.string,
+                                                                element.start(),
+                                                                element.end()),)
+
+                if stress2_nbr > 1:
+                    err_msg = "In '{0}' (start={1}, end={2}), stress2 defined several times."
+                    raise DCharsError( context = "DStringANG.init_from_str",
+                                       message = err_msg.format(element.string,
+                                                                element.start(),
+                                                                element.end()),)
+
+                if stress1_nbr  + stress2_nbr > 1:
+                    err_msg = "In '{0}' (start={1}, end={2}), stress1 and stress2 " \
+                              "simultaneously defined."
+                    raise DCharsError( context = "DStringANG.init_from_str",
                                        message = err_msg.format(element.string,
                                                                 element.start(),
                                                                 element.end()),)
 
                 stress = 0
 
-                if SYMB_DIACRITICS.are_these_symbols_in_a_string('1', diacritics):
+                if SYMB_DIACRITICS.are_these_symbols_in_a_string('stress1', diacritics):
                     stress = 1
-                elif SYMB_DIACRITICS.are_these_symbols_in_a_string('2', diacritics):
+                elif SYMB_DIACRITICS.are_these_symbols_in_a_string('stress2', diacritics):
                     stress = 2
 
                 #. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
@@ -317,7 +335,7 @@ class DStringLAT(DStringMotherClass):
 
                 if upperdot_nbr > 1:
                     err_msg = "In '{0}' (start={1}, end={2}), upperdot defined several times."
-                    raise DCharsError( context = "DStringLAT.init_from_str",
+                    raise DCharsError( context = "DStringANG.init_from_str",
                                        message = err_msg.format(element.string,
                                                                 element.start(),
                                                                 element.end()),)
@@ -327,7 +345,7 @@ class DStringLAT(DStringMotherClass):
             #. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
             # (3.5) we add the new character
             #. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
-            new_character = DCharacterLAT(dstring_object = self,
+            new_character = DCharacterANG(dstring_object = self,
                                           unknown_char = False,
                                           base_char = base_char,
                                           punctuation = punctuation,
@@ -345,7 +363,7 @@ class DStringLAT(DStringMotherClass):
         if indexes:
             # <element> is the last one and <indexes> isn't empty :
             for index in range( max(indexes[-1])+1, len(normalized_src) ):
-                new_character = DCharacterLAT(dstring_object = self,
+                new_character = DCharacterANG(dstring_object = self,
                                               unknown_char = True,
                                               base_char = normalized_src[index])
 
@@ -353,7 +371,7 @@ class DStringLAT(DStringMotherClass):
         else:
             # <indexes> is empty :
             for index in range( 0, len(normalized_src) ):
-                new_character = DCharacterLAT(dstring_object = self,
+                new_character = DCharacterANG(dstring_object = self,
                                               unknown_char = True,
                                               base_char = normalized_src[index])
 
@@ -362,7 +380,7 @@ class DStringLAT(DStringMotherClass):
     #///////////////////////////////////////////////////////////////////////////
     def init_from_transliteration(self, src):
         """
-                DStringLAT.init_from_transliteration
+                DStringANG.init_from_transliteration
 
                 src     :       string
 
@@ -371,11 +389,11 @@ class DStringLAT(DStringMotherClass):
         # Pylint can't know that <self> has a 'transliteration_method' member
         # created when <self> has been initialized by new_dstring() :
         # pylint: disable=E1101
-        # -> "Instance of 'DStringLAT' has no 'transliteration_method' member"
+        # -> "Instance of 'DStringANG' has no 'transliteration_method' member"
 
-        DStringLAT.trans__init_from_transliteration[self.transliteration_method](
+        DStringANG.trans__init_from_transliteration[self.transliteration_method](
                 dstring = self,
-                dcharactertype = DCharacterLAT,
+                dcharactertype = DCharacterANG,
                 src = src)
 
         return self
@@ -383,7 +401,7 @@ class DStringLAT(DStringMotherClass):
     #///////////////////////////////////////////////////////////////////////////
     def sortingvalue(self):
         """
-                DStringLAT.sortingvalue
+                DStringANG.sortingvalue
 
                 Return a SortingValue object
         """
@@ -392,7 +410,7 @@ class DStringLAT(DStringMotherClass):
         # Pylint can't know that <self> has an 'options' member
         # created when <self> has been initialized by new_dstring() :
         # pylint: disable=E1101
-        # -> "Instance of 'DStringLAT' has no 'options' member"
+        # -> "Instance of 'DStringANG' has no 'options' member"
         if self.options["sorting method"] == "default":
 
             # base character :
@@ -414,9 +432,9 @@ class DStringLAT(DStringMotherClass):
             # Pylint can't know that <self> has an 'options' member
             # created when <self> has been initialized by new_dstring() :
             # pylint: disable=E1101
-            # -> "Instance of 'DStringLAT' has no 'options' member"
+            # -> "Instance of 'DStringANG' has no 'options' member"
             err_msg = "unknown sorting method '{0}'."
-            raise DCharsError( context = "DStringLAT.sortingvalue",
+            raise DCharsError( context = "DStringANG.sortingvalue",
                                message = err_msg.format(self.options["sorting method"]) )
 
         return res
