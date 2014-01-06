@@ -37,6 +37,7 @@ from dchars.languages.ang.symbols import SYMB_PUNCTUATION, \
                                          SYMB_LOWER_CASE, \
                                          SYMB_DIACRITICS
 from dchars.languages.ang.symbols import SYMB_DIACRITICS__MAKRON, \
+                                         SYMB_DIACRITICS__STRESS_MINUS1, \
                                          SYMB_DIACRITICS__STRESS1, \
                                          SYMB_DIACRITICS__STRESS2, \
                                          SYMB_DIACRITICS__UPPERDOT
@@ -293,10 +294,19 @@ class DStringANG(DStringMotherClass):
                 #. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
                 # (3.3) stress
                 #. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+                stressM1_nbr = number_of_occurences( source_string = diacritics,
+                                                     symbols = SYMB_DIACRITICS__STRESS_MINUS1)
                 stress1_nbr = number_of_occurences( source_string = diacritics,
                                                     symbols = SYMB_DIACRITICS__STRESS1)
                 stress2_nbr = number_of_occurences( source_string = diacritics,
                                                     symbols = SYMB_DIACRITICS__STRESS2)
+
+                if stressM1_nbr > 1:
+                    err_msg = "In '{0}' (start={1}, end={2}), stressM1(-1) defined several times."
+                    raise DCharsError( context = "DStringANG.init_from_str",
+                                       message = err_msg.format(element.string,
+                                                                element.start(),
+                                                                element.end()),)
 
                 if stress1_nbr > 1:
                     err_msg = "In '{0}' (start={1}, end={2}), stress1 defined several times."
@@ -312,8 +322,8 @@ class DStringANG(DStringMotherClass):
                                                                 element.start(),
                                                                 element.end()),)
 
-                if stress1_nbr  + stress2_nbr > 1:
-                    err_msg = "In '{0}' (start={1}, end={2}), stress1 and stress2 " \
+                if stressM1_nbr + stress1_nbr + stress2_nbr > 1:
+                    err_msg = "In '{0}' (start={1}, end={2}), stressM1, stress1 and stress2 " \
                               "simultaneously defined."
                     raise DCharsError( context = "DStringANG.init_from_str",
                                        message = err_msg.format(element.string,
@@ -322,6 +332,8 @@ class DStringANG(DStringMotherClass):
 
                 stress = 0
 
+                if SYMB_DIACRITICS.are_these_symbols_in_a_string('stressM1', diacritics):
+                    stress = -1
                 if SYMB_DIACRITICS.are_these_symbols_in_a_string('stress1', diacritics):
                     stress = 1
                 elif SYMB_DIACRITICS.are_these_symbols_in_a_string('stress2', diacritics):

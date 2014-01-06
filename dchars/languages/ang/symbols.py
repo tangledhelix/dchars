@@ -131,12 +131,14 @@ SYMB_PUNCTUATION = Name2Symbols(
 
 SYMB_DIACRITICS = Name2Symbols(
     {
+     "stressM1"   : ( chr(0x033D), ), # a̽
      "stress1"    : ( chr(0x300), ),  # à
      "stress2"    : ( chr(0x301), chr(0x030D) ),  # á, a̍
      "makron"     : ( chr(0x304),),  # ā
      "upperdot"   : ( chr(0x307),),  # ċ, ġ
     })
 # we define these constants in order to avoir multiple calls to SYMB_DIACRITICS.get_default_symbol :
+DEFAULTSYMB__STRESS_MINUS1 = SYMB_DIACRITICS.get_default_symbol("stressM1")
 DEFAULTSYMB__STRESS1 = SYMB_DIACRITICS.get_default_symbol("stress1")
 DEFAULTSYMB__STRESS2 = SYMB_DIACRITICS.get_default_symbol("stress2")
 DEFAULTSYMB__MAKRON  = SYMB_DIACRITICS.get_default_symbol("makron")
@@ -145,6 +147,7 @@ DEFAULTSYMB__UPPERDOT = SYMB_DIACRITICS.get_default_symbol("upperdot")
 #...............................................................................
 # we calculate these tuple which is often used in order to speed up the code :
 #...............................................................................
+SYMB_DIACRITICS__STRESS_MINUS1 = SYMB_DIACRITICS["stressM1"]
 SYMB_DIACRITICS__STRESS1 = SYMB_DIACRITICS["stress1"]
 SYMB_DIACRITICS__STRESS2 = SYMB_DIACRITICS["stress2"]
 SYMB_DIACRITICS__MAKRON =  SYMB_DIACRITICS["makron"]

@@ -30,7 +30,8 @@ from dchars.errors.errors import DCharsError
 from dchars.utilities.sortingvalue import SortingValue
 from dchars.dcharacter import DCharacterMotherClass
 from dchars.languages.ang.symbols import SYMB_DIACRITICS
-from dchars.languages.ang.symbols import DEFAULTSYMB__STRESS1, \
+from dchars.languages.ang.symbols import DEFAULTSYMB__STRESS_MINUS1, \
+                                         DEFAULTSYMB__STRESS1, \
                                          DEFAULTSYMB__STRESS2, \
                                          DEFAULTSYMB__MAKRON, \
                                          DEFAULTSYMB__UPPERDOT, \
@@ -120,7 +121,8 @@ class DCharacterANG(DCharacterMotherClass):
                 capital_letter                  : True, False
 
                 makron                          : bool
-                stress                          : 0 (no stress), 1 (half-stressed) or 2
+                stress                          : -1 (stress not taken in account) 0 (no stress),
+                                                  1 (half-stressed) or 2
                 upperdot                        : bool
         """
         DCharacterMotherClass.__init__(self,
@@ -160,7 +162,8 @@ class DCharacterANG(DCharacterMotherClass):
                 capital_letter                  : True, False
 
                 makron                          : bool
-                stress                          : 0 (no stress), 1 (half-stressed) or 2
+                stress                          : -1 (stress not taken in account) 0 (no stress),
+                                                  1 (half-stressed) or 2
                 upperdot                        : bool
         """
         return DCharacterANG( dstring_object = self.dstring_object,
@@ -224,7 +227,7 @@ class DCharacterANG(DCharacterMotherClass):
                                            ( False, True,),
 
                                            # stress
-                                           (0, 1, 2),
+                                           (-1, 0, 1, 2),
 
                                            # upperdot
                                            (False, True),
@@ -236,7 +239,7 @@ class DCharacterANG(DCharacterMotherClass):
 
             if base_char not in ('a', 'e', 'i', 'o', 'u'):
                 if makron is True or \
-                   stress == True or \
+                   stress != 0 or \
                    upperdot == True:
 
                     add_this_dchar = False
@@ -313,6 +316,8 @@ class DCharacterANG(DCharacterMotherClass):
                 # upper case :
                 res.append( SYMB_UPPER_CASE.get_default_symbol(self.base_char) )
 
+        if self.stress == -1:
+            res.append( DEFAULTSYMB__STRESS_MINUS1 )
         if self.stress == 1:
             res.append( DEFAULTSYMB__STRESS1 )
         elif self.stress == 2:

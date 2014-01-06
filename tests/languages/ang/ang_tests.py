@@ -77,8 +77,11 @@ class TESTSDStringANG(unittest.TestCase):
         # 'a' and 'A' have the same "base_char" representation :
         string = DSTRING_ANG("a")
         self.assertEqual( string[0].base_char, "a" )
-
+        
         string = DSTRING_ANG("A")
+        self.assertEqual( string[0].base_char, "a" )
+
+        string = DSTRING_ANG("a̽")
         self.assertEqual( string[0].base_char, "a" )
 
     #///////////////////////////////////////////////////////////////////////////
@@ -92,7 +95,7 @@ class TESTSDStringANG(unittest.TestCase):
         self.assertEqual( string1, string2 )
 
         string1[0].capital_letter = True
-        string1[0].stress = True
+        string1[0].stress = -1
         string1[0].makron = True
 
         self.assertEqual( string0, string2 )
@@ -147,6 +150,7 @@ class TESTSDStringANG(unittest.TestCase):
                      "Q",
                      "Æ",
                      "ō",
+                     "a̽",
                      "mōdgeþanc, ...",
                      "N",
                      " ",
@@ -201,6 +205,7 @@ class TESTSDStringANG(unittest.TestCase):
                      "Á",
                      "Æ",
                      "N",
+                     "a̽",
                      " ",
                      "iài",
                      ):
@@ -222,6 +227,8 @@ class TESTSDStringANG(unittest.TestCase):
 
         for txt in ('ceosan',
                     "ǣ",
+                    "a̽",
+                    "a̽",
                     "þat wīf",
                     "se mōna",
                     "se mōna",
@@ -316,6 +323,9 @@ class TESTSDStringANG(unittest.TestCase):
         with self.assertRaises( DCharsError ):
             DSTRING_ANG("ī̄")
 
+        # i with two "stress(es)" :
+        with self.assertRaises( DCharsError ):
+            DSTRING_ANG("a̽̽")
 
     #///////////////////////////////////////////////////////////////////////////
     def test_modify_character(self):
@@ -326,6 +336,11 @@ class TESTSDStringANG(unittest.TestCase):
         string1 = DSTRING_ANG("a")
         string1[0].stress = 2
         string2 = DSTRING_ANG("á")
+        self.assertEqual( string1, string2)
+
+        string1 = DSTRING_ANG("a")
+        string1[0].stress = -1
+        string2 = DSTRING_ANG("a̽")
         self.assertEqual( string1, string2)
 
         string1 = DSTRING_ANG("a")
@@ -343,7 +358,7 @@ class TESTSDStringANG(unittest.TestCase):
         string1[0].makron = True
         string2 = DSTRING_ANG("ǣ")
         self.assertEqual( string1, string2)
-
+        
     #///////////////////////////////////////////////////////////////////////////
     def test_sortingvalue(self):
         """
