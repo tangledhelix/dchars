@@ -140,10 +140,12 @@ class TESTSDStringANG(unittest.TestCase):
 
         for txt1 in ('',
                      'a',
+                     'ǣ',
                      'p',
                      'à',
                      'ā́', # 0101 0301
                      "Q",
+                     "Æ",
                      "ō",
                      "mōdgeþanc, ...",
                      "N",
@@ -195,7 +197,9 @@ class TESTSDStringANG(unittest.TestCase):
                      'ā́',
                      "Quō usque tandem abūtēre",
                      "Quō usque tandem abūtēre, ...",
+                     "ǣ",
                      "Á",
+                     "Æ",
                      "N",
                      " ",
                      "iài",
@@ -217,13 +221,37 @@ class TESTSDStringANG(unittest.TestCase):
         """
 
         for txt in ('ceosan',
+                    "ǣ",
+                    "þat wīf",
+                    "se mōna",
+                    "se mōna",
+                    "Ænglisc",
+                    "Hwæt! wē Gār-Dena in ġeār-dagum,",
+                    "þēod-cyninga, þrym ġefrūnon,",
+                    "hū ðā æþelingas ellen fremedon.",
+                    "Oft Scyld Scēfing sceaþena þrēatum,",
+                    "monegum mǣġþum, meodosetla oftēah,",
+                    "egsode eorlas. Syððan ǣrest wearð",
+                    "fēasceaft funden, hē þæs frōfre ġebād,",
+                    "wēox under wolcnum, weorðmyndum þāh,",
+                    "oðþæt him ǣġhwylc þāra ymbsittendra",
+                    "ofer hronrāde hȳran scolde,",
+                    "gomban gyldan. Þæt wæs gōd cyning!",
+                    "",
+                    'ċēosan'):
+
+            string = DSTRING_ANG(txt)
+            txt2 = str(string)
+
+            self.assertEqual(txt, txt2)
+
+        for txt in ('ceosan',
                     'ċēosan'):
 
             string = DSTRING_ANG(txt)
             txt2 = str(string)
 
             self.assertEqual( len(txt2), 6 )
-            self.assertEqual(txt, txt2)
 
     #///////////////////////////////////////////////////////////////////////////
     def test_normalstring(self):
@@ -249,7 +277,7 @@ class TESTSDStringANG(unittest.TestCase):
         self.assertEqual( str(string), "*ā́*bebiB**" )
 
         #.......................................................................
-        string = DSTRING_ANG__UNKNOWNCHAR("*ā́*bebiB**")
+        string = DSTRING_ANG__UNKNOWNCHAR("*ā́*bÆbiB**")
         self.assertEqual( len(string), 10 )
 
         for index in range(0, 10):
@@ -263,7 +291,7 @@ class TESTSDStringANG(unittest.TestCase):
         self.assertEqual( string[1].stress, 2 )
         self.assertEqual( string[1].makron, True )
 
-        self.assertEqual( str(string), "{0}ā́{0}bebiB{0}{0}".format(UNKNOWN_CHAR_SYMBOL) )
+        self.assertEqual( str(string), "{0}ā́{0}bÆbiB{0}{0}".format(UNKNOWN_CHAR_SYMBOL) )
 
         #.......................................................................
         string = DSTRING_ANG("*")
@@ -309,6 +337,11 @@ class TESTSDStringANG(unittest.TestCase):
         string1 = DSTRING_ANG("c")
         string1[0].upperdot = True
         string2 = DSTRING_ANG("ċ")
+        self.assertEqual( string1, string2)
+
+        string1 = DSTRING_ANG("æ")
+        string1[0].makron = True
+        string2 = DSTRING_ANG("ǣ")
         self.assertEqual( string1, string2)
 
     #///////////////////////////////////////////////////////////////////////////
