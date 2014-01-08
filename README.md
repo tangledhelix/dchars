@@ -1,4 +1,4 @@
-A **Python3** module aiming to modify easily the diacritics signs of complex unicode characters and to get their transliteration. DChars’ code is licensed under the **GPLv3** licence and is free. Current available languages are Ancient Greek, Latin, Biblical Hebrew, Sanskrit (devanāgarī) and Tibetan.
+A **Python3** module aiming to modify easily the diacritics signs of complex unicode characters and to get their transliteration. DChars’ code is licensed under the **GPLv3** licence and is free. Current available languages are Ancient Greek, Latin, Biblical Hebrew, Sanskrit (devanāgarī), Tibetan and Old English.
 
 [Check out the homepage !](http://94.23.197.37/dchars/)
 
