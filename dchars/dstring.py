@@ -182,14 +182,14 @@ class DStringMotherClass(list):
         for index_dchar, dchar in enumerate(self):
             res.append( "#("+str(index_dchar)+")"+repr(dchar) )
 
-        return "\n".join( (string for string in res) )
+        return "\n".join( string for string in res )
 
     #///////////////////////////////////////////////////////////////////////////
     def __str__(self):
         """
                 DStringMotherClass.__str__
         """
-        return "".join( (str(element) for element in self) )
+        return "".join( str(element) for element in self )
 
     #///////////////////////////////////////////////////////////////////////////
     def clone(self):
