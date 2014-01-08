@@ -22,7 +22,7 @@
     ❏DChars❏ : dchars/tests/languages/ang/ang_tests.py
 """
 
-import unittest, os.path
+import unittest
 
 from dchars.errors.errors import DCharsError
 from dchars.dchars import new_dstring
@@ -77,7 +77,7 @@ class TESTSDStringANG(unittest.TestCase):
         # 'a' and 'A' have the same "base_char" representation :
         string = DSTRING_ANG("a")
         self.assertEqual( string[0].base_char, "a" )
-        
+
         string = DSTRING_ANG("A")
         self.assertEqual( string[0].base_char, "a" )
 
@@ -358,7 +358,7 @@ class TESTSDStringANG(unittest.TestCase):
         string1[0].makron = True
         string2 = DSTRING_ANG("ǣ")
         self.assertEqual( string1, string2)
-        
+
     #///////////////////////////////////////////////////////////////////////////
     def test_sortingvalue(self):
         """

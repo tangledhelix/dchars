@@ -29,7 +29,6 @@ from dchars.errors.errors import DCharsError
 
 from dchars.utilities.sortingvalue import SortingValue
 from dchars.dcharacter import DCharacterMotherClass
-from dchars.languages.ang.symbols import SYMB_DIACRITICS
 from dchars.languages.ang.symbols import DEFAULTSYMB__STRESS_MINUS1, \
                                          DEFAULTSYMB__STRESS1, \
                                          DEFAULTSYMB__STRESS2, \

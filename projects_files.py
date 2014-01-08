@@ -58,6 +58,19 @@ MODULES = {
          "dchars.languages"     : ( ("__init__.py", False),
                                   ),
 
+         "dchars.languages.ang" : ( ("__init__.py", False),
+                                    ("dcharacter.py", False),
+                                    ("dstring.py", False),
+                                    ("symbols.py", False),
+                                  ),
+
+         "dchars.languages.ang.transliterations" : ( ("__init__.py", False),
+                                  ),
+
+         "dchars.languages.ang.transliterations.basic" : ( ("__init__.py", False),
+                                                     ("basic.py", False),
+                                  ),
+
          "dchars.languages.bod" : ( ("__init__.py", False),
                                     ("buffer.py", False),
                                     ("buffer_str.data", False),
@@ -184,6 +197,14 @@ MODULES = {
 
          "tests.languages": ( ("__init__.py", False),
                                   ),
+
+         "tests.languages.ang": ( ("__init__.py", False),
+                                  ("ang_tests.py", False),
+                                ),
+
+         "tests.languages.ang.transliterations": ( ("__init__.py", False),
+                                                   ("basic_tests.py", False),
+                                                 ),
 
          "tests.languages.bod": ( ("__init__.py", False),
                                          ("bod_tests.py", False),
