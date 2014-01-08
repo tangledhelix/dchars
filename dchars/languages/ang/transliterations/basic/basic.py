@@ -153,6 +153,7 @@ UPPER_CASE_INVERSED = invertdict(UPPER_CASE)
 PUNCTUATION_INVERSED = invertdict(PUNCTUATION)
 
 DIACRITICS =  {
+                "stressM1"      : "*",
                 "stress1"       : "\\",
                 "stress2"       : "/",
                 "makron"        : "_",
@@ -174,7 +175,8 @@ UPPERDOT = isort_a_lstrings_bylen_nodup(
 MAKRON = isort_a_lstrings_bylen_nodup(
                  [re.escape(DIACRITICS['makron']), ])
 STRESS = isort_a_lstrings_bylen_nodup(
-                [re.escape(DIACRITICS['stress1']),
+                [re.escape(DIACRITICS['stressM1']),
+                 re.escape(DIACRITICS['stress1']),
                  re.escape(DIACRITICS['stress2']), ])
 LETTERS = isort_a_lstrings_bylen_nodup(
                 regexstring_list(tuple(LOWER_CASE_INVERSED.keys())) + \
@@ -239,8 +241,12 @@ def dchar__get_translit_str(dstring_object, dchar):
                 # upper case :
                 res.append( UPPER_CASE[dchar.base_char] )
 
-    if dchar.stress:
-        res.append( DIACRITICS['stress'] )
+    if dchar.stress == -1 :
+        res.append( DIACRITICS["stressM1"] )
+    elif dchar.stress == 1 :
+        res.append( DIACRITICS["stress1"] )
+    elif dchar.stress == 2 :
+        res.append( DIACRITICS["stress2"] )
 
     if dchar.makron:
         res.append( DIACRITICS['makron'] )
@@ -275,7 +281,11 @@ def dchar__init_from_translit_str(dchar, src):
         if trans_stress is None:
             dchar.stress = 0
         else:
-            dchar.stress = DIACRITICS_INVERSED[trans_stress]
+            dchar.stress = {
+                                "stressM1" : -1,
+                                "stress1"  : 1,
+                                "stress2"  : 2,
+                           }[DIACRITICS_INVERSED[trans_stress]]
 
         dchar.upperdot = element.group('trans_upperdot') is not None
 
