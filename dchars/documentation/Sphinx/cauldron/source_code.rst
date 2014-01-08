@@ -48,6 +48,37 @@ dchars.languages
    dchars.languages.__init__
 
 --------------------------------------------------------------------------------
+dchars.languages.ang
+--------------------------------------------------------------------------------
+
+.. toctree::
+   :maxdepth: 2
+
+   dchars.languages.ang.__init__
+   dchars.languages.ang.dcharacter
+   dchars.languages.ang.dstring
+   dchars.languages.ang.symbols
+
+--------------------------------------------------------------------------------
+dchars.languages.ang.transliterations
+--------------------------------------------------------------------------------
+
+.. toctree::
+   :maxdepth: 2
+
+   dchars.languages.ang.transliterations.__init__
+
+--------------------------------------------------------------------------------
+dchars.languages.ang.transliterations.basic
+--------------------------------------------------------------------------------
+
+.. toctree::
+   :maxdepth: 2
+
+   dchars.languages.ang.transliterations.basic.__init__
+   dchars.languages.ang.transliterations.basic.basic
+
+--------------------------------------------------------------------------------
 dchars.languages.bod
 --------------------------------------------------------------------------------
 
@@ -325,6 +356,26 @@ tests.languages
    :maxdepth: 2
 
    tests.languages.__init__
+
+--------------------------------------------------------------------------------
+tests.languages.ang
+--------------------------------------------------------------------------------
+
+.. toctree::
+   :maxdepth: 2
+
+   tests.languages.ang.__init__
+   tests.languages.ang.ang_tests
+
+--------------------------------------------------------------------------------
+tests.languages.ang.transliterations
+--------------------------------------------------------------------------------
+
+.. toctree::
+   :maxdepth: 2
+
+   tests.languages.ang.transliterations.__init__
+   tests.languages.ang.transliterations.basic_tests
 
 --------------------------------------------------------------------------------
 tests.languages.bod

@@ -3,6 +3,18 @@ CHANGELOG_TITLE
 ===============
 
 ------------------
+0.5.8 [2014_01_08]
+------------------
+
+  * new language : Old English (ang)
+
+  * code quality :
+
+    * header_please_test.py ok
+    * 176 tests, all ok
+    * Pylint's worst mark : 9.47
+
+------------------
 0.5.7 [2013_12_21]
 ------------------
 
