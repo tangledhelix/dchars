@@ -173,36 +173,36 @@ class DCharacterJPN(DCharacterMotherClass):
         #.......................................................................
         # ok, the function can analyse <self> :
         #.......................................................................
-
         res = []
 
-        if self.base_char is not None:
-            if self.punctuation:
-                # punctuation symbol :
-                res.append( self.base_char )
-            elif self.base_char in SYMB_OTHER_SYMBOLS:
-                # other symbol :
-                res.append( self.base_char )
-            elif not self.capital_letter:
-                # lower case :
+        if self.punctuation:
+            res.append( self.chartype )
 
-                base_char = self.base_char
-                if base_char =='β' and \
-                   not self.capital_letter and \
-                   self.chartype == "medium+final":
-                    base_char = "ϐ"
-                elif base_char =='σ' and \
-                     not self.capital_letter and \
-                     self.chartype == "final":
-                    base_char = "ς"
+        else:
 
-                res.append( SYMB_LOWER_CASE.get_default_symbol(base_char) )
-            else:
-                # upper case :
-                res.append( SYMB_UPPER_CASE.get_default_symbol(self.base_char) )
+            if self.chartype == 'hiragana':
+
+                if not self.smallsize:
+                    res.append( self.chartype )
+                else:
+                    res.append( HIRAGANA_TO_SMALL_HIRAGANA[ self.chartype ] )
+
+            elif self.chartype == 'katakana':
+
+                if not self.smallsize:
+                    res.append( self.chartype )
+                else:
+                    res.append( KATAKANA_TO_SMALL_KATAKANA[ self.chartype ] )
+
+            elif self.chartype == 'kanji':
+                res.append( self.chartype )
+
+            elif self.chartype == 'other':
+                res.append( self.chartype )
 
         if self.diacritic == 'diakuten':
             res.append( DEFAULTSYMB__DIAKUTEN )
+
         elif self.diacritic == 'handiakuten':
             res.append( DEFAULTSYMB__HANDIAKUTEN )
 
