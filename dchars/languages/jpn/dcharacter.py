@@ -30,18 +30,10 @@ from dchars.errors.errors import DCharsError
 from dchars.utilities.sortingvalue import SortingValue
 from dchars.dcharacter import DCharacterMotherClass
 from dchars.symbols.symbols import UNKNOWN_CHAR_SYMBOL
-from dchars.languages.jpn.symbols import SYMB_LOWER_CASE, \
-                                         SYMB_UPPER_CASE, \
-                                         SYMB_OTHER_SYMBOLS, \
-                                         DEFAULTSYMB__HANDIACRITICPSILON, \
-                                         DEFAULTSYMB__HANDIACRITICDASU, \
-                                         DEFAULTSYMB__DIACRITICOXEIA, \
-                                         DEFAULTSYMB__DIACRITICBAREIA, \
-                                         DEFAULTSYMB__DIACRITICPERISPOMENE, \
-                                         DEFAULTSYMB__MEKOSBRAXU, \
-                                         DEFAULTSYMB__MEKOSMAKRON, \
-                                         DEFAULTSYMB__HUPOGEGRAMMENE, \
-                                         DEFAULTSYMB__DIALYTIKA
+from dchars.languages.jpn.symbols import DEFAULTSYMB__DIAKUTEN, \
+                                         DEFAULTSYMB__HANDIAKUTEN, \
+                                         HIRAGANA_TO_SMALL_HIRAGANA
+                                         
 import unicodedata
 import copy
 import itertools
@@ -71,7 +63,6 @@ class DCharacterJPN(DCharacterMotherClass):
 
                 aliud   :       DCharacterJPN object
         """
-
         return (self.unknown_char == aliud.unknown_char) and \
                (self.base_char == aliud.base_char) and \
                (self.punctuation == aliud.punctuation) and \
@@ -240,104 +231,50 @@ class DCharacterJPN(DCharacterMotherClass):
 
         # base_char : we don't use the list stored in symbols.py
         # since we would lost the character's order.
-        base_characters  = ( 'α', 'β', 'γ', 'δ', 'ε', 'ζ', 'η', 'θ', 'ι',
-                             'κ', 'λ', 'μ', 'ν', 'ξ', 'ο', 'π', 'ρ', 'σ',
-                             'τ', 'υ', 'φ', 'χ', 'ψ', 'ω',
-                             'ϝ', 'ϗ', 'ϡ', 'ϛ', 'ϙ', )
+        base_characters  = ( 'あ', 'い', 'う', 'え', 'お',
+                             'か', 'き', 'く', 'け', 'こ',
+                             'さ', 'し', 'す', 'せ', 'そ',
+                             'た', 'ち', 'つ', 'て', 'と',
+                             'な', 'に', 'ぬ', 'ね', 'の',
+                             'は', 'ひ', 'ふ', 'へ', 'ほ',
+                             'ま', 'み', 'む', 'め', 'も',
+                             'や', 'ゆ', 'よ',
+                             'ら', 'り', 'る', 'れ', 'ろ',
+                             'わ', 'ゐ', 'ゑ', 'ゑ',
+                             'を',
+                             'ん',
+                            )            
 
-        #-----------------------------------------------------------------------
-        # (1/2) simple characters
-        #-----------------------------------------------------------------------
         for base_char in base_characters:
-            for capital_letter in (False, True):
-                self.__init__( dstring_object = self.dstring_object,
-                               base_char = base_char,
-                               chartype = "initial+medium+final",
-                               punctuation = False,
-                               diacritic = None,
-                               smallsize = False )
+            for chartype in ('hiragana', 'katakana'):
+                for smallsize in (False, True):
+                    for diacritic in (None, "dakuten", "handakuten"):
 
-                yield copy.copy(self)
+                        add_this_char = True
 
-        #-----------------------------------------------------------------------
-        # (2/2) complex characters
-        #-----------------------------------------------------------------------
-        combinations = (itertools.product(
-                                           # base_chars
-                                           base_characters,
+                        if smallsize and base_char not in HIRAGANA_TO_SMALL_HIRAGANA:
+                            add_this_char = False
 
-                                           # chartype
-                                           ("initial", "medium", "final",
-                                            "initial+medium", "medium+final",
-                                            "initial+medium+final"),
+                        if diacritic == 'dakuten' and \
+                           base_char not in ('か', 'き', 'く', 'け', 'こ',
+                                             'さ', 'し', 'す', 'せ', 'そ',
+                                             'た', 'ち', 'つ', 'て', 'と',
+                                             'は', 'ひ', 'ふ', 'へ', 'ほ',):
+                            add_this_char = False
 
-                                           # diacritic
-                                           ( None, "ὀξεῖα", "βαρεῖα", "περισπωμένη" ),
+                        if diacritic == 'handakuten' and \
+                           base_char not in ('は', 'ひ', 'ふ', 'へ', 'ほ',):
+                            add_this_char = False
 
-                                           # smallsize
-                                           (False, True),
+                        if add_this_char:
+                            self.__init__( dstring_object = self.dstring_object,
+                                           base_char = base_char,
+                                           chartype = chartype,
+                                           punctuation = False,
+                                           diacritic = diacritic,
+                                           smallsize = smallsize )
 
-                                           ))
-
-        for base_char, chartype, \
-            diacritic, smallsize, in combinations:
-
-            add_this_dchar = True
-
-            if base_char == 'ρ':
-                if chartype != "initial+medium+final" or \
-                   diacritic is not None or \
-                   smallsize == True or \
-                   mekos is not None:
-
-                    add_this_dchar = False
-
-            elif base_char in ('β', 'σ'):
-                if diacritic is not None or \
-                   smallsize == True or \
-                   mekos is not None:
-
-                    add_this_dchar = False
-
-            elif base_char in ('α', 'η', 'ω'):
-                if chartype != "initial+medium+final" or \
-                   mekos is not None:
-
-                    add_this_dchar = False
-
-            elif base_char in ('ε', 'ο'):
-                if chartype != "initial+medium+final" or \
-                   smallsize == True or \
-                   diacritic == "περισπωμένη" or \
-                   smallsize == True or \
-                   mekos is not None:
-
-                    add_this_dchar = False
-
-            elif base_char in ('ι', 'υ'):
-                if chartype != "initial+medium+final" or \
-                   smallsize == True or \
-                   mekos is not None:
-
-                    add_this_dchar = False
-
-            else:
-                if chartype != "initial+medium+final" or \
-                   diacritic is not None or \
-                   smallsize == True or \
-                   mekos is not None:
-
-                    add_this_dchar = False
-
-            if add_this_dchar:
-                self.__init__( dstring_object = self.dstring_object,
-                               base_char = base_char,
-                               chartype = chartype,
-                               punctuation = False,
-                               diacritic = diacritic,
-                               smallsize = smallsize )
-
-                yield copy.copy(self)
+                            yield copy.copy(self)
 
     #///////////////////////////////////////////////////////////////////////////
     def init_from_transliteration(self, src, transliteration_method):
@@ -383,46 +320,14 @@ class DCharacterJPN(DCharacterMotherClass):
             if self.unknown_char:
                 # unknown char :
                 res.append(1)
-
-                # Some base_char may contain more than one character, like "β2".
-                base_char_num = 0
-                for index_char, char in enumerate(self.base_char):
-                    base_char_num += ord(char) << index_char
-                res.append( base_char_num )
-
+                res.append( ord(base_char) )
                 return res
 
             # known char :
             res.append(0)
 
             # base_char :
-            #
-            # Some base_char may contain more than one character, like "β2".
-            #
-            base_char_num = 0
-            for index_char, char in enumerate(self.base_char):
-                base_char_num += ord(char) << index_char
-            res.append( base_char_num )
-
-            # diacritic :
-            if self.diacritic is None:
-                res.append(0)
-            elif self.diacritic == "ὀξεῖα":
-                res.append(1)
-            elif self.diacritic == "βαρεῖα":
-                res.append(2)
-            elif self.diacritic == "περισπωμένη":
-                res.append(3)
-            else:
-                raise DCharsError( context = "DCharacterJPN.sortingvalue",
-                                   message = "unknown value for diacritic ="+\
-                                             str(self.diacritic) )
-
-            # smallsize :
-            if not self.smallsize:
-                res.append(0)
-            else:
-                res.append(1)
+            res.append( ord(base_char) )
 
         else:
             raise DCharsError( context = "DCharacterJPN.sortingvalue",

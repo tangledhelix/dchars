@@ -154,6 +154,20 @@ LANGUAGES = {
                 ),
 
                 #...............................................................
+                "日本語" :
+                ("jpn",
+                 "DStringJPN",
+                 CONFIG_INI["jpn"]["transliteration method"],
+
+                 {DATA["jpn"].get_optionname("sorting method"): \
+                  CONFIG_INI["jpn"]["sorting method"],
+
+                  DATA["jpn"].get_optionname("anonymize the unknown characters"): \
+                  CONFIG_INI["jpn"]["anonymize the unknown characters"],
+                 }
+                ),
+
+                #...............................................................
                 "latīna" :
                 ("lat",
                  "DStringLAT",

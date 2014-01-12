@@ -168,10 +168,10 @@ class ConfigValuesForOneLanguage(list):
         return res
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-# Ænglisc (old English)
+# Ænglisc (Old English)
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-ANG_DATA = ConfigValuesForOneLanguage(header = 'Ænglisc (old English)')
+ANG_DATA = ConfigValuesForOneLanguage(header = 'Ænglisc (Old English)')
 ANG_DATA.append( ConfigValue( subsection = '',
                               values = ("basic",),
                               name = 'transliteration method',
@@ -328,6 +328,29 @@ HBO_DATA.append( ConfigValue( subsection = '',
                               optionname = "sorting method" ))
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 日本語 (Japanese)
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+JPN_DATA = ConfigValuesForOneLanguage(header = '日本語 (Japanese)')
+JPN_DATA.append( ConfigValue( subsection = '',
+                              values = ("basic",),
+                              name = 'transliteration method',
+                              defaultvalue = 'basic',
+                              optionname = "transliteration method" ))
+
+JPN_DATA.append( ConfigValue( subsection = '',
+                              values = ("yes", "no"),
+                              name = 'anonymize the unknown characters',
+                              defaultvalue = 'no',
+                              optionname = "anonymize the unknown characters" ))
+
+JPN_DATA.append( ConfigValue( subsection = '',
+                              values = ("default",),
+                              name = 'sorting method',
+                              defaultvalue = 'default',
+                              optionname = "sorting method" ))
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # latīna (Latin)
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -384,6 +407,7 @@ DATA = {
         "bod"   : BOD_DATA,
         "grc"   : GRC_DATA,
         "hbo"   : HBO_DATA,
+        "jpn"   : JPN_DATA,
         "lat"   : LAT_DATA,
         "san"   : SAN_DATA,
        }

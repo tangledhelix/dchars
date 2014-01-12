@@ -34,29 +34,19 @@ from dchars.utilities.lstringtools import isort_a_lstrings_bylen_nodup
 from dchars.dstring import DStringMotherClass
 from dchars.languages.jpn.dcharacter import DCharacterJPN
 from dchars.languages.jpn.symbols import SYMB_PUNCTUATION, \
-                                         SYMB_UPPER_CASE, \
-                                         SYMB_LOWER_CASE, \
-                                         SYMB_OTHER_SYMBOLS, \
-                                         SYMB_DIACRITICS
-from dchars.languages.jpn.symbols import SYMB_DIACRITICS__TONOS, \
-                                         SYMB_DIACRITICS__MEKOS, \
-                                         SYMB_DIACRITICS__PNEUMA
+                                         SYMB_DIACRITICS, \
+                                         SYMB_HIRAGANA, \
+                                         SYMB_KATAKANA, \
+                                         SYMB_KANJI
+from dchars.languages.jpn.symbols import SYMB_DIACRITICS__DAKUTEN, \
+                                         SYMB_DIACRITICS__HANDAKUTEN
 
 from dchars.utilities.lstringtools import number_of_occurences
 from dchars.utilities.sortingvalue import SortingValue
 
 # known transliterations :
-import dchars.languages.jpn.transliterations.basic.basic as basictrans
-import dchars.languages.jpn.transliterations.basic.ucombinations as basictrans_ucombinations
-
-import dchars.languages.jpn.transliterations.betacode.betacode as betacodetrans
-import dchars.languages.jpn.transliterations.betacode.ucombinations as betacodetrans_ucombinations
-
-import dchars.languages.jpn.transliterations.perseus.perseus as perseustrans
-import dchars.languages.jpn.transliterations.perseus.ucombinations as perseustrans_ucombinations
-
-import dchars.languages.jpn.transliterations.gutenberg.gutenberg as gutenbergtrans
-import dchars.languages.jpn.transliterations.gutenberg.ucombinations as gutenbergtrans_ucombinations
+import dchars.languages.jpn.transliterations.rhepburm.rhepburm as rhepburmtrans
+import dchars.languages.jpn.transliterations.rhepburm.ucombinations as rhepburmtrans_ucombinations
 
 ################################################################################
 class DStringJPN(DStringMotherClass):
@@ -73,9 +63,11 @@ class DStringJPN(DStringMotherClass):
     #      default_symbols() function since some characters have to be
     #      treated apart to work with a regex.
     pattern_letters = "|".join( isort_a_lstrings_bylen_nodup(
-                                SYMB_LOWER_CASE.default_symbols__pattern() + \
-                                SYMB_UPPER_CASE.default_symbols__pattern() + \
-                                SYMB_OTHER_SYMBOLS.default_symbols__pattern() + \
+                                SYMB_HIRAGANA.default_symbols__pattern() + \
+                                SYMB_SMALL_HIRAGANA.default_symbols__pattern() + \
+                                SYMB_KATAKANA.default_symbols__pattern() + \
+                                SYMB_SMALL_KATAKANA.default_symbols__pattern() +\
+                                SYMB_KANJI.default_symbols__pattern() +\
                                 SYMB_PUNCTUATION.default_symbols__pattern() ))
     pattern_diacritics = "|".join( isort_a_lstrings_bylen_nodup(
                                    SYMB_DIACRITICS.default_symbols__pattern() ))
@@ -84,32 +76,20 @@ class DStringJPN(DStringMotherClass):
 
     # transliterations' methods : available direction(s) :
     trans__directions = {
-          "basic"       : basictrans.AVAILABLE_DIRECTIONS,
-          "betacode"    : betacodetrans.AVAILABLE_DIRECTIONS,
-          "gutenberg"   : gutenbergtrans.AVAILABLE_DIRECTIONS,
-          "perseus"     : perseustrans.AVAILABLE_DIRECTIONS,
+          "rhepburm"       : rhepburmtrans.AVAILABLE_DIRECTIONS,
         }
 
     # transliteration's functions :
     trans__init_from_transliteration = {
-          "basic" : basictrans.dstring__init_from_translit_str,
-          "betacode": betacodetrans.dstring__init_from_translit_str,
-          "perseus" : perseustrans.dstring__init_from_translit_str,
-          "gutenberg" : None,
+          "rhepburm" : rhepburmtrans.dstring__init_from_translit_str,
           }
 
     trans__get_transliteration = {
-          "basic"       : basictrans.dstring__trans__get_trans,
-          "betacode"    : betacodetrans.dstring__trans__get_trans,
-          "perseus"     : perseustrans.dstring__trans__get_trans,
-          "gutenberg"   : gutenbergtrans.dstring__trans__get_trans,
+          "rhepburm"       : rhepburmtrans.dstring__trans__get_trans,
           }
 
     trans__get_transl_ucombinations = {
-          "basic" : basictrans_ucombinations.get_usefull_combinations,
-          "betacode" : betacodetrans_ucombinations.get_usefull_combinations,
-          "gutenberg" : gutenbergtrans_ucombinations.get_usefull_combinations,
-          "perseus" : perseustrans_ucombinations.get_usefull_combinations,
+          "rhepburm" : rhepburmtrans_ucombinations.get_usefull_combinations,
           }
 
     #///////////////////////////////////////////////////////////////////////////
@@ -130,43 +110,16 @@ class DStringJPN(DStringMotherClass):
             self.init_from_str(str_src)
 
     #///////////////////////////////////////////////////////////////////////////
-    def endsWithABareiaAccent(self):
-        """
-                DStringJPN.endsWithABareiaAccent
-
-                Return True if the last vowel of the word is marked with
-                a βαρεῖα accent.
-
-                "καὶ" : True
-                "καί" : False
-        """
-        res = False
-
-        for dchar in self[::-1]:
-
-            if dchar.base_char in ('α', 'ε', 'η', 'ι', 'ο', 'υ', 'ω'):
-                if dchar.tonos == 'βαρεῖα':
-                    res = True
-
-                break
-
-        return res
-
-    #///////////////////////////////////////////////////////////////////////////
-    def get_sourcestr_representation(self, ignore_makron = False):
+    def get_sourcestr_representation(self):
         """
                 DStringJPN.get_sourcestr_representation
-
-                PARAMETER :
-                o  (bool) ignore_makron : if True, no makron will be added on the
-                                          characters
 
                 RETURN VALUE : a (str) string.
         """
         res = []
 
         for dchar in self:
-            res.append( dchar.get_sourcestr_representation(ignore_makron) )
+            res.append( dchar.get_sourcestr_representation() )
 
         return "".join(res)
 
@@ -253,14 +206,9 @@ class DStringJPN(DStringMotherClass):
                 *     replace_by_the_default_symbols() -> normalized_src
                 * (3) initialisation from the recognized characters.
                 *     re.finditer(DStringJPN.pattern) give the symbols{letter+diacritics}
-                *     (3.1) base_char
-                *     (3.2) contextual_form
-                *     (3.3) tonos (τόνος)
-                *     (3.4) mekos (μῆκος)
-                *     (3.5) pneuma (πνεῦμα)
-                *     (3.6) hypogegrammene (ὑπογεγραμμένη)
-                *     (3.7) dialutika (διαλυτικά)
-                *     (3.8) we add the new character
+                *     (3.1) base_char, chartype, smallsize
+                *     (3.2) diacritic
+                *     (3.3) we add the new character
         """
 
         #.......................................................................
@@ -273,11 +221,12 @@ class DStringJPN(DStringMotherClass):
         #     replace_by_the_default_symbols() -> normalized_src
         #.......................................................................
         normalized_src = SYMB_PUNCTUATION.replace_by_the_default_symbols(normalized_src)
-        normalized_src = SYMB_LOWER_CASE.replace_by_the_default_symbols(normalized_src)
-        normalized_src = SYMB_UPPER_CASE.replace_by_the_default_symbols(normalized_src)
-        normalized_src = SYMB_OTHER_SYMBOLS.replace_by_the_default_symbols(normalized_src)
         normalized_src = SYMB_DIACRITICS.replace_by_the_default_symbols(normalized_src)
-
+        normalized_src = SYMB_HIRAGANA.replace_by_the_default_symbols(normalized_src)
+        normalized_src = SYMB_SMALL_HIRAGANA.replace_by_the_default_symbols(normalized_src)
+        normalized_src = SYMB_KATAKANA.replace_by_the_default_symbols(normalized_src)
+        normalized_src = SYMB_SMALL_KATAKANA.replace_by_the_default_symbols(normalized_src)
+        
         #.......................................................................
         # (3) initialisation from the recognized characters.
         #     re.finditer(DStringJPN.pattern) give the symbols{letter+diacritics}
@@ -319,149 +268,95 @@ class DStringJPN(DStringMotherClass):
             diacritics = data['diacritics']
 
             punctuation = letter in SYMB_PUNCTUATION.symbol2name
-            capital_letter = letter in SYMB_UPPER_CASE.symbol2name
 
             #. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
-            # (3.1) base_char
+            # (3.1) base_char, chartype, smallsize
             #. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+            
             if punctuation:
                 # punctuation symbol :
                 base_char = SYMB_PUNCTUATION.get_the_name_for_this_symbol(letter)
-            elif letter in SYMB_LOWER_CASE.symbol2name:
-                # lower case :
-                base_char = SYMB_LOWER_CASE.get_the_name_for_this_symbol(letter)
-            elif letter in SYMB_UPPER_CASE.symbol2name:
-                # upper case :
-                base_char = SYMB_UPPER_CASE.get_the_name_for_this_symbol(letter)
-            else:
-                # other symbols :
-                base_char = SYMB_OTHER_SYMBOLS.get_the_name_for_this_symbol(letter)
+                smallsize = False
+                chartype = "other"
+
+            elif letter in SYMB_HIRAGANA.symbol2name:
+                # hiragana :
+                base_char = SYMB_HIRAGANA.get_the_name_for_this_symbol(letter)
+                smallsize = False
+                chartype = "hiragana"
+
+            elif letter in SYMB_SMALL_HIRAGANA.symbol2name:
+                # small hiragana :
+                base_char = SYMB_SMALL_HIRAGANA.get_the_name_for_this_symbol(letter)
+                smallsize = True
+                chartype = "hiragana"
+
+            elif letter in SYMB_KATAKANA.symbol2name:
+                # katakana :
+                base_char = SYMB_KATAKANA.get_the_name_for_this_symbol(letter)
+                smallsize = False
+                chartype = "katakana"
+
+            elif letter in SYMB_SMALL_KATAKANA.symbol2name:
+                # small katakana :
+                base_char = SYMB_SMALL_KATAKANA.get_the_name_for_this_symbol(letter)
+                smallsize = True
+                chartype = "katakana"
+
+            elif letter in SYMB_KANJI.symbol2name:
+                # kanji :
+                base_char = SYMB_KANJI.get_the_name_for_this_symbol(letter)
+                smallsize = False
+                chartype = "kanji"
 
             #. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
-            # (3.2) contextual_form
+            # (3.2) diacritics
             #. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
-            if base_char == 'β' and not capital_letter:
-                contextual_form = "initial"
-            elif base_char == 'ϐ' and not capital_letter:
-                base_char = 'β'
-                contextual_form = "medium+final"
-            elif base_char == 'σ' and not capital_letter:
-                contextual_form = "initial+medium"
-            elif base_char == 'ς' and not capital_letter:
-                base_char = 'σ'
-                contextual_form = "final"
-            else:
-                contextual_form = "initial+medium+final"
+            diacritic = None
 
-            tonos = None
-            mekos = None
-            pneuma = None
-            hypogegrammene = False
-            dialutika = False
             if diacritics is not None:
 
                 #. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
-                # (3.3) tonos (τόνος)
+                # (3.2.1) dakuten
                 #. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
-                tonos_nbr = number_of_occurences( source_string = diacritics,
-                                                  symbols = SYMB_DIACRITICS__TONOS )
+                dakuten_nbr = number_of_occurences( source_string = diacritics,
+                                                  symbols = SYMB_DIACRITICS__DAKUTEN )
 
-                if tonos_nbr > 1:
-                    err_msg = "In '{0}' (start={1}, end={2}), τόνος defined several times."
+                if dakuten_nbr > 1:
+                    err_msg = "In '{0}' (start={1}, end={2}), dakuten defined several times."
                     raise DCharsError( context = "DStringJPN.init_from_str",
                                        message = err_msg.format(element.string,
                                                                 element.start(),
                                                                 element.end()))
 
-                if SYMB_DIACRITICS.are_these_symbols_in_a_string('τόνος.βαρεῖα', diacritics):
-                    tonos = "βαρεῖα"
-                elif SYMB_DIACRITICS.are_these_symbols_in_a_string('τόνος.ὀξεῖα', diacritics):
-                    tonos = "ὀξεῖα"
-                elif SYMB_DIACRITICS.are_these_symbols_in_a_string('τόνος.περισπωμένη', diacritics):
-                    tonos = "περισπωμένη"
+                if SYMB_DIACRITICS.are_these_symbols_in_a_string('dakuten', diacritics):
+                    diacritic = "dakuten"
 
                 #. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
-                # (3.4) mekos (μῆκος)
+                # (3.2.2) handakuten
                 #. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
-                mekos_nbr = number_of_occurences( source_string = diacritics,
-                                                  symbols = SYMB_DIACRITICS__MEKOS)
+                handakuten_nbr = number_of_occurences( source_string = diacritics,
+                                                  symbols = SYMB_DIACRITICS__HANDAKUTEN )
 
-                if mekos_nbr > 1:
-                    err_msg = "In '{0}' (start={1}, end={2}), μῆκος defined several times."
+                if handakuten_nbr > 1:
+                    err_msg = "In '{0}' (start={1}, end={2}), handakuten defined several times."
                     raise DCharsError( context = "DStringJPN.init_from_str",
                                        message = err_msg.format(element.string,
                                                                 element.start(),
                                                                 element.end()))
 
-                if SYMB_DIACRITICS.are_these_symbols_in_a_string('μῆκος.μακρόν', diacritics):
-                    mekos = "μακρόν"
-                elif SYMB_DIACRITICS.are_these_symbols_in_a_string('μῆκος.βραχύ', diacritics):
-                    mekos = "βραχύ"
-
-                #. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
-                # (3.5) pneuma (πνεῦμα)
-                #. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
-                pneuma_nbr = number_of_occurences( source_string = diacritics,
-                                                   symbols = SYMB_DIACRITICS__PNEUMA)
-
-                if pneuma_nbr > 1:
-                    err_msg = "In '{0}' (start={1}, end={2}), πνεῦμα defined several times."
-                    raise DCharsError( context = "DStringJPN.init_from_str",
-                                       message = err_msg.format(element.string,
-                                                                element.start(),
-                                                                element.end()))
-
-                if SYMB_DIACRITICS.are_these_symbols_in_a_string('πνεῦμα.ψιλὸν', diacritics):
-                    pneuma = "ψιλὸν"
-                elif SYMB_DIACRITICS.are_these_symbols_in_a_string('πνεῦμα.δασὺ', diacritics):
-                    pneuma = "δασὺ"
-
-                #. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
-                # (3.6) hypogegrammene (ὑπογεγραμμένη)
-                #. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
-                hypogegrammene_nbr = number_of_occurences(
-                    source_string = diacritics,
-                    symbols = SYMB_DIACRITICS['ὑπογεγραμμένη'])
-
-                if hypogegrammene_nbr > 1:
-                    err_msg = "In '{0}' (start={1}, end={2}), ὑπογεγραμμένη defined several times."
-                    raise DCharsError( context = "DStringJPN.init_from_str",
-                                       message = err_msg.format(element.string,
-                                                                element.start(),
-                                                                element.end()))
-
-                hypogegrammene = SYMB_DIACRITICS.are_these_symbols_in_a_string('ὑπογεγραμμένη',
-                                                                               diacritics)
-
-                #. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
-                # (3.7) dialutika (διαλυτικά)
-                #. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
-                dialutika_nbr = number_of_occurences( source_string = diacritics,
-                                                      symbols = SYMB_DIACRITICS['διαλυτικά'])
-
-                if dialutika_nbr > 1:
-                    err_msg = "In '{0}' (start={1}, end={2}), διαλυτικά defined several times."
-                    raise DCharsError( context = "DStringJPN.init_from_str",
-                                       message = err_msg.format(element.string,
-                                                                element.start(),
-                                                                element.end()))
-
-                dialutika = SYMB_DIACRITICS.are_these_symbols_in_a_string('διαλυτικά', diacritics)
+                if SYMB_DIACRITICS.are_these_symbols_in_a_string('handakuten', diacritics):
+                    diacritic = "handakuten"
 
             #. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
-            # (3.8) we add the new character
+            # (3.3) we add the new character
             #. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
             new_character = DCharacterJPN(dstring_object = self,
                                           unknown_char = False,
                                           base_char = base_char,
-                                          contextual_form = contextual_form,
+                                          diacritic = diacritic,
                                           punctuation = punctuation,
-                                          capital_letter = capital_letter,
-                                          tonos = tonos,
-                                          pneuma = pneuma,
-                                          hypogegrammene = hypogegrammene,
-                                          dialutika = dialutika,
-                                          mekos=mekos)
+                                          chartype=chartype)
 
             self.append( new_character )
 
@@ -529,38 +424,6 @@ class DStringJPN(DStringMotherClass):
                 data.append( ({False:0,
                                True:1}[char.unknown_char],
                               char.base_char ))
-            res.append(data)
-
-            # pneuma :
-            data = []
-            for char in self:
-                data.append( { None      : 0,
-                               "ψιλὸν"   : 1,
-                               "δασὺ"    : 2, }[char.pneuma])
-            res.append(data)
-
-            # tonos :
-            data = []
-            for char in self:
-                data.append( { None             : 0,
-                               "ὀξεῖα"          : 1,
-                               "βαρεῖα"         : 2,
-                               "περισπωμένη"    : 3, }[char.tonos])
-            res.append(data)
-
-            # hypogegrammene :
-            data = []
-            for char in self:
-                data.append( { False            : 0,
-                               True             : 1, }[char.hypogegrammene])
-            res.append(data)
-
-            # mekos :
-            data = []
-            for char in self:
-                data.append( { None             : 0,
-                               "βραχύ"          : 1,
-                               "μακρόν"         : 2, }[char.mekos])
             res.append(data)
 
         else:

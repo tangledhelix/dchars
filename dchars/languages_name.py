@@ -55,6 +55,10 @@ LANGUAGES_NAME = {
         "hbo"                   :       BIBLICAL_HEBREW__NAME,
         "Biblical Hebrew"       :       BIBLICAL_HEBREW__NAME,
 
+        "jpn"                   :       "日本語",
+        "日本語"                 :       "日本語",
+        "Japanese"              :       "日本語",
+
         "latīna"                :       "latīna",
         "lat"                   :       "latīna",
         "Latin"                 :       "latīna",
@@ -82,6 +86,10 @@ ISO_639_3_NAME = {
         "hbo"                   :       "hbo",
         "Biblical Hebrew"       :       "hbo",
 
+        "jpn"                   :       "jpn",
+        "日本語"                 :       "jpn",
+        "Japanese"              :       "jpn",
+
         "latīna"                :       "lat",
         "lat"                   :       "lat",
         "Latin"                 :       "lat",
@@ -92,7 +100,6 @@ ISO_639_3_NAME = {
     }
 
 LANGUAGES_AND_TRANSLITERATIONS = {
-
                                         "Ænglisc"      : ("basic",),
 
                                         "བོད་ཡིག"         : ("ewts",
@@ -109,7 +116,9 @@ LANGUAGES_AND_TRANSLITERATIONS = {
                                                                     "perseus",
                                                                     ),
 
+                                        "日本語"                : ( "basic", ),
+
                                         "संस्कृतम्"                 : ( "iso15919",
-                                                                      "itrans",
-                                                                    ),
+                                                                    "itrans",
+                                                                   ),
                                  }
