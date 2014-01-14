@@ -28,12 +28,20 @@
 from dchars.utilities.name2symbols import Name2Symbols
 
 #...............................................................................
-# symbols used by the Ancient Greek :
+# symbols used by Japanese :
 #
 # CAVEAT ! If you modify these dictionaries, don't forget to modify their
 # corresponding transliteration's dictionaries !
 #
 #...............................................................................
+
+# "ー" (the chōonpu 長音符 symbol)
+# confer http://en.wikipedia.org/wiki/Ch%C5%8Donpu
+SYMB_CHOONPU = Name2Symbols(
+    {
+      'ー'      : ('ー',),
+    })
+
 SYMB_HIRAGANA = Name2Symbols(
     {
       'あ'        : ('あ',),
@@ -262,6 +270,7 @@ HIRAGANA_TO_KATAKANA = {
       'を'        : 'ヲ',
       'ん'        : 'ン',
     }
+KATAKANA_TO_HIRAGANA = { v:k for k,v in HIRAGANA_TO_KATAKANA.items() }
 
 # http://en.wikipedia.org/wiki/List_of_j%C5%8Dy%C5%8D_kanji
 SYMB_KANJI = Name2Symbols(

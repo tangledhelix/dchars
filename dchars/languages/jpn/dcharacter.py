@@ -32,7 +32,8 @@ from dchars.dcharacter import DCharacterMotherClass
 from dchars.symbols.symbols import UNKNOWN_CHAR_SYMBOL
 from dchars.languages.jpn.symbols import DEFAULTSYMB__DAKUTEN, \
                                          DEFAULTSYMB__HANDAKUTEN, \
-                                         HIRAGANA_TO_SMALL_HIRAGANA
+                                         HIRAGANA_TO_SMALL_HIRAGANA, \
+                                         HIRAGANA_TO_KATAKANA
                                          
 import unicodedata
 import copy
@@ -89,12 +90,12 @@ class DCharacterJPN(DCharacterMotherClass):
                                             o "あ", "い", ... (one hiragana)
                                             
                                             o "東", "名" (one kanji)
-                                            
-                                            o "ー" (the chōonpu 長音符 symbol)
-                                              cd http://en.wikipedia.org/wiki/Ch%C5%8Donpu
 
                     chartype            : None or a string
-                                            "hiragana" / "katakana" / "kanji" / "other"
+                                            "hiragana" / "katakana" / "kanji" / "choonpu" / "other"
+
+                                              about "ー" (the chōonpu 長音符 symbol)
+                                              confer http://en.wikipedia.org/wiki/Ch%C5%8Donpu
 
                     punctuation         : bool
                     diacritic           : None / "dakuten" / "handakuten"
@@ -174,30 +175,35 @@ class DCharacterJPN(DCharacterMotherClass):
             if self.chartype == 'hiragana':
 
                 if not self.smallsize:
-                    res.append( self.chartype )
+                    res.append( self.base_char )
                 else:
-                    res.append( HIRAGANA_TO_SMALL_HIRAGANA[ self.chartype ] )
+                    res.append( HIRAGANA_TO_SMALL_HIRAGANA[ self.base_char ] )
 
             elif self.chartype == 'katakana':
 
                 if not self.smallsize:
-                    res.append( self.chartype )
+                    res.append( HIRAGANA_TO_KATAKANA[self.base_char] )
                 else:
-                    res.append( KATAKANA_TO_SMALL_KATAKANA[ self.chartype ] )
+                    res.append( KATAKANA_TO_SMALL_KATAKANA[ self.base_char ] )
 
             elif self.chartype == 'kanji':
-                res.append( self.chartype )
+                res.append( self.base_char )
+
+            elif self.chartype == 'choonpu':
+                res.append( self.base_char )
 
             elif self.chartype == 'other':
-                res.append( self.chartype )
+                res.append( self.base_char )
 
-        if self.diacritic == 'diakuten':
-            res.append( DEFAULTSYMB__DIAKUTEN )
+        if self.diacritic == 'dakuten':
+            res.append( DEFAULTSYMB__DAKUTEN )
 
-        elif self.diacritic == 'handiakuten':
-            res.append( DEFAULTSYMB__HANDIAKUTEN )
+        elif self.diacritic == 'handakuten':
+            res.append( DEFAULTSYMB__HANDAKUTEN )
 
         res = "".join(res)
+
+        res = unicodedata.normalize('NFC', res)
 
         return res
 
@@ -246,7 +252,7 @@ class DCharacterJPN(DCharacterMotherClass):
                             )            
 
         for base_char in base_characters:
-            for chartype in ('hiragana', 'katakana'):
+            for chartype in ('hiragana', 'katakana', 'choonpu'):
                 for smallsize in (False, True):
                     for diacritic in (None, "dakuten", "handakuten"):
 

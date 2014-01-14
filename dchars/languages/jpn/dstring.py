@@ -33,13 +33,15 @@ from dchars.errors.errors import DCharsError
 from dchars.utilities.lstringtools import isort_a_lstrings_bylen_nodup
 from dchars.dstring import DStringMotherClass
 from dchars.languages.jpn.dcharacter import DCharacterJPN
-from dchars.languages.jpn.symbols import SYMB_PUNCTUATION, \
+from dchars.languages.jpn.symbols import SYMB_CHOONPU, \
+                                         SYMB_PUNCTUATION, \
                                          SYMB_DIACRITICS, \
                                          SYMB_HIRAGANA, \
                                          SYMB_SMALL_HIRAGANA, \
                                          SYMB_KATAKANA, \
                                          SYMB_SMALL_KATAKANA, \
-                                         SYMB_KANJI
+                                         SYMB_KANJI, \
+                                         KATAKANA_TO_HIRAGANA
 from dchars.languages.jpn.symbols import SYMB_DIACRITICS__DAKUTEN, \
                                          SYMB_DIACRITICS__HANDAKUTEN
 
@@ -65,6 +67,7 @@ class DStringJPN(DStringMotherClass):
     #      default_symbols() function since some characters have to be
     #      treated apart to work with a regex.
     pattern_letters = "|".join( isort_a_lstrings_bylen_nodup(
+                                SYMB_CHOONPU.default_symbols__pattern() + \
                                 SYMB_HIRAGANA.default_symbols__pattern() + \
                                 SYMB_SMALL_HIRAGANA.default_symbols__pattern() + \
                                 SYMB_KATAKANA.default_symbols__pattern() + \
@@ -223,6 +226,7 @@ class DStringJPN(DStringMotherClass):
         #     replace_by_the_default_symbols() -> normalized_src
         #.......................................................................
         normalized_src = SYMB_PUNCTUATION.replace_by_the_default_symbols(normalized_src)
+        normalized_src = SYMB_CHOONPU.replace_by_the_default_symbols(normalized_src)
         normalized_src = SYMB_DIACRITICS.replace_by_the_default_symbols(normalized_src)
         normalized_src = SYMB_HIRAGANA.replace_by_the_default_symbols(normalized_src)
         normalized_src = SYMB_SMALL_HIRAGANA.replace_by_the_default_symbols(normalized_src)
@@ -281,6 +285,13 @@ class DStringJPN(DStringMotherClass):
                 smallsize = False
                 chartype = "other"
 
+            elif letter in SYMB_CHOONPU.symbol2name:
+                # "ー" (the chōonpu 長音符 symbol)
+                # confer http://en.wikipedia.org/wiki/Ch%C5%8Donpu
+                base_char = SYMB_CHOONPU.get_the_name_for_this_symbol(letter)
+                smallsize = False
+                chartype = "choonpu"
+
             elif letter in SYMB_HIRAGANA.symbol2name:
                 # hiragana :
                 base_char = SYMB_HIRAGANA.get_the_name_for_this_symbol(letter)
@@ -295,7 +306,7 @@ class DStringJPN(DStringMotherClass):
 
             elif letter in SYMB_KATAKANA.symbol2name:
                 # katakana :
-                base_char = SYMB_KATAKANA.get_the_name_for_this_symbol(letter)
+                base_char = KATAKANA_TO_HIRAGANA[ SYMB_KATAKANA.get_the_name_for_this_symbol(letter) ]
                 smallsize = False
                 chartype = "katakana"
 
