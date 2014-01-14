@@ -36,7 +36,9 @@ from dchars.languages.jpn.dcharacter import DCharacterJPN
 from dchars.languages.jpn.symbols import SYMB_PUNCTUATION, \
                                          SYMB_DIACRITICS, \
                                          SYMB_HIRAGANA, \
+                                         SYMB_SMALL_HIRAGANA, \
                                          SYMB_KATAKANA, \
+                                         SYMB_SMALL_KATAKANA, \
                                          SYMB_KANJI
 from dchars.languages.jpn.symbols import SYMB_DIACRITICS__DAKUTEN, \
                                          SYMB_DIACRITICS__HANDAKUTEN
@@ -45,8 +47,8 @@ from dchars.utilities.lstringtools import number_of_occurences
 from dchars.utilities.sortingvalue import SortingValue
 
 # known transliterations :
-import dchars.languages.jpn.transliterations.rhepburm.rhepburm as rhepburmtrans
-import dchars.languages.jpn.transliterations.rhepburm.ucombinations as rhepburmtrans_ucombinations
+import dchars.languages.jpn.transliterations.rhepburn.rhepburn as rhepburntrans
+import dchars.languages.jpn.transliterations.rhepburn.ucombinations as rhepburntrans_ucombinations
 
 ################################################################################
 class DStringJPN(DStringMotherClass):
@@ -76,20 +78,20 @@ class DStringJPN(DStringMotherClass):
 
     # transliterations' methods : available direction(s) :
     trans__directions = {
-          "rhepburm"       : rhepburmtrans.AVAILABLE_DIRECTIONS,
+          "rhepburn"       : rhepburntrans.AVAILABLE_DIRECTIONS,
         }
 
     # transliteration's functions :
     trans__init_from_transliteration = {
-          "rhepburm" : rhepburmtrans.dstring__init_from_translit_str,
+          "rhepburn" : rhepburntrans.dstring__init_from_translit_str,
           }
 
     trans__get_transliteration = {
-          "rhepburm"       : rhepburmtrans.dstring__trans__get_trans,
+          "rhepburn"       : rhepburntrans.dstring__trans__get_trans,
           }
 
     trans__get_transl_ucombinations = {
-          "rhepburm" : rhepburmtrans_ucombinations.get_usefull_combinations,
+          "rhepburn" : rhepburntrans_ucombinations.get_usefull_combinations,
           }
 
     #///////////////////////////////////////////////////////////////////////////

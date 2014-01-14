@@ -19,7 +19,7 @@
 #    along with DChars.  If not, see <http://www.gnu.org/licenses/>.
 ################################################################################
 """
-    ❏DChars❏ : dchars/languages/grc/transliterations/basic/basic.py
+    ❏DChars❏ : dchars/languages/jpn/transliterations/rhepburn/rhepburn.py
 """
 
 from dchars.utilities.regexstring import regexstring_list
@@ -53,69 +53,109 @@ TRANS_EQUIVALENCES = ()
 #
 # * CAVEAT ! No duplicate value allowed in these dictionaries !
 #
+# HIRAGANA[base_char] = transliterated character
 # LOWER_CASE[base_char] = transliterated character
-LOWER_CASE = {"α"     : "a",
-              "β"     : "b",
-              'γ'     : "g",
-              'δ'     : "d",
-              'ε'     : "e",
-              'ζ'     : "z",
-              'η'     : "ê",
-              'θ'     : "th",
-              'ι'     : "i",
-              'κ'     : "k",
-              'λ'     : "l",
-              'μ'     : "m",
-              'ν'     : "n",
-              'ξ'     : "x",
-              'ο'     : "o",
-              'π'     : "p",
-              'ρ'     : "r",
-              'σ'     : "s",
-              'τ'     : "t",
-              'υ'     : "u",
-              'φ'     : "ph",
-              'χ'     : "kh",
-              'ψ'     : "ps",
-              'ω'     : "ô",
-              'ϝ'     : "f",
-              'ϗ'     : '&',
-              'ϡ'     : '<sampi>',
-              'ϛ'     : '<stigma>',
-              'ϙ'     : 'q',
-              }
+HIRAGANA = {
+      'あ'        : "a",
+      'い'        : "i",
+      'う'        : "u",
+      'え'        : "e",
+      'お'        : "o",
+      'か'        : "ka",
+      'き'        : "ki",
+      'く'        : "ku",
+      'け'        : "ke",
+      'こ'        : "ko",
+      'さ'        : "sa",
+      'し'        : "shi",
+      'す'        : "su",
+      'せ'        : "se",
+      'そ'        : "so",
+      'た'        : "ta",
+      'ち'        : "chi",
+      'つ'        : "tsu",
+      'て'        : "te",
+      'と'        : "to",
+      'な'        : "na",
+      'に'        : "ni",
+      'ぬ'        : "nu",
+      'ね'        : "ne",
+      'の'        : "no",
+      'は'        : "ha",
+      'ひ'        : "hi",
+      'ふ'        : "hu",
+      'へ'        : "he",
+      'ほ'        : "ho",
+      'ま'        : "ma",
+      'み'        : "mi",
+      'む'        : "mu",
+      'め'        : "me",
+      'も'        : "mo",
+      'や'        : "ya",
+      'ゆ'        : "yu",
+      'よ'        : "yo",
+      'ら'        : "ra",
+      'り'        : "ri",
+      'る'        : "ru",
+      'れ'        : "re",
+      'ろ'        : "ro",
+      'わ'        : "wa",
+      'ゐ'        : "wi",
+      'ゑ'        : "we",
+      'を'        : "wo",
+      'ん'        : "n",
+    }
 
-# UPPER_CASE[base_char] = transliterated character
-UPPER_CASE = {"α"     : "A",
-              "β"     : "B",
-              'γ'     : "G",
-              'δ'     : "D",
-              'ε'     : "E",
-              'ζ'     : "Z",
-              'η'     : "Ê",
-              'θ'     : "TH",
-              'ι'     : "I",
-              'κ'     : "K",
-              'λ'     : "L",
-              'μ'     : "M",
-              'ν'     : "N",
-              'ξ'     : "X",
-              'ο'     : "O",
-              'π'     : "P",
-              'ρ'     : "R",
-              'σ'     : "S",
-              'τ'     : "T",
-              'υ'     : "U",
-              'φ'     : "PH",
-              'χ'     : "KH",
-              'ψ'     : "PS",
-              'ω'     : "Ô",
-              'ϝ'     : "F",
-              'ϗ'     : '&',
-              'ϡ'     : '<SAMPI>',
-              'ϛ'     : '<STIGMA>',
-              'ϙ'     : 'Q',
-             }
+KATAKANA = {
+      'ア'        : "A",
+      'イ'        : "I",
+      'ウ'        : "U",
+      'エ'        : "E",
+      'オ'        : "O",
+      'カ'        : "KA",
+      'キ'        : "KI",
+      'ク'        : "KU",
+      'ケ'        : "KE",
+      'コ'        : "KO",
+      'サ'        : "SA",
+      'シ'        : "SHI",
+      'ス'        : "SU",
+      'セ'        : "SE",
+      'ソ'        : "SO",
+      'タ'        : "TA",
+      'チ'        : "CHI",
+      'ツ'        : "TSU",
+      'テ'        : "TE",
+      'ト'        : "TO",
+      'ナ'        : "NA",
+      'ニ'        : "NI",
+      'ヌ'        : "NU",
+      'ネ'        : "NE",
+      'ノ'        : "NO",
+      'ハ'        : "HA",
+      'ヒ'        : "HI",
+      'フ'        : "HU",
+      'ヘ'        : "HE",
+      'ホ'        : "HO",
+      'マ'        : "MA",
+      'ミ'        : "MI",
+      'ム'        : "MU",
+      'メ'        : "ME",
+      'モ'        : "MO",
+      'ヤ'        : "YA",
+      'ユ'        : "YU",
+      'ヨ'        : "YO",
+      'ラ'        : "RA",
+      'リ'        : "RI",
+      'ル'        : "RU",
+      'レ'        : "RE",
+      'ロ'        : "RO",
+      'ワ'        : "WA",
+      'ヰ'        : "WI",
+      'ヱ'        : "WE",
+      'ヲ'        : "WO",
+      'ン'        : "N",
+    }
 
 # OTHER_SYMBOLS[base_char] = transliterated character
 OTHER_SYMBOLS = {
@@ -157,29 +197,10 @@ PUNCTUATION = {'-'       : '-',
                "᾽"       : '<1FBD>',
               }
 
-LOWER_CASE_INVERSED = invertdict(LOWER_CASE, accept_duplicated_values=True)
-LOWER_CASE_INVERSED['b'] = 'β'
-LOWER_CASE_INVERSED['s'] = 'σ'
-UPPER_CASE_INVERSED = invertdict(UPPER_CASE)
+HIRAGANA_INVERSED = invertdict(HIRAGANA, accept_duplicated_values=True)
+KATAKANA_INVERSED = invertdict(KATAKANA)
 OTHER_SYMBOLS_INVERSED = invertdict(OTHER_SYMBOLS)
 PUNCTUATION_INVERSED = invertdict(PUNCTUATION)
-
-DIACRITICS =  {
-                       "βαρεῖα"         : "\\",
-                       "ὀξεῖα"          : "/",
-                       "περισπωμένη"    : "/\\",
-
-                       "μακρόν"         : "_",
-                       "βραχύ"          : "-",
-
-                       "ψιλὸν"          : ")",
-                       "δασὺ"           : "(",
-
-                       "ὑπογεγραμμένη"  : "+i",
-                       "διαλυτικά"      : ":",
-                       }
-
-DIACRITICS_INVERSED = invertdict(DIACRITICS)
 
 ################################################################################
 # transliteration's patterns :
@@ -191,55 +212,21 @@ DIACRITICS_INVERSED = invertdict(DIACRITICS)
 # result : (|a|b|t|th) won't find 'th' in "theatre" but (th|a|b|t) will.
 # We delete the possible duplicates in the resulting string.
 
-PNEUMA = isort_a_lstrings_bylen_nodup(
-                [re.escape(DIACRITICS['ψιλὸν']),
-                 re.escape(DIACRITICS['δασὺ'])] )
-TONOS = isort_a_lstrings_bylen_nodup(
-                [re.escape(DIACRITICS['βαρεῖα']),
-                 re.escape(DIACRITICS['ὀξεῖα']),
-                 re.escape(DIACRITICS['περισπωμένη'])] )
 LETTERS = isort_a_lstrings_bylen_nodup(
-                regexstring_list(tuple(LOWER_CASE_INVERSED.keys())) + \
-                regexstring_list(tuple(UPPER_CASE_INVERSED.keys())) + \
+                regexstring_list(tuple(HIRAGANA_INVERSED.keys())) + \
+                regexstring_list(tuple(KATAKANA_INVERSED.keys())) + \
                 regexstring_list(tuple(OTHER_SYMBOLS_INVERSED.keys())) + \
                 regexstring_list(tuple(PUNCTUATION_INVERSED.keys())) )
-HYPOGEGRAMMENE = isort_a_lstrings_bylen_nodup(
-                [re.escape(DIACRITICS['ὑπογεγραμμένη']),] )
-DIALUTIKA = isort_a_lstrings_bylen_nodup(
-                [re.escape(DIACRITICS['διαλυτικά']),] )
-MEKOS = isort_a_lstrings_bylen_nodup(
-                [re.escape(DIACRITICS['μακρόν']),
-                re.escape(DIACRITICS['βραχύ'])] )
 
-PATTERN_TXT = "((?P<trans_pneuma>({0}))?" \
-              "(?P<trans_tonos>({1}))?" \
-              "(?P<base_char>({2}))" \
-              "(?P<trans_hypogegrammene>({3}))?" \
-              "(?P<trans_dialutika>({4}))?" \
-              "(?P<trans_mekos>({5}))?)".format("|".join(prepare_list_to_strformat(PNEUMA)),
-                                                "|".join(prepare_list_to_strformat(TONOS)),
-                                                "|".join(prepare_list_to_strformat(LETTERS)),
-                                                "|".join(prepare_list_to_strformat(HYPOGEGRAMMENE)),
-                                                "|".join(prepare_list_to_strformat(DIALUTIKA)),
-                                                "|".join(prepare_list_to_strformat(MEKOS)),
-                                              )
+PATTERN_TXT = "(?P<base_char>({0}))".format("|".join(prepare_list_to_strformat(LETTERS)),)
+
 # we inverse the effect of prepare_list_to_strformat()
 PATTERN_TXT = PATTERN_TXT.replace('{{', '{')
 PATTERN_TXT = PATTERN_TXT.replace('}}', '}')
 PATTERN = re.compile(PATTERN_TXT)
 
-PATTERN_TXT2 = "(({0})?" \
-               "({1})?" \
-               "({2})" \
-               "({3})?" \
-               "({4})?" \
-               "({5})?)".format("|".join(prepare_list_to_strformat(PNEUMA)),
-                                "|".join(prepare_list_to_strformat(TONOS)),
-                                "|".join(prepare_list_to_strformat(LETTERS)),
-                                "|".join(prepare_list_to_strformat(HYPOGEGRAMMENE)),
-                                "|".join(prepare_list_to_strformat(DIALUTIKA)),
-                                "|".join(prepare_list_to_strformat(MEKOS)),
-                               )
+PATTERN_TXT2 = "({0})".format("|".join(prepare_list_to_strformat(LETTERS)),)
+
 # we inverse the effect of prepare_list_to_strformat()
 PATTERN_TXT2 = PATTERN_TXT2.replace('{{', '{')
 PATTERN_TXT2 = PATTERN_TXT2.replace('}}', '}')
@@ -251,7 +238,7 @@ def dchar__get_translit_str(dstring_object, dchar):
     """
         function dchar__get_translit_str()
 
-        dchar : DCharacterGRC object
+        dchar : DCharacterJPN object
 
         Return a transliterared string corresponding to <char>.
     """
@@ -263,12 +250,6 @@ def dchar__get_translit_str(dstring_object, dchar):
         else:
             return dchar.base_char
 
-    if dchar.pneuma is not None:
-        res.append( DIACRITICS[dchar.pneuma] )
-
-    if dchar.tonos is not None:
-        res.append( DIACRITICS[dchar.tonos] )
-
     if dchar.base_char is not None:
 
         if dchar.punctuation:
@@ -276,20 +257,12 @@ def dchar__get_translit_str(dstring_object, dchar):
 
         elif dchar.base_char in OTHER_SYMBOLS:
             res.append( OTHER_SYMBOLS[dchar.base_char] )
+
         else:
-            if dchar.capital_letter == False:
-                res.append( LOWER_CASE[dchar.base_char] )
-            else:
-                res.append( UPPER_CASE[dchar.base_char] )
-
-    if dchar.hypogegrammene == True:
-        res.append( DIACRITICS['ὑπογεγραμμένη'] )
-
-    if dchar.dialutika == True:
-        res.append( DIACRITICS['διαλυτικά'] )
-
-    if dchar.mekos is not None:
-        res.append( DIACRITICS[dchar.mekos] )
+            if dchar.chartype == 'hiragana':
+                res.append( HIRAGANA[dchar.base_char] )
+            elif dchar.chartype == 'katakana':
+                res.append( KATAKANA[dchar.base_char] )
 
     return "".join( res )
 
@@ -298,7 +271,7 @@ def dchar__init_from_translit_str(dchar, src):
     """
         function init_from_transliteration()
 
-        dchar   :       DCharacterGRC object
+        dchar   :       DCharacterJPN object
         src     :       string
 
         Initialize and return <dchar>.
@@ -326,13 +299,13 @@ def dchar__init_from_translit_str(dchar, src):
             dchar.tonos = DIACRITICS_INVERSED[trans_tonos]
 
         base_char = element.group('base_char')
-        if base_char in LOWER_CASE_INVERSED:
-            dchar.base_char = LOWER_CASE_INVERSED[base_char]
+        if base_char in HIRAGANA_INVERSED:
+            dchar.base_char = HIRAGANA_INVERSED[base_char]
             dchar.capital_letter = False
             dchar.punctuation = False
 
-        elif base_char in UPPER_CASE_INVERSED:
-            dchar.base_char = UPPER_CASE_INVERSED[base_char]
+        elif base_char in KATAKANA_INVERSED:
+            dchar.base_char = KATAKANA_INVERSED[base_char]
             dchar.capital_letter = True
             dchar.punctuation = False
 
@@ -364,7 +337,7 @@ def dstring__init_from_translit_str(dstring, dcharactertype, src):
         function dstring__init_from_translit_str()
 
         dstring         :       DString object
-        dcharactertype  :       type of DCharacterGRC
+        dcharactertype  :       type of DCharacterJPN
         src             :       string
 
         Initialize <dstring>.
@@ -391,7 +364,7 @@ def dstring__init_from_translit_str(dstring, dcharactertype, src):
         # we add the character read by the regex :
         string = element.string[element.start():element.end()]
         new_character = dcharactertype(dstring_object=dstring).init_from_transliteration(string,
-                                                                   "basic")
+                                                                   "rhepburn")
         dstring.append(new_character)
 
         last_real_index = max(real_indexes)

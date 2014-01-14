@@ -19,6 +19,6 @@
 #    along with DChars.  If not, see <http://www.gnu.org/licenses/>.
 ################################################################################
 """
-    ❏DChars❏ : dchars/languages/grc/__init__.py
+    ❏DChars❏ : dchars/languages/jpn/__init__.py
 """
 

@@ -30,8 +30,8 @@ from dchars.errors.errors import DCharsError
 from dchars.utilities.sortingvalue import SortingValue
 from dchars.dcharacter import DCharacterMotherClass
 from dchars.symbols.symbols import UNKNOWN_CHAR_SYMBOL
-from dchars.languages.jpn.symbols import DEFAULTSYMB__DIAKUTEN, \
-                                         DEFAULTSYMB__HANDIAKUTEN, \
+from dchars.languages.jpn.symbols import DEFAULTSYMB__DAKUTEN, \
+                                         DEFAULTSYMB__HANDAKUTEN, \
                                          HIRAGANA_TO_SMALL_HIRAGANA
                                          
 import unicodedata
@@ -39,7 +39,7 @@ import copy
 import itertools
 
 # known transliterations :
-import dchars.languages.jpn.transliterations.rhepburm.rhepburm as rhepburm
+import dchars.languages.jpn.transliterations.rhepburn.rhepburn as rhepburntrans
 
 ################################################################################
 class DCharacterJPN(DCharacterMotherClass):

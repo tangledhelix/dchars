@@ -34,7 +34,7 @@ from dchars.utilities.name2symbols import Name2Symbols
 # corresponding transliteration's dictionaries !
 #
 #...............................................................................
-SYMB_HIRAGANA =
+SYMB_HIRAGANA = Name2Symbols(
     {
       'あ'        : ('あ',),
       'い'        : ('い',),
@@ -84,9 +84,9 @@ SYMB_HIRAGANA =
       'ゑ'        : ('ゑ',),
       'を'        : ('を',),
       'ん'        : ('ん',),
-    }
+    })
 
-SYMB_SMALL_HIRAGANA =
+SYMB_SMALL_HIRAGANA = Name2Symbols(
     {
       'ぁ'        : ('ぁ',),
       'ぃ'        : ('ぃ',),
@@ -106,10 +106,9 @@ SYMB_SMALL_HIRAGANA =
       'ょ'        : ('ょ',),
 
       'ゎ'        : ('ゎ',),
-    }
+    })
 
-HIRAGANA_TO_SMALL_HIRAGANA =
-    {
+HIRAGANA_TO_SMALL_HIRAGANA = {
       'あ'      : 'ぁ',
       'い'      : 'ぃ',
       'う'      : 'ぅ',
@@ -124,7 +123,7 @@ HIRAGANA_TO_SMALL_HIRAGANA =
       'わ'      : 'ゎ',
     }
 
-SYMB_KATAKANA =
+SYMB_KATAKANA = Name2Symbols(
     {
       'ア'        : ('ア',),
       'イ'        : ('イ',),
@@ -174,9 +173,9 @@ SYMB_KATAKANA =
       'ヱ'        : ('ヱ',),
       'ヲ'        : ('ヲ',),
       'ン'        : ('ン',),
-    }
+    })
 
-SYMB_SMALL_KATAKANA =
+SYMB_SMALL_KATAKANA = Name2Symbols(
     {
       'ァ'        : ('ァ',),
       'ィ'        : ('ィ',),
@@ -196,10 +195,9 @@ SYMB_SMALL_KATAKANA =
       'ョ'        : ('ョ',),
 
       'ヮ'        : ('ヮ',),
-    }
+    })
 
-KATAKANA_TO_SMALL_KATAKANA =
-    {
+KATAKANA_TO_SMALL_KATAKANA = {
       'ア'      : 'ァ',
       'イ'      : 'ィ',
       'ウ'      : 'ゥ',
@@ -214,8 +212,7 @@ KATAKANA_TO_SMALL_KATAKANA =
       'ワ'      : 'ヮ',
     }
 
-HIRAGANA_TO_KATAKANA =
-    {
+HIRAGANA_TO_KATAKANA = {
       'あ'        : 'ア',
       'い'        : 'イ',
       'う'        : 'エ',
@@ -267,7 +264,7 @@ HIRAGANA_TO_KATAKANA =
     }
 
 # http://en.wikipedia.org/wiki/List_of_j%C5%8Dy%C5%8D_kanji
-SYMB_KANJI =
+SYMB_KANJI = Name2Symbols(
     {
       # jōyō kanji #1
       '亜'        : ('亜', '亞'),
@@ -4539,7 +4536,7 @@ SYMB_KANJI =
       '湾'        : ('湾', '灣'),
       # jōyō kanji #2136
       '腕'        : ('腕',),
-    }
+    })
     
 # http://ja.wikipedia.org/wiki/%E6%8B%AC%E5%BC%A7
 SYMB_PUNCTUATION = Name2Symbols(
@@ -4739,8 +4736,14 @@ SYMB_PUNCTUATION = Name2Symbols(
 
 SYMB_DIACRITICS = Name2Symbols(
     {"dakuten"          : ( chr(0x3099),),      # が 
-     "handakuten"       : ( chr(0x309A1,),      # ぱ̍
+     "handakuten"       : ( chr(0x309A),),      # ぱ̍
      })
+
+#...............................................................................
+# we calculate these tuples which are often used in order to speed up the code :
+#...............................................................................
+SYMB_DIACRITICS__DAKUTEN = ( SYMB_DIACRITICS['dakuten'], )
+SYMB_DIACRITICS__HANDAKUTEN = ( SYMB_DIACRITICS['handakuten'], )
 
 # we define these constants in order to avoir multiple calls to SYMB_DIACRITICS.get_default_symbol :
 DEFAULTSYMB__DAKUTEN = SYMB_DIACRITICS.get_default_symbol('dakuten')
