@@ -91,7 +91,7 @@ class DCharacterJPN(DCharacterMotherClass):
                                             
                                             o "東", "名" (one kanji)
 
-                    chartype            : None or a string
+                    chartype            : None (=unknown character) or a string
                                             "hiragana" / "katakana" / "kanji" / "choonpu" / "other"
 
                                               about "ー" (the chōonpu 長音符 symbol)
@@ -168,7 +168,7 @@ class DCharacterJPN(DCharacterMotherClass):
         res = []
 
         if self.punctuation:
-            res.append( self.chartype )
+            res.append( self.base_char )
 
         else:
 

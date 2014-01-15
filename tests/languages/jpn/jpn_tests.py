@@ -179,22 +179,22 @@ class TESTSDStringJPN(unittest.TestCase):
             string = DSTRING_JPN(txt2)
             txt1 = string.get_sourcestr_representation()
             self.assertEqual( txt1, txt2 )
-$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
     #///////////////////////////////////////////////////////////////////////////
     def test_get_sourcestr_repr(self):
         """
                 TESTSDStringJPN.test_get_sourcestr_repr
         """
 
-        txt1 = "α"
+        txt1 = "日"
         string1 = DSTRING_JPN(txt1)
-        txt2 = string1.get_sourcestr_representation()+"β"
+        txt2 = string1.get_sourcestr_representation()+"本"
         string2 = DSTRING_JPN(txt2)
         self.assertNotEqual( string1, string2 )
 
-        txt1 = "α"
+        txt1 = "日"
         string1 = DSTRING_JPN__UNKNOWNCHAR(txt1)
-        txt2 = string1.get_sourcestr_representation()+"β"
+        txt2 = string1.get_sourcestr_representation()+"本"
         string2 = DSTRING_JPN__UNKNOWNCHAR(txt2)
         self.assertNotEqual( string1, string2 )
 
@@ -211,20 +211,22 @@ $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
         self.assertEqual( string1, string2 )
 
         for txt1 in ('',
-                     'α',
-                     'ά',
-                     'ᾄ',
-                     "ᾄ ἕ",
-                     "δὲ ὅτι μὲν καθ' ἕνα πάντων ἀμείνων καὶ ἰσχυρό",
-                     "ὅτι. μὲν",
-                     "ϋ" # 03CB=(03C5+0308),
-                     "ῧ" # (1FE7) 03CB+0342
-                     "ῧͅ" # (1FE7) 03CB+0342; 0345
-                     "μῧͅμ" # μ + (1FE7) 03CB+0342; 0345 + μ
-                     "ᾎ̈",
-                     "Ἰ",       # 1F38
-                     "βϐσς",
+                     'きゃヒー日本',
+                     "ほお",
+                     "市長選、またも「基地」の重し　名護「本土はひとごと」",
+                     "「日本」という漢字による国号の表記は、",
+                     "(1) 第一説は、天武天皇の治世（672年 - 686年）に成立したとする説である。",
+                     "首と頭が長く、長い四肢をもつ。角はない。各脚とも第3指を残し他の指は退化している。",
+                     "よく発達した蹄（ひづめ）をもち、硬い土の上を走ることができる。長い尾と、",
+                     "頭から首の上部にかけての鬣（たてがみ）を除くと、全身の毛は短いが、",
+                     "ある程度の寒冷地での生活にも耐えられる。",
+                     "優れた嗅覚をもつが、毒草や血のにおいなどを嗅ぎ分けることはできない。",
+                     "顔の両側に目が位置するため視野が広いが、反面、両眼視できる範囲は狭いため、",
+                     "距離感をつかむことは苦手とする。走るときに背中が湾曲しないため、",
+                     "乗用に用いることができる。",
+                     " 一般に、立ったまま寝る事でも知られるが、本当に安全な場所であれば、横になって休むこともある。",
                      ):
+
             string1 = DSTRING_JPN(txt1)
             txt2 = string1.get_sourcestr_representation()
             string2 = DSTRING_JPN(txt2)
@@ -236,62 +238,13 @@ $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
             self.assertEqual( string1, string2 )
 
     #///////////////////////////////////////////////////////////////////////////
-    def test_get_sourcestr_repr2(self):
-        """
-                TESTSDStringJPN.test_get_sourcestr_repr2
-        """
-
-        for src in (
-                        open( os.path.join("tests",
-                                "languages",
-                                "jpn",
-                                "text001_Lucian_Dialogues_of_the_Gods.txt"), 'r'),
-
-                        open( os.path.join("tests",
-                                "languages",
-                                "jpn",
-                                "text002_Iliad_I_v1_205.txt"), 'r'),
-
-                        open( os.path.join("tests",
-                                "languages",
-                                "jpn",
-                                "text003_Euripides_Bacchae_1_104.txt"), 'r')
-                ):
-
-            txt1 = src.read()
-            string1 = DSTRING_JPN(txt1)
-            txt2 = string1.get_sourcestr_representation()
-            string2 = DSTRING_JPN(txt2)
-            self.assertEqual( string1, string2 )
-
-    #///////////////////////////////////////////////////////////////////////////
-    def test_get_sourcestr_repr3(self):
-        """
-                TESTSDStringJPN.test_get_sourcestr_repr3
-
-                Testing the 'ignore_makron' parameter.
-        """
-
-        #.......................................................................
-        string1 = DSTRING_JPN("ί̄")
-        string2 = DSTRING_JPN("ί")
-        self.assertEqual( string1.get_sourcestr_representation(ignore_makron = True),
-                          string2.get_sourcestr_representation(ignore_makron = False) )
-
-        #.......................................................................
-        string1 = DSTRING_JPN("ί̄")
-        string2 = DSTRING_JPN("ί̄")
-        self.assertNotEqual( string1.get_sourcestr_representation(ignore_makron = True),
-                             string2.get_sourcestr_representation(ignore_makron = False) )
-
-    #///////////////////////////////////////////////////////////////////////////
     def test_normalstring(self):
         """
                 TESTSDStringJPN.test_normalstring
         """
 
         #.......................................................................
-        string = DSTRING_JPN("*ά̄*βάϐά̄Β**")
+        string = DSTRING_JPN("*き*ー日本は、**")
         self.assertEqual( len(string), 10 )
 
         for index in range(0, 10):
@@ -300,16 +253,13 @@ $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
             else:
                 self.assertEqual( string[index].unknown_char, False )
 
-        self.assertEqual( string[1].base_char, "α" )
-        self.assertEqual( string[1].capital_letter, False )
-        self.assertEqual( string[1].tonos, 'ὀξεῖα' )
-        self.assertEqual( string[1].mekos, 'μακρόν' )
-        self.assertEqual( string[1].pneuma, None )
+        self.assertEqual( string[1].base_char, "き" )
+        self.assertEqual( string[1].chartype, "hiragana" )
 
-        self.assertEqual( str(string), "*ά̄*βάϐά̄Β**" )
+        self.assertEqual( str(string), "*き*ー日本は、**" )
 
         #.......................................................................
-        string = DSTRING_JPN__UNKNOWNCHAR("*ά̄*βάϐά̄Β**")
+        string = DSTRING_JPN__UNKNOWNCHAR("*き*ー日本は、**")
         self.assertEqual( len(string), 10 )
 
         for index in range(0, 10):
@@ -318,13 +268,10 @@ $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
             else:
                 self.assertEqual( string[index].unknown_char, False )
 
-        self.assertEqual( string[1].base_char, "α" )
-        self.assertEqual( string[1].capital_letter, False )
-        self.assertEqual( string[1].tonos, 'ὀξεῖα' )
-        self.assertEqual( string[1].mekos, 'μακρόν' )
-        self.assertEqual( string[1].pneuma, None )
+        self.assertEqual( string[1].base_char, "き" )
+        self.assertEqual( string[1].chartype, "hiragana" )
 
-        self.assertEqual( str(string), "{0}ά̄{0}βάϐά̄Β{0}{0}".format(UNKNOWN_CHAR_SYMBOL) )
+        self.assertEqual( str(string), "{0}き{0}ー日本は、{0}{0}".format(UNKNOWN_CHAR_SYMBOL) )
 
         #.......................................................................
         string = DSTRING_JPN("*")
@@ -341,122 +288,97 @@ $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
                 TESTSDStringJPN.test_problematicstring
         """
 
-        # α with two "tonos" :
+        # き with two "dakuten" :
         with self.assertRaises( DCharsError ):
-            DSTRING_JPN("ά̀")
+            DSTRING_JPN("ぎ゙")
 
-        # α with two "pneuma" :
+        # は with two "handakuten" :
         with self.assertRaises( DCharsError ):
-            DSTRING_JPN("ἀ̔")
+            DSTRING_JPN("ぱ゚")
 
-        # α with one makron and one brakhu :
+        # は with a "dakuten" and a "handakuten" :
         with self.assertRaises( DCharsError ):
-            DSTRING_JPN("ᾱ̆")
-
-        # α with two dialytika :
-        with self.assertRaises( DCharsError ):
-            DSTRING_JPN("α̈̈")
-
-        # α (lower case) with two hypogegrammene :
-        with self.assertRaises( DCharsError ):
-            DSTRING_JPN("ᾳͅ")
-
-        # α (upper case) with two hypogegrammene :
-        with self.assertRaises( DCharsError ):
-            DSTRING_JPN("ᾼͅ")
-
-        # ρ (upper case) with one pneuma :
-        DSTRING_JPN("Ῥ")
-
-        # ρ (upper case) with two pneuma :
-        with self.assertRaises( DCharsError ):
-            DSTRING_JPN("Ῥ̔")
-
-        # normal α (lower case) with tonos, pneuma, makron, dialutika :
-        DSTRING_JPN("ᾆ̈")
-
-        # normal α (upper case) with tonos, pneuma, makron, dialutika :
-        DSTRING_JPN("ᾎ̈")
+            DSTRING_JPN("ば゚")
 
     #///////////////////////////////////////////////////////////////////////////
-    def test_sortingvalue(self):
+    def test_punctuation(self):
         """
-                TESTSDStringJPN.test_sortingvalue
+                TESTSDStringJPN.test_punctuation
         """
 
-        #.......................................................................
-        # comparisons between two characters :
-        #.......................................................................
-        self.assertTrue( DSTRING_JPN("α")[0] == DSTRING_JPN("α")[0] )
+        string = DSTRING_JPN("、")
+        self.assertEqual( string[0].base_char, "、" )
+        self.assertEqual( string[0].smallsize, False )
+        self.assertEqual( string[0].unknown_char, False )
+        self.assertEqual( string[0].chartype, "other" )
+        self.assertEqual( string[0].diacritic, None )
+        self.assertEqual( string[0].punctuation, True )
 
-        self.assertTrue( DSTRING_JPN("α")[0] < DSTRING_JPN("β")[0] )
-        self.assertFalse( DSTRING_JPN("α")[0] > DSTRING_JPN("β")[0] )
+    ## #///////////////////////////////////////////////////////////////////////////
+    ## def test_sortingvalue(self):
+    ##     """
+    ##             TESTSDStringJPN.test_sortingvalue
+    ##     """
 
-        self.assertFalse( DSTRING_JPN("α")[0] < DSTRING_JPN("Α")[0] )
-        self.assertFalse( DSTRING_JPN("α")[0] > DSTRING_JPN("Β")[0] )
+    ##     #.......................................................................
+    ##     # comparisons between two characters :
+    ##     #.......................................................................
+    ##     self.assertTrue( DSTRING_JPN("α")[0] == DSTRING_JPN("α")[0] )
 
-        #.......................................................................
-        # comparisons between two strings :
-        #.......................................................................
-        self.assertTrue( DSTRING_JPN("αβγ") == DSTRING_JPN("αβγ") )
+    ##     self.assertTrue( DSTRING_JPN("α")[0] < DSTRING_JPN("β")[0] )
+    ##     self.assertFalse( DSTRING_JPN("α")[0] > DSTRING_JPN("β")[0] )
 
-        self.assertTrue( DSTRING_JPN("αβγ") < DSTRING_JPN("αβδ") )
-        self.assertFalse( DSTRING_JPN("αβγ") > DSTRING_JPN("αβδ") )
+    ##     self.assertFalse( DSTRING_JPN("α")[0] < DSTRING_JPN("Α")[0] )
+    ##     self.assertFalse( DSTRING_JPN("α")[0] > DSTRING_JPN("Β")[0] )
 
-        self.assertTrue( DSTRING_JPN("α") < DSTRING_JPN("β") )
-        self.assertFalse( DSTRING_JPN("α") > DSTRING_JPN("β") )
+    ##     #.......................................................................
+    ##     # comparisons between two strings :
+    ##     #.......................................................................
+    ##     self.assertTrue( DSTRING_JPN("αβγ") == DSTRING_JPN("αβγ") )
 
-        self.assertTrue( DSTRING_JPN("μαμ") < DSTRING_JPN("μάμ") )
-        self.assertFalse( DSTRING_JPN("μαμ") > DSTRING_JPN("μάμ") )
+    ##     self.assertTrue( DSTRING_JPN("αβγ") < DSTRING_JPN("αβδ") )
+    ##     self.assertFalse( DSTRING_JPN("αβγ") > DSTRING_JPN("αβδ") )
 
-        self.assertTrue( DSTRING_JPN("μάμ") < DSTRING_JPN("μᾶμ") )
-        self.assertFalse( DSTRING_JPN("μάμ") > DSTRING_JPN("μᾶμ") )
+    ##     self.assertTrue( DSTRING_JPN("α") < DSTRING_JPN("β") )
+    ##     self.assertFalse( DSTRING_JPN("α") > DSTRING_JPN("β") )
 
-        self.assertFalse( DSTRING_JPN("Πλάτων") < DSTRING_JPN("πλάτων") )
-        self.assertFalse( DSTRING_JPN("Πλάτων") > DSTRING_JPN("πλάτων") )
+    ##     self.assertTrue( DSTRING_JPN("μαμ") < DSTRING_JPN("μάμ") )
+    ##     self.assertFalse( DSTRING_JPN("μαμ") > DSTRING_JPN("μάμ") )
 
-        self.assertTrue( DSTRING_JPN("ἂν") < DSTRING_JPN("ἀνακλαίομαι") < DSTRING_JPN("ἀνήρ") )
+    ##     self.assertTrue( DSTRING_JPN("μάμ") < DSTRING_JPN("μᾶμ") )
+    ##     self.assertFalse( DSTRING_JPN("μάμ") > DSTRING_JPN("μᾶμ") )
 
-        # with unknown characters :
-        self.assertTrue( DSTRING_JPN("ᾶμ") < DSTRING_JPN("ᾶ²") )
-        self.assertTrue( DSTRING_JPN("ᾶμω") < DSTRING_JPN("ᾶ²ω") )
-        self.assertFalse( DSTRING_JPN("ᾶμω") > DSTRING_JPN("ᾶ²ω") )
+    ##     self.assertFalse( DSTRING_JPN("Πλάτων") < DSTRING_JPN("πλάτων") )
+    ##     self.assertFalse( DSTRING_JPN("Πλάτων") > DSTRING_JPN("πλάτων") )
 
-    #///////////////////////////////////////////////////////////////////////////
-    def test_sortingvalue2(self):
-        """
-                TESTSDStringJPN.test_sortingvalue2
+    ##     self.assertTrue( DSTRING_JPN("ἂν") < DSTRING_JPN("ἀνακλαίομαι") < DSTRING_JPN("ἀνήρ") )
 
-                We try to compute the "sorting value" of many words.
-        """
-        for src in (
-                        open( os.path.join("tests",
-                                "languages",
-                                "jpn",
-                                "text001_Lucian_Dialogues_of_the_Gods.txt"), 'r'),
-
-                        open( os.path.join("tests",
-                                "languages",
-                                "jpn",
-                                "text002_Iliad_I_v1_205.txt"), 'r'),
-
-                        open( os.path.join("tests",
-                                "languages",
-                                "jpn",
-                                "text003_Euripides_Bacchae_1_104.txt"), 'r')
-                ):
-
-            for line in src.readlines():
-                for word in line.split():
-                    DSTRING_JPN(word).sortingvalue()
+    ##     # with unknown characters :
+    ##     self.assertTrue( DSTRING_JPN("ᾶμ") < DSTRING_JPN("ᾶ²") )
+    ##     self.assertTrue( DSTRING_JPN("ᾶμω") < DSTRING_JPN("ᾶ²ω") )
+    ##     self.assertFalse( DSTRING_JPN("ᾶμω") > DSTRING_JPN("ᾶ²ω") )
 
     #///////////////////////////////////////////////////////////////////////////
     def test_startswith(self):
         """
                 TESTSDStringJPN.test_startswith
         """
-        string = DSTRING_JPN("ἀμείνων")
-        self.assertEqual( string.startswith( DSTRING_JPN("ἀμεί") ), True )
+        string = DSTRING_JPN("きゃヒー日本")
+        self.assertEqual( string.startswith( DSTRING_JPN("きゃ") ), True )
         self.assertEqual( string.startswith( DSTRING_JPN("") ), True )
-        self.assertEqual( string.startswith( DSTRING_JPN("ἀμείνων") ), True )
-        self.assertEqual( string.startswith( DSTRING_JPN("μείνων") ), False )
+        self.assertEqual( string.startswith( DSTRING_JPN("きゃヒー日本") ), True )
+        self.assertEqual( string.startswith( DSTRING_JPN("ゃヒー日本") ), False )
+
+    #///////////////////////////////////////////////////////////////////////////
+    def test_unknown_character(self):
+        """
+                TESTSDStringJPN.test_unknown_character
+        """
+
+        string = DSTRING_JPN("*")
+        self.assertEqual( string[0].base_char, "*" )
+        self.assertEqual( string[0].smallsize, False )
+        self.assertEqual( string[0].unknown_char, True )
+        self.assertEqual( string[0].chartype, None )
+        self.assertEqual( string[0].diacritic, None )
+        self.assertEqual( string[0].punctuation, False )

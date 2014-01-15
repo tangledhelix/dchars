@@ -41,7 +41,9 @@ from dchars.languages.jpn.symbols import SYMB_CHOONPU, \
                                          SYMB_KATAKANA, \
                                          SYMB_SMALL_KATAKANA, \
                                          SYMB_KANJI, \
-                                         KATAKANA_TO_HIRAGANA
+                                         KATAKANA_TO_HIRAGANA, \
+                                         SMALL_HIRAGANA_TO_HIRAGANA, \
+                                         SMALL_KATAKANA_TO_KATAKANA
 from dchars.languages.jpn.symbols import SYMB_DIACRITICS__DAKUTEN, \
                                          SYMB_DIACRITICS__HANDAKUTEN
 
@@ -232,7 +234,7 @@ class DStringJPN(DStringMotherClass):
         normalized_src = SYMB_SMALL_HIRAGANA.replace_by_the_default_symbols(normalized_src)
         normalized_src = SYMB_KATAKANA.replace_by_the_default_symbols(normalized_src)
         normalized_src = SYMB_SMALL_KATAKANA.replace_by_the_default_symbols(normalized_src)
-        
+
         #.......................................................................
         # (3) initialisation from the recognized characters.
         #     re.finditer(DStringJPN.pattern) give the symbols{letter+diacritics}
@@ -300,7 +302,8 @@ class DStringJPN(DStringMotherClass):
 
             elif letter in SYMB_SMALL_HIRAGANA.symbol2name:
                 # small hiragana :
-                base_char = SYMB_SMALL_HIRAGANA.get_the_name_for_this_symbol(letter)
+                base_char = SYMB_HIRAGANA.get_the_name_for_this_symbol(\
+                                                SMALL_HIRAGANA_TO_HIRAGANA[letter])
                 smallsize = True
                 chartype = "hiragana"
 
@@ -312,7 +315,8 @@ class DStringJPN(DStringMotherClass):
 
             elif letter in SYMB_SMALL_KATAKANA.symbol2name:
                 # small katakana :
-                base_char = SYMB_SMALL_KATAKANA.get_the_name_for_this_symbol(letter)
+                base_char = SYMB_KATAKANA.get_the_name_for_this_symbol(\
+                                            KATAKANA_TO_HIRAGANA[SMALL_KATAKANA_TO_KATAKANA[letter]])
                 smallsize = True
                 chartype = "katakana"
 
@@ -321,6 +325,12 @@ class DStringJPN(DStringMotherClass):
                 base_char = SYMB_KANJI.get_the_name_for_this_symbol(letter)
                 smallsize = False
                 chartype = "kanji"
+
+            else:
+                # other :
+                base_char = letter
+                smallsize = False
+                chartype = "other"
 
             #. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
             # (3.2) diacritics
@@ -361,6 +371,18 @@ class DStringJPN(DStringMotherClass):
                 if SYMB_DIACRITICS.are_these_symbols_in_a_string('handakuten', diacritics):
                     diacritic = "handakuten"
 
+
+                #. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+                # dakuten + handakuten ? error
+                if dakuten_nbr >= 1 and handakuten_nbr >= 1:
+                    err_msg = "In '{0}' (start={1}, end={2}), dakuten and handakuten " \
+                              "defined simultaneously"
+                    raise DCharsError( context = "DStringJPN.init_from_str",
+                                       message = err_msg.format(element.string,
+                                                                element.start(),
+                                                                element.end()))
+                    
+
             #. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
             # (3.3) we add the new character
             #. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
@@ -369,7 +391,8 @@ class DStringJPN(DStringMotherClass):
                                           base_char = base_char,
                                           diacritic = diacritic,
                                           punctuation = punctuation,
-                                          chartype=chartype)
+                                          chartype=chartype,
+                                          smallsize = smallsize)
 
             self.append( new_character )
 
