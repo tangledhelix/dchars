@@ -69,6 +69,7 @@ MODULES = {
 
          "dchars.languages.ang.transliterations.basic" : ( ("__init__.py", False),
                                                      ("basic.py", False),
+                                                     ("ucombinations.py", False),
                                   ),
 
          "dchars.languages.bod" : ( ("__init__.py", False),
@@ -142,6 +143,20 @@ MODULES = {
 
          "dchars.languages.hbo.transliterations.basic" : ( ("__init__.py", False),
                                                      ("basic.py", False),
+                                                     ("ucombinations.py", False),
+                                  ),
+
+         "dchars.languages.jpn" : ( ("__init__.py", False),
+                                    ("dcharacter.py", False),
+                                    ("dstring.py", False),
+                                    ("symbols.py", False),
+                                  ),
+
+         "dchars.languages.jpn.transliterations" : ( ("__init__.py", False),
+                                  ),
+
+         "dchars.languages.jpn.transliterations.rhepburn" : ( ("__init__.py", False),
+                                                     ("rhepburn.py", False),
                                                      ("ucombinations.py", False),
                                   ),
 
@@ -242,6 +257,14 @@ MODULES = {
          "tests.languages.hbo.transliterations": ( ("__init__.py", False),
                                                    ("basic_tests.py", False),
                                                  ),
+
+         "tests.languages.jpn": ( ("__init__.py", False),
+                                  ("jpn_tests.py", False),
+                                ),
+
+#         "tests.languages.jpn.transliterations": ( ("__init__.py", False),
+#                                                   ("rhepbrun_tests.py", False),
+#                                                 ),
 
          "tests.languages.lat": ( ("__init__.py", False),
                                   ("lat_tests.py", False),
