@@ -164,6 +164,12 @@ LANGUAGES = {
 
                   DATA["jpn"].get_optionname("anonymize the unknown characters"): \
                   CONFIG_INI["jpn"]["anonymize the unknown characters"],
+
+                  DATA["jpn"].get_optionname("long vowels written with circumflex"): \
+                  CONFIG_INI["jpn.rhepburn"]["long vowels written with circumflex"],
+
+                  DATA["jpn"].get_optionname("katakanas written with upper case letters"): \
+                  CONFIG_INI["jpn.rhepburn"]["katakanas written with upper case letters"],
                  }
                 ),
 

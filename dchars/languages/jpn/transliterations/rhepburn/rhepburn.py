@@ -562,4 +562,13 @@ def dstring__trans__get_trans(dstring_object):
 
     res = res.replace("n[no vowel]", "n")
 
+    if dstring_object.options["long vowels written with circumflex"] == 'yes':
+        res = res.replace("ā", "â")
+        res = res.replace("ē", "ê")
+        res = res.replace("ō", "ô")
+        res = res.replace("ū", "û")
+
+    if dstring_object.options["katakanas written with upper case letters"] == 'no':
+        res = res.lower()
+
     return res

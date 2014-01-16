@@ -350,6 +350,18 @@ JPN_DATA.append( ConfigValue( subsection = '',
                               defaultvalue = 'default',
                               optionname = "sorting method" ))
 
+JPN_DATA.append( ConfigValue( subsection = 'jpn.rhepburn',
+                              values = ("yes", "no"),
+                              name = 'long vowels written with circumflex',
+                              defaultvalue = 'no',
+                              optionname = "long vowels written with circumflex" ))
+
+JPN_DATA.append( ConfigValue( subsection = 'jpn.rhepburn',
+                              values = ("yes", "no"),
+                              name = 'katakanas written with upper case letters',
+                              defaultvalue = 'no',
+                              optionname = "katakanas written with upper case letters" ))
+
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # latīna (Latin)
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
