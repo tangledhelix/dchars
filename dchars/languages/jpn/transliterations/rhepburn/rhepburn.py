@@ -291,8 +291,12 @@ PUNCTUATION = {'-'       : '-',
                "᾽"       : '<1FBD>',
               }
 
-HIRAGANA_INVERSED = invertdict(HIRAGANA, accept_duplicated_values=True)
+HIRAGANA_INVERSED = invertdict(HIRAGANA)
+HIRAGANA_DAKUTEN_INVERSED = invertdict(HIRAGANA_DAKUTEN)
+HIRAGANA_HANDAKUTEN_INVERSED = invertdict(HIRAGANA_HANDAKUTEN)
 KATAKANA_INVERSED = invertdict(KATAKANA)
+KATAKANA_DAKUTEN_INVERSED = invertdict(KATAKANA_DAKUTEN)
+KATAKANA_HANDAKUTEN_INVERSED = invertdict(KATAKANA_HANDAKUTEN)
 OTHER_SYMBOLS_INVERSED = invertdict(OTHER_SYMBOLS)
 PUNCTUATION_INVERSED = invertdict(PUNCTUATION)
 
@@ -365,7 +369,11 @@ COMPOSED_TRANSCRIPTIONS = {
 
 LETTERS = isort_a_lstrings_bylen_nodup(
                 regexstring_list(tuple(HIRAGANA_INVERSED.keys())) + \
+                regexstring_list(tuple(HIRAGANA_DAKUTEN_INVERSED.keys())) + \
+                regexstring_list(tuple(HIRAGANA_HANDAKUTEN_INVERSED.keys())) + \
                 regexstring_list(tuple(KATAKANA_INVERSED.keys())) + \
+                regexstring_list(tuple(KATAKANA_DAKUTEN_INVERSED.keys())) + \
+                regexstring_list(tuple(KATAKANA_HANDAKUTEN_INVERSED.keys())) + \
                 regexstring_list(tuple(OTHER_SYMBOLS_INVERSED.keys())) + \
                 regexstring_list(tuple(PUNCTUATION_INVERSED.keys())) )
 
@@ -455,6 +463,13 @@ def dchar__init_from_translit_str(dchar, src):
     else:
         dchar.unknown_char = False
 
+        base_char = element.group('base_char')
+        if base_char in HIRAGANA_INVERSED:
+            dchar.chartype = "hiragana"
+            dchar.base_char = HIRAGANA_INVERSED[base_char]
+            dchar.capital_letter = False
+            dchar.punctuation = False
+
         ## trans_pneuma = element.group('trans_pneuma')
         ## if trans_pneuma is None:
         ##     dchar.pneuma = None
@@ -509,6 +524,11 @@ def dstring__init_from_translit_str(dstring, dcharactertype, src):
     """
     for start, dest in TRANS_EQUIVALENCES:
         src = src.replace( start, dest )
+
+    for after, before in COMPOSED_TRANSCRIPTIONS.items():
+        src = src.replace( before, after )
+
+    print(">>>", src)
 
     last_real_index = -1
     for element in re.finditer(PATTERN2, src):

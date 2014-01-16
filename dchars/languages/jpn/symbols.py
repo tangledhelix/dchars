@@ -26,6 +26,7 @@
 # pylint: disable=E0611
 # many errors like "No name 'extensions' in module 'dchars'"
 from dchars.utilities.name2symbols import Name2Symbols
+from dchars.utilities.dicttools import invertdict
 
 #...............................................................................
 # symbols used by Japanese :
@@ -130,7 +131,7 @@ HIRAGANA_TO_SMALL_HIRAGANA = {
       'よ'      : 'ょ',
       'わ'      : 'ゎ',
     }
-SMALL_HIRAGANA_TO_HIRAGANA = { v:k for k,v in HIRAGANA_TO_SMALL_HIRAGANA.items() }
+SMALL_HIRAGANA_TO_HIRAGANA = invertdict( HIRAGANA_TO_SMALL_HIRAGANA )
 
 HIRAGANA_DAKUTEN_TO_HIRAGANA = {
       'が'        : "か",
@@ -154,7 +155,7 @@ HIRAGANA_DAKUTEN_TO_HIRAGANA = {
       'べ'        : 'へ',
       'ぼ'        : 'ほ',
     }
-HIRAGANA_TO_HIRAGANA_DAKUTEN = { v:k for (k,v) in HIRAGANA_DAKUTEN_TO_HIRAGANA.items() }
+HIRAGANA_TO_HIRAGANA_DAKUTEN = invertdict( HIRAGANA_DAKUTEN_TO_HIRAGANA )
 
 HIRAGANA_HANDAKUTEN_TO_HIRAGANA = {
       'ぱ'        : "は",
@@ -163,7 +164,7 @@ HIRAGANA_HANDAKUTEN_TO_HIRAGANA = {
       'ぺ'        : 'へ',
       'ぽ'        : 'ほ',
     }
-HIRAGANA_TO_HIRAGANA_HANDAKUTEN = { v:k for (k,v) in HIRAGANA_HANDAKUTEN_TO_HIRAGANA.items() }
+HIRAGANA_TO_HIRAGANA_HANDAKUTEN = invertdict( HIRAGANA_HANDAKUTEN_TO_HIRAGANA )
 
 SYMB_KATAKANA = Name2Symbols(
     {
@@ -253,7 +254,7 @@ KATAKANA_TO_SMALL_KATAKANA = {
       'ヨ'      : 'ョ',
       'ワ'      : 'ヮ',
     }
-SMALL_KATAKANA_TO_KATAKANA = { v:k for (k,v) in KATAKANA_TO_SMALL_KATAKANA.items() }
+SMALL_KATAKANA_TO_KATAKANA = invertdict( KATAKANA_TO_SMALL_KATAKANA )
 
 KATAKANA_DAKUTEN_TO_KATAKANA = {
       'ガ'        : "カ",
@@ -277,7 +278,7 @@ KATAKANA_DAKUTEN_TO_KATAKANA = {
       'ベ'        : 'ヘ',
       'ボ'        : 'ホ',
     }
-KATAKANA_TO_KATAKANA_DAKUTEN = { v:k for (k,v) in KATAKANA_DAKUTEN_TO_KATAKANA.items() }
+KATAKANA_TO_KATAKANA_DAKUTEN = invertdict( KATAKANA_DAKUTEN_TO_KATAKANA )
 
 KATAKANA_HANDAKUTEN_TO_KATAKANA = {
       'パ'        : "ハ",
@@ -286,12 +287,12 @@ KATAKANA_HANDAKUTEN_TO_KATAKANA = {
       'ペ'        : 'ヘ',
       'ポ'        : 'ホ',
     }
-KATAKANA_TO_KATAKANA_HANDAKUTEN = { v:k for (k,v) in KATAKANA_HANDAKUTEN_TO_KATAKANA.items() }
+KATAKANA_TO_KATAKANA_HANDAKUTEN = invertdict( KATAKANA_HANDAKUTEN_TO_KATAKANA )
 
 HIRAGANA_TO_KATAKANA = {
       'あ'        : 'ア',
       'い'        : 'イ',
-      'う'        : 'エ',
+      'う'        : 'ウ',
       'え'        : 'エ',
       'お'        : 'オ',
       'か'        : 'カ',
@@ -338,7 +339,7 @@ HIRAGANA_TO_KATAKANA = {
       'を'        : 'ヲ',
       'ん'        : 'ン',
     }
-KATAKANA_TO_HIRAGANA = { v:k for k,v in HIRAGANA_TO_KATAKANA.items() }
+KATAKANA_TO_HIRAGANA = invertdict( HIRAGANA_TO_KATAKANA )
 
 #
 # 常用漢字 (jōyō kanji)
