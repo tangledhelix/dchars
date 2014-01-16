@@ -333,9 +333,9 @@ HBO_DATA.append( ConfigValue( subsection = '',
 
 JPN_DATA = ConfigValuesForOneLanguage(header = '日本語 (Japanese)')
 JPN_DATA.append( ConfigValue( subsection = '',
-                              values = ("basic",),
+                              values = ("rhepburn",),
                               name = 'transliteration method',
-                              defaultvalue = 'basic',
+                              defaultvalue = 'rhepburn',
                               optionname = "transliteration method" ))
 
 JPN_DATA.append( ConfigValue( subsection = '',

@@ -116,7 +116,7 @@ LANGUAGES_AND_TRANSLITERATIONS = {
                                                                     "perseus",
                                                                     ),
 
-                                        "日本語"                : ( "basic", ),
+                                        "日本語"                : ( "rhepburn", ),
 
                                         "संस्कृतम्"                 : ( "iso15919",
                                                                     "itrans",

@@ -132,6 +132,39 @@ HIRAGANA_TO_SMALL_HIRAGANA = {
     }
 SMALL_HIRAGANA_TO_HIRAGANA = { v:k for k,v in HIRAGANA_TO_SMALL_HIRAGANA.items() }
 
+HIRAGANA_DAKUTEN_TO_HIRAGANA = {
+      'が'        : "か",
+      'ぎ'        : 'き',
+      'ぐ'        : 'く',
+      'げ'        : 'け',
+      'ご'        : 'こ',
+      'ざ'        : 'さ',
+      'じ'        : 'し',
+      'ず'        : 'す',
+      'ぜ'        : 'せ',
+      'ぞ'        : 'そ',
+      'だ'        : 'た',
+      'ぢ'        : 'ち',
+      'づ'        : 'つ',
+      'で'        : 'て',
+      'ど'        : 'と',
+      'ば'        : 'は',
+      'び'        : 'ひ',
+      'ぶ'        : 'ふ',
+      'べ'        : 'へ',
+      'ぼ'        : 'ほ',
+    }
+HIRAGANA_TO_HIRAGANA_DAKUTEN = { v:k for (k,v) in HIRAGANA_DAKUTEN_TO_HIRAGANA.items() }
+
+HIRAGANA_HANDAKUTEN_TO_HIRAGANA = {
+      'ぱ'        : "は",
+      'ぴ'        : 'ひ',
+      'ぷ'        : 'ふ',
+      'ぺ'        : 'へ',
+      'ぽ'        : 'ほ',
+    }
+HIRAGANA_TO_HIRAGANA_HANDAKUTEN = { v:k for (k,v) in HIRAGANA_HANDAKUTEN_TO_HIRAGANA.items() }
+
 SYMB_KATAKANA = Name2Symbols(
     {
       'ア'        : ('ア',),
@@ -221,6 +254,39 @@ KATAKANA_TO_SMALL_KATAKANA = {
       'ワ'      : 'ヮ',
     }
 SMALL_KATAKANA_TO_KATAKANA = { v:k for (k,v) in KATAKANA_TO_SMALL_KATAKANA.items() }
+
+KATAKANA_DAKUTEN_TO_KATAKANA = {
+      'ガ'        : "カ",
+      'ギ'        : 'キ',
+      'グ'        : 'ク',
+      'ゲ'        : 'ケ',
+      'ゴ'        : 'コ',
+      'ザ'        : 'サ',
+      'ジ'        : 'シ',
+      'ズ'        : 'ス',
+      'ゼ'        : 'セ',
+      'ゾ'        : 'ソ',
+      'ダ'        : 'タ',
+      'ヂ'        : 'チ',
+      'ヅ'        : 'ツ',
+      'デ'        : 'テ',
+      'ド'        : 'ト',
+      'バ'        : 'ハ',
+      'ビ'        : 'ヒ',
+      'ブ'        : 'フ',
+      'ベ'        : 'ヘ',
+      'ボ'        : 'ホ',
+    }
+KATAKANA_TO_KATAKANA_DAKUTEN = { v:k for (k,v) in KATAKANA_DAKUTEN_TO_KATAKANA.items() }
+
+KATAKANA_HANDAKUTEN_TO_KATAKANA = {
+      'パ'        : "ハ",
+      'ピ'        : 'ヒ',
+      'プ'        : 'フ',
+      'ペ'        : 'ヘ',
+      'ポ'        : 'ホ',
+    }
+KATAKANA_TO_KATAKANA_HANDAKUTEN = { v:k for (k,v) in KATAKANA_HANDAKUTEN_TO_KATAKANA.items() }
 
 HIRAGANA_TO_KATAKANA = {
       'あ'        : 'ア',
@@ -8097,5 +8163,6 @@ SYMB_DIACRITICS__DAKUTEN = SYMB_DIACRITICS['dakuten']
 SYMB_DIACRITICS__HANDAKUTEN = SYMB_DIACRITICS['handakuten']
 
 # we define these constants in order to avoir multiple calls to SYMB_DIACRITICS.get_default_symbol :
+DEFAULTSYMB__CHOONPU = SYMB_CHOONPU.get_default_symbol('ー')
 DEFAULTSYMB__DAKUTEN = SYMB_DIACRITICS.get_default_symbol('dakuten')
 DEFAULTSYMB__HANDAKUTEN = SYMB_DIACRITICS.get_default_symbol('handakuten')

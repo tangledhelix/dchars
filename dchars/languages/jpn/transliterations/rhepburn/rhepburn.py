@@ -27,6 +27,12 @@ from dchars.utilities.dicttools import invertdict
 from dchars.utilities.lstringtools import isort_a_lstrings_bylen_nodup
 from dchars.utilities.lstringtools import prepare_list_to_strformat
 from dchars.symbols.symbols import UNKNOWN_CHAR_SYMBOL
+from dchars.languages.jpn.symbols import DEFAULTSYMB__CHOONPU, \
+                                         HIRAGANA_TO_HIRAGANA_DAKUTEN, \
+                                         HIRAGANA_TO_HIRAGANA_HANDAKUTEN, \
+                                         KATAKANA_TO_KATAKANA_DAKUTEN, \
+                                         KATAKANA_TO_KATAKANA_HANDAKUTEN, \
+                                         HIRAGANA_TO_KATAKANA
 import re
 
 ################################################################################
@@ -54,7 +60,7 @@ TRANS_EQUIVALENCES = ()
 # * CAVEAT ! No duplicate value allowed in these dictionaries !
 #
 # HIRAGANA[base_char] = transliterated character
-# LOWER_CASE[base_char] = transliterated character
+
 HIRAGANA = {
       'あ'        : "a",
       'い'        : "i",
@@ -103,9 +109,53 @@ HIRAGANA = {
       'ゐ'        : "wi",
       'ゑ'        : "we",
       'を'        : "wo",
-      'ん'        : "n",
+      'ん'        : "n[no vowel]",
+
+      'ぁ'      : "[small]a",
+      'ぃ'      : "[small]i",
+      'ぅ'      : "[small]u",
+      'ぇ'      : "[small]e",
+      'ぉ'      : "[small]o",
+      'ゕ'      : "[small]ka",
+      'ゖ'      : "[small]ke",
+      'っ'      : "[small]tsu",
+      'ゃ'      : "[small]ya",
+      'ゅ'      : "[small]yu",
+      'ょ'      : "[small]yo",
+      'ゎ'      : "[small]wa",
     }
 
+HIRAGANA_DAKUTEN = {
+      'が'        : "ga",
+      'ぎ'        : 'gi',
+      'ぐ'        : 'gu',
+      'げ'        : 'ge',
+      'ご'        : 'go',
+      'ざ'        : 'za',
+      'じ'        : 'ji',
+      'ず'        : 'zu',
+      'ぜ'        : 'ze',
+      'ぞ'        : 'zo',
+      'だ'        : 'da',
+#      'ぢ'        : 'ji',
+#      'づ'        : 'zu',
+      'で'        : 'de',
+      'ど'        : 'do',
+      'ば'        : 'ba',
+      'び'        : 'bi',
+      'ぶ'        : 'bu',
+      'べ'        : 'be',
+      'ぼ'        : 'bo',
+    }
+
+HIRAGANA_HANDAKUTEN = {
+      'ぱ'        : "pa",
+      'ぴ'        : 'pi',
+      'ぷ'        : 'pu',
+      'ぺ'        : 'pe',
+      'ぽ'        : 'po',
+    }
+    
 KATAKANA = {
       'ア'        : "A",
       'イ'        : "I",
@@ -155,6 +205,50 @@ KATAKANA = {
       'ヱ'        : "WE",
       'ヲ'        : "WO",
       'ン'        : "N",
+
+      'ァ'      : "[small]A",
+      'ィ'      : "[small]I",
+      'ゥ'      : "[small]U",
+      'ェ'      : "[small]E",
+      'ォ'      : "[small]O",
+      'ヵ'      : "[small]KA",
+      'ヶ'      : "[small]KE",
+      'ッ'      : "[small]TSU",
+      'ャ'      : "[small]YA",
+      'ュ'      : "[small]YU",
+      'ョ'      : "[small]YO",
+      'ヮ'      : "[small]WA",
+    }
+
+KATAKANA_DAKUTEN = {
+      'ガ'        : "GA",
+      'ギ'        : 'GI',
+      'グ'        : 'GU',
+      'ゲ'        : 'GE',
+      'ゴ'        : 'GO',
+      'ザ'        : 'ZA',
+      'ジ'        : 'JI',
+      'ズ'        : 'ZU',
+      'ゼ'        : 'ZE',
+      'ゾ'        : 'ZO',
+      'ダ'        : 'DA',
+#      'ヂ'        : 'JI',
+#      'ヅ'        : 'ZU',
+      'デ'        : 'DE',
+      'ド'        : 'DO',
+      'バ'        : 'BA',
+      'ビ'        : 'BI',
+      'ブ'        : 'BU',
+      'ベ'        : 'BE',
+      'ボ'        : 'BO',
+    }
+
+KATAKANA_HANDAKUTEN = {
+      'パ'        : "PA",
+      'ピ'        : 'PI',
+      'プ'        : 'PU',
+      'ペ'        : 'PE',
+      'ポ'        : 'PO',
     }
 
 # OTHER_SYMBOLS[base_char] = transliterated character
@@ -201,6 +295,63 @@ HIRAGANA_INVERSED = invertdict(HIRAGANA, accept_duplicated_values=True)
 KATAKANA_INVERSED = invertdict(KATAKANA)
 OTHER_SYMBOLS_INVERSED = invertdict(OTHER_SYMBOLS)
 PUNCTUATION_INVERSED = invertdict(PUNCTUATION)
+
+COMPOSED_TRANSCRIPTIONS = {
+        "ki[small]y"    : "ky",
+        "gi[small]y"    : "gy",
+        "shi[small]y"   : "sh",
+        "ji[small]y"    : "j",
+        "chi[small]y"   : "ch",
+        "ni[small]y"    : "ny",
+        "hi[small]y"    : "hy",
+        "hi[small]y"    : "hy",
+        "hi[small]y"    : "hy",
+        "bi[small]y"    : "by",
+        "pi[small]y"    : "py",
+        "mi[small]y"    : "my",
+        "ri[small]y"    : "ry",
+
+        #"n[no vowel]b"        : "mb",
+        #"n[no vowel]m"        : "mm",
+        #"n[no vowel]p"        : "mp",
+
+        "n[no vowel]y"        : "n'y",
+
+        "n[no vowel]a"        : "n'a",
+        "n[no vowel]ā"        : "n'ā",
+        "n[no vowel]e"        : "n'e",
+        "n[no vowel]ē"        : "n'ē",
+        "n[no vowel]i"        : "n'i",
+        "n[no vowel]ī"        : "n'ī",
+        "n[no vowel]o"        : "n'o",
+        "n[no vowel]ō"        : "n'ō",
+        "n[no vowel]u"        : "n'u",
+        "n[no vowel]ū"        : "n'ū",
+
+        "aa"                  : "ā",
+        "ee"                  : "ē",
+        "oo"                  : "ō",
+        "ou"                  : "ō",
+        "uu"                  : "ū",
+
+        "Aー"                   : "Ā",
+        "Eー"                   : "Ē",
+        "Iー"                   : "Ī",
+        "Oー"                   : "Ō",
+        "Uー"                   : "Ū",
+
+        # sokuon : http://en.wikipedia.org/wiki/Sokuon
+        "[small]tsuk"         : "kk",
+        "[small]tsug"         : "gg",
+        "[small]tsus"         : "ss",
+        "[small]tsuz"         : "zz",
+        "[small]tsut"         : "tt",
+        "[small]tsud"         : "dd",
+        "[small]tsuh"         : "hh",
+        "[small]tsush"        : "shh",
+        "[small]tsuch"        : "tch",
+        "[small]tsuts"        : "tts",        
+    }    
 
 ################################################################################
 # transliteration's patterns :
@@ -255,14 +406,32 @@ def dchar__get_translit_str(dstring_object, dchar):
         if dchar.punctuation:
             res.append( PUNCTUATION[dchar.base_char] )
 
-        elif dchar.base_char in OTHER_SYMBOLS:
-            res.append( OTHER_SYMBOLS[dchar.base_char] )
+        elif dchar.chartype == 'hiragana':
 
-        else:
-            if dchar.chartype == 'hiragana':
+            if dchar.diacritic is None:
+                if dchar.smallsize:
+                    res.append( "[small]" )
+
                 res.append( HIRAGANA[dchar.base_char] )
-            elif dchar.chartype == 'katakana':
-                res.append( KATAKANA[dchar.base_char] )
+            elif dchar.diacritic == 'dakuten':
+                res.append( HIRAGANA_DAKUTEN[ HIRAGANA_TO_HIRAGANA_DAKUTEN[ dchar.base_char ] ] )
+            elif dchar.diacritic == 'handakuten':
+                res.append( HIRAGANA_HANDAKUTEN[ HIRAGANA_TO_HIRAGANA_HANDAKUTEN[ dchar.base_char ]])
+
+        elif dchar.chartype == 'katakana':
+
+            if dchar.diacritic is None:
+                res.append( KATAKANA[ HIRAGANA_TO_KATAKANA[dchar.base_char]] )
+            elif dchar.diacritic == 'dakuten':
+                res.append( KATAKANA_DAKUTEN[ \
+                    KATAKANA_TO_KATAKANA_DAKUTEN[ HIRAGANA_TO_KATAKANA[dchar.base_char]]] )
+            elif dchar.diacritic == 'handakuten':
+                res.append( KATAKANA_DAKUTEN[ \
+                    KATAKANA_TO_KATAKANA_HANDAKUTEN[ HIRAGANA_TO_KATAKANA[dchar.base_char]]] )
+
+        elif dchar.chartype == 'choonpu':
+
+            res.append( DEFAULTSYMB__CHOONPU )
 
     return "".join( res )
 
@@ -286,48 +455,44 @@ def dchar__init_from_translit_str(dchar, src):
     else:
         dchar.unknown_char = False
 
-        trans_pneuma = element.group('trans_pneuma')
-        if trans_pneuma is None:
-            dchar.pneuma = None
-        else:
-            dchar.pneuma = DIACRITICS_INVERSED[trans_pneuma]
+        ## trans_pneuma = element.group('trans_pneuma')
+        ## if trans_pneuma is None:
+        ##     dchar.pneuma = None
+        ## else:
+        ##     dchar.pneuma = DIACRITICS_INVERSED[trans_pneuma]
 
-        trans_tonos = element.group('trans_tonos')
-        if trans_tonos is None:
-            dchar.tonos = None
-        else:
-            dchar.tonos = DIACRITICS_INVERSED[trans_tonos]
+        ## trans_tonos = element.group('trans_tonos')
+        ## if trans_tonos is None:
+        ##     dchar.tonos = None
+        ## else:
+        ##     dchar.tonos = DIACRITICS_INVERSED[trans_tonos]
 
-        base_char = element.group('base_char')
-        if base_char in HIRAGANA_INVERSED:
-            dchar.base_char = HIRAGANA_INVERSED[base_char]
-            dchar.capital_letter = False
-            dchar.punctuation = False
+        ## base_char = element.group('base_char')
+        ## if base_char in HIRAGANA_INVERSED:
+        ##     dchar.base_char = HIRAGANA_INVERSED[base_char]
+        ##     dchar.capital_letter = False
+        ##     dchar.punctuation = False
 
-        elif base_char in KATAKANA_INVERSED:
-            dchar.base_char = KATAKANA_INVERSED[base_char]
-            dchar.capital_letter = True
-            dchar.punctuation = False
+        ## elif base_char in KATAKANA_INVERSED:
+        ##     dchar.base_char = KATAKANA_INVERSED[base_char]
+        ##     dchar.capital_letter = True
+        ##     dchar.punctuation = False
 
-        elif base_char in OTHER_SYMBOLS_INVERSED:
-            dchar.base_char = OTHER_SYMBOLS_INVERSED[base_char]
-            dchar.capital_letter = False
-            dchar.punctuation = False
+        ## elif base_char in OTHER_SYMBOLS_INVERSED:
+        ##     dchar.base_char = OTHER_SYMBOLS_INVERSED[base_char]
+        ##     dchar.capital_letter = False
+        ##     dchar.punctuation = False
 
-        else:
-            dchar.base_char = PUNCTUATION_INVERSED[base_char]
-            dchar.capital_letter = False
-            dchar.punctuation = True
+        ## else:
+        ##     dchar.base_char = PUNCTUATION_INVERSED[base_char]
+        ##     dchar.capital_letter = False
+        ##     dchar.punctuation = True
 
-        dchar.hypogegrammene = element.group('trans_hypogegrammene') is not None
-
-        dchar.dialutika = element.group('trans_dialutika') is not None
-
-        trans_mekos = element.group('trans_mekos')
-        if trans_mekos is None:
-            dchar.mekos = None
-        else:
-            dchar.mekos = DIACRITICS_INVERSED[trans_mekos]
+        ## trans_mekos = element.group('trans_mekos')
+        ## if trans_mekos is None:
+        ##     dchar.mekos = None
+        ## else:
+        ##     dchar.mekos = DIACRITICS_INVERSED[trans_mekos]
 
     return dchar
 
@@ -345,7 +510,6 @@ def dstring__init_from_translit_str(dstring, dcharactertype, src):
     _src = src[:]
     for start, dest in TRANS_EQUIVALENCES:
         _src = _src.replace( start, dest )
-
 
     last_real_index = -1
     for element in re.finditer(PATTERN2, _src):
@@ -385,11 +549,17 @@ def dstring__trans__get_trans(dstring_object):
 
         Return a (unicode) string corresponding to the <dstring_object>.
     """
-
     res = []
 
     for dchar in dstring_object:
         res.append( dchar__get_translit_str(dstring_object = dstring_object,
                                             dchar = dchar))
 
-    return "".join( res )
+    res = "".join( res )
+
+    for before, after in COMPOSED_TRANSCRIPTIONS.items():
+        res = res.replace(before, after)
+
+    res = res.replace("n[no vowel]", "n")
+
+    return res
