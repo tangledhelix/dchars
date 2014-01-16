@@ -206,7 +206,7 @@ class ListOfInternalStructures(list):
                             indexes_found.append( index_self )
 
                     for index_found in indexes_found:
-                        # $$$traduire$$$<line> peut être prolongée par <obj_self> :
+                        # <line> can be prolonged by <obj_self> :
                         new_line = line + [index_found,]
 
                         # if <new_line> matched what the function have to return, we put <new_line>
@@ -217,7 +217,7 @@ class ListOfInternalStructures(list):
                             future_table.append( new_line )
 
                 #. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
-                table = future_table[:]
+                table = future_table
 
         #.......................................................................
         # let's use real_indexes :
@@ -263,7 +263,7 @@ class ListOfInternalStructures(list):
                             future_table.append( new_line )
 
                 #. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
-                table = future_table[:]
+                table = future_table
 
         #.......................................................................
         # let's take the shortest string(s) among <res>.
@@ -1767,7 +1767,7 @@ def get_intstructures_from_dstring(dstring_object):
                 future_istructs[-1].vowel1 = dchar.vowel1
                 future_istructs[-1].vowel2 = dchar.vowel2
                 if dchar.subj_consonants is not None:
-                    future_istructs[-1].subfix = dchar.subj_consonants[:]
+                    future_istructs[-1].subfix = dchar.subj_consonants
                 future_istructs[-1].indexes.add( index_dchar )
                 future_istructs[-1].anusvara_candrabindu = dchar.anusvara_candrabindu
                 future_istructs[-1].rnam_bcad = dchar.rnam_bcad
@@ -2359,7 +2359,7 @@ def get_intstruct_from_str(_src,
                             vowel2 = _base_char__vowel2))
 
                         if subj_consonants is not None:
-                            future_istructs[-1].subfix = subj_consonants__name[:]
+                            future_istructs[-1].subfix = subj_consonants__name
 
                         future_istructs[-1].indexes.update( indexes )
                         future_istructs[-1].real_indexes.add( real_index_char  )

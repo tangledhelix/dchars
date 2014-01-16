@@ -286,16 +286,15 @@ class DStringBOD(DStringMotherClass):
         return res
 
     #///////////////////////////////////////////////////////////////////////////
-    def init_from_str(self, _str_src):
+    def init_from_str(self, str_src):
         """
                 DStringBOD.init_from_str
 
                 Function called by __init__(), initialize <self> and return
                 <indexes_of_unrecognized_chars>.
 
-                _str_src : str
+                str_src : str
         """
-        str_src = _str_src[:]
         for before, after in INIT_FROM_STR__SUBSTITUTIONS:
             str_src = str_src.replace(before, after)
 

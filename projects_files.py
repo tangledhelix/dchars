@@ -363,7 +363,7 @@ if __name__ == "__main__":
         for filename in filenames:
             if filename[-1] != "~" and filename[-4:] != ".pyc" and filename[-4:] != ".rst":
 
-                dirname = dirpath[:]
+                dirname = dirpath
                 dirname = dirname.replace("./", "")
                 dirname = dirname.replace("/", ".")
 

@@ -152,12 +152,10 @@ class Name2Symbols(dict):
         """
                 Name2Symbols.replace_by_the_default_symbols
         """
-        res = src[:]
-
         for substitution_src, substitution_dest in self.substitutions:
-            res = res.replace( substitution_src, substitution_dest )
+            src = src.replace( substitution_src, substitution_dest )
 
-        return res
+        return src
 
     #///////////////////////////////////////////////////////////////////////////
     def get_the_name_for_this_symbol(self, symbol):

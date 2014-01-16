@@ -514,7 +514,7 @@ def dchar__init_from_translit_str(dchar, src):
         function init_from_transliteration()
 
         dchar   :       DCharacterSAN object
-        _src     :       string
+        src     :       string
 
         Initialize and return <dchar>.
 
@@ -610,22 +610,20 @@ def dstring__init_from_translit_str(dstring,
     #...........................................................................
     # transliteration's equivalences :
     #...........................................................................
-    _src = src[:]
-
     for start, dest in COMPACT_CHARACTERS:
-        _src = _src.replace( start, dest )
+        src = src.replace( start, dest )
 
     for start, dest in UNCOMPACT_CHARACTERS:
-        _src = _src.replace( start, dest )
+        src = src.replace( start, dest )
 
     for start, dest in TRANS_EQUIVALENCES:
-        _src = _src.replace( start, dest )
+        src = src.replace( start, dest )
 
     #...........................................................................
-    # analyze of <_src> :
+    # analyze of <src> :
     #...........................................................................
     last_real_index = -1
-    for element in re.finditer( PATTERN2, _src ):
+    for element in re.finditer( PATTERN2, src ):
 
         real_indexes = range(element.start(), element.end())
 
@@ -674,7 +672,7 @@ def dstring__init_from_translit_str(dstring,
     # we add the unknown chars placed AFTER the recognized characters :
     # pylint: disable=W0612
     # Unused variable 'i'
-    for i in range( last_real_index+1, len(_src) ):
+    for i in range( last_real_index+1, len(src) ):
         new_dcharacter = dcharactertype(dstring_object=dstring)
         new_dcharacter.unknown_char = True
         new_dcharacter.base_char = src[i]
