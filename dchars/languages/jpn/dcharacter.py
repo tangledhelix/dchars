@@ -43,7 +43,7 @@ import copy
 import itertools
 
 # known transliterations :
-import dchars.languages.jpn.transliterations.rhepburn.rhepburn as rhepburntrans
+import dchars.languages.jpn.transliterations.shepburn.shepburn as shepburntrans
 
 ################################################################################
 class DCharacterJPN(DCharacterMotherClass):
@@ -53,11 +53,11 @@ class DCharacterJPN(DCharacterMotherClass):
 
     # transliteration's functions :
     trans__get_transliteration = {
-          "rhepburn" : rhepburntrans.dchar__get_translit_str,
+          "shepburn" : shepburntrans.dchar__get_translit_str,
           }
 
     trans__init_from_transliteration = {
-          "rhepburn" : rhepburntrans.dchar__init_from_translit_str,
+          "shepburn" : shepburntrans.dchar__init_from_translit_str,
           }
 
     #///////////////////////////////////////////////////////////////////////////

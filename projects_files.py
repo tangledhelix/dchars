@@ -155,8 +155,8 @@ MODULES = {
          "dchars.languages.jpn.transliterations" : ( ("__init__.py", False),
                                   ),
 
-         "dchars.languages.jpn.transliterations.rhepburn" : ( ("__init__.py", False),
-                                                     ("rhepburn.py", False),
+         "dchars.languages.jpn.transliterations.shepburn" : ( ("__init__.py", False),
+                                                     ("shepburn.py", False),
                                                      ("ucombinations.py", False),
                                   ),
 
@@ -263,7 +263,7 @@ MODULES = {
                                 ),
 
          "tests.languages.jpn.transliterations": ( ("__init__.py", False),
-                                                   ("rhepburn_tests.py", False),
+                                                   ("shepburn_tests.py", False),
                                                  ),
 
          "tests.languages.lat": ( ("__init__.py", False),

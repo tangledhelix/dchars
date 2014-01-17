@@ -52,8 +52,8 @@ from dchars.utilities.lstringtools import number_of_occurences
 from dchars.utilities.sortingvalue import SortingValue
 
 # known transliterations :
-import dchars.languages.jpn.transliterations.rhepburn.rhepburn as rhepburntrans
-import dchars.languages.jpn.transliterations.rhepburn.ucombinations as rhepburntrans_ucombinations
+import dchars.languages.jpn.transliterations.shepburn.shepburn as shepburntrans
+import dchars.languages.jpn.transliterations.shepburn.ucombinations as shepburntrans_ucombinations
 
 ################################################################################
 class DStringJPN(DStringMotherClass):
@@ -84,20 +84,20 @@ class DStringJPN(DStringMotherClass):
 
     # transliterations' methods : available direction(s) :
     trans__directions = {
-          "rhepburn"       : rhepburntrans.AVAILABLE_DIRECTIONS,
+          "shepburn"       : shepburntrans.AVAILABLE_DIRECTIONS,
         }
 
     # transliteration's functions :
     trans__init_from_transliteration = {
-          "rhepburn" : rhepburntrans.dstring__init_from_translit_str,
+          "shepburn" : shepburntrans.dstring__init_from_translit_str,
           }
 
     trans__get_transliteration = {
-          "rhepburn"       : rhepburntrans.dstring__trans__get_trans,
+          "shepburn"       : shepburntrans.dstring__trans__get_trans,
           }
 
     trans__get_transl_ucombinations = {
-          "rhepburn" : rhepburntrans_ucombinations.get_usefull_combinations,
+          "shepburn" : shepburntrans_ucombinations.get_usefull_combinations,
           }
 
     #///////////////////////////////////////////////////////////////////////////

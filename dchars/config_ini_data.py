@@ -333,9 +333,9 @@ HBO_DATA.append( ConfigValue( subsection = '',
 
 JPN_DATA = ConfigValuesForOneLanguage(header = '日本語 (Japanese)')
 JPN_DATA.append( ConfigValue( subsection = '',
-                              values = ("rhepburn",),
+                              values = ("shepburn",),
                               name = 'transliteration method',
-                              defaultvalue = 'rhepburn',
+                              defaultvalue = 'shepburn',
                               optionname = "transliteration method" ))
 
 JPN_DATA.append( ConfigValue( subsection = '',
@@ -350,13 +350,13 @@ JPN_DATA.append( ConfigValue( subsection = '',
                               defaultvalue = 'default',
                               optionname = "sorting method" ))
 
-JPN_DATA.append( ConfigValue( subsection = 'jpn.rhepburn',
+JPN_DATA.append( ConfigValue( subsection = 'jpn.shepburn',
                               values = ("yes", "no"),
                               name = 'long vowels written with circumflex',
                               defaultvalue = 'no',
                               optionname = "long vowels written with circumflex" ))
 
-JPN_DATA.append( ConfigValue( subsection = 'jpn.rhepburn',
+JPN_DATA.append( ConfigValue( subsection = 'jpn.shepburn',
                               values = ("yes", "no"),
                               name = 'katakanas written with upper case letters',
                               defaultvalue = 'no',
