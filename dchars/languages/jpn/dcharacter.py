@@ -33,7 +33,8 @@ from dchars.symbols.symbols import UNKNOWN_CHAR_SYMBOL
 from dchars.languages.jpn.symbols import DEFAULTSYMB__DAKUTEN, \
                                          DEFAULTSYMB__HANDAKUTEN, \
                                          HIRAGANA_TO_SMALL_HIRAGANA, \
-                                         HIRAGANA_TO_KATAKANA
+                                         HIRAGANA_TO_KATAKANA, \
+                                         HIRAGANA_ORDER
                                          
 import unicodedata
 import copy
@@ -326,14 +327,18 @@ class DCharacterJPN(DCharacterMotherClass):
             if self.unknown_char:
                 # unknown char :
                 res.append(1)
-                res.append( ord(base_char) )
+                res.append( ord(self.base_char) )
                 return res
 
             # known char :
             res.append(0)
 
             # base_char :
-            res.append( ord(base_char) )
+            res.append( HIRAGANA_ORDER[self.base_char] )
+
+            # small size ?
+            res.append( {True:0,
+                         False:1}[self.smallsize] )
 
         else:
             raise DCharsError( context = "DCharacterJPN.sortingvalue",

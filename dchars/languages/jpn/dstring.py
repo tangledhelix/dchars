@@ -43,7 +43,8 @@ from dchars.languages.jpn.symbols import SYMB_CHOONPU, \
                                          SYMB_KANJI, \
                                          KATAKANA_TO_HIRAGANA, \
                                          SMALL_HIRAGANA_TO_HIRAGANA, \
-                                         SMALL_KATAKANA_TO_KATAKANA
+                                         SMALL_KATAKANA_TO_KATAKANA, \
+                                         HIRAGANA_ORDER
 from dchars.languages.jpn.symbols import SYMB_DIACRITICS__DAKUTEN, \
                                          SYMB_DIACRITICS__HANDAKUTEN
 
@@ -457,10 +458,28 @@ class DStringJPN(DStringMotherClass):
             # base character :
             data = []
             for char in self:
-                data.append( ({False:0,
-                               True:1}[char.unknown_char],
-                              char.base_char ))
+                if char.unknown_char:
+                    data.append( (1, 999) )
+                else:
+                    data.append( (0, HIRAGANA_ORDER[char.base_char] ))
+
             res.append(data)
+
+            # small size :
+            data = []
+            for char in self:
+                data.append( { False:0,
+                               True:1, }[char.smallsize])
+            res.append(data)
+
+            # diacritic :
+            data = []
+            for char in self:
+                data.append( { None:0,
+                               "dakuten":1,
+                               "handakuten":2 }[char.diacritic] )
+            res.append(data)
+            
 
         else:
             # Pylint can't know that <self> has an 'options' member

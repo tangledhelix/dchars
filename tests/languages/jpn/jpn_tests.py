@@ -314,49 +314,49 @@ class TESTSDStringJPN(unittest.TestCase):
         self.assertEqual( string[0].diacritic, None )
         self.assertEqual( string[0].punctuation, True )
 
-    ## #///////////////////////////////////////////////////////////////////////////
-    ## def test_sortingvalue(self):
-    ##     """
-    ##             TESTSDStringJPN.test_sortingvalue
-    ##     """
+    #///////////////////////////////////////////////////////////////////////////
+    def test_sortingvalue(self):
+        """
+                TESTSDStringJPN.test_sortingvalue
+        """
 
-    ##     #.......................................................................
-    ##     # comparisons between two characters :
-    ##     #.......................................................................
-    ##     self.assertTrue( DSTRING_JPN("α")[0] == DSTRING_JPN("α")[0] )
+        #.......................................................................
+        # comparisons between two characters :
+        #.......................................................................
+        self.assertTrue( DSTRING_JPN("ま")[0] == DSTRING_JPN("ま")[0] )
 
-    ##     self.assertTrue( DSTRING_JPN("α")[0] < DSTRING_JPN("β")[0] )
-    ##     self.assertFalse( DSTRING_JPN("α")[0] > DSTRING_JPN("β")[0] )
+        self.assertTrue( DSTRING_JPN("か")[0] < DSTRING_JPN("ま")[0] )
+        self.assertTrue( DSTRING_JPN("か")[0] < DSTRING_JPN("マ")[0] )
+        self.assertTrue( DSTRING_JPN("ま")[0] > DSTRING_JPN("か")[0] )
+        self.assertTrue( DSTRING_JPN("マ")[0] > DSTRING_JPN("か")[0] )        
 
-    ##     self.assertFalse( DSTRING_JPN("α")[0] < DSTRING_JPN("Α")[0] )
-    ##     self.assertFalse( DSTRING_JPN("α")[0] > DSTRING_JPN("Β")[0] )
+        self.assertTrue( DSTRING_JPN("ら")[0] < DSTRING_JPN("り")[0] )
+        self.assertTrue( DSTRING_JPN("り")[0] > DSTRING_JPN("ら")[0] )
 
-    ##     #.......................................................................
-    ##     # comparisons between two strings :
-    ##     #.......................................................................
-    ##     self.assertTrue( DSTRING_JPN("αβγ") == DSTRING_JPN("αβγ") )
+        #.......................................................................
+        # comparisons between two strings :
+        #.......................................................................
 
-    ##     self.assertTrue( DSTRING_JPN("αβγ") < DSTRING_JPN("αβδ") )
-    ##     self.assertFalse( DSTRING_JPN("αβγ") > DSTRING_JPN("αβδ") )
+        # from http://en.wikipedia.org/wiki/Goj%C5%ABon
 
-    ##     self.assertTrue( DSTRING_JPN("α") < DSTRING_JPN("β") )
-    ##     self.assertFalse( DSTRING_JPN("α") > DSTRING_JPN("β") )
+        self.assertTrue( DSTRING_JPN("は") < DSTRING_JPN("ば") < DSTRING_JPN("ぱ") )
+        
+        self.assertTrue( DSTRING_JPN("まつ") == DSTRING_JPN("まつ") )
 
-    ##     self.assertTrue( DSTRING_JPN("μαμ") < DSTRING_JPN("μάμ") )
-    ##     self.assertFalse( DSTRING_JPN("μαμ") > DSTRING_JPN("μάμ") )
+        self.assertTrue( DSTRING_JPN("まつ") < DSTRING_JPN("まったく") < \
+                         DSTRING_JPN("まつば") < DSTRING_JPN("まとう"))
 
-    ##     self.assertTrue( DSTRING_JPN("μάμ") < DSTRING_JPN("μᾶμ") )
-    ##     self.assertFalse( DSTRING_JPN("μάμ") > DSTRING_JPN("μᾶμ") )
+        self.assertTrue( DSTRING_JPN("きや") < DSTRING_JPN("きゃ") < \
+                         DSTRING_JPN("きやく") < DSTRING_JPN("きゃく") < \
+                         DSTRING_JPN("きゆ") )
 
-    ##     self.assertFalse( DSTRING_JPN("Πλάτων") < DSTRING_JPN("πλάτων") )
-    ##     self.assertFalse( DSTRING_JPN("Πλάτων") > DSTRING_JPN("πλάτων") )
+        self.assertTrue( DSTRING_JPN("すず") < DSTRING_JPN("すすいろ") < \
+                         DSTRING_JPN("すすき") < DSTRING_JPN("すずき") < \
+                         DSTRING_JPN("すずしい") < DSTRING_JPN("すすむ") )
 
-    ##     self.assertTrue( DSTRING_JPN("ἂν") < DSTRING_JPN("ἀνακλαίομαι") < DSTRING_JPN("ἀνήρ") )
-
-    ##     # with unknown characters :
-    ##     self.assertTrue( DSTRING_JPN("ᾶμ") < DSTRING_JPN("ᾶ²") )
-    ##     self.assertTrue( DSTRING_JPN("ᾶμω") < DSTRING_JPN("ᾶ²ω") )
-    ##     self.assertFalse( DSTRING_JPN("ᾶμω") > DSTRING_JPN("ᾶ²ω") )
+        # with unknown characters :
+        self.assertTrue( DSTRING_JPN("まつ") < DSTRING_JPN("ま²") )
+        self.assertTrue( DSTRING_JPN("まったく") < DSTRING_JPN("ま²たく") )
 
     #///////////////////////////////////////////////////////////////////////////
     def test_startswith(self):

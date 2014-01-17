@@ -400,7 +400,7 @@ class DStringLAT(DStringMotherClass):
             for char in self:
                 data.append( ({False:0,
                                True:1}[char.unknown_char],
-                              char.base_char ))
+                              char.base_char )) # !!! ord
             res.append(data)
 
             # length :

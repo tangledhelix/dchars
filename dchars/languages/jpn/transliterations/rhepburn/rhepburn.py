@@ -286,9 +286,6 @@ PUNCTUATION = {'-'       : '-',
                '\n'      : '\n',
                '\r'      : '\r',
                '\t'      : '\t',
-               "‘"       : '<2018>',
-               "’"       : '<2019>',
-               "᾽"       : '<1FBD>',
               }
 
 HIRAGANA_INVERSED = invertdict(HIRAGANA)
@@ -315,6 +312,7 @@ COMPOSED_TRANSCRIPTIONS = {
         "mi[small]y"    : "my",
         "ri[small]y"    : "ry",
 
+        # "traditional" Hepburn :
         #"n[no vowel]b"        : "mb",
         #"n[no vowel]m"        : "mm",
         #"n[no vowel]p"        : "mp",
@@ -470,6 +468,12 @@ def dchar__init_from_translit_str(dchar, src):
             dchar.capital_letter = False
             dchar.punctuation = False
 
+        elif base_char in PUNCTUATION:
+            dchar.chartype = "other"
+            dchar.base_char = PUNCTUATION_INVERSED[base_char]
+            dchar.capital_letter = False
+            dchar.punctuation = True
+            
         ## trans_pneuma = element.group('trans_pneuma')
         ## if trans_pneuma is None:
         ##     dchar.pneuma = None
@@ -524,6 +528,8 @@ def dstring__init_from_translit_str(dstring, dcharactertype, src):
     """
     for start, dest in TRANS_EQUIVALENCES:
         src = src.replace( start, dest )
+
+    print(">>>", src)
 
     for after, before in COMPOSED_TRANSCRIPTIONS.items():
         src = src.replace( before, after )
