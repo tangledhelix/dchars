@@ -34,7 +34,9 @@ from dchars.languages.jpn.symbols import DEFAULTSYMB__DAKUTEN, \
                                          DEFAULTSYMB__HANDAKUTEN, \
                                          HIRAGANA_TO_SMALL_HIRAGANA, \
                                          HIRAGANA_TO_KATAKANA, \
-                                         HIRAGANA_ORDER
+                                         HIRAGANA_ORDER, \
+                                         KATAKANA_TO_SMALL_KATAKANA, \
+                                         KATAKANA_TO_HIRAGANA
                                          
 import unicodedata
 import copy
@@ -102,6 +104,7 @@ class DCharacterJPN(DCharacterMotherClass):
                     diacritic           : None / "dakuten" / "handakuten"
                     smallsize           : bool
         """
+        print("[DCharacterJPN.__init__]", base_char, chartype, smallsize)
         DCharacterMotherClass.__init__(self,
                                        dstring_object = dstring_object,
                                        unknown_char = unknown_char,
@@ -185,7 +188,7 @@ class DCharacterJPN(DCharacterMotherClass):
                 if not self.smallsize:
                     res.append( HIRAGANA_TO_KATAKANA[self.base_char] )
                 else:
-                    res.append( KATAKANA_TO_SMALL_KATAKANA[ self.base_char ] )
+                    res.append( KATAKANA_TO_SMALL_KATAKANA[ HIRAGANA_TO_KATAKANA[self.base_char] ] )
 
             elif self.chartype == 'kanji':
                 res.append( self.base_char )
@@ -293,6 +296,7 @@ class DCharacterJPN(DCharacterMotherClass):
 
                 Return <self>.
         """
+        print("[DCharacterJPN.init_from_transliteration]", src)
         self.reset()
         return DCharacterJPN.trans__init_from_transliteration[transliteration_method](dchar = self,
                                                                                       src = src)

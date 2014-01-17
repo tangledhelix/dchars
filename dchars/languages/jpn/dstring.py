@@ -310,13 +310,14 @@ class DStringJPN(DStringMotherClass):
 
             elif letter in SYMB_KATAKANA.symbol2name:
                 # katakana :
-                base_char = KATAKANA_TO_HIRAGANA[ SYMB_KATAKANA.get_the_name_for_this_symbol(letter) ]
+                base_char = SYMB_HIRAGANA.get_the_name_for_this_symbol(\
+                        KATAKANA_TO_HIRAGANA[ SYMB_KATAKANA.get_the_name_for_this_symbol(letter) ])
                 smallsize = False
                 chartype = "katakana"
 
             elif letter in SYMB_SMALL_KATAKANA.symbol2name:
                 # small katakana :
-                base_char = SYMB_KATAKANA.get_the_name_for_this_symbol(\
+                base_char = SYMB_HIRAGANA.get_the_name_for_this_symbol(\
                                             KATAKANA_TO_HIRAGANA[SMALL_KATAKANA_TO_KATAKANA[letter]])
                 smallsize = True
                 chartype = "katakana"

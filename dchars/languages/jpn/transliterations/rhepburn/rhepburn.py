@@ -32,7 +32,14 @@ from dchars.languages.jpn.symbols import DEFAULTSYMB__CHOONPU, \
                                          HIRAGANA_TO_HIRAGANA_HANDAKUTEN, \
                                          KATAKANA_TO_KATAKANA_DAKUTEN, \
                                          KATAKANA_TO_KATAKANA_HANDAKUTEN, \
-                                         HIRAGANA_TO_KATAKANA
+                                         HIRAGANA_TO_KATAKANA, \
+                                         HIRAGANA_DAKUTEN_TO_HIRAGANA, \
+                                         HIRAGANA_HANDAKUTEN_TO_HIRAGANA, \
+                                         KATAKANA_TO_HIRAGANA, \
+                                         SMALL_HIRAGANA_TO_HIRAGANA, \
+                                         SMALL_KATAKANA_TO_KATAKANA, \
+                                         KATAKANA_DAKUTEN_TO_KATAKANA, \
+                                         KATAKANA_HANDAKUTEN_TO_KATAKANA
 import re
 
 ################################################################################
@@ -89,7 +96,7 @@ HIRAGANA = {
       'の'        : "no",
       'は'        : "ha",
       'ひ'        : "hi",
-      'ふ'        : "hu",
+      'ふ'        : "fu",
       'へ'        : "he",
       'ほ'        : "ho",
       'ま'        : "ma",
@@ -184,7 +191,7 @@ KATAKANA = {
       'ノ'        : "NO",
       'ハ'        : "HA",
       'ヒ'        : "HI",
-      'フ'        : "HU",
+      'フ'        : "FU",
       'ヘ'        : "HE",
       'ホ'        : "HO",
       'マ'        : "MA",
@@ -305,12 +312,22 @@ COMPOSED_TRANSCRIPTIONS = {
         "chi[small]y"   : "ch",
         "ni[small]y"    : "ny",
         "hi[small]y"    : "hy",
-        "hi[small]y"    : "hy",
-        "hi[small]y"    : "hy",
         "bi[small]y"    : "by",
         "pi[small]y"    : "py",
         "mi[small]y"    : "my",
         "ri[small]y"    : "ry",
+
+        "KI[small]Y"    : "KY",
+        "GI[small]Y"    : "GY",
+        "SHI[small]Y"   : "SH",
+        "JI[small]Y"    : "J",
+        "CHI[small]Y"   : "CH",
+        "NI[small]Y"    : "NY",
+        "HI[small]Y"    : "HY",
+        "BI[small]Y"    : "BY",
+        "PI[small]Y"    : "PY",
+        "MI[small]Y"    : "MY",
+        "RI[small]Y"    : "RY",
 
         # "traditional" Hepburn :
         #"n[no vowel]b"        : "mb",
@@ -333,13 +350,14 @@ COMPOSED_TRANSCRIPTIONS = {
         "aa"                  : "ā",
         "ee"                  : "ē",
         "oo"                  : "ō",
-        "ou"                  : "ō",
+        #"ou"                  : "ō",
         "uu"                  : "ū",
 
         "Aー"                   : "Ā",
         "Eー"                   : "Ē",
-        "Iー"                   : "Ī",
+        "Iー"                   : "Ī",
         "Oー"                   : "Ō",
+        #"OU"                    : "Ō",
         "Uー"                   : "Ū",
 
         # sokuon : http://en.wikipedia.org/wiki/Sokuon
@@ -427,12 +445,15 @@ def dchar__get_translit_str(dstring_object, dchar):
         elif dchar.chartype == 'katakana':
 
             if dchar.diacritic is None:
+                if dchar.smallsize:
+                    res.append( "[small]" )
+
                 res.append( KATAKANA[ HIRAGANA_TO_KATAKANA[dchar.base_char]] )
             elif dchar.diacritic == 'dakuten':
                 res.append( KATAKANA_DAKUTEN[ \
                     KATAKANA_TO_KATAKANA_DAKUTEN[ HIRAGANA_TO_KATAKANA[dchar.base_char]]] )
             elif dchar.diacritic == 'handakuten':
-                res.append( KATAKANA_DAKUTEN[ \
+                res.append( KATAKANA_HANDAKUTEN[ \
                     KATAKANA_TO_KATAKANA_HANDAKUTEN[ HIRAGANA_TO_KATAKANA[dchar.base_char]]] )
 
         elif dchar.chartype == 'choonpu':
@@ -444,7 +465,7 @@ def dchar__get_translit_str(dstring_object, dchar):
 #///////////////////////////////////////////////////////////////////////////////
 def dchar__init_from_translit_str(dchar, src):
     """
-        function init_from_transliteration()
+        function dchar__init_from_translit_str()
 
         dchar   :       DCharacterJPN object
         src     :       string
@@ -452,6 +473,7 @@ def dchar__init_from_translit_str(dchar, src):
         Initialize and return <dchar>.
 
     """
+    print("[dchar__init_from_translit_str()]", src)
     element = re.match(PATTERN, src)
 
     if element is None:
@@ -462,56 +484,82 @@ def dchar__init_from_translit_str(dchar, src):
         dchar.unknown_char = False
 
         base_char = element.group('base_char')
+
         if base_char in HIRAGANA_INVERSED:
             dchar.chartype = "hiragana"
-            dchar.base_char = HIRAGANA_INVERSED[base_char]
+            dchar.diacritic = None
+
+            if HIRAGANA_INVERSED[base_char] not in SMALL_HIRAGANA_TO_HIRAGANA:
+                dchar.smallsize = False
+                dchar.base_char = HIRAGANA_INVERSED[base_char]
+            else:
+                # small hiragana ;
+                dchar.smallsize = True
+                dchar.base_char = SMALL_HIRAGANA_TO_HIRAGANA[ HIRAGANA_INVERSED[base_char] ]
+            
+            dchar.capital_letter = False
+            dchar.punctuation = False
+
+        elif base_char in HIRAGANA_DAKUTEN_INVERSED:
+            dchar.chartype = "hiragana"
+            dchar.smallsize = False
+            dchar.diacritic = "dakuten"
+            dchar.base_char = HIRAGANA_DAKUTEN_TO_HIRAGANA[ HIRAGANA_DAKUTEN_INVERSED[base_char] ]
+            dchar.capital_letter = False
+            dchar.punctuation = False
+
+        elif base_char in HIRAGANA_HANDAKUTEN_INVERSED:
+            dchar.chartype = "hiragana"
+            dchar.smallsize = False
+            dchar.diacritic = "handakuten"
+            dchar.base_char = \
+              HIRAGANA_HANDAKUTEN_TO_HIRAGANA[ HIRAGANA_HANDAKUTEN_INVERSED[base_char] ]
+            dchar.capital_letter = False
+            dchar.punctuation = False
+
+        if base_char in KATAKANA_INVERSED:
+            dchar.chartype = "katakana"
+            dchar.diacritic = None
+
+            if KATAKANA_INVERSED[base_char] not in SMALL_KATAKANA_TO_KATAKANA:
+                dchar.smallsize = False
+                dchar.base_char = KATAKANA_TO_HIRAGANA[ KATAKANA_INVERSED[base_char] ]
+            else:
+                # small katakana ;
+                dchar.smallsize = True
+                dchar.base_char = \
+                  KATAKANA_TO_HIRAGANA[ SMALL_KATAKANA_TO_KATAKANA[KATAKANA_INVERSED[base_char]] ]
+
+            dchar.capital_letter = False
+            dchar.punctuation = False
+
+        elif base_char in KATAKANA_DAKUTEN_INVERSED:
+            dchar.chartype = "katakana"
+            dchar.smallsize = False
+            dchar.diacritic = "dakuten"
+            dchar.base_char = \
+              KATAKANA_TO_HIRAGANA[ KATAKANA_DAKUTEN_TO_KATAKANA[ \
+                                                    KATAKANA_DAKUTEN_INVERSED[base_char] ] ]
+            dchar.capital_letter = False
+            dchar.punctuation = False
+
+        elif base_char in KATAKANA_HANDAKUTEN_INVERSED:
+            dchar.chartype = "katakana"
+            dchar.smallsize = False
+            dchar.diacritic = "handakuten"
+
+            dchar.base_char = \
+              KATAKANA_TO_HIRAGANA[ KATAKANA_HANDAKUTEN_TO_KATAKANA[ \
+                                                    KATAKANA_HANDAKUTEN_INVERSED[base_char] ] ]
             dchar.capital_letter = False
             dchar.punctuation = False
 
         elif base_char in PUNCTUATION:
             dchar.chartype = "other"
+            dchar.smallsize = False
             dchar.base_char = PUNCTUATION_INVERSED[base_char]
             dchar.capital_letter = False
             dchar.punctuation = True
-            
-        ## trans_pneuma = element.group('trans_pneuma')
-        ## if trans_pneuma is None:
-        ##     dchar.pneuma = None
-        ## else:
-        ##     dchar.pneuma = DIACRITICS_INVERSED[trans_pneuma]
-
-        ## trans_tonos = element.group('trans_tonos')
-        ## if trans_tonos is None:
-        ##     dchar.tonos = None
-        ## else:
-        ##     dchar.tonos = DIACRITICS_INVERSED[trans_tonos]
-
-        ## base_char = element.group('base_char')
-        ## if base_char in HIRAGANA_INVERSED:
-        ##     dchar.base_char = HIRAGANA_INVERSED[base_char]
-        ##     dchar.capital_letter = False
-        ##     dchar.punctuation = False
-
-        ## elif base_char in KATAKANA_INVERSED:
-        ##     dchar.base_char = KATAKANA_INVERSED[base_char]
-        ##     dchar.capital_letter = True
-        ##     dchar.punctuation = False
-
-        ## elif base_char in OTHER_SYMBOLS_INVERSED:
-        ##     dchar.base_char = OTHER_SYMBOLS_INVERSED[base_char]
-        ##     dchar.capital_letter = False
-        ##     dchar.punctuation = False
-
-        ## else:
-        ##     dchar.base_char = PUNCTUATION_INVERSED[base_char]
-        ##     dchar.capital_letter = False
-        ##     dchar.punctuation = True
-
-        ## trans_mekos = element.group('trans_mekos')
-        ## if trans_mekos is None:
-        ##     dchar.mekos = None
-        ## else:
-        ##     dchar.mekos = DIACRITICS_INVERSED[trans_mekos]
 
     return dchar
 
@@ -552,6 +600,7 @@ def dstring__init_from_translit_str(dstring, dcharactertype, src):
 
         # we add the character read by the regex :
         string = element.string[element.start():element.end()]
+        print(">>>_", string)
         new_character = dcharactertype(dstring_object=dstring).init_from_transliteration(string,
                                                                    "rhepburn")
         dstring.append(new_character)

@@ -262,9 +262,9 @@ MODULES = {
                                   ("jpn_tests.py", False),
                                 ),
 
-#         "tests.languages.jpn.transliterations": ( ("__init__.py", False),
-#                                                   ("rhepbrun_tests.py", False),
-#                                                 ),
+         "tests.languages.jpn.transliterations": ( ("__init__.py", False),
+                                                   ("rhepburn_tests.py", False),
+                                                 ),
 
          "tests.languages.lat": ( ("__init__.py", False),
                                   ("lat_tests.py", False),
