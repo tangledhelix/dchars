@@ -362,6 +362,12 @@ JPN_DATA.append( ConfigValue( subsection = 'jpn.shepburn',
                               defaultvalue = 'no',
                               optionname = "katakanas written with upper case letters" ))
 
+JPN_DATA.append( ConfigValue( subsection = 'jpn.shepburn',
+                              values = ("yes", "no"),
+                              name = "ou becomes ō",
+                              defaultvalue = 'no',
+                              optionname = "ou becomes ō" ))
+
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # latīna (Latin)
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

@@ -170,6 +170,9 @@ LANGUAGES = {
 
                   DATA["jpn"].get_optionname("katakanas written with upper case letters"): \
                   CONFIG_INI["jpn.shepburn"]["katakanas written with upper case letters"],
+
+                  DATA["jpn"].get_optionname("ou becomes ō"): \
+                  CONFIG_INI["jpn.shepburn"]["ou becomes ō"],
                  }
                 ),
 
