@@ -122,20 +122,20 @@ HIRAGANA = {
       'ゐ'        : "wi",
       'ゑ'        : "we",
       'を'        : "wo",
-      'ん'        : "n[no vowel]",
+      'ん'        : "n[0]",
 
-      'ぁ'      : "[small]a",
-      'ぃ'      : "[small]i",
-      'ぅ'      : "[small]u",
-      'ぇ'      : "[small]e",
-      'ぉ'      : "[small]o",
-      'ゕ'      : "[small]ka",
-      'ゖ'      : "[small]ke",
-      'っ'      : "[small]tsu",
-      'ゃ'      : "[small]ya",
-      'ゅ'      : "[small]yu",
-      'ょ'      : "[small]yo",
-      'ゎ'      : "[small]wa",
+      'ぁ'      : "[-]a",
+      'ぃ'      : "[-]i",
+      'ぅ'      : "[-]u",
+      'ぇ'      : "[-]e",
+      'ぉ'      : "[-]o",
+      'ゕ'      : "[-]ka",
+      'ゖ'      : "[-]ke",
+      'っ'      : "[-]tsu",
+      'ゃ'      : "[-]ya",
+      'ゅ'      : "[-]yu",
+      'ょ'      : "[-]yo",
+      'ゎ'      : "[-]wa",
     }
 
 HIRAGANA_DAKUTEN = {
@@ -217,20 +217,20 @@ KATAKANA = {
       'ヰ'        : "WI",
       'ヱ'        : "WE",
       'ヲ'        : "WO",
-      'ン'        : "N",
+      'ン'        : "N[0]",
 
-      'ァ'      : "[small]A",
-      'ィ'      : "[small]I",
-      'ゥ'      : "[small]U",
-      'ェ'      : "[small]E",
-      'ォ'      : "[small]O",
-      'ヵ'      : "[small]KA",
-      'ヶ'      : "[small]KE",
-      'ッ'      : "[small]TSU",
-      'ャ'      : "[small]YA",
-      'ュ'      : "[small]YU",
-      'ョ'      : "[small]YO",
-      'ヮ'      : "[small]WA",
+      'ァ'      : "[-]A",
+      'ィ'      : "[-]I",
+      'ゥ'      : "[-]U",
+      'ェ'      : "[-]E",
+      'ォ'      : "[-]O",
+      'ヵ'      : "[-]KA",
+      'ヶ'      : "[-]KE",
+      'ッ'      : "[-]TSU",
+      'ャ'      : "[-]YA",
+      'ュ'      : "[-]YU",
+      'ョ'      : "[-]YO",
+      'ヮ'      : "[-]WA",
     }
 
 KATAKANA_DAKUTEN = {
@@ -312,52 +312,52 @@ OTHER_SYMBOLS_INVERSED = invertdict(OTHER_SYMBOLS)
 PUNCTUATION_INVERSED = invertdict(PUNCTUATION)
 
 COMPOSED_TRANSCRIPTIONS = {
-        "ki[small]y"    : "ky",
-        "gi[small]y"    : "gy",
-        "shi[small]y"   : "sh",
-        "ji[small]y"    : "j",
-        "chi[small]y"   : "ch",
-        "ni[small]y"    : "ny",
-        "hi[small]y"    : "hy",
-        "bi[small]y"    : "by",
-        "pi[small]y"    : "py",
-        "mi[small]y"    : "my",
-        "ri[small]y"    : "ry",
+        "ki[-]y"    : "ky",
+        "gi[-]y"    : "gy",
+        "shi[-]y"   : "sh",
+        "ji[-]y"    : "j",
+        "chi[-]y"   : "ch",
+        "ni[-]y"    : "ny",
+        "hi[-]y"    : "hy",
+        "bi[-]y"    : "by",
+        "pi[-]y"    : "py",
+        "mi[-]y"    : "my",
+        "ri[-]y"    : "ry",
 
-        "KI[small]Y"    : "KY",
-        "GI[small]Y"    : "GY",
-        "SHI[small]Y"   : "SH",
-        "JI[small]Y"    : "J",
-        "CHI[small]Y"   : "CH",
-        "NI[small]Y"    : "NY",
-        "HI[small]Y"    : "HY",
-        "BI[small]Y"    : "BY",
-        "PI[small]Y"    : "PY",
-        "MI[small]Y"    : "MY",
-        "RI[small]Y"    : "RY",
+        "KI[-]Y"    : "KY",
+        "GI[-]Y"    : "GY",
+        "SHI[-]Y"   : "SH",
+        "JI[-]Y"    : "J",
+        "CHI[-]Y"   : "CH",
+        "NI[-]Y"    : "NY",
+        "HI[-]Y"    : "HY",
+        "BI[-]Y"    : "BY",
+        "PI[-]Y"    : "PY",
+        "MI[-]Y"    : "MY",
+        "RI[-]Y"    : "RY",
 
         # "traditional" Hepburn :
-        #"n[no vowel]b"        : "mb",
-        #"n[no vowel]m"        : "mm",
-        #"n[no vowel]p"        : "mp",
+        #"n[0]b"        : "mb",
+        #"n[0]m"        : "mm",
+        #"n[0]p"        : "mp",
 
-        "n[no vowel]y"        : "n'y",
+        "n[0]y"        : "n'y",
 
-        "n[no vowel]a"        : "n'a",
-        "n[no vowel]ā"        : "n'ā",
-        "n[no vowel]e"        : "n'e",
-        "n[no vowel]ē"        : "n'ē",
-        "n[no vowel]i"        : "n'i",
-        "n[no vowel]ī"        : "n'ī",
-        "n[no vowel]o"        : "n'o",
-        "n[no vowel]ō"        : "n'ō",
-        "n[no vowel]u"        : "n'u",
-        "n[no vowel]ū"        : "n'ū",
+        "n[0]a"        : "n'a",
+        "n[0]ā"        : "n'ā",
+        "n[0]e"        : "n'e",
+        "n[0]ē"        : "n'ē",
+        "n[0]i"        : "n'i",
+        "n[0]ī"        : "n'ī",
+        "n[0]o"        : "n'o",
+        "n[0]ō"        : "n'ō",
+        "n[0]u"        : "n'u",
+        "n[0]ū"        : "n'ū",
 
-        "aa"                  : "ā",
-        "ee"                  : "ē",
-        "oo"                  : "ō",
-        "uu"                  : "ū",
+#        "aa"                  : "ā",
+#        "ee"                  : "ē",
+#        "oo"                  : "ō",
+#        "uu"                  : "ū",
 
         "Aー"                   : "Ā",
         "Eー"                   : "Ē",
@@ -366,16 +366,16 @@ COMPOSED_TRANSCRIPTIONS = {
         "Uー"                   : "Ū",
 
         # sokuon : http://en.wikipedia.org/wiki/Sokuon
-        "[small]tsuk"         : "kk",
-        "[small]tsug"         : "gg",
-        "[small]tsus"         : "ss",
-        "[small]tsuz"         : "zz",
-        "[small]tsut"         : "tt",
-        "[small]tsud"         : "dd",
-        "[small]tsuh"         : "hh",
-        "[small]tsush"        : "shh",
-        "[small]tsuch"        : "tch",
-        "[small]tsuts"        : "tts",        
+        "[-]tsuk"         : "kk",
+        "[-]tsug"         : "gg",
+        "[-]tsus"         : "ss",
+        "[-]tsuz"         : "zz",
+        "[-]tsut"         : "tt",
+        "[-]tsud"         : "dd",
+        "[-]tsuh"         : "hh",
+        "[-]tsush"        : "shh",
+        "[-]tsuch"        : "tch",
+        "[-]tsuts"        : "tts",        
     }    
 
 ################################################################################
@@ -440,7 +440,7 @@ def dchar__get_translit_str(dstring_object, dchar):
 
             if dchar.diacritic is None:
                 if dchar.smallsize:
-                    res.append( "[small]" )
+                    res.append( "[-]" )
 
                 res.append( HIRAGANA[dchar.base_char] )
             elif dchar.diacritic == 'dakuten':
@@ -452,7 +452,7 @@ def dchar__get_translit_str(dstring_object, dchar):
 
             if dchar.diacritic is None:
                 if dchar.smallsize:
-                    res.append( "[small]" )
+                    res.append( "[-]" )
 
                 res.append( KATAKANA[ HIRAGANA_TO_KATAKANA[dchar.base_char]] )
             elif dchar.diacritic == 'dakuten':
@@ -594,6 +594,44 @@ def dstring__init_from_translit_str(dstring, dcharactertype, src):
 
     print(">>>", src)
 
+    #...........................................................................
+    # if a 'n'/'N' isn't followed by a vowel, n > "n[0]", N > "N[0]"
+
+    # indexes of the 'n' / 'N' to be replaced :
+    n_indexes = []
+    N_indexes = []
+    for index, char in enumerate(src):
+
+        if char == 'n' or char == 'N':
+
+            if index == len(src)-1:
+                # this 'n'/'N' is the last character of <src> :
+                if char == 'n':
+                    n_indexes.append(index)
+                else:
+                    N_indexes.append(index)
+            else:
+                if src[index+1] not in ('a', 'e', 'i', 'o', 'u',
+                                        'â', 'ê', 'ô', 'û',
+                                        'ā', 'ē', 'ō', 'ū',
+                                        'A', 'E', 'I', 'O', 'U',
+                                        'Â', 'Ê', 'Î', 'Ô', 'Û',
+                                        'Ā', 'Ē', 'Ī', 'Ō', 'Ū',
+                                        ):
+                    if char == 'n':
+                        n_indexes.append(index)
+                    else:
+                        N_indexes.append(index)
+
+    # the selected 'n'/'N' becomes "n[0]" / "N[0]"
+    for index in n_indexes:
+        src = src[:index] + "n[0]" + src[index+1:]
+    for index in N_indexes:
+        src = src[:index] + "N[0]" + src[index+1:]
+
+    print(">>>", src)
+                                    
+    #...........................................................................
     last_real_index = -1
     for element in re.finditer(PATTERN2, src):
 
@@ -644,8 +682,8 @@ def dstring__trans__get_trans(dstring_object):
     for before, after in COMPOSED_TRANSCRIPTIONS.items():
         res = res.replace(before, after)
 
-    # ん,ン > "n[no vowel]" > "n"
-    res = res.replace("n[no vowel]", "n")
+    # ん,ン > "n[0]" > "n"
+    res = res.replace("n[0]", "n")
 
     if dstring_object.options["ou becomes ō"] == 'yes':
         res = res.replace("ou", "ō")
