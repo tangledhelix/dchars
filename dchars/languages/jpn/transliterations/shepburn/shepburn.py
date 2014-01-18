@@ -22,6 +22,8 @@
     ❏DChars❏ : dchars/languages/jpn/transliterations/shepburn/shepburn.py
 """
 
+from collections import OrderedDict
+
 from dchars.utilities.regexstring import regexstring_list
 from dchars.utilities.dicttools import invertdict
 from dchars.utilities.lstringtools import isort_a_lstrings_bylen_nodup
@@ -54,7 +56,17 @@ AVAILABLE_DIRECTIONS = (-1, +1)
 ################################################################################
 # transliteration's equivalences :
 ################################################################################
-TRANS_EQUIVALENCES = ()
+TRANS_EQUIVALENCES = (
+        ("â", "ā",),
+        ("ê", "ē"),
+        ("ô", "ō"),
+        ("û", "ū"),
+
+        ("Â", "Ā",),
+        ("Ê", "Ē"),
+        ("Ô", "Ō"),
+        ("Û", "Ū"),
+        )
 
 ################################################################################
 # transliteration's symbols :
@@ -311,72 +323,126 @@ KATAKANA_HANDAKUTEN_INVERSED = invertdict(KATAKANA_HANDAKUTEN)
 OTHER_SYMBOLS_INVERSED = invertdict(OTHER_SYMBOLS)
 PUNCTUATION_INVERSED = invertdict(PUNCTUATION)
 
-COMPOSED_TRANSCRIPTIONS = {
-        "ki[-]y"    : "ky",
-        "gi[-]y"    : "gy",
-        "shi[-]y"   : "sh",
-        "ji[-]y"    : "j",
-        "chi[-]y"   : "ch",
-        "ni[-]y"    : "ny",
-        "hi[-]y"    : "hy",
-        "bi[-]y"    : "by",
-        "pi[-]y"    : "py",
-        "mi[-]y"    : "my",
-        "ri[-]y"    : "ry",
+# Be carefull : order matters, hence the use of an OrderedDict object.
+COMPOSED_TRANSCRIPTIONS = OrderedDict((
 
-        "KI[-]Y"    : "KY",
-        "GI[-]Y"    : "GY",
-        "SHI[-]Y"   : "SH",
-        "JI[-]Y"    : "J",
-        "CHI[-]Y"   : "CH",
-        "NI[-]Y"    : "NY",
-        "HI[-]Y"    : "HY",
-        "BI[-]Y"    : "BY",
-        "PI[-]Y"    : "PY",
-        "MI[-]Y"    : "MY",
-        "RI[-]Y"    : "RY",
+        ("shi[-]ya"      , "sha"),
+        ("shi[-]yu"      , "shu"),
+        ("shi[-]yo"      , "sho"),
+        ("shi[-]yâ"      , "shâ"),
+        ("shi[-]yû"      , "shû"),
+        ("shi[-]yô"      , "shô"),
+        ("shi[-]yā"      , "shā"),
+        ("shi[-]yū"      , "shū"),
+        ("shi[-]yō"      , "shō"),
 
-        # "traditional" Hepburn :
-        #"n[0]b"        : "mb",
-        #"n[0]m"        : "mm",
-        #"n[0]p"        : "mp",
+        ("ji[-]ya"      , "ja"),
+        ("ji[-]yu"      , "ju"),
+        ("ji[-]yo"      , "jo"),
+        ("ji[-]yâ"      , "jâ"),
+        ("ji[-]yû"      , "jû"),
+        ("ji[-]yô"      , "jô"),
+        ("ji[-]yā"      , "jā"),
+        ("ji[-]yū"      , "jū"),
+        ("ji[-]yō"      , "jō"),
 
-        "n[0]y"        : "n'y",
+        ("chi[-]ya"      , "cha"),
+        ("chi[-]yu"      , "chu"),
+        ("chi[-]yo"      , "cho"),
+        ("chi[-]yâ"      , "châ"),
+        ("chi[-]yû"      , "chû"),
+        ("chi[-]yô"      , "chô"),
+        ("chi[-]yā"      , "chā"),
+        ("chi[-]yū"      , "chū"),
+        ("chi[-]yō"      , "chō"),
+        
+        ("KI[-]Y"    , "KY"),
+        ("GI[-]Y"    , "GY"),
+        ("NI[-]Y"    , "NY"),
+        ("HI[-]Y"    , "HY"),
+        ("BI[-]Y"    , "BY"),
+        ("PI[-]Y"    , "PY"),
+        ("MI[-]Y"    , "MY"),
+        ("RI[-]Y"    , "RY"),
 
-        "n[0]a"        : "n'a",
-        "n[0]ā"        : "n'ā",
-        "n[0]e"        : "n'e",
-        "n[0]ē"        : "n'ē",
-        "n[0]i"        : "n'i",
-        "n[0]ī"        : "n'ī",
-        "n[0]o"        : "n'o",
-        "n[0]ō"        : "n'ō",
-        "n[0]u"        : "n'u",
-        "n[0]ū"        : "n'ū",
+        ("SHI[-]YA"      , "SHA"),
+        ("SHI[-]YU"      , "SHU"),
+        ("SHI[-]YO"      , "SHO"),
+        ("SHI[-]YÂ"      , "SHÂ"),
+        ("SHI[-]YÛ"      , "SHÛ"),
+        ("SHI[-]YÔ"      , "SHÔ"),
+        ("SHI[-]YĀ"      , "SHĀ"),
+        ("SHI[-]YŪ"      , "SHŪ"),
+        ("SHI[-]YŌ"      , "SHŌ"),
 
-#        "aa"                  : "ā",
-#        "ee"                  : "ē",
-#        "oo"                  : "ō",
-#        "uu"                  : "ū",
+        ("JI[-]YA"      , "JA"),
+        ("JI[-]YU"      , "JU"),
+        ("JI[-]YO"      , "JO"),
+        ("JI[-]YÂ"      , "JÂ"),
+        ("JI[-]YÛ"      , "JÛ"),
+        ("JI[-]YÔ"      , "JÔ"),
+        ("JI[-]YĀ"      , "JĀ"),
+        ("JI[-]YŪ"      , "JŪ"),
+        ("JI[-]YŌ"      , "JŌ"),
 
-        "Aー"                   : "Ā",
-        "Eー"                   : "Ē",
-        "Iー"                   : "Ī",
-        "Oー"                   : "Ō",
-        "Uー"                   : "Ū",
+        ("CHI[-]YA"      , "CHA"),
+        ("CHI[-]YU"      , "CHU"),
+        ("CHI[-]YO"      , "CHO"),
+        ("CHI[-]YÂ"      , "CHÂ"),
+        ("CHI[-]YÛ"      , "CHÛ"),
+        ("CHI[-]YÔ"      , "CHÔ"),
+        ("CHI[-]YĀ"      , "CHĀ"),
+        ("CHI[-]YŪ"      , "CHŪ"),
+        ("CHI[-]YŌ"      , "CHŌ"),
+
+        # "traditional" Hepburn ,
+        #("n[0]b"        , "mb"),
+        #("n[0]m"        , "mm"),
+        #("n[0]p"        , "mp"),
+
+        ("n[0]y"        , "n'y"),
+
+        ("n[0]a"        , "n'a"),
+        ("n[0]ā"        , "n'ā"),
+        ("n[0]e"        , "n'e"),
+        ("n[0]ē"        , "n'ē"),
+        ("n[0]i"        , "n'i"),
+        ("n[0]ī"        , "n'ī"),
+        ("n[0]o"        , "n'o"),
+        ("n[0]ō"        , "n'ō"),
+        ("n[0]u"        , "n'u"),
+        ("n[0]ū"        , "n'ū"),
+
+        ("Aー"                   , "Ā"),
+        ("Eー"                   , "Ē"),
+        ("Iー"                   , "Ī"),
+        ("Oー"                   , "Ō"),
+        ("Uー"                   , "Ū"),
+
+        ("ki[-]y"    , "ky"),
+        ("gi[-]y"    , "gy"),
+        ("ni[-]y"    , "ny"),
+        ("hi[-]y"    , "hy"),
+        ("bi[-]y"    , "by"),
+        ("pi[-]y"    , "py"),
+        ("mi[-]y"    , "my"),
+        ("ri[-]y"    , "ry"),
 
         # sokuon : http://en.wikipedia.org/wiki/Sokuon
-        "[-]tsuk"         : "kk",
-        "[-]tsug"         : "gg",
-        "[-]tsus"         : "ss",
-        "[-]tsuz"         : "zz",
-        "[-]tsut"         : "tt",
-        "[-]tsud"         : "dd",
-        "[-]tsuh"         : "hh",
-        "[-]tsush"        : "shh",
-        "[-]tsuch"        : "tch",
-        "[-]tsuts"        : "tts",        
-    }    
+        ("[-]tsush"        , "ssh"),
+        ("[-]tsuj"         , "jj"),
+        ("[-]tsuch"        , "tch"),
+        ("[-]tsuts"        , "tts"),
+        ("[-]tsuk"         , "kk"),
+        ("[-]tsug"         , "gg"),
+        ("[-]tsus"         , "ss"),
+        ("[-]tsuz"         , "zz"),
+        ("[-]tsut"         , "tt"),
+        ("[-]tsud"         , "dd"),
+        ("[-]tsuh"         , "hh"),
+        ("[-]tsub"         , "bb"),
+        ("[-]tsup"         , "pp"),
+    ))
 
 ################################################################################
 # transliteration's patterns :
@@ -421,8 +487,9 @@ def dchar__get_translit_str(dstring_object, dchar):
 
         dchar : DCharacterJPN object
 
-        Return a transliterared string corresponding to <char>.
+        Return a transliterared string corresponding to <dchar>.
     """
+    print("?", repr(dchar))
     res = []
 
     if dchar.unknown_char:
@@ -443,6 +510,7 @@ def dchar__get_translit_str(dstring_object, dchar):
                     res.append( "[-]" )
 
                 res.append( HIRAGANA[dchar.base_char] )
+
             elif dchar.diacritic == 'dakuten':
                 res.append( HIRAGANA_DAKUTEN[ HIRAGANA_TO_HIRAGANA_DAKUTEN[ dchar.base_char ] ] )
             elif dchar.diacritic == 'handakuten':
@@ -466,6 +534,7 @@ def dchar__get_translit_str(dstring_object, dchar):
 
             res.append( DEFAULTSYMB__CHOONPU )
 
+    print("!!", "".join( res ))
     return "".join( res )
 
 #///////////////////////////////////////////////////////////////////////////////
@@ -587,12 +656,12 @@ def dstring__init_from_translit_str(dstring, dcharactertype, src):
     for start, dest in TRANS_EQUIVALENCES:
         src = src.replace( start, dest )
 
-    print(">>>", src)
+    print(">>>_", src)
 
     for after, before in COMPOSED_TRANSCRIPTIONS.items():
         src = src.replace( before, after )
 
-    print(">>>", src)
+    print(">>>-", src)
 
     #...........................................................................
     # if a 'n'/'N' isn't followed by a vowel, n > "n[0]", N > "N[0]"
@@ -617,6 +686,7 @@ def dstring__init_from_translit_str(dstring, dcharactertype, src):
                                         'A', 'E', 'I', 'O', 'U',
                                         'Â', 'Ê', 'Î', 'Ô', 'Û',
                                         'Ā', 'Ē', 'Ī', 'Ō', 'Ū',
+                                        '[',
                                         ):
                     if char == 'n':
                         n_indexes.append(index)
@@ -629,7 +699,7 @@ def dstring__init_from_translit_str(dstring, dcharactertype, src):
     for index in N_indexes:
         src = src[:index] + "N[0]" + src[index+1:]
 
-    print(">>>", src)
+    print(">>>+", src)
                                     
     #...........................................................................
     last_real_index = -1
@@ -648,7 +718,7 @@ def dstring__init_from_translit_str(dstring, dcharactertype, src):
 
         # we add the character read by the regex :
         string = element.string[element.start():element.end()]
-        print(">>>_", string)
+        print(">>>*", string)
         new_character = dcharactertype(dstring_object=dstring).init_from_transliteration(string,
                                                                    "shepburn")
         dstring.append(new_character)
@@ -679,8 +749,15 @@ def dstring__trans__get_trans(dstring_object):
 
     res = "".join( res )
 
+    print("[dstring__trans__get_trans]", res)
+
     for before, after in COMPOSED_TRANSCRIPTIONS.items():
+        if before in res:
+            print(":::2", before, after)
+
         res = res.replace(before, after)
+
+    print("[dstring__trans__get_trans]0", res)
 
     # ん,ン > "n[0]" > "n"
     res = res.replace("n[0]", "n")
@@ -699,3 +776,16 @@ def dstring__trans__get_trans(dstring_object):
         res = res.lower()
 
     return res
+
+
+    ## # sh-, j- and ch- are ambiguous and couldn't be stored in COMPOSED_TRANSCRIPTIONS :
+    ## for before, after in { 
+    ##                        "shi[-]y"   : "sh",
+    ##                        "ji[-]y"    : "j",
+    ##                        "chi[-]y"   : "ch",
+
+    ##                        "SHI[-]Y"   : "SH",
+    ##                        "JI[-]Y"    : "J",
+    ##                        "CHI[-]Y"   : "CH",
+    ##                      }.items():
+    ##     res = res.replace(before, after)
