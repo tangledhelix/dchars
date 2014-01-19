@@ -489,7 +489,6 @@ def dchar__get_translit_str(dstring_object, dchar):
 
         Return a transliterared string corresponding to <dchar>.
     """
-    print("?", repr(dchar))
     res = []
 
     if dchar.unknown_char:
@@ -534,7 +533,6 @@ def dchar__get_translit_str(dstring_object, dchar):
 
             res.append( DEFAULTSYMB__CHOONPU )
 
-    print("!!", "".join( res ))
     return "".join( res )
 
 #///////////////////////////////////////////////////////////////////////////////
@@ -656,12 +654,8 @@ def dstring__init_from_translit_str(dstring, dcharactertype, src):
     for start, dest in TRANS_EQUIVALENCES:
         src = src.replace( start, dest )
 
-    print(">>>_", src)
-
     for after, before in COMPOSED_TRANSCRIPTIONS.items():
         src = src.replace( before, after )
-
-    print(">>>-", src)
 
     #...........................................................................
     # if a 'n'/'N' isn't followed by a vowel, n > "n[0]", N > "N[0]"
@@ -699,8 +693,6 @@ def dstring__init_from_translit_str(dstring, dcharactertype, src):
     for index in N_indexes:
         src = src[:index] + "N[0]" + src[index+1:]
 
-    print(">>>+", src)
-                                    
     #...........................................................................
     last_real_index = -1
     for element in re.finditer(PATTERN2, src):
@@ -718,7 +710,6 @@ def dstring__init_from_translit_str(dstring, dcharactertype, src):
 
         # we add the character read by the regex :
         string = element.string[element.start():element.end()]
-        print(">>>*", string)
         new_character = dcharactertype(dstring_object=dstring).init_from_transliteration(string,
                                                                    "shepburn")
         dstring.append(new_character)
@@ -749,15 +740,8 @@ def dstring__trans__get_trans(dstring_object):
 
     res = "".join( res )
 
-    print("[dstring__trans__get_trans]", res)
-
     for before, after in COMPOSED_TRANSCRIPTIONS.items():
-        if before in res:
-            print(":::2", before, after)
-
         res = res.replace(before, after)
-
-    print("[dstring__trans__get_trans]0", res)
 
     # ん,ン > "n[0]" > "n"
     res = res.replace("n[0]", "n")

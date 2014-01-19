@@ -104,7 +104,6 @@ class DCharacterJPN(DCharacterMotherClass):
                     diacritic           : None / "dakuten" / "handakuten"
                     smallsize           : bool
         """
-        print("[DCharacterJPN.__init__]", base_char, chartype, smallsize)
         DCharacterMotherClass.__init__(self,
                                        dstring_object = dstring_object,
                                        unknown_char = unknown_char,
@@ -296,7 +295,6 @@ class DCharacterJPN(DCharacterMotherClass):
 
                 Return <self>.
         """
-        print("[DCharacterJPN.init_from_transliteration]", src)
         self.reset()
         return DCharacterJPN.trans__init_from_transliteration[transliteration_method](dchar = self,
                                                                                       src = src)
