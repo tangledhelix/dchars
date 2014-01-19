@@ -44,7 +44,8 @@ from dchars.languages.jpn.symbols import SYMB_CHOONPU, \
                                          KATAKANA_TO_HIRAGANA, \
                                          SMALL_HIRAGANA_TO_HIRAGANA, \
                                          SMALL_KATAKANA_TO_KATAKANA, \
-                                         HIRAGANA_ORDER
+                                         HIRAGANA_ORDER, \
+                                         VOWEL_IN_HIRAGANA
 from dchars.languages.jpn.symbols import SYMB_DIACRITICS__DAKUTEN, \
                                          SYMB_DIACRITICS__HANDAKUTEN
 
@@ -446,6 +447,9 @@ class DStringJPN(DStringMotherClass):
         """
                 DStringJPN.sortingvalue
 
+                sorting methods :
+                o "default" : cf Kanji & Kana, Hadamitzky and Spahn, p. 22
+                
                 Return a SortingValue object
         """
         res = SortingValue()
@@ -458,11 +462,32 @@ class DStringJPN(DStringMotherClass):
 
             # base character :
             data = []
-            for char in self:
+            previous_char = None
+            for index, char in enumerate(self):
+
                 if char.unknown_char:
                     data.append( (1, 999) )
+
+                elif char.chartype == 'choonpu':
+                    # we treat the choonpu symbol as if it was the last vowel
+                    # cf Kanji & Kana, Hadamitzky and Spahn, p. 22
+
+                    if index == 0:
+                        # problem : no preceding vowel
+                        data.append( (0, 0 ))
+                    else:
+                        vowel = VOWEL_IN_HIRAGANA[previous_char.base_char]
+                        if vowel is not None:
+                            # normal case : if char == 'か', vowel = 'あ'
+                            data.append( (0, HIRAGANA_ORDER[vowel] ))
+                        else:
+                            # abnormal case : if char == 'ん', there's no vowel...
+                            # so ... we take the order of ん.
+                            data.append( (0, HIRAGANA_ORDER['ん'] ))
                 else:
                     data.append( (0, HIRAGANA_ORDER[char.base_char] ))
+
+                previous_char = char
 
             res.append(data)
 
@@ -480,7 +505,22 @@ class DStringJPN(DStringMotherClass):
                                "dakuten":1,
                                "handakuten":2 }[char.diacritic] )
             res.append(data)
-            
+
+            # hiragana < katakana:
+            data = []
+            for char in self:
+                if char.chartype == 'hiragana':
+                    data.append( 0 )
+                elif char.chartype == 'choonpu':
+                    # we treat the choonpu symbol as a katakana
+                    # cf Kanji & Kana, Hadamitzky and Spahn, p. 22
+                    data.append( 1 )
+                elif char.chartype == 'katakana':
+                    data.append( 1 )
+                else:
+                    data.append( 2 )
+
+            res.append(data)            
 
         else:
             # Pylint can't know that <self> has an 'options' member

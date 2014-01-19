@@ -344,6 +344,14 @@ class DCharacterJPN(DCharacterMotherClass):
             res.append( {True:0,
                          False:1}[self.smallsize] )
 
+            # hiragana < katakana :
+            if self.chartype == 'hiragana':
+                res.append(0)
+            elif self.chartype == 'katakana':
+                res.append(1)
+            else:
+                res.append(2)
+
         else:
             raise DCharsError( context = "DCharacterJPN.sortingvalue",
                                message = "unknown sorting method ="+\

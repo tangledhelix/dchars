@@ -358,6 +358,47 @@ class TESTSDStringJPN(unittest.TestCase):
         self.assertTrue( DSTRING_JPN("まつ") < DSTRING_JPN("ま²") )
         self.assertTrue( DSTRING_JPN("まったく") < DSTRING_JPN("ま²たく") )
 
+        # examples taken from Kanji & Kana, Hadamitzky and Spahn, p. 22
+        words = (
+                'あ',
+                'ア',
+                'ああ',
+                'アー',
+                'アート',
+                'ああら',
+                'あい',
+                'あいか',
+                'あいが',
+                'あいがえし',
+                'あいかぎ',
+                'あいき',
+                'あいぎ',
+                'あいきどう',
+                'あいきゃく',
+                'アイキャー',
+                'あいきょう',
+                'あいぎょう',
+                'あいきわ',
+                'あいきん',
+                'あいぎん',
+                'あち',
+                'あつ',
+                'あっ',
+                'あつい',
+                'あつか',
+                'あっか',
+                'あつかい',
+            )
+
+        previous_word = None
+        for word in words:
+            if previous_word is not None:
+                self.assertTrue( DSTRING_JPN(previous_word) < DSTRING_JPN(word) )
+
+            previous_word = word
+            
+        
+
     #///////////////////////////////////////////////////////////////////////////
     def test_startswith(self):
         """
