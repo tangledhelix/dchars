@@ -35,8 +35,9 @@ from dchars.languages.ang.dcharacter import DCharacterANG
 from dchars.languages.ang.symbols import SYMB_PUNCTUATION, \
                                          SYMB_UPPER_CASE, \
                                          SYMB_LOWER_CASE, \
-                                         SYMB_DIACRITICS
-from dchars.languages.ang.symbols import SYMB_DIACRITICS__MAKRON, \
+                                         SYMB_DIACRITICS, \
+                                         SORTING_ORDER, \
+                                         SYMB_DIACRITICS__MAKRON, \
                                          SYMB_DIACRITICS__STRESS_MINUS1, \
                                          SYMB_DIACRITICS__STRESS1, \
                                          SYMB_DIACRITICS__STRESS2, \
@@ -428,10 +429,16 @@ class DStringANG(DStringMotherClass):
             # base character :
             data = []
             for char in self:
+
+                sorting_order = -1
+                if char.base_char in SORTING_ORDER:
+                    sorting_order = SORTING_ORDER[char.base_char]
+
                 data.append( ({False:0,
                                True:1}[char.unknown_char],
-                              char.base_char ))
-            res.append(data)
+                              sorting_order ))
+
+            res.append( data )
 
             # makron :
             data = []

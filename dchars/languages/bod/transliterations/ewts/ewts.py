@@ -869,7 +869,7 @@ def get_intstruct_from_trans_str( _src, dstring_object ):
     for istruct in res:
         istruct.dstring_object = dstring_object
 
-    return(res)
+    return res
 
 #///////////////////////////////////////////////////////////////////////////////
 def dstring__get_translit_str(dstring):

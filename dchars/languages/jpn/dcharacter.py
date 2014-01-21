@@ -35,12 +35,10 @@ from dchars.languages.jpn.symbols import DEFAULTSYMB__DAKUTEN, \
                                          HIRAGANA_TO_SMALL_HIRAGANA, \
                                          HIRAGANA_TO_KATAKANA, \
                                          HIRAGANA_ORDER, \
-                                         KATAKANA_TO_SMALL_KATAKANA, \
-                                         KATAKANA_TO_HIRAGANA
-                                         
+                                         KATAKANA_TO_SMALL_KATAKANA
+
 import unicodedata
 import copy
-import itertools
 
 # known transliterations :
 import dchars.languages.jpn.transliterations.shepburn.shepburn as shepburntrans
@@ -91,7 +89,7 @@ class DCharacterJPN(DCharacterMotherClass):
                     unknown_char        : bool
                     base_char           : None or a string
                                             o "あ", "い", ... (one hiragana)
-                                            
+
                                             o "東", "名" (one kanji)
 
                     chartype            : None (=unknown character) or a string
@@ -252,7 +250,7 @@ class DCharacterJPN(DCharacterMotherClass):
                              'わ', 'ゐ', 'ゑ', 'ゑ',
                              'を',
                              'ん',
-                            )            
+                            )
 
         for base_char in base_characters:
             for chartype in ('hiragana', 'katakana', 'choonpu'):

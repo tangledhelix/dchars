@@ -22,7 +22,7 @@
     ❏DChars❏ : dchars/tests/languages/jpn/jpn_tests.py
 """
 
-import unittest, os.path
+import unittest
 
 from dchars.errors.errors import DCharsError
 from dchars.dchars import new_dstring
@@ -328,7 +328,7 @@ class TESTSDStringJPN(unittest.TestCase):
         self.assertTrue( DSTRING_JPN("か")[0] < DSTRING_JPN("ま")[0] )
         self.assertTrue( DSTRING_JPN("か")[0] < DSTRING_JPN("マ")[0] )
         self.assertTrue( DSTRING_JPN("ま")[0] > DSTRING_JPN("か")[0] )
-        self.assertTrue( DSTRING_JPN("マ")[0] > DSTRING_JPN("か")[0] )        
+        self.assertTrue( DSTRING_JPN("マ")[0] > DSTRING_JPN("か")[0] )
 
         self.assertTrue( DSTRING_JPN("ら")[0] < DSTRING_JPN("り")[0] )
         self.assertTrue( DSTRING_JPN("り")[0] > DSTRING_JPN("ら")[0] )
@@ -340,7 +340,7 @@ class TESTSDStringJPN(unittest.TestCase):
         # from http://en.wikipedia.org/wiki/Goj%C5%ABon
 
         self.assertTrue( DSTRING_JPN("は") < DSTRING_JPN("ば") < DSTRING_JPN("ぱ") )
-        
+
         self.assertTrue( DSTRING_JPN("まつ") == DSTRING_JPN("まつ") )
 
         self.assertTrue( DSTRING_JPN("まつ") < DSTRING_JPN("まったく") < \
@@ -396,8 +396,6 @@ class TESTSDStringJPN(unittest.TestCase):
                 self.assertTrue( DSTRING_JPN(previous_word) < DSTRING_JPN(word) )
 
             previous_word = word
-            
-        
 
     #///////////////////////////////////////////////////////////////////////////
     def test_startswith(self):

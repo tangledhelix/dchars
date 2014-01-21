@@ -157,7 +157,7 @@ class DStringMotherClass(list):
         """
                 DStringMotherClass.__ne__
         """
-        return not(self.__eq__(aliud))
+        return not self.__eq__(aliud)
 
     #///////////////////////////////////////////////////////////////////////////
     def __repr__(self):

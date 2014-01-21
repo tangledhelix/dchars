@@ -33,7 +33,9 @@ load-plugins=
 # can either give multiple identifier separated by comma (,) or put this option
 # multiple time (only on the command line, not in the configuration file where
 # it should appear only once).
-disable=W0142
+
+# C0326 : No space allowed before/after bracket
+disable=W0142, C0326
 
 [REPORTS]
 

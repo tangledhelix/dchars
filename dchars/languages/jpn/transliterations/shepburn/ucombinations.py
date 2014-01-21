@@ -24,8 +24,7 @@
 from dchars.dchars import new_dstring
 from dchars.languages.jpn.dcharacter import DCharacterJPN
 from dchars.languages.jpn.transliterations.shepburn.shepburn import dchar__get_translit_str
-
-import itertools
+from dchars.languages.jpn.symbols import HIRAGANA_TO_SMALL_HIRAGANA
 
 #///////////////////////////////////////////////////////////////////////////
 def get_usefull_combinations():
@@ -60,7 +59,7 @@ def get_usefull_combinations():
                          'わ', 'ゐ', 'ゑ', 'ゑ',
                          'を',
                          'ん',
-                        )            
+                        )
 
     for base_char in base_characters:
         for chartype in ('hiragana', 'katakana'):

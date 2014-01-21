@@ -794,7 +794,7 @@ class TESTSDStringBOD(unittest.TestCase):
         string1 = DSTRING_BOD("བསྒྲིབས") # bsgribs
         string2 = DSTRING_BOD("བསྒྲིབ") # bsgrib
 
-        del(string1[-1])
+        del string1[-1]
         self.assertEqual( string1, string2 )
 
         #.......................................................................
@@ -1991,5 +1991,6 @@ class TESTSDStringBOD(unittest.TestCase):
         string = DSTRING_BOD("འཇམ་མགོན་ཀོང་སྤྲུལ་བློ་གྲོས་མཐའ་ཡས་")
         self.assertEqual( string.startswith( DSTRING_BOD("འཇམ") ), True )
         self.assertEqual( string.startswith( DSTRING_BOD("") ), True )
-        self.assertEqual( string.startswith( DSTRING_BOD("འཇམ་མགོན་ཀོང་སྤྲུལ་བློ་གྲོས་མཐའ་ཡས་") ), True )
+        self.assertEqual( string.startswith( DSTRING_BOD("འཇམ་མགོན་ཀོང་སྤྲུལ་བློ་གྲོས་མཐའ་ཡས་") ),
+                          True )
         self.assertEqual( string.startswith( DSTRING_BOD("གོ") ), False )

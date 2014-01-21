@@ -22,7 +22,7 @@
     ❏DChars❏ : dchars/tests/languages/jpn/transliterations/shepburn_tests.py
 """
 
-import unittest, os.path
+import unittest
 
 from dchars.dchars import new_dstring
 from dchars.languages.bod.dcharacter import UNKNOWN_CHAR_SYMBOL

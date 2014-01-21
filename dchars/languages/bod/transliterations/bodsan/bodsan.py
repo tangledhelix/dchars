@@ -117,24 +117,24 @@ def get_intstruct_from_trans_str( _src, dstring_object ):
                 #...............................................................
                 # _independent_vowel will be added as an independent vowel :
                 #...............................................................
-                if (dstring_object.options["san2bod quality"] == "normal" and \
-                    dchar_san.base_char=='O'):
+                if  dstring_object.options["san2bod quality"] == "normal" and \
+                    dchar_san.base_char=='O':
                     #====================
                     # @@BOD2SAN-NORM-004
                     # (independent vowel) ओ(ō) > औ(au)
                     #====================
                     _independent_vowel = "AU"
 
-                elif (dstring_object.options["san2bod quality"] == "low" and \
-                    dchar_san.base_char=='O'):
+                elif dstring_object.options["san2bod quality"] == "low" and \
+                     dchar_san.base_char=='O':
                     #====================
                     # @@BOD2SAN-LOW-004
                     # (independent vowel) ओ(ō) > औ(au)
                     #====================
                     _independent_vowel = "AU"
 
-                elif (dstring_object.options["san2bod quality"] == "low" and \
-                    dchar_san.base_char in ('AA', 'II', 'UU')):
+                elif dstring_object.options["san2bod quality"] == "low" and \
+                     dchar_san.base_char in ('AA', 'II', 'UU'):
                     #====================
                     # @@BOD2SAN-LOW-006
                     # (independent vowel) long vowels > short vowels
@@ -161,15 +161,15 @@ def get_intstruct_from_trans_str( _src, dstring_object ):
                     # special case : the visarga symbol is placed among consonants in Sanskrit,
                     # among diacritics in Tibetan.
 
-                    if (dstring_object.options["san2bod quality"] == "normal" and \
-                        dchar_san.base_char=='DEVANAGARI SIGN VISARGA'):
+                    if dstring_object.options["san2bod quality"] == "normal" and \
+                       dchar_san.base_char=='DEVANAGARI SIGN VISARGA':
                         #====================
                         # @@BOD2SAN-NORM-001
                         # the visarga is omitted if "san2bod quality" == "normal"
                         #====================
                         pass
-                    elif (dstring_object.options["san2bod quality"] == "low" and \
-                        dchar_san.base_char=='DEVANAGARI SIGN VISARGA'):
+                    elif dstring_object.options["san2bod quality"] == "low" and \
+                         dchar_san.base_char=='DEVANAGARI SIGN VISARGA':
                         #===================
                         # @@BOD2SAN-LOW-001
                         # the visarga is omitted if "san2bod quality" == "low"
@@ -188,16 +188,16 @@ def get_intstruct_from_trans_str( _src, dstring_object ):
                     #...........................................................
                     # _base_char will be added as a main consonant :
                     #...........................................................
-                    if (dstring_object.options["san2bod quality"] == "normal" and \
-                        dchar_san.base_char=='VA'):
+                    if  dstring_object.options["san2bod quality"] == "normal" and \
+                        dchar_san.base_char=='VA':
                         #====================
                         # @@BOD2SAN-NORM-002
                         # the व(va) becomes ब(ba) if "san2bod quality" == "normal"
                         #====================
                         _base_char = "BA"
 
-                    elif (dstring_object.options["san2bod quality"] == "low" and \
-                        dchar_san.base_char=='VA'):
+                    elif dstring_object.options["san2bod quality"] == "low" and \
+                         dchar_san.base_char=='VA':
                         #===================
                         # @@BOD2SAN-LOW-002
                         # the व(va) becomes ब(ba) if "san2bod quality" == "normal"
@@ -297,24 +297,24 @@ def get_intstruct_from_trans_str( _src, dstring_object ):
                     #...........................................................
                     # _dependent_vowel will be added as a dependent vowel :
                     #...........................................................
-                    if (dstring_object.options["san2bod quality"] == "normal" and \
-                        dchar_san.dependentvowel=='O'):
+                    if  dstring_object.options["san2bod quality"] == "normal" and \
+                        dchar_san.dependentvowel=='O':
                         #====================
                         # @@BOD2SAN-NORM-003
                         # (dependent vowel) ओ(ō) > औ(au)
                         #====================
                         _dependent_vowel = "AU"
 
-                    elif (dstring_object.options["san2bod quality"] == "low" and \
-                        dchar_san.dependentvowel=='O'):
+                    elif dstring_object.options["san2bod quality"] == "low" and \
+                         dchar_san.dependentvowel=='O':
                         #====================
                         # @@BOD2SAN-LOW-003
                         # (dependent vowel) ओ(ō) > औ(au)
                         #====================
                         _dependent_vowel = "AU"
 
-                    elif (dstring_object.options["san2bod quality"] == "low" and \
-                          dchar_san.dependentvowel in ('AA', 'II', 'UU')):
+                    elif  dstring_object.options["san2bod quality"] == "low" and \
+                          dchar_san.dependentvowel in ('AA', 'II', 'UU'):
                         #====================
                         # @@BOD2SAN-LOW-005
                         # (dependent vowel) long vowels > short vowels

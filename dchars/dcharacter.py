@@ -110,7 +110,7 @@ class DCharacterMotherClass(object):
         # created by the derived class (e.g. : DCharacterGRC)
         # pylint: disable=E1101
         # -> Instance of 'DCharacterMotherClass' has no 'sortingvalue' member
-        return not(self.__eq__(aliud))
+        return not self.__eq__(aliud)
 
     #///////////////////////////////////////////////////////////////////////////
     def __str__(self):

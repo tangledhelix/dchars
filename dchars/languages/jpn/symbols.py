@@ -400,7 +400,7 @@ HIRAGANA_TO_KATAKANA = {
       'か'        : 'カ',
       'き'        : 'キ',
       'く'        : 'ク',
-      'け'        : 'ケ', 
+      'け'        : 'ケ',
       'こ'        : 'コ',
       'さ'        : 'サ',
       'し'        : 'シ',
@@ -453,9 +453,11 @@ KATAKANA_TO_HIRAGANA = invertdict( HIRAGANA_TO_KATAKANA )
 # o https://github.com/suizokukan/getpurejinmeiyo
 #
 # 表外字 (hyōgaiji) :
-# o http://ja.wiktionary.org/wiki/Wiktionary:%E8%A1%A8%E5%A4%96%E6%BC%A2%E5%AD%97%E5%AD%97%E4%BD%93%E8%A1%A8%E3%81%AE%E6%BC%A2%E5%AD%97%E4%B8%80%E8%A6%A7
+# o http://ja.wiktionary.org/wiki/Wiktionary:
+#   %E8%A1%A8%E5%A4%96%E6%BC%A2%E5%AD%97%E5%AD%97%E4%BD%93%E8%A1%A8%E3%81
+#   %AE%E6%BC%A2%E5%AD%97%E4%B8%80%E8%A6%A7
 # o https://github.com/suizokukan/gethyogaiji
-#  
+#
 SYMB_KANJI = Name2Symbols(
     {
       # jōyō kanji #1
@@ -5999,2047 +6001,1037 @@ SYMB_KANJI = Name2Symbols(
       # hyōgaiji kanji #4
       '埃'        : ('埃',),
       # hyōgaiji kanji #5
-      '挨'        : ('挨',),
-      # hyōgaiji kanji #6
-      '曖'        : ('曖',),
-      # hyōgaiji kanji #7
       '靄'        : ('靄',),
-      # hyōgaiji kanji #8
+      # hyōgaiji kanji #6
       '軋'        : ('軋',),
-      # hyōgaiji kanji #9
-      '斡'        : ('斡',),
-      # hyōgaiji kanji #10
-      '按'        : ('按',),
-      # hyōgaiji kanji #11
-      '庵'        : ('庵',),
-      # hyōgaiji kanji #12
-      '鞍'        : ('鞍',),
-      # hyōgaiji kanji #13
-      '闇'        : ('闇',),
-      # hyōgaiji kanji #14
-      '已'        : ('已',),
-      # hyōgaiji kanji #15
-      '夷'        : ('夷',),
-      # hyōgaiji kanji #16
-      '畏'        : ('畏',),
-      # hyōgaiji kanji #17
+      # hyōgaiji kanji #7
       '韋'        : ('韋',),
-      # hyōgaiji kanji #18
+      # hyōgaiji kanji #8
       '帷'        : ('帷',),
-      # hyōgaiji kanji #19
-      '萎'        : ('萎',),
-      # hyōgaiji kanji #20
-      '椅'        : ('椅',),
-      # hyōgaiji kanji #21
-      '葦'        : ('葦',),
-      # hyōgaiji kanji #22
-      '彙'        : ('彙',),
-      # hyōgaiji kanji #23
+      # hyōgaiji kanji #9
       '飴'        : ('飴',),
-      # hyōgaiji kanji #24
-      '謂'        : ('謂',),
-      # hyōgaiji kanji #25
+      # hyōgaiji kanji #10
       '閾'        : ('閾',),
-      # hyōgaiji kanji #26
-      '溢'        : ('溢',),
-      # hyōgaiji kanji #27
-      '鰯'        : ('鰯',),
-      # hyōgaiji kanji #28
+      # hyōgaiji kanji #11
       '尹'        : ('尹',),
-      # hyōgaiji kanji #29
-      '咽'        : ('咽',),
-      # hyōgaiji kanji #30
+      # hyōgaiji kanji #12
       '殷'        : ('殷',),
-      # hyōgaiji kanji #31
-      '淫'        : ('淫',),
-      # hyōgaiji kanji #32
+      # hyōgaiji kanji #13
       '隕'        : ('隕',),
-      # hyōgaiji kanji #33
-      '蔭'        : ('蔭',),
-      # hyōgaiji kanji #34
+      # hyōgaiji kanji #14
       '于'        : ('于',),
-      # hyōgaiji kanji #35
-      '迂'        : ('迂',),
-      # hyōgaiji kanji #36
+      # hyōgaiji kanji #15
       '盂'        : ('盂',),
-      # hyōgaiji kanji #37
-      '烏'        : ('烏',),
-      # hyōgaiji kanji #38
-      '鬱'        : ('鬱',),
-      # hyōgaiji kanji #39
-      '云'        : ('云',),
-      # hyōgaiji kanji #40
+      # hyōgaiji kanji #16
       '暈'        : ('暈',),
-      # hyōgaiji kanji #41
+      # hyōgaiji kanji #17
       '穢'        : ('穢',),
-      # hyōgaiji kanji #42
-      '曳'        : ('曳',),
-      # hyōgaiji kanji #43
+      # hyōgaiji kanji #18
       '洩'        : ('洩',),
-      # hyōgaiji kanji #44
+      # hyōgaiji kanji #19
       '裔'        : ('裔',),
-      # hyōgaiji kanji #45
+      # hyōgaiji kanji #20
       '穎'        : ('穎', '頴'),
-      # hyōgaiji kanji #46
+      # hyōgaiji kanji #21
       '嬰'        : ('嬰',),
-      # hyōgaiji kanji #47
+      # hyōgaiji kanji #22
       '翳'        : ('翳',),
-      # hyōgaiji kanji #48
+      # hyōgaiji kanji #23
       '腋'        : ('腋',),
-      # hyōgaiji kanji #49
+      # hyōgaiji kanji #24
       '曰'        : ('曰',),
-      # hyōgaiji kanji #50
-      '奄'        : ('奄',),
-      # hyōgaiji kanji #51
-      '宛'        : ('宛',),
-      # hyōgaiji kanji #52
-      '怨'        : ('怨',),
-      # hyōgaiji kanji #53
-      '俺'        : ('俺',),
-      # hyōgaiji kanji #54
+      # hyōgaiji kanji #25
       '冤'        : ('冤',),
-      # hyōgaiji kanji #55
+      # hyōgaiji kanji #26
       '袁'        : ('袁',),
-      # hyōgaiji kanji #56
+      # hyōgaiji kanji #27
       '婉'        : ('婉',),
-      # hyōgaiji kanji #57
+      # hyōgaiji kanji #28
       '焉'        : ('焉',),
-      # hyōgaiji kanji #58
-      '堰'        : ('堰',),
-      # hyōgaiji kanji #59
-      '淵'        : ('淵',),
-      # hyōgaiji kanji #60
-      '焰'        : ('焰',),
-      # hyōgaiji kanji #61
+      # hyōgaiji kanji #29
       '筵'        : ('筵',),
-      # hyōgaiji kanji #62
+      # hyōgaiji kanji #30
       '厭'        : ('厭',),
-      # hyōgaiji kanji #63
-      '鳶'        : ('鳶',),
-      # hyōgaiji kanji #64
-      '燕'        : ('燕',),
-      # hyōgaiji kanji #65
+      # hyōgaiji kanji #31
       '閻'        : ('閻',),
-      # hyōgaiji kanji #66
+      # hyōgaiji kanji #32
       '嚥'        : ('嚥',),
-      # hyōgaiji kanji #67
+      # hyōgaiji kanji #33
       '嗚'        : ('嗚',),
-      # hyōgaiji kanji #68
-      '凰'        : ('凰',),
-      # hyōgaiji kanji #69
+      # hyōgaiji kanji #34
       '嘔'        : ('嘔',),
-      # hyōgaiji kanji #70
-      '鴨'        : ('鴨',),
-      # hyōgaiji kanji #71
+      # hyōgaiji kanji #35
       '甕'        : ('甕',),
-      # hyōgaiji kanji #72
-      '襖'        : ('襖',),
-      # hyōgaiji kanji #73
+      # hyōgaiji kanji #36
       '謳'        : ('謳',),
-      # hyōgaiji kanji #74
-      '鶯'        : ('鶯',),
-      # hyōgaiji kanji #75
-      '鷗'        : ('鷗', '鴎'),
-      # hyōgaiji kanji #76
+      # hyōgaiji kanji #37
+      '鶯'        : ('鶯', '鴎'),
+      # hyōgaiji kanji #38
       '鸚'        : ('鸚',),
-      # hyōgaiji kanji #77
-      '臆'        : ('臆',),
-      # hyōgaiji kanji #78
+      # hyōgaiji kanji #39
       '俤'        : ('俤',),
-      # hyōgaiji kanji #79
-      '瓜'        : ('瓜',),
-      # hyōgaiji kanji #80
+      # hyōgaiji kanji #40
       '呵'        : ('呵',),
-      # hyōgaiji kanji #81
-      '苛'        : ('苛',),
-      # hyōgaiji kanji #82
-      '珂'        : ('珂',),
-      # hyōgaiji kanji #83
-      '迦'        : ('迦',),
-      # hyōgaiji kanji #84
+      # hyōgaiji kanji #41
       '訛'        : ('訛',),
-      # hyōgaiji kanji #85
+      # hyōgaiji kanji #42
       '訶'        : ('訶',),
-      # hyōgaiji kanji #86
+      # hyōgaiji kanji #43
       '跏'        : ('跏',),
-      # hyōgaiji kanji #87
-      '嘩'        : ('嘩',),
-      # hyōgaiji kanji #88
+      # hyōgaiji kanji #44
       '瑕'        : ('瑕',),
-      # hyōgaiji kanji #89
-      '榎'        : ('榎',),
-      # hyōgaiji kanji #90
+      # hyōgaiji kanji #45
       '窩'        : ('窩',),
-      # hyōgaiji kanji #91
-      '蝦'        : ('蝦',),
-      # hyōgaiji kanji #92
+      # hyōgaiji kanji #46
       '蝸'        : ('蝸',),
-      # hyōgaiji kanji #93
-      '鍋'        : ('鍋',),
-      # hyōgaiji kanji #94
+      # hyōgaiji kanji #47
       '顆'        : ('顆',),
-      # hyōgaiji kanji #95
-      '牙'        : ('牙',),
-      # hyōgaiji kanji #96
-      '瓦'        : ('瓦',),
-      # hyōgaiji kanji #97
-      '臥'        : ('臥',),
-      # hyōgaiji kanji #98
-      '俄'        : ('俄',),
-      # hyōgaiji kanji #99
-      '峨'        : ('峨',),
-      # hyōgaiji kanji #100
+      # hyōgaiji kanji #48
       '訝'        : ('訝',),
-      # hyōgaiji kanji #101
+      # hyōgaiji kanji #49
       '蛾'        : ('蛾',),
-      # hyōgaiji kanji #102
+      # hyōgaiji kanji #50
       '衙'        : ('衙',),
-      # hyōgaiji kanji #103
-      '駕'        : ('駕',),
-      # hyōgaiji kanji #104
-      '芥'        : ('芥',),
-      # hyōgaiji kanji #105
+      # hyōgaiji kanji #51
       '乖'        : ('乖',),
-      # hyōgaiji kanji #106
-      '廻'        : ('廻',),
-      # hyōgaiji kanji #107
+      # hyōgaiji kanji #52
       '徊'        : ('徊',),
-      # hyōgaiji kanji #108
-      '恢'        : ('恢',),
-      # hyōgaiji kanji #109
-      '晦'        : ('晦',),
-      # hyōgaiji kanji #110
-      '堺'        : ('堺',),
-      # hyōgaiji kanji #111
-      '潰'        : ('潰',),
-      # hyōgaiji kanji #112
+      # hyōgaiji kanji #53
       '鞋'        : ('鞋',),
-      # hyōgaiji kanji #113
-      '諧'        : ('諧',),
-      # hyōgaiji kanji #114
+      # hyōgaiji kanji #54
       '檜'        : ('檜',),
-      # hyōgaiji kanji #115
-      '蟹'        : ('蟹',),
-      # hyōgaiji kanji #116
+      # hyōgaiji kanji #55
       '咳'        : ('咳',),
-      # hyōgaiji kanji #117
-      '崖'        : ('崖',),
-      # hyōgaiji kanji #118
-      '蓋'        : ('蓋',),
-      # hyōgaiji kanji #119
+      # hyōgaiji kanji #56
       '漑'        : ('漑',),
-      # hyōgaiji kanji #120
-      '骸'        : ('骸',),
-      # hyōgaiji kanji #121
-      '鎧'        : ('鎧',),
-      # hyōgaiji kanji #122
+      # hyōgaiji kanji #57
       '喀'        : ('喀',),
-      # hyōgaiji kanji #123
+      # hyōgaiji kanji #58
       '廓'        : ('廓',),
-      # hyōgaiji kanji #124
+      # hyōgaiji kanji #59
       '摑'        : ('摑',),
-      # hyōgaiji kanji #125
+      # hyōgaiji kanji #60
       '攪'        : ('攪', '撹'),
-      # hyōgaiji kanji #126
+      # hyōgaiji kanji #61
       '愕'        : ('愕',),
-      # hyōgaiji kanji #127
+      # hyōgaiji kanji #62
       '萼'        : ('萼',),
-      # hyōgaiji kanji #128
+      # hyōgaiji kanji #63
       '諤'        : ('諤',),
-      # hyōgaiji kanji #129
-      '顎'        : ('顎',),
-      # hyōgaiji kanji #130
+      # hyōgaiji kanji #64
       '鰐'        : ('鰐',),
-      # hyōgaiji kanji #131
-      '樫'        : ('樫',),
-      # hyōgaiji kanji #132
+      # hyōgaiji kanji #65
       '絣'        : ('絣',),
-      # hyōgaiji kanji #133
-      '筈'        : ('筈',),
-      # hyōgaiji kanji #134
-      '葛'        : ('葛',),
-      # hyōgaiji kanji #135
+      # hyōgaiji kanji #66
       '闊'        : ('闊',),
-      # hyōgaiji kanji #136
+      # hyōgaiji kanji #67
       '鰹'        : ('鰹',),
-      # hyōgaiji kanji #137
-      '萱'        : ('萱',),
-      # hyōgaiji kanji #138
+      # hyōgaiji kanji #68
       '奸'        : ('奸',),
-      # hyōgaiji kanji #139
-      '串'        : ('串',),
-      # hyōgaiji kanji #140
+      # hyōgaiji kanji #69
       '旱'        : ('旱',),
-      # hyōgaiji kanji #141
-      '函'        : ('函',),
-      # hyōgaiji kanji #142
+      # hyōgaiji kanji #70
       '咸'        : ('咸',),
-      # hyōgaiji kanji #143
+      # hyōgaiji kanji #71
       '姦'        : ('姦',),
-      # hyōgaiji kanji #144
+      # hyōgaiji kanji #72
       '宦'        : ('宦',),
-      # hyōgaiji kanji #145
-      '柑'        : ('柑',),
-      # hyōgaiji kanji #146
-      '竿'        : ('竿',),
-      # hyōgaiji kanji #147
+      # hyōgaiji kanji #73
       '悍'        : ('悍',),
-      # hyōgaiji kanji #148
+      # hyōgaiji kanji #74
       '桓'        : ('桓',),
-      # hyōgaiji kanji #149
+      # hyōgaiji kanji #75
       '涵'        : ('涵',),
-      # hyōgaiji kanji #150
-      '菅'        : ('菅',),
-      # hyōgaiji kanji #151
+      # hyōgaiji kanji #76
       '嵌'        : ('嵌',),
-      # hyōgaiji kanji #152
+      # hyōgaiji kanji #77
       '鉗'        : ('鉗',),
-      # hyōgaiji kanji #153
+      # hyōgaiji kanji #78
       '澗'        : ('澗',),
-      # hyōgaiji kanji #154
+      # hyōgaiji kanji #79
       '翰'        : ('翰',),
-      # hyōgaiji kanji #155
+      # hyōgaiji kanji #80
       '諫'        : ('諫',),
-      # hyōgaiji kanji #156
+      # hyōgaiji kanji #81
       '瞰'        : ('瞰',),
-      # hyōgaiji kanji #157
-      '韓'        : ('韓',),
-      # hyōgaiji kanji #158
+      # hyōgaiji kanji #82
       '檻'        : ('檻',),
-      # hyōgaiji kanji #159
+      # hyōgaiji kanji #83
       '灌'        : ('灌',),
-      # hyōgaiji kanji #160
-      '玩'        : ('玩',),
-      # hyōgaiji kanji #161
-      '雁'        : ('雁',),
-      # hyōgaiji kanji #162
+      # hyōgaiji kanji #84
       '翫'        : ('翫',),
-      # hyōgaiji kanji #163
+      # hyōgaiji kanji #85
       '頷'        : ('頷',),
-      # hyōgaiji kanji #164
+      # hyōgaiji kanji #86
       '癌'        : ('癌',),
-      # hyōgaiji kanji #165
+      # hyōgaiji kanji #87
       '贋'        : ('贋',),
-      # hyōgaiji kanji #166
+      # hyōgaiji kanji #88
       '几'        : ('几',),
-      # hyōgaiji kanji #167
+      # hyōgaiji kanji #89
       '卉'        : ('卉',),
-      # hyōgaiji kanji #168
-      '其'        : ('其',),
-      # hyōgaiji kanji #169
-      '祁'        : ('祁',),
-      # hyōgaiji kanji #170
+      # hyōgaiji kanji #90
       '耆'        : ('耆',),
-      # hyōgaiji kanji #171
-      '埼'        : ('埼',),
-      # hyōgaiji kanji #172
+      # hyōgaiji kanji #91
       '悸'        : ('悸',),
-      # hyōgaiji kanji #173
+      # hyōgaiji kanji #92
       '揆'        : ('揆',),
-      # hyōgaiji kanji #174
-      '毀'        : ('毀',),
-      # hyōgaiji kanji #175
-      '箕'        : ('箕',),
-      # hyōgaiji kanji #176
-      '畿'        : ('畿',),
-      # hyōgaiji kanji #177
-      '窺'        : ('窺',),
-      # hyōgaiji kanji #178
+      # hyōgaiji kanji #93
       '諱'        : ('諱',),
-      # hyōgaiji kanji #179
-      '徽'        : ('徽',),
-      # hyōgaiji kanji #180
+      # hyōgaiji kanji #94
       '櫃'        : ('櫃',),
-      # hyōgaiji kanji #181
+      # hyōgaiji kanji #95
       '妓'        : ('妓',),
-      # hyōgaiji kanji #182
-      '祇'        : ('祇',),
-      # hyōgaiji kanji #183
+      # hyōgaiji kanji #96
       '魏'        : ('魏',),
-      # hyōgaiji kanji #184
+      # hyōgaiji kanji #97
       '蟻'        : ('蟻',),
-      # hyōgaiji kanji #185
-      '掬'        : ('掬',),
-      # hyōgaiji kanji #186
+      # hyōgaiji kanji #98
       '麴'        : ('麴', '麹'),
-      # hyōgaiji kanji #187
+      # hyōgaiji kanji #99
       '吃'        : ('吃',),
-      # hyōgaiji kanji #188
+      # hyōgaiji kanji #100
       '屹'        : ('屹',),
-      # hyōgaiji kanji #189
+      # hyōgaiji kanji #101
       '拮'        : ('拮',),
-      # hyōgaiji kanji #190
+      # hyōgaiji kanji #102
       '謔'        : ('謔',),
-      # hyōgaiji kanji #191
+      # hyōgaiji kanji #103
       '仇'        : ('仇',),
-      # hyōgaiji kanji #192
-      '臼'        : ('臼',),
-      # hyōgaiji kanji #193
-      '汲'        : ('汲',),
-      # hyōgaiji kanji #194
-      '灸'        : ('灸',),
-      # hyōgaiji kanji #195
+      # hyōgaiji kanji #104
       '咎'        : ('咎',),
-      # hyōgaiji kanji #196
+      # hyōgaiji kanji #105
       '邱'        : ('邱',),
-      # hyōgaiji kanji #197
+      # hyōgaiji kanji #106
       '柩'        : ('柩',),
-      # hyōgaiji kanji #198
-      '笈'        : ('笈',),
-      # hyōgaiji kanji #199
+      # hyōgaiji kanji #107
       '躬'        : ('躬',),
-      # hyōgaiji kanji #200
-      '厩'        : ('厩',),
-      # hyōgaiji kanji #201
-      '嗅'        : ('嗅',),
-      # hyōgaiji kanji #202
+      # hyōgaiji kanji #108
       '舅'        : ('舅',),
-      # hyōgaiji kanji #203
+      # hyōgaiji kanji #109
       '炬'        : ('炬',),
-      # hyōgaiji kanji #204
+      # hyōgaiji kanji #110
       '渠'        : ('渠',),
-      # hyōgaiji kanji #205
-      '裾'        : ('裾',),
-      # hyōgaiji kanji #206
+      # hyōgaiji kanji #111
       '噓'        : ('噓',),
-      # hyōgaiji kanji #207
+      # hyōgaiji kanji #112
       '墟'        : ('墟',),
-      # hyōgaiji kanji #208
-      '鋸'        : ('鋸',),
-      # hyōgaiji kanji #209
+      # hyōgaiji kanji #113
       '遽'        : ('遽',),
-      # hyōgaiji kanji #210
+      # hyōgaiji kanji #114
       '欅'        : ('欅',),
-      # hyōgaiji kanji #211
+      # hyōgaiji kanji #115
       '匈'        : ('匈',),
-      # hyōgaiji kanji #212
+      # hyōgaiji kanji #116
       '怯'        : ('怯',),
-      # hyōgaiji kanji #213
-      '俠'        : ('俠',),
-      # hyōgaiji kanji #214
-      '脇'        : ('脇',),
-      # hyōgaiji kanji #215
+      # hyōgaiji kanji #117
       '莢'        : ('莢',),
-      # hyōgaiji kanji #216
+      # hyōgaiji kanji #118
       '竟'        : ('竟',),
-      # hyōgaiji kanji #217
-      '卿'        : ('卿',),
-      # hyōgaiji kanji #218
+      # hyōgaiji kanji #119
       '僑'        : ('僑',),
-      # hyōgaiji kanji #219
+      # hyōgaiji kanji #120
       '嬌'        : ('嬌',),
-      # hyōgaiji kanji #220
-      '蕎'        : ('蕎',),
-      # hyōgaiji kanji #221
+      # hyōgaiji kanji #121
       '鋏'        : ('鋏',),
-      # hyōgaiji kanji #222
-      '頰'        : ('頰',),
-      # hyōgaiji kanji #223
+      # hyōgaiji kanji #122
       '橿'        : ('橿',),
-      # hyōgaiji kanji #224
+      # hyōgaiji kanji #123
       '疆'        : ('疆',),
-      # hyōgaiji kanji #225
-      '饗'        : ('饗',),
-      # hyōgaiji kanji #226
+      # hyōgaiji kanji #124
       '棘'        : ('棘',),
-      # hyōgaiji kanji #227
+      # hyōgaiji kanji #125
       '髷'        : ('髷',),
-      # hyōgaiji kanji #228
-      '巾'        : ('巾',),
-      # hyōgaiji kanji #229
-      '僅'        : ('僅',),
-      # hyōgaiji kanji #230
-      '禽'        : ('禽',),
-      # hyōgaiji kanji #231
+      # hyōgaiji kanji #126
       '饉'        : ('饉',),
-      # hyōgaiji kanji #232
+      # hyōgaiji kanji #127
       '狗'        : ('狗',),
-      # hyōgaiji kanji #233
-      '惧'        : ('惧',),
-      # hyōgaiji kanji #234
+      # hyōgaiji kanji #128
       '軀'        : ('軀',),
-      # hyōgaiji kanji #235
+      # hyōgaiji kanji #129
       '懼'        : ('懼',),
-      # hyōgaiji kanji #236
-      '俱'        : ('俱',),
-      # hyōgaiji kanji #237
-      '喰'        : ('喰',),
-      # hyōgaiji kanji #238
-      '寓'        : ('寓',),
-      # hyōgaiji kanji #239
-      '窟'        : ('窟',),
-      # hyōgaiji kanji #240
+      # hyōgaiji kanji #130
       '粂'        : ('粂',),
-      # hyōgaiji kanji #241
+      # hyōgaiji kanji #131
       '偈'        : ('偈',),
-      # hyōgaiji kanji #242
+      # hyōgaiji kanji #132
       '荊'        : ('荊',),
-      # hyōgaiji kanji #243
+      # hyōgaiji kanji #133
       '珪'        : ('珪',),
-      # hyōgaiji kanji #244
+      # hyōgaiji kanji #134
       '畦'        : ('畦',),
-      # hyōgaiji kanji #245
+      # hyōgaiji kanji #135
       '脛'        : ('脛',),
-      # hyōgaiji kanji #246
-      '頃'        : ('頃',),
-      # hyōgaiji kanji #247
+      # hyōgaiji kanji #136
       '痙'        : ('痙',),
-      # hyōgaiji kanji #248
-      '詣'        : ('詣',),
-      # hyōgaiji kanji #249
+      # hyōgaiji kanji #137
       '禊'        : ('禊',),
-      # hyōgaiji kanji #250
+      # hyōgaiji kanji #138
       '閨'        : ('閨',),
-      # hyōgaiji kanji #251
-      '稽'        : ('稽',),
-      # hyōgaiji kanji #252
+      # hyōgaiji kanji #139
       '頸'        : ('頸',),
-      # hyōgaiji kanji #253
+      # hyōgaiji kanji #140
       '髻'        : ('髻',),
-      # hyōgaiji kanji #254
+      # hyōgaiji kanji #141
       '蹊'        : ('蹊',),
-      # hyōgaiji kanji #255
+      # hyōgaiji kanji #142
       '鮭'        : ('鮭',),
-      # hyōgaiji kanji #256
-      '繫'        : ('繫',),
-      # hyōgaiji kanji #257
+      # hyōgaiji kanji #143
       '睨'        : ('睨',),
-      # hyōgaiji kanji #258
-      '戟'        : ('戟',),
-      # hyōgaiji kanji #259
-      '隙'        : ('隙',),
-      # hyōgaiji kanji #260
+      # hyōgaiji kanji #144
       '抉'        : ('抉',),
-      # hyōgaiji kanji #261
-      '頁'        : ('頁',),
-      # hyōgaiji kanji #262
-      '訣'        : ('訣',),
-      # hyōgaiji kanji #263
-      '蕨'        : ('蕨',),
-      # hyōgaiji kanji #264
+      # hyōgaiji kanji #145
       '姸'        : ('姸',),
-      # hyōgaiji kanji #265
-      '倦'        : ('倦',),
-      # hyōgaiji kanji #266
+      # hyōgaiji kanji #146
       '虔'        : ('虔',),
-      # hyōgaiji kanji #267
-      '捲'        : ('捲',),
-      # hyōgaiji kanji #268
-      '牽'        : ('牽',),
-      # hyōgaiji kanji #269
-      '喧'        : ('喧',),
-      # hyōgaiji kanji #270
-      '硯'        : ('硯',),
-      # hyōgaiji kanji #271
+      # hyōgaiji kanji #147
       '腱'        : ('腱',),
-      # hyōgaiji kanji #272
-      '鍵'        : ('鍵',),
-      # hyōgaiji kanji #273
+      # hyōgaiji kanji #148
       '瞼'        : ('瞼',),
-      # hyōgaiji kanji #274
+      # hyōgaiji kanji #149
       '鹼'        : ('鹼', '鹸'),
-      # hyōgaiji kanji #275
+      # hyōgaiji kanji #150
       '呟'        : ('呟',),
-      # hyōgaiji kanji #276
+      # hyōgaiji kanji #151
       '眩'        : ('眩',),
-      # hyōgaiji kanji #277
-      '舷'        : ('舷',),
-      # hyōgaiji kanji #278
-      '諺'        : ('諺',),
-      # hyōgaiji kanji #279
-      '乎'        : ('乎',),
-      # hyōgaiji kanji #280
+      # hyōgaiji kanji #152
       '姑'        : ('姑',),
-      # hyōgaiji kanji #281
+      # hyōgaiji kanji #153
       '狐'        : ('狐',),
-      # hyōgaiji kanji #282
-      '股'        : ('股',),
-      # hyōgaiji kanji #283
+      # hyōgaiji kanji #154
       '涸'        : ('涸',),
-      # hyōgaiji kanji #284
+      # hyōgaiji kanji #155
       '菰'        : ('菰',),
-      # hyōgaiji kanji #285
-      '袴'        : ('袴',),
-      # hyōgaiji kanji #286
+      # hyōgaiji kanji #156
       '壺'        : ('壺',),
-      # hyōgaiji kanji #287
-      '跨'        : ('跨',),
-      # hyōgaiji kanji #288
-      '糊'        : ('糊',),
-      # hyōgaiji kanji #289
-      '醐'        : ('醐',),
-      # hyōgaiji kanji #290
+      # hyōgaiji kanji #157
       '齬'        : ('齬',),
-      # hyōgaiji kanji #291
+      # hyōgaiji kanji #158
       '亢'        : ('亢',),
-      # hyōgaiji kanji #292
-      '勾'        : ('勾',),
-      # hyōgaiji kanji #293
+      # hyōgaiji kanji #159
       '叩'        : ('叩',),
-      # hyōgaiji kanji #294
-      '尻'        : ('尻',),
-      # hyōgaiji kanji #295
+      # hyōgaiji kanji #160
       '吼'        : ('吼',),
-      # hyōgaiji kanji #296
+      # hyōgaiji kanji #161
       '肛'        : ('肛',),
-      # hyōgaiji kanji #297
-      '岡'        : ('岡',),
-      # hyōgaiji kanji #298
-      '庚'        : ('庚',),
-      # hyōgaiji kanji #299
-      '杭'        : ('杭',),
-      # hyōgaiji kanji #300
-      '肴'        : ('肴',),
-      # hyōgaiji kanji #301
+      # hyōgaiji kanji #162
       '咬'        : ('咬',),
-      # hyōgaiji kanji #302
+      # hyōgaiji kanji #163
       '垢'        : ('垢',),
-      # hyōgaiji kanji #303
-      '巷'        : ('巷',),
-      # hyōgaiji kanji #304
+      # hyōgaiji kanji #164
       '恍'        : ('恍',),
-      # hyōgaiji kanji #305
-      '恰'        : ('恰',),
-      # hyōgaiji kanji #306
+      # hyōgaiji kanji #165
       '狡'        : ('狡',),
-      # hyōgaiji kanji #307
-      '桁'        : ('桁',),
-      # hyōgaiji kanji #308
+      # hyōgaiji kanji #166
       '胱'        : ('胱',),
-      # hyōgaiji kanji #309
+      # hyōgaiji kanji #167
       '崗'        : ('崗',),
-      # hyōgaiji kanji #310
-      '梗'        : ('梗',),
-      # hyōgaiji kanji #311
-      '喉'        : ('喉',),
-      # hyōgaiji kanji #312
-      '腔'        : ('腔',),
-      # hyōgaiji kanji #313
+      # hyōgaiji kanji #168
       '蛤'        : ('蛤',),
-      # hyōgaiji kanji #314
-      '幌'        : ('幌',),
-      # hyōgaiji kanji #315
-      '煌'        : ('煌',),
-      # hyōgaiji kanji #316
+      # hyōgaiji kanji #169
       '鉤'        : ('鉤',),
-      # hyōgaiji kanji #317
+      # hyōgaiji kanji #170
       '敲'        : ('敲',),
-      # hyōgaiji kanji #318
+      # hyōgaiji kanji #171
       '睾'        : ('睾',),
-      # hyōgaiji kanji #319
-      '膏'        : ('膏',),
-      # hyōgaiji kanji #320
-      '閤'        : ('閤',),
-      # hyōgaiji kanji #321
+      # hyōgaiji kanji #172
       '膠'        : ('膠',),
-      # hyōgaiji kanji #322
+      # hyōgaiji kanji #173
       '篝'        : ('篝',),
-      # hyōgaiji kanji #323
-      '縞'        : ('縞',),
-      # hyōgaiji kanji #324
+      # hyōgaiji kanji #174
       '薨'        : ('薨',),
-      # hyōgaiji kanji #325
+      # hyōgaiji kanji #175
       '糠'        : ('糠',),
-      # hyōgaiji kanji #326
-      '藁'        : ('藁',),
-      # hyōgaiji kanji #327
+      # hyōgaiji kanji #176
       '鮫'        : ('鮫',),
-      # hyōgaiji kanji #328
+      # hyōgaiji kanji #177
       '壙'        : ('壙',),
-      # hyōgaiji kanji #329
+      # hyōgaiji kanji #178
       '曠'        : ('曠',),
-      # hyōgaiji kanji #330
-      '劫'        : ('劫',),
-      # hyōgaiji kanji #331
+      # hyōgaiji kanji #179
       '毫'        : ('毫',),
-      # hyōgaiji kanji #332
-      '傲'        : ('傲',),
-      # hyōgaiji kanji #333
-      '壕'        : ('壕',),
-      # hyōgaiji kanji #334
+      # hyōgaiji kanji #180
       '濠'        : ('濠',),
-      # hyōgaiji kanji #335
+      # hyōgaiji kanji #181
       '嚙'        : ('嚙', '噛'),
-      # hyōgaiji kanji #336
-      '轟'        : ('轟',),
-      # hyōgaiji kanji #337
+      # hyōgaiji kanji #182
       '剋'        : ('剋',),
-      # hyōgaiji kanji #338
+      # hyōgaiji kanji #183
       '哭'        : ('哭',),
-      # hyōgaiji kanji #339
+      # hyōgaiji kanji #184
       '鵠'        : ('鵠',),
-      # hyōgaiji kanji #340
-      '乞'        : ('乞',),
-      # hyōgaiji kanji #341
-      '忽'        : ('忽',),
-      # hyōgaiji kanji #342
-      '惚'        : ('惚',),
-      # hyōgaiji kanji #343
-      '昏'        : ('昏',),
-      # hyōgaiji kanji #344
-      '痕'        : ('痕',),
-      # hyōgaiji kanji #345
+      # hyōgaiji kanji #185
       '渾'        : ('渾',),
-      # hyōgaiji kanji #346
+      # hyōgaiji kanji #186
       '褌'        : ('褌',),
-      # hyōgaiji kanji #347
-      '叉'        : ('叉',),
-      # hyōgaiji kanji #348
-      '些'        : ('些',),
-      # hyōgaiji kanji #349
+      # hyōgaiji kanji #187
       '嗟'        : ('嗟',),
-      # hyōgaiji kanji #350
-      '蓑'        : ('蓑',),
-      # hyōgaiji kanji #351
+      # hyōgaiji kanji #188
       '磋'        : ('磋',),
-      # hyōgaiji kanji #352
-      '坐'        : ('坐',),
-      # hyōgaiji kanji #353
-      '挫'        : ('挫',),
-      # hyōgaiji kanji #354
-      '晒'        : ('晒',),
-      # hyōgaiji kanji #355
-      '柴'        : ('柴',),
-      # hyōgaiji kanji #356
-      '砦'        : ('砦',),
-      # hyōgaiji kanji #357
-      '犀'        : ('犀',),
-      # hyōgaiji kanji #358
+      # hyōgaiji kanji #189
       '賽'        : ('賽',),
-      # hyōgaiji kanji #359
+      # hyōgaiji kanji #190
       '鰓'        : ('鰓',),
-      # hyōgaiji kanji #360
-      '榊'        : ('榊',),
-      # hyōgaiji kanji #361
-      '柵'        : ('柵',),
-      # hyōgaiji kanji #362
+      # hyōgaiji kanji #191
       '炸'        : ('炸',),
-      # hyōgaiji kanji #363
-      '窄'        : ('窄',),
-      # hyōgaiji kanji #364
+      # hyōgaiji kanji #192
       '簀'        : ('簀',),
-      # hyōgaiji kanji #365
-      '刹'        : ('刹',),
-      # hyōgaiji kanji #366
-      '拶'        : ('拶',),
-      # hyōgaiji kanji #367
+      # hyōgaiji kanji #193
       '紮'        : ('紮',),
-      # hyōgaiji kanji #368
-      '撒'        : ('撒',),
-      # hyōgaiji kanji #369
-      '薩'        : ('薩',),
-      # hyōgaiji kanji #370
-      '珊'        : ('珊',),
-      # hyōgaiji kanji #371
+      # hyōgaiji kanji #194
       '餐'        : ('餐',),
-      # hyōgaiji kanji #372
-      '纂'        : ('纂',),
-      # hyōgaiji kanji #373
+      # hyōgaiji kanji #195
       '霰'        : ('霰',),
-      # hyōgaiji kanji #374
+      # hyōgaiji kanji #196
       '攢'        : ('攢',),
-      # hyōgaiji kanji #375
-      '讃'        : ('讃',),
-      # hyōgaiji kanji #376
-      '斬'        : ('斬',),
-      # hyōgaiji kanji #377
+      # hyōgaiji kanji #197
       '懺'        : ('懺',),
-      # hyōgaiji kanji #378
-      '仔'        : ('仔',),
-      # hyōgaiji kanji #379
-      '弛'        : ('弛',),
-      # hyōgaiji kanji #380
-      '此'        : ('此',),
-      # hyōgaiji kanji #381
+      # hyōgaiji kanji #198
       '址'        : ('址',),
-      # hyōgaiji kanji #382
+      # hyōgaiji kanji #199
       '祀'        : ('祀',),
-      # hyōgaiji kanji #383
+      # hyōgaiji kanji #200
       '屍'        : ('屍',),
-      # hyōgaiji kanji #384
+      # hyōgaiji kanji #201
       '屎'        : ('屎',),
-      # hyōgaiji kanji #385
-      '柿'        : ('柿',),
-      # hyōgaiji kanji #386
-      '茨'        : ('茨',),
-      # hyōgaiji kanji #387
-      '恣'        : ('恣',),
-      # hyōgaiji kanji #388
-      '砥'        : ('砥',),
-      # hyōgaiji kanji #389
+      # hyōgaiji kanji #202
       '祠'        : ('祠',),
-      # hyōgaiji kanji #390
+      # hyōgaiji kanji #203
       '翅'        : ('翅',),
-      # hyōgaiji kanji #391
+      # hyōgaiji kanji #204
       '舐'        : ('舐',),
-      # hyōgaiji kanji #392
+      # hyōgaiji kanji #205
       '疵'        : ('疵',),
-      # hyōgaiji kanji #393
+      # hyōgaiji kanji #206
       '趾'        : ('趾',),
-      # hyōgaiji kanji #394
-      '斯'        : ('斯',),
-      # hyōgaiji kanji #395
+      # hyōgaiji kanji #207
       '覗'        : ('覗',),
-      # hyōgaiji kanji #396
+      # hyōgaiji kanji #208
       '嗜'        : ('嗜',),
-      # hyōgaiji kanji #397
+      # hyōgaiji kanji #209
       '滓'        : ('滓',),
-      # hyōgaiji kanji #398
-      '獅'        : ('獅',),
-      # hyōgaiji kanji #399
+      # hyōgaiji kanji #210
       '幟'        : ('幟',),
-      # hyōgaiji kanji #400
-      '摯'        : ('摯',),
-      # hyōgaiji kanji #401
+      # hyōgaiji kanji #211
       '嘴'        : ('嘴',),
-      # hyōgaiji kanji #402
+      # hyōgaiji kanji #212
       '熾'        : ('熾',),
-      # hyōgaiji kanji #403
+      # hyōgaiji kanji #213
       '髭'        : ('髭',),
-      # hyōgaiji kanji #404
+      # hyōgaiji kanji #214
       '贄'        : ('贄',),
-      # hyōgaiji kanji #405
-      '而'        : ('而',),
-      # hyōgaiji kanji #406
+      # hyōgaiji kanji #215
       '峙'        : ('峙',),
-      # hyōgaiji kanji #407
+      # hyōgaiji kanji #216
       '痔'        : ('痔',),
-      # hyōgaiji kanji #408
-      '餌'        : ('餌',),
-      # hyōgaiji kanji #409
-      '竺'        : ('竺',),
-      # hyōgaiji kanji #410
-      '雫'        : ('雫',),
-      # hyōgaiji kanji #411
-      '𠮟'        : ('𠮟',),
-      # hyōgaiji kanji #412
-      '悉'        : ('悉',),
-      # hyōgaiji kanji #413
+      # hyōgaiji kanji #217
       '蛭'        : ('蛭',),
-      # hyōgaiji kanji #414
-      '嫉'        : ('嫉',),
-      # hyōgaiji kanji #415
-      '膝'        : ('膝',),
-      # hyōgaiji kanji #416
-      '櫛'        : ('櫛',),
-      # hyōgaiji kanji #417
-      '柘'        : ('柘',),
-      # hyōgaiji kanji #418
+      # hyōgaiji kanji #218
       '洒'        : ('洒',),
-      # hyōgaiji kanji #419
+      # hyōgaiji kanji #219
       '娑'        : ('娑',),
-      # hyōgaiji kanji #420
-      '這'        : ('這',),
-      # hyōgaiji kanji #421
+      # hyōgaiji kanji #220
       '奢'        : ('奢',),
-      # hyōgaiji kanji #422
+      # hyōgaiji kanji #221
       '闍'        : ('闍',),
-      # hyōgaiji kanji #423
+      # hyōgaiji kanji #222
       '杓'        : ('杓',),
-      # hyōgaiji kanji #424
-      '灼'        : ('灼',),
-      # hyōgaiji kanji #425
+      # hyōgaiji kanji #223
       '綽'        : ('綽',),
-      # hyōgaiji kanji #426
-      '錫'        : ('錫',),
-      # hyōgaiji kanji #427
-      '雀'        : ('雀',),
-      # hyōgaiji kanji #428
-      '惹'        : ('惹',),
-      # hyōgaiji kanji #429
+      # hyōgaiji kanji #224
       '娶'        : ('娶',),
-      # hyōgaiji kanji #430
-      '腫'        : ('腫',),
-      # hyōgaiji kanji #431
-      '諏'        : ('諏',),
-      # hyōgaiji kanji #432
+      # hyōgaiji kanji #225
       '鬚'        : ('鬚',),
-      # hyōgaiji kanji #433
-      '呪'        : ('呪',),
-      # hyōgaiji kanji #434
-      '竪'        : ('竪',),
-      # hyōgaiji kanji #435
+      # hyōgaiji kanji #226
       '綬'        : ('綬',),
-      # hyōgaiji kanji #436
+      # hyōgaiji kanji #227
       '聚'        : ('聚',),
-      # hyōgaiji kanji #437
-      '濡'        : ('濡',),
-      # hyōgaiji kanji #438
+      # hyōgaiji kanji #228
       '襦'        : ('襦',),
-      # hyōgaiji kanji #439
+      # hyōgaiji kanji #229
       '帚'        : ('帚',),
-      # hyōgaiji kanji #440
+      # hyōgaiji kanji #230
       '酋'        : ('酋',),
-      # hyōgaiji kanji #441
-      '袖'        : ('袖',),
-      # hyōgaiji kanji #442
-      '羞'        : ('羞',),
-      # hyōgaiji kanji #443
-      '葺'        : ('葺',),
-      # hyōgaiji kanji #444
-      '蒐'        : ('蒐',),
-      # hyōgaiji kanji #445
+      # hyōgaiji kanji #231
       '箒'        : ('箒',),
-      # hyōgaiji kanji #446
-      '皺'        : ('皺',),
-      # hyōgaiji kanji #447
-      '輯'        : ('輯',),
-      # hyōgaiji kanji #448
-      '鍬'        : ('鍬',),
-      # hyōgaiji kanji #449
-      '繡'        : ('繡', '繍'),
-      # hyōgaiji kanji #450
-      '蹴'        : ('蹴',),
-      # hyōgaiji kanji #451
+      # hyōgaiji kanji #232
+      '皺'        : ('皺', '繍'),
+      # hyōgaiji kanji #233
       '讐'        : ('讐',),
-      # hyōgaiji kanji #452
-      '鷲'        : ('鷲',),
-      # hyōgaiji kanji #453
-      '廿'        : ('廿',),
-      # hyōgaiji kanji #454
+      # hyōgaiji kanji #234
       '揉'        : ('揉',),
-      # hyōgaiji kanji #455
+      # hyōgaiji kanji #235
       '絨'        : ('絨',),
-      # hyōgaiji kanji #456
-      '粥'        : ('粥',),
-      # hyōgaiji kanji #457
+      # hyōgaiji kanji #236
       '戌'        : ('戌',),
-      # hyōgaiji kanji #458
-      '閏'        : ('閏',),
-      # hyōgaiji kanji #459
-      '楯'        : ('楯',),
-      # hyōgaiji kanji #460
-      '馴'        : ('馴',),
-      # hyōgaiji kanji #461
-      '杵'        : ('杵',),
-      # hyōgaiji kanji #462
+      # hyōgaiji kanji #237
       '薯'        : ('薯',),
-      # hyōgaiji kanji #463
+      # hyōgaiji kanji #238
       '藷'        : ('藷',),
-      # hyōgaiji kanji #464
-      '汝'        : ('汝',),
-      # hyōgaiji kanji #465
+      # hyōgaiji kanji #239
       '抒'        : ('抒',),
-      # hyōgaiji kanji #466
+      # hyōgaiji kanji #240
       '鋤'        : ('鋤',),
-      # hyōgaiji kanji #467
+      # hyōgaiji kanji #241
       '妾'        : ('妾',),
-      # hyōgaiji kanji #468
-      '哨'        : ('哨',),
-      # hyōgaiji kanji #469
-      '秤'        : ('秤',),
-      # hyōgaiji kanji #470
+      # hyōgaiji kanji #242
       '娼'        : ('娼',),
-      # hyōgaiji kanji #471
+      # hyōgaiji kanji #243
       '逍'        : ('逍',),
-      # hyōgaiji kanji #472
+      # hyōgaiji kanji #244
       '廂'        : ('廂',),
-      # hyōgaiji kanji #473
+      # hyōgaiji kanji #245
       '椒'        : ('椒',),
-      # hyōgaiji kanji #474
-      '湘'        : ('湘',),
-      # hyōgaiji kanji #475
+      # hyōgaiji kanji #246
       '竦'        : ('竦',),
-      # hyōgaiji kanji #476
+      # hyōgaiji kanji #247
       '鈔'        : ('鈔',),
-      # hyōgaiji kanji #477
+      # hyōgaiji kanji #248
       '睫'        : ('睫',),
-      # hyōgaiji kanji #478
+      # hyōgaiji kanji #249
       '蛸'        : ('蛸',),
-      # hyōgaiji kanji #479
-      '鉦'        : ('鉦',),
-      # hyōgaiji kanji #480
-      '摺'        : ('摺',),
-      # hyōgaiji kanji #481
-      '蔣'        : ('蔣', '蒋'),
-      # hyōgaiji kanji #482
-      '裳'        : ('裳',),
-      # hyōgaiji kanji #483
+      # hyōgaiji kanji #250
+      '鉦'        : ('鉦', '蒋'),
+      # hyōgaiji kanji #251
       '誦'        : ('誦',),
-      # hyōgaiji kanji #484
+      # hyōgaiji kanji #252
       '漿'        : ('漿',),
-      # hyōgaiji kanji #485
+      # hyōgaiji kanji #253
       '蕭'        : ('蕭',),
-      # hyōgaiji kanji #486
+      # hyōgaiji kanji #254
       '踵'        : ('踵',),
-      # hyōgaiji kanji #487
-      '鞘'        : ('鞘',),
-      # hyōgaiji kanji #488
-      '篠'        : ('篠',),
-      # hyōgaiji kanji #489
+      # hyōgaiji kanji #255
       '聳'        : ('聳',),
-      # hyōgaiji kanji #490
-      '鍾'        : ('鍾',),
-      # hyōgaiji kanji #491
-      '醬'        : ('醬', '醤'),
-      # hyōgaiji kanji #492
+      # hyōgaiji kanji #256
+      '鍾'        : ('鍾', '醤'),
+      # hyōgaiji kanji #257
       '囁'        : ('囁',),
-      # hyōgaiji kanji #493
-      '杖'        : ('杖',),
-      # hyōgaiji kanji #494
-      '茸'        : ('茸',),
-      # hyōgaiji kanji #495
-      '嘗'        : ('嘗',),
-      # hyōgaiji kanji #496
+      # hyōgaiji kanji #258
       '擾'        : ('擾',),
-      # hyōgaiji kanji #497
+      # hyōgaiji kanji #259
       '攘'        : ('攘',),
-      # hyōgaiji kanji #498
+      # hyōgaiji kanji #260
       '饒'        : ('饒',),
-      # hyōgaiji kanji #499
-      '拭'        : ('拭',),
-      # hyōgaiji kanji #500
-      '埴'        : ('埴',),
-      # hyōgaiji kanji #501
+      # hyōgaiji kanji #261
       '蜀'        : ('蜀',),
-      # hyōgaiji kanji #502
+      # hyōgaiji kanji #262
       '蝕'        : ('蝕',),
-      # hyōgaiji kanji #503
-      '燭'        : ('燭',),
-      # hyōgaiji kanji #504
+      # hyōgaiji kanji #263
       '褥'        : ('褥',),
-      # hyōgaiji kanji #505
+      # hyōgaiji kanji #264
       '沁'        : ('沁',),
-      # hyōgaiji kanji #506
-      '芯'        : ('芯',),
-      # hyōgaiji kanji #507
+      # hyōgaiji kanji #265
       '呻'        : ('呻',),
-      # hyōgaiji kanji #508
+      # hyōgaiji kanji #266
       '宸'        : ('宸',),
-      # hyōgaiji kanji #509
+      # hyōgaiji kanji #267
       '疹'        : ('疹',),
-      # hyōgaiji kanji #510
+      # hyōgaiji kanji #268
       '蜃'        : ('蜃',),
-      # hyōgaiji kanji #511
+      # hyōgaiji kanji #269
       '滲'        : ('滲',),
-      # hyōgaiji kanji #512
-      '賑'        : ('賑',),
-      # hyōgaiji kanji #513
+      # hyōgaiji kanji #270
       '鍼'        : ('鍼',),
-      # hyōgaiji kanji #514
-      '壬'        : ('壬',),
-      # hyōgaiji kanji #515
-      '訊'        : ('訊',),
-      # hyōgaiji kanji #516
-      '腎'        : ('腎',),
-      # hyōgaiji kanji #517
+      # hyōgaiji kanji #271
       '靱'        : ('靱',),
-      # hyōgaiji kanji #518
+      # hyōgaiji kanji #272
       '塵'        : ('塵',),
-      # hyōgaiji kanji #519
+      # hyōgaiji kanji #273
       '儘'        : ('儘',),
-      # hyōgaiji kanji #520
+      # hyōgaiji kanji #274
       '笥'        : ('笥',),
-      # hyōgaiji kanji #521
+      # hyōgaiji kanji #275
       '祟'        : ('祟',),
-      # hyōgaiji kanji #522
+      # hyōgaiji kanji #276
       '膵'        : ('膵',),
-      # hyōgaiji kanji #523
-      '誰'        : ('誰',),
-      # hyōgaiji kanji #524
-      '錐'        : ('錐',),
-      # hyōgaiji kanji #525
+      # hyōgaiji kanji #277
       '雖'        : ('雖',),
-      # hyōgaiji kanji #526
+      # hyōgaiji kanji #278
       '隋'        : ('隋',),
-      # hyōgaiji kanji #527
+      # hyōgaiji kanji #279
       '隧'        : ('隧',),
-      # hyōgaiji kanji #528
+      # hyōgaiji kanji #280
       '芻'        : ('芻',),
-      # hyōgaiji kanji #529
+      # hyōgaiji kanji #281
       '趨'        : ('趨',),
-      # hyōgaiji kanji #530
+      # hyōgaiji kanji #282
       '鮨'        : ('鮨',),
-      # hyōgaiji kanji #531
-      '丼'        : ('丼',),
-      # hyōgaiji kanji #532
-      '凄'        : ('凄',),
-      # hyōgaiji kanji #533
-      '栖'        : ('栖',),
-      # hyōgaiji kanji #534
-      '棲'        : ('棲',),
-      # hyōgaiji kanji #535
-      '甥'        : ('甥',),
-      # hyōgaiji kanji #536
-      '貰'        : ('貰',),
-      # hyōgaiji kanji #537
+      # hyōgaiji kanji #283
       '蜻'        : ('蜻',),
-      # hyōgaiji kanji #538
-      '醒'        : ('醒',),
-      # hyōgaiji kanji #539
-      '錆'        : ('錆',),
-      # hyōgaiji kanji #540
+      # hyōgaiji kanji #284
       '臍'        : ('臍',),
-      # hyōgaiji kanji #541
+      # hyōgaiji kanji #285
       '瀞'        : ('瀞',),
-      # hyōgaiji kanji #542
+      # hyōgaiji kanji #286
       '鯖'        : ('鯖',),
-      # hyōgaiji kanji #543
+      # hyōgaiji kanji #287
       '脆'        : ('脆',),
-      # hyōgaiji kanji #544
+      # hyōgaiji kanji #288
       '贅'        : ('贅',),
-      # hyōgaiji kanji #545
-      '脊'        : ('脊',),
-      # hyōgaiji kanji #546
-      '戚'        : ('戚',),
-      # hyōgaiji kanji #547
+      # hyōgaiji kanji #289
       '晰'        : ('晰',),
-      # hyōgaiji kanji #548
-      '蹟'        : ('蹟',),
-      # hyōgaiji kanji #549
+      # hyōgaiji kanji #290
       '泄'        : ('泄',),
-      # hyōgaiji kanji #550
-      '屑'        : ('屑',),
-      # hyōgaiji kanji #551
+      # hyōgaiji kanji #291
       '浙'        : ('浙',),
-      # hyōgaiji kanji #552
+      # hyōgaiji kanji #292
       '啜'        : ('啜',),
-      # hyōgaiji kanji #553
+      # hyōgaiji kanji #293
       '楔'        : ('楔',),
-      # hyōgaiji kanji #554
+      # hyōgaiji kanji #294
       '截'        : ('截',),
-      # hyōgaiji kanji #555
-      '尖'        : ('尖',),
-      # hyōgaiji kanji #556
+      # hyōgaiji kanji #295
       '苫'        : ('苫',),
-      # hyōgaiji kanji #557
-      '穿'        : ('穿',),
-      # hyōgaiji kanji #558
-      '閃'        : ('閃',),
-      # hyōgaiji kanji #559
+      # hyōgaiji kanji #296
       '陝'        : ('陝',),
-      # hyōgaiji kanji #560
-      '釧'        : ('釧',),
-      # hyōgaiji kanji #561
-      '揃'        : ('揃',),
-      # hyōgaiji kanji #562
-      '煎'        : ('煎',),
-      # hyōgaiji kanji #563
-      '羨'        : ('羨',),
-      # hyōgaiji kanji #564
-      '腺'        : ('腺',),
-      # hyōgaiji kanji #565
-      '詮'        : ('詮',),
-      # hyōgaiji kanji #566
+      # hyōgaiji kanji #297
       '煽'        : ('煽',),
-      # hyōgaiji kanji #567
-      '箋'        : ('箋',),
-      # hyōgaiji kanji #568
-      '撰'        : ('撰',),
-      # hyōgaiji kanji #569
+      # hyōgaiji kanji #298
       '箭'        : ('箭',),
-      # hyōgaiji kanji #570
+      # hyōgaiji kanji #299
       '賤'        : ('賤',),
-      # hyōgaiji kanji #571
-      '蟬'        : ('蟬',),
-      # hyōgaiji kanji #572
+      # hyōgaiji kanji #300
       '癬'        : ('癬',),
-      # hyōgaiji kanji #573
+      # hyōgaiji kanji #301
       '喘'        : ('喘',),
-      # hyōgaiji kanji #574
-      '膳'        : ('膳',),
-      # hyōgaiji kanji #575
-      '狙'        : ('狙',),
-      # hyōgaiji kanji #576
+      # hyōgaiji kanji #302
       '疽'        : ('疽',),
-      # hyōgaiji kanji #577
-      '疏'        : ('疏',),
-      # hyōgaiji kanji #578
+      # hyōgaiji kanji #303
       '甦'        : ('甦',),
-      # hyōgaiji kanji #579
-      '楚'        : ('楚',),
-      # hyōgaiji kanji #580
+      # hyōgaiji kanji #304
       '鼠'        : ('鼠',),
-      # hyōgaiji kanji #581
-      '遡'        : ('遡',),
-      # hyōgaiji kanji #582
-      '蘇'        : ('蘇',),
-      # hyōgaiji kanji #583
+      # hyōgaiji kanji #305
       '齟'        : ('齟',),
-      # hyōgaiji kanji #584
-      '爪'        : ('爪',),
-      # hyōgaiji kanji #585
-      '宋'        : ('宋',),
-      # hyōgaiji kanji #586
+      # hyōgaiji kanji #306
       '炒'        : ('炒',),
-      # hyōgaiji kanji #587
+      # hyōgaiji kanji #307
       '叟'        : ('叟',),
-      # hyōgaiji kanji #588
-      '蚤'        : ('蚤',),
-      # hyōgaiji kanji #589
-      '曾'        : ('曾', '曽'),
-      # hyōgaiji kanji #590
-      '湊'        : ('湊',),
-      # hyōgaiji kanji #591
+      # hyōgaiji kanji #308
+      '蚤'        : ('蚤', '曾'),
+      # hyōgaiji kanji #309
       '葱'        : ('葱',),
-      # hyōgaiji kanji #592
+      # hyōgaiji kanji #310
       '搔'        : ('搔', '掻'),
-      # hyōgaiji kanji #593
-      '槍'        : ('槍',),
-      # hyōgaiji kanji #594
-      '漕'        : ('漕',),
-      # hyōgaiji kanji #595
+      # hyōgaiji kanji #311
       '箏'        : ('箏',),
-      # hyōgaiji kanji #596
-      '噌'        : ('噌',),
-      # hyōgaiji kanji #597
-      '瘡'        : ('瘡',),
-      # hyōgaiji kanji #598
-      '瘦'        : ('瘦', '痩'),
-      # hyōgaiji kanji #599
-      '踪'        : ('踪',),
-      # hyōgaiji kanji #600
+      # hyōgaiji kanji #312
+      '瘡'        : ('瘡', '瘦'),
+      # hyōgaiji kanji #313
       '艘'        : ('艘',),
-      # hyōgaiji kanji #601
+      # hyōgaiji kanji #314
       '薔'        : ('薔',),
-      # hyōgaiji kanji #602
+      # hyōgaiji kanji #315
       '甑'        : ('甑',),
-      # hyōgaiji kanji #603
-      '叢'        : ('叢',),
-      # hyōgaiji kanji #604
+      # hyōgaiji kanji #316
       '藪'        : ('藪',),
-      # hyōgaiji kanji #605
+      # hyōgaiji kanji #317
       '躁'        : ('躁',),
-      # hyōgaiji kanji #606
+      # hyōgaiji kanji #318
       '囃'        : ('囃',),
-      # hyōgaiji kanji #607
+      # hyōgaiji kanji #319
       '竈'        : ('竈',),
-      # hyōgaiji kanji #608
+      # hyōgaiji kanji #320
       '鰺'        : ('鰺',),
-      # hyōgaiji kanji #609
+      # hyōgaiji kanji #321
       '仄'        : ('仄',),
-      # hyōgaiji kanji #610
-      '捉'        : ('捉',),
-      # hyōgaiji kanji #611
-      '塞'        : ('塞',),
-      # hyōgaiji kanji #612
-      '粟'        : ('粟',),
-      # hyōgaiji kanji #613
+      # hyōgaiji kanji #322
       '杣'        : ('杣',),
-      # hyōgaiji kanji #614
-      '遜'        : ('遜',),
-      # hyōgaiji kanji #615
-      '噂'        : ('噂',),
-      # hyōgaiji kanji #616
-      '樽'        : ('樽',),
-      # hyōgaiji kanji #617
-      '鱒'        : ('鱒',),
-      # hyōgaiji kanji #618
+      # hyōgaiji kanji #323
       '侘'        : ('侘',),
-      # hyōgaiji kanji #619
+      # hyōgaiji kanji #324
       '咤'        : ('咤',),
-      # hyōgaiji kanji #620
-      '詫'        : ('詫',),
-      # hyōgaiji kanji #621
-      '陀'        : ('陀',),
-      # hyōgaiji kanji #622
+      # hyōgaiji kanji #325
       '拿'        : ('拿',),
-      # hyōgaiji kanji #623
+      # hyōgaiji kanji #326
       '荼'        : ('荼',),
-      # hyōgaiji kanji #624
-      '唾'        : ('唾',),
-      # hyōgaiji kanji #625
-      '舵'        : ('舵',),
-      # hyōgaiji kanji #626
-      '楕'        : ('楕',),
-      # hyōgaiji kanji #627
+      # hyōgaiji kanji #327
       '驒'        : ('驒',),
-      # hyōgaiji kanji #628
-      '苔'        : ('苔',),
-      # hyōgaiji kanji #629
-      '殆'        : ('殆',),
-      # hyōgaiji kanji #630
-      '堆'        : ('堆',),
-      # hyōgaiji kanji #631
-      '碓'        : ('碓',),
-      # hyōgaiji kanji #632
+      # hyōgaiji kanji #328
       '腿'        : ('腿',),
-      # hyōgaiji kanji #633
+      # hyōgaiji kanji #329
       '頽'        : ('頽',),
-      # hyōgaiji kanji #634
-      '戴'        : ('戴',),
-      # hyōgaiji kanji #635
-      '醍'        : ('醍',),
-      # hyōgaiji kanji #636
-      '托'        : ('托',),
-      # hyōgaiji kanji #637
+      # hyōgaiji kanji #330
       '鐸'        : ('鐸',),
-      # hyōgaiji kanji #638
-      '凧'        : ('凧',),
-      # hyōgaiji kanji #639
+      # hyōgaiji kanji #331
       '襷'        : ('襷',),
-      # hyōgaiji kanji #640
+      # hyōgaiji kanji #332
       '燵'        : ('燵',),
-      # hyōgaiji kanji #641
-      '坦'        : ('坦',),
-      # hyōgaiji kanji #642
+      # hyōgaiji kanji #333
       '疸'        : ('疸',),
-      # hyōgaiji kanji #643
-      '耽'        : ('耽',),
-      # hyōgaiji kanji #644
+      # hyōgaiji kanji #334
       '啖'        : ('啖',),
-      # hyōgaiji kanji #645
+      # hyōgaiji kanji #335
       '蛋'        : ('蛋',),
-      # hyōgaiji kanji #646
+      # hyōgaiji kanji #336
       '毯'        : ('毯',),
-      # hyōgaiji kanji #647
-      '湛'        : ('湛',),
-      # hyōgaiji kanji #648
+      # hyōgaiji kanji #337
       '痰'        : ('痰',),
-      # hyōgaiji kanji #649
-      '綻'        : ('綻',),
-      # hyōgaiji kanji #650
+      # hyōgaiji kanji #338
       '憚'        : ('憚',),
-      # hyōgaiji kanji #651
-      '歎'        : ('歎',),
-      # hyōgaiji kanji #652
-      '簞'        : ('簞',),
-      # hyōgaiji kanji #653
+      # hyōgaiji kanji #339
       '譚'        : ('譚',),
-      # hyōgaiji kanji #654
-      '灘'        : ('灘',),
-      # hyōgaiji kanji #655
+      # hyōgaiji kanji #340
       '雉'        : ('雉',),
-      # hyōgaiji kanji #656
-      '馳'        : ('馳',),
-      # hyōgaiji kanji #657
+      # hyōgaiji kanji #341
       '蜘'        : ('蜘',),
-      # hyōgaiji kanji #658
-      '緻'        : ('緻',),
-      # hyōgaiji kanji #659
-      '筑'        : ('筑',),
-      # hyōgaiji kanji #660
+      # hyōgaiji kanji #342
       '膣'        : ('膣',),
-      # hyōgaiji kanji #661
-      '肘'        : ('肘',),
-      # hyōgaiji kanji #662
+      # hyōgaiji kanji #343
       '冑'        : ('冑',),
-      # hyōgaiji kanji #663
-      '紐'        : ('紐',),
-      # hyōgaiji kanji #664
-      '酎'        : ('酎',),
-      # hyōgaiji kanji #665
-      '厨'        : ('厨',),
-      # hyōgaiji kanji #666
+      # hyōgaiji kanji #344
       '蛛'        : ('蛛',),
-      # hyōgaiji kanji #667
-      '註'        : ('註',),
-      # hyōgaiji kanji #668
+      # hyōgaiji kanji #345
       '誅'        : ('誅',),
-      # hyōgaiji kanji #669
+      # hyōgaiji kanji #346
       '疇'        : ('疇',),
-      # hyōgaiji kanji #670
+      # hyōgaiji kanji #347
       '躊'        : ('躊',),
-      # hyōgaiji kanji #671
+      # hyōgaiji kanji #348
       '佇'        : ('佇',),
-      # hyōgaiji kanji #672
+      # hyōgaiji kanji #349
       '楮'        : ('楮',),
-      # hyōgaiji kanji #673
-      '箸'        : ('箸',),
-      # hyōgaiji kanji #674
-      '儲'        : ('儲',),
-      # hyōgaiji kanji #675
+      # hyōgaiji kanji #350
       '瀦'        : ('瀦',),
-      # hyōgaiji kanji #676
+      # hyōgaiji kanji #351
       '躇'        : ('躇',),
-      # hyōgaiji kanji #677
+      # hyōgaiji kanji #352
       '吊'        : ('吊',),
-      # hyōgaiji kanji #678
-      '帖'        : ('帖',),
-      # hyōgaiji kanji #679
-      '喋'        : ('喋',),
-      # hyōgaiji kanji #680
-      '貼'        : ('貼',),
-      # hyōgaiji kanji #681
-      '牒'        : ('牒',),
-      # hyōgaiji kanji #682
+      # hyōgaiji kanji #353
       '趙'        : ('趙',),
-      # hyōgaiji kanji #683
+      # hyōgaiji kanji #354
       '銚'        : ('銚',),
-      # hyōgaiji kanji #684
-      '嘲'        : ('嘲',),
-      # hyōgaiji kanji #685
+      # hyōgaiji kanji #355
       '諜'        : ('諜',),
-      # hyōgaiji kanji #686
-      '寵'        : ('寵',),
-      # hyōgaiji kanji #687
-      '捗'        : ('捗',),
-      # hyōgaiji kanji #688
-      '枕'        : ('枕',),
-      # hyōgaiji kanji #689
-      '槌'        : ('槌',),
-      # hyōgaiji kanji #690
+      # hyōgaiji kanji #356
       '鎚'        : ('鎚',),
-      # hyōgaiji kanji #691
-      '辻'        : ('辻',),
-      # hyōgaiji kanji #692
+      # hyōgaiji kanji #357
       '剃'        : ('剃',),
-      # hyōgaiji kanji #693
-      '挺'        : ('挺',),
-      # hyōgaiji kanji #694
-      '釘'        : ('釘',),
-      # hyōgaiji kanji #695
+      # hyōgaiji kanji #358
       '掟'        : ('掟',),
-      # hyōgaiji kanji #696
-      '梯'        : ('梯',),
-      # hyōgaiji kanji #697
-      '逞'        : ('逞',),
-      # hyōgaiji kanji #698
+      # hyōgaiji kanji #359
       '啼'        : ('啼',),
-      # hyōgaiji kanji #699
+      # hyōgaiji kanji #360
       '碇'        : ('碇',),
-      # hyōgaiji kanji #700
-      '鼎'        : ('鼎',),
-      # hyōgaiji kanji #701
-      '綴'        : ('綴',),
-      # hyōgaiji kanji #702
-      '鄭'        : ('鄭',),
-      # hyōgaiji kanji #703
-      '薙'        : ('薙',),
-      # hyōgaiji kanji #704
-      '諦'        : ('諦',),
-      # hyōgaiji kanji #705
-      '蹄'        : ('蹄',),
-      # hyōgaiji kanji #706
-      '鵜'        : ('鵜',),
-      # hyōgaiji kanji #707
-      '荻'        : ('荻',),
-      # hyōgaiji kanji #708
-      '擢'        : ('擢',),
-      # hyōgaiji kanji #709
-      '溺'        : ('溺',),
-      # hyōgaiji kanji #710
-      '姪'        : ('姪',),
-      # hyōgaiji kanji #711
+      # hyōgaiji kanji #361
       '轍'        : ('轍',),
-      # hyōgaiji kanji #712
-      '辿'        : ('辿',),
-      # hyōgaiji kanji #713
+      # hyōgaiji kanji #362
       '唸'        : ('唸',),
-      # hyōgaiji kanji #714
-      '塡'        : ('塡',),
-      # hyōgaiji kanji #715
+      # hyōgaiji kanji #363
       '篆'        : ('篆',),
-      # hyōgaiji kanji #716
-      '顚'        : ('顚',),
-      # hyōgaiji kanji #717
+      # hyōgaiji kanji #364
       '囀'        : ('囀',),
-      # hyōgaiji kanji #718
-      '纏'        : ('纏',),
-      # hyōgaiji kanji #719
-      '佃'        : ('佃',),
-      # hyōgaiji kanji #720
-      '淀'        : ('淀',),
-      # hyōgaiji kanji #721
+      # hyōgaiji kanji #365
       '澱'        : ('澱',),
-      # hyōgaiji kanji #722
+      # hyōgaiji kanji #366
       '臀'        : ('臀',),
-      # hyōgaiji kanji #723
-      '兎'        : ('兎',),
-      # hyōgaiji kanji #724
-      '妬'        : ('妬',),
-      # hyōgaiji kanji #725
-      '兜'        : ('兜',),
-      # hyōgaiji kanji #726
-      '堵'        : ('堵',),
-      # hyōgaiji kanji #727
+      # hyōgaiji kanji #367
       '屠'        : ('屠',),
-      # hyōgaiji kanji #728
-      '賭'        : ('賭',),
-      # hyōgaiji kanji #729
-      '宕'        : ('宕',),
-      # hyōgaiji kanji #730
-      '沓'        : ('沓',),
-      # hyōgaiji kanji #731
-      '套'        : ('套',),
-      # hyōgaiji kanji #732
+      # hyōgaiji kanji #368
       '疼'        : ('疼',),
-      # hyōgaiji kanji #733
-      '桶'        : ('桶',),
-      # hyōgaiji kanji #734
+      # hyōgaiji kanji #369
       '淘'        : ('淘',),
-      # hyōgaiji kanji #735
-      '萄'        : ('萄',),
-      # hyōgaiji kanji #736
-      '逗'        : ('逗',),
-      # hyōgaiji kanji #737
+      # hyōgaiji kanji #370
       '棹'        : ('棹',),
-      # hyōgaiji kanji #738
-      '樋'        : ('樋',),
-      # hyōgaiji kanji #739
+      # hyōgaiji kanji #371
       '蕩'        : ('蕩',),
-      # hyōgaiji kanji #740
+      # hyōgaiji kanji #372
       '鄧'        : ('鄧',),
-      # hyōgaiji kanji #741
-      '橙'        : ('橙',),
-      # hyōgaiji kanji #742
+      # hyōgaiji kanji #373
       '濤'        : ('濤',),
-      # hyōgaiji kanji #743
-      '檮'        : ('檮',),
-      # hyōgaiji kanji #744
-      '櫂'        : ('櫂',),
-      # hyōgaiji kanji #745
-      '禱'        : ('禱', '祷'),
-      # hyōgaiji kanji #746
-      '撞'        : ('撞',),
-      # hyōgaiji kanji #747
+      # hyōgaiji kanji #374
+      '檮'        : ('檮', '禱'),
+      # hyōgaiji kanji #375
       '禿'        : ('禿',),
-      # hyōgaiji kanji #748
+      # hyōgaiji kanji #376
       '瀆'        : ('瀆',),
-      # hyōgaiji kanji #749
-      '栃'        : ('栃',),
-      # hyōgaiji kanji #750
+      # hyōgaiji kanji #377
       '咄'        : ('咄',),
-      # hyōgaiji kanji #751
-      '沌'        : ('沌',),
-      # hyōgaiji kanji #752
-      '遁'        : ('遁',),
-      # hyōgaiji kanji #753
-      '頓'        : ('頓',),
-      # hyōgaiji kanji #754
-      '吞'        : ('吞',),
-      # hyōgaiji kanji #755
-      '貪'        : ('貪',),
-      # hyōgaiji kanji #756
+      # hyōgaiji kanji #378
       '邇'        : ('邇',),
-      # hyōgaiji kanji #757
-      '匂'        : ('匂',),
-      # hyōgaiji kanji #758
+      # hyōgaiji kanji #379
       '韮'        : ('韮',),
-      # hyōgaiji kanji #759
+      # hyōgaiji kanji #380
       '涅'        : ('涅',),
-      # hyōgaiji kanji #760
+      # hyōgaiji kanji #381
       '禰'        : ('禰',),
-      # hyōgaiji kanji #761
+      # hyōgaiji kanji #382
       '捏'        : ('捏',),
-      # hyōgaiji kanji #762
-      '捻'        : ('捻',),
-      # hyōgaiji kanji #763
+      # hyōgaiji kanji #383
       '撚'        : ('撚',),
-      # hyōgaiji kanji #764
+      # hyōgaiji kanji #384
       '膿'        : ('膿',),
-      # hyōgaiji kanji #765
+      # hyōgaiji kanji #385
       '囊'        : ('囊',),
-      # hyōgaiji kanji #766
-      '杷'        : ('杷',),
-      # hyōgaiji kanji #767
+      # hyōgaiji kanji #386
       '爬'        : ('爬',),
-      # hyōgaiji kanji #768
-      '琶'        : ('琶',),
-      # hyōgaiji kanji #769
-      '頗'        : ('頗',),
-      # hyōgaiji kanji #770
-      '播'        : ('播',),
-      # hyōgaiji kanji #771
-      '芭'        : ('芭',),
-      # hyōgaiji kanji #772
-      '罵'        : ('罵',),
-      # hyōgaiji kanji #773
+      # hyōgaiji kanji #387
       '蟇'        : ('蟇',),
-      # hyōgaiji kanji #774
+      # hyōgaiji kanji #388
       '胚'        : ('胚',),
-      # hyōgaiji kanji #775
+      # hyōgaiji kanji #389
       '徘'        : ('徘',),
-      # hyōgaiji kanji #776
+      # hyōgaiji kanji #390
       '牌'        : ('牌',),
-      # hyōgaiji kanji #777
+      # hyōgaiji kanji #391
       '稗'        : ('稗',),
-      # hyōgaiji kanji #778
+      # hyōgaiji kanji #392
       '狽'        : ('狽',),
-      # hyōgaiji kanji #779
-      '煤'        : ('煤',),
-      # hyōgaiji kanji #780
+      # hyōgaiji kanji #393
       '帛'        : ('帛',),
-      # hyōgaiji kanji #781
-      '柏'        : ('柏',),
-      # hyōgaiji kanji #782
-      '剝'        : ('剝',),
-      # hyōgaiji kanji #783
+      # hyōgaiji kanji #394
       '粕'        : ('粕',),
-      # hyōgaiji kanji #784
-      '箔'        : ('箔',),
-      # hyōgaiji kanji #785
-      '莫'        : ('莫',),
-      # hyōgaiji kanji #786
+      # hyōgaiji kanji #395
       '駁'        : ('駁',),
-      # hyōgaiji kanji #787
+      # hyōgaiji kanji #396
       '瀑'        : ('瀑',),
-      # hyōgaiji kanji #788
-      '曝'        : ('曝',),
-      # hyōgaiji kanji #789
-      '畠'        : ('畠',),
-      # hyōgaiji kanji #790
+      # hyōgaiji kanji #397
       '捌'        : ('捌',),
-      # hyōgaiji kanji #791
+      # hyōgaiji kanji #398
       '撥'        : ('撥',),
-      # hyōgaiji kanji #792
+      # hyōgaiji kanji #399
       '潑'        : ('潑',),
-      # hyōgaiji kanji #793
+      # hyōgaiji kanji #400
       '醱'        : ('醱',),
-      # hyōgaiji kanji #794
+      # hyōgaiji kanji #401
       '筏'        : ('筏',),
-      # hyōgaiji kanji #795
+      # hyōgaiji kanji #402
       '跋'        : ('跋',),
-      # hyōgaiji kanji #796
+      # hyōgaiji kanji #403
       '噺'        : ('噺',),
-      # hyōgaiji kanji #797
-      '氾'        : ('氾',),
-      # hyōgaiji kanji #798
-      '汎'        : ('汎',),
-      # hyōgaiji kanji #799
-      '阪'        : ('阪',),
-      # hyōgaiji kanji #800
+      # hyōgaiji kanji #404
       '叛'        : ('叛',),
-      # hyōgaiji kanji #801
+      # hyōgaiji kanji #405
       '袢'        : ('袢',),
-      # hyōgaiji kanji #802
-      '絆'        : ('絆',),
-      # hyōgaiji kanji #803
-      '斑'        : ('斑',),
-      # hyōgaiji kanji #804
+      # hyōgaiji kanji #406
       '槃'        : ('槃',),
-      # hyōgaiji kanji #805
-      '幡'        : ('幡',),
-      # hyōgaiji kanji #806
+      # hyōgaiji kanji #407
       '攀'        : ('攀',),
-      # hyōgaiji kanji #807
-      '挽'        : ('挽',),
-      # hyōgaiji kanji #808
-      '磐'        : ('磐',),
-      # hyōgaiji kanji #809
-      '蕃'        : ('蕃',),
-      # hyōgaiji kanji #810
+      # hyōgaiji kanji #408
       '屁'        : ('屁',),
-      # hyōgaiji kanji #811
-      '庇'        : ('庇',),
-      # hyōgaiji kanji #812
+      # hyōgaiji kanji #409
       '砒'        : ('砒',),
-      # hyōgaiji kanji #813
+      # hyōgaiji kanji #410
       '脾'        : ('脾',),
-      # hyōgaiji kanji #814
+      # hyōgaiji kanji #411
       '痺'        : ('痺',),
-      # hyōgaiji kanji #815
+      # hyōgaiji kanji #412
       '鄙'        : ('鄙',),
-      # hyōgaiji kanji #816
+      # hyōgaiji kanji #413
       '誹'        : ('誹',),
-      # hyōgaiji kanji #817
+      # hyōgaiji kanji #414
       '臂'        : ('臂',),
-      # hyōgaiji kanji #818
-      '枇'        : ('枇',),
-      # hyōgaiji kanji #819
-      '毘'        : ('毘',),
-      # hyōgaiji kanji #820
-      '梶'        : ('梶',),
-      # hyōgaiji kanji #821
+      # hyōgaiji kanji #415
       '媚'        : ('媚',),
-      # hyōgaiji kanji #822
-      '琵'        : ('琵',),
-      # hyōgaiji kanji #823
+      # hyōgaiji kanji #416
       '薇'        : ('薇',),
-      # hyōgaiji kanji #824
+      # hyōgaiji kanji #417
       '靡'        : ('靡',),
-      # hyōgaiji kanji #825
-      '疋'        : ('疋',),
-      # hyōgaiji kanji #826
-      '畢'        : ('畢',),
-      # hyōgaiji kanji #827
+      # hyōgaiji kanji #418
       '逼'        : ('逼',),
-      # hyōgaiji kanji #828
+      # hyōgaiji kanji #419
       '謬'        : ('謬',),
-      # hyōgaiji kanji #829
-      '豹'        : ('豹',),
-      # hyōgaiji kanji #830
+      # hyōgaiji kanji #420
       '憑'        : ('憑',),
-      # hyōgaiji kanji #831
-      '瓢'        : ('瓢',),
-      # hyōgaiji kanji #832
+      # hyōgaiji kanji #421
       '屛'        : ('屛', '屏'),
-      # hyōgaiji kanji #833
-      '廟'        : ('廟',),
-      # hyōgaiji kanji #834
+      # hyōgaiji kanji #422
       '牝'        : ('牝',),
-      # hyōgaiji kanji #835
-      '瀕'        : ('瀕',),
-      # hyōgaiji kanji #836
+      # hyōgaiji kanji #423
       '憫'        : ('憫',),
-      # hyōgaiji kanji #837
+      # hyōgaiji kanji #424
       '鬢'        : ('鬢',),
-      # hyōgaiji kanji #838
-      '斧'        : ('斧',),
-      # hyōgaiji kanji #839
-      '阜'        : ('阜',),
-      # hyōgaiji kanji #840
-      '訃'        : ('訃',),
-      # hyōgaiji kanji #841
+      # hyōgaiji kanji #425
       '俯'        : ('俯',),
-      # hyōgaiji kanji #842
-      '釜'        : ('釜',),
-      # hyōgaiji kanji #843
+      # hyōgaiji kanji #426
       '腑'        : ('腑',),
-      # hyōgaiji kanji #844
+      # hyōgaiji kanji #427
       '孵'        : ('孵',),
-      # hyōgaiji kanji #845
+      # hyōgaiji kanji #428
       '鮒'        : ('鮒',),
-      # hyōgaiji kanji #846
+      # hyōgaiji kanji #429
       '巫'        : ('巫',),
-      # hyōgaiji kanji #847
-      '葡'        : ('葡',),
-      # hyōgaiji kanji #848
-      '撫'        : ('撫',),
-      # hyōgaiji kanji #849
-      '蕪'        : ('蕪',),
-      # hyōgaiji kanji #850
+      # hyōgaiji kanji #430
       '諷'        : ('諷',),
-      # hyōgaiji kanji #851
+      # hyōgaiji kanji #431
       '祓'        : ('祓',),
-      # hyōgaiji kanji #852
-      '吻'        : ('吻',),
-      # hyōgaiji kanji #853
+      # hyōgaiji kanji #432
       '扮'        : ('扮',),
-      # hyōgaiji kanji #854
-      '焚'        : ('焚',),
-      # hyōgaiji kanji #855
+      # hyōgaiji kanji #433
       '糞'        : ('糞',),
-      # hyōgaiji kanji #856
+      # hyōgaiji kanji #434
       '幷'        : ('幷', '并'),
-      # hyōgaiji kanji #857
+      # hyōgaiji kanji #435
       '聘'        : ('聘',),
-      # hyōgaiji kanji #858
-      '蔽'        : ('蔽',),
-      # hyōgaiji kanji #859
-      '餅'        : ('餅',),
-      # hyōgaiji kanji #860
+      # hyōgaiji kanji #436
       '斃'        : ('斃',),
-      # hyōgaiji kanji #861
+      # hyōgaiji kanji #437
       '袂'        : ('袂',),
-      # hyōgaiji kanji #862
+      # hyōgaiji kanji #438
       '僻'        : ('僻',),
-      # hyōgaiji kanji #863
-      '璧'        : ('璧',),
-      # hyōgaiji kanji #864
+      # hyōgaiji kanji #439
       '襞'        : ('襞',),
-      # hyōgaiji kanji #865
-      '蔑'        : ('蔑',),
-      # hyōgaiji kanji #866
-      '瞥'        : ('瞥',),
-      # hyōgaiji kanji #867
+      # hyōgaiji kanji #440
       '扁'        : ('扁',),
-      # hyōgaiji kanji #868
-      '篇'        : ('篇',),
-      # hyōgaiji kanji #869
+      # hyōgaiji kanji #441
       '騙'        : ('騙',),
-      # hyōgaiji kanji #870
-      '娩'        : ('娩',),
-      # hyōgaiji kanji #871
-      '鞭'        : ('鞭',),
-      # hyōgaiji kanji #872
-      '哺'        : ('哺',),
-      # hyōgaiji kanji #873
-      '圃'        : ('圃',),
-      # hyōgaiji kanji #874
-      '蒲'        : ('蒲',),
-      # hyōgaiji kanji #875
-      '戊'        : ('戊',),
-      # hyōgaiji kanji #876
-      '牡'        : ('牡',),
-      # hyōgaiji kanji #877
-      '姥'        : ('姥',),
-      # hyōgaiji kanji #878
-      '菩'        : ('菩',),
-      # hyōgaiji kanji #879
+      # hyōgaiji kanji #442
       '呆'        : ('呆',),
-      # hyōgaiji kanji #880
+      # hyōgaiji kanji #443
       '彷'        : ('彷',),
-      # hyōgaiji kanji #881
+      # hyōgaiji kanji #444
       '庖'        : ('庖',),
-      # hyōgaiji kanji #882
+      # hyōgaiji kanji #445
       '苞'        : ('苞',),
-      # hyōgaiji kanji #883
+      # hyōgaiji kanji #446
       '疱'        : ('疱',),
-      # hyōgaiji kanji #884
-      '捧'        : ('捧',),
-      # hyōgaiji kanji #885
-      '逢'        : ('逢',),
-      # hyōgaiji kanji #886
-      '蜂'        : ('蜂',),
-      # hyōgaiji kanji #887
-      '蓬'        : ('蓬',),
-      # hyōgaiji kanji #888
-      '鞄'        : ('鞄',),
-      # hyōgaiji kanji #889
-      '鋒'        : ('鋒',),
-      # hyōgaiji kanji #890
-      '牟'        : ('牟',),
-      # hyōgaiji kanji #891
+      # hyōgaiji kanji #447
       '芒'        : ('芒',),
-      # hyōgaiji kanji #892
+      # hyōgaiji kanji #448
       '茫'        : ('茫',),
-      # hyōgaiji kanji #893
+      # hyōgaiji kanji #449
       '虻'        : ('虻',),
-      # hyōgaiji kanji #894
+      # hyōgaiji kanji #450
       '榜'        : ('榜',),
-      # hyōgaiji kanji #895
+      # hyōgaiji kanji #451
       '膀'        : ('膀',),
-      # hyōgaiji kanji #896
-      '貌'        : ('貌',),
-      # hyōgaiji kanji #897
+      # hyōgaiji kanji #452
       '鉾'        : ('鉾',),
-      # hyōgaiji kanji #898
+      # hyōgaiji kanji #453
       '謗'        : ('謗',),
-      # hyōgaiji kanji #899
+      # hyōgaiji kanji #454
       '吠'        : ('吠',),
-      # hyōgaiji kanji #900
-      '卜'        : ('卜',),
-      # hyōgaiji kanji #901
-      '勃'        : ('勃',),
-      # hyōgaiji kanji #902
+      # hyōgaiji kanji #455
       '梵'        : ('梵',),
-      # hyōgaiji kanji #903
-      '昧'        : ('昧',),
-      # hyōgaiji kanji #904
+      # hyōgaiji kanji #456
       '邁'        : ('邁',),
-      # hyōgaiji kanji #905
+      # hyōgaiji kanji #457
       '枡'        : ('枡', '桝'),
-      # hyōgaiji kanji #906
-      '俣'        : ('俣',),
-      # hyōgaiji kanji #907
-      '沫'        : ('沫',),
-      # hyōgaiji kanji #908
-      '迄'        : ('迄',),
-      # hyōgaiji kanji #909
+      # hyōgaiji kanji #458
       '曼'        : ('曼',),
-      # hyōgaiji kanji #910
-      '蔓'        : ('蔓',),
-      # hyōgaiji kanji #911
+      # hyōgaiji kanji #459
       '瞞'        : ('瞞',),
-      # hyōgaiji kanji #912
+      # hyōgaiji kanji #460
       '饅'        : ('饅',),
-      # hyōgaiji kanji #913
+      # hyōgaiji kanji #461
       '鬘'        : ('鬘',),
-      # hyōgaiji kanji #914
+      # hyōgaiji kanji #462
       '鰻'        : ('鰻',),
-      # hyōgaiji kanji #915
-      '蜜'        : ('蜜',),
-      # hyōgaiji kanji #916
+      # hyōgaiji kanji #463
       '鵡'        : ('鵡',),
-      # hyōgaiji kanji #917
-      '冥'        : ('冥',),
-      # hyōgaiji kanji #918
-      '瞑'        : ('瞑',),
-      # hyōgaiji kanji #919
-      '謎'        : ('謎',),
-      # hyōgaiji kanji #920
-      '麵'        : ('麵', '麺'),
-      # hyōgaiji kanji #921
-      '蒙'        : ('蒙',),
-      # hyōgaiji kanji #922
+      # hyōgaiji kanji #464
+      '瞑'        : ('瞑', '麵'),
+      # hyōgaiji kanji #465
       '朦'        : ('朦',),
-      # hyōgaiji kanji #923
-      '勿'        : ('勿',),
-      # hyōgaiji kanji #924
-      '籾'        : ('籾',),
-      # hyōgaiji kanji #925
+      # hyōgaiji kanji #466
       '悶'        : ('悶',),
-      # hyōgaiji kanji #926
+      # hyōgaiji kanji #467
       '揶'        : ('揶',),
-      # hyōgaiji kanji #927
+      # hyōgaiji kanji #468
       '爺'        : ('爺',),
-      # hyōgaiji kanji #928
+      # hyōgaiji kanji #469
       '鑓'        : ('鑓',),
-      # hyōgaiji kanji #929
-      '喩'        : ('喩',),
-      # hyōgaiji kanji #930
+      # hyōgaiji kanji #470
       '揄'        : ('揄',),
-      # hyōgaiji kanji #931
+      # hyōgaiji kanji #471
       '愈'        : ('愈',),
-      # hyōgaiji kanji #932
+      # hyōgaiji kanji #472
       '楡'        : ('楡',),
-      # hyōgaiji kanji #933
-      '尤'        : ('尤',),
-      # hyōgaiji kanji #934
-      '釉'        : ('釉',),
-      # hyōgaiji kanji #935
-      '楢'        : ('楢',),
-      # hyōgaiji kanji #936
+      # hyōgaiji kanji #473
       '猷'        : ('猷',),
-      # hyōgaiji kanji #937
+      # hyōgaiji kanji #474
       '飫'        : ('飫',),
-      # hyōgaiji kanji #938
-      '輿'        : ('輿',),
-      # hyōgaiji kanji #939
+      # hyōgaiji kanji #475
       '孕'        : ('孕',),
-      # hyōgaiji kanji #940
-      '妖'        : ('妖',),
-      # hyōgaiji kanji #941
+      # hyōgaiji kanji #476
       '拗'        : ('拗',),
-      # hyōgaiji kanji #942
+      # hyōgaiji kanji #477
       '涌'        : ('涌',),
-      # hyōgaiji kanji #943
+      # hyōgaiji kanji #478
       '痒'        : ('痒',),
-      # hyōgaiji kanji #944
-      '傭'        : ('傭',),
-      # hyōgaiji kanji #945
+      # hyōgaiji kanji #479
       '熔'        : ('熔',),
-      # hyōgaiji kanji #946
-      '瘍'        : ('瘍',),
-      # hyōgaiji kanji #947
+      # hyōgaiji kanji #480
       '蠅'        : ('蠅',),
-      # hyōgaiji kanji #948
-      '沃'        : ('沃',),
-      # hyōgaiji kanji #949
-      '螺'        : ('螺',),
-      # hyōgaiji kanji #950
-      '萊'        : ('萊',),
-      # hyōgaiji kanji #951
-      '蕾'        : ('蕾',),
-      # hyōgaiji kanji #952
-      '洛'        : ('洛',),
-      # hyōgaiji kanji #953
+      # hyōgaiji kanji #481
       '埒'        : ('埒',),
-      # hyōgaiji kanji #954
-      '拉'        : ('拉',),
-      # hyōgaiji kanji #955
-      '辣'        : ('辣',),
-      # hyōgaiji kanji #956
+      # hyōgaiji kanji #482
       '瀾'        : ('瀾',),
-      # hyōgaiji kanji #957
+      # hyōgaiji kanji #483
       '爛'        : ('爛',),
-      # hyōgaiji kanji #958
+      # hyōgaiji kanji #484
       '鸞'        : ('鸞',),
-      # hyōgaiji kanji #959
+      # hyōgaiji kanji #485
       '狸'        : ('狸',),
-      # hyōgaiji kanji #960
-      '裡'        : ('裡',),
-      # hyōgaiji kanji #961
+      # hyōgaiji kanji #486
       '罹'        : ('罹',),
-      # hyōgaiji kanji #962
+      # hyōgaiji kanji #487
       '籬'        : ('籬',),
-      # hyōgaiji kanji #963
+      # hyōgaiji kanji #488
       '戮'        : ('戮',),
-      # hyōgaiji kanji #964
-      '慄'        : ('慄',),
-      # hyōgaiji kanji #965
-      '掠'        : ('掠',),
-      # hyōgaiji kanji #966
-      '笠'        : ('笠',),
-      # hyōgaiji kanji #967
-      '溜'        : ('溜',),
-      # hyōgaiji kanji #968
+      # hyōgaiji kanji #489
       '榴'        : ('榴',),
-      # hyōgaiji kanji #969
-      '劉'        : ('劉',),
-      # hyōgaiji kanji #970
+      # hyōgaiji kanji #490
       '瘤'        : ('瘤',),
-      # hyōgaiji kanji #971
-      '侶'        : ('侶',),
-      # hyōgaiji kanji #972
-      '梁'        : ('梁',),
-      # hyōgaiji kanji #973
+      # hyōgaiji kanji #491
       '聊'        : ('聊',),
-      # hyōgaiji kanji #974
-      '菱'        : ('菱',),
-      # hyōgaiji kanji #975
+      # hyōgaiji kanji #492
       '寥'        : ('寥',),
-      # hyōgaiji kanji #976
+      # hyōgaiji kanji #493
       '蓼'        : ('蓼',),
-      # hyōgaiji kanji #977
-      '淋'        : ('淋',),
-      # hyōgaiji kanji #978
+      # hyōgaiji kanji #494
       '燐'        : ('燐',),
-      # hyōgaiji kanji #979
-      '鱗'        : ('鱗',),
-      # hyōgaiji kanji #980
+      # hyōgaiji kanji #495
       '屢'        : ('屢',),
-      # hyōgaiji kanji #981
+      # hyōgaiji kanji #496
       '蛉'        : ('蛉',),
-      # hyōgaiji kanji #982
+      # hyōgaiji kanji #497
       '蠣'        : ('蠣',),
-      # hyōgaiji kanji #983
+      # hyōgaiji kanji #498
       '櫟'        : ('櫟',),
-      # hyōgaiji kanji #984
+      # hyōgaiji kanji #499
       '礫'        : ('礫',),
-      # hyōgaiji kanji #985
+      # hyōgaiji kanji #500
       '轢'        : ('轢',),
-      # hyōgaiji kanji #986
-      '煉'        : ('煉',),
-      # hyōgaiji kanji #987
-      '漣'        : ('漣',),
-      # hyōgaiji kanji #988
-      '憐'        : ('憐',),
-      # hyōgaiji kanji #989
-      '簾'        : ('簾',),
-      # hyōgaiji kanji #990
+      # hyōgaiji kanji #501
       '鰊'        : ('鰊',),
-      # hyōgaiji kanji #991
+      # hyōgaiji kanji #502
       '攣'        : ('攣',),
-      # hyōgaiji kanji #992
-      '賂'        : ('賂',),
-      # hyōgaiji kanji #993
-      '魯'        : ('魯',),
-      # hyōgaiji kanji #994
+      # hyōgaiji kanji #503
       '濾'        : ('濾', '沪'),
-      # hyōgaiji kanji #995
-      '廬'        : ('廬',),
-      # hyōgaiji kanji #996
-      '櫓'        : ('櫓',),
-      # hyōgaiji kanji #997
-      '蘆'        : ('蘆', '芦'),
-      # hyōgaiji kanji #998
-      '鷺'        : ('鷺',),
-      # hyōgaiji kanji #999
-      '弄'        : ('弄',),
-      # hyōgaiji kanji #1000
+      # hyōgaiji kanji #504
+      '廬'        : ('廬', '蘆'),
+      # hyōgaiji kanji #505
       '牢'        : ('牢',),
-      # hyōgaiji kanji #1001
-      '狼'        : ('狼',),
-      # hyōgaiji kanji #1002
+      # hyōgaiji kanji #506
       '榔'        : ('榔',),
-      # hyōgaiji kanji #1003
+      # hyōgaiji kanji #507
       '瘻'        : ('瘻',),
-      # hyōgaiji kanji #1004
+      # hyōgaiji kanji #508
       '﨟'        : ('﨟',),
-      # hyōgaiji kanji #1005
+      # hyōgaiji kanji #509
       '臘'        : ('臘',),
-      # hyōgaiji kanji #1006
-      '朧'        : ('朧',),
-      # hyōgaiji kanji #1007
-      '蠟'        : ('蠟', '蝋'),
-      # hyōgaiji kanji #1008
-      '籠'        : ('籠',),
-      # hyōgaiji kanji #1009
+      # hyōgaiji kanji #510
+      '朧'        : ('朧', '蝋'),
+      # hyōgaiji kanji #511
       '聾'        : ('聾',),
-      # hyōgaiji kanji #1010
-      '肋'        : ('肋',),
-      # hyōgaiji kanji #1011
+      # hyōgaiji kanji #512
       '勒'        : ('勒',),
-      # hyōgaiji kanji #1012
+      # hyōgaiji kanji #513
       '漉'        : ('漉',),
-      # hyōgaiji kanji #1013
-      '麓'        : ('麓',),
-      # hyōgaiji kanji #1014
-      '窪'        : ('窪',),
-      # hyōgaiji kanji #1015
+      # hyōgaiji kanji #514
       '歪'        : ('歪',),
-      # hyōgaiji kanji #1016
+      # hyōgaiji kanji #515
       '猥'        : ('猥',),
-      # hyōgaiji kanji #1017
-      '隈'        : ('隈',),
-      # hyōgaiji kanji #1018
-      '或'        : ('或',),
-      # hyōgaiji kanji #1019
+      # hyōgaiji kanji #516
       '罠'        : ('罠',),
-      # hyōgaiji kanji #1020
-      '椀'        : ('椀',),
-      # hyōgaiji kanji #1021
-      '碗'        : ('碗',),
-      # hyōgaiji kanji #1022
+      # hyōgaiji kanji #517
       '彎'        : ('彎', '弯'),
 
       # ???
       '鬣'        : ('鬣',),
 
     })
-    
+
 # http://ja.wikipedia.org/wiki/%E6%8B%AC%E5%BC%A7
 SYMB_PUNCTUATION = Name2Symbols(
     {"("         : ('(',),
@@ -8066,14 +7058,14 @@ SYMB_PUNCTUATION = Name2Symbols(
      "⁾"         : ('⁾',),
      "₍"         : ('₍',),
      "₎"         : ('₎',),
-     
+
      "⦅"         : ('⦅',),
      "⦆"         : ('⦆',),
      "｟"         : ('｟',),
      "｠"         : ('｠',),
      "⸨"         : ('⸨',),
      "⸩"         : ('⸩',),
-     
+
      "「"         : ('「',),
      "」"         : ('」',),
      "｢"         : ('｢',),
@@ -8172,8 +7164,6 @@ SYMB_PUNCTUATION = Name2Symbols(
 
      "«"         : ('«',),
      "»"         : ('»',),
-     "‹"         : ('‹',),
-     "›"         : ('›',),
 
      "【"         : ('【',),
      "】"         : ('】',),
@@ -8255,7 +7245,7 @@ SYMB_PUNCTUATION = Name2Symbols(
     })
 
 SYMB_DIACRITICS = Name2Symbols(
-    {"dakuten"          : ( chr(0x3099),),      # が 
+    {"dakuten"          : ( chr(0x3099),),      # が
      "handakuten"       : ( chr(0x309A),),      # ぱ̍
      })
 

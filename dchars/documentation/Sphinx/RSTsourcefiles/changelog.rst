@@ -3,6 +3,19 @@ CHANGELOG_TITLE
 ===============
 
 ------------------
+0.5.9 [2014_01_21]
+------------------
+
+  * new language : 日本語/Japanese (ang) and its transliteration's method "shepburn" (simplified Hepburn)
+  * Old English (ang) : sorting method 'default' is ok (thorn character has been taken in account)
+
+  * code quality :
+
+    * header_please_test.py ok
+    * 176 tests, all ok
+    * Pylint's worst mark : 9.47
+
+------------------
 0.5.8 [2014_01_08]
 ------------------
 

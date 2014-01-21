@@ -180,7 +180,7 @@ HIRAGANA_HANDAKUTEN = {
       'ぺ'        : 'pe',
       'ぽ'        : 'po',
     }
-    
+
 KATAKANA = {
       'ア'        : "A",
       'イ'        : "I",
@@ -355,7 +355,7 @@ COMPOSED_TRANSCRIPTIONS = OrderedDict((
         ("chi[-]yā"      , "chā"),
         ("chi[-]yū"      , "chū"),
         ("chi[-]yō"      , "chō"),
-        
+
         ("KI[-]Y"    , "KY"),
         ("GI[-]Y"    , "GY"),
         ("NI[-]Y"    , "NY"),
@@ -513,7 +513,8 @@ def dchar__get_translit_str(dstring_object, dchar):
             elif dchar.diacritic == 'dakuten':
                 res.append( HIRAGANA_DAKUTEN[ HIRAGANA_TO_HIRAGANA_DAKUTEN[ dchar.base_char ] ] )
             elif dchar.diacritic == 'handakuten':
-                res.append( HIRAGANA_HANDAKUTEN[ HIRAGANA_TO_HIRAGANA_HANDAKUTEN[ dchar.base_char ]])
+                res.append( \
+                    HIRAGANA_HANDAKUTEN[ HIRAGANA_TO_HIRAGANA_HANDAKUTEN[ dchar.base_char ]])
 
         elif dchar.chartype == 'katakana':
 
@@ -573,7 +574,7 @@ def dchar__init_from_translit_str(dchar, src):
                 # small hiragana ;
                 dchar.smallsize = True
                 dchar.base_char = SMALL_HIRAGANA_TO_HIRAGANA[ HIRAGANA_INVERSED[base_char] ]
-            
+
             dchar.capital_letter = False
             dchar.punctuation = False
 
@@ -760,16 +761,3 @@ def dstring__trans__get_trans(dstring_object):
         res = res.lower()
 
     return res
-
-
-    ## # sh-, j- and ch- are ambiguous and couldn't be stored in COMPOSED_TRANSCRIPTIONS :
-    ## for before, after in { 
-    ##                        "shi[-]y"   : "sh",
-    ##                        "ji[-]y"    : "j",
-    ##                        "chi[-]y"   : "ch",
-
-    ##                        "SHI[-]Y"   : "SH",
-    ##                        "JI[-]Y"    : "J",
-    ##                        "CHI[-]Y"   : "CH",
-    ##                      }.items():
-    ##     res = res.replace(before, after)

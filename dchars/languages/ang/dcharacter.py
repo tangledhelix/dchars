@@ -35,7 +35,8 @@ from dchars.languages.ang.symbols import DEFAULTSYMB__STRESS_MINUS1, \
                                          DEFAULTSYMB__MAKRON, \
                                          DEFAULTSYMB__UPPERDOT, \
                                          SYMB_LOWER_CASE, \
-                                         SYMB_UPPER_CASE
+                                         SYMB_UPPER_CASE, \
+                                         SORTING_ORDER
 from dchars.symbols.symbols import UNKNOWN_CHAR_SYMBOL
 
 import itertools
@@ -364,7 +365,10 @@ class DCharacterANG(DCharacterMotherClass):
             #     res.append( 1 )
 
             # base_char :
-            res.append( ord(self.base_char) )
+            if self.base_char not in SORTING_ORDER:
+                res.append( -1 )
+            else:
+                res.append( SORTING_ORDER[self.base_char] )
 
             # makron :
             if not self.makron:

@@ -30,8 +30,6 @@
 from dchars.errors.errors import DCharsError
 import collections
 
-# pylint: disable=R0924
-# "Badly implemented Container, implements __len__ but not __delitem__, ...
 ################################################################################
 class OrderedSet(collections.MutableSet):
     """

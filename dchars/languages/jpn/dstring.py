@@ -282,7 +282,7 @@ class DStringJPN(DStringMotherClass):
             #. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
             # (3.1) base_char, chartype, smallsize
             #. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
-            
+
             if punctuation:
                 # punctuation symbol :
                 base_char = SYMB_PUNCTUATION.get_the_name_for_this_symbol(letter)
@@ -319,7 +319,7 @@ class DStringJPN(DStringMotherClass):
             elif letter in SYMB_SMALL_KATAKANA.symbol2name:
                 # small katakana :
                 base_char = SYMB_HIRAGANA.get_the_name_for_this_symbol(\
-                                            KATAKANA_TO_HIRAGANA[SMALL_KATAKANA_TO_KATAKANA[letter]])
+                                        KATAKANA_TO_HIRAGANA[SMALL_KATAKANA_TO_KATAKANA[letter]])
                 smallsize = True
                 chartype = "katakana"
 
@@ -384,7 +384,7 @@ class DStringJPN(DStringMotherClass):
                                        message = err_msg.format(element.string,
                                                                 element.start(),
                                                                 element.end()))
-                    
+
 
             #. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
             # (3.3) we add the new character
@@ -449,7 +449,7 @@ class DStringJPN(DStringMotherClass):
 
                 sorting methods :
                 o "default" : cf Kanji & Kana, Hadamitzky and Spahn, p. 22
-                
+
                 Return a SortingValue object
         """
         res = SortingValue()
@@ -520,7 +520,7 @@ class DStringJPN(DStringMotherClass):
                 else:
                     data.append( 2 )
 
-            res.append(data)            
+            res.append(data)
 
         else:
             # Pylint can't know that <self> has an 'options' member

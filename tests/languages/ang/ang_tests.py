@@ -396,6 +396,11 @@ class TESTSDStringANG(unittest.TestCase):
         self.assertTrue( DSTRING_ANG("Rō") < DSTRING_ANG("Romam") )
         self.assertFalse( DSTRING_ANG("Rō") > DSTRING_ANG("Romam") )
 
+        self.assertTrue( DSTRING_ANG("pea") < DSTRING_ANG("pēa") )
+        self.assertFalse( DSTRING_ANG("pea") < DSTRING_ANG("pēa") < DSTRING_ANG("pea"))
+        self.assertTrue( DSTRING_ANG("te") < DSTRING_ANG("the") < \
+                         DSTRING_ANG("þe") < DSTRING_ANG("we"))
+
         # with unknown characters :
         self.assertTrue( DSTRING_ANG("ab") < DSTRING_ANG("a²") )
         self.assertFalse( DSTRING_ANG("ab") > DSTRING_ANG("a²") )

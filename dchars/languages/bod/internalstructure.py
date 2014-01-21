@@ -2843,4 +2843,4 @@ def get_intstruct_from_str(_src,
     for istruct in res:
         istruct.dstring_object = dstring_object
 
-    return(res)
+    return res
