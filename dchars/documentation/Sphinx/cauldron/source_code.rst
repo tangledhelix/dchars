@@ -77,6 +77,7 @@ dchars.languages.ang.transliterations.basic
 
    dchars.languages.ang.transliterations.basic.__init__
    dchars.languages.ang.transliterations.basic.basic
+   dchars.languages.ang.transliterations.basic.ucombinations
 
 --------------------------------------------------------------------------------
 dchars.languages.bod
@@ -223,6 +224,38 @@ dchars.languages.hbo.transliterations.basic
    dchars.languages.hbo.transliterations.basic.__init__
    dchars.languages.hbo.transliterations.basic.basic
    dchars.languages.hbo.transliterations.basic.ucombinations
+
+--------------------------------------------------------------------------------
+dchars.languages.jpn
+--------------------------------------------------------------------------------
+
+.. toctree::
+   :maxdepth: 2
+
+   dchars.languages.jpn.__init__
+   dchars.languages.jpn.dcharacter
+   dchars.languages.jpn.dstring
+   dchars.languages.jpn.symbols
+
+--------------------------------------------------------------------------------
+dchars.languages.jpn.transliterations
+--------------------------------------------------------------------------------
+
+.. toctree::
+   :maxdepth: 2
+
+   dchars.languages.jpn.transliterations.__init__
+
+--------------------------------------------------------------------------------
+dchars.languages.jpn.transliterations.shepburn
+--------------------------------------------------------------------------------
+
+.. toctree::
+   :maxdepth: 2
+
+   dchars.languages.jpn.transliterations.shepburn.__init__
+   dchars.languages.jpn.transliterations.shepburn.shepburn
+   dchars.languages.jpn.transliterations.shepburn.ucombinations
 
 --------------------------------------------------------------------------------
 dchars.languages.lat
@@ -440,6 +473,26 @@ tests.languages.hbo.transliterations
 
    tests.languages.hbo.transliterations.__init__
    tests.languages.hbo.transliterations.basic_tests
+
+--------------------------------------------------------------------------------
+tests.languages.jpn
+--------------------------------------------------------------------------------
+
+.. toctree::
+   :maxdepth: 2
+
+   tests.languages.jpn.__init__
+   tests.languages.jpn.jpn_tests
+
+--------------------------------------------------------------------------------
+tests.languages.jpn.transliterations
+--------------------------------------------------------------------------------
+
+.. toctree::
+   :maxdepth: 2
+
+   tests.languages.jpn.transliterations.__init__
+   tests.languages.jpn.transliterations.shepburn_tests
 
 --------------------------------------------------------------------------------
 tests.languages.lat
