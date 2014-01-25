@@ -471,6 +471,8 @@ class TESTSDStringGRC(unittest.TestCase):
 
         self.assertTrue( DSTRING_GRC("ἂν") < DSTRING_GRC("ἀνακλαίομαι") < DSTRING_GRC("ἀνήρ") )
 
+        self.assertTrue( DSTRING_GRC("ἐλαία") < DSTRING_GRC("Ἑλλάς") < DSTRING_GRC("ἔχω"))
+
         # with unknown characters :
         self.assertTrue( DSTRING_GRC("ᾶμ") < DSTRING_GRC("ᾶ²") )
         self.assertTrue( DSTRING_GRC("ᾶμω") < DSTRING_GRC("ᾶ²ω") )
