@@ -402,3 +402,16 @@ class DCharacterANG(DCharacterMotherClass):
         self.stress = 0
         self.upperdot = False
 
+    #///////////////////////////////////////////////////////////////////////////
+    def set_to_its_most_visual_form(self):
+        """
+                DCharacterANG.set_to_its_most_visual_form
+
+                Modify <self> in place and change it to "most simple" representation.
+
+                Function used by the Logotheras project.
+        """
+        self.capital_letter = True
+        self.makron = False
+        self.stress = 0
+        self.upperdot = False

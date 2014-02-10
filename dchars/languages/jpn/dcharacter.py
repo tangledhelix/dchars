@@ -310,6 +310,18 @@ class DCharacterJPN(DCharacterMotherClass):
         self.smallsize = False
 
     #///////////////////////////////////////////////////////////////////////////
+    def set_to_its_most_visual_form(self):
+        """
+                DCharacterJPN.set_to_its_most_visual_form
+
+                Modify <self> in place and change it to "most simple" representation.
+
+                Function used by the Logotheras project.
+        """
+        self.diacritic = None
+        self.smallsize = False
+
+    #///////////////////////////////////////////////////////////////////////////
     def sortingvalue(self):
         """
                 DCharacterJPN.sortingvalue

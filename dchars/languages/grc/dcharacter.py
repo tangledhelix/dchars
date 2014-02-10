@@ -543,6 +543,23 @@ class DCharacterGRC(DCharacterMotherClass):
         self.mekos = None
 
     #///////////////////////////////////////////////////////////////////////////
+    def set_to_its_most_visual_form(self):
+        """
+                DCharacterGRC.set_to_its_most_visual_form
+
+                Modify <self> in place and change it to "most simple" representation.
+
+                Function used by the Logotheras project.
+        """
+        self.contextual_form = False
+        self.capital_letter = True
+        self.tonos = None
+        self.pneuma = None
+        self.hypogegrammene = False
+        self.dialutika = False
+        self.mekos = None
+        
+    #///////////////////////////////////////////////////////////////////////////
     def sortingvalue(self):
         """
                 DCharacterGRC.sortingvalue

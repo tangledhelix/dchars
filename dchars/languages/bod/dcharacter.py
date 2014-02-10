@@ -391,3 +391,18 @@ class DCharacterBOD(DCharacterMotherClass):
         self.vowel1 = None
         self.vowel2 = None
 
+    #///////////////////////////////////////////////////////////////////////////
+    def set_to_its_most_visual_form(self):
+        """
+                DCharacterBOD.set_to_its_most_visual_form
+
+                Modify <self> in place and change it to "most simple" representation.
+
+                Function used by the Logotheras project.
+        """
+        self.subj_consonants = None
+        self.rnam_bcad = False
+        self.halanta = False
+        self.anusvara_candrabindu = None
+        self.vowel1 = None
+        self.vowel2 = None

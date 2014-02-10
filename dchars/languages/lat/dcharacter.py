@@ -405,3 +405,16 @@ class DCharacterLAT(DCharacterMotherClass):
         self.stress = None
         self.diaeresis = False
 
+    #///////////////////////////////////////////////////////////////////////////
+    def set_to_its_most_visual_form(self):
+        """
+                DCharacterLAT.set_to_its_most_visual_form
+
+                Modify <self> in place and change it to "most simple" representation.
+
+                Function used by the Logotheras project.
+        """
+        self.capital_letter = True
+        self.length = None
+        self.stress = None
+        self.diaeresis = False

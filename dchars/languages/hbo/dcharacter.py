@@ -473,6 +473,23 @@ class DCharacterHBO(DCharacterMotherClass):
         self.cantillation_mark = None
 
     #///////////////////////////////////////////////////////////////////////////
+    def set_to_its_most_visual_form(self):
+        """
+                DCharacterHBO.set_to_its_most_visual_form
+
+                Modify <self> in place and change it to "most simple" representation.
+
+                Function used by the Logotheras project.
+        """
+        self.shin_sin_dot = None
+        self.daghesh_mapiq = False
+        self.methegh = False
+        self.specialpoint = None
+        self.vowel = None
+        self.raphe = False
+        self.cantillation_mark = None
+
+    #///////////////////////////////////////////////////////////////////////////
     def sortingvalue(self):
         """
                 DCharacterHBO.sortingvalue

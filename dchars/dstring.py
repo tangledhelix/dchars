@@ -336,6 +336,17 @@ class DStringMotherClass(list):
             yield self
 
     #///////////////////////////////////////////////////////////////////////////
+    def set_to_its_most_visual_form(self):
+        """
+                DStringMotherClass.set_to_its_most_visual_form
+
+                Modify <self> in place and change each character into its
+                "most simple" representation
+        """
+        for dchar in self:
+            dchar.set_to_its_most_visual_form()
+
+    #///////////////////////////////////////////////////////////////////////////
     def sortingvalue(self):
         """
                 DStringMotherClass.sortingvalue

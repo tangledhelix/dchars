@@ -465,6 +465,21 @@ class DStringBOD(DStringMotherClass):
         return self.istructs.seems_to_be_a_sanskrit_string(strict_answer)
 
     #///////////////////////////////////////////////////////////////////////////
+    def set_to_its_most_visual_form(self):
+        """
+                DStringBOD.set_to_its_most_visual_form
+
+                Modify <self> in place and change each character into its
+                "most simple" representation
+
+                Function used by the Logotheras project.
+        """
+        for dchar in self:
+            dchar.set_to_its_most_visual_form()
+
+        self.update_istructs()
+
+    #///////////////////////////////////////////////////////////////////////////
     def update_istructs(self):
         """
                 DStringBOD.update_istructs

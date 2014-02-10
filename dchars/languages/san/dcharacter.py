@@ -510,6 +510,21 @@ class DCharacterSAN(DCharacterMotherClass):
         self.dependentvowel = None
 
     #///////////////////////////////////////////////////////////////////////////
+    def set_to_its_most_visual_form(self):
+        """
+                DCharacterSAN.set_to_its_most_visual_form
+
+                Modify <self> in place and change it to "most simple" representation.
+
+                Function used by the Logotheras project.
+        """
+        self.accent = None
+        self.nukta = False
+        self.anusvara_candrabindu = None
+        self.virama = False
+        self.anudatta = False
+
+    #///////////////////////////////////////////////////////////////////////////
     def init_from_transliteration(self,
                                   src,
                                   transliteration_method):

@@ -152,3 +152,16 @@ class DCharacterMotherClass(object):
         self.base_char = None
         self.punctuation = False
 
+    #///////////////////////////////////////////////////////////////////////////
+    def set_to_its_most_visual_form(self):
+        """
+                DCharacterMotherClass.set_to_its_most_visual_form
+
+                Modify <self> in place and change it to "most simple" representation.
+
+                This function should be overloaded
+
+                Function used by the Logotheras project.
+        """
+        pass
+
