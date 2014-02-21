@@ -88,7 +88,7 @@ class DCharacterJPN(DCharacterMotherClass):
 
                     unknown_char        : bool
                     base_char           : None or a string
-                                            o "あ", "い", ... (one hiragana)
+                                            o "あ", "い", ... (one hiragana, NOT A KATAKANA)
 
                                             o "東", "名" (one kanji)
 

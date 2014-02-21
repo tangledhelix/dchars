@@ -484,8 +484,13 @@ class DStringJPN(DStringMotherClass):
                             # abnormal case : if char == 'ん', there's no vowel...
                             # so ... we take the order of ん.
                             data.append( (0, HIRAGANA_ORDER['ん'] ))
-                else:
+
+                elif char.chartype in ('hiragana', 'katakana'):
                     data.append( (0, HIRAGANA_ORDER[char.base_char] ))
+
+                else:
+                    # other cases : kanji or unknown symbol.
+                    data.append( (0, ord(char.base_char) ))
 
                 previous_char = char
 
