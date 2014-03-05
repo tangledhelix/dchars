@@ -509,6 +509,20 @@ class DStringGRC(DStringMotherClass):
         return self
 
     #///////////////////////////////////////////////////////////////////////////
+    def remove_any_orthographic_soft_breathing_on_a_vowel(self):
+        """
+                DStringGRC.remove_any_orthographic_soft_breathing_on_a_vowel
+
+                Remove any soft breathing sign on any vowel.
+        """
+        for dchar in self:
+
+            if dchar.base_char in ('α', 'ε', 'η', 'ο', 'ω', 'ι', 'υ') and \
+               dchar.pneuma == 'ψιλὸν':
+
+                dchar.pneuma = None
+                
+    #///////////////////////////////////////////////////////////////////////////
     def sortingvalue(self):
         """
                 DStringGRC.sortingvalue
