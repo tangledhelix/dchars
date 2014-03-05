@@ -509,11 +509,11 @@ class DStringGRC(DStringMotherClass):
         return self
 
     #///////////////////////////////////////////////////////////////////////////
-    def remove_any_orthographic_soft_breathing_on_a_vowel(self):
+    def rm_soft_breathing_on_vowels(self):
         """
-                DStringGRC.remove_any_orthographic_soft_breathing_on_a_vowel
+                DStringGRC.rm_soft_breathing_on_vowels
 
-                Remove any soft breathing sign on any vowel.
+                Remove any soft breathing sign (ψιλὸν) on any vowel.
         """
         for dchar in self:
 
