@@ -289,8 +289,12 @@ class DStringMotherClass(list):
                     DSTRING_SAN = dchars.new_dstring(language='संस्कृतम्',
                                   transliteration_method="itrans")
 
-                    with DSTRING_SAN().open("myfile", 'r') as src:
-                        print( src.get_transliteration() )
+                   with DSTRING_SAN().open("z", 'r').read() as src:
+                        print(src.get_transliteration())
+
+                   with DSTRING_SAN().open("z", 'r') as src:
+                        for line in src.readlines():
+                           print(line.get_transliteration())
         """
 
         # we call io.open() since a call to open() would call self.open()
@@ -313,6 +317,8 @@ class DStringMotherClass(list):
     def read(self):
         """
                 DStringMotherClass.read
+
+                see DStringMotherClass.open for some code examples.
         """
         if self.srcfile is None:
             raise DCharsError( context = "DStringMotherClass.read",
@@ -326,14 +332,27 @@ class DStringMotherClass(list):
     def readlines(self):
         """
                 DStringMotherClass.readline
+
+                see DStringMotherClass.open for some code examples.
         """
         if self.srcfile is None:
             raise DCharsError( context = "DStringMotherClass.read",
                                message = "no file attached to this object" )
 
-        for line in self.srcfile.readlines():
-            self.init_from_str( line )
-            yield self
+        for _line in self.srcfile.readlines():
+
+            if _line[-2:] == '\r\n':
+                line = _line[:-2]
+            elif _line[-1:] == '\n':
+                line = _line[:-1]
+            elif _line[-1:] == '\r':
+                line = _line[:-1]
+            else:
+                line = _line
+
+            res = type(self)()
+            res.init_from_str( line )
+            yield res
 
     #///////////////////////////////////////////////////////////////////////////
     def set_to_its_most_visual_form(self):
