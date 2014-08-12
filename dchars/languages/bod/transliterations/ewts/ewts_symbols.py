@@ -179,11 +179,16 @@ PUNCTUATION = {  # from http://www.thlib.org/reference/transliteration/#!essay=/
               }
 
 DIACRITICS = {
+                 # = Sanskrit visarga :
                  'SIGN RNAM BCAD'                       : 'H',
 
+                 # = srog med = Sanskrit virama
                  'MARK HALANTA'                         : '?',
 
+                 # = Sanskrit anusvara
                  'SIGN RJES SU NGA RO'                  : 'M',
+
+                 # = Sanskrit candrabindu
                  'SIGN NYI ZLA NAA DA'                  : '~M`',
                  'SIGN SNA LDAN'                        : '~M',
              }
