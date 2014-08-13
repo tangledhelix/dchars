@@ -219,12 +219,3 @@ SYMB_DIACRITICS__ANUSVARA = (
 SYMB_DIACRITICS__ANUDATTA = (
                             SYMB_DIACRITICS.get_default_symbol('DEVANAGARI STRESS SIGN ANUDATTA'),
                           )
-
-
-
-
-
-
-
-
-
