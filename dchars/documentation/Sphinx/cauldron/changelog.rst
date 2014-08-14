@@ -3,6 +3,21 @@ CHANGELOG_TITLE
 ===============
 
 ------------------
+0.6.0 [2014_08_13]
+------------------
+
+  * improved documentation
+  * (all languages) added a family of functions called by the Logotheras project : set_to_its_most_visual_form()
+  * (all languages) fixed a bug DStringMotherClass.open/.readlines
+  * (grc) one more test; remove_any_orthographic_soft_breathing_on_a_vowel() > rm_soft_breathing_on_vowels();  DStringGRC.remove_any_orthographic_soft_breathing_on_a_vowel()
+  * (jpn) modified DStringJPN.sortingvalue() : fixed the way the sorting value is computed : some special cases were missing.
+
+  * code quality :
+
+    * header_please_test.py ok
+    * 194 tests, all ok
+
+------------------
 0.5.9 [2014_01_21]
 ------------------
 

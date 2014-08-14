@@ -447,13 +447,11 @@ class DStringBOD(DStringMotherClass):
         return True
 
     #///////////////////////////////////////////////////////////////////////////
-    def sortingvalue(self):
+    def seems_to_be_a_pure_tibetan_string(self):
         """
-                DStringBOD.sortingvalue
-
-                Return an SortingValue object
+                DStringBOD.seems_to_be_a_pure_tibetan_string
         """
-        return self.istructs.sortingvalue()
+        return self.istructs.seems_to_be_a_pure_tibetan_string()
 
     #///////////////////////////////////////////////////////////////////////////
     def seems_to_be_a_sanskrit_string(self, strict_answer = False):
@@ -478,6 +476,15 @@ class DStringBOD(DStringMotherClass):
             dchar.set_to_its_most_visual_form()
 
         self.update_istructs()
+
+    #///////////////////////////////////////////////////////////////////////////
+    def sortingvalue(self):
+        """
+                DStringBOD.sortingvalue
+
+                Return an SortingValue object
+        """
+        return self.istructs.sortingvalue()
 
     #///////////////////////////////////////////////////////////////////////////
     def update_istructs(self):

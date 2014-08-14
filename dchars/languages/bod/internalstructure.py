@@ -443,6 +443,17 @@ class ListOfInternalStructures(list):
         return res
 
     #///////////////////////////////////////////////////////////////////////////
+    def seems_to_be_a_pure_tibetan_string(self):
+        """
+                ListOfInternalStructures.seems_to_be_a_pure_tibetan_string
+        """
+        for istruct in self:
+            if not istruct.seems_to_be_a_pure_tibetan_string():
+                return False
+
+        return True       
+
+    #///////////////////////////////////////////////////////////////////////////
     def seems_to_be_a_sanskrit_string(self, strict_answer = False):
         """
                 ListOfInternalStructures.seems_to_be_a_sanskrit_string
@@ -497,7 +508,7 @@ class ListOfInternalStructures(list):
                     return True
 
             return False
-
+            
     #///////////////////////////////////////////////////////////////////////////
     def set_the_dstring_object(self, dstring_object):
         """
@@ -1398,6 +1409,51 @@ class InternalStructure(object):
                self.real_indexes == aliud.real_indexes
 
         return res
+
+    #///////////////////////////////////////////////////////////////////////////
+    def seems_to_be_a_pure_tibetan_string(self):
+        """
+                InternalStructures.seems_to_be_a_pure_tibetan_string
+        """
+        if self.prefix is not None and \
+           self.prefix not in ('-', 'G', 'D', 'B', 'M'):
+            return False
+
+        if self.consonant is not None and \
+           self.consonant not in ('K', 'KH', 'G', 'NG', 'C', 'CH', 'J', 'NY',
+                                  'T', 'TH', 'D', 'N',  'P', 'PH', 'B', 'M',
+                                  'TS','TSH','DZ',
+                                  'W', 'ZH', 'Z',
+                                  '-', 'Y', 'R', 'L', 
+                                  'SH', 'S', 'H',
+                                  'A',):
+            return False
+            
+        if self.superfix is not None and \
+           self.superfix not in ('R', 'L', 'S'):
+            return False
+
+        if self.subfix is not None and \
+           self.subfix not in ('Y', 'R', 'L', 'W'):
+            return False
+
+        if self.suffix1 is not None and \
+           self.suffix1 not in ('G', 'NG', 'D', 'N', 'B', 'M', '-', 'R', 'L', 'S'):
+            return False
+
+        if self.suffix2 is not None and \
+           self.suffix2 not in ('S', 'D'):
+            return False
+
+        if self.vowel1 is not None and \
+           self.vowel1 not in ('E', 'I', 'O'):
+            return False
+
+        if self.vowel2 is not None and \
+           self.vowel2 not in ('U',):
+            return False
+
+        return True
 
     #///////////////////////////////////////////////////////////////////////////
     def sortingvalue(self):
