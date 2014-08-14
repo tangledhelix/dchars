@@ -252,3 +252,167 @@ COMMON_CONSONANTS_STACK = (
         ('PH','Y', 'W'),
        )
 
+# source : http://www.tibet.columbia.edu/iats/it/IATS-X_Chilton_slides.pdf, slide 32
+# prefixed + superfixed + root consonant
+CHILTON_S_LIST = (
+    (None,None,"K"),
+    ("D", None,"K"),
+    ("B", None,"K"),
+    (None,"R", "K"),
+    (None,"L", "K"),
+    (None,"S", "K"),
+    ("B", "R", "K",),
+    ("B", "S", "K",),
+
+    (None,None,"KH"),
+    ("M", None,"KH"),
+    ("-", None,"KH"),
+
+    (None,None,"G"),
+    ("D", None,"G"),
+    ("B", None,"G"),
+    ("M", None,"G"),
+    ("-", None,"G"),
+    (None,"R", "G"),
+    (None,"L", "G"),
+    (None,"S", "G"),
+    ("B", "R", "G"),
+    ("B", "S", "G"),
+    
+    (None,"NG",None),
+    ("D", "NG",None),
+    ("M", "NG",None),
+    ("R", "NG",None),
+    ("L", "NG",None),
+    ("S", "NG",None),
+    ("B", "R", "NG",),
+    ("B", "S", "NG",),
+
+    (None,None,"C"),
+    ("G", None,"C"),
+    ("B", None,"C"),
+    ("L", None,"C"),
+    ("B", "L", "C",),
+
+    (None,None,"CH"),
+    ("M", None,"CH"),
+    ("-", None,"CH"),
+
+    (None,None,"J"),
+    ("M", None,"J"),
+    ("-", None,"J"),
+    (None,"R", "J"),
+    (None,"L", "J"),
+    ("B", "R", "J",),
+
+    (None,None,"NY"),
+    ("G", None,"NY"),
+    ("M", None,"NY"),
+    (None,"R", "NY"),
+    (None,"S", "NY"),
+    ("B", "R", "NY",),
+    ("B", "S", "NY",),
+
+    (None,None,"T"),
+    ("G", None,"T"),
+    ("B", None,"T"),
+    (None,"R", "T"),
+    (None,"L", "T"),
+    (None,"S", "T"),
+    ("B", "R", "T",),
+    ("B", "L", "T",),
+    ("B", "S", "T",),
+
+    (None,None,"TH"),
+    ("M", None,"TH"),
+    ("-", None,"TH"),
+
+    (None,None,"D"),
+    ("G", None,"D"),
+    ("B", None,"D"),
+    ("M", None,"D"),
+    ("-", None,"D"),
+    (None,"R", "D"),
+    (None,"L", "D"),
+    (None,"S", "D"),
+    ("B", "R", "D",),
+    ("B", "L", "D",),
+    ("B", "S", "D",),
+
+    (None,None,"N"),
+    ("G", None,"N"),
+    ("M", None,"N"),
+    (None,"R", "N"),
+    (None,"S", "N"),
+    ("B", "R", "N",),
+    ("B", "S", "N",),
+
+    (None,None,"P"),
+    ("D", None,"P"),
+    (None,"L", "P"),
+    (None,"S", "P"),
+
+    (None,None,"PH"),
+    ("-", None,"PH"),
+
+    (None,None,"B"),
+    ("D", None,"B"),
+    ("-", None,"B"),
+    (None,"R", "B"),
+    (None,"L", "B"),
+    (None,"S", "B"),
+
+    (None,None,"M"),
+    ("D", None,"M"),
+    (None,"R", "M"),
+    (None,"S", "M"),
+
+    (None,None,"TS"),
+    ("G",None, "TS"),
+    ("B",None, "TS"),
+    (None,"R", "TS"),
+    (None,"S", "TS"),
+    ("B", "R", "TS",),
+    ("B", "S", "TS",),
+
+    (None,None,"TSH"),
+    ("M", None,"TSH"),
+    ("-", None,"TSH"),
+
+    (None,None,"DZ"),
+    ("M", None,"DZ"),
+    ("-", None,"DZ"),
+    (None,"R", "DZ"),
+    ("B", "R", "DZ",),
+
+    (None,None,"W"),
+
+    (None,None,"ZH"),
+    ("G", None,"ZH"),
+    ("B", None,"ZH"),
+
+    (None,None,"Z"),
+    ("G", None,"Z"),
+    ("B", None,"Z"),
+
+    (None,None,"-"),
+
+    (None,None,"Y"),
+    ("G", None,"Y"),
+
+    (None,None,"R"),
+    ("B", None,"R"),
+
+    (None,None,"L"),
+
+    (None,None,"SH"),
+    ("G", None,"SH"),
+    ("B", None,"SH"),
+
+    (None,None,"S"),
+    ("G", None,"S"),
+    ("B", None,"S"),
+
+    (None,None,"H"),
+    (None,"L", "H"),
+)

@@ -447,11 +447,13 @@ class DStringBOD(DStringMotherClass):
         return True
 
     #///////////////////////////////////////////////////////////////////////////
-    def seems_to_be_a_pure_tibetan_string(self):
+    def seems_to_be_a_pure_tibetan_string(self, method):
         """
                 DStringBOD.seems_to_be_a_pure_tibetan_string
+
+                for the <method> parameter, see InternalStructure.seems_to_be_a_pure_tibetan_string
         """
-        return self.istructs.seems_to_be_a_pure_tibetan_string()
+        return self.istructs.seems_to_be_a_pure_tibetan_string(method)
 
     #///////////////////////////////////////////////////////////////////////////
     def seems_to_be_a_sanskrit_string(self, strict_answer = False):

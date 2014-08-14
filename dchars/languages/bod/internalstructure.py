@@ -46,7 +46,8 @@ from dchars.languages.bod.symbols import SYMB_CONSONANTS, \
 from dchars.symbols.symbols import UNKNOWN_CHAR_SYMBOL
 from dchars.languages.bod.syllabic_structure import PREFIXES, SUPERFIXES, SUBFIXES, ROOT, \
                                                     SUFFIXES1, SUFFIXES2, \
-                                                    COMMON_CONSONANTS_STACK
+                                                    COMMON_CONSONANTS_STACK, \
+                                                    CHILTON_S_LIST
 from dchars.languages.bod.symbols import TIBETANSANSKRIT_SYMB_VOWELS, \
                                          TIBETANSANSKRIT_SYMB_CONSONANTS
 
@@ -444,12 +445,14 @@ class ListOfInternalStructures(list):
         return res
 
     #///////////////////////////////////////////////////////////////////////////
-    def seems_to_be_a_pure_tibetan_string(self):
+    def seems_to_be_a_pure_tibetan_string(self, method):
         """
                 ListOfInternalStructures.seems_to_be_a_pure_tibetan_string
+
+                for the <method> parameter, see InternalStructure.seems_to_be_a_pure_tibetan_string
         """
         for istruct in self:
-            if not istruct.seems_to_be_a_pure_tibetan_string():
+            if not istruct.seems_to_be_a_pure_tibetan_string(method):
                 return False
 
         return True       
@@ -1418,63 +1421,95 @@ class InternalStructure(object):
         return False
 
     #///////////////////////////////////////////////////////////////////////////
-    def seems_to_be_a_pure_tibetan_string(self):
+    def seems_to_be_a_pure_tibetan_string(self, method):
         """
                 InternalStructures.seems_to_be_a_pure_tibetan_string
+
+                method :
+                "standard" : grammatical analyse of the word
+                "Chilton's list" : Chilton made a list of the possible
+                                   prefixed+superfixed+root consonants
+
+                see  http://www.tibet.columbia.edu/iats/it/IATS-X_Chilton_slides.pdf, slide 32
         """
-        if self.prefix is not None and \
-           self.prefix not in ('-', 'G', 'D', 'B', 'M'):
-            return False
+        if method == 'standard':
 
-        if self.consonant is not None and \
-           self.consonant not in ('K', 'KH', 'G', 'NG', 'C', 'CH', 'J', 'NY',
-                                  'T', 'TH', 'D', 'N',  'P', 'PH', 'B', 'M',
-                                  'TS','TSH','DZ',
-                                  'W', 'ZH', 'Z',
-                                  '-', 'Y', 'R', 'L', 
-                                  'SH', 'S', 'H',
-                                  'A',):
-            return False
+            # some words are followed by a TSHEG :
+            if self.punctuation_or_other_symbol:
+                return True
 
-        if self.superfix is not None and \
-           self.superfix not in ('R', 'L', 'S'):
-            return False
+            if self.prefix is not None and \
+               self.prefix not in ('-', 'G', 'D', 'B', 'M'):
+                return False
 
-        if self.subfix is not None and \
-           self.subfix not in ('Y', 'R', 'L', 'W'):
-            return False
+            if self.consonant is not None and \
+               self.consonant not in ('K', 'KH', 'G', 'NG', 'C', 'CH', 'J', 'NY',
+                                      'T', 'TH', 'D', 'N',  'P', 'PH', 'B', 'M',
+                                      'TS','TSH','DZ',
+                                      'W', 'ZH', 'Z',
+                                      '-', 'Y', 'R', 'L', 
+                                      'SH', 'S', 'H',
+                                      'A',):
+                return False
 
-        if self.suffix1 is not None and \
-           self.suffix1 not in ('G', 'NG', 'D', 'N', 'B', 'M', '-', 'R', 'L', 'S'):
-            return False
+            if self.superfix is not None and \
+               self.superfix not in ('R', 'L', 'S'):
+                return False
 
-        if self.suffix2 is not None and \
-           self.suffix2 not in ('S', 'D'):
-            return False
+            if self.subfix is not None and \
+               self.subfix not in ('Y', 'R', 'L', 'W'):
+                return False
 
-        if self.vowel1 is not None and \
-           self.vowel1 not in ('A', 'E', 'I', 'O'):
-            return False
+            if self.suffix1 is not None and \
+               self.suffix1 not in ('G', 'NG', 'D', 'N', 'B', 'M', '-', 'R', 'L', 'S'):
+                return False
 
-        if self.vowel2 is not None and \
-           self.vowel2 not in ('A', 'U',):
-            return False
+            if self.suffix2 is not None and \
+               self.suffix2 not in ('S', 'D'):
+                return False
 
-        # is the stack of consontants defined as in 
-        # http://www.thlib.org/reference/transliteration/tibstacks.php ?
-        cons = []
-        if self.consonant is not None:
-            cons.append( self.consonant )
-        if self.subfix is not None:
-            for subj_c in self.subfix:
-                cons.extend( subj_c )
-        if len(cons)>=2 and tuple(cons) not in COMMON_CONSONANTS_STACK:
-            return False
+            if self.vowel1 is not None and \
+               self.vowel1 not in ('A', 'E', 'I', 'O'):
+                return False
 
-        if self.seems_to_be_a_sanskrit_string(strict_answer = True):
-            return False
+            if self.vowel2 is not None and \
+               self.vowel2 not in ('A', 'U',):
+                return False
 
-        return True
+            # is the stack of consontants defined as in 
+            # http://www.thlib.org/reference/transliteration/tibstacks.php ?
+            cons = []
+            if self.consonant is not None:
+                cons.append( self.consonant )
+            if self.subfix is not None:
+                for subj_c in self.subfix:
+                    cons.extend( subj_c )
+            if len(cons)>=2 and tuple(cons) not in COMMON_CONSONANTS_STACK:
+                return False
+
+            if self.seems_to_be_a_sanskrit_string(strict_answer = True):
+                return False
+
+            return True
+    
+        elif method == "Chilton's list":
+
+            # some words are followed by a TSHEG :
+            if self.punctuation_or_other_symbol:
+                return True
+
+            cons = ( self.prefix, self.superfix, self.consonant )
+            if cons not in CHILTON_S_LIST:
+                return False
+    
+            if self.seems_to_be_a_sanskrit_string(strict_answer = True):
+                return False
+
+            return True
+
+        else:
+            # error : wrong method's name.
+            return None
 
     #///////////////////////////////////////////////////////////////////////////
     def sortingvalue(self):
