@@ -3,6 +3,17 @@ CHANGELOG_TITLE
 ===============
 
 ------------------
+0.6.3 [2014_08_14]
+------------------
+
+  * (bod) InternalStructures.seems_to_be_a_pure_tibetan_string() now calls .seems_to_be_a_sanskrit_string() with strict_answer equal to True.
+
+  * code quality :
+
+    * header_please_test.py ok
+    * 194 tests, all ok
+
+------------------
 0.6.2 [2014_08_14]
 ------------------
 

@@ -1471,7 +1471,7 @@ class InternalStructure(object):
         if len(cons)>=2 and tuple(cons) not in COMMON_CONSONANTS_STACK:
             return False
 
-        if self.seems_to_be_a_sanskrit_string(strict_answer = False):
+        if self.seems_to_be_a_sanskrit_string(strict_answer = True):
             return False
 
         return True
