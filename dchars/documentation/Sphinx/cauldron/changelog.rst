@@ -3,6 +3,28 @@ CHANGELOG_TITLE
 ===============
 
 ------------------
+0.6.2 [2014_08_14]
+------------------
+
+  * (bod) improved InternalStructures.seems_to_be_a_pure_tibetan_string() : the stack of consonants must now be adequate to http://www.thlib.org/reference/transliteration/tibstacks.php and the function seems_to_be_a_sanskrit_string() is called.
+
+  * code quality :
+
+    * header_please_test.py ok
+    * 194 tests, all ok
+
+------------------
+0.6.1 [2014_08_14]
+------------------
+
+  * (bod) new functions *.seems_to_be_a_pure_tibetan_string() 
+
+  * code quality :
+
+    * header_please_test.py ok
+    * 194 tests, all ok
+
+------------------
 0.6.0 [2014_08_13]
 ------------------
 

@@ -45,7 +45,8 @@ from dchars.languages.bod.symbols import SYMB_CONSONANTS, \
 
 from dchars.symbols.symbols import UNKNOWN_CHAR_SYMBOL
 from dchars.languages.bod.syllabic_structure import PREFIXES, SUPERFIXES, SUBFIXES, ROOT, \
-                                                    SUFFIXES1, SUFFIXES2
+                                                    SUFFIXES1, SUFFIXES2, \
+                                                    COMMON_CONSONANTS_STACK
 from dchars.languages.bod.symbols import TIBETANSANSKRIT_SYMB_VOWELS, \
                                          TIBETANSANSKRIT_SYMB_CONSONANTS
 
@@ -458,56 +459,11 @@ class ListOfInternalStructures(list):
         """
                 ListOfInternalStructures.seems_to_be_a_sanskrit_string
         """
+        for istruct in self:
+            if istruct.seems_to_be_a_sanskrit_string(strict_answer):
+                return True
 
-        if strict_answer:
-
-            for istruct in self:
-
-                if istruct.rnam_bcad:
-                    return True
-
-                if istruct.anusvara_candrabindu is not None:
-                    return True
-
-                if istruct.halanta:
-                    return True
-
-                if istruct.vowel1 in TIBETANSANSKRIT_SYMB_VOWELS:
-                    return True
-
-                if istruct.consonant in TIBETANSANSKRIT_SYMB_CONSONANTS or \
-                   istruct.suffix1 in TIBETANSANSKRIT_SYMB_CONSONANTS or \
-                   istruct.suffix2 in TIBETANSANSKRIT_SYMB_CONSONANTS:
-                    return True
-
-            return False
-
-        else:
-
-            for istruct in self:
-
-                # @@BOD-INTERNALSTRUCTURE-007
-                # rnam bcad is not an evidence  གཏིཿ = gtiH (NOT gatiH)
-                # if istruct.rnam_bcad:
-                #    return True
-
-                # @@BOD-INTERNALSTRUCTURE-008
-                # rjes su nga ro isn't an evidence of a Sanskrit word
-                # if istruct.anusvara_candrabindu is not None:
-                #     return True
-
-                if istruct.halanta:
-                    return True
-
-                if istruct.vowel1 in TIBETANSANSKRIT_SYMB_VOWELS:
-                    return True
-
-                if istruct.consonant in TIBETANSANSKRIT_SYMB_CONSONANTS or \
-                   istruct.suffix1 in TIBETANSANSKRIT_SYMB_CONSONANTS or \
-                   istruct.suffix2 in TIBETANSANSKRIT_SYMB_CONSONANTS:
-                    return True
-
-            return False
+        return False
             
     #///////////////////////////////////////////////////////////////////////////
     def set_the_dstring_object(self, dstring_object):
@@ -1411,6 +1367,57 @@ class InternalStructure(object):
         return res
 
     #///////////////////////////////////////////////////////////////////////////
+    def seems_to_be_a_sanskrit_string(self, strict_answer):
+        """
+                InternalStructures.seems_to_be_a_sanskrit_string
+        """
+        if strict_answer:
+
+            if self.rnam_bcad:
+                return True
+
+            if self.anusvara_candrabindu is not None:
+                return True
+
+            if self.halanta:
+                return True
+
+            if self.vowel1 in TIBETANSANSKRIT_SYMB_VOWELS:
+                return True
+
+            if self.consonant in TIBETANSANSKRIT_SYMB_CONSONANTS or \
+               self.suffix1 in TIBETANSANSKRIT_SYMB_CONSONANTS or \
+               self.suffix2 in TIBETANSANSKRIT_SYMB_CONSONANTS:
+                return True
+
+            return False
+
+        else:
+
+            # @@BOD-INTERNALSTRUCTURE-007
+            # rnam bcad is not an evidence  གཏིཿ = gtiH (NOT gatiH)
+            # if self.rnam_bcad:
+            #    return True
+
+            # @@BOD-INTERNALSTRUCTURE-008
+            # rjes su nga ro isn't an evidence of a Sanskrit word
+            # if self.anusvara_candrabindu is not None:
+            #     return True
+
+            if self.halanta:
+                return True
+
+            if self.vowel1 in TIBETANSANSKRIT_SYMB_VOWELS:
+                return True
+
+            if self.consonant in TIBETANSANSKRIT_SYMB_CONSONANTS or \
+               self.suffix1 in TIBETANSANSKRIT_SYMB_CONSONANTS or \
+               self.suffix2 in TIBETANSANSKRIT_SYMB_CONSONANTS:
+                return True
+
+        return False
+
+    #///////////////////////////////////////////////////////////////////////////
     def seems_to_be_a_pure_tibetan_string(self):
         """
                 InternalStructures.seems_to_be_a_pure_tibetan_string
@@ -1428,7 +1435,7 @@ class InternalStructure(object):
                                   'SH', 'S', 'H',
                                   'A',):
             return False
-            
+
         if self.superfix is not None and \
            self.superfix not in ('R', 'L', 'S'):
             return False
@@ -1446,11 +1453,25 @@ class InternalStructure(object):
             return False
 
         if self.vowel1 is not None and \
-           self.vowel1 not in ('E', 'I', 'O'):
+           self.vowel1 not in ('A', 'E', 'I', 'O'):
             return False
 
         if self.vowel2 is not None and \
-           self.vowel2 not in ('U',):
+           self.vowel2 not in ('A', 'U',):
+            return False
+
+        # is the stack of consontants defined as in 
+        # http://www.thlib.org/reference/transliteration/tibstacks.php ?
+        cons = []
+        if self.consonant is not None:
+            cons.append( self.consonant )
+        if self.subfix is not None:
+            for subj_c in self.subfix:
+                cons.extend( subj_c )
+        if len(cons)>=2 and tuple(cons) not in COMMON_CONSONANTS_STACK:
+            return False
+
+        if self.seems_to_be_a_sanskrit_string(strict_answer = False):
             return False
 
         return True
