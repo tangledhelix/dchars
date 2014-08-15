@@ -3,6 +3,17 @@ CHANGELOG_TITLE
 ===============
 
 ------------------
+0.6.4 [2014_08_14]
+------------------
+
+  * (bod) improved the InternalStructures.seems_to_be_a_pure_tibetan_string() function, whicn now uses two methods, the standard one (grammatical analysis) or the one's based on Chilton list (see  http://www.tibet.columbia.edu/iats/it/IATS-X_Chilton_slides.pdf, slide 32)
+
+  * code quality :
+
+    * header_please_test.py ok
+    * 194 tests, all ok
+
+------------------
 0.6.3 [2014_08_14]
 ------------------
 

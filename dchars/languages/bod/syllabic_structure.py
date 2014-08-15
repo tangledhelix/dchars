@@ -415,4 +415,6 @@ CHILTON_S_LIST = (
 
     (None,None,"H"),
     (None,"L", "H"),
+
+    (None, None, "A"),
 )
