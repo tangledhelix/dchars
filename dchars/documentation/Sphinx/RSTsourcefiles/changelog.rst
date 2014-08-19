@@ -3,6 +3,17 @@ CHANGELOG_TITLE
 ===============
 
 ------------------
+0.6.5 [2014_08_19]
+------------------
+
+  * (bod) updated syllabic_structure.py::CHILTON_LIST : added (None, None, 'A')
+
+  * code quality :
+
+    * header_please_test.py ok
+    * 194 tests, all ok
+
+------------------
 0.6.4 [2014_08_14]
 ------------------
 
