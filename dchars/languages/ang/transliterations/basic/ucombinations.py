@@ -22,8 +22,8 @@
     ❏DChars❏ : dchars/languages/lat/transliterations/basic/ucombinations.py
 """
 from dchars.dchars import new_dstring
-from dchars.languages.lat.dcharacter import DCharacterLAT
-from dchars.languages.lat.transliterations.basic.basic import dchar__get_translit_str
+from dchars.languages.ang.dcharacter import DCharacterANG
+from dchars.languages.ang.transliterations.basic.basic import dchar__get_translit_str
 
 import itertools
 
@@ -44,14 +44,14 @@ def get_usefull_combinations():
     """
     res = []
 
-    dstring = new_dstring( 'lat' )()
+    dstring = new_dstring( 'ang' )()
 
     # base_char : we don't use the list stored in symbols.py
     # since we would lost the character's order.
     base_characters  = ( 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h',
                          'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p',
-                         'q', 'r', 's', 't', 'u', 'v', 'w', 'x',
-                         'y', 'z', )
+                         'q', 'r', 's', 't', 'þ', 'u', 'v', 'w',
+                         'x', 'y', 'z', )
 
     #-----------------------------------------------------------------------
     # (1/2) simple characters
@@ -59,13 +59,13 @@ def get_usefull_combinations():
     for base_char in base_characters:
         for capital_letter in (False, True):
 
-            dchar = DCharacterLAT( dstring_object = dstring,
+            dchar = DCharacterANG( dstring_object = dstring,
                                    base_char = base_char,
                                    punctuation = False,
                                    capital_letter = capital_letter,
-                                   stress = False,
-                                   length = None,
-                                   diaeresis = False)
+                                   makron = False,
+                                   stress = 0,
+                                   upperdot = False)
 
             txt = dchar__get_translit_str(dstring_object = dstring,
                                           dchar = dchar)
@@ -82,35 +82,38 @@ def get_usefull_combinations():
                                        # capital_letter
                                        (False, True),
 
+                                       # makron
+                                       (False, True),
+
                                        # length
                                        ( None, "short", "long",),
 
                                        # stress
-                                       (False, True),
+                                       (-1, 0, 1, 2),
 
-                                       # diaeresis
+                                       # upperdot
                                        (False, True),
                                        ))
 
-    for base_char, capital_letter, length, stress, diaeresis in combinations:
+    for base_char, capital_letter, makron, length, stress, upperdot in combinations:
 
         add_this_dchar = True
 
         if base_char not in ('a', 'e', 'i', 'o', 'u'):
             if length is not None or \
-               stress == True or \
-               diaeresis == True:
+               stress != 0 or \
+               upperdot == True:
 
                 add_this_dchar = False
 
         if add_this_dchar:
-            dchar = DCharacterLAT( dstring_object = dstring,
+            dchar = DCharacterANG( dstring_object = dstring,
                                    base_char = base_char,
                                    punctuation = False,
                                    capital_letter = capital_letter,
-                                   length = length,
+                                   makron = makron,
                                    stress = stress,
-                                   diaeresis = diaeresis )
+                                   upperdot = upperdot )
 
             txt = dchar__get_translit_str(dstring_object = dstring,
                                           dchar = dchar)

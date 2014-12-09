@@ -388,3 +388,16 @@ class DStringMotherClass(list):
         # see DStringMotherClass.startswith to understand this (strange) way
         # to compare the two strings.
         return str(self).startswith( str(aliud) )
+
+    #///////////////////////////////////////////////////////////////////////////
+    def percentage_of_unknown_characters(self):
+        """
+                DStringMotherClass.percentage_of_unknown_characters
+
+                Return the ratio "number of unknown characters/length" or 0
+                if the object is empty.
+        """
+        if len(self)==0:
+            return 0
+
+        return 100.0*len([unknown_char for unknown_char in self if unknown_char.unknown_char==True])/len(self)
