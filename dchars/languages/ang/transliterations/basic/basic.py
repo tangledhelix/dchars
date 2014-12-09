@@ -328,7 +328,6 @@ def dstring__init_from_translit_str(dstring, dcharactertype, src):
     for element in re.finditer(PATTERN2, src):
 
         real_indexes = range(element.start(), element.end())
-
         # we add the unknown chars placed BEFORE OR WITHIN the recognized characters :
         # pylint: disable=W0612
         # Unused variable 'i'
@@ -351,5 +350,6 @@ def dstring__init_from_translit_str(dstring, dcharactertype, src):
     for i in range( last_real_index+1, len(src) ):
         new_dcharacter = dcharactertype(dstring_object=dstring)
         new_dcharacter.unknown_char = True
+        new_dcharacter.base_char = src[i]
+        new_dcharacter.unknown_char = True
         dstring.append( new_dcharacter )
-
