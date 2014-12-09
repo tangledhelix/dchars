@@ -162,8 +162,8 @@ HIRAGANA_DAKUTEN = {
       'ぜ'        : 'ze',
       'ぞ'        : 'zo',
       'だ'        : 'da',
-#      'ぢ'        : 'ji',
-#      'づ'        : 'zu',
+      'ぢ'        : 'ji*', # required but officially without the '*'
+      'づ'        : 'zu*', # required but officially without the '*'
       'で'        : 'de',
       'ど'        : 'do',
       'ば'        : 'ba',
@@ -257,8 +257,8 @@ KATAKANA_DAKUTEN = {
       'ゼ'        : 'ZE',
       'ゾ'        : 'ZO',
       'ダ'        : 'DA',
-#      'ヂ'        : 'JI',
-#      'ヅ'        : 'ZU',
+      'ヂ'        : 'JI*',  # required but officially without the '*'
+      'ヅ'        : 'ZU*',  # required but officially without the '*'
       'デ'        : 'DE',
       'ド'        : 'DO',
       'バ'        : 'BA',
