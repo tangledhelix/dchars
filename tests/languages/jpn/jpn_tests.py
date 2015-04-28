@@ -357,6 +357,14 @@ class TESTSDStringJPN(unittest.TestCase):
         # with unknown characters :
         self.assertTrue( DSTRING_JPN("まつ") < DSTRING_JPN("ま²") )
         self.assertTrue( DSTRING_JPN("まったく") < DSTRING_JPN("ま²たく") )
+        # with nothing but unknown characters :
+        self.assertTrue( DSTRING_JPN("u5B66") < DSTRING_JPN("u5C0F") )
+        self.assertFalse( DSTRING_JPN("u5B66") > DSTRING_JPN("u5C0F") )
+        # with nothing but complex unknown characters :
+        self.assertTrue( DSTRING_JPN("a") < DSTRING_JPN("é") )
+        self.assertTrue( DSTRING_JPN("a") < DSTRING_JPN("ὖ") )
+        # with an empty string :
+        self.assertTrue( DSTRING_JPN("") < DSTRING_JPN("a") )
 
         # examples taken from Kanji & Kana, Hadamitzky and Spahn, p. 22
         words = (

@@ -466,7 +466,7 @@ class DStringJPN(DStringMotherClass):
             for index, char in enumerate(self):
 
                 if char.unknown_char:
-                    data.append( (1, 999) )
+                    data.append( (1, ord(char.base_char)) )
 
                 elif char.chartype == 'choonpu':
                     # we treat the choonpu symbol as if it was the last vowel
