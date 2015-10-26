@@ -48,7 +48,7 @@ def get_usefull_combinations():
 
     # base_char : we don't use the list stored in symbols.py
     # since we would lost the character's order.
-    base_characters  = ( 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h',
+    base_characters  = ( 'a', 'æ', 'b', 'c', 'd', 'e', 'f', 'g', 'h',
                          'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p',
                          'q', 'r', 's', 't', 'þ', 'ð', 'u', 'v',
                          'w', 'x', 'y', 'z', )

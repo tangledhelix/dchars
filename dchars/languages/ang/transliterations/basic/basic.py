@@ -52,9 +52,10 @@ TRANS_EQUIVALENCES = ()
 #            corresponding symbols' dictionaries in symbols.py !
 #
 # LOWER_CASE[base_char] = transliterated character
-LOWER_CASE = {"a"     : "a",
-              "æ"     : "a+e",
-              "b"     : "b",
+LOWER_CASE = {
+              'a'     : "a",
+              'æ'     : "a+e",
+              'b'     : "b",
               'c'     : "c",
               'd'     : "d",
               'ð'     : "d+h",
@@ -84,9 +85,9 @@ LOWER_CASE = {"a"     : "a",
               }
 
 # UPPER_CASE[base_char] = transliterated character
-UPPER_CASE = {"a"     : "A",
-              "æ"     : "A+E",
-              "b"     : "B",
+UPPER_CASE = {'a'     : "A",
+              'æ'     : "A+E",
+              'b'     : "B",
               'c'     : "C",
               'd'     : "D",
               'ð'     : "D+h",

@@ -49,9 +49,9 @@ LIST_OF_RECIPROCAL_EXAMPLES = (
     ("A",       'A'     ),
     ("abcedefg",'abcedefg'),
     ("WXYZ",    'WXYZ'  ),
-    ("ǣ",       'æ_'    ),
-    ("Æ",       "Æ"     ),
-    ("a̽",       "a*"     ),
+    ("ǣ",       'a+e_'  ),
+    ("Æ",       "A+E"   ),
+    ("a̽",       "a*"    ),
     )
 
 # pylint: disable=R0904
