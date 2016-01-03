@@ -240,6 +240,29 @@ BOD_DATA.append( ConfigValue( subsection = 'bod.bodsan',
                               optionname = "bodsan.san2bod quality" ))
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# ancien français (Old English)
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+FRO_DATA = ConfigValuesForOneLanguage(header = 'Ænglisc (Old English)')
+FRO_DATA.append( ConfigValue( subsection = '',
+                              values = ("basic",),
+                              name = 'transliteration method',
+                              defaultvalue = 'basic',
+                              optionname = "transliteration method" ))
+
+FRO_DATA.append( ConfigValue( subsection = '',
+                              values = ("yes", "no"),
+                              name = 'anonymize the unknown characters',
+                              defaultvalue = 'no',
+                              optionname = "anonymize the unknown characters" ))
+
+FRO_DATA.append( ConfigValue( subsection = '',
+                              values = ("default",),
+                              name = 'sorting method',
+                              defaultvalue = 'default',
+                              optionname = "sorting method" ))
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # Ἑλληνικὴ γλῶττα (Ancient Greek)
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -423,6 +446,7 @@ SAN_DATA.append( ConfigValue( subsection = '',
 DATA = {
         "ang"   : ANG_DATA,
         "bod"   : BOD_DATA,
+        "fro"   : FRO_DATA,
         "grc"   : GRC_DATA,
         "hbo"   : HBO_DATA,
         "jpn"   : JPN_DATA,

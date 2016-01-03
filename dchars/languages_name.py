@@ -47,6 +47,10 @@ LANGUAGES_NAME = {
         "bod"                   : "བོད་ཡིག",
         "Tibetan"               : "བོད་ཡིག",
 
+        "ancien français"       : "ancien français",
+        "fro"                   : "ancien français",
+        "Old French"            : "ancien français",
+
         "Ἑλληνικὴ γλῶττα"       :       "Ἑλληνικὴ γλῶττα",
         "grc"                   :       "Ἑλληνικὴ γλῶττα",
         "Ancient Greek"         :       "Ἑλληνικὴ γλῶττα",
@@ -77,6 +81,10 @@ ISO_639_3_NAME = {
         "བོད་ཡིག"                  : "bod",
         "bod"                   : "bod",
         "Tibetan"               : "bod",
+
+        "fro"                   : "fro",
+        "ancien français"       : "fro",
+        "Old French"            : "fro",
 
         "Ἑλληνικὴ γλῶττα"       :       "grc",
         "grc"                   :       "grc",
@@ -109,6 +117,8 @@ LANGUAGES_AND_TRANSLITERATIONS = {
                                         "latīna"                : ("basic", ),
 
                                         BIBLICAL_HEBREW__NAME   : ( "basic", ),
+
+                                        "ancien français"       : ( "basic", ),
 
                                         "Ἑλληνικὴ γλῶττα"       : ( "basic",
                                                                     "betacode",

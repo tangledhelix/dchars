@@ -174,6 +174,20 @@ MODULES = {
                                                      ("ucombinations.py", False),
                                   ),
 
+         "dchars.languages.fro" : ( ("__init__.py", False),
+                                    ("dcharacter.py", False),
+                                    ("dstring.py", False),
+                                    ("symbols.py", False),
+                                  ),
+
+         "dchars.languages.fro.transliterations" : ( ("__init__.py", False),
+                                  ),
+
+         "dchars.languages.fro.transliterations.basic" : ( ("__init__.py", False),
+                                                     ("basic.py", False),
+                                                     ("ucombinations.py", False),
+                                  ),
+
          "dchars.languages.san" : ( ("__init__.py", False),
                                     ("dcharacter.py", False),
                                     ("dstring.py", False),

@@ -105,6 +105,20 @@ LANGUAGES = {
                 ),
 
                 #...............................................................
+                "ancien français" :
+                ("fro",
+                 "DStringFRO",
+                 CONFIG_INI["fro"]["transliteration method"],
+
+                 {DATA["lat"].get_optionname("sorting method"): \
+                  CONFIG_INI["fro"]["sorting method"],
+
+                  DATA["lat"].get_optionname("anonymize the unknown characters"): \
+                  CONFIG_INI["fro"]["anonymize the unknown characters"],
+                 }
+                ),
+
+                #...............................................................
                 "Ἑλληνικὴ γλῶττα":
                 ("grc",
                  "DStringGRC",
