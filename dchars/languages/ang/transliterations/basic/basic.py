@@ -21,7 +21,6 @@
 """
     ❏DChars❏ : dchars/languages/ang/transliterations/basic/basic.py
 """
-
 from dchars.utilities.regexstring import regexstring_list
 from dchars.utilities.dicttools import invertdict
 from dchars.utilities.lstringtools import isort_a_lstrings_bylen_nodup
