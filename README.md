@@ -6,6 +6,7 @@ A **Python3** module aiming to modify easily the diacritics signs of complex uni
 versions :
 
 0.6.6 [2016_01_04]
+
     o added Old French language ('fro').
     o 207 tests : all are ok .
 
