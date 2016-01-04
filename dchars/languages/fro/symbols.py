@@ -134,11 +134,15 @@ SYMB_DIACRITICS = Name2Symbols(
      "stress1"    : ( chr(0x300), ),  # è
      "stress2"    : ( chr(0x301), ),  # é
      "stress12"   : ( chr(0x302), ),  # ê
+     "stress3"    : ( chr(0x308), ),  # ï
+     "cedilla"    : ( chr(0x327), ),  # ç
     })
 # we define these constants in order to avoir multiple calls to SYMB_DIACRITICS.get_default_symbol :
 DEFAULTSYMB__STRESS1 = SYMB_DIACRITICS.get_default_symbol("stress1")
 DEFAULTSYMB__STRESS2 = SYMB_DIACRITICS.get_default_symbol("stress2")
 DEFAULTSYMB__STRESS12 = SYMB_DIACRITICS.get_default_symbol("stress12")
+DEFAULTSYMB__STRESS3  = SYMB_DIACRITICS.get_default_symbol("stress3")
+DEFAULTSYMB__CEDILLA = SYMB_DIACRITICS.get_default_symbol("cedilla")
 
 SORTING_ORDER = {
       'A'       : 10,
@@ -228,3 +232,5 @@ SORTING_ORDER = {
 SYMB_DIACRITICS__STRESS1 = SYMB_DIACRITICS["stress1"]
 SYMB_DIACRITICS__STRESS2 = SYMB_DIACRITICS["stress2"]
 SYMB_DIACRITICS__STRESS12 = SYMB_DIACRITICS["stress12"]
+SYMB_DIACRITICS__STRESS3 = SYMB_DIACRITICS["stress3"]
+SYMB_DIACRITICS__CEDILLA = SYMB_DIACRITICS["cedilla"]

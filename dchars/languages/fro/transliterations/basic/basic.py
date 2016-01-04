@@ -56,7 +56,6 @@ LOWER_CASE = {
               'a'     : "a",
               'b'     : "b",
               'c'     : "c",
-              'ç'     : "ç",
               'd'     : "d",
               'e'     : "e",
               'f'     : "f",
@@ -86,7 +85,6 @@ LOWER_CASE = {
 UPPER_CASE = {'a'     : "A",
               'b'     : "B",
               'c'     : "C",
-              'ç'     : "Ç",
               'd'     : "D",
               'e'     : "E",
               'f'     : "F",
@@ -155,6 +153,8 @@ DIACRITICS =  {
                 "stress1"      : "\\",
                 "stress2"      : "/",
                 "stress12"     : "/\\",
+                "stress3"      : "+:",
+                "cedilla"      : "+c",
               }
 DIACRITICS_INVERSED = invertdict(DIACRITICS)
 
@@ -170,7 +170,11 @@ DIACRITICS_INVERSED = invertdict(DIACRITICS)
 STRESS = isort_a_lstrings_bylen_nodup(
                 [re.escape(DIACRITICS['stress1']),
                  re.escape(DIACRITICS['stress2']),
-                 re.escape(DIACRITICS['stress12']), ])
+                 re.escape(DIACRITICS['stress12']),
+                 re.escape(DIACRITICS['stress3']),
+                ])
+CEDILLA = isort_a_lstrings_bylen_nodup(
+                [re.escape(DIACRITICS['cedilla']), ])
 LETTERS = isort_a_lstrings_bylen_nodup(
                 regexstring_list(tuple(LOWER_CASE_INVERSED.keys())) + \
                 regexstring_list(tuple(UPPER_CASE_INVERSED.keys())) + \
@@ -178,8 +182,10 @@ LETTERS = isort_a_lstrings_bylen_nodup(
 
 PATTERN_TXT = "((?P<base_char>({0}))" \
               "(?P<trans_stress>({1}))?" \
+              "(?P<trans_cedilla>({2}))?" \
               ")".format("|".join(prepare_list_to_strformat(LETTERS)),
                          "|".join(prepare_list_to_strformat(STRESS)),
+                         "|".join(prepare_list_to_strformat(CEDILLA)),
                          )
 # we inverse the effect of prepare_list_to_strformat()
 PATTERN_TXT = PATTERN_TXT.replace('{{', '{')
@@ -188,8 +194,10 @@ PATTERN = re.compile(PATTERN_TXT)
 
 PATTERN_TXT2 = "(({0})" \
                 "({1})?" \
+                "({2})?" \
                 ")".format("|".join(prepare_list_to_strformat(LETTERS)),
                            "|".join(prepare_list_to_strformat(STRESS)),
+                           "|".join(prepare_list_to_strformat(CEDILLA)),
                           )
 # we inverse the effect of prepare_list_to_strformat()
 PATTERN_TXT2 = PATTERN_TXT2.replace('{{', '{')
@@ -232,6 +240,11 @@ def dchar__get_translit_str(dstring_object, dchar):
         res.append( DIACRITICS["stress2"] )
     elif dchar.stress == 3 :
         res.append( DIACRITICS["stress12"] )
+    elif dchar.stress == 4 :
+        res.append( DIACRITICS["stress3"] )
+
+    if dchar.cedilla == True:
+        res.append( DIACRITICS["cedilla"] )
 
     return "".join( res )
 
@@ -262,7 +275,14 @@ def dchar__init_from_translit_str(dchar, src):
                                 "stress1"  : 1,
                                 "stress2"  : 2,
                                 "stress12" : 3,
+                                "stress3"  : 4,
                            }[DIACRITICS_INVERSED[trans_stress]]
+
+        trans_cedilla = element.group('trans_cedilla')
+        if trans_cedilla is None:
+            dchar.cedilla = False
+        else:
+            dchar.cedilla = True
 
         base_char = element.group('base_char')
         if base_char in LOWER_CASE_INVERSED:

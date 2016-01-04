@@ -32,6 +32,8 @@ from dchars.dcharacter import DCharacterMotherClass
 from dchars.languages.fro.symbols import DEFAULTSYMB__STRESS1, \
                                          DEFAULTSYMB__STRESS2, \
                                          DEFAULTSYMB__STRESS12, \
+                                         DEFAULTSYMB__STRESS3, \
+                                         DEFAULTSYMB__CEDILLA, \
                                          SYMB_LOWER_CASE, \
                                          SYMB_UPPER_CASE, \
                                          SORTING_ORDER
@@ -49,6 +51,7 @@ import dchars.languages.fro.transliterations.basic.basic as basictrans
 #
 ################################################################################
 COMPLETE_NORMALIZE_NFC = (
+#                ('ç', 'ç'),   # 0063 0327 -> 00E7
                )
 
 ################################################################################
@@ -86,6 +89,7 @@ class DCharacterFRO(DCharacterMotherClass):
                  base_char = None,
                  punctuation = False,
                  capital_letter = False,
+                 cedilla = False,
                  stress = 0):
         """
                 DCharacterFRO.__init__
@@ -95,7 +99,8 @@ class DCharacterFRO(DCharacterMotherClass):
                 punctuation                     : True, False
                 capital_letter                  : True, False
 
-                stress                          : 1,2,3
+                cedilla                         : False
+                stress                          : 1,2,3,4
         """
         DCharacterMotherClass.__init__(self,
                                        dstring_object = dstring_object,
@@ -105,6 +110,7 @@ class DCharacterFRO(DCharacterMotherClass):
 
         self.dstring_object = dstring_object
         self.capital_letter = capital_letter
+        self.cedilla = cedilla
         self.stress = stress
 
     #///////////////////////////////////////////////////////////////////////////
@@ -117,6 +123,7 @@ class DCharacterFRO(DCharacterMotherClass):
                "base_char="+repr(self.base_char) + "; " + \
                "punctuation="+repr(self.punctuation) + "; " + \
                "capital_letter="+repr(self.capital_letter) + "; " + \
+               "cedilla="+repr(self.cedilla) + "; " + \
                "stress="+repr(self.stress) + "; "
 
     #///////////////////////////////////////////////////////////////////////////
@@ -129,13 +136,15 @@ class DCharacterFRO(DCharacterMotherClass):
                 punctuation                     : True, False
                 capital_letter                  : True, False
 
-                stress                          : 1,2,3
+                cedilla                         : bool
+                stress                          : (int)1,2,3,4
         """
         return DCharacterFRO( dstring_object = self.dstring_object,
                               unknown_char = self.unknown_char,
                               base_char = self.base_char,
                               punctuation = self.punctuation,
                               capital_letter = self.capital_letter,
+                              cedilla = self.cedilla,
                               stress = self.stress)
 
     #///////////////////////////////////////////////////////////////////////////
@@ -156,7 +165,7 @@ class DCharacterFRO(DCharacterMotherClass):
 
         # base_char : we don't use the list stored in symbols.py
         # since we would lost the character's order.
-        base_characters  = ( 'a', 'æ', 'b', 'c', 'd', 'e', 'f', 'g', 'h',
+        base_characters  = ( 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h',
                              'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p',
                              'q', 'r', 's', 't', 'þ', 'ð', 'u', 'v',
                              'w', 'x', 'y', 'z', )
@@ -170,6 +179,7 @@ class DCharacterFRO(DCharacterMotherClass):
                                base_char = base_char,
                                punctuation = False,
                                capital_letter = capital_letter,
+                               cedilla = False,
                                stress = 0)
 
                 yield copy.copy(self)
@@ -187,9 +197,12 @@ class DCharacterFRO(DCharacterMotherClass):
                                            # stress
                                            (-1, 0, 1, 2),
 
+                                           # cedilla
+                                           (False, True),
+
                                            ))
 
-        for base_char, capital_letter, stress, in combinations:
+        for base_char, capital_letter, stress, cedilla in combinations:
 
             add_this_dchar = True
 
@@ -197,11 +210,16 @@ class DCharacterFRO(DCharacterMotherClass):
                 if stress != 0:
                     add_this_dchar = False
 
+            if base_char not in ('c'):
+                if cedilla is True:
+                    add_this_dchar = False
+
             if add_this_dchar:
                 self.__init__( dstring_object = self.dstring_object,
                                base_char = base_char,
                                punctuation = False,
                                capital_letter = capital_letter,
+                               cedilla = cedilla,
                                stress = stress)
 
                 yield copy.copy(self)
@@ -273,6 +291,11 @@ class DCharacterFRO(DCharacterMotherClass):
             res.append( DEFAULTSYMB__STRESS2 )
         elif self.stress == 3:
             res.append( DEFAULTSYMB__STRESS12 )
+        elif self.stress == 4:
+            res.append( DEFAULTSYMB__STRESS3 )
+
+        if self.cedilla is True:
+            res.append( DEFAULTSYMB__CEDILLA )
 
         res = "".join(res)
 
@@ -336,6 +359,7 @@ class DCharacterFRO(DCharacterMotherClass):
         self.base_char = None
         self.punctuation = False
         self.capital_letter = False
+        self.cedilla = False
         self.stress = 0
 
     #///////////////////////////////////////////////////////////////////////////
@@ -348,4 +372,5 @@ class DCharacterFRO(DCharacterMotherClass):
                 Function used by the Logotheras project.
         """
         self.capital_letter = True
+        self.cedilla = False
         self.stress = 0

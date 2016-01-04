@@ -63,6 +63,7 @@ def get_usefull_combinations():
                                    base_char = base_char,
                                    punctuation = False,
                                    capital_letter = capital_letter,
+                                   cedilla = False,
                                    stress = 0)
 
             txt = dchar__get_translit_str(dstring_object = dstring,
@@ -85,6 +86,9 @@ def get_usefull_combinations():
 
                                        # stress
                                        (-1, 0, 1, 2),
+
+                                       # cedilla
+                                       (False, True),
                                        ))
 
     for base_char, capital_letter, length, stress in combinations:
@@ -93,6 +97,10 @@ def get_usefull_combinations():
 
         if base_char not in ('a', 'e', 'i', 'o', 'u'):
             if stress != 0:
+                add_this_dchar = False
+
+        if base_char not in ('c',):
+            if cedilla is True:
                 add_this_dchar = False
 
         if add_this_dchar:

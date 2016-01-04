@@ -39,7 +39,9 @@ from dchars.languages.fro.symbols import SYMB_PUNCTUATION, \
                                          SORTING_ORDER, \
                                          SYMB_DIACRITICS__STRESS1, \
                                          SYMB_DIACRITICS__STRESS2, \
-                                         SYMB_DIACRITICS__STRESS12
+                                         SYMB_DIACRITICS__STRESS12, \
+                                         SYMB_DIACRITICS__STRESS3, \
+                                         SYMB_DIACRITICS__CEDILLA
 
 from dchars.utilities.lstringtools import number_of_occurences
 from dchars.utilities.sortingvalue import SortingValue
@@ -199,6 +201,7 @@ class DStringFRO(DStringMotherClass):
                 *     re.finditer(DStringFRO.pattern) give the symbols{letter+diacritics}
                 *     (3.1) base_char
                 *     (3.2) stress
+                *     (3.3) cedilla
                 *     (3.3) we add the new character
         """
         #.......................................................................
@@ -270,6 +273,7 @@ class DStringFRO(DStringMotherClass):
                 base_char = SYMB_UPPER_CASE.get_the_name_for_this_symbol(letter)
 
             stress = 0
+            cedilla = False
             if diacritics is not None:
 
                 #. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
@@ -281,7 +285,8 @@ class DStringFRO(DStringMotherClass):
                                                     symbols = SYMB_DIACRITICS__STRESS2)
                 stress12_nbr = number_of_occurences( source_string = diacritics,
                                                     symbols = SYMB_DIACRITICS__STRESS12)
-
+                stress3_nbr = number_of_occurences( source_string = diacritics,
+                                                    symbols = SYMB_DIACRITICS__STRESS3)
 
                 if stress1_nbr > 1:
                     err_msg = "In '{0}' (start={1}, end={2}), stress1 defined several times."
@@ -304,8 +309,14 @@ class DStringFRO(DStringMotherClass):
                                                                 element.start(),
                                                                 element.end()),)
 
+                if stress3_nbr > 1:
+                    err_msg = "In '{0}' (start={1}, end={2}), stress3 defined several times."
+                    raise DCharsError( context = "DStringFRO.init_from_str",
+                                       message = err_msg.format(element.string,
+                                                                element.start(),
+                                                                element.end()),)
 
-                if stress1_nbr + stress2_nbr + stress12_nbr > 1:
+                if stress1_nbr + stress2_nbr + stress12_nbr + stress3_nbr > 1:
                     err_msg = "In '{0}' (start={1}, end={2}), stress1, stress2 and stress12 " \
                               "simultaneously defined."
                     raise DCharsError( context = "DStringFRO.init_from_str",
@@ -320,16 +331,34 @@ class DStringFRO(DStringMotherClass):
                 elif SYMB_DIACRITICS.are_these_symbols_in_a_string('stress2', diacritics):
                     stress = 2
                 elif SYMB_DIACRITICS.are_these_symbols_in_a_string('stress12', diacritics):
-                    stress = 12
+                    stress = 3
+                elif SYMB_DIACRITICS.are_these_symbols_in_a_string('stress3', diacritics):
+                    stress = 4
+
+                #. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+                # (3.3) cedilla
+                #. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+                cedilla_nbr = number_of_occurences( source_string = diacritics,
+                                                    symbols = SYMB_DIACRITICS__CEDILLA)
+                if cedilla_nbr > 1:
+                    err_msg = "In '{0}' (start={1}, end={2}), cedilla defined several times."
+                    raise DCharsError( context = "DStringFRO.init_from_str",
+                                       message = err_msg.format(element.string,
+                                                                element.start(),
+                                                                element.end()),)
+
+                if SYMB_DIACRITICS.are_these_symbols_in_a_string('cedilla', diacritics):
+                    cedilla = True
 
             #. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
-            # (3.3) we add the new character
+            # (3.4) we add the new character
             #. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
             new_character = DCharacterFRO(dstring_object = self,
                                           unknown_char = False,
                                           base_char = base_char,
                                           punctuation = punctuation,
                                           capital_letter = capital_letter,
+                                          cedilla = cedilla,
                                           stress = stress)
 
             self.append( new_character )

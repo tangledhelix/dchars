@@ -63,6 +63,7 @@ with open("pylint.output","w") as dest:
 
         e = re.search("rated at\\s(?P<evaluation>[-|\\d|.]+)/10",  pylintdata)
 
+        evaluation = 0
         if e is None:
             CONSOLE.use_the_color("red")
             CONSOLE.writeln("problem with : ", filename)
