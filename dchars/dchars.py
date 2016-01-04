@@ -105,7 +105,7 @@ LANGUAGES = {
                 ),
 
                 #...............................................................
-                "ancien français" :
+                "romanz" :
                 ("fro",
                  "DStringFRO",
                  CONFIG_INI["fro"]["transliteration method"],

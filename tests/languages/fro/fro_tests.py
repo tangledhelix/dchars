@@ -28,11 +28,11 @@ from dchars.errors.errors import DCharsError
 from dchars.dchars import new_dstring
 from dchars.languages.bod.dcharacter import UNKNOWN_CHAR_SYMBOL
 
-DSTRING_FRO = new_dstring(language = "ancien français",
+DSTRING_FRO = new_dstring(language = "romanz",
                           options = {"anonymize the unknown characters" : "no",
                                      "sorting method" : "default"},
                           )
-DSTRING_FRO__UNKNOWNCHAR = new_dstring(language = "ancien français",
+DSTRING_FRO__UNKNOWNCHAR = new_dstring(language = "romanz",
                                        options = {"anonymize the unknown characters" : "yes"},
                                       )
 
