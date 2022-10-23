@@ -1,3 +1,15 @@
+Administrative note
+-------------------
+
+> This project was originally created by GitHub user "suizokukan". For reasons unknown to me, the project is no longer available on GitHub under their profile. This copy is a fork.
+>
+> **I am not maintaining this code**. I'm hosting a copy because it's a dependency for the [PPTools][] project.
+
+[pptools]: https://github.com/tangledhelix/pptools
+
+----
+----
+
 A **Python3** module aiming to modify easily the diacritics signs of complex unicode characters and to get their transliteration. DChars’ code is licensed under the **GPLv3** licence and is free. Current available languages are Ancient Greek, Latin, Biblical Hebrew, Sanskrit (devanāgarī), Tibetan, Old English, Japanese and Old French .
 
 ----
